@@ -1,0 +1,72 @@
+/* additional-styles.css */
+
+.swiper {
+    width: 100%;
+    height: 500px;
+    margin-bottom: 40px;
+}
+  
+  .swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: #fff; 
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Maintain aspect ratio and fill the height */
+    object-position: center; /* Center the image */
+    opacity: 1;
+    background-color: #fff; 
+  }
+  
+  /* Responsive styles */
+  @media (max-width: 767px) {
+    .swiper {
+      height: 300px;
+    }
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+    .swiper {
+      height: 400px;
+    }
+  }
+  
+  @media (min-width: 992px) {
+    .swiper {
+      height: 500px;
+    }
+  }
+  
+  @media (min-width: 1200px) {
+    .swiper-slide img {
+      width: auto; /* Maintain the original width if it's larger than the main area */
+      max-width: 100%; /* Ensure the image doesn't exceed the main area width */
+    }
+  }
+
+  .ci {
+    pointer-events: none;
+  }
+
+  .lSSlideOuter .lSPager.lSpg {
+    display: none;
+  }
+
+.swiper-slide .image-name {
+  position: absolute;
+  bottom: 10px;
+  left: 30%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 14px;
+}
