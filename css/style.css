@@ -1,0 +1,140 @@
+.bg-image {
+  background-image: url('../img/marble.jpg');
+  background-repeat: repeat; /* Repeat the image horizontally and vertically */
+  background-size: 400px 400px; /* Set the tile size */
+  background-color: #b2a292; /* Brownish gap color */
+  gap: 2px;
+  box-sizing: border-box; 
+  padding-top: 18px;
+  padding-bottom: 18px;
+  opacity: 0.7;
+  background-attachment: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Set height to 100% viewport height */
+  /* Hide background on mobile devices (adjust the breakpoint as needed) */
+  @media screen and (max-width: 768px) {
+    background: none;
+  }
+}
+
+/* White theme */
+.main {
+  background-color: #edfffb;
+  color: #333;
+  max-width: 800px;
+  border-radius: 6px;
+  position: relative;
+}
+
+.btn-primary {
+    background-color: #030a86;
+    border-color: #1b0ca6;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+    color: #e9f4a0;
+  }
+
+.btn-primary:focus {
+    color: #fff;
+}
+
+.btn-primary:hover {
+    color: #fff;
+}
+
+/* Add padding to button text */
+.btn {
+    padding: 0.5rem 1rem; /* Adjust padding values as needed */
+  }
+
+
+
+/* Dark theme */
+[data-theme="dark"] {
+    background-color: #333;
+    color: #fff;
+  }
+
+[data-theme="dark"] .btn-primary {
+    background-color: #2988ed;
+    border-color: #0c08da;
+    color: #e8f898;
+  }
+  
+/* Space between buttons */
+.nav-item {
+    margin: 0 10px; /* Margin on both sides for spacing */
+  }
+  
+/* Font contrast */
+.btn-primary {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2); /* Slight shadow for better contrast */
+  }
+  
+/* Space between buttons */
+.nav-item {
+    margin: 0 5px; /* Margin on both sides for spacing on all screen sizes */
+    margin-bottom: 5px;
+  }
+
+#simeza-logo {
+  width: 150px;
+  max-width: 200px;
+  border-radius: 50%;
+}
+
+
+hr {
+  border: none;
+  height: 3px;
+  background-image: linear-gradient(to right, #060487, #96530c); 
+}
+
+h1 {
+  font-family: 'Playfair Display', serif; /* Elegant serif font */
+  font-size: 36px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #884315; /* Dark brown color */
+  margin: 0 0 20px 0; /* Add some margin below */
+  text-align: center; /* Center the title text */
+}
+
+h2 {
+  font-family: 'Playfair Display', serif; /* Or Roboto Slab, Poppins */
+  font-size: 24px;
+  line-height: 1.5;
+  font-weight: bold;
+  color: #554f4f; /* Darker gray for contrast */
+  margin: 15px 0;
+}
+
+p {
+  font-size: 1.2rem;
+  font-family:  'Merriweather', 'Lato', 'Open Sans', sans-serif; 
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  margin: 0 0 15px 0;
+}
+
+p.first::first-letter {
+  font-family: 'Playfair Display', 'Roboto Slab', 'Poppins', serif; 
+  font-size: 3.5em; /* Increase font size by 2 times */
+  line-height: 1.5; /* Adjust line-height for better spacing */
+  float: left; /* Float the first letter to the left */
+  margin-right: 0.2rem; /* Add margin to separate from the rest of the text */
+  color: #884315; /* Dark brown color */
+  top: -0.5em;
+}
+
+
+footer {
+  background-color: #bfbcb7;
+  opacity: 0.8; /* Set opacity to 0.8 for 80% transparency */
+  color: #884315; /* Dark brown color */
+}
+
+.copyright:before {
+  content: "Dreptul de autor © 2024 Pavy Beloiu";
+}
