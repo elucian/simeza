@@ -5,7 +5,7 @@ try {
     var imageUrls = [];
   
     // Load the first 10 images eagerly
-    for (var i = 1; i <= 10; i++) {
+    for (var i = 1; i <= 25; i++) {
       // Construct the image URL
       var imageUrl = "galery/picture" + i + ".jpg";
       imageUrls.push(imageUrl);
@@ -51,7 +51,7 @@ try {
     }
   
     // Add the remaining images using lazy loading
-    for (var j = 10; j < 230; j++) {
+    for (var j = 25; j < 230; j++) {
       var slide = document.createElement("div");
       slide.classList.add("swiper-slide", "ci");
   
