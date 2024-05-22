@@ -138,3 +138,26 @@ footer {
 .copyright:before {
   content: "Dreptul de autor © 2024 Pavy Beloiu";
 }
+
+.responsive-video {
+  position: relative;
+  display: flex; /* Ensures centering on desktop */
+  justify-content: center; /* Centers horizontally */
+  align-items: center; /* Centers vertically */
+  margin: 0 auto; /* Adds horizontal centering for desktop */
+  width: 80%; /* Sets width for desktop (adjust if needed) */
+  padding-bottom:2%; /* Maintains aspect ratio for YouTube videos (16:9) */
+  overflow: hidden;
+}
+
+@media (max-width: 768px) { /* Media query for mobile devices */
+  .responsive-video {
+    width: 100%; /* Sets full width on mobile */
+    padding-bottom: 0; /* Removes aspect ratio padding on mobile (optional) */
+  }
+}
+
+.video-list {
+  list-style: none; /* Hides the default round bullets */
+  /* Other styles... */
+}
