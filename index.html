@@ -71,6 +71,44 @@
       <p>Pe acest site, veți găsi o gamă vastă de materiale create de Pavy Beloiu, inclusiv cărți, articole științifice și lucrări de artă. Aceste materiale vă vor inspira și vă vor ajuta să vă dezvoltați cunoștințele și orizontul spiritual.</p>
     </section>
 
+    <section class="row mb-4">
+      <h2>Interviu cu Pavy Beloyu</h2>
+      <ul class="video-list">
+        <li>
+          <a href="https://www.youtube.com/live/QFk6d4MZjXc?si=t3SHGJiTWS9i7Aqr">
+            <i class="bi bi-play-circle-fill"></i>Streamed live on Apr 15, 2024
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/live/ZAZWibQlVVA?si=QWW7ciSxTCsWvg8k">
+            <i class="bi bi-play-circle-fill"></i>Streamed live on Sep 4, 2023 
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="row mb-4">
+      <h4 class="text-center">A7TV - Premiered Jul 19, 2022</h4>
+      <div id="player"></div><script>
+        // Initialize YouTube player
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'bopYVV5LBdY',
+            events: {
+              'onReady': function(event) {
+                // Function to be called when the player is ready (moved inside)
+                var desiredStartTimeInSeconds = 3395;
+                player.seekTo(desiredStartTimeInSeconds);
+              }
+            }
+          });
+        }
+      </script>
+    </section>
+
   <footer class="footer py-3 text-center">
     <p class="mb-0 text-center copyright"></p>
     <a href="https://groups.google.com/g/simeza" class="btn btn-sm btn-outline-dark">      <i class="bi bi-envelope"></i> Discuții și Noutăți</a>     
@@ -81,5 +119,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
   <script src="js/tougle-style.js"></script>
   <script src="js/global.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
 </body>
 </html>
