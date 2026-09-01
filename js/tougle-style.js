@@ -30,8 +30,6 @@ function updateUI(theme, iconElement, logoElement) {
     logoElement.src = theme === 'dark' ? 'img/sage-logo-b.svg' : 'img/sage-logo-w.svg';
     
     // Theme toggle icon update using the switch-theme.svg
-    // Note: If you want to visually flip/rotate the icon based on theme,
-    // you might need CSS classes, but here we just keep the source.
     iconElement.style.filter = theme === 'dark' ? 'invert(1)' : 'invert(0)';
 }
 
@@ -43,32 +41,4 @@ function googleTranslateElementInit() {
     layout: google.translate.TranslateElement.InlineLayout.SIMPLE
   }, 'google_translate_element');
 }
-
-// Custom flag trigger
-document.addEventListener('DOMContentLoaded', () => {
-    const langEn = document.getElementById('lang-en');
-    const langRo = document.getElementById('lang-ro');
-    
-    if(langEn) {
-        langEn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = 'en';
-                select.dispatchEvent(new Event('change'));
-            }
-        });
-    }
-
-    if(langRo) {
-        langRo.addEventListener('click', (e) => {
-            e.preventDefault();
-            const select = document.querySelector('.goog-te-combo');
-            if (select) {
-                select.value = 'ro';
-                select.dispatchEvent(new Event('change'));
-            }
-        });
-    }
-});
 

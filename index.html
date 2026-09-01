@@ -92,8 +92,28 @@
 
   <footer class="footer py-3 text-center">
     <p class="mb-0 text-center copyright"></p>
-    <a href="https://groups.google.com/g/simeza" class="btn btn-sm btn-outline-dark">      <i class="bi bi-envelope"></i> Discuții și Noutăți</a>     
+    <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#joinGroupModal">
+      <i class="bi bi-envelope"></i> Discuții și Noutăți
+    </button>
   </footer>
+
+  <!-- Join Group Modal -->
+  <div class="modal fade" id="joinGroupModal" tabindex="-1" aria-labelledby="joinGroupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="joinGroupModalLabel">Alăturați-vă Grupului La Simeza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Doriți să vă alăturați comunității noastre? Vizitați grupul nostru Google folosind butonul de mai jos pentru a cere o invitație oficială.</p>
+          <div class="text-center">
+            <a href="https://groups.google.com/g/simeza" target="_blank" class="btn btn-primary">Vizitează grupul Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
 </main>
 
