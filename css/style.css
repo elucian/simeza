@@ -255,6 +255,17 @@ footer {
 
 .btn-primary.active {
     background-color: #ffc107 !important; /* Yellow */
+
+/* Modal Dark Mode */
+[data-theme="dark"] .modal-content {
+  background-color: #242424 !important;
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .modal-header .btn-close {
+  filter: invert(1);
+}
+
     border-color: #ffc107 !important;
     color: #000 !important; /* Dark text on yellow for contrast */
     box-shadow: inset 0 2px 4px rgba(0,0,0,0.5) !important;

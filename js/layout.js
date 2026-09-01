@@ -1,3 +1,11 @@
+// Early Translation Cookie Check
+(function() {
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang) {
+        document.cookie = `googtrans=/ro/${savedLang}; path=/; `;
+    }
+})();
+
 document.addEventListener("DOMContentLoaded", function() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
@@ -30,8 +38,9 @@ document.addEventListener("DOMContentLoaded", function() {
                 <img src="img/switch-theme.svg" id="themeIcon" style="width: 40px; height: 40px;" alt="Switch Theme">
             </button>
             <div class="d-flex gap-2">
-                <img src="img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
                 <img src="img/ro-flag.svg" alt="Romanian" id="lang-ro" style="width: 40px; cursor: pointer;">
+                <img src="img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
+                <img src="img/de-flag.svg" alt="German" id="lang-de" style="width: 40px; cursor: pointer;">
             </div>
         </div>
     </header>
@@ -70,16 +79,81 @@ document.addEventListener("DOMContentLoaded", function() {
         initTheme();
     }
 
+    // Modal Language Translation
+    const translations = {
+        ro: {
+            title: "Alăturați-vă Grupului La Simeza",
+            text: "Doriți să vă alăturați comunității noastre? Vizitați grupul nostru Google folosind butonul de mai jos pentru a cere o invitație oficială.",
+            button: "Vizitează grupul Google"
+        },
+        en: {
+            title: "Join the La Simeza Group",
+            text: "Would you like to join our community? Visit our Google Group using the button below to request an official invitation.",
+            button: "Visit Google Group"
+        },
+        de: {
+            title: "Treten Sie der La Simeza-Gruppe bei",
+            text: "Möchten Sie unserer Gemeinschaft beitreten? Besuchen Sie unsere Google-Gruppe über die untenstehende Schaltfläche, um eine offizielle Einladung anzufordern.",
+            button: "Besuchen Sie die Google-Gruppe"
+        }
+    };
+
+    function updateModalLanguage() {
+        const lang = localStorage.getItem('lang') || 'ro';
+        const t = translations[lang] || translations['ro'];
+        const modal = document.getElementById('joinGroupModal');
+        if (modal) {
+            modal.querySelector('.modal-title').textContent = t.title;
+            modal.querySelector('.modal-body p').textContent = t.text;
+            modal.querySelector('.modal-body a').textContent = t.button;
+        }
+    }
+
+    // Initialize Modal Language on Load
+    updateModalLanguage();
+    
+    // Listen for modal show event if supported
+    document.getElementById('joinGroupModal')?.addEventListener('show.bs.modal', updateModalLanguage);
+
+    // Flag Highlighting Function
+    function applyFlagStyles() {
+        const lang = localStorage.getItem('lang') || 'ro';
+        const enFlag = document.getElementById('lang-en');
+        const roFlag = document.getElementById('lang-ro');
+        const deFlag = document.getElementById('lang-de');
+        
+        if (enFlag && roFlag && deFlag) {
+            enFlag.style.border = lang === 'en' ? '3px solid #007bff' : 'none';
+            roFlag.style.border = lang === 'ro' ? '3px solid #333' : 'none';
+            deFlag.style.border = lang === 'de' ? '3px solid #ffcc00' : 'none';
+            enFlag.style.borderRadius = roFlag.style.borderRadius = deFlag.style.borderRadius = '5px';
+        }
+    }
+    
+    // Apply flag styles on load
+    applyFlagStyles();
+    
     // Add language selection functionality
-    document.getElementById('lang-en')?.addEventListener('click', () => {
-        localStorage.setItem('lang', 'en');
-        alert('Limba selectată: Engleză');
+    document.getElementById('lang-ro')?.addEventListener('click', () => {
+        localStorage.setItem('lang', 'ro');
+        document.cookie = "googtrans=/ro/ro; path=/";
+        applyFlagStyles();
         location.reload();
     });
 
-    document.getElementById('lang-ro')?.addEventListener('click', () => {
-        localStorage.setItem('lang', 'ro');
-        alert('Limba selectată: Română');
+    document.getElementById('lang-en')?.addEventListener('click', () => {
+        localStorage.setItem('lang', 'en');
+        document.cookie = "googtrans=/ro/en; path=/";
+        applyFlagStyles();
         location.reload();
     });
+
+    document.getElementById('lang-de')?.addEventListener('click', () => {
+        localStorage.setItem('lang', 'de');
+        document.cookie = "googtrans=/ro/de; path=/";
+        applyFlagStyles();
+        location.reload();
+    });
+
+
 });
