@@ -119,6 +119,12 @@ def build():
                 with open(os.path.join(PUBLIC_DIR, 'index.html'), 'w', encoding='utf-8') as f:
                     f.write(final_html)
 
+    # Add CNAME and .nojekyll
+    if os.path.exists(os.path.join(ROOT, 'CNAME')):
+        shutil.copy(os.path.join(ROOT, 'CNAME'), os.path.join(PUBLIC_DIR, 'CNAME'))
+    with open(os.path.join(PUBLIC_DIR, '.nojekyll'), 'w') as f:
+        f.write('')
+
     shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(PUBLIC_DIR, 'core'), dirs_exist_ok=True)
     if os.path.exists(os.path.join(ROOT, 'files')):
         shutil.copytree(os.path.join(ROOT, 'files'), os.path.join(PUBLIC_DIR, 'files'), dirs_exist_ok=True)
