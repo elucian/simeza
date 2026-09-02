@@ -9,15 +9,18 @@
 document.addEventListener("DOMContentLoaded", function() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     
+    const isRo = window.location.pathname.includes('/ro/');
+    const base = isRo ? '../' : '';
+
     // Define mapping for titles and button IDs
     const pageData = {
         'index.html': { title: 'La Simeza - [Intro]', label: 'Intro', buttonHref: 'index.html' },
-        'arta.html': { title: 'La Simeza - [Artă]', label: 'Artă', buttonHref: 'arta.html' },
-        'scrieri.html': { title: 'La Simeza - [Scrieri]', label: 'Scrieri', buttonHref: 'scrieri.html' },
-        'matematica.html': { title: 'La Simeza - [Matematică]', label: 'Matematică', buttonHref: 'matematica.html' },
-        'spiritualitate.html': { title: 'La Simeza - [Spiritualitate]', label: 'Spiritualitate', buttonHref: 'spiritualitate.html' },
-        'poezie.html': { title: 'La Simeza - [Poezie]', label: 'Poezie', buttonHref: 'poezie.html' },
-        'carti.html': { title: 'La Simeza - [Cărți]', label: 'Cărți', buttonHref: 'carti.html' }
+        'arta.html': { title: 'La Simeza - [Artă]', label: 'Artă', buttonHref: isRo ? 'arta.html' : 'ro/arta.html' },
+        'scrieri.html': { title: 'La Simeza - [Scrieri]', label: 'Scrieri', buttonHref: isRo ? 'scrieri.html' : 'ro/scrieri.html' },
+        'matematica.html': { title: 'La Simeza - [Matematică]', label: 'Matematică', buttonHref: isRo ? 'matematica.html' : 'ro/matematica.html' },
+        'spiritualitate.html': { title: 'La Simeza - [Spiritualitate]', label: 'Spiritualitate', buttonHref: isRo ? 'spiritualitate.html' : 'ro/spiritualitate.html' },
+        'poezie.html': { title: 'La Simeza - [Poezie]', label: 'Poezie', buttonHref: isRo ? 'poezie.html' : 'ro/poezie.html' },
+        'carti.html': { title: 'La Simeza - [Cărți]', label: 'Cărți', buttonHref: isRo ? 'carti.html' : 'ro/carti.html' }
     };
 
     const currentData = pageData[currentPage] || { title: 'La Simeza', label: '', buttonHref: null };
@@ -28,32 +31,42 @@ document.addEventListener("DOMContentLoaded", function() {
     const layoutHTML = `
     <header class="fixed-header">
         <div>
-            <a href="index.html">
-                <img src="img/sage-logo.svg" id="sage-logo" alt="La Simeza Logo" style="width: 56px; height: 56px; border-radius: 50%;" class="image-responsive">
+            <a href="${isRo ? '../index.html' : 'index.html'}">
+                <img src="${base}img/sage-logo.svg" id="sage-logo" alt="La Simeza Logo" style="width: 56px; height: 56px; border-radius: 50%;" class="image-responsive">
             </a>
         </div>
         <h1 id="dynamic-page-title">La Simeza</h1>
         <div class="d-flex align-items-center justify-content-end gap-3">
             <button id="themeToggle" class="btn btn-outline-secondary rounded-circle p-2" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                <img src="img/switch-theme.svg" id="themeIcon" style="width: 40px; height: 40px;" alt="Switch Theme">
+                <img src="${base}img/switch-theme.svg" id="themeIcon" style="width: 40px; height: 40px;" alt="Switch Theme">
             </button>
             <div class="d-flex gap-2">
-                <img src="img/ro-flag.svg" alt="Romanian" id="lang-ro" style="width: 40px; cursor: pointer;">
-                <img src="img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
-                <img src="img/de-flag.svg" alt="German" id="lang-de" style="width: 40px; cursor: pointer;">
+                <img src="${base}img/ro-flag.svg" alt="Romanian" id="lang-ro" style="width: 40px; cursor: pointer;">
+                <img src="${base}img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
+                <img src="${base}img/de-flag.svg" alt="German" id="lang-de" style="width: 40px; cursor: pointer;">
             </div>
         </div>
     </header>
+    
+    <!-- Hamburger Button for Mobile -->
+    <div class="d-lg-none text-center py-2">
+        <button class="navbar-toggler btn btn-outline-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <i class="bi bi-list"></i> Menu
+        </button>
+    </div>
+
     <nav class="nav-bar-container navbar navbar-expand-lg navbar-light py-2">
-        <ul class="nav navbar-nav justify-content-center w-100">
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'index.html' ? 'active' : ''}" href="index.html">Intro <i class="bi bi-house"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'arta.html' ? 'active' : ''}" href="arta.html">Artă <i class="bi bi-palette"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'scrieri.html' ? 'active' : ''}" href="scrieri.html">Scrieri <i class="bi bi-pen"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'matematica.html' ? 'active' : ''}" href="matematica.html">Matematică <i class="bi bi-calculator"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'spiritualitate.html' ? 'active' : ''}" href="spiritualitate.html">Spiritualitate <i class="bi bi-bell"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'poezie.html' ? 'active' : ''}" href="poezie.html">Poezie <i class="bi bi-book"></i></a></li>
-            <li class="nav-item mx-2"><a class="nav-link btn btn-primary ${currentData.buttonHref === 'carti.html' ? 'active' : ''}" href="carti.html">Cărți <i class="bi bi-bookmark"></i></a></li>
-        </ul>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="nav navbar-nav justify-content-center w-100">
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'index.html' ? 'active' : ''}" href="${isRo ? '../index.html' : 'index.html'}">Intro</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'arta.html' ? 'active' : ''}" href="${isRo ? 'arta.html' : 'ro/arta.html'}">Artă</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'scrieri.html' ? 'active' : ''}" href="${isRo ? 'scrieri.html' : 'ro/scrieri.html'}">Scrieri</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'matematica.html' ? 'active' : ''}" href="${isRo ? 'matematica.html' : 'ro/matematica.html'}">Matematică</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'spiritualitate.html' ? 'active' : ''}" href="${isRo ? 'spiritualitate.html' : 'ro/spiritualitate.html'}">Spiritualitate</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'poezie.html' ? 'active' : ''}" href="${isRo ? 'poezie.html' : 'ro/poezie.html'}">Poezie</a></li>
+                <li class="nav-item"><a class="nav-link btn btn-primary ${currentPage === 'carti.html' ? 'active' : ''}" href="${isRo ? 'carti.html' : 'ro/carti.html'}">Cărți</a></li>
+            </ul>
+        </div>
     </nav>
     `;
 
