@@ -26,8 +26,11 @@ function initTheme() {
 }
 
 function updateUI(theme, iconElement, logoElement) {
+    const isRo = window.location.pathname.includes('/ro/');
+    const base = isRo ? '../' : '';
+
     // Logo update remains the same
-    logoElement.src = theme === 'dark' ? 'img/sage-logo-b.svg' : 'img/sage-logo-w.svg';
+    logoElement.src = theme === 'dark' ? `${base}img/sage-logo-b.svg` : `${base}img/sage-logo-w.svg`;
     
     // Theme toggle icon update using the switch-theme.svg
     iconElement.style.filter = theme === 'dark' ? 'invert(1)' : 'invert(0)';

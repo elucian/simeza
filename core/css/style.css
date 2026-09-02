@@ -1,0 +1,246 @@
+/* Theme Variables (General) */
+.bg-image {
+  background-color: #f4f6f8; /* Soft neutral canvas */
+  min-height: 100vh;
+  padding-bottom: 20px;
+}
+
+/* Light Theme (Default) */
+.main, .fixed-header, .nav-bar-container {
+  background-color: #ffffff; /* Crisp white surface */
+  color: #1e293b; /* Charcoal text */
+  border-color: #e2e8f0;
+}
+
+.main {
+  max-width: 1000px;
+  border-radius: 12px;
+  position: relative;
+  margin: auto;
+  padding: 24px;
+  box-sizing: border-box;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.06); /* Subtle elevation */
+}
+
+/* Ensure content elements inside .main do not overflow and respect padding */
+.main > *:not(.row) {
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+/* Button Base Styling */
+.btn-primary {
+    background-color: #0d6efd; 
+    border-color: #0d6efd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    color: #ffffff;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+    transform: translateY(-1px);
+}
+
+/* Active Pressed Button State */
+.btn-primary.active {
+    background-color: #ffc107 !important; /* Vibrant gold */
+    border-color: #ffc107 !important;
+    color: #000 !important;
+    font-weight: 700;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.25) !important;
+    transform: translateY(2px) !important;
+}
+
+
+/* Dark Theme */
+[data-theme="dark"] .bg-image {
+    background-color: #0e1117 !important; /* Deep sleek black */
+}
+
+[data-theme="dark"] .main,
+[data-theme="dark"] .fixed-header,
+[data-theme="dark"] .nav-bar-container {
+    background-color: #1c212d !important; /* Modern dark surface */
+    color: #e2e8f0 !important;
+    border-color: #2d3748 !important;
+}
+
+[data-theme="dark"] p,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] a {
+    color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .btn-primary {
+    background-color: #1e40af; 
+    border-color: #1e40af;
+    color: #ffffff !important;
+}
+
+[data-theme="dark"] .btn-primary.active {
+    background-color: #fbbf24 !important; /* Luminous amber */
+    border-color: #fbbf24 !important;
+    color: #000 !important;
+    box-shadow: inset 0 3px 6px rgba(0,0,0,0.6), 0 0 10px rgba(255, 193, 7, 0.35) !important;
+}
+
+[data-theme="dark"] footer {
+    background-color: #1c212d !important;
+    color: #e2e8f0 !important;
+}
+  
+/* Space between buttons */
+.nav-item {
+    margin: 0 8px; 
+    margin-bottom: 8px;
+}
+  
+/* Card styling */
+.card {
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #ffffff;
+}
+
+[data-theme="dark"] .card {
+    background-color: #242b38 !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+}
+
+/* Dark Theme Swiper Adjustments */
+[data-theme="dark"] .swiper-slide,
+[data-theme="dark"] .swiper-slide img {
+    background-color: #1c212d !important;
+}
+
+[data-theme="dark"] .swiper-button-prev,
+[data-theme="dark"] .swiper-button-next {
+    background-color: #334155 !important;
+    --swiper-navigation-color: #ffffff !important;
+    width: 50px !important;
+    height: 50px !important;
+    border-radius: 50%;
+}
+
+
+[data-theme="dark"] .swiper-button-prev::after,
+[data-theme="dark"] .swiper-button-next::after {
+    font-size: 20px !important;
+    font-weight: bold;
+}
+
+#sage-logo {
+  width: 88px;
+  height: 88px;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+
+hr {
+  border: none;
+  height: 3px;
+  background-image: linear-gradient(to right, #060487, #96530c); 
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #7c2d12;
+  margin: 0 0 20px 0;
+  text-align: center;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.2rem;
+  line-height: 1.2;
+  font-weight: bold;
+  color: #554f4f;
+  margin: 15px 0;
+}
+
+p {
+  font-size: 1.1rem;
+  font-family: 'Merriweather', 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #334155;
+  margin: 0 0 15px 0;
+}
+
+[data-theme="dark"] p {
+    color: #cbd5e1 !important;
+}
+
+footer {
+  background-color: #f8f9fa;
+  color: #7c2d12;
+}
+
+.copyright:before {
+  content: "Dreptul de autor © 2025 Pavy Beloiu";
+}
+
+.responsive-video {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  overflow: hidden;
+}
+
+.fixed-header {
+  position: static;
+  width: 100%;
+  max-width: 1000px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.nav-bar-container {
+  position: static;
+  width: 100%;
+  max-width: 1000px;
+  border-bottom: 2px solid #e2e8f0;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .responsive-video {
+    width: 100%;
+  }
+}
+
+.btn-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.center-img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* Modal Dark Mode */
+[data-theme="dark"] .modal-content {
+  background-color: #242b38 !important;
+  color: #e2e8f0 !important;
+}
+
+[data-theme="dark"] .modal-header .btn-close {
+  filter: invert(1);
+}
+

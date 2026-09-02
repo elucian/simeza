@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Simeza</title>
+  <meta name="description" content="Descoperă o lume a cunoașterii și inspirației La Simeza, unde arta, scrierea, matematica, spiritualitatea și poezia se împletesc pentru a te îmbogăți pe plan personal și spiritual.">
+  <meta name="keywords" content="arta, scriere, matematica, spiritualitate, poezie, cunoaștere, inspirație, dezvoltare personală, înțelepciune">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="core/css/style.css">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Merriweather:wght@400;700&family=Open+Sans:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+</head>
+
+
+<body class="bg-image">
+
+
+<main class="container main">
+
+
+    <section class="row mb-4">
+      <h2>Explorați!</h2>
+      <p>Pe acest site, veți găsi o gamă vastă de materiale create de Pavy Beloiu, inclusiv cărți, articole științifice și lucrări de artă. Aceste materiale vă vor inspira și vă vor ajuta să vă dezvoltați cunoștințele și orizontul spiritual.</p>
+    </section>
+
+
+    
+    <section class="row mb-4">
+      <h2>Interviu cu Pavy Beloyu</h2>
+      <ul class="video-list">
+        <li>
+          <a href="https://www.youtube.com/live/QFk6d4MZjXc?si=t3SHGJiTWS9i7Aqr">
+            <i class="bi bi-play-circle-fill"></i>Streamed live on Apr 15, 2024
+          </a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/live/ZAZWibQlVVA?si=QWW7ciSxTCsWvg8k">
+            <i class="bi bi-play-circle-fill"></i>Streamed live on Sep 4, 2023 
+          </a>
+        </li>
+      </ul>
+    </section>
+
+    <section class="row mb-4">
+      <h4 class="text-center">A7TV - Premiered Jul 19, 2022</h4>
+      <div id="player"></div><script>
+        // Initialize YouTube player
+        var player;
+        function onYouTubeIframeAPIReady() {
+          player = new YT.Player('player', {
+            height: '390',
+            width: '640',
+            videoId: 'bopYVV5LBdY',
+            events: {
+              'onReady': function(event) {
+                // Function to be called when the player is ready (moved inside)
+                var desiredStartTimeInSeconds = 3395;
+                player.seekTo(desiredStartTimeInSeconds);
+              }
+            }
+          });
+        }
+      </script>
+    </section>
+
+    <section class="row mb-4">
+      <div class="col-md-6">
+        <h2>Despre noi</h2>
+        <p>La Simeza credem că o viață împlinită se obține prin cultivarea diferitelor aspecte ale ființei noastre. Studiul matematicii ne dezvoltă logica și gândirea, arta ne hrănește creativitatea și imaginația, iar spiritualitatea ne oferă o cale spre înțelegerea locului nostru în univers.</p>
+      </div>
+      <div class="col-md-6">
+        <h2>Pavy Beloiu</h2>
+        <p>Acest site web este condus de Pavy Beloiu, un autor prolific ale cărui lucrări cuprind domenii diverse precum matematica, arta și spiritualitatea. Pavy Beloiu este inginer și artist patriot Român, cu dragoste pentru progress, libertate  și adevăr.</p>
+      </div>
+    </section>
+
+    <section>
+
+    <h2>Împărtășește lumina cunoașterii!</h2>
+      <p>
+        Invitați prietenii dumneavoastră la o călătorie spirituală la Simeza, unde pot descoperi scrierile lui Pavy Beloiu și pot beneficia de învățăturile sale profunde. Împreună, puteți explora teme fascinante și vă puteți îmbogăți sufletele.
+      </p>
+        
+    <h2>Alăturați-vă comunității noastre!</h2>
+        
+       <p>Vizitați grupul nostru Google, folosing butonul de mai jos. Cereți o invitație cu un mesaj inițial care poate fi publicat tuturor membrilor din grup. Dacă mesajul dumneavoastră este cu bună intenție, veți primi o confirmare si veți deveni membru oficial al grupului la Simeza.</p>  
+  </section>
+
+  <footer class="footer py-3 text-center">
+    <p class="mb-0 text-center copyright"></p>
+    <button type="button" class="btn btn-sm btn-outline-dark" data-bs-toggle="modal" data-bs-target="#joinGroupModal">
+      <i class="bi bi-envelope"></i> Discuții și Noutăți
+    </button>
+  </footer>
+
+  <!-- Join Group Modal -->
+  <div class="modal fade" id="joinGroupModal" tabindex="-1" aria-labelledby="joinGroupModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="joinGroupModalLabel">Alăturați-vă Grupului La Simeza</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Doriți să vă alăturați comunității noastre? Vizitați grupul nostru Google folosind butonul de mai jos pentru a cere o invitație oficială.</p>
+          <div class="text-center">
+            <a href="https://groups.google.com/g/simeza" target="_blank" class="btn btn-primary">Vizitează grupul Google</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</main>
+
+<div id="google_translate_element" style="display:none;"></div>
+  <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/tougle-style.js"></script>
+  <script src="js/global.js"></script>
+  <script src="js/layout.js"></script>
+  <script src="https://www.youtube.com/iframe_api"></script>
+</body>
+</html>

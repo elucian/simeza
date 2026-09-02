@@ -7,7 +7,7 @@ try {
     // Load the first 10 images eagerly
     for (var i = 1; i <= 25; i++) {
       // Construct the image URL
-      var imageUrl = "galery/picture" + i + ".jpg";
+      var imageUrl = "files/galery/picture" + i + ".jpg";
       imageUrls.push(imageUrl);
     }
   
@@ -58,7 +58,7 @@ try {
       // Create the image element
       var img = document.createElement("img");
       img.classList.add("ci", "lazyload");
-      img.setAttribute("data-src", "galery/picture" + (j + 1) + ".jpg");
+      img.setAttribute("data-src", "files/galery/picture" + (j + 1) + ".jpg");
       img.setAttribute("oncontextmenu", "return false;");
       img.addEventListener('contextmenu', (e) => {
         e.preventDefault();
@@ -68,11 +68,11 @@ try {
       // Create the image name element
       var imageNameElement = document.createElement("div");
       imageNameElement.classList.add("image-name");
-      imageNameElement.textContent = "galery/picture" + (j + 1) + ".jpg";
+      imageNameElement.textContent = "files/galery/picture" + (j + 1) + ".jpg";
       slide.appendChild(imageNameElement);
   
       carouselContainer.appendChild(slide);
-      console.log('Adding lazy-loaded slide:', "galery/picture" + (j + 1) + ".jpg");
+      console.log('Adding lazy-loaded slide:', "files/galery/picture" + (j + 1) + ".jpg");
     }
   
     // Initialize the Swiper carousel

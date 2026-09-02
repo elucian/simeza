@@ -7,7 +7,7 @@ try {
   // Loop through the image numbers from 1 to 4
   for (var i = 1; i <= 4; i++) {
     // Construct the image URL
-    var imageUrl = "galery/picture" + i + ".jpg";
+    var imageUrl = "files/galery/picture" + i + ".jpg";
     imageUrls.push(imageUrl);
   }
 
