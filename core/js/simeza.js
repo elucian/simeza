@@ -31,7 +31,9 @@
     { code: 'de', flag: 'https://flagcdn.com/de.svg', name: 'DE' },
     { code: 'es', flag: 'https://flagcdn.com/es.svg', name: 'ES' },
     { code: 'fr', flag: 'https://flagcdn.com/fr.svg', name: 'FR' },
-    { code: 'ru', flag: 'https://flagcdn.com/ru.svg', name: 'RU' }
+    { code: 'ru', flag: 'https://flagcdn.com/ru.svg', name: 'RU' },
+    { code: 'pt', flag: 'https://flagcdn.com/pt.svg', name: 'PT' },
+    { code: 'hu', flag: 'https://flagcdn.com/hu.svg', name: 'HU' }
   ];
 
   const lang = localStorage.getItem('lang') || 'en';

@@ -10,7 +10,7 @@ LAYOUT_DIR = os.path.join(ROOT, 'layout')
 PUBLIC_DIR = os.path.join(ROOT, 'public')
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 
-LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru']
+LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 
 def render_menu(lang):
     menu_file = os.path.join(LAYOUT_DIR, lang, 'menu.json')
