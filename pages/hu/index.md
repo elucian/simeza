@@ -1,3 +1,3 @@
-# Helló Világ
+# Hello World
 
-Üdvözöljük a Simeza Art-ban!
+Üdvözöljük a Simeza Artban!

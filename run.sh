@@ -1,15 +1,31 @@
 #!/bin/bash
 
 # Commands
-# build: Commit changes, update releases.json, build.
+# commit: Commit changes locally.
+# translate: Run translations.
+# build: Translate, commit, update releases.json, build.
 # publish: Update releases.json, build, push.
 # release: Check release status, promote, build.
 # kill: Terminate all unused terminal sessions.
+# clean: Remove public.
+# serve: Serve public.
 
 CMD=$1
 
-if [ "$CMD" == "build" ]; then
+if [ "$CMD" == "commit" ]; then
+    echo "Committing changes..."
+    git add .
+    MSG="${2:-"Commit: $(date)"}"
+    git commit -m "$MSG"
+    echo "Changes committed locally."
+
+elif [ "$CMD" == "translate" ]; then
+    python script/translate.py
+
+elif [ "$CMD" == "build" ]; then
     echo "Building candidate..."
+    # 0. Translate
+    python script/translate.py
     # 1. Commit changes
     git add .
     git commit -m "Build candidate: $(date)"
@@ -76,5 +92,5 @@ elif [ "$CMD" == "kill" ]; then
 
 
 else
-    echo "Usage: ./run.sh [build|publish|release|clean|serve|kill]"
+    echo "Usage: ./run.sh [commit|translate|build|publish|release|clean|serve|kill]"
 fi
