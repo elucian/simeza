@@ -7,7 +7,7 @@ import hashlib
 
 # Configuration
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
-PAGES_DIR = 'articles'
+PAGES_DIR = 'pages'
 CACHE_FILE = 'release/.translation_cache.json'
 EN_DIR = os.path.join(PAGES_DIR, 'en')
 
