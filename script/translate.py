@@ -1,7 +1,7 @@
 import os
 import json
 import urllib.request
-import urllib.parse
+import urllib.error
 import time
 import re
 import hashlib
@@ -12,6 +12,18 @@ LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
+GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models'
+
+LANGUAGE_NAMES = {
+    'ro': 'Romanian',
+    'de': 'German',
+    'es': 'Spanish',
+    'fr': 'French',
+    'ru': 'Russian',
+    'pt': 'Portuguese',
+    'hu': 'Hungarian'
+}
 
 # Slug map to ensure URL-friendly filenames.
 # If a file is not in this map, it will use the original filename (untranslated).
@@ -60,22 +72,41 @@ def parse_frontmatter(content):
     return meta, body
 
 def translate_text(text, target_lang):
-    """Translate text using MyMemory API."""
+    """Translate text using the Gemini API."""
     if not text.strip():
         return text
-    
+
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        raise RuntimeError('GEMINI_API_KEY environment variable is required')
+
     # Simple rate limiting/delay
     time.sleep(1)
-    
-    params = {'q': text, 'langpair': f'en|{target_lang}'}
-    url = f"https://api.mymemory.translated.net/get?{urllib.parse.urlencode(params)}"
-    
+
+    language = LANGUAGE_NAMES.get(target_lang, target_lang)
+    prompt = (
+        f'Translate the following English text into {language}. '
+        'Return only the translation. Preserve all Markdown formatting, '
+        'links and their URLs, HTML tags, code, and line breaks exactly.\n\n'
+        f'{text}'
+    )
+    payload = {
+        'contents': [{'parts': [{'text': prompt}]}],
+        'generationConfig': {'temperature': 0.2}
+    }
+    url = f'{GEMINI_API_URL}/{GEMINI_MODEL}:generateContent'
+    request = urllib.request.Request(
+        f'{url}?key={api_key}',
+        data=json.dumps(payload).encode('utf-8'),
+        headers={'Content-Type': 'application/json'},
+        method='POST'
+    )
+
     try:
-        with urllib.request.urlopen(url) as resp:
+        with urllib.request.urlopen(request) as resp:
             res_data = json.loads(resp.read().decode("utf-8"))
-            if res_data['responseStatus'] == 200:
-                return res_data['responseData']['translatedText']
-    except Exception as e:
+            return res_data['candidates'][0]['content']['parts'][0]['text'].strip()
+    except (urllib.error.HTTPError, urllib.error.URLError, KeyError, IndexError, json.JSONDecodeError) as e:
         print(f"Translation error: {e}")
     return text # Fallback
 
@@ -136,7 +167,9 @@ def translate_all():
         translated_menu = {}
         for label, url in menu_data.items():
             # Use MENU_MAP if available, otherwise translate
-            trans_label = MENU_MAP.get(label, {}).get(lang, translate_text(label, lang))
+            trans_label = MENU_MAP.get(label, {}).get(lang)
+            if trans_label is None:
+                trans_label = translate_text(label, lang)
             
             # Find the original filename (e.g., 'about.html') to match with SLUG_MAP
             original_filename = url.replace('.html', '.md')
