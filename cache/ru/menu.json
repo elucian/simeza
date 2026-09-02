@@ -1,8 +1,8 @@
 {
-  "About": "about.html",
-  "Events": "events.html",
-  "Writings": "writings.html",
-  "Pictures": "pictures.html",
-  "Paintings": "paintings.html",
-  "Books": "books.html"
+  "\u0421\u0432\u0435\u0434\u0435\u043d\u0438\u044f": "o-nas.html",
+  "\u0421\u043e\u0431\u044b\u0442\u0438\u044f": "sobytiya.html",
+  "\u041d\u0430\u0434\u043f\u0438\u0441\u0438": "stati.html",
+  "\u041a\u0430\u0440\u0442\u0438\u043d\u044b": "fotografii.html",
+  "\u0416\u0438\u0432\u043e\u043f\u0438\u0441\u044c": "kartiny.html",
+  "\u041a\u043d\u0438\u0433\u0438": "knigi.html"
 }

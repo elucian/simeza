@@ -13,6 +13,18 @@ PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
 
+# Slug map to ensure URL-friendly filenames.
+# If a file is not in this map, it will use the original filename (untranslated).
+# This provides stable URLs.
+SLUG_MAP = {
+    'about.md': {'ro': 'despre.md', 'de': 'ueber-uns.md', 'fr': 'a-propos.md', 'es': 'sobre-nosotros.md', 'ru': 'o-nas.md', 'pt': 'sobre.md', 'hu': 'rolunk.md'},
+    'events.md': {'ro': 'evenimente.md', 'de': 'veranstaltungen.md', 'fr': 'evenements.md', 'es': 'eventos.md', 'ru': 'sobytiya.md', 'pt': 'eventos.md', 'hu': 'esemenyek.md'},
+    'writings.md': {'ro': 'scrieri.md', 'de': 'schriften.md', 'fr': 'ecrits.md', 'es': 'escritos.md', 'ru': 'stati.md', 'pt': 'escritos.md', 'hu': 'irasok.md'},
+    'pictures.md': {'ro': 'fotografii.md', 'de': 'bilder.md', 'fr': 'photos.md', 'es': 'fotos.md', 'ru': 'fotografii.md', 'pt': 'fotos.md', 'hu': 'kepek.md'},
+    'paintings.md': {'ro': 'picturi.md', 'de': 'gemaelde.md', 'fr': 'peintures.md', 'es': 'pinturas.md', 'ru': 'kartiny.md', 'pt': 'pinturas.md', 'hu': 'festmenyek.md'},
+    'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md'}
+}
+
 def get_file_hash(filepath):
     """Calculate SHA-256 hash of a file."""
     sha256 = hashlib.sha256()
@@ -37,36 +49,25 @@ def parse_frontmatter(content):
             meta[k.strip().lower()] = v.strip()
     return meta, body
 
-def translate_markdown(content, target_lang, source_lang="en"):
-    if not content.strip():
-        return content
+def translate_text(text, target_lang):
+    """Translate text using MyMemory API."""
+    if not text.strip():
+        return text
     
-    # Protect code blocks
-    code_blocks = []
-    def save_code_block(match):
-        idx = len(code_blocks)
-        code_blocks.append(match.group(0))
-        return f"__CODE_BLOCK_{idx}__"
-    
-    # Match fenced code blocks
+    # Simple rate limiting/delay
     time.sleep(1)
-    protected_content = re.sub(r"```[\s\S]*?```", save_code_block, content)
     
-    # Translate
-    data = urllib.parse.urlencode({"q": protected_content}).encode("utf-8")
-    url = f"https://translate.googleapis.com/translate_a/single?client=gtx&sl={source_lang}&tl={target_lang}&dt=t"
-    req = urllib.request.Request(url, data=data, headers={"User-Agent": "Mozilla/5.0"})
+    params = {'q': text, 'langpair': f'en|{target_lang}'}
+    url = f"https://api.mymemory.translated.net/get?{urllib.parse.urlencode(params)}"
     
-    with urllib.request.urlopen(req) as resp:
-        res_data = json.loads(resp.read().decode("utf-8"))
-        translated = "".join(part[0] for part in res_data[0] if part[0])
-    
-    # Restore code blocks
-    for idx, block in enumerate(code_blocks):
-        pattern = re.compile(rf"__\s*CODE_BLOCK_{idx}\s*__")
-        translated = pattern.sub(lambda m: block, translated)
-        
-    return translated
+    try:
+        with urllib.request.urlopen(url) as resp:
+            res_data = json.loads(resp.read().decode("utf-8"))
+            if res_data['responseStatus'] == 200:
+                return res_data['responseData']['translatedText']
+    except Exception as e:
+        print(f"Translation error: {e}")
+    return text # Fallback
 
 def translate_all():
     # 1. Translate Pages
@@ -84,9 +85,10 @@ def translate_all():
         for lang in LANGUAGES:
             if lang == 'en': continue
             
+            slug = SLUG_MAP.get(file, {}).get(lang, file)
             lang_dir = os.path.join(CACHE_DIR, lang)
             os.makedirs(lang_dir, exist_ok=True)
-            target_path = os.path.join(lang_dir, file)
+            target_path = os.path.join(lang_dir, slug)
             
             # Check if translation exists and hash matches
             if os.path.exists(target_path):
@@ -96,14 +98,14 @@ def translate_all():
                 if cached_meta.get('source_hash') == en_hash:
                     continue
             
-            print(f"Translating {file} to {lang}...")
+            print(f"Translating {file} -> {lang}/{slug}...")
             
             # Translate body
-            trans_body = translate_markdown(body, lang)
+            trans_body = translate_text(body, lang)
             # Translate meta
             trans_meta = meta.copy()
             for k, v in meta.items():
-                trans_meta[k] = translate_markdown(v, lang)
+                trans_meta[k] = translate_text(v, lang)
             
             trans_meta['source_hash'] = en_hash
             
@@ -120,10 +122,17 @@ def translate_all():
     for lang in LANGUAGES:
         if lang == 'en': continue
         
-        # Simple translation for menu
+        # Translate menu labels and update URLs to use translated slugs
         translated_menu = {}
         for label, url in menu_data.items():
-            translated_menu[translate_markdown(label, lang)] = url
+            trans_label = translate_text(label, lang)
+            # Find the original filename (e.g., 'about.html') to match with SLUG_MAP
+            original_filename = url.replace('.html', '.md')
+            
+            # Get translated filename
+            translated_filename = SLUG_MAP.get(original_filename, {}).get(lang, original_filename).replace('.md', '.html')
+            
+            translated_menu[trans_label] = translated_filename
             
         with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
             json.dump(translated_menu, f, indent=2)
