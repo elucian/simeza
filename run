@@ -3,6 +3,7 @@
 # Commands
 # build: Commit changes, update releases.json, build.
 # publish: Update releases.json, build, push.
+# release: Check release status, promote, build.
 
 CMD=$1
 
@@ -33,6 +34,10 @@ elif [ "$CMD" == "publish" ]; then
     git push origin main
     echo "Published."
 
+elif [ "$CMD" == "release" ]; then
+    echo "Running release check..."
+    python script/release.py
+
 elif [ "$CMD" == "clean" ]; then
     rm -rf public
     echo "Cleaned."
@@ -41,5 +46,5 @@ elif [ "$CMD" == "serve" ]; then
     python -m http.server 8000 -d public
 
 else
-    echo "Usage: ./run [build|publish|clean|serve]"
+    echo "Usage: ./run [build|publish|release|clean|serve]"
 fi
