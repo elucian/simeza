@@ -2,22 +2,26 @@
 
 To improve efficiency, minimize token usage, and ensure codebase integrity, follow these protocols:
 
-## 1. Interaction Mode & Planning
-- **State Changes:** Never make changes in "Plan" mode.
-- **Batched Actions:** When in "Act" mode, combine all independent reads, searches, and file modifications into a single response to reduce turn-around time.
-- **Prioritize Context:** Always use `read_files` or `search_codebase` to gather necessary context before editing. Do not guess file contents.
+## 1. Git Diff-First Protocol
+- **Atomic Edits**: Avoid overwriting entire files unless absolutely necessary. Use targeted replacements (Git diff style) to minimize token usage and prevent accidental data loss.
+- **Verification**: After every edit, verify the state of the file using `git diff <file>` to confirm the change matches the user's intent.
+- **Safe Overwrites**: Never use shell redirection (`>`) to overwrite files. Use the `editor` tool for precise edits.
 
-## 2. File Modification Protocol (Git Diffs)
-To minimize payload size and avoid errors, use the following approach for edits:
-- **Use `editor` tool:** Always use the `editor` tool for small, targeted changes.
-- **Git Diff Format:** If the change is complex or spans multiple areas of a file, provide the change in a format that clearly shows context (the code to be replaced) and the new code.
-- **Chunking:** If a file is large or the change is extensive, split the operation into multiple `editor` tool calls within the same response.
+## 2. Layout & Architectural Standards
+- **Single Source of Truth**: All CSS styles must be in `core/css/style.css`. Zero inline CSS allowed.
+- **Container Strategy**: Every page must use a single `<main class="container main p-0">` wrapper.
+- **Containment**: Use a 1000px max-width constraint with `margin: 24px auto` for desktop/laptop, and 100% width for mobile.
+- **Grid Centering**: Headers must use `grid-template-columns: 1fr auto 1fr` for mathematical title centering.
+- **Dynamic Injection**: `core/js/layout.js` must inject header/nav/footer inside the `.main` container, not globally on the `body`.
 
-## 3. Cache Maintenance
-- **File Integrity:** Always verify the state of a file after an edit (using `read_files` or `run_commands` if necessary) to ensure the cache (the model's internal representation of the file) is healthy.
-- **Avoid Redundant Reads:** If a file has already been read in the current conversation, rely on your internal context. If you suspect the file has changed on disk, re-read it.
+## 3. Communication Standards
+- **Git Diffs**: When explaining changes, provide the relevant `git diff` or the affected code block.
+- **Atomic Tasks**: If a task is complex, break it into smaller, commit-ready steps.
+- **Validation**: Always end a turn by confirming the state with `git status` or a relevant `git diff --stat`.
 
-## 4. Prompt Efficiency
-- **Be Concise:** When requesting tasks, be specific about *what* needs to change and *where*.
-- **Avoid Ambiguity:** If you want a layout change, specify the elements (e.g., "Move Header above Title").
-- **Task Resumption:** If a task was interrupted, explicitly state the current progress and the next immediate step to keep the context window focused.
+## 4. Onboarding & Cache
+- **Project Structure**:
+  - `core/`: CSS, JS, Assets, and Menu JSONs.
+  - `ro/`: Localized HTML templates.
+  - `index.html`: The root entry point, aligned with the `ro/` template architecture.
+- **Task Focus**: Context is persistent. If a task fails, analyze the diff of the failure before attempting a retry.
