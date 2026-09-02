@@ -70,10 +70,21 @@ document.addEventListener("DOMContentLoaded", function() {
     </nav>
     `;
 
-    // Create a container and prepend it to body
+    // Inject into .main instead of body
+    const mainContainer = document.querySelector('.main');
     const layoutContainer = document.createElement('div');
     layoutContainer.innerHTML = layoutHTML;
-    document.body.prepend(layoutContainer);
+    
+    // Add social footer to the layout
+    const socialFooter = document.createElement('footer');
+    socialFooter.id = 'socialFooter';
+    layoutContainer.appendChild(socialFooter);
+
+    if (mainContainer) {
+        mainContainer.prepend(layoutContainer);
+    } else {
+        document.body.prepend(layoutContainer);
+    }
 
     // Update Header Title with dynamic content
     const pageTitle = document.getElementById('dynamic-page-title');
