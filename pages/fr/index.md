@@ -1,3 +1,3 @@
-# Bonjour le monde
+# Bonjour tout le monde
 
-Bienvenue à Simeza Art !
+Bienvenue chez Simeza Art !

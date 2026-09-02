@@ -1,3 +1,3 @@
-# ¡Hola Mundo!
+# Hola mundo
 
-¡Bienvenido a Simeza Art!
+¡Bienvenidos a Simeza Arte!
