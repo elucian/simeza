@@ -41,6 +41,13 @@ body.bg-image {
   display: flex !important;
   flex-direction: column !important;
   overflow: hidden !important;
+  position: relative !important;
+}
+
+/* Ensure bootstrap containers don't break our 1000px limit */
+.container {
+  max-width: 1000px !important;
+  padding: 0 !important;
 }
 
 /* Header Grid - Ensures title centering */
