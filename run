@@ -1,0 +1,45 @@
+#!/bin/bash
+
+# Commands
+# build: Commit changes, update releases.json, build.
+# publish: Update releases.json, build, push.
+
+CMD=$1
+
+if [ "$CMD" == "build" ]; then
+    echo "Building candidate..."
+    # 1. Commit changes
+    git add .
+    git commit -m "Build candidate: $(date)"
+    
+    # 2. Update releases.json (simple python call to update)
+    python -c "import json, subprocess; r=json.load(open('release/releases.json')); c=subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode().strip(); r['candidate']['commit']=c; r['candidate']['date']=subprocess.check_output(['date', '-Iseconds']).decode().strip(); json.dump(r, open('release/releases.json', 'w'), indent=2)"
+    
+    # 3. Build
+    python script/build.py
+    echo "Build completed."
+
+elif [ "$CMD" == "publish" ]; then
+    echo "Publishing..."
+    # 1. Update releases.json: Promote candidate to published
+    python -c "import json; r=json.load(open('release/releases.json')); r['published']=r['candidate']; r['candidate']={'version':'', 'commit':'', 'date':'', 'notes':''}; json.dump(r, open('release/releases.json', 'w'), indent=2)"
+    
+    # 2. Build
+    python script/build.py
+    
+    # 3. Commit and push
+    git add .
+    git commit -m "Publish release: $(date)"
+    git push origin main
+    echo "Published."
+
+elif [ "$CMD" == "clean" ]; then
+    rm -rf public
+    echo "Cleaned."
+
+elif [ "$CMD" == "serve" ]; then
+    python -m http.server 8000 -d public
+
+else
+    echo "Usage: ./run [build|publish|clean|serve]"
+fi

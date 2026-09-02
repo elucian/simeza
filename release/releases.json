@@ -1,0 +1,14 @@
+{
+  "published": {
+    "version": "0.0.0",
+    "commit": "",
+    "date": "",
+    "notes": "Initial setup"
+  },
+  "candidate": {
+    "version": "0.0.1-rc.1",
+    "commit": "",
+    "date": "",
+    "notes": "Initial candidate"
+  }
+}
