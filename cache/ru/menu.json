@@ -1,7 +1,8 @@
 {
-  "\u041e \u043d\u0430\u0441": "o-nas.html",
-  "\u0421\u043e\u0431\u044b\u0442\u0438\u044f": "sobytiya.html",
-  "\u0421\u0442\u0430\u0442\u044c\u0438": "stati.html",
-  "\u0413\u0430\u043b\u0435\u0440\u0435\u044f": "galereya.html",
-  "\u041a\u043d\u0438\u0433\u0438": "knigi.html"
+  "Галерея": "galereya.html",
+  "События": "sobytiya.html",
+  "Авторы": "avtory.html",
+  "Статьи": "stati.html",
+  "Книги": "knigi.html",
+  "О нас": "o-nas.html"
 }

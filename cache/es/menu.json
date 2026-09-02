@@ -1,7 +1,8 @@
 {
-  "Acerca de": "sobre-nosotros.html",
+  "Galería": "galeria.html",
   "Eventos": "eventos.html",
+  "Autores": "autores.html",
   "Obras": "escritos.html",
-  "Galer\u00eda": "galeria.html",
-  "Libros": "libros.html"
+  "Libros": "libros.html",
+  "Acerca de": "sobre-nosotros.html"
 }

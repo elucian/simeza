@@ -1,7 +1,8 @@
 {
-  "R\u00f3lunk": "rolunk.html",
-  "Esem\u00e9nyek": "esemenyek.html",
-  "\u00cdr\u00e1sok": "irasok.html",
-  "Gal\u00e9ria": "galeria.html",
-  "K\u00f6nyvek": "konyvek.html"
+  "Galéria": "galeria.html",
+  "Események": "esemenyek.html",
+  "Szerzők": "szerzok.html",
+  "Írások": "irasok.html",
+  "Könyvek": "konyvek.html",
+  "Rólunk": "rolunk.html"
 }
