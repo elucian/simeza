@@ -27,26 +27,23 @@ body.bg-image {
   min-height: 100vh;
 }
 
-/* Centralized container for everything */
-.app-container {
-  background-color: var(--bg-main);
-  color: var(--text-main);
-  min-height: 100vh;
-  margin: 0 auto;
-  width: 100%;
+/* The 1000px centered card */
+.main {
+  background-color: var(--bg-main) !important;
+  color: var(--text-main) !important;
+  margin: 24px auto !important;
+  width: 95% !important;
+  max-width: 1000px !important;
+  border-radius: 12px !important;
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15) !important;
+  border: 1px solid var(--border-color) !important;
+  min-height: calc(100vh - 48px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  overflow: hidden !important;
 }
 
-@media (min-width: 1025px) {
-  .app-container {
-    max-width: 1000px;
-    margin: 24px auto;
-    border-radius: 12px;
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
-    border: 1px solid var(--border-color);
-  }
-}
-
-/* Header Grid */
+/* Header Grid - Ensures title centering */
 .fixed-header {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
@@ -57,7 +54,7 @@ body.bg-image {
 }
 .header-left { justify-self: start; }
 .header-center { justify-self: center; display: flex; align-items: center; justify-content: center; }
-.header-center h1 { margin: 0; font-family: 'Playfair Display', serif; color: var(--accent-color); }
+.header-center h1 { margin: 0; font-family: 'Playfair Display', serif; color: var(--accent-color); font-size: 1.5rem; }
 .header-right { justify-self: end; }
 
 /* Menu */
@@ -87,7 +84,7 @@ body.bg-image {
 }
 
 /* Footer & Social Icons */
-.social-footer { padding: 30px; text-align: center; background: var(--bg-footer); color: var(--accent-color); }
+.social-footer { padding: 30px; text-align: center; background: var(--bg-footer); color: var(--accent-color); margin-top: auto; border-top: 1px solid var(--border-color); }
 .social-icons {
   display: flex;
   justify-content: center;
