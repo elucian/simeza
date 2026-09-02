@@ -163,15 +163,17 @@ p {
   margin: 0 0 15px 0;
 }
 
+/*
 p.first::first-letter {
   font-family: 'Playfair Display', 'Roboto Slab', 'Poppins', serif; 
-  font-size: 3.5em; /* Increase font size by 2 times */
-  line-height: 1.5; /* Adjust line-height for better spacing */
-  float: left; /* Float the first letter to the left */
-  margin-right: 0.2rem; /* Add margin to separate from the rest of the text */
-  color: #884315; /* Dark brown color */
+  font-size: 3.5em; 
+  line-height: 1.5; 
+  float: left; 
+  margin-right: 0.2rem; 
+  color: #884315; 
   top: -0.5em;
 }
+*/
 
 
 footer {
