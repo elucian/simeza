@@ -1,8 +1,8 @@
 {
-  "Despre": "ro/despre.html",
-  "Evenimente": "ro/evenimente.html",
-  "Scrieri": "ro/scrieri.html",
-  "Imagini": "ro/imagini.html",
-  "Picturi": "ro/picturi.html",
-  "Cărți": "ro/carti.html"
+  "Despre": "ro/about.html",
+  "Evenimente": "ro/events.html",
+  "Scrieri": "ro/writings.html",
+  "Imagini": "ro/pictures.html",
+  "Picturi": "ro/paintings.html",
+  "Cărți": "ro/books.html"
 }

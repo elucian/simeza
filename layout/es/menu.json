@@ -1,8 +1,8 @@
 {
-  "Acerca de": "es/acerca.html",
-  "Eventos": "es/eventos.html",
-  "Escritos": "es/escritos.html",
-  "Imágenes": "es/imagenes.html",
-  "Pinturas": "es/pinturas.html",
-  "Libros": "es/libros.html"
+  "Acerca de": "es/about.html",
+  "Eventos": "es/events.html",
+  "Escritos": "es/writings.html",
+  "Imágenes": "es/pictures.html",
+  "Pinturas": "es/paintings.html",
+  "Libros": "es/books.html"
 }
