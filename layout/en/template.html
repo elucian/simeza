@@ -5,17 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>La Simeza</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
-  <link rel="stylesheet" href="core/css/style.css">
+  <link rel="stylesheet" href="/core/css/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
 
 <div class="container"> 
 <header class="header-app">
-  <img src="core/img/sage-logo-w.svg" id="themeLogo" alt="Logo" class="logo-btn" onclick="toggleTheme()">
+  <img src="/core/img/sage-logo-w.svg" id="themeLogo" alt="Logo" class="logo-btn" onclick="toggleTheme()">
   
   <nav class="desktop-nav">
-    <ul id="menuList" class="nav-menu"></ul>
+    <ul id="menuList" class="nav-menu">
+      {{menu}}
+    </ul>
   </nav>
 
   <div class="header-actions">
@@ -30,7 +32,9 @@
 </header>
 
 <nav id="mobileMenu">
-  <ul id="mobileMenuList" style="list-style:none; padding:0;"></ul>
+  <ul id="mobileMenuList" style="list-style:none; padding:0;">
+    {{mobile_menu}}
+  </ul>
 </nav>
 
 <main id="content">

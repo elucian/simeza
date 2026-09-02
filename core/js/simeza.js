@@ -4,13 +4,13 @@
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
-      document.getElementById('themeLogo').src = newTheme === 'dark' ? 'core/img/sage-logo-w.svg' : 'core/img/sage-logo-b.svg';
+      document.getElementById('themeLogo').src = newTheme === 'dark' ? '/core/img/sage-logo-w.svg' : '/core/img/sage-logo-b.svg';
     }
 
     // Initialize theme from cookie/localStorage
     const savedTheme = localStorage.getItem('theme') || (document.cookie.includes('theme=dark') ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', savedTheme);
-    document.getElementById('themeLogo').src = savedTheme === 'dark' ? 'core/img/sage-logo-w.svg' : 'core/img/sage-logo-b.svg';
+    document.getElementById('themeLogo').src = savedTheme === 'dark' ? '/core/img/sage-logo-w.svg' : '/core/img/sage-logo-b.svg';
 
     function toggleMobileMenu() {
         document.getElementById('mobileMenu').classList.toggle('show');
@@ -18,7 +18,7 @@
 
   function setLang(lang) {
     localStorage.setItem('lang', lang);
-    location.reload();
+    location.href = '/' + lang;
   }
 
   function toggleLangMenu() {
@@ -43,7 +43,7 @@
     langMenu.innerHTML += `<li class="p-2 d-flex align-items-center gap-2" style="cursor:pointer" onclick="setLang('${l.code}')"><img src="${l.flag}" alt="${l.name}" style="width:31px; height:24px; object-fit:cover;"> ${l.name}</li>`;
   });
 
-  fetch(lang + '/menu.json')
+  fetch('/' + lang + '/menu.json')
     .then(r => r.json())
     .then(data => {
       const list = document.getElementById('menuList');
