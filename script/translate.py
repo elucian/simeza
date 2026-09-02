@@ -25,6 +25,16 @@ SLUG_MAP = {
     'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md'}
 }
 
+# Menu label map
+MENU_MAP = {
+    'About': {'ro': 'Despre', 'de': 'Über', 'fr': 'À propos', 'es': 'Acerca de', 'ru': 'О нас', 'pt': 'Sobre', 'hu': 'Rólunk'},
+    'Events': {'ro': 'Evenimente', 'de': 'Veranstaltungen', 'fr': 'Événements', 'es': 'Eventos', 'ru': 'События', 'pt': 'Eventos', 'hu': 'Események'},
+    'Writings': {'ro': 'Scrieri', 'de': 'Schriften', 'fr': 'Écrits', 'es': 'Obras', 'ru': 'Статьи', 'pt': 'Escritos', 'hu': 'Írások'},
+    'Pictures': {'ro': 'Imagini', 'de': 'Bilder', 'fr': 'Photos', 'es': 'Imágenes', 'ru': 'Фотографии', 'pt': 'Fotos', 'hu': 'Képek'},
+    'Paintings': {'ro': 'Pictură', 'de': 'Gemälde', 'fr': 'Peintures', 'es': 'Pinturas', 'ru': 'Картины', 'pt': 'Pinturas', 'hu': 'Festmények'},
+    'Books': {'ro': 'Cărți', 'de': 'Bücher', 'fr': 'Livres', 'es': 'Libros', 'ru': 'Книги', 'pt': 'Livros', 'hu': 'Könyvek'}
+}
+
 def get_file_hash(filepath):
     """Calculate SHA-256 hash of a file."""
     sha256 = hashlib.sha256()
@@ -125,7 +135,9 @@ def translate_all():
         # Translate menu labels and update URLs to use translated slugs
         translated_menu = {}
         for label, url in menu_data.items():
-            trans_label = translate_text(label, lang)
+            # Use MENU_MAP if available, otherwise translate
+            trans_label = MENU_MAP.get(label, {}).get(lang, translate_text(label, lang))
+            
             # Find the original filename (e.g., 'about.html') to match with SLUG_MAP
             original_filename = url.replace('.html', '.md')
             
