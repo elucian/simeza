@@ -40,7 +40,8 @@ def build():
     # Load Release Info
     with open(RELEASE_FILE, 'r') as f:
         releases = json.load(f)
-    version = releases['candidate']['version']
+    # Use candidate version, fallback to published version if candidate is empty
+    version = releases.get('candidate', {}).get('version') or releases.get('published', {}).get('version') or ''
 
     # 2. Build Pages
     # Base layout
