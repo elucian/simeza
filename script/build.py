@@ -5,7 +5,7 @@ import markdown
 
 # Paths
 ROOT = os.getcwd()
-PAGES_DIR = os.path.join(ROOT, 'articles')
+PAGES_DIR = os.path.join(ROOT, 'pages')
 LAYOUT_DIR = os.path.join(ROOT, 'layout')
 PUBLIC_DIR = os.path.join(ROOT, 'public')
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
