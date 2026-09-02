@@ -32,18 +32,18 @@ document.addEventListener("DOMContentLoaded", function() {
     <header class="fixed-header">
         <div>
             <a href="${isRo ? '../index.html' : 'index.html'}">
-                <img src="${base}img/sage-logo.svg" id="sage-logo" alt="La Simeza Logo" style="width: 56px; height: 56px; border-radius: 50%;" class="image-responsive">
+                <img src="${base}core/img/sage-logo.svg" id="sage-logo" alt="La Simeza Logo" style="width: 56px; height: 56px; border-radius: 50%;" class="image-responsive">
             </a>
         </div>
         <h1 id="dynamic-page-title">La Simeza</h1>
         <div class="d-flex align-items-center justify-content-end gap-3">
             <button id="themeToggle" class="btn btn-outline-secondary rounded-circle p-2" style="width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
-                <img src="${base}img/switch-theme.svg" id="themeIcon" style="width: 40px; height: 40px;" alt="Switch Theme">
+                <img src="${base}core/img/switch-theme.svg" id="themeIcon" style="width: 40px; height: 40px;" alt="Switch Theme">
             </button>
             <div class="d-flex gap-2">
-                <img src="${base}img/ro-flag.svg" alt="Romanian" id="lang-ro" style="width: 40px; cursor: pointer;">
-                <img src="${base}img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
-                <img src="${base}img/de-flag.svg" alt="German" id="lang-de" style="width: 40px; cursor: pointer;">
+                <img src="${base}core/img/ro-flag.svg" alt="Romanian" id="lang-ro" style="width: 40px; cursor: pointer;">
+                <img src="${base}core/img/en-flag.svg" alt="English" id="lang-en" style="width: 40px; cursor: pointer;">
+                <img src="${base}core/img/de-flag.svg" alt="German" id="lang-de" style="width: 40px; cursor: pointer;">
             </div>
         </div>
     </header>
