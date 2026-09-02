@@ -79,11 +79,15 @@ document.addEventListener("DOMContentLoaded", function() {
     const socialFooter = document.createElement('footer');
     socialFooter.id = 'socialFooter';
     layoutContainer.appendChild(socialFooter);
+    socialFooter.classList.add("social-footer");
+    socialFooter.innerHTML = `<div class="social-icons"><a href="#"><i class="bi bi-google"></i></a><a href="#"><i class="bi bi-reddit"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-discord"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a></div>`;
+    socialFooter.classList.add("social-footer");
+    socialFooter.innerHTML = `<div class="social-icons"><a href="#"><i class="bi bi-google"></i></a><a href="#"><i class="bi bi-reddit"></i></a><a href="#"><i class="bi bi-facebook"></i></a><a href="#"><i class="bi bi-discord"></i></a><a href="#"><i class="bi bi-whatsapp"></i></a></div>`;
 
     if (mainContainer) {
         mainContainer.prepend(layoutContainer);
     } else {
-        document.body.prepend(layoutContainer);
+        mainContainer.prepend(layoutContainer);
     }
 
     // Update Header Title with dynamic content
