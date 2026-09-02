@@ -7,8 +7,8 @@
   },
   "candidate": {
     "version": "0.0.1-rc.1",
-    "commit": "a008c93ac6d37fdc1cad485f9c393fd377f68b0b",
-    "date": "2026-09-02T10:48:35-04:00",
+    "commit": "68821d757720e51342a4eff36b7205cbcf7e1263",
+    "date": "2026-09-02T10:51:58-04:00",
     "notes": "Initial candidate"
   }
 }

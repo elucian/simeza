@@ -36,7 +36,13 @@
     { code: 'hu', flag: 'https://flagcdn.com/hu.svg', name: 'HU' }
   ];
 
-  const lang = localStorage.getItem('lang') || 'en';
+  // Detect language from URL path, then localStorage, then default 'en'
+  const pathParts = window.location.pathname.split('/');
+  const urlLang = pathParts[1];
+  const lang = (urlLang && languages.find(l => l.code === urlLang)) ? urlLang : (localStorage.getItem('lang') || 'en');
+  
+  localStorage.setItem('lang', lang);
+
   const activeLang = languages.find(l => l.code === lang);
   document.getElementById('langBtn').innerHTML = `<img src="${activeLang.flag}" alt="${activeLang.name}" style="width:31px; height:24px; object-fit:cover;"> ${activeLang.name}`;
 
@@ -44,21 +50,6 @@
   languages.forEach(l => {
     langMenu.innerHTML += `<li class="p-2 d-flex align-items-center gap-2" style="cursor:pointer" onclick="setLang('${l.code}')"><img src="${l.flag}" alt="${l.name}" style="width:31px; height:24px; object-fit:cover;"> ${l.name}</li>`;
   });
-
-  fetch('/' + lang + '/menu.json')
-    .then(r => r.json())
-    .then(data => {
-      const list = document.getElementById('menuList');
-      const mobileList = document.getElementById('mobileMenuList');
-      // Clear existing menu items before appending new ones
-      list.innerHTML = '';
-      mobileList.innerHTML = '';
-      Object.entries(data).forEach(([label, url]) => {
-        const item = `<li class="nav-item"><a class="nav-link" href="${url}">${label}</a></li>`;
-        list.innerHTML += item;
-        mobileList.innerHTML += item;
-      });
-    });
 
   const socialLinks = [
     { name: "Google Groups", icon: "bi-google", url: "#" },
