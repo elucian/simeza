@@ -14,15 +14,22 @@ PUBLIC_DIR = os.path.join(ROOT, 'public')
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 
+# Slug map (must match translate.py)
+SLUG_MAP = {
+    'about.md': {'ro': 'despre.md', 'de': 'ueber-uns.md', 'fr': 'a-propos.md', 'es': 'sobre-nosotros.md', 'ru': 'o-nas.md', 'pt': 'sobre.md', 'hu': 'rolunk.md'},
+    'events.md': {'ro': 'evenimente.md', 'de': 'veranstaltungen.md', 'fr': 'evenements.md', 'es': 'eventos.md', 'ru': 'sobytiya.md', 'pt': 'eventos.md', 'hu': 'esemenyek.md'},
+    'writings.md': {'ro': 'scrieri.md', 'de': 'schriften.md', 'fr': 'ecrits.md', 'es': 'escritos.md', 'ru': 'stati.md', 'pt': 'escritos.md', 'hu': 'irasok.md'},
+    'pictures.md': {'ro': 'fotografii.md', 'de': 'bilder.md', 'fr': 'photos.md', 'es': 'fotos.md', 'ru': 'fotografii.md', 'pt': 'fotos.md', 'hu': 'kepek.md'},
+    'paintings.md': {'ro': 'picturi.md', 'de': 'gemaelde.md', 'fr': 'peintures.md', 'es': 'pinturas.md', 'ru': 'kartiny.md', 'pt': 'pinturas.md', 'hu': 'festmenyek.md'},
+    'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md'}
+}
+
 def parse_frontmatter(content):
-    # Regex to capture the YAML block
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if not m:
         return {}, content
-    
     meta_block = m.group(1)
     body = content[m.end():]
-    
     meta = {}
     for line in meta_block.splitlines():
         if ':' in line:
@@ -30,7 +37,6 @@ def parse_frontmatter(content):
             meta[k.strip().lower()] = v.strip()
     return meta, body
 
-# --- Build Logic ---
 def render_menu(lang):
     if lang == 'en':
         menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
@@ -64,16 +70,22 @@ def build():
         lang_dir = os.path.join(PUBLIC_DIR, lang)
         os.makedirs(lang_dir, exist_ok=True)
         
-        # Determine source dir
-        source_dir = PAGES_DIR if lang == 'en' else os.path.join(CACHE_DIR, lang)
-        
         for file in os.listdir(PAGES_DIR):
             if not file.endswith('.md'): continue
             
-            # Use source file, fallback to pages if missing in cache (should not happen if translate run)
-            source_filepath = os.path.join(source_dir, file)
+            # Determine source file
+            if lang == 'en':
+                source_filepath = os.path.join(PAGES_DIR, file)
+                output_filename = file.replace('.md', '.html')
+            else:
+                slug = SLUG_MAP.get(file, {}).get(lang, file)
+                source_filepath = os.path.join(CACHE_DIR, lang, slug)
+                output_filename = slug.replace('.md', '.html')
+            
+            # If translation file doesn't exist, fallback
             if not os.path.exists(source_filepath):
                 source_filepath = os.path.join(PAGES_DIR, file)
+                output_filename = file.replace('.md', '.html')
                 
             with open(source_filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
@@ -98,7 +110,7 @@ def build():
             final_html = final_html.replace('href="core/', 'href="/core/')
             final_html = final_html.replace('src="core/', 'src="/core/')
             
-            output_file = os.path.join(lang_dir, file.replace('.md', '.html'))
+            output_file = os.path.join(lang_dir, output_filename)
             with open(output_file, 'w', encoding='utf-8') as f:
                 f.write(final_html)
             

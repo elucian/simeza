@@ -1,9 +1,9 @@
 ---
-title: La Simeza - Contemporary Art Gallery & Community
-description: Explore contemporary art, writings, paintings, books, and exhibitions at Simeza Art Gallery.
-keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibitions, books, culture
+title: Галерея современного искусства и сообщество La Simeza
+description: Познакомьтесь с современным искусством, литературой, картинами, книгами и выставками в Художественной галерее Симезы.
+keywords: симеза, художественная галерея, современное искусство, румынское искусство, картины, выставки, книги, культура
+source_hash: 2827f9d17c9c7161ff63e1118e45699d6e7e000f62acc6b7b356e48ce741a87c
 ---
+# Добро пожаловать в Simeza Art
 
-# Welcome to Simeza Art
-
-Discover contemporary art, exhibitions, literature, and cultural events at La Simeza.
+Откройте для себя современное искусство, выставки, литературу и культурные мероприятия в La Simeza.
