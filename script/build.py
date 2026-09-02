@@ -12,6 +12,20 @@ RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru']
 
+def render_menu(lang):
+    menu_file = os.path.join(LAYOUT_DIR, lang, 'menu.json')
+    if not os.path.exists(menu_file):
+        return ""
+    with open(menu_file, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+    
+    html = ""
+    for label, url in data.items():
+        # Ensure URL is root-relative for consistent navigation
+        link = url if url.startswith('/') else '/' + url
+        html += f'<li class="nav-item"><a class="nav-link" href="{link}">{label}</a></li>'
+    return html
+
 def build():
     # 1. Clean Public
     if os.path.exists(PUBLIC_DIR):
@@ -49,16 +63,25 @@ def build():
                 
                 html_content = markdown.markdown(md_content)
                 
-                # Select template (fallback to base if not exists)
+                # Select template
                 template = base_template
                 lang_template = os.path.join(LAYOUT_DIR, lang, 'template.html')
                 if os.path.exists(lang_template):
                      with open(lang_template, 'r', encoding='utf-8') as f:
                         template = f.read()
                 
+                # Render Menu
+                menu_html = render_menu(lang)
+                
                 # Expand
                 final_html = template.replace('{{page-content}}', html_content)
+                final_html = final_html.replace('{{menu}}', menu_html)
+                final_html = final_html.replace('{{mobile_menu}}', menu_html)
                 final_html = final_html.replace('{{version}}', version)
+                
+                # Fix relative assets to root-relative
+                final_html = final_html.replace('href="core/', 'href="/core/')
+                final_html = final_html.replace('src="core/', 'src="/core/')
                 
                 # Write to Public
                 target_path = os.path.join(PUBLIC_DIR, rel_path.replace('.md', '.html'))
@@ -67,9 +90,19 @@ def build():
                     f.write(final_html)
 
     # 3. Copy Assets
-    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(PUBLIC_DIR, 'core'))
+    os.makedirs(os.path.join(PUBLIC_DIR, 'core'), exist_ok=True)
+    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(PUBLIC_DIR, 'core'), dirs_exist_ok=True)
+    
+    # Copy menu.json files for dynamic switching
+    for lang in LANGUAGES:
+        lang_dir = os.path.join(PUBLIC_DIR, lang)
+        os.makedirs(lang_dir, exist_ok=True)
+        menu_src = os.path.join(LAYOUT_DIR, lang, 'menu.json')
+        if os.path.exists(menu_src):
+            shutil.copy(menu_src, os.path.join(lang_dir, 'menu.json'))
+
     if os.path.exists(os.path.join(ROOT, 'files')):
-         shutil.copytree(os.path.join(ROOT, 'files'), os.path.join(PUBLIC_DIR, 'files'))
+         shutil.copytree(os.path.join(ROOT, 'files'), os.path.join(PUBLIC_DIR, 'files'), dirs_exist_ok=True)
 
 if __name__ == '__main__':
     build()
