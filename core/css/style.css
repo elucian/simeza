@@ -27,8 +27,12 @@ body.bg-image {
   min-height: 100vh;
 }
 
+
 /* The 1000px centered card - Unified for Header, Main, Footer */
 .main {
+  width: 1000px !important;
+  max-width: 1000px !important;
+  margin: 24px auto !important;
   background-color: var(--bg-main) !important;
   color: var(--text-main) !important;
   margin: 24px auto !important;
@@ -46,6 +50,9 @@ body.bg-image {
 
 @media (max-width: 1024px) {
   .main {
+  width: 1000px !important;
+  max-width: 1000px !important;
+  margin: 24px auto !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
@@ -102,7 +109,15 @@ body.bg-image {
 }
 
 /* Footer & Social Icons */
-.social-footer { padding: 30px; text-align: center; background: var(--bg-footer); color: var(--accent-color); margin-top: auto; border-top: 1px solid var(--border-color); }
+.social-footer { 
+  padding: 30px; 
+  text-align: center; 
+  background: var(--bg-footer); 
+  color: var(--accent-color); 
+  margin-top: 
+  auto; border-top: 1px solid var(--border-color); 
+}
+
 .social-icons {
   display: flex;
   justify-content: center;
@@ -124,25 +139,10 @@ p { color: var(--text-main); font-size: 1.1rem; font-family: 'Merriweather', 'La
   padding: 15px;
   background-color: var(--bg-main);
 }
+
 .responsive-video { position: relative; display: flex; justify-content: center; margin: 0 auto; width: 80%; overflow: hidden; }
 @media (max-width: 768px) { .responsive-video { width: 100%; } }
 #sage-logo { width: 88px; height: 88px; border-radius: 50%; }
 
 /* Poetry styles merged */
 .poem p { font-family: 'Verdana', 'Tahoma', Arial; font-style: italic; font-size: 1.2rem; line-height: 1.4rem; }
-
-/* Swiper merged styles */
-.swiper { width: 100%; height: 500px; margin-bottom: 40px; }
-.swiper-slide { text-align: center; font-size: 18px; display: flex; justify-content: center; align-items: center; overflow: hidden; background-color: #fff; }
-.swiper-slide img { width: 100%; height: 100%; object-fit: contain; object-position: center; opacity: 1; background-color: #fff; }
-@media (max-width: 767px) { .swiper { height: 300px; } }
-@media (min-width: 768px) and (max-width: 991px) { .swiper { height: 400px; } }
-@media (min-width: 992px) { .swiper { height: 500px; } }
-@media (min-width: 1200px) { .swiper-slide img { width: auto; max-width: 100%; } }
-.ci { pointer-events: none; }
-.lSSlideOuter .lSPager.lSpg { display: none; }
-.swiper-slide .image-name { position: absolute; bottom: 10px; left: 30%; transform: translateX(-50%); background-color: #333; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 14px; }
-
-
-
-
