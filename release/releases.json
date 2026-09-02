@@ -1,14 +1,14 @@
 {
   "published": {
-    "version": "0.0.0",
-    "commit": "",
-    "date": "",
-    "notes": "Initial setup"
+    "version": "0.0.1-rc.1",
+    "commit": "69fd2700bdd45fb3d0c11b339b76ad8fa32dead4",
+    "date": "2026-09-02T11:34:48-04:00",
+    "notes": "Initial candidate"
   },
   "candidate": {
-    "version": "0.0.1-rc.1",
-    "commit": "9eda5aed39cbff201836fe2ff38f5c1e3109101b",
-    "date": "2026-09-02T11:31:22-04:00",
-    "notes": "Initial candidate"
+    "version": "",
+    "commit": "",
+    "date": "",
+    "notes": ""
   }
 }

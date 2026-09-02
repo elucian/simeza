@@ -6,6 +6,7 @@ To improve efficiency, minimize token usage, and ensure codebase integrity, foll
 - **Atomic Edits**: Avoid overwriting entire files unless absolutely necessary. Use targeted replacements (Git diff style) to minimize token usage and prevent accidental data loss.
 - **Verification**: After every edit, verify the state of the file using `git diff <file>` to confirm the change matches the user's intent.
 - **Safe Overwrites**: Never use shell redirection (`>`) to overwrite files. Use the `editor` tool for precise edits.
+- **Non-Interactive**: Use `git --no-pager` for all git commands to prevent hanging.
 
 ## 2. Layout & Architectural Standards
 - **Single Source of Truth**: All CSS styles must be in `core/css/style.css`. Zero inline CSS allowed.
@@ -25,3 +26,7 @@ To improve efficiency, minimize token usage, and ensure codebase integrity, foll
   - `ro/`: Localized HTML templates.
   - `index.html`: The root entry point, aligned with the `ro/` template architecture.
 - **Task Focus**: Context is persistent. If a task fails, analyze the diff of the failure before attempting a retry.
+
+## 5. Environment & Process Hygiene
+- **Cleanup**: Before finishing any turn, ensure no processes are running in the background. Kill unused terminals.
+- **Temporary Files**: Delete any temporary files or logs generated during tool execution.
