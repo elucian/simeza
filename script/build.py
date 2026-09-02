@@ -62,7 +62,15 @@ def build():
                 with open(os.path.join(root, file), 'r', encoding='utf-8') as f:
                     md_content = f.read()
                 
-                html_content = markdown.markdown(md_content)
+                # Parse Markdown with Metadata
+                md = markdown.Markdown(extensions=['meta'])
+                html_content = md.convert(md_content)
+                
+                # Metadata
+                meta = md.Meta
+                title = meta.get('title', ['La Simeza'])[0]
+                description = meta.get('description', ['Art gallery and community'])[0]
+                keywords = meta.get('keywords', ['art, simeza, community'])[0]
                 
                 # Select template
                 template = base_template
@@ -79,6 +87,9 @@ def build():
                 final_html = final_html.replace('{{menu}}', menu_html)
                 final_html = final_html.replace('{{mobile_menu}}', menu_html)
                 final_html = final_html.replace('{{version}}', version)
+                final_html = final_html.replace('{{title}}', title)
+                final_html = final_html.replace('{{description}}', description)
+                final_html = final_html.replace('{{keywords}}', keywords)
                 
                 # Fix relative assets to root-relative
                 final_html = final_html.replace('href="core/', 'href="/core/')
