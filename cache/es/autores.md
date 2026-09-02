@@ -1,11 +1,11 @@
 ---
-title: Autores - Simeza Art
-description: Descubra los autores y colaboradores detrás de Simeza Art.
-keywords: simeza, arte, galería, autores, colaboradores
+title: Authors - Simeza Art
+description: Discover the authors and contributors behind Simeza Art.
+keywords: simeza, art, gallery, authors, contributors
+source_hash: 58055bee35fc9a58dc7cd489716fb0336669b33bea645544b1c9d44c9c0db0eb
 ---
+# Authors
 
-# Autores
+Welcome to the Authors section of Simeza Art.
 
-Bienvenido a la sección de Autores de Simeza Art.
-
-El contenido para esta sección estará disponible pronto.
+Content for this section will be available soon.

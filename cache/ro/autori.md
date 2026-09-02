@@ -1,11 +1,11 @@
 ---
-title: Autori - Simeza Art
-description: Descoperiți autorii și colaboratorii din spatele Simeza Art.
-keywords: simeza, artă, galerie, autori, colaboratori
+title: Authors - Simeza Art
+description: Discover the authors and contributors behind Simeza Art.
+keywords: simeza, art, gallery, authors, contributors
+source_hash: 58055bee35fc9a58dc7cd489716fb0336669b33bea645544b1c9d44c9c0db0eb
 ---
+# Authors
 
-# Autori
+Welcome to the Authors section of Simeza Art.
 
-Bine ați venit în secțiunea Autori a Simeza Art.
-
-Conținutul pentru această secțiune va fi disponibil în curând.
+Content for this section will be available soon.
