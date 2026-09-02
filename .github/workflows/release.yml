@@ -25,8 +25,8 @@ jobs:
 
       - name: Run release check and build
         run: |
-          chmod +x run
-          ./run release
+          chmod +x run.sh
+          ./run.sh release
 
       - name: Commit and push changes
         run: |
