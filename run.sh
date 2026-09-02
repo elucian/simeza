@@ -4,6 +4,7 @@
 # build: Commit changes, update releases.json, build.
 # publish: Update releases.json, build, push.
 # release: Check release status, promote, build.
+# kill: Terminate all unused terminal sessions.
 
 CMD=$1
 
@@ -45,6 +46,35 @@ elif [ "$CMD" == "clean" ]; then
 elif [ "$CMD" == "serve" ]; then
     python -m http.server 8000 -d public
 
+elif [ "$CMD" == "kill" ]; then
+    echo "Terminating other open terminal sessions..."
+    MY_TTY=$(tty 2>/dev/null | sed 's|^/dev/||')
+    MY_PID=$$
+    MY_PPID=$PPID
+
+    PIDS_TO_KILL=$(ps | awk -v my_tty="$MY_TTY" -v my_pid="$MY_PID" -v my_ppid="$MY_PPID" '
+    NR > 1 {
+        pid = $1
+        ppid = $2
+        tty = $5
+        # Preserve self, parent caller, and processes on the active TTY
+        if (pid == my_pid || pid == my_ppid || (my_ppid != 1 && ppid == my_ppid) || (my_tty != "" && my_tty != "not a tty" && tty == my_tty)) {
+            next
+        }
+        print pid
+    }')
+
+    if [ -n "$PIDS_TO_KILL" ]; then
+        for p in $PIDS_TO_KILL; do
+            echo "Killing process $p..."
+            kill -9 "$p" 2>/dev/null || true
+        done
+        echo "Cleanup completed."
+    else
+        echo "No other sessions found to kill."
+    fi
+
+
 else
-    echo "Usage: ./run [build|publish|release|clean|serve]"
+    echo "Usage: ./run.sh [build|publish|release|clean|serve|kill]"
 fi
