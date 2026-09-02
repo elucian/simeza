@@ -1,7 +1,8 @@
 {
-  "Sobre": "sobre.html",
-  "Eventos": "eventos.html",
-  "Escritos": "escritos.html",
   "Galeria": "galeria.html",
-  "Livros": "livros.html"
+  "Eventos": "eventos.html",
+  "Autores": "autores.html",
+  "Escritos": "escritos.html",
+  "Livros": "livros.html",
+  "Sobre": "sobre.html"
 }
