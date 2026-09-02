@@ -1,19 +1,19 @@
     function toggleTheme() {
-      const isDark = document.body.classList.toggle('dark-mode');
-      const theme = isDark ? 'dark' : 'light';
-      document.cookie = `theme=${theme}; path=/; max-age=31536000`;
-      localStorage.setItem('theme', theme);
-      document.getElementById('themeLogo').src = isDark ? 'core/img/sage-logo-w.svg' : 'core/img/sage-logo-b.svg';
+      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
+      document.getElementById('themeLogo').src = newTheme === 'dark' ? 'core/img/sage-logo-w.svg' : 'core/img/sage-logo-b.svg';
     }
 
     // Initialize theme from cookie/localStorage
-    const savedTheme = localStorage.getItem('theme') || (document.cookie.includes('theme=light') ? 'light' : 'dark');
-    if (savedTheme === 'light') {
-      document.body.classList.remove('dark-mode');
-      document.getElementById('themeLogo').src = 'core/img/sage-logo-b.svg';
-    } else {
-      document.body.classList.add('dark-mode');
-      document.getElementById('themeLogo').src = 'core/img/sage-logo-w.svg';
+    const savedTheme = localStorage.getItem('theme') || (document.cookie.includes('theme=dark') ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    document.getElementById('themeLogo').src = savedTheme === 'dark' ? 'core/img/sage-logo-w.svg' : 'core/img/sage-logo-b.svg';
+
+    function toggleMobileMenu() {
+        document.getElementById('mobileMenu').classList.toggle('show');
     }
 
   function setLang(lang) {
@@ -67,6 +67,13 @@
   ];
   
   const footer = document.getElementById('socialFooter');
+  const iconsWrapper = document.createElement('div');
+  iconsWrapper.className = 'social-icons-wrapper';
+  
   socialLinks.forEach(link => {
-    footer.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon} fs-3"></i></a>`;
+    iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
   });
+  
+  footer.appendChild(iconsWrapper);
+  footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
+
