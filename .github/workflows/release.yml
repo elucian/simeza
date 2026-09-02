@@ -1,4 +1,4 @@
-name: Release Website
+name: Deploy Website
 
 on:
   push:
@@ -6,8 +6,20 @@ on:
       - main
   workflow_dispatch:
 
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
-  release:
+  build-and-deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -23,17 +35,18 @@ jobs:
           python -m pip install --upgrade pip
           pip install markdown
 
-      - name: Run release check and build
+      - name: Build static site
         run: |
-          chmod +x run.sh
-          ./run.sh release
+          python script/build.py
 
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
-          if [[ -n $(git status -s) ]]; then
-            git add release/releases.json
-            git commit -m "Automated release update [skip ci]"
-            git push
-          fi
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: public/
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
