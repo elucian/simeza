@@ -1,1 +1,8 @@
-{"About": "hu/about.html", "Events": "hu/events.html", "Articles": "hu/articles.html", "Pictures": "hu/pictures.html", "Paintings": "hu/paintings.html", "Books": "hu/books.html"}
+{
+  "Rólunk": "hu/rolunk.html",
+  "Események": "hu/esemenyek.html",
+  "Cikkek": "hu/cikkek.html",
+  "Képek": "hu/kepek.html",
+  "Festmények": "hu/festmenyek.html",
+  "Könyvek": "hu/konyvek.html"
+}

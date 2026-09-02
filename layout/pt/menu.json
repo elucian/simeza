@@ -1,1 +1,8 @@
-{"About": "pt/about.html", "Events": "pt/events.html", "Articles": "pt/articles.html", "Pictures": "pt/pictures.html", "Paintings": "pt/paintings.html", "Books": "pt/books.html"}
+{
+  "Sobre": "pt/sobre.html",
+  "Eventos": "pt/eventos.html",
+  "Artigos": "pt/artigos.html",
+  "Imagens": "pt/imagens.html",
+  "Pinturas": "pt/pinturas.html",
+  "Livros": "pt/livros.html"
+}
