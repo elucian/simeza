@@ -1,8 +1,8 @@
 {
-  "About": "o-nas.html",
-  "Events": "sobytiya.html",
-  "Writings": "stati.html",
-  "Pictures": "fotografii.html",
-  "Paintings": "kartiny.html",
-  "Books": "knigi.html"
+  "О нас": "o-nas.html",
+  "События": "sobytiya.html",
+  "Статьи": "stati.html",
+  "Фотографии": "fotografii.html",
+  "Картины": "kartiny.html",
+  "Книги": "knigi.html"
 }
