@@ -65,7 +65,7 @@ def build():
                 
                 # Select template
                 template = base_template
-                lang_template = os.path.join(LAYOUT_DIR, lang, 'template.html')
+                lang_template = os.path.join(LAYOUT_DIR, lang, 'index.html')
                 if os.path.exists(lang_template):
                      with open(lang_template, 'r', encoding='utf-8') as f:
                         template = f.read()
