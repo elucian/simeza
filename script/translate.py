@@ -2,14 +2,16 @@ import os
 import json
 import urllib.request
 import urllib.parse
+import time
 import re
 import hashlib
+import shutil
 
 # Configuration
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 PAGES_DIR = 'pages'
-CACHE_FILE = 'release/.translation_cache.json'
-EN_DIR = os.path.join(PAGES_DIR, 'en')
+CACHE_DIR = 'cache'
+LAYOUT_DIR = 'layout'
 
 def get_file_hash(filepath):
     """Calculate SHA-256 hash of a file."""
@@ -19,16 +21,21 @@ def get_file_hash(filepath):
             sha256.update(chunk)
     return sha256.hexdigest()
 
-def load_cache():
-    if os.path.exists(CACHE_FILE):
-        with open(CACHE_FILE, 'r') as f:
-            return json.load(f)
-    return {}
-
-def save_cache(cache):
-    os.makedirs(os.path.dirname(CACHE_FILE), exist_ok=True)
-    with open(CACHE_FILE, 'w') as f:
-        json.dump(cache, f, indent=2)
+def parse_frontmatter(content):
+    # Regex to capture the YAML block
+    m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
+    if not m:
+        return {}, content
+    
+    meta_block = m.group(1)
+    body = content[m.end():]
+    
+    meta = {}
+    for line in meta_block.splitlines():
+        if ':' in line:
+            k, v = line.split(':', 1)
+            meta[k.strip().lower()] = v.strip()
+    return meta, body
 
 def translate_markdown(content, target_lang, source_lang="en"):
     if not content.strip():
@@ -42,6 +49,7 @@ def translate_markdown(content, target_lang, source_lang="en"):
         return f"__CODE_BLOCK_{idx}__"
     
     # Match fenced code blocks
+    time.sleep(1)
     protected_content = re.sub(r"```[\s\S]*?```", save_code_block, content)
     
     # Translate
@@ -61,45 +69,64 @@ def translate_markdown(content, target_lang, source_lang="en"):
     return translated
 
 def translate_all():
-    cache = load_cache()
-    changed = False
-    
-    for root, dirs, files in os.walk(EN_DIR):
-        for file in files:
-            if not file.endswith('.md'): continue
+    # 1. Translate Pages
+    for file in os.listdir(PAGES_DIR):
+        if not file.endswith('.md'): continue
+        
+        filepath = os.path.join(PAGES_DIR, file)
+        en_hash = get_file_hash(filepath)
+        
+        with open(filepath, 'r', encoding='utf-8') as f:
+            content = f.read()
+        
+        meta, body = parse_frontmatter(content)
+        
+        for lang in LANGUAGES:
+            if lang == 'en': continue
             
-            en_path = os.path.join(root, file)
-            en_hash = get_file_hash(en_path)
-            rel_path = os.path.relpath(en_path, EN_DIR)
+            lang_dir = os.path.join(CACHE_DIR, lang)
+            os.makedirs(lang_dir, exist_ok=True)
+            target_path = os.path.join(lang_dir, file)
             
-            with open(en_path, 'r', encoding='utf-8') as f:
-                content = f.read()
-            
-            for lang in LANGUAGES:
-                if lang == 'en': continue
-                
-                target_path = os.path.join(PAGES_DIR, lang, rel_path)
-                
-                # Check cache/mod time
-                cache_key = f"{lang}/{rel_path}"
-                if cache.get(cache_key) == en_hash and os.path.exists(target_path):
+            # Check if translation exists and hash matches
+            if os.path.exists(target_path):
+                with open(target_path, 'r', encoding='utf-8') as f:
+                    cached_content = f.read()
+                    cached_meta, _ = parse_frontmatter(cached_content)
+                if cached_meta.get('source_hash') == en_hash:
                     continue
-                
-                print(f"Translating {rel_path} to {lang}...")
-                translated_content = translate_markdown(content, lang)
-                
-                os.makedirs(os.path.dirname(target_path), exist_ok=True)
-                with open(target_path, 'w', encoding='utf-8') as f:
-                    f.write(translated_content)
-                
-                cache[cache_key] = en_hash
-                changed = True
+            
+            print(f"Translating {file} to {lang}...")
+            
+            # Translate body
+            trans_body = translate_markdown(body, lang)
+            # Translate meta
+            trans_meta = meta.copy()
+            for k, v in meta.items():
+                trans_meta[k] = translate_markdown(v, lang)
+            
+            trans_meta['source_hash'] = en_hash
+            
+            # Reconstruct content
+            meta_str = "---\n" + "\n".join([f"{k}: {v}" for k, v in trans_meta.items()]) + "\n---\n"
+            with open(target_path, 'w', encoding='utf-8') as f:
+                f.write(meta_str + trans_body)
     
-    if changed:
-        save_cache(cache)
-        print("Translation complete.")
-    else:
-        print("No changes to translate.")
+    # 2. Translate Menu
+    menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
+    with open(menu_file, 'r', encoding='utf-8') as f:
+        menu_data = json.load(f)
+        
+    for lang in LANGUAGES:
+        if lang == 'en': continue
+        
+        # Simple translation for menu
+        translated_menu = {}
+        for label, url in menu_data.items():
+            translated_menu[translate_markdown(label, lang)] = url
+            
+        with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
+            json.dump(translated_menu, f, indent=2)
 
 if __name__ == '__main__':
     translate_all()
