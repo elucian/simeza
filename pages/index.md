@@ -1,3 +1,3 @@
-# Welcome to Simeza
+# Hello World
 
-This is the main page.
+Welcome to Simeza Art!
