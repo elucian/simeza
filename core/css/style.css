@@ -329,6 +329,18 @@ body {
 
 
 /* Mobile Landscape Optimization */
+
+/* Mobile typography reduction */
+@media (max-width: 767px), (orientation: landscape) and (max-height: 600px) {
+  h1 { font-size: 1.4rem; }
+  h2 { font-size: 1.225rem; }
+  h3 { font-size: 1.05rem; }
+  h4 { font-size: 0.875rem; }
+  h5 { font-size: 0.7875rem; }
+  h6 { font-size: 0.7rem; }
+  p { font-size: 0.7rem; }
+}
+
 @media (orientation: landscape) and (max-height: 600px) {
   #socialFooter {
     display: none !important;

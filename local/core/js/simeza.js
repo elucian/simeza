@@ -192,3 +192,47 @@ function initFullscreenViewer() {
 
 document.addEventListener('DOMContentLoaded', initFullscreenViewer);
 
+
+function initLandscapeAutoFullscreen() {
+    const enterFullscreen = () => {
+        if (!document.fullscreenElement && window.innerHeight < window.innerWidth && window.innerWidth <= 900) {
+            const elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen({ navigationUI: 'hide' }).catch(() => {});
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            }
+        }
+    };
+
+    const exitFullscreen = () => {
+        if (document.fullscreenElement) {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            }
+        }
+    };
+
+    // Trigger on resize (rotation)
+    window.addEventListener('resize', () => {
+        if (window.innerHeight < window.innerWidth && window.innerWidth <= 900) {
+            enterFullscreen();
+        } else {
+            exitFullscreen();
+        }
+    });
+
+    // Touch gesture fallback (one-time)
+    const handleTouch = () => {
+        if (window.innerHeight < window.innerWidth && window.innerWidth <= 900) {
+            enterFullscreen();
+        }
+        document.removeEventListener('touchstart', handleTouch);
+    };
+    document.addEventListener('touchstart', handleTouch, { once: true });
+}
+
+document.addEventListener('DOMContentLoaded', initLandscapeAutoFullscreen);
+
