@@ -111,7 +111,6 @@ def build():
     # Generate gallery manifest
     gallery_data = []
     gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
-    garbage_source_dir = os.path.join(ROOT, 'content', 'garbage')
     def load_json_files(directory):
         if not os.path.exists(directory): return
         for filename in os.listdir(directory):
@@ -122,7 +121,6 @@ def build():
                     except:
                         pass
     load_json_files(gallery_source_dir)
-    load_json_files(garbage_source_dir)
     os.makedirs(os.path.join(LOCAL_DIR, 'content', 'gallery'), exist_ok=True)
     with open(os.path.join(LOCAL_DIR, 'content', 'gallery', 'manifest.json'), 'w', encoding='utf-8') as f:
         json.dump(gallery_data, f, indent=2)

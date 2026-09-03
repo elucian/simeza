@@ -6,6 +6,7 @@
     overflow: auto;
     scroll-snap-type: y mandatory;
     height: 80vh;
+    background: var(--bg-main);
 }
 
 @media (min-width: 768px) {
@@ -21,8 +22,9 @@
     flex-direction: column;
     scroll-snap-align: start;
     min-width: 100%;
-    border: 1px solid #ccc;
-    background: #fff;
+    border: 1px solid var(--border-color);
+    background: var(--bg-header);
+    color: var(--text-main);
     padding: 10px;
 }
 
@@ -50,11 +52,11 @@
     height: 12px;
 }
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--bg-outer);
 }
 ::-webkit-scrollbar-thumb {
-    background: #888;
+    background: var(--border-color);
 }
 ::-webkit-scrollbar-thumb:hover {
-    background: #555;
+    background: var(--accent-color);
 }
