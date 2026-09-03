@@ -1,0 +1,21 @@
+{
+  "id": "flori-pe-stergar",
+  "file": "flori-pe-stergar.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "flori pe stergar",
+      "description": "flori pe stergar"
+    },
+    "en": {
+      "name": "flowers on a towel",
+      "description": "flowers on a towel"
+    }
+  },
+  "source_hash": "8bfd29ce2f48714dac9886e20dc0c2c0505679d44f2f268b2dc0e967cb5da75a"
+}

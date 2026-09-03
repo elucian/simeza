@@ -1,0 +1,21 @@
+{
+  "id": "sibiu-centru",
+  "file": "sibiu-centru.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "sibiu centru",
+      "description": "sibiu centru"
+    },
+    "en": {
+      "name": "Sibiu city center",
+      "description": "Sibiu city center"
+    }
+  },
+  "source_hash": "b4a0c98b506f6afcbbbc5799b1adfd490c0591764a0bb304aa07ef0ca18b25aa"
+}

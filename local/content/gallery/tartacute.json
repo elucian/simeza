@@ -1,0 +1,21 @@
+{
+  "id": "tartacute",
+  "file": "tartacute.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "tartacute",
+      "description": "tartacute"
+    },
+    "en": {
+      "name": "tartacute",
+      "description": "tartacute"
+    }
+  },
+  "source_hash": "0c4f64a816f15920fd8e09e30520b3cb12467f2d0d4973244ae1427e569b23fd"
+}

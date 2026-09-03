@@ -1,0 +1,21 @@
+{
+  "id": "plaja-insorita",
+  "file": "plaja-insorita.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "plaja insorita",
+      "description": "plaja insorita"
+    },
+    "en": {
+      "name": "sunny beach",
+      "description": "sunny beach"
+    }
+  },
+  "source_hash": "45f490e95013de7512d5b2723da114b291b43e4b7eb76e79c358aac6ae27153e"
+}

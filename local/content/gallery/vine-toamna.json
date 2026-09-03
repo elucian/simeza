@@ -1,0 +1,21 @@
+{
+  "id": "vine-toamna",
+  "file": "vine-toamna.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "Vine Toamna",
+      "description": "Vine Toamna"
+    },
+    "en": {
+      "name": "Autumn is Coming",
+      "description": "Autumn is coming"
+    }
+  },
+  "source_hash": "392ef1da228df6715f9c6fa883f26fd6662ec85b91f34713829b6bbbe0bb12fb"
+}

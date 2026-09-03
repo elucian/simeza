@@ -1,0 +1,21 @@
+{
+  "id": "lavander-si-mt-hood",
+  "file": "lavander-si-mt-hood.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "Lavander si Mt Hood",
+      "description": "Lavander si Mt Hood"
+    },
+    "en": {
+      "name": "Lavender and Mt Hood",
+      "description": "Lavender and Mt Hood"
+    }
+  },
+  "source_hash": "05b83756343efdfa9c90c24b97bccd3ed3e831625ee4c49b366f24b18d069287"
+}

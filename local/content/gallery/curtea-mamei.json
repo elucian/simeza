@@ -1,0 +1,21 @@
+{
+  "id": "curtea-mamei",
+  "file": "curtea-mamei.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "curtea mamei",
+      "description": "curtea mamei"
+    },
+    "en": {
+      "name": "mother's courtyard",
+      "description": "mother's courtyard"
+    }
+  },
+  "source_hash": "070d652e536fb03fe071d7a3bd6e0fb6e931edbc346881620cac6ec092073ce2"
+}

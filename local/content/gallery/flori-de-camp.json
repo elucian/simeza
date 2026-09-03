@@ -1,0 +1,21 @@
+{
+  "id": "flori-de-camp",
+  "file": "flori-de-camp.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "flori de camp",
+      "description": "flori de camp"
+    },
+    "en": {
+      "name": "wildflowers",
+      "description": "wildflowers"
+    }
+  },
+  "source_hash": "047dce2407ac143adc2dadd9b99d3ecc4b01b50855615f8a950111c6aa8f7937"
+}

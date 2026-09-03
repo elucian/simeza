@@ -1,0 +1,21 @@
+{
+  "id": "biserica-la-rasinari",
+  "file": "biserica-la-rasinari.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "biserica la Rasinari",
+      "description": "biserica la Rasinari"
+    },
+    "en": {
+      "name": "church in Rășinari",
+      "description": "the church in Rășinari"
+    }
+  },
+  "source_hash": "90d5f22f58ecd918e41e8d45d237875bb0de061950c8f369d621d84d2ab77871"
+}

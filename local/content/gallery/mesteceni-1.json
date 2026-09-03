@@ -1,0 +1,21 @@
+{
+  "id": "mesteceni-1",
+  "file": "mesteceni-1.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "mesteceni 1",
+      "description": "mesteceni 1"
+    },
+    "en": {
+      "name": "birch trees 1",
+      "description": "birch trees 1"
+    }
+  },
+  "source_hash": "c42b0a034207a9e6fa0c53a53bf1f593a0790b2673ff5f628436d8c7c9735671"
+}

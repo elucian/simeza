@@ -1,0 +1,21 @@
+{
+  "id": "edy-mai-mic",
+  "file": "edy-mai-mic.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Portraits",
+  "topic": "Portraits",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "Edy mai mic",
+      "description": "Edy mai mic"
+    },
+    "en": {
+      "name": "Edy the younger",
+      "description": "Younger Edy"
+    }
+  },
+  "source_hash": "3255d64026569dbfb693405294335e9919af653c2353acbe9bf75729e5740e70"
+}
