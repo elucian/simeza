@@ -1,0 +1,21 @@
+{
+  "id": "gura-leului",
+  "file": "gura-leului.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "gura leului",
+      "description": "gura leului"
+    },
+    "en": {
+      "name": "snapdragon",
+      "description": "snapdragon"
+    }
+  },
+  "source_hash": "2c0488cc72404e4ae04fb05ead4acadbb0eaf5b7862e460a91e4910b67e1088b"
+}

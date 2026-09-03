@@ -1,0 +1,17 @@
+{
+  "id": "self-portrait-4",
+  "file": "self-portrait-4.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Portraits",
+  "topic": "Portraits",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "en": {
+      "name": "self portrait 4",
+      "description": "self portrait 4"
+    }
+  },
+  "source_hash": "dece2a51bdf9de466ce0e05cb1f5c95c63835f1189e57413b3db51e68892d02f"
+}

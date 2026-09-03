@@ -1,0 +1,14 @@
+{
+  "id": "author-1",
+  "file": "photo.jpg",
+  "name": "Full Name",
+  "birth_year": 1980,
+  "original": "en",
+  "content": {
+    "en": {
+      "bio": "...",
+      "role": "..."
+    }
+  },
+  "source_hash": "5cf88b968ffb64d03e400ec68bcf1c6a7431491e1ba26782b3c517a27fce6681"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "carmel-2",
+  "file": "carmel-2.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "carmel 2",
+      "description": "carmel 2"
+    },
+    "en": {
+      "name": "carmel 2",
+      "description": "carmel 2"
+    }
+  },
+  "source_hash": "40ec88f394d20a3e01e98c26d75f4711d89d0ef80f5955c08f44b74549d0f89b"
+}

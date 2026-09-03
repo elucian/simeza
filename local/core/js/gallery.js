@@ -11,7 +11,7 @@ containers.forEach(container => {
     // Get type, fallback to 'gallery'
     const type = container.getAttribute('data-widget') || container.getAttribute('data-type') || 'gallery';
 
-    const manifestUrl = lang === 'en' ? `/files/${type}/manifest.json` : `/files/${type}/manifest_${lang}.json`;
+    const manifestUrl = lang === 'en' ? `/content/${type}/manifest.json` : `/content/${type}/manifest_${lang}.json`;
 
     fetch(manifestUrl)
         .then(response => {
@@ -34,7 +34,7 @@ containers.forEach(container => {
                 if (item.file) {
                         html += `
                     <div class="panel-image">
-                        <img src="/files/${type}/${item.file}" alt="${content.name}">
+                        <img src="/content/${type}/${item.file}" alt="${content.name}">
                     </div>`;
                 }
                 

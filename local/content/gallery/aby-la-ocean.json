@@ -1,0 +1,21 @@
+{
+  "id": "aby-la-ocean",
+  "file": "aby-la-ocean.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Portraits",
+  "topic": "Portraits",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "Aby la ocean",
+      "description": "Aby la ocean"
+    },
+    "en": {
+      "name": "Aby at the ocean",
+      "description": "Aby at the ocean"
+    }
+  },
+  "source_hash": "af0de7845948c188d57f18b179f3f9c33b92fa04f2fd8eba3dd39286c0a772ad"
+}

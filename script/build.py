@@ -18,14 +18,10 @@ LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu', 'it']
 def write_summary(summary_text):
     if 'GITHUB_STEP_SUMMARY' in os.environ:
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
-            f.write(summary_text + '
-')
+            f.write(summary_text + '\n')
 
 def parse_frontmatter(content):
-    m = re.match(r'^---\s*
-(.*?)
----\s*
-', content, re.DOTALL)
+    m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if not m:
         return {}, content
     meta_block = m.group(1)
@@ -59,12 +55,12 @@ def build():
         shutil.rmtree(LOCAL_DIR)
     os.makedirs(LOCAL_DIR, exist_ok=True)
     with open(RELEASE_FILE, 'r') as f:
-        version = json.load(f)['version']
+        version = json.load(f).get('candidate', {}).get('version', '0.1.0')
     summary = []
     for lang in LANGUAGES:
         lang_dir = os.path.join(LOCAL_DIR, lang)
         os.makedirs(lang_dir, exist_ok=True)
-        base_template_path = os.path.join(LAYOUT_DIR, 'base.html')
+        base_template_path = os.path.join(LAYOUT_DIR, 'template.html')
         with open(base_template_path, 'r', encoding='utf-8') as f:
             base_template = f.read()
         files = os.listdir(PAGES_DIR)
@@ -92,8 +88,7 @@ def build():
             md = markdown.Markdown(extensions=['extra'])
             body = body.replace('{{widget:gallery}}', '<div class="widget-placeholder" data-widget="gallery"></div>')
             html_content = md.convert(body)
-            html_content = re.sub(r'(<p>.*?</p>)', r'
-<div class="widget-placeholder"></div>', html_content, count=1, flags=re.DOTALL)
+            html_content = re.sub(r'(<p>.*?</p>)', r'\1\n<div class="widget-placeholder"></div>', html_content, count=1, flags=re.DOTALL)
             title = meta.get('title', 'La Simeza')
             final_html = base_template.replace('{{lang}}', lang).replace('{{page-content}}', html_content).replace('{{menu}}', render_menu(lang)).replace('{{mobile_menu}}', render_menu(lang)).replace('{{version}}', version).replace('{{title}}', title).replace('{{description}}', meta.get('description', 'Art gallery')).replace('{{keywords}}', meta.get('keywords', 'art')).replace('{{page-css}}', page_css).replace('{{page-js}}', page_js).replace('href="core/', 'href="/core/').replace('src="core/', 'src="/core/')
             with open(os.path.join(lang_dir, output_filename), 'w', encoding='utf-8') as f:
@@ -107,15 +102,11 @@ def build():
         shutil.copy(os.path.join(ROOT, 'CNAME'), os.path.join(LOCAL_DIR, 'CNAME'))
     with open(os.path.join(LOCAL_DIR, '.nojekyll'), 'w') as f:
         f.write('')
-    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(LOCAL_DIR, 'core'), dirs_exist_ok=True)
-
     shutil.copytree(os.path.join(ROOT, 'content'), os.path.join(LOCAL_DIR, 'content'), dirs_exist_ok=True)
-    
     # Generate gallery manifest
     gallery_data = []
     gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
     garbage_source_dir = os.path.join(ROOT, 'content', 'garbage')
-    
     def load_json_files(directory):
         if not os.path.exists(directory): return
         for filename in os.listdir(directory):
@@ -125,19 +116,15 @@ def build():
                         gallery_data.append(json.load(f))
                     except:
                         pass
-    
     load_json_files(gallery_source_dir)
     load_json_files(garbage_source_dir)
-    
     os.makedirs(os.path.join(LOCAL_DIR, 'content', 'gallery'), exist_ok=True)
     with open(os.path.join(LOCAL_DIR, 'content', 'gallery', 'manifest.json'), 'w', encoding='utf-8') as f:
         json.dump(gallery_data, f, indent=2)
+    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(LOCAL_DIR, 'core'), dirs_exist_ok=True)
     duration = time.time() - start_time
-    print(f'
-Build completed in {duration:.2f} seconds.')
-    summary.append(f'
-**Build completed in {duration:.2f} seconds.**')
-    write_summary('
-'.join(summary))
+    print(f'\nBuild completed in {duration:.2f} seconds.')
+    summary.append(f'\n**Build completed in {duration:.2f} seconds.**')
+    write_summary('\n'.join(summary))
 if __name__ == '__main__':
     build()

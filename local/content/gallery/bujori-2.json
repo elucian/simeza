@@ -1,0 +1,21 @@
+{
+  "id": "bujori-2",
+  "file": "bujori-2.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "bujori 2",
+      "description": "bujori 2"
+    },
+    "en": {
+      "name": "peonies 2",
+      "description": "peonies 2"
+    }
+  },
+  "source_hash": "21d55ad61552d9e5fb671ab1f94fa393a3b500b2d56bc847a0b749faa1d0385a"
+}

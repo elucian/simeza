@@ -1,0 +1,21 @@
+{
+  "id": "soare-pe-plaja",
+  "file": "soare-pe-plaja.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "soare pe plaja",
+      "description": "soare pe plaja"
+    },
+    "en": {
+      "name": "sun on the beach",
+      "description": "sun on the beach"
+    }
+  },
+  "source_hash": "0bf807b21e4aa34fbce47ef8ed6818df7bf2c59f54a5143ccc59efd0e1636a2c"
+}

@@ -1,0 +1,21 @@
+{
+  "id": "maci",
+  "file": "maci.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Still Life",
+  "topic": "Still Life",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "Maci",
+      "description": "Maci"
+    },
+    "en": {
+      "name": "Poppies",
+      "description": "Poppies"
+    }
+  },
+  "source_hash": "4323d25ee665dc4081aab31335eb82c29b696540ee9f7ffc017db8c3cdf2da13"
+}
