@@ -9,8 +9,8 @@
 # setup: Load environment variables from .env.
 #        IMPORTANT: Must be run with 'source ./run.sh setup' to take effect.
 # kill: Terminate all unused terminal sessions.
-# clean: Remove public.
-# serve: Serve public.
+# clean: Remove local.
+# serve: Serve local.
 
 CMD=$1
 
@@ -72,7 +72,7 @@ elif [ "$CMD" == "clean" ]; then
     python script/clean.py
 
 elif [ "$CMD" == "serve" ]; then
-    python -m http.server 8000 -d public
+    python -m http.server 8000 -d local
 
 elif [ "$CMD" == "kill" ]; then
     echo "Terminating other open terminal sessions..."

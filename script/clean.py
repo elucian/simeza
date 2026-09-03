@@ -8,13 +8,13 @@ from translate import LANGUAGES, SLUG_MAP
 
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
-PUBLIC_DIR = 'public'
+LOCAL_DIR = 'local'
 
 def clean():
-    # 1. Clean public/
-    if os.path.exists(PUBLIC_DIR):
-        print(f"Removing {PUBLIC_DIR}...")
-        shutil.rmtree(PUBLIC_DIR)
+    # 1. Clean local/
+    if os.path.exists(LOCAL_DIR):
+        print(f"Removing {LOCAL_DIR}...")
+        shutil.rmtree(LOCAL_DIR)
     
     # 2. Clean __pycache__
     for root, dirs, files in os.walk('.'):
