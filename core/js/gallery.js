@@ -21,21 +21,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const prevBtn = container.querySelector('.gallery-nav-prev');
     const nextBtn = container.querySelector('.gallery-nav-next');
     
-    // Panel click for modal
+  // Open modal helper
+  const openModal = (panel) => {
+    modalImg.src = panel.dataset.image;
+    modalPicName.value = panel.dataset.title;
+    modalAuthor.value = panel.dataset.author;
+    modalYear.value = panel.dataset.year;
+    modalStatus.value = panel.dataset.status;
+    modalDesc.value = panel.dataset.desc;
+    modal.classList.add('active');
+  };
+
+  wrappers.forEach(wrapper => {
+    const container = wrapper.parentElement;
+    const prevBtn = container.querySelector('.gallery-nav-prev');
+    const nextBtn = container.querySelector('.gallery-nav-next');
+    
+    // Panel interaction
     wrapper.querySelectorAll('.panel').forEach(panel => {
+      // Click for Desktop
       panel.addEventListener('click', () => {
-        // Allow in desktop OR landscape mobile
         const isLandscapeMobile = (window.innerWidth <= 1024 && window.innerWidth > window.innerHeight);
-        if (window.innerWidth <= 767 && !isLandscapeMobile) return; 
+        const isPortraitMobile = (window.innerWidth <= 767);
+        // On mobile, rely on double tap for dialog
+        if (isLandscapeMobile || isPortraitMobile) return; 
         
-        modalImg.src = panel.dataset.image;
-        modalPicName.value = panel.dataset.title;
-        modalAuthor.value = panel.dataset.author;
-        modalYear.value = panel.dataset.year;
-        modalStatus.value = panel.dataset.status;
-        modalDesc.value = panel.dataset.desc;
-        modal.classList.add('active');
+        openModal(panel);
       });
+
+      // Double tap/click for Mobile/Landscape
+      let lastTap = 0;
+      const handleDoubleTap = (e) => {
+        const isLandscapeMobile = (window.innerWidth <= 1024 && window.innerWidth > window.innerHeight);
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        
+        // Only on mobile or landscape
+        if (isLandscapeMobile || window.innerWidth <= 767) {
+          if (e.type === 'dblclick' || (tapLength < 300 && tapLength > 0)) {
+            openModal(panel);
+            e.preventDefault();
+          }
+        }
+        lastTap = currentTime;
+      };
+
+      panel.addEventListener('dblclick', handleDoubleTap);
+      panel.addEventListener('touchend', handleDoubleTap);
     });
 
     // Smooth scroll functions

@@ -9,6 +9,11 @@
 - Follow the manual/ folder for architecture details.
 - Adhere to manual/context-guidelines.md for context efficiency.
 
+## Terminal Execution Constraints
+- **No Interactive Editors:** Never invoke or fall back to interactive terminal editors (`vi`, `vim`, `nano`, `emacs`). 
+- **Non-Interactive File Edits:** Modify files exclusively via non-interactive methods (`cat << 'EOF' > file`, stream editors, or native workspace file tools).
+- **Git Operations:** Always pass inline arguments to prevent editor spawns (e.g., `git commit -m "..."`, never raw `git commit`).
+- **Environment Enforcements:** Treat `EDITOR=cat` and `VISUAL=cat` as active for all spawned shell processes to dump output instead of opening an editor loop.
 ## Terminal & Process Hygiene
 - **Non-Interactive Only**: 
   - ALWAYS use `git --no-pager` for all Git inspection commands (`log`, `diff`, `show`, `status`). 
