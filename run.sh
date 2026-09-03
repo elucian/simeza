@@ -6,13 +6,26 @@
 # build: Translate, commit, update releases.json, build.
 # publish: Update releases.json, build, push.
 # release: Check release status, promote, build.
+# setup: Load environment variables from .env.
+#        IMPORTANT: Must be run with 'source ./run.sh setup' to take effect.
 # kill: Terminate all unused terminal sessions.
 # clean: Remove public.
 # serve: Serve public.
 
 CMD=$1
 
-if [ "$CMD" == "commit" ]; then
+if [ "$CMD" == "setup" ]; then
+    if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
+        echo "Error: You must run 'source ./run.sh setup' to set variables."
+        echo "The current command './run.sh setup' runs in a subshell and will not work."
+    elif [ -f .env ]; then
+        export $(grep -v "^#" .env | xargs)
+        echo "Environment variables loaded."
+    else
+        echo "Error: .env file not found."
+    fi
+
+elif [ "$CMD" == "commit" ]; then
     echo "Committing changes..."
     git add .
     MSG="${2:-"Commit: $(date)"}"
@@ -92,5 +105,5 @@ elif [ "$CMD" == "kill" ]; then
 
 
 else
-    echo "Usage: ./run.sh [commit|translate|build|publish|release|clean|serve|kill]"
+    echo "Usage: ./run.sh [setup|commit|translate|build|publish|release|clean|serve|kill]"
 fi
