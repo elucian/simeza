@@ -11,6 +11,11 @@
     "ro": {
       "name": "Luminis in parcul Mirea",
       "description": "Luminis in parcul Mirea"
+    },
+    "en": {
+      "name": "Luminis in Mirea park",
+      "description": "Luminis in Mirea park"
     }
-  }
+  },
+  "source_hash": "896767cc9d490dd16ef45acb677058b97f9e089756013265608c464f19603963"
 }

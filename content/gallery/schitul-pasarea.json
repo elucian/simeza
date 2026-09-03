@@ -11,6 +11,11 @@
     "ro": {
       "name": "schitul pasarea",
       "description": "schitul pasarea"
+    },
+    "en": {
+      "name": "Pasărea Hermitage",
+      "description": "Pasărea Hermitage"
     }
-  }
+  },
+  "source_hash": "dba7cf78d35cd518ba4d0bcd7ac22a99c42368d7d26ae3e77eac9bbb79f0f41f"
 }

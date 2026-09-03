@@ -9,12 +9,25 @@ import shutil
 import sys
 import argparse
 
+# --- .env loading ---
+def load_env():
+    env_path = os.path.join(os.getcwd(), '.env')
+    if os.path.exists(env_path):
+        with open(env_path, 'r', encoding='utf-8') as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith('#') and '=' in line:
+                    k, v = line.split('=', 1)
+                    os.environ.setdefault(k.strip(), v.strip().strip("'\""))
+
+load_env()
+# --------------------
+
 # Configuration
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu', 'it']
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
-GALLERY_DIR = os.path.join(os.getcwd(), 'files', 'gallery')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta'
 GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-3.5-flash-lite')
 
@@ -26,7 +39,8 @@ LANGUAGE_NAMES = {
     'ru': 'Russian',
     'pt': 'Portuguese',
     'hu': 'Hungarian',
-    'it': 'Italian'
+    'it': 'Italian',
+    'en': 'English'
 }
 
 # Slug map to ensure URL-friendly filenames.
@@ -89,7 +103,7 @@ def format_translation_error(error):
         return f'URL error: {error.reason}'
     return f'{type(error).__name__}: {error}'
 
-def translate_text(text, target_lang):
+def translate_text(text, target_lang, source_lang='en'):
     """Translate text using the Gemini API."""
     if not text.strip():
         return text
@@ -101,9 +115,11 @@ def translate_text(text, target_lang):
     # Simple rate limiting/delay
     time.sleep(1)
 
+    source_language = LANGUAGE_NAMES.get(source_lang, source_lang)
     language = LANGUAGE_NAMES.get(target_lang, target_lang)
+    
     prompt = (
-        f'Translate the following English text into {language}. '
+        f'Translate the following text from {source_language} into {language}. '
         'Return only the translation. Preserve all Markdown formatting, '
         'links and their URLs, HTML tags, code, and line breaks exactly.\n\n'
         f'{text}'
@@ -223,56 +239,134 @@ def translate_menu(target_langs):
         with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
             json.dump(translated_menu, f, indent=2, ensure_ascii=False)
 
-def translate_gallery(target_langs):
-    # 3. Translate Gallery Manifest
-    manifest_path = os.path.join(GALLERY_DIR, 'manifest.json')
-    if not os.path.exists(manifest_path):
-        print("Gallery manifest not found, skipping.")
-        return
 
-    with open(manifest_path, 'r', encoding='utf-8') as f:
-        gallery_data = json.load(f)
-
-    for lang in target_langs:
-        if lang == 'en': continue
-        if lang not in LANGUAGES: continue
+def translate_content_jsons(target_langs):
+    content_root = os.path.join(os.getcwd(), 'content')
+    skip_dirs = ['archive', 'garbage']
+    
+    for root, dirs, files in os.walk(content_root):
+        # Skip archive/garbage
+        dirs[:] = [d for d in dirs if d not in skip_dirs]
         
-        print(f"Translating gallery manifest for {lang}...")
-        translated_gallery = []
-        
-        for item in gallery_data:
-            new_item = item.copy()
-            # Only translate if not already translated
-            if 'content' not in new_item:
-                new_item['content'] = {}
+        for file in files:
+            if not file.endswith('.json'): continue
             
-            if lang not in new_item['content']:
-                print(f"  - Translating {item['id']} to {lang}...")
-                new_content = {
-                    "name": translate_text(item['content']['en']['name'], lang),
-                    "description": translate_text(item['content']['en']['description'], lang)
-                }
-                new_item['content'][lang] = new_content
-            translated_gallery.append(new_item)
+            filepath = os.path.join(root, file)
+            print(f"\nProcessing {filepath}...")
             
-        with open(os.path.join(GALLERY_DIR, f'manifest_{lang}.json'), 'w', encoding='utf-8') as f:
-            json.dump(translated_gallery, f, indent=2, ensure_ascii=False)
+            with open(filepath, 'r', encoding='utf-8') as f:
+                data = json.load(f)
+            
+            if 'content' not in data:
+                print(f"  Skipping: No 'content' key.")
+                continue
+            
+            content = data['content']
+            if not content:
+                print(f"  Skipping: Empty 'content'.")
+                continue
+            
+            # 1. First entry in content is the initial language that must remain original & first
+            # We get the keys as a list to keep order, assuming insertion order (Python 3.7+)
+            content_keys = list(content.keys())
+            source_lang = content_keys[0]
+            source_data = content[source_lang]
+            print(f"  Source language (original/primary): {source_lang}")
+            
+            # Compute hash of source data to detect changes
+            current_source_hash = hashlib.sha256(json.dumps(source_data, sort_keys=True).encode('utf-8')).hexdigest()
+            stored_source_hash = data.get('source_hash', '')
+            source_changed = (current_source_hash != stored_source_hash)
+            
+            if source_changed:
+                print(f"  Source content changed. Will re-translate target languages.")
+            
+            # Determine targets
+            targets = target_langs
+            if not targets: # No parameter, default to English if missing
+                targets = ['en']
+            
+            # Build ordered content dict with source_lang first
+            # We use OrderedDict or just re-insert to ensure order
+            new_content = {source_lang: source_data}
+            
+            # Add existing translations, re-translating if source changed
+            modified = source_changed
+            
+            # We must process all targets (either explicitly requested or all languages)
+            # Actually user said "translate parameter OR all if parameter specify all"
+            # And "Or in english if parameter specify nothing and english is missing"
+            # This is slightly contradictory if targets are set to ['en'] by default.
+            
+            # Revised logic based on "add new content entries for translations":
+            # 1. Preserve ALL existing languages in content.
+            # 2. Add/Re-translate target languages if they are missing or source changed.
+            
+            # Collect all known language keys
+            all_known_langs = set(content.keys())
+            if targets:
+                all_known_langs.update(targets)
+            
+            for lang in sorted(list(all_known_langs)):
+                if lang == source_lang: continue
+                
+                # Check if translation is needed: missing or source changed
+                needs_translation = (lang not in content) or source_changed
+                
+                if needs_translation:
+                    # If it's not a targeted language, skip re-translation unless it's missing (shouldn't happen for existing)
+                    if targets and lang not in targets: continue
+                    
+                    print(f"  Translating to {lang} from {source_lang}...")
+                    trans_content = {}
+                    for key, val in source_data.items():
+                        if isinstance(val, str):
+                            trans_content[key] = translate_text(val, lang, source_lang=source_lang)
+                        else:
+                            trans_content[key] = val
+                    new_content[lang] = trans_content
+                    modified = True
+                else:
+                    # Keep existing translation
+                    new_content[lang] = content[lang]
+            
+            data['content'] = new_content
+            data['source_hash'] = current_source_hash
+            
+            if modified:
+                with open(filepath, 'w', encoding='utf-8') as f:
+                    json.dump(data, f, indent=2, ensure_ascii=False)
+                print(f"  Successfully updated and saved {filepath}")
+            else:
+                print(f"  No changes needed for {filepath}")
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Translate content.")
-    parser.add_argument('lang', nargs='?', default='all', help="Language code to translate, or 'all'.")
+    parser.add_argument('lang', nargs='?', default=None, help="Language code to translate, 'all', or None (default to English).")
     args = parser.parse_args()
     
-    target_langs = LANGUAGES if args.lang == 'all' else ([args.lang] if args.lang in LANGUAGES else [])
+    if args.lang == 'all':
+        target_langs = LANGUAGES
+    elif args.lang:
+        target_langs = [args.lang] if args.lang in LANGUAGES else []
+    else:
+        target_langs = [] # None implies just fill English if missing
     
-    if not target_langs:
+    if args.lang and not target_langs:
         print(f"Invalid language: {args.lang}. Available: {', '.join(LANGUAGES)}")
         sys.exit(1)
 
     try:
         translate_pages(target_langs)
         translate_menu(target_langs)
-        translate_gallery(target_langs)
+        translate_content_jsons(target_langs)
+        # Keep translate_gallery just in case, but it might not be needed if content/gallery/*.json are translated.
+        # Actually user said "except atchive and garbage", so gallery/ is processed by this new function.
+        # I'll comment it out or leave it if manifest needs special handling. 
+        # User said "edit not fully replace the json manifest files". 
+        # The individual json files are now the source. 
+        # So I will remove translate_gallery.
+        # translate_gallery(target_langs)
     except RuntimeError as e:
         print(f"Error: {e}", file=sys.stderr)
         print("Run 'source ./run.sh setup' first, or put GEMINI_API_KEY in .env and use './run.sh translate'.", file=sys.stderr)

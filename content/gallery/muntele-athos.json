@@ -11,6 +11,11 @@
     "ro": {
       "name": "Muntele Athos",
       "description": "Muntele Athos"
+    },
+    "en": {
+      "name": "Mount Athos",
+      "description": "Mount Athos"
     }
-  }
+  },
+  "source_hash": "6419566df4fa4f8cabda4de709109a84cd302402129f5ed9e69e234ec43c3266"
 }

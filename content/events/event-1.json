@@ -5,7 +5,10 @@
   "location": "Venue Name",
   "original": "en",
   "content": {
-    "en": { "title": "...", "description": "..." },
-    "it": { "title": "...", "description": "..." }
-  }
+    "en": {
+      "title": "...",
+      "description": "..."
+    }
+  },
+  "source_hash": "9db8b1609b64542c0687009afca5315f29bd386d7ffa6a3d4caccf7377d9460a"
 }

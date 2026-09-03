@@ -11,6 +11,11 @@
     "ro": {
       "name": "catalina island 2",
       "description": "catalina island 2"
+    },
+    "en": {
+      "name": "catalina island 2",
+      "description": "catalina island 2"
     }
-  }
+  },
+  "source_hash": "876ff6e3b4f7c15dd986adb88db4fb4582305cf82f29c4f727bc45f1be4d646c"
 }
