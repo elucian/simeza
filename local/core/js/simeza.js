@@ -4,13 +4,13 @@
       document.documentElement.setAttribute('data-theme', newTheme);
       localStorage.setItem('theme', newTheme);
       document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
-      document.getElementById('themeLogo').src = newTheme === 'dark' ? '/core/img/sage-logo-w.svg' : '/core/img/sage-logo-b.svg';
+      document.getElementById('themeLogo').src = newTheme === 'dark' ? '/core/img/simeza-logo-w.svg' : '/core/img/simeza-logo-b.svg';
     }
 
     // Initialize theme from cookie/localStorage
     const savedTheme = localStorage.getItem('theme') || (document.cookie.includes('theme=dark') ? 'dark' : 'light');
     document.documentElement.setAttribute('data-theme', savedTheme);
-    document.getElementById('themeLogo').src = savedTheme === 'dark' ? '/core/img/sage-logo-w.svg' : '/core/img/sage-logo-b.svg';
+    document.getElementById('themeLogo').src = savedTheme === 'dark' ? '/core/img/simeza-logo-w.svg' : '/core/img/simeza-logo-b.svg';
 
     function toggleMobileMenu() {
         document.getElementById('mobileMenu').classList.toggle('show');
