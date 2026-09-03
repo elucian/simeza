@@ -2,16 +2,13 @@ import os
 import json
 import sys
 import subprocess
-import shutil
 import datetime
+import build
 
 # Paths
 ROOT = os.getcwd()
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 RELEASE_DIR = os.path.join(ROOT, 'release')
-# Assuming build.py is in script/
-sys.path.append(os.path.join(ROOT, 'script'))
-import build
 
 def generate_release_notes(version, prev_commit, curr_commit):
     """Automatically generate release notes markdown file based on git history."""
@@ -29,7 +26,7 @@ def generate_release_notes(version, prev_commit, curr_commit):
     date_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     
     notes_content = f"""# Release Notes: {version}
-
+ 
 - **Release Date**: {date_str}
 - **Current Commit**: `{curr_commit}`
 - **Previous Commit**: `{prev_commit or 'None'}`
@@ -63,13 +60,13 @@ def release():
     with open(RELEASE_FILE, 'r', encoding='utf-8') as f:
         data = json.load(f)
 
-    pub = data.get('published', {})
+    # 1. Promote candidate to published
     cand = data.get('candidate', {})
-
-    if not cand.get('version') or cand.get('version') == pub.get('version'):
-        print("Published version matches candidate. Nothing to release.")
+    if not cand.get('version'):
+        print("No candidate found to release.")
         sys.exit(0)
-
+    
+    pub = data.get('published', {})
     version = cand['version']
     print(f"Releasing version {version}...")
 
@@ -85,7 +82,7 @@ def release():
     if not cand.get('commit'):
         cand['commit'] = curr_commit
 
-    # 1. Promote candidate to published
+    # Promote
     data['published'] = cand
     data['candidate'] = {'version': '', 'commit': '', 'date': '', 'notes': ''}
 
