@@ -47,8 +47,6 @@ elif [ "$CMD" == "translate" ]; then
 elif [ "$CMD" == "build" ]; then
     echo "Building candidate..."
     load_env
-    # 0. Translate
-    python script/translate.py
     # 1. Commit changes
     git add .
     git commit -m "Build candidate: $(date)"
