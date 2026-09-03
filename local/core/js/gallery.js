@@ -11,16 +11,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const closeModal = () => modal.classList.remove('active');
 
   // Close modal events
-  document.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
-  document.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  modal.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
+  modal.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  wrappers.forEach(wrapper => {
-    const container = wrapper.parentElement;
-    const prevBtn = container.querySelector('.gallery-nav-prev');
-    const nextBtn = container.querySelector('.gallery-nav-next');
-    
   // Open modal helper
   const openModal = (panel) => {
     modalImg.src = panel.dataset.image;
@@ -32,6 +27,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.classList.add('active');
   };
 
+  const isPortraitMobile = () => (window.innerHeight >= window.innerWidth && window.innerWidth <= 768);
+
   wrappers.forEach(wrapper => {
     const container = wrapper.parentElement;
     const prevBtn = container.querySelector('.gallery-nav-prev');
@@ -39,26 +36,24 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Panel interaction
     wrapper.querySelectorAll('.panel').forEach(panel => {
-      // Click for Desktop
-      panel.addEventListener('click', () => {
-        const isLandscapeMobile = (window.innerWidth <= 1024 && window.innerWidth > window.innerHeight);
-        const isPortraitMobile = (window.innerWidth <= 767);
-        // On mobile, rely on double tap for dialog
-        if (isLandscapeMobile || isPortraitMobile) return; 
+      // Click for Desktop & Landscape Mobile
+      panel.addEventListener('click', (e) => {
+        // Prevent opening modal if clicking the image itself while in portrait mobile mode
+        if (isPortraitMobile()) return;
         
         openModal(panel);
       });
 
-      // Double tap/click for Mobile/Landscape
+      // Double tap/click handler for mobile
       let lastTap = 0;
       const handleDoubleTap = (e) => {
-        const isLandscapeMobile = (window.innerWidth <= 1024 && window.innerWidth > window.innerHeight);
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
         
-        // Only on mobile or landscape
-        if (isLandscapeMobile || window.innerWidth <= 767) {
-          if (e.type === 'dblclick' || (tapLength < 300 && tapLength > 0)) {
+        if (e.type === 'dblclick' || (tapLength < 300 && tapLength > 0)) {
+          // If in portrait, do not open dialog (unless explicitly desired, 
+          // but current requirement is property dialog in landscape)
+          if (!isPortraitMobile()) {
             openModal(panel);
             e.preventDefault();
           }

@@ -157,7 +157,7 @@ function initFullscreenViewer() {
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {
         const isPortrait = window.innerHeight >= window.innerWidth;
-        if (isPortrait && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+        if (isPortrait && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);
@@ -169,7 +169,7 @@ function initFullscreenViewer() {
         const isPortrait = window.innerHeight >= window.innerWidth;
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
-        if (isPortrait && tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+        if (isPortrait && tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);

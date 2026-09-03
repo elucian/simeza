@@ -399,6 +399,7 @@
   }
   .gallery-modal-body {
     gap: 10px;
+    overflow-y: auto;
   }
   .gallery-modal-image-col {
     flex: 1 1 40%;
@@ -406,6 +407,7 @@
   .gallery-modal-data-col {
     flex: 1 1 60%;
     gap: 4px;
+    overflow-y: auto;
   }
   #modalDesc {
     min-height: 40px;
@@ -414,5 +416,6 @@
     top: 5px;
     right: 8px;
     font-size: 1.5rem;
+    z-index: 10;
   }
 }
