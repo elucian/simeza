@@ -154,7 +154,10 @@ def build():
         shutil.rmtree(LOCAL_DIR)
     os.makedirs(LOCAL_DIR, exist_ok=True)
     with open(RELEASE_FILE, 'r') as f:
-        version = json.load(f).get('candidate', {}).get('version', '0.1.0')
+        data = json.load(f)
+        version = data.get('candidate', {}).get('version')
+        if not version:
+            version = data.get('published', {}).get('version', '0.1.0')
     # Pre-load gallery data
     gallery_data = []
     gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')

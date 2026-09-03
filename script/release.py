@@ -9,6 +9,13 @@ import build
 ROOT = os.getcwd()
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 RELEASE_DIR = os.path.join(ROOT, 'release')
+RELEASE_LOG = os.path.join(RELEASE_DIR, 'release.log')
+
+def log_event(message):
+    os.makedirs(RELEASE_DIR, exist_ok=True)
+    with open(RELEASE_LOG, 'a', encoding='utf-8') as f:
+        timestamp = datetime.datetime.now().isoformat()
+        f.write(f"[{timestamp}] {message}\n")
 
 def generate_release_notes(version, prev_commit, curr_commit):
     """Automatically generate release notes markdown file based on git history."""
@@ -24,9 +31,9 @@ def generate_release_notes(version, prev_commit, curr_commit):
         files_output = ""
 
     date_str = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    
+
     notes_content = f"""# Release Notes: {version}
- 
+
 - **Release Date**: {date_str}
 - **Current Commit**: `{curr_commit}`
 - **Previous Commit**: `{prev_commit or 'None'}`
@@ -45,10 +52,10 @@ def generate_release_notes(version, prev_commit, curr_commit):
     safe_version = version.replace('/', '-').replace('\\', '-')
     notes_filename = f"notes-{safe_version}.md"
     notes_filepath = os.path.join(RELEASE_DIR, notes_filename)
-    
+
     with open(notes_filepath, 'w', encoding='utf-8') as f:
         f.write(notes_content)
-    
+
     print(f"Generated release notes at {notes_filepath}")
     return f"release/{notes_filename}"
 
@@ -65,7 +72,7 @@ def release():
     if not cand.get('version'):
         print("No candidate found to release.")
         sys.exit(0)
-    
+
     pub = data.get('published', {})
     version = cand['version']
     print(f"Releasing version {version}...")
@@ -78,20 +85,25 @@ def release():
 
     # Automatically generate release notes file
     notes_path = generate_release_notes(version, prev_commit, curr_commit)
-    cand['notes'] = notes_path
-    if not cand.get('commit'):
-        cand['commit'] = curr_commit
-
+    
     # Promote
-    data['published'] = cand
+    data['published'] = {
+        'version': version,
+        'commit': curr_commit,
+        'date': datetime.datetime.now().isoformat(),
+        'notes': 'success' # Set success
+    }
     data['candidate'] = {'version': '', 'commit': '', 'date': '', 'notes': ''}
 
     with open(RELEASE_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)
 
+    # Log the release
+    log_event(f"Released version {version}. Notes: {notes_path}")
+
     # 2. Build
     build.build()
-    
+
     print("Release completed successfully.")
 
 if __name__ == '__main__':

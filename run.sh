@@ -36,10 +36,15 @@ if [ "$CMD" == "setup" ]; then
 elif [ "$CMD" == "commit" ]; then
     echo "Committing changes..."
     if [ "$2" == "rc" ]; then
-        python script/version.py rc
+        python script/version.py rc "$3"
     fi
     git add .
-    MSG="${3:-"Commit: $(date)"}"
+    # Use $3 for rc commit, $2 for regular commit
+    if [ "$2" == "rc" ]; then
+        MSG="${3:-"Build candidate: $(date)"}"
+    else
+        MSG="${2:-"Commit: $(date)"}"
+    fi
     git commit -m "$MSG"
     echo "Changes committed locally."
 
@@ -51,29 +56,28 @@ elif [ "$CMD" == "build" ]; then
     echo "Building candidate..."
     load_env
     # 1. Bump version and commit changes
-    python script/version.py rc
+    python script/version.py rc "Build candidate: $(date)"
     git add .
     git commit -m "Build candidate: $(date)"
     
-    # 2. Update releases.json (simple python call to update)
-    python -c "import json, subprocess; r=json.load(open('release/releases.json')); c=subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode().strip(); r['candidate']['commit']=c; r['candidate']['date']=subprocess.check_output(['date', '-Iseconds']).decode().strip(); json.dump(r, open('release/releases.json', 'w'), indent=2)"
-    
-    # 3. Build
+    # 2. Build
     python script/build.py
+    
+    # 3. Update Status
+    if [ $? -eq 0 ]; then
+        python -c "import json; r=json.load(open('release/releases.json')); r['candidate']['notes']='success'; json.dump(r, open('release/releases.json', 'w'), indent=2)"
+    else
+        python -c "import json; r=json.load(open('release/releases.json')); r['candidate']['notes']='failure'; json.dump(r, open('release/releases.json', 'w'), indent=2)"
+    fi
     echo "Build completed."
 
 elif [ "$CMD" == "publish" ]; then
     echo "Publishing..."
-    # 1. Promote candidate to published
-    python script/version.py publish
+    # 1. Promote candidate to published and build
+    # release.py internally handles: promotion, notes generation, build, status update
+    python script/release.py
     
-    # 2. Update releases.json (sync commit info for published)
-    python -c "import json, subprocess; r=json.load(open('release/releases.json')); r['published']['commit']=subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode().strip(); r['published']['date']=subprocess.check_output(['date', '-Iseconds']).decode().strip(); json.dump(r, open('release/releases.json', 'w'), indent=2)"
-    
-    # 3. Build
-    python script/build.py
-    
-    # 4. Commit, Tag and push
+    # 2. Commit, Tag and push
     git add .
     VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])")
     git commit -m "Publish release: v$VERSION"
