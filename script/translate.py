@@ -13,7 +13,7 @@ PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
 GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-1.5-flash')
-GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1'
+GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta'
 
 LANGUAGE_NAMES = {
     'ro': 'Romanian',
