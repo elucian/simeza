@@ -15,6 +15,34 @@
     "en": {
       "name": "chrysanthemums with apples",
       "description": "chrysanthemums with apples"
+    },
+    "de": {
+      "name": "Chrysanthemen mit Äpfeln",
+      "description": "Chrysanthemen mit Äpfeln"
+    },
+    "es": {
+      "name": "crisantemos con manzanas",
+      "description": "crisantemos con manzanas"
+    },
+    "fr": {
+      "name": "chrysanthèmes aux pommes",
+      "description": "chrysanthèmes aux pommes"
+    },
+    "hu": {
+      "name": "krizantémok almával",
+      "description": "krizantémok almával"
+    },
+    "it": {
+      "name": "crisantemi con mele",
+      "description": "crisantemi con mele"
+    },
+    "pt": {
+      "name": "crisântemos com maçãs",
+      "description": "crisântemos com maçãs"
+    },
+    "ru": {
+      "name": "хризантемы с яблоками",
+      "description": "хризантемы с яблоками"
     }
   },
   "source_hash": "46ded8ac727c774ce2bdfbdc6b45734e21abade43e33fe586c68c3e7580416d5"

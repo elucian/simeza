@@ -15,6 +15,34 @@
     "en": {
       "name": "sun on the beach",
       "description": "sun on the beach"
+    },
+    "de": {
+      "name": "Sonne am Strand",
+      "description": "Sonne am Strand"
+    },
+    "es": {
+      "name": "sol en la playa",
+      "description": "sol en la playa"
+    },
+    "fr": {
+      "name": "soleil sur la plage",
+      "description": "soleil sur la plage"
+    },
+    "hu": {
+      "name": "nap a tengerparton",
+      "description": "nap a tengerparton"
+    },
+    "it": {
+      "name": "sole in spiaggia",
+      "description": "sole in spiaggia"
+    },
+    "pt": {
+      "name": "sol na praia",
+      "description": "sol na praia"
+    },
+    "ru": {
+      "name": "солнце на пляже",
+      "description": "солнце на пляже"
     }
   },
   "source_hash": "0bf807b21e4aa34fbce47ef8ed6818df7bf2c59f54a5143ccc59efd0e1636a2c"

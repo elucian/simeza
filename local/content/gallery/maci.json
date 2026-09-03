@@ -15,6 +15,34 @@
     "en": {
       "name": "Poppies",
       "description": "Poppies"
+    },
+    "de": {
+      "name": "Mohn",
+      "description": "Mohn"
+    },
+    "es": {
+      "name": "Amapolas",
+      "description": "Amapolas"
+    },
+    "fr": {
+      "name": "Coquelicots",
+      "description": "Coquelicots"
+    },
+    "hu": {
+      "name": "Pipacsok",
+      "description": "Pipacsok"
+    },
+    "it": {
+      "name": "Papaveri",
+      "description": "Papaveri"
+    },
+    "pt": {
+      "name": "Papoulas",
+      "description": "Papoulas"
+    },
+    "ru": {
+      "name": "Маки",
+      "description": "Маки"
     }
   },
   "source_hash": "4323d25ee665dc4081aab31335eb82c29b696540ee9f7ffc017db8c3cdf2da13"

@@ -15,6 +15,34 @@
     "en": {
       "name": "mother's courtyard",
       "description": "mother's courtyard"
+    },
+    "de": {
+      "name": "der Hof der Mutter",
+      "description": "der Hof der Mutter"
+    },
+    "es": {
+      "name": "el patio de la madre",
+      "description": "el patio de la madre"
+    },
+    "fr": {
+      "name": "la cour de la mère",
+      "description": "la cour de la mère"
+    },
+    "hu": {
+      "name": "az anya udvara",
+      "description": "az anya udvara"
+    },
+    "it": {
+      "name": "il cortile della madre",
+      "description": "il cortile della madre"
+    },
+    "pt": {
+      "name": "o pátio da mãe",
+      "description": "o pátio da mãe"
+    },
+    "ru": {
+      "name": "двор матери",
+      "description": "двор матери"
     }
   },
   "source_hash": "070d652e536fb03fe071d7a3bd6e0fb6e931edbc346881620cac6ec092073ce2"

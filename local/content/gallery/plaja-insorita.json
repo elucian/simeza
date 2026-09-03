@@ -15,6 +15,34 @@
     "en": {
       "name": "sunny beach",
       "description": "sunny beach"
+    },
+    "de": {
+      "name": "sonniger Strand",
+      "description": "sonniger Strand"
+    },
+    "es": {
+      "name": "playa soleada",
+      "description": "playa soleada"
+    },
+    "fr": {
+      "name": "plage ensoleillée",
+      "description": "plage ensoleillée"
+    },
+    "hu": {
+      "name": "napos strand",
+      "description": "napos strand"
+    },
+    "it": {
+      "name": "spiaggia soleggiata",
+      "description": "spiaggia soleggiata"
+    },
+    "pt": {
+      "name": "praia ensolarada",
+      "description": "praia ensolarada"
+    },
+    "ru": {
+      "name": "солнечный пляж",
+      "description": "солнечный пляж"
     }
   },
   "source_hash": "45f490e95013de7512d5b2723da114b291b43e4b7eb76e79c358aac6ae27153e"

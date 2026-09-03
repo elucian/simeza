@@ -8,10 +8,13 @@ const lang = (urlLang && languages.includes(urlLang)) ? urlLang : (localStorage.
 const containers = document.querySelectorAll('.widget-placeholder, #panel-container, #gallery-container');
 
 containers.forEach(container => {
-    // Get type, fallback to 'gallery'
-    const type = container.getAttribute('data-widget') || container.getAttribute('data-type') || 'gallery';
-
-    const manifestUrl = lang === 'en' ? `/content/${type}/manifest.json` : `/content/${type}/manifest_${lang}.json`;
+    // Get type, fallback to 'gallery' only if data-widget or data-type is present, or if it's a specific container ID
+    const type = container.getAttribute('data-widget') || container.getAttribute('data-type');
+    if (!type && !['panel-container', 'gallery-container'].includes(container.id)) return;
+    
+    const effectiveType = type || 'gallery';
+    
+    const manifestUrl = lang === 'en' ? `/content/${effectiveType}/manifest.json` : `/content/${effectiveType}/manifest_${lang}.json`;
 
     fetch(manifestUrl)
         .then(response => {
@@ -34,7 +37,7 @@ containers.forEach(container => {
                 if (item.file) {
                         html += `
                     <div class="panel-image">
-                        <img src="/content/${type}/${item.file}" alt="${content.name}">
+                        <img src="/content/${effectiveType}/${item.file}" alt="${content.name}">
                     </div>`;
                 }
                 
@@ -52,9 +55,9 @@ containers.forEach(container => {
             });
         })
         .catch(error => {
-            console.error(`Error loading ${type}:`, error);
+            console.error(`Error loading ${effectiveType}:`, error);
             if (container) {
-                container.innerHTML = `<p>Error loading ${type}. Please try again later.</p>`;
+                container.innerHTML = `<p>Error loading ${effectiveType}. Please try again later.</p>`;
             }
         });
 });
