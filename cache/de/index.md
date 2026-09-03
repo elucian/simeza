@@ -1,27 +1,26 @@
 ---
-title: La Simeza - Contemporary Art Gallery & Community
-description: Explore contemporary art, writings, paintings, books, and exhibitions at Simeza Art Gallery.
-keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibitions, books, culture
+title: La Simeza - Galerie für zeitgenössische Kunst & Gemeinschaft
+description: Entdecken Sie zeitgenössische Kunst, Schriften, Gemälde, Bücher und Ausstellungen in der Simeza Art Gallery.
+keywords: Simeza, Kunstgalerie, zeitgenössische Kunst, rumänische Kunst, Gemälde, Ausstellungen, Bücher, Kultur
 source_hash: c1fc42a9c78816a370de875cf87f632d9c7d9e223d6e30797228be97206fef98
 ---
-# Welcome to Simeza
+# Willkommen bei Simeza
 
-**Original paintings and artistic photography in high resolution. Original books, rare writings, and polyglot reading materials for language learners, book authors, and art collectors.**
+**Originalgemälde und künstlerische Fotografie in hoher Auflösung. Originalbücher, seltene Schriften und polyglotte Lektüren für Sprachlernende, Buchautoren und Kunstsammler.**
 
 ---
 
-<h2 id="about">About Simeza</h2>
+<h2 id="about">Über Simeza</h2>
 
-Simeza is an independent cultural platform dedicated to exhibiting contemporary visual art, curating literary works, and hosting cultural events. The platform serves as a direct conduit between creators and audiences, supporting diverse mediums including paintings, drawings, photography, and digital works.
+Simeza ist eine unabhängige Kulturplattform, die sich der Ausstellung zeitgenössischer bildender Kunst, der Kuratierung literarischer Werke und der Ausrichtung kultureller Veranstaltungen widmet. Die Plattform dient als direkte Verbindung zwischen Kunstschaffenden und Publikum und unterstützt verschiedene Medien, darunter Gemälde, Zeichnungen, Fotografie und digitale Arbeiten.
 
-<h2 id="focus">Core Focus Areas</h2>
+<h2 id="focus">Schwerpunkte</h2>
 
-| Section | Description |
+| Bereich | Beschreibung |
 | --- | --- |
-| **[Gallery](https://www.google.com/search?q=gallery.html)** | Curated collections of original paintings, drawings, and artistic photography. |
-| **[Authors](https://www.google.com/search?q=authors.html)** | Portfolios, biographies, and statements from resident and featured creators. |
-| **[Events](https://www.google.com/search?q=events.html)** | Schedules for upcoming physical and digital exhibitions, presentations, and cultural gatherings. |
-| **[Writings](https://www.google.com/search?q=writings.html)** | Rare writings, critical essays, and artistic publications. |
-| **[Books](https://www.google.com/search?q=books.html)** | Original books and polyglot reading materials tailored for language learners and collectors. |
-| **[About](https://www.google.com/search?q=index.html)** | Institutional background, platform manifesto, and project goals. |
-
+| **[Galerie](https://www.google.com/search?q=gallery.html)** | Kuratierte Sammlungen von Originalgemälden, Zeichnungen und künstlerischer Fotografie. |
+| **[Autoren](https://www.google.com/search?q=authors.html)** | Portfolios, Biografien und Statements von ansässigen und vorgestellten Kunstschaffenden. |
+| **[Veranstaltungen](https://www.google.com/search?q=events.html)** | Termine für kommende physische und digitale Ausstellungen, Präsentationen und kulturelle Zusammenkünfte. |
+| **[Schriften](https://www.google.com/search?q=writings.html)** | Seltene Schriften, kritische Essays und künstlerische Publikationen. |
+| **[Bücher](https://www.google.com/search?q=books.html)** | Originalbücher und polyglotte Lektüren, maßgeschneidert für Sprachlernende und Sammler. |
+| **[Über uns](https://www.google.com/search?q=index.html)** | Institutioneller Hintergrund, Plattform-Manifest und Projektziele. |

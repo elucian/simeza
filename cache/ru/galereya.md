@@ -1,11 +1,11 @@
 ---
-title: Gallery - Simeza Art
-description: A curated collection of photographic works and paintings from Simeza Art gallery.
-keywords: simeza, art, gallery, paintings, pictures, photography, fine art
+title: Галерея - Simeza Art
+description: Кураторская коллекция фотографических работ и картин из галереи Simeza Art.
+keywords: simeza, искусство, галерея, живопись, картины, фотография, изобразительное искусство
 source_hash: 106c382fc87a392681de030bad5d59242e9b119ade2b16e1da002b445cf3471f
 ---
-# Gallery
+# Галерея
 
-Welcome to the Gallery section of Simeza Art.
+Добро пожаловать в раздел «Галерея» Simeza Art.
 
-Explore our collection of fine paintings and photographic works exhibited at Simeza Art.
+Познакомьтесь с нашей коллекцией изысканной живописи и фоторабот, представленных в Simeza Art.

@@ -12,8 +12,8 @@ LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
-GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-1.5-flash')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta'
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-3.5-flash-light')
 
 LANGUAGE_NAMES = {
     'ro': 'Romanian',
@@ -94,9 +94,16 @@ def translate_text(text, target_lang):
         'contents': [{'parts': [{'text': prompt}]}],
         'generationConfig': {'temperature': 0.2}
     }
-    url = f'{GEMINI_API_URL}/{GEMINI_MODEL}:generateContent'
-    # Add debugging: print URL (masking the API key)
-    print(f"Requesting URL: {url.replace(api_key, 'REDACTED')}")
+    # Correct construction: API_URL/MODEL_NAME:generateContent
+    # Using v1beta as it supports recent models
+    api_url = 'https://generativelanguage.googleapis.com/v1beta'
+    model_name = 'models/gemini-3.5-flash'
+    url = f'{api_url}/{model_name}:generateContent'
+    
+    # Debugging
+    print(f"Requesting URL: {url}")
+    print(f"API Key: {api_key[:5]}...{api_key[-5:]}")
+    print(f"Payload: {json.dumps(payload)[:100]}")
     
     request = urllib.request.Request(
         f'{url}?key={api_key}',

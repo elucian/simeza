@@ -1,11 +1,11 @@
 ---
 title: Veranstaltungen - Simeza Art
-description: Nehmen Sie an unseren Community-Veranstaltungen und Galerieausstellungen in der Simeza Art teil.
-keywords: simeza, kunst, galerie, veranstaltungen, ausstellungen
+description: Nehmen Sie an unseren Community-Events und Galerieausstellungen bei Simeza Art teil.
+keywords: simeza, Kunst, Galerie, Veranstaltungen, Ausstellungen
 source_hash: 6a7728a615a047387fb0ec1a69c1189cca5a48935437272ff5b1307229862d2a
 ---
-# Events
+# Veranstaltungen
 
-Willkommen im Veranstaltungsbereich von Simeza Art.
+Willkommen im Bereich „Veranstaltungen“ von Simeza Art.
 
-Der Inhalt für diesen Abschnitt wird in Kürze verfügbar sein.
+Inhalte für diesen Bereich sind in Kürze verfügbar.
