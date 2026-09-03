@@ -1,26 +1,26 @@
 ---
 title: La Simeza - Galeria de Arte Contemporânea & Comunidade
-description: Explore arte contemporânea, escritos, pinturas, livros e exposições na Galeria de Arte Simeza.
+description: Explore arte contemporânea, escritos, pinturas, livros e exposições na Simeza Art Gallery.
 keywords: simeza, galeria de arte, arte contemporânea, arte romena, pinturas, exposições, livros, cultura
-source_hash: c1fc42a9c78816a370de875cf87f632d9c7d9e223d6e30797228be97206fef98
+source_hash: 9d473e207000e084c7169c3ddf2aa29867f7e20a67462ef4347af53ac140d93e
 ---
 # Bem-vindo à Simeza
 
-**Pinturas originais e fotografia artística em alta resolução. Livros originais, escritos raros e materiais de leitura poliglotas para estudantes de idiomas, autores de livros e colecionadores de arte.**
+**Aquisição por oferta direta para pesquisadores, autores e colecionadores.**
 
+Telas originais, monografias linguísticas, edições raras e fotografia artística de alta resolução. Explore a galeria, faça o download de artefatos digitais ou adquira edições físicas.
+    
 ---
 
-<h2 id="about">Sobre a Simeza</h2>
+<h2 id="about">Sobre a Plataforma Simeza</h2>
 
-Simeza é uma plataforma cultural independente dedicada a exibir arte visual contemporânea, curar obras literárias e realizar eventos culturais. A plataforma serve como um canal direto entre criadores e públicos, apoiando diversos meios, incluindo pinturas, desenhos, fotografia e obras digitais.
+A Simeza é uma plataforma de publicação independente para livros raros multilíngues, guias de idiomas e arte original. Oferecemos obras exclusivas para autores, estudantes de idiomas e colecionadores de arte por meio de ofertas diretas.
 
 <h2 id="focus">Principais Áreas de Foco</h2>
 
-| Seção | Descrição |
-| --- | --- |
-| **[Galeria](https://www.google.com/search?q=gallery.html)** | Coleções com curadoria de pinturas originais, desenhos e fotografia artística. |
-| **[Autores](https://www.google.com/search?q=authors.html)** | Portfólios, biografias e declarações de criadores residentes e de destaque. |
-| **[Eventos](https://www.google.com/search?q=events.html)** | Programação de próximas exposições físicas e digitais, apresentações e encontros culturais. |
-| **[Escritos](https://www.google.com/search?q=writings.html)** | Escritos raros, ensaios críticos e publicações artísticas. |
-| **[Livros](https://www.google.com/search?q=books.html)** | Livros originais e materiais de leitura poliglotas sob medida para estudantes de idiomas e colecionadores. |
-| **[Sobre](https://www.google.com/search?q=index.html)** | Histórico institucional, manifesto da plataforma e objetivos do projeto. |
+| Foco | Descrição | 
+| :--- | :--- | 
+| **Multilíngue** | Hospedamos textos originais e traduzimos para 8 idiomas para um público internacional. | 
+| **Arte Original** | Telas autênticas e obras de arte visual disponíveis para colecionadores. | 
+| **Fotografia Artística** | Impressões fotográficas de alta resolução e arquivos digitais. | 
+| **Aquisição Direta** | Adquira itens físicos ou faça o download de edições digitais diretamente de nossa plataforma. |

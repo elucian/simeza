@@ -1,26 +1,26 @@
 ---
 title: La Simeza - Galerie de Artă Contemporană & Comunitate
-description: Explorează arta contemporană, scrierile, picturile, cărțile și expozițiile de la Galeria de Artă Simeza.
-keywords: simeză, galerie de artă, artă contemporană, artă românească, picturi, expoziții, cărți, cultură
-source_hash: c1fc42a9c78816a370de875cf87f632d9c7d9e223d6e30797228be97206fef98
+description: Explorează artă contemporană, scrieri, picturi, cărți și expoziții la Galeria de Artă Simeza.
+keywords: simeza, galerie de artă, artă contemporană, artă românească, picturi, expoziții, cărți, cultură
+source_hash: 9d473e207000e084c7169c3ddf2aa29867f7e20a67462ef4347af53ac140d93e
 ---
 # Bun venit la Simeza
 
-**Picturi originale și fotografie artistică la rezoluție înaltă. Cărți originale, scrieri rare și materiale de lectură poligloate pentru cei care învață limbi străine, autori de cărți și colecționari de artă.**
+**Achiziție prin ofertă directă pentru cercetători, autori și colecționari.**
 
+Pânze originale, monografii lingvistice, ediții rare și fotografie artistică de înaltă rezoluție. Explorează galeria, descarcă artefacte digitale sau achiziționează ediții fizice.
+    
 ---
 
-<h2 id="about">Despre Simeza</h2>
+<h2 id="about">Despre Platforma Simeza</h2>
 
-Simeza este o platformă culturală independentă dedicată expunerii artei vizuale contemporane, curatorierii operelor literare și găzduirii de evenimente culturale. Platforma servește ca un canal direct între creatori și public, susținând diverse medii, inclusiv picturi, desene, fotografie și lucrări digitale.
+Simeza este o platformă de editare independentă pentru cărți rare multilingve, ghiduri lingvistice și artă originală. Oferim lucrări unice autorilor, celor care învață limbi străine și colecționarilor de artă prin oferte directe.
 
 <h2 id="focus">Domenii principale de interes</h2>
 
-| Secțiune | Descriere |
-| --- | --- |
-| **[Galerie](https://www.google.com/search?q=gallery.html)** | Colecții curatoriate de picturi originale, desene și fotografie artistică. |
-| **[Autori](https://www.google.com/search?q=authors.html)** | Portofolii, biografii și declarații ale creatorilor rezidenți și promovați. |
-| **[Evenimente](https://www.google.com/search?q=events.html)** | Programul viitoarelor expoziții fizice și digitale, prezentări și întâlniri culturale. |
-| **[Scrieri](https://www.google.com/search?q=writings.html)** | Scrieri rare, eseuri critice și publicații artistice. |
-| **[Cărți](https://www.google.com/search?q=books.html)** | Cărți originale și materiale de lectură poligloate, adaptate pentru cei care învață limbi străine și colecționari. |
-| **[Despre](https://www.google.com/search?q=index.html)** | Context instituțional, manifestul platformei și obiectivele proiectului. |
+| Focus | Descriere | 
+| :--- | :--- | 
+| **Multilingv** | Găzduim text original și traducem în 8 limbi pentru un public internațional. | 
+| **Artă originală** | Pânze autentice și opere de artă vizuală disponibile pentru colecționari. | 
+| **Fotografie artistică** | Printuri fotografice de înaltă rezoluție și arhive digitale. | 
+| **Achiziție directă** | Achiziționează obiecte fizice sau descarcă ediții digitale direct de pe platforma noastră. |
