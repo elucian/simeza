@@ -1,0 +1,11 @@
+{
+  "id": "event-1",
+  "file": "flyer.jpg",
+  "date": "2026-10-01",
+  "location": "Venue Name",
+  "original": "en",
+  "content": {
+    "en": { "title": "...", "description": "..." },
+    "it": { "title": "...", "description": "..." }
+  }
+}

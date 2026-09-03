@@ -1,0 +1,11 @@
+{
+  "id": "author-1",
+  "file": "photo.jpg",
+  "name": "Full Name",
+  "birth_year": 1980,
+  "original": "en",
+  "content": {
+    "en": { "bio": "...", "role": "..." },
+    "it": { "bio": "...", "role": "..." }
+  }
+}
