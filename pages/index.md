@@ -10,9 +10,9 @@ keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibi
 
 ---
 
-<h2 id="about">About Simeza</h2>
+<h2 id="about">About Simeza Platform</h2>
 
-Simeza is an independent cultural platform dedicated to exhibiting contemporary visual art, curating literary works, and hosting cultural events. The platform serves as a direct conduit between creators and audiences, supporting diverse mediums including paintings, drawings, photography, and digital works.
+Simeza is an independent cultural portal dedicated to exhibiting contemporary visual art, curating literary works, and hosting cultural events. The platform serves as a direct conduit between creators and audiences, supporting diverse mediums including paintings, drawings, photography, and digital works.
 
 <h2 id="focus">Core Focus Areas</h2>
 
