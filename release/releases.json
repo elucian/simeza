@@ -1,14 +1,14 @@
 {
   "published": {
     "version": "",
-    "commit": "472affbe36ba46b94d99f8c2bd5bf6343e5cbf43",
-    "date": "2026-09-03T16:02:00-04:00",
+    "commit": "756b3672b13cd56f89f8885124179667db7e94ad",
+    "date": "2026-09-03T16:20:38-04:00",
     "notes": ""
   },
   "candidate": {
     "version": "",
-    "commit": "5e35d83b0a5dad5adc721ed144ab4330dea54d58",
-    "date": "2026-09-03T16:14:23-04:00",
+    "commit": "",
+    "date": "",
     "notes": ""
   }
 }
