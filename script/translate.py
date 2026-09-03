@@ -175,7 +175,7 @@ def translate_pages(target_langs):
             with open(target_path, 'w', encoding='utf-8') as f:
                 f.write(meta_str + trans_body)
     
-    def translate_menu(target_langs):
+def translate_menu(target_langs):
     # 2. Translate Menu
     menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
     with open(menu_file, 'r', encoding='utf-8') as f:
