@@ -6,6 +6,7 @@ import time
 import re
 import hashlib
 import shutil
+import sys
 
 # Configuration
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
@@ -13,7 +14,7 @@ PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta'
-GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-3.5-flash-light')
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-3.5-flash-lite')
 
 LANGUAGE_NAMES = {
     'ro': 'Romanian',
@@ -71,6 +72,20 @@ def parse_frontmatter(content):
             meta[k.strip().lower()] = v.strip()
     return meta, body
 
+def normalize_gemini_model(model):
+    """Accept the common flash-light typo, but call the API with flash-lite."""
+    if model.endswith('-light'):
+        return f'{model[:-len("-light")]}-lite'
+    return model
+
+def format_translation_error(error):
+    if isinstance(error, urllib.error.HTTPError):
+        detail = error.read().decode('utf-8', errors='replace')[:500]
+        return f'HTTP {error.code}: {detail}'
+    if isinstance(error, urllib.error.URLError):
+        return f'URL error: {error.reason}'
+    return f'{type(error).__name__}: {error}'
+
 def translate_text(text, target_lang):
     """Translate text using the Gemini API."""
     if not text.strip():
@@ -94,16 +109,7 @@ def translate_text(text, target_lang):
         'contents': [{'parts': [{'text': prompt}]}],
         'generationConfig': {'temperature': 0.2}
     }
-    # Correct construction: API_URL/MODEL_NAME:generateContent
-    # Using v1beta as it supports recent models
-    api_url = 'https://generativelanguage.googleapis.com/v1beta'
-    model_name = 'models/gemini-3.5-flash'
-    url = f'{api_url}/{model_name}:generateContent'
-    
-    # Debugging
-    print(f"Requesting URL: {url}")
-    print(f"API Key: {api_key[:5]}...{api_key[-5:]}")
-    print(f"Payload: {json.dumps(payload)[:100]}")
+    url = f'{GEMINI_API_URL}/{normalize_gemini_model(GEMINI_MODEL)}:generateContent'
     
     request = urllib.request.Request(
         f'{url}?key={api_key}',
@@ -117,8 +123,7 @@ def translate_text(text, target_lang):
             res_data = json.loads(resp.read().decode("utf-8"))
             return res_data['candidates'][0]['content']['parts'][0]['text'].strip()
     except (urllib.error.HTTPError, urllib.error.URLError, KeyError, IndexError, json.JSONDecodeError) as e:
-        print(f"Translation error: {e}")
-    return text # Fallback
+        raise RuntimeError(f'Translation failed for {target_lang}: {format_translation_error(e)}') from e
 
 def translate_all():
     # 1. Translate Pages
@@ -212,4 +217,12 @@ def translate_all():
             json.dump(translated_menu, f, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
-    translate_all()
+    try:
+        translate_all()
+    except RuntimeError as e:
+        print(f"Error: {e}", file=sys.stderr)
+        print("Run 'source ./run.sh setup' first, or put GEMINI_API_KEY in .env and use './run.sh translate'.", file=sys.stderr)
+        sys.exit(1)
+    except KeyboardInterrupt:
+        print("Translation interrupted; no in-progress file was written.", file=sys.stderr)
+        sys.exit(130)

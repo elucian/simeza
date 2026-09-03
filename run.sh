@@ -14,6 +14,14 @@
 
 CMD=$1
 
+load_env() {
+    if [ -f .env ]; then
+        set -a
+        . ./.env
+        set +a
+    fi
+}
+
 if [ "$CMD" == "setup" ]; then
     if [[ "${BASH_SOURCE[0]}" == "${0}" ]]; then
         echo "Error: You must run 'source ./run.sh setup' to set variables."
@@ -33,10 +41,12 @@ elif [ "$CMD" == "commit" ]; then
     echo "Changes committed locally."
 
 elif [ "$CMD" == "translate" ]; then
+    load_env
     python script/translate.py
 
 elif [ "$CMD" == "build" ]; then
     echo "Building candidate..."
+    load_env
     # 0. Translate
     python script/translate.py
     # 1. Commit changes
