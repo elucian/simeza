@@ -1,11 +1,11 @@
 ---
-title: Acerca de - Simeza Art
-description: Descubre la historia, la visión y los artistas detrás de Simeza Art.
-keywords: simeza, arte, galería, sobre, historia
+title: About - Simeza Art
+description: Discover the history, vision, and artists behind Simeza Art.
+keywords: simeza, art, gallery, about, history
 source_hash: 8b5be09d5d11c110daaf7baaebbf4eb2ce3d231131559727560e812d79f38fa4
 ---
-# Acerca de
+# About
 
-Bienvenido a la sección Acerca de Simeza Art.
+Welcome to the About section of Simeza Art.
 
-El contenido de esta sección estará disponible pronto.
+Content for this section will be available soon.

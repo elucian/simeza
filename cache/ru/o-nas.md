@@ -1,11 +1,11 @@
 ---
-title: О нас - Simeza Art
-description: Откройте для себя историю, видение и художников, стоящих за искусством Симезы.
-keywords: симеза, искусство, галерея, о нас, история
+title: About - Simeza Art
+description: Discover the history, vision, and artists behind Simeza Art.
+keywords: simeza, art, gallery, about, history
 source_hash: 8b5be09d5d11c110daaf7baaebbf4eb2ce3d231131559727560e812d79f38fa4
 ---
-# О программе
+# About
 
-Добро пожаловать в раздел «О нас» в Simeza Art.
+Welcome to the About section of Simeza Art.
 
-Контент для этого раздела будет доступен в ближайшее время.
+Content for this section will be available soon.
