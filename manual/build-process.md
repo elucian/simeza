@@ -7,7 +7,7 @@ This project uses a decoupled Static Site Generation (SSG) pipeline designed for
 - **`pages/`**: Contains the Source of Truth (English markdown).
 - **`cache/`**: Contains the versioned, translated, human-editable localized markdown and menu files.
 - **`layout/`**: Shared templates and global base menu.
-- **`public/`**: Ephemeral output directory (generated files, not versioned in Git).
+- **`local/`**: Ephemeral output directory (generated files, not versioned in Git).
 - **`script/`**: Contains translation automation and offline build logic.
 
 ## 2. The Cache System (`cache/`)
@@ -39,12 +39,12 @@ The build process is **100% offline** and runs in milliseconds.
 1. **Source Parsing**: Reads `pages/*.md` for English and `cache/<lang>/*.md` for other languages.
 2. **Metadata & Content**: Parses YAML frontmatter (title, description, keywords) and converts Markdown body to HTML.
 3. **Template Injection**: Injects data into `layout/template.html` (replaces `{{title}}`, `{{menu}}`, `{{page-content}}`, etc.).
-4. **Static Generation**: Writes the resulting HTML files to `public/<lang>/<slug>.html`.
-5. **Asset Sync**: Copies `core/` (JS/CSS) and `files/` assets to `public/`.
+4. **Static Generation**: Writes the resulting HTML files to `local/<lang>/<slug>.html`.
+5. **Asset Sync**: Copies `core/` (JS/CSS) and `files/` assets to `local/`.
 
 ## 4. Operational Commands (`run.sh`)
 
 - **`./run.sh translate`**: Scans for changes in `pages/`, calls the translation API (if needed), and updates `cache/<lang>/`.
-- **`./run.sh build`**: Runs the offline compilation pipeline to generate the `public/` directory.
-- **`./run.sh serve`**: Serves the generated `public/` folder on `http://localhost:8000`.
-- **`./run.sh clean`**: Deletes the `public/` directory.
+- **`./run.sh build`**: Runs the offline compilation pipeline to generate the `local/` directory.
+- **`./run.sh serve`**: Serves the generated `local/` folder on `http://localhost:8000`.
+- **`./run.sh clean`**: Deletes the `local/` directory.

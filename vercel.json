@@ -1,4 +1,4 @@
 {
-  "outputDirectory": "public",
+  "outputDirectory": "local",
   "buildCommand": "python script/build.py"
 }

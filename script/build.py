@@ -13,7 +13,7 @@ ROOT = os.getcwd()
 PAGES_DIR = os.path.join(ROOT, 'pages')
 CACHE_DIR = os.path.join(ROOT, 'cache')
 LAYOUT_DIR = os.path.join(ROOT, 'layout')
-PUBLIC_DIR = os.path.join(ROOT, 'public')
+LOCAL_DIR = os.path.join(ROOT, 'local')
 RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 def write_summary(summary_text):
@@ -72,9 +72,9 @@ def build():
     start_time = time.time()
     print(f'Starting build at {time.ctime()}')
     
-    if os.path.exists(PUBLIC_DIR):
-        shutil.rmtree(PUBLIC_DIR)
-    os.makedirs(PUBLIC_DIR, exist_ok=True)
+    if os.path.exists(LOCAL_DIR):
+        shutil.rmtree(LOCAL_DIR)
+    os.makedirs(LOCAL_DIR, exist_ok=True)
 
     with open(RELEASE_FILE, 'r') as f:
         releases = json.load(f)
@@ -86,7 +86,7 @@ def build():
     summary = ['# Build Report', f'**Version**: {version}', '| Language | Code | Pages Compiled | Status |', '| :--- | :--- | :--- | :--- |']
     
     for lang in LANGUAGES:
-        lang_dir = os.path.join(PUBLIC_DIR, lang)
+        lang_dir = os.path.join(LOCAL_DIR, lang)
         os.makedirs(lang_dir, exist_ok=True)
         pages_count = 0
         
@@ -135,20 +135,20 @@ def build():
                 f.write(final_html)
             
             if file == 'index.md' and lang == 'en':
-                with open(os.path.join(PUBLIC_DIR, 'index.html'), 'w', encoding='utf-8') as f:
+                with open(os.path.join(LOCAL_DIR, 'index.html'), 'w', encoding='utf-8') as f:
                     f.write(final_html)
             pages_count += 1
             
         summary.append(f'| {lang.upper()} |  | {pages_count} pages | ✅ Ready |')
 
     if os.path.exists(os.path.join(ROOT, 'CNAME')):
-        shutil.copy(os.path.join(ROOT, 'CNAME'), os.path.join(PUBLIC_DIR, 'CNAME'))
-    with open(os.path.join(PUBLIC_DIR, '.nojekyll'), 'w') as f:
+        shutil.copy(os.path.join(ROOT, 'CNAME'), os.path.join(LOCAL_DIR, 'CNAME'))
+    with open(os.path.join(LOCAL_DIR, '.nojekyll'), 'w') as f:
         f.write('')
 
-    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(PUBLIC_DIR, 'core'), dirs_exist_ok=True)
+    shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(LOCAL_DIR, 'core'), dirs_exist_ok=True)
     if os.path.exists(os.path.join(ROOT, 'files')):
-        shutil.copytree(os.path.join(ROOT, 'files'), os.path.join(PUBLIC_DIR, 'files'), dirs_exist_ok=True)
+        shutil.copytree(os.path.join(ROOT, 'files'), os.path.join(LOCAL_DIR, 'files'), dirs_exist_ok=True)
     
     duration = time.time() - start_time
     print(f'\nBuild completed in {duration:.2f} seconds.')
