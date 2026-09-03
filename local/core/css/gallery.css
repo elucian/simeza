@@ -38,7 +38,7 @@ html, body {
   min-height: 0;
   display: flex;
   flex-direction: column;
-  padding: 8px 20px;
+  padding: 8px 20px 16px 20px;
   overflow: hidden;
 }
 
@@ -186,13 +186,25 @@ html, body {
 
 #socialFooter {
   flex: 0 0 auto;
-  height: 44px;
   background: var(--bg-footer);
   border-top: 1px solid var(--border-color);
-  padding: 0 20px;
+  padding: 12px 20px;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: 0.75rem;
+  gap: 6px;
+}
+
+#socialFooter .social-icons-wrapper {
+  font-size: 1.25rem;
+  display: flex;
+  gap: 15px;
+}
+
+#socialFooter .copyright {
+  font-size: 0.8rem;
+  margin: 0;
+  color: var(--text-main);
 }
 
