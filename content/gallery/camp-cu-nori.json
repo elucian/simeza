@@ -15,6 +15,34 @@
     "en": {
       "name": "field with clouds",
       "description": "field with clouds"
+    },
+    "de": {
+      "name": "Feld mit Wolken",
+      "description": "Feld mit Wolken"
+    },
+    "es": {
+      "name": "campo con nubes",
+      "description": "campo con nubes"
+    },
+    "fr": {
+      "name": "champ avec des nuages",
+      "description": "champ avec des nuages"
+    },
+    "hu": {
+      "name": "mező felhőkkel",
+      "description": "mező felhőkkel"
+    },
+    "it": {
+      "name": "campo con nuvole",
+      "description": "campo con nuvole"
+    },
+    "pt": {
+      "name": "campo com nuvens",
+      "description": "campo com nuvens"
+    },
+    "ru": {
+      "name": "поле с облаками",
+      "description": "поле с облаками"
     }
   },
   "source_hash": "68edc84830449b554bf06839fc94bc3d9fb8c543d9a28123e8165df0dc553e05"

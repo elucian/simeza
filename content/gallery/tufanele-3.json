@@ -15,6 +15,34 @@
     "en": {
       "name": "chrysanthemums 3",
       "description": "chrysanthemums 3"
+    },
+    "de": {
+      "name": "Chrysanthemen 3",
+      "description": "Chrysanthemen 3"
+    },
+    "es": {
+      "name": "crisantemos 3",
+      "description": "crisantemos 3"
+    },
+    "fr": {
+      "name": "chrysanthèmes 3",
+      "description": "chrysanthèmes 3"
+    },
+    "hu": {
+      "name": "krizantémok 3",
+      "description": "krizantémok 3"
+    },
+    "it": {
+      "name": "crisantemi 3",
+      "description": "crisantemi 3"
+    },
+    "pt": {
+      "name": "crisântemos 3",
+      "description": "crisântemos 3"
+    },
+    "ru": {
+      "name": "хризантемы 3",
+      "description": "хризантемы 3"
     }
   },
   "source_hash": "ec35664711538624130f9ea585280b1092430e0b5985d635ff02fa3e8f47bf21"

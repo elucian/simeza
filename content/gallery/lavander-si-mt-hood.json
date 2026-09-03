@@ -15,6 +15,34 @@
     "en": {
       "name": "Lavender and Mt Hood",
       "description": "Lavender and Mt Hood"
+    },
+    "de": {
+      "name": "Lavendel und Mt Hood",
+      "description": "Lavendel und Mt Hood"
+    },
+    "es": {
+      "name": "Lavanda y Mt Hood",
+      "description": "Lavanda y Mt Hood"
+    },
+    "fr": {
+      "name": "Lavande et Mt Hood",
+      "description": "Lavande et Mt Hood"
+    },
+    "hu": {
+      "name": "Levendula és Mt Hood",
+      "description": "Levendula és Mt Hood"
+    },
+    "it": {
+      "name": "Lavanda e Mt Hood",
+      "description": "Lavanda e Mt Hood"
+    },
+    "pt": {
+      "name": "Lavanda e Mt Hood",
+      "description": "Lavanda e Mt Hood"
+    },
+    "ru": {
+      "name": "Лаванда и Маунт-Худ",
+      "description": "Лаванда и Маунт-Худ"
     }
   },
   "source_hash": "05b83756343efdfa9c90c24b97bccd3ed3e831625ee4c49b366f24b18d069287"

@@ -15,6 +15,34 @@
     "en": {
       "name": "peonies 2",
       "description": "peonies 2"
+    },
+    "de": {
+      "name": "Pfingstrosen 2",
+      "description": "Pfingstrosen 2"
+    },
+    "es": {
+      "name": "peonías 2",
+      "description": "peonías 2"
+    },
+    "fr": {
+      "name": "pivoines 2",
+      "description": "pivoines 2"
+    },
+    "hu": {
+      "name": "bazsarózsák 2",
+      "description": "bazsarózsák 2"
+    },
+    "it": {
+      "name": "peonie 2",
+      "description": "peonie 2"
+    },
+    "pt": {
+      "name": "peônias 2",
+      "description": "peônias 2"
+    },
+    "ru": {
+      "name": "пионы 2",
+      "description": "пионы 2"
     }
   },
   "source_hash": "21d55ad61552d9e5fb671ab1f94fa393a3b500b2d56bc847a0b749faa1d0385a"

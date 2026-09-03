@@ -15,6 +15,34 @@
     "en": {
       "name": "snapdragon",
       "description": "snapdragon"
+    },
+    "de": {
+      "name": "Löwenmaul",
+      "description": "Löwenmäulchen"
+    },
+    "es": {
+      "name": "boca de dragón",
+      "description": "boca de dragón"
+    },
+    "fr": {
+      "name": "gueule-de-loup",
+      "description": "gueule-de-loup"
+    },
+    "hu": {
+      "name": "oroszlánszáj",
+      "description": "oroszlánszáj"
+    },
+    "it": {
+      "name": "bocca di leone",
+      "description": "bocca di leone"
+    },
+    "pt": {
+      "name": "boca-de-leão",
+      "description": "boca-de-leão"
+    },
+    "ru": {
+      "name": "львиный зев",
+      "description": "львиный зев"
     }
   },
   "source_hash": "2c0488cc72404e4ae04fb05ead4acadbb0eaf5b7862e460a91e4910b67e1088b"

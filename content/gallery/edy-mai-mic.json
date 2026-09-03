@@ -15,6 +15,34 @@
     "en": {
       "name": "Edy the younger",
       "description": "Younger Edy"
+    },
+    "de": {
+      "name": "Edy der Jüngere",
+      "description": "Edy der Jüngere"
+    },
+    "es": {
+      "name": "Edy el pequeño",
+      "description": "Edy el pequeño"
+    },
+    "fr": {
+      "name": "Edy le plus jeune",
+      "description": "Edy le plus jeune"
+    },
+    "hu": {
+      "name": "Ifjabb Edy",
+      "description": "Ifjabb Edy"
+    },
+    "it": {
+      "name": "Edy il più piccolo",
+      "description": "Edy il più piccolo"
+    },
+    "pt": {
+      "name": "Edy o mais novo",
+      "description": "Edy o mais novo"
+    },
+    "ru": {
+      "name": "Эди младший",
+      "description": "Эди младший"
     }
   },
   "source_hash": "3255d64026569dbfb693405294335e9919af653c2353acbe9bf75729e5740e70"

@@ -15,6 +15,34 @@
     "en": {
       "name": "Pasărea Hermitage",
       "description": "Pasărea Hermitage"
+    },
+    "de": {
+      "name": "Pasarea-Einsiedelei",
+      "description": "Pasărea-Einsiedelei"
+    },
+    "es": {
+      "name": "Ermita de Pasarea",
+      "description": "Ermita de Pasărea"
+    },
+    "fr": {
+      "name": "Ermitage de Pasarea",
+      "description": "Ermitage de Pasărea"
+    },
+    "hu": {
+      "name": "Pasăreai remeteség",
+      "description": "Pasărea-i kolostor"
+    },
+    "it": {
+      "name": "Eremo di Pasarea",
+      "description": "Eremo di Pasărea"
+    },
+    "pt": {
+      "name": "Ermida de Pasarea",
+      "description": "Ermida de Pasărea"
+    },
+    "ru": {
+      "name": "Скит Пасяря",
+      "description": "Скит Пэсяря"
     }
   },
   "source_hash": "dba7cf78d35cd518ba4d0bcd7ac22a99c42368d7d26ae3e77eac9bbb79f0f41f"
