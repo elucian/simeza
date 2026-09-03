@@ -110,3 +110,71 @@
   footer.appendChild(iconsWrapper);
   footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
 
+
+function initFullscreenViewer() {
+    const viewer = document.createElement('div');
+    viewer.id = 'imageFullscreenViewer';
+    viewer.innerHTML = `
+        <button class="gallery-modal-close-x" aria-label="Close">&times;</button>
+        <img src="" alt="Fullscreen Image">
+    `;
+    document.body.appendChild(viewer);
+
+    const viewerImg = viewer.querySelector('img');
+    const closeBtn = viewer.querySelector('.gallery-modal-close-x');
+    
+    function closeViewer() {
+        viewer.classList.remove('active');
+    }
+
+    closeBtn.addEventListener('click', closeViewer);
+    viewer.addEventListener('click', (e) => {
+        if (e.target === viewer) closeViewer();
+    });
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') closeViewer();
+    });
+
+    function updateRotation(imgElement) {
+        const isScreenPortrait = window.innerHeight >= window.innerWidth;
+        const isImgPortrait = (imgElement.naturalHeight || imgElement.height) >= (imgElement.naturalWidth || imgElement.width);
+        
+        if ((isScreenPortrait && !isImgPortrait) || (!isScreenPortrait && isImgPortrait)) {
+            imgElement.classList.add('rotated');
+        } else {
+            imgElement.classList.remove('rotated');
+        }
+    }
+
+    // Double tap/click handler
+    let lastTap = 0;
+    document.addEventListener('dblclick', (e) => {
+        if (e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+            viewerImg.src = e.target.src;
+            viewer.classList.add('active');
+            updateRotation(viewerImg);
+        }
+    });
+
+    // Touch support for double tap
+    document.addEventListener('touchend', (e) => {
+        const currentTime = new Date().getTime();
+        const tapLength = currentTime - lastTap;
+        if (tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+            viewerImg.src = e.target.src;
+            viewer.classList.add('active');
+            updateRotation(viewerImg);
+            e.preventDefault();
+        }
+        lastTap = currentTime;
+    });
+
+    window.addEventListener('resize', () => {
+        if (viewer.classList.contains('active')) {
+            updateRotation(viewerImg);
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', initFullscreenViewer);
+
