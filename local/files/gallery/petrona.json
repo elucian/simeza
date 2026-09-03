@@ -1,0 +1,16 @@
+{
+  "id": "petrona",
+  "file": "petrona.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Portraits",
+  "topic": "Portraits",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "en": {
+      "name": "petrona",
+      "description": "petrona"
+    }
+  }
+}
