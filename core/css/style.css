@@ -289,8 +289,8 @@ body {
 }
 
 .copyright {
-  font-size: 0.8rem;
-  color: var(--text-main);
+  font-size: 0.6rem;
+  color: #7f5e56
   margin: 0;
   text-align: center;
 }
