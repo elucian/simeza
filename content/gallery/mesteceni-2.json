@@ -1,0 +1,49 @@
+{
+  "id": "mesteceni-2",
+  "file": "mesteceni-2.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "ro": {
+      "name": "mesteceni 2",
+      "description": "mesteceni 2"
+    },
+    "de": {
+      "name": "Birken 2",
+      "description": "Birken 2"
+    },
+    "en": {
+      "name": "birch trees 2",
+      "description": "birch trees 2"
+    },
+    "es": {
+      "name": "abedules 2",
+      "description": "abedules 2"
+    },
+    "fr": {
+      "name": "bouleaux 2",
+      "description": "bouleaux 2"
+    },
+    "hu": {
+      "name": "nyírfák 2",
+      "description": "nyírfák 2"
+    },
+    "it": {
+      "name": "betulle 2",
+      "description": "betulle 2"
+    },
+    "pt": {
+      "name": "bétulas 2",
+      "description": "bétulas 2"
+    },
+    "ru": {
+      "name": "берёзы 2",
+      "description": "берёзы 2"
+    }
+  },
+  "source_hash": "04660930547ade0eca5f67679b22db986166c9dead3f322407c2fbf2d438f438"
+}
