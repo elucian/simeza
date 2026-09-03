@@ -24,7 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // Panel click for modal
     wrapper.querySelectorAll('.panel').forEach(panel => {
       panel.addEventListener('click', () => {
-        if (window.innerWidth <= 767) return; // Do not appear on small screen
+        // Allow in desktop OR landscape mobile
+        const isLandscapeMobile = (window.innerWidth <= 1024 && window.innerWidth > window.innerHeight);
+        if (window.innerWidth <= 767 && !isLandscapeMobile) return; 
         
         modalImg.src = panel.dataset.image;
         modalPicName.value = panel.dataset.title;

@@ -1,50 +1,39 @@
 # Build Process & Cache Documentation
 
-## 1. Architecture Overview
+This project uses a deterministic, offline static site generation pipeline.
 
-This project uses a decoupled Static Site Generation (SSG) pipeline designed for speed, reliability, and robust multi-language support.
+## 1. Translation & Cache Engine (`script/translate.py`)
 
-- **`pages/`**: Contains the Source of Truth (English markdown).
-- **`cache/`**: Contains the versioned, translated, human-editable localized markdown and menu files.
-- **`layout/`**: Shared templates and global base menu.
-- **`local/`**: Ephemeral output directory (generated files, not versioned in Git).
-- **`script/`**: Contains translation automation and offline build logic.
+- **Languages**: Supports `ro`, `en`, `de`, `es`, `fr`, `ru`, `pt`, `hu`, `it`.
+- **Slug Mapping**: Uses `SLUG_MAP` for SEO-friendly, language-native URLs.
+- **Menu Mapping**: Uses `MENU_MAP` for localized navigation.
+- **Incremental Updates**: SHA-256 `source_hash` in cached frontmatter ensures only changed files trigger API translation.
+- **Gemini Engine**: Uses `models/gemini-3.5-flash-lite`. Includes automatic fallback and retry logic.
 
-## 2. The Cache System (`cache/`)
+## 2. Compilation Pipeline (`script/build.py`)
 
-To keep builds offline and reliable, all translated content is stored in the `cache/` directory.
+The build runs entirely offline:
+1.  **Clean**: Purges `local/`.
+2.  **Version**: Reads version from `release/releases.json`.
+3.  **Data Loading**: Pre-loads `content/` entities.
+4.  **Generation**: Iterates through languages, parses Markdown/Frontmatter, injects template placeholders, and applies widget rendering.
+5.  **Sync**: Copies `core/` and `content/` assets.
+6.  **Finalization**: Generates `CNAME` and `.nojekyll`.
 
-### Structure
-```text
-cache/
-├── ro/
-│   ├── menu.json          # Translated menu with localized links
-│   ├── despre.md          # Translated About page (about.md -> despre.md)
-│   └── index.md           # Translated homepage
-├── de/
-├── fr/
-└── ...
-```
+## 3. Cache & Workspace Cleanup (`script/clean.py`)
 
-### Key Mechanics
-- **Slug Mapping (`SLUG_MAP`)**: `translate.py` uses a mapping to ensure URLs are localized (e.g., `about.md` translates to `despre.md` in Romanian). This ensures SEO-friendly, language-native URLs.
-- **Versioned & Editable**: Unlike traditional build caches, these files are plain text, human-readable, and versioned in Git. This allows for manual polishing of machine translations.
-- **Hash Invalidation**: Every file in `cache/` contains a `source_hash` in its frontmatter. The translation script compares this against the source `pages/` file hash to perform incremental updates. Only changed files are re-translated via the API.
+- **Orphan Cleaner**: Run without arguments to automatically prune cached translations when source files or slugs are removed.
+- **Targeted Purge**:
+  - `./run.sh clean <lang>`: Removes specific language cache and local build.
+  - `./run.sh clean all`: Purges all `local/` and `cache/` directories.
 
-## 3. The Build Pipeline (`script/build.py`)
+## 4. Developer CLI Reference
 
-The build process is **100% offline** and runs in milliseconds.
+| Command | Description |
+| :--- | :--- |
+| `./run.sh setup` | Loads `.env` variables. |
+| `./run.sh translate` | Incremental translation of changed pages. |
+| `./run.sh build` | Full site compilation. |
+| `./run.sh serve` | Starts a local web server on port 8000. |
+| `./run.sh clean` | Prunes stale cache. |
 
-### Workflow
-1. **Source Parsing**: Reads `pages/*.md` for English and `cache/<lang>/*.md` for other languages.
-2. **Metadata & Content**: Parses YAML frontmatter (title, description, keywords) and converts Markdown body to HTML.
-3. **Template Injection**: Injects data into `layout/template.html` (replaces `{{title}}`, `{{menu}}`, `{{page-content}}`, etc.).
-4. **Static Generation**: Writes the resulting HTML files to `local/<lang>/<slug>.html`.
-5. **Asset Sync**: Copies `core/` (JS/CSS) and `files/` assets to `local/`.
-
-## 4. Operational Commands (`run.sh`)
-
-- **`./run.sh translate`**: Scans for changes in `pages/`, calls the translation API (if needed), and updates `cache/<lang>/`.
-- **`./run.sh build`**: Runs the offline compilation pipeline to generate the `local/` directory.
-- **`./run.sh serve`**: Serves the generated `local/` folder on `http://localhost:8000`.
-- **`./run.sh clean`**: Deletes the `local/` directory.

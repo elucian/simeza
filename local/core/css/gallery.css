@@ -200,6 +200,54 @@
   }
 }
 
+/* Portrait: Vertical Scrollbar & Full-screen container */
+@media (orientation: portrait) and (max-width: 900px) {
+  .panel-wrapper {
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+  }
+  .panel-wrapper::-webkit-scrollbar {
+    width: 8px !important;
+    height: 0 !important;
+  }
+  .panel-wrapper::-webkit-scrollbar-track {
+    background: var(--bg-outer);
+  }
+  .panel-wrapper::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 4px;
+  }
+}
+
+/* Landscape: Horizontal Cards */
+@media (orientation: landscape) and (max-height: 600px) {
+  .panel-wrapper {
+    flex-direction: row !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+  .panel {
+    flex-direction: column !important;
+    height: 100% !important;
+    width: fit-content !important;
+    margin-bottom: 0 !important;
+    margin-right: 16px;
+  }
+  .panel-image {
+    width: auto !important;
+    height: calc(100% - 60px) !important;
+    border-right: none !important;
+    border-bottom: 1px solid var(--border-color);
+  }
+  .panel-data {
+    width: 100% !important;
+    height: 60px !important;
+    border-top: none !important;
+    border-left: none !important;
+  }
+}
+
+
 
 /* Modal Styles */
 .gallery-modal-overlay {

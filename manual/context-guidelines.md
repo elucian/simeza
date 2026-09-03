@@ -1,8 +1,23 @@
 # Context Guidelines
-To maintain context efficiency, follow these rules:
 
-1.  **Ignore Binaries**: Do not include images (.jpg, .jpeg, .png, .svg), PDFs (.pdf), audio, or video files in the context.
-2.  **Text Only**: Only read and process text-based files (.md, .json, .py, .js, .html, .css, .yml, .sh).
-3.  **Differential Updates**: When updating context, focus on the changes (diffs) rather than the whole codebase where possible.
-4.  **Mode Switching**: Cache context for transitions between 'plan' and 'act' modes to ensure consistency.
-5.  **Terminal Hygiene**: Always use non-interactive commands. Terminate any background processes and remove temporary files upon completing a task.
+To maintain operational efficiency and codebase integrity:
+
+## 1. Context Boundaries & Token Optimization
+- **Ignore**: All binary assets (`.webp`, `.jpg`, `.png`, `.pdf`, `.svg`, audio/video).
+- **Whitelist**: Only process `.md`, `.json`, `.py`, `.js`, `.html`, `.css`, `.yml`, `.sh`.
+- **Ephemeral**: Never load or track `local/`, `__pycache__/`, or `node_modules/` in context.
+
+## 2. Diff-First Protocol
+- **Atomic Edits**: Never overwrite entire files unless necessary.
+- **Verification**: Always use `git --no-pager diff <file>` to verify and explain changes.
+
+## 3. Terminal & Process Hygiene
+- **Zero-Hang Policy**: 
+  - ALWAYS use `git --no-pager` or `PAGER=cat` for all Git inspections.
+  - NEVER run interactive commands (e.g., bare `git commit`, `vi`, `nano`).
+- **Cleanup**: Use `./run.sh kill` to terminate hanging background sessions while preserving the active TTY.
+
+## 4. Security & Environment
+- **Secrets**: Handle `.env` variables (`GEMINI_API_KEY`) via `source ./run.sh setup`.
+- **Commit Safety**: Ensure no secrets ever enter release logs, metadata, or repository history.
+
