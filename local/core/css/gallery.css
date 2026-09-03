@@ -142,3 +142,36 @@
 .gallery-nav-prev { left: 8px; }
 .gallery-nav-next { right: 8px; }
 
+@media (max-width: 767px) {
+  .panel-wrapper {
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-snap-type: y mandatory;
+  }
+  
+  .panel {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    scroll-snap-align: start;
+    margin-bottom: 16px;
+  }
+  
+  .panel-image {
+    width: 40%;
+    height: 150px;
+    border-right: 1px solid var(--border-color);
+  }
+  
+  .panel-data {
+    width: 60%;
+    height: auto;
+    border-top: none;
+  }
+  
+  .gallery-nav-btn {
+    display: none;
+  }
+}
+

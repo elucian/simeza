@@ -198,18 +198,31 @@ p {
   color: var(--text-main);
 }
 
-/* Responsive Visibility */
 @media (min-width: 768px) {
   .navbar-toggler { display: none !important; }
   .desktop-nav { display: block; }
 }
 @media (max-width: 767px) {
+  html, body, .container {
+    height: auto;
+    overflow: visible;
+  }
+  
   .desktop-nav { display: none !important; }
   .navbar-toggler { display: inline-flex !important; }
   
   .container {
     width: 100%;
     border: none;
+    height: auto;
+  }
+  
+  #content {
+    overflow-y: visible;
+  }
+  
+  #socialFooter {
+    position: static;
   }
 }
 
