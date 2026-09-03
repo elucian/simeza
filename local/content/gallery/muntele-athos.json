@@ -15,6 +15,34 @@
     "en": {
       "name": "Mount Athos",
       "description": "Mount Athos"
+    },
+    "de": {
+      "name": "Berg Athos",
+      "description": "Berg Athos"
+    },
+    "es": {
+      "name": "Monte Athos",
+      "description": "Monte Athos"
+    },
+    "fr": {
+      "name": "Mont Athos",
+      "description": "Mont Athos"
+    },
+    "hu": {
+      "name": "Athosz-hegy",
+      "description": "Athosz-hegy"
+    },
+    "it": {
+      "name": "Monte Athos",
+      "description": "Monte Athos"
+    },
+    "pt": {
+      "name": "Monte Athos",
+      "description": "Monte Athos"
+    },
+    "ru": {
+      "name": "Гора Афон",
+      "description": "Гора Афон"
     }
   },
   "source_hash": "6419566df4fa4f8cabda4de709109a84cd302402129f5ed9e69e234ec43c3266"

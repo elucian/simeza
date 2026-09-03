@@ -15,6 +15,34 @@
     "en": {
       "name": "Boats in the sun",
       "description": "Boats in the sun"
+    },
+    "de": {
+      "name": "Boote in der Sonne",
+      "description": "Boote in der Sonne"
+    },
+    "es": {
+      "name": "Barcos al sol",
+      "description": "Barcos al sol"
+    },
+    "fr": {
+      "name": "Bateaux au soleil",
+      "description": "Bateaux au soleil"
+    },
+    "hu": {
+      "name": "Csónakok a napon",
+      "description": "Csónakok a napon"
+    },
+    "it": {
+      "name": "Barche al sole",
+      "description": "Barche al sole"
+    },
+    "pt": {
+      "name": "Barcos ao sol",
+      "description": "Barcos ao sol"
+    },
+    "ru": {
+      "name": "Лодки на солнце",
+      "description": "Лодки на солнце"
     }
   },
   "source_hash": "9fe9fe4c55e7c328aee52a86010dbd77886e795656e95c7b677d4c2e471e607f"

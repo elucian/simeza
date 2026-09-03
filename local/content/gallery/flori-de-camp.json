@@ -15,6 +15,34 @@
     "en": {
       "name": "wildflowers",
       "description": "wildflowers"
+    },
+    "de": {
+      "name": "Wiesenblumen",
+      "description": "Wiesenblumen"
+    },
+    "es": {
+      "name": "flores silvestres",
+      "description": "flores silvestres"
+    },
+    "fr": {
+      "name": "fleurs des champs",
+      "description": "fleurs des champs"
+    },
+    "hu": {
+      "name": "mezei virágok",
+      "description": "mezei virágok"
+    },
+    "it": {
+      "name": "fiori di campo",
+      "description": "fiori di campo"
+    },
+    "pt": {
+      "name": "flores do campo",
+      "description": "flores do campo"
+    },
+    "ru": {
+      "name": "полевые цветы",
+      "description": "полевые цветы"
     }
   },
   "source_hash": "047dce2407ac143adc2dadd9b99d3ecc4b01b50855615f8a950111c6aa8f7937"

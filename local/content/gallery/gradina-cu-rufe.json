@@ -15,6 +15,34 @@
     "en": {
       "name": "laundry garden",
       "description": "laundry garden"
+    },
+    "de": {
+      "name": "Wäschegarten",
+      "description": "Wäschegarten"
+    },
+    "es": {
+      "name": "jardín con ropa tendida",
+      "description": "jardín con ropa tendida"
+    },
+    "fr": {
+      "name": "jardin avec du linge",
+      "description": "jardin avec du linge"
+    },
+    "hu": {
+      "name": "ruháskert",
+      "description": "ruháskert"
+    },
+    "it": {
+      "name": "giardino con bucato",
+      "description": "giardino con bucato"
+    },
+    "pt": {
+      "name": "jardim com roupa estendida",
+      "description": "jardim com roupa estendida"
+    },
+    "ru": {
+      "name": "сад с бельем",
+      "description": "сад с бельем"
     }
   },
   "source_hash": "8c468f6c4a2c9c1a3a9a2a14f33e9fbbe9da1ac3df5e893185d354e4d39a7f19"

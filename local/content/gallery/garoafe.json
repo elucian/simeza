@@ -15,6 +15,34 @@
     "en": {
       "name": "carnations",
       "description": "carnations"
+    },
+    "de": {
+      "name": "Nelken",
+      "description": "Nelken"
+    },
+    "es": {
+      "name": "claveles",
+      "description": "claveles"
+    },
+    "fr": {
+      "name": "œillets",
+      "description": "œillets"
+    },
+    "hu": {
+      "name": "szegfű",
+      "description": "szegfű"
+    },
+    "it": {
+      "name": "garofani",
+      "description": "garofani"
+    },
+    "pt": {
+      "name": "cravos",
+      "description": "cravos"
+    },
+    "ru": {
+      "name": "гвоздики",
+      "description": "гвоздики"
     }
   },
   "source_hash": "a0f6acb2e9522dff6ef84e0ae2cc89419edd37a33f9be7c46f23fdce3a5078b4"
