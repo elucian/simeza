@@ -27,18 +27,30 @@ SLUG_MAP = {
 }
 
 def render_gallery_html(gallery_data, lang):
+    # Modal Translations
+    t = {
+        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide'},
+        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen'},
+        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar'},
+        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer'},
+        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть'},
+        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar'},
+        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár'},
+        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi'}
+    }
+    trans = t.get(lang, t['en'])
+
     panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">&lt;</button>', '<div class="panel-wrapper" data-widget="gallery">']
     for item in gallery_data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
-        title = html.escape(loc.get('name') or item.get('id') or 'Untitled')
-        desc = html.escape(loc.get('description') or '')
+        title = loc.get('name') or item.get('id') or 'Untitled'
+        desc = loc.get('description') or ''
         file = item.get('file', '')
-        author = html.escape(str(item.get('author', '')))
-        category = html.escape(str(item.get('category', '')))
-        status = html.escape(str(item.get('status', ''))) if item.get('status') else ''
-        year = html.escape(str(item.get('year', ''))) if item.get('year') else ''
-        original = item.get('original', '')
+        author = item.get('author', '')
+        status = item.get('status', '') or ''
+        year = item.get('year', '') or ''
         
         # Calculate aspect ratio
         aspect_ratio = "1/1"
@@ -50,26 +62,41 @@ def render_gallery_html(gallery_data, lang):
             except:
                 pass
         
-        p = [f'    <div class="panel">']
+        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}">']
         if file:
-            p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{title}" loading="lazy"></div>')
+            p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         else:
             p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
-        p.append(f'        <div class="panel-title">{title}</div>')
-        if author: p.append(f'        <div class="panel-author">{author}</div>')
-        meta = []
-        if year: meta.append(f"{year}")
-        if category: meta.append(f"{category}")
-        if status: meta.append(f"Status: {status}")
-        if original == 'yes': meta.append("Original")
-        if meta: p.append(f'        <div class="panel-meta">{" | ".join(meta)}</div>')
-        if desc: p.append(f'        <div class="panel-desc">{desc}</div>')
+        p.append(f'        <div class="panel-title">{html.escape(title)}</div>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
     panels.append('</div>')
     panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">&gt;</button>')
+    
+    # Modal
+    modal = [
+        '<div id="galleryModal" class="gallery-modal-overlay">',
+        '  <div class="gallery-modal">',
+        '    <div class="gallery-modal-header">',
+        '      <span class="gallery-modal-close-x">&times;</span>',
+        '    </div>',
+        '    <div class="gallery-modal-body">',
+        '      <img id="modalImg" src="" alt="">',
+        f'      <label>{trans["Name"]}</label><input type="text" id="modalPicName" readonly>',
+        f'      <label>{trans["Author"]}</label><input type="text" id="modalAuthor" readonly>',
+        f'      <label>{trans["Year"]}</label><input type="text" id="modalYear" readonly>',
+        f'      <label>{trans["Status"]}</label><input type="text" id="modalStatus" readonly>',
+        f'      <label>{trans["Desc"]}</label><textarea id="modalDesc" readonly rows="3"></textarea>',
+        '    </div>',
+        '    <div class="gallery-modal-footer">',
+        f'      <button class="gallery-modal-btn-close">{trans["Close"]}</button>',
+        '    </div>',
+        '  </div>',
+        '</div>'
+    ]
+    panels.extend(modal)
     panels.append('</div>')
     return '\n'.join(panels)
 
