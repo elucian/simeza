@@ -1,0 +1,16 @@
+{
+  "id": "beach-in-greece",
+  "file": "beach-in-greece.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "en": {
+      "name": "Beach in Greece",
+      "description": "Beach in Greece"
+    }
+  }
+}
