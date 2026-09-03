@@ -6,6 +6,7 @@ import sys
 import re
 import html
 import time
+from PIL import Image
 
 # Configuration
 ROOT = os.getcwd()
@@ -26,7 +27,7 @@ SLUG_MAP = {
 }
 
 def render_gallery_html(gallery_data, lang):
-    panels = ['<div class="panel-wrapper" data-widget="gallery">']
+    panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">&lt;</button>', '<div class="panel-wrapper" data-widget="gallery">']
     for item in gallery_data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
@@ -36,20 +37,33 @@ def render_gallery_html(gallery_data, lang):
         status = html.escape(str(item.get('status', ''))) if item.get('status') else ''
         year = html.escape(str(item.get('year', ''))) if item.get('year') else ''
         
-        p = ['    <div class="panel">']
+        # Calculate aspect ratio
+        aspect_ratio = "1/1"
         if file:
-            p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{title}" loading="lazy"></div>')
+            try:
+                with Image.open(os.path.join(ROOT, 'content', 'gallery', file)) as img:
+                    w, h = img.size
+                    aspect_ratio = f"{w}/{h}"
+            except:
+                pass
+        
+        p = [f'    <div class="panel">']
+        if file:
+            p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{title}" loading="lazy"></div>')
+        else:
+            p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
-        p.append(f'        <h3>{title}</h3>')
-        if desc:
-            p.append(f'        <p>{desc}</p>')
-        if status:
-            p.append(f'        <p>Status: {status}</p>')
-        if year:
-            p.append(f'        <p>Year: {year}</p>')
+        p.append(f'        <div class="panel-title">{title}</div>')
+        meta = []
+        if status: meta.append(f"Status: {status}")
+        if year: meta.append(f"{year}")
+        if meta: p.append(f'        <div class="panel-meta">{" | ".join(meta)}</div>')
+        if desc: p.append(f'        <div class="panel-desc">{desc}</div>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
+    panels.append('</div>')
+    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">&gt;</button>')
     panels.append('</div>')
     return '\n'.join(panels)
 
@@ -57,19 +71,8 @@ def write_summary(summary_text):
     if 'GITHUB_STEP_SUMMARY' in os.environ:
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
             f.write(summary_text + '\n')
-def parse_frontmatter(content):
-    m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
-    if not m:
-        return {}, content
-    meta_block = m.group(1)
-    body = content[m.end():]
-    meta = {}
-    for line in meta_block.splitlines():
-        if ':' in line:
-            k, v = line.split(':', 1)
-            meta[k.strip().lower()] = v.strip()
-    return meta, body
 
+def parse_frontmatter(content):
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if not m:
         return {}, content
