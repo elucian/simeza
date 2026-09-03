@@ -14,6 +14,8 @@
 
 CMD=$1
 
+export EDITOR=cat VISUAL=cat
+
 load_env() {
     if [ -f .env ]; then
         set -a

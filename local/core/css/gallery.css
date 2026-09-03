@@ -388,3 +388,31 @@
   cursor: pointer;
   font-weight: 600;
 }
+
+
+/* Landscape Mobile Modal Fixes */
+@media (orientation: landscape) and (max-height: 600px) {
+  .gallery-modal {
+    width: 96vw;
+    height: 94vh;
+    padding: 10px 16px;
+  }
+  .gallery-modal-body {
+    gap: 10px;
+  }
+  .gallery-modal-image-col {
+    flex: 1 1 40%;
+  }
+  .gallery-modal-data-col {
+    flex: 1 1 60%;
+    gap: 4px;
+  }
+  #modalDesc {
+    min-height: 40px;
+  }
+  .gallery-modal-close-x {
+    top: 5px;
+    right: 8px;
+    font-size: 1.5rem;
+  }
+}

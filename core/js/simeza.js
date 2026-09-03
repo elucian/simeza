@@ -23,7 +23,9 @@
     // Close mobile menu on link click
     document.addEventListener('click', function(event) {
         const mobileMenu = document.getElementById('mobileMenu');
+        const langMenu = document.getElementById('langMenu');
         const toggler = document.querySelector('.navbar-toggler');
+        const langBtn = document.getElementById('langBtn');
         
         // If clicked on a nav link in mobile menu, close it
         if (mobileMenu.classList.contains('show') && mobileMenu.contains(event.target) && event.target.tagName === 'A') {
@@ -32,6 +34,11 @@
         // If clicked outside menu and not on toggler, close it
         else if (mobileMenu.classList.contains('show') && !mobileMenu.contains(event.target) && !toggler.contains(event.target)) {
             closeMobileMenu();
+        }
+
+        // Close lang menu if clicked outside
+        if (langMenu.classList.contains('show') && !langMenu.contains(event.target) && !langBtn.contains(event.target)) {
+            toggleLangMenu();
         }
     });
 
@@ -149,7 +156,8 @@ function initFullscreenViewer() {
     // Double tap/click handler
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {
-        if (e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+        const isPortrait = window.innerHeight >= window.innerWidth;
+        if (isPortrait && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);
@@ -158,9 +166,10 @@ function initFullscreenViewer() {
 
     // Touch support for double tap
     document.addEventListener('touchend', (e) => {
+        const isPortrait = window.innerHeight >= window.innerWidth;
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
-        if (tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
+        if (isPortrait && tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);
@@ -170,8 +179,13 @@ function initFullscreenViewer() {
     });
 
     window.addEventListener('resize', () => {
+        const isPortrait = window.innerHeight >= window.innerWidth;
         if (viewer.classList.contains('active')) {
-            updateRotation(viewerImg);
+            if (!isPortrait) {
+                viewer.classList.remove('active');
+            } else {
+                updateRotation(viewerImg);
+            }
         }
     });
 }
