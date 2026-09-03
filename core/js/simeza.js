@@ -16,6 +16,32 @@
         document.getElementById('mobileMenu').classList.toggle('show');
     }
 
+    function closeMobileMenu() {
+        document.getElementById('mobileMenu').classList.remove('show');
+    }
+
+    // Close mobile menu on link click
+    document.addEventListener('click', function(event) {
+        const mobileMenu = document.getElementById('mobileMenu');
+        const toggler = document.querySelector('.navbar-toggler');
+        
+        // If clicked on a nav link in mobile menu, close it
+        if (mobileMenu.classList.contains('show') && mobileMenu.contains(event.target) && event.target.tagName === 'A') {
+            closeMobileMenu();
+        } 
+        // If clicked outside menu and not on toggler, close it
+        else if (mobileMenu.classList.contains('show') && !mobileMenu.contains(event.target) && !toggler.contains(event.target)) {
+            closeMobileMenu();
+        }
+    });
+
+    // Handle Escape key
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape') {
+            closeMobileMenu();
+        }
+    });
+
   const SLUG_MAP = {
     'about.md': {'ro': 'despre.md', 'de': 'ueber-uns.md', 'fr': 'a-propos.md', 'es': 'sobre-nosotros.md', 'ru': 'o-nas.md', 'pt': 'sobre.md', 'hu': 'rolunk.md', 'it': 'chi-siamo.md'}, 
     'events.md': {'ro': 'evenimente.md', 'de': 'veranstaltungen.md', 'fr': 'evenements.md', 'es': 'eventos.md', 'ru': 'sobytiya.md', 'pt': 'eventos.md', 'hu': 'esemenyek.md', 'it': 'eventi.md'}, 
