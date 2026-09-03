@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html class="notranslate" lang="ru">
+<head>
+  <meta name="google" content="notranslate">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Галерея - Simeza Art</title>
+  <meta name="description" content="Кураторская коллекция фоторабот и картин из галереи Simeza Art.">
+  <meta name="keywords" content="simeza, искусство, галерея, картины, изображения, фотография, изобразительное искусство">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+  <link rel="stylesheet" href="/core/css/style.css?v=">
+  <link rel="stylesheet" href="/core/css/gallery.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+  <link rel="icon" type="image/svg+xml" href="/core/img/favicon.svg">
+</head>
+<body>
+
+<div class="container"> 
+<header class="header-app">
+  <img src="/core/img/simeza-logo-w.svg" id="themeLogo" alt="Logo" class="logo-btn" onclick="toggleTheme()">
+  
+  <nav class="desktop-nav">
+    <ul id="menuList" class="nav-menu">
+      <li class="nav-item"><a class="nav-link" href="/ru/galereya.html">Галерея</a></li><li class="nav-item"><a class="nav-link" href="/ru/sobytiya.html">События</a></li><li class="nav-item"><a class="nav-link" href="/ru/avtory.html">Авторы</a></li><li class="nav-item"><a class="nav-link" href="/ru/stati.html">Статьи</a></li><li class="nav-item"><a class="nav-link" href="/ru/knigi.html">Книги</a></li><li class="nav-item"><a class="nav-link" href="/ru/index.html">О нас</a></li>
+    </ul>
+  </nav>
+
+  <div class="header-actions">
+    <div class="lang-selector">
+      <button id="langBtn" style="border:none; background:none; cursor:pointer;" onclick="toggleLangMenu()"></button>
+      <ul id="langMenu" class="lang-menu"></ul>
+    </div>
+    <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
+      <i class="bi bi-list"></i>
+    </button>
+  </div>
+</header>
+
+<nav id="mobileMenu">
+  <ul id="mobileMenuList" style="list-style:none; padding:0;">
+    <li class="nav-item"><a class="nav-link" href="/ru/galereya.html">Галерея</a></li><li class="nav-item"><a class="nav-link" href="/ru/sobytiya.html">События</a></li><li class="nav-item"><a class="nav-link" href="/ru/avtory.html">Авторы</a></li><li class="nav-item"><a class="nav-link" href="/ru/stati.html">Статьи</a></li><li class="nav-item"><a class="nav-link" href="/ru/knigi.html">Книги</a></li><li class="nav-item"><a class="nav-link" href="/ru/index.html">О нас</a></li>
+  </ul>
+</nav>
+
+<main id="content">
+   <h1>Галерея</h1>
+<p>Добро пожаловать в галерею Simeza. Ознакомьтесь с нашей коллекцией живописи и фоторабот.</p>
+<div class="panel-wrapper" data-widget="gallery">
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/aby-7-ani.webp" alt="aby 7 ani" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>aby 7 ani</h3>
+        <p>aby 7 ani</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/aby-la-ocean.webp" alt="Аби у океана" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Аби у океана</h3>
+        <p>Аби у океана</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/barci-la-soare.webp" alt="Лодки на солнце" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Лодки на солнце</h3>
+        <p>Лодки на солнце</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/beach-in-greece.webp" alt="Пляж в Греции" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Пляж в Греции</h3>
+        <p>Пляж в Греции</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/biserica-la-rasinari.webp" alt="церковь в Рэшинари" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>церковь в Рэшинари</h3>
+        <p>церковь в Рэшинари</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/bujori-2.webp" alt="пионы 2" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>пионы 2</h3>
+        <p>пионы 2</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/camp-cu-nori.webp" alt="поле с облаками" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>поле с облаками</h3>
+        <p>поле с облаками</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/carmel-2.webp" alt="carmel 2" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>carmel 2</h3>
+        <p>carmel 2</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/catalina-island-2.webp" alt="Остров Каталина 2" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Остров Каталина 2</h3>
+        <p>Остров Каталина 2</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/cer-in-apa.webp" alt="Небо в воде" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Небо в воде</h3>
+        <p>Небо в воде</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/crizanteme-cu-mere.webp" alt="хризантемы с яблоками" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>хризантемы с яблоками</h3>
+        <p>хризантемы с яблоками</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/curtea-mamei.webp" alt="двор матери" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>двор матери</h3>
+        <p>двор матери</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/edy-mai-mic.webp" alt="Эди младший" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Эди младший</h3>
+        <p>Эди младший</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/flori-de-camp.webp" alt="полевые цветы" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>полевые цветы</h3>
+        <p>полевые цветы</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/flori-la-mihai.webp" alt="цветы у Михая" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>цветы у Михая</h3>
+        <p>цветы у Михая</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/flori-pe-covor-de-rucar.webp" alt="цветы на ковре из Рукара" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>цветы на ковре из Рукара</h3>
+        <p>цветы на ковре из Рукара</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/flori-pe-stergar.webp" alt="цветы на полотенце" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>цветы на полотенце</h3>
+        <p>цветы на полотенце</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/garoafe.webp" alt="гвоздики" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>гвоздики</h3>
+        <p>гвоздики</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/gradina-cu-rufe.webp" alt="сад с бельем" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>сад с бельем</h3>
+        <p>сад с бельем</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/gura-leului.webp" alt="львиный зев" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>львиный зев</h3>
+        <p>львиный зев</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/la-jolla-cove.webp" alt="Ла-Хойя-Коув" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Ла-Хойя-Коув</h3>
+        <p>Ла-Хойя-Коув</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/lac-pe-grui.webp" alt="Озеро на Груи" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Озеро на Груи</h3>
+        <p>Озеро на Груи</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/lavander-si-mt-hood.webp" alt="Лаванда и Маунт-Худ" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Лаванда и Маунт-Худ</h3>
+        <p>Лаванда и Маунт-Худ</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/luminis-in-parcul-mirea.webp" alt="Luminis в парке Миря" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Luminis в парке Миря</h3>
+        <p>Luminis в парке Миря</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/maci.webp" alt="Маки" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Маки</h3>
+        <p>Маки</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/mesteceni-1.webp" alt="берёзы 1" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>берёзы 1</h3>
+        <p>берёзы 1</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/miki3.webp" alt="miki3" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>miki3</h3>
+        <p>miki3</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/muntele-athos.webp" alt="Гора Афон" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Гора Афон</h3>
+        <p>Гора Афон</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/pinos.webp" alt="Pinos" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Pinos</h3>
+        <p>Pinos</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/plaja-insorita.webp" alt="солнечный пляж" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>солнечный пляж</h3>
+        <p>солнечный пляж</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/san-juan-capistrano-2.webp" alt="сан-хуан-капистрано 2" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>сан-хуан-капистрано 2</h3>
+        <p>сан-хуан-капистрано 2</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/schitul-pasarea.webp" alt="Скит Пасяря" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Скит Пасяря</h3>
+        <p>Скит Пэсяря</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/self-portrait-4.webp" alt="автопортрет 4" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>автопортрет 4</h3>
+        <p>автопортрет 4</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/sibiu-centru.webp" alt="Сибиу центр" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Сибиу центр</h3>
+        <p>центр Сибиу</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/soare-pe-plaja.webp" alt="солнце на пляже" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>солнце на пляже</h3>
+        <p>солнце на пляже</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/tartacute.webp" alt="tartacute" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>tartacute</h3>
+        <p>tartacute</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/tufanele-3.webp" alt="хризантемы 3" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>хризантемы 3</h3>
+        <p>хризантемы 3</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/tufanele-cu-mar.webp" alt="хризантемы с яблоком" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>хризантемы с яблоком</h3>
+        <p>хризантемы с яблоком</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/ventura-3.webp" alt="ventura 3" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>ventura 3</h3>
+        <p>ventura 3</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/ventura1.webp" alt="ventura1" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>ventura1</h3>
+        <p>ventura1</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel-image"><img src="/content/gallery/vine-toamna.webp" alt="Приходит осень" loading="lazy"></div>
+      <div class="panel-data">
+        <h3>Приходит осень</h3>
+        <p>Приходит осень</p>
+        <p>Status: Available</p>
+        <p>Year: 1990</p>
+      </div>
+    </div>
+</div>
+</main>
+
+<footer id="socialFooter"></footer>
+</div>
+
+<script src="/core/js/simeza.js"></script>
+<script src="/core/js/gallery.js"></script>
+
+</body>
+</html>
