@@ -40,7 +40,7 @@ body {
 
 /* Layout Container */
 .container {
-  max-width: 1000px;
+  max-width: 1400px;
   width: 95%;
   margin: 0 auto;
   background-color: var(--bg-main);
