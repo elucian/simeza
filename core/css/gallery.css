@@ -149,6 +149,10 @@
 .gallery-nav-prev { left: 8px; }
 .gallery-nav-next { right: 8px; }
 
+.panel-mobile-meta {
+  display: none;
+}
+
 @media (max-width: 767px) {
   .panel-wrapper {
     flex-direction: column;
@@ -160,7 +164,7 @@
   .panel {
     width: 100%;
     height: auto;
-    flex-direction: row-reverse;
+    flex-direction: row;
     scroll-snap-align: start;
     margin-bottom: 16px;
   }
@@ -168,14 +172,27 @@
   .panel-image {
     width: 50%;
     height: 165px;
-    border-left: 1px solid var(--border-color);
+    border-right: 1px solid var(--border-color);
   }
   
   .panel-data {
     width: 50%;
     height: auto;
     border-top: none;
-    border-right: 1px solid var(--border-color);
+    border-left: 1px solid var(--border-color);
+    justify-content: flex-start;
+    padding-top: 10px;
+  }
+  
+  .panel-mobile-meta {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.72rem;
+    color: var(--text-main);
+  }
+  
+  .panel-author, .panel-year, .panel-status {
+    margin-bottom: 2px;
   }
   
   .gallery-nav-btn {
