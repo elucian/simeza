@@ -15,6 +15,34 @@
     "en": {
       "name": "Sibiu city center",
       "description": "Sibiu city center"
+    },
+    "de": {
+      "name": "Sibiu Zentrum",
+      "description": "Sibiu Zentrum"
+    },
+    "es": {
+      "name": "Sibiu centro",
+      "description": "centro de Sibiu"
+    },
+    "fr": {
+      "name": "Sibiu centre",
+      "description": "centre de Sibiu"
+    },
+    "hu": {
+      "name": "Nagyszeben központ",
+      "description": "Nagyszeben központ"
+    },
+    "it": {
+      "name": "Sibiu centro",
+      "description": "centro di Sibiu"
+    },
+    "pt": {
+      "name": "Sibiu centro",
+      "description": "centro de Sibiu"
+    },
+    "ru": {
+      "name": "Сибиу центр",
+      "description": "центр Сибиу"
     }
   },
   "source_hash": "b4a0c98b506f6afcbbbc5799b1adfd490c0591764a0bb304aa07ef0ca18b25aa"

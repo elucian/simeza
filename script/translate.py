@@ -144,6 +144,62 @@ def translate_text(text, target_lang, source_lang='en'):
     except (urllib.error.HTTPError, urllib.error.URLError, KeyError, IndexError, json.JSONDecodeError) as e:
         raise RuntimeError(f'Translation failed for {target_lang}: {format_translation_error(e)}') from e
 
+
+def translate_text_bulk(text, target_langs, source_lang='en'):
+    """Translate text to multiple languages using the Gemini API in a single request."""
+    if not text.strip():
+        return {lang: text for lang in target_langs}
+
+    api_key = os.environ.get('GEMINI_API_KEY')
+    if not api_key:
+        raise RuntimeError('GEMINI_API_KEY environment variable is required')
+
+    # Simple rate limiting/delay
+    time.sleep(1)
+
+    source_language = LANGUAGE_NAMES.get(source_lang, source_lang)
+    target_specs = {lang: LANGUAGE_NAMES.get(lang, lang) for lang in target_langs}
+    
+    # Prompt for bulk translation
+    prompt = (
+        f"Translate the following source text from {source_language} into each of the following target languages: {json.dumps(target_specs)}.\n"
+        "Return ONLY a valid JSON object where keys are the target language codes (e.g., 'ro', 'de', etc.) and values are the corresponding translated texts.\n"
+        "Preserve all Markdown formatting, links and their URLs, HTML tags, code, and line breaks exactly in every translation.\n"
+        "Do not include markdown code block wrappers (like ```json) in your response, output raw JSON only.\n\n"
+        f"SOURCE TEXT:\n{text}"
+    )
+    payload = {
+        'contents': [{'parts': [{'text': prompt}]}],
+        'generationConfig': {'temperature': 0.2}
+    }
+    url = f'{GEMINI_API_URL}/{normalize_gemini_model(GEMINI_MODEL)}:generateContent'
+    
+    request = urllib.request.Request(
+        f'{url}?key={api_key}',
+        data=json.dumps(payload).encode('utf-8'),
+        headers={'Content-Type': 'application/json'},
+        method='POST'
+    )
+
+    try:
+        with urllib.request.urlopen(request) as resp:
+            res_data = json.loads(resp.read().decode("utf-8"))
+            bulk_text = res_data['candidates'][0]['content']['parts'][0]['text'].strip()
+            # Clean up potential markdown blocks if Gemini ignores the prompt's instruction
+            bulk_text = bulk_text.replace('```json', '').replace('```', '').strip()
+            return json.loads(bulk_text)
+    except Exception as e:
+        print(f"Bulk translation failed, falling back to individual calls: {e}")
+        # Fallback to individual
+        results = {}
+        for lang in target_langs:
+            try:
+                results[lang] = translate_text(text, lang, source_lang=source_lang)
+            except Exception as e_ind:
+                print(f"Individual translation failed for {lang}: {e_ind}")
+                results[lang] = text # Return source text if translation fails
+        return results
+
 def translate_pages(target_langs):
     # 1. Translate Pages
     for file in os.listdir(PAGES_DIR):
@@ -157,6 +213,8 @@ def translate_pages(target_langs):
         
         meta, body = parse_frontmatter(content)
         
+        # Determine which languages actually need translation
+        languages_to_translate = []
         for lang in target_langs:
             if lang == 'en': continue
             if lang not in LANGUAGES: continue
@@ -175,19 +233,32 @@ def translate_pages(target_langs):
                     print(f"Skipping {file} ({lang}/{slug}), already up to date.")
                     continue
             
-            print(f"Translating {file} -> {lang}/{slug}...")
+            languages_to_translate.append(lang)
+        
+        if not languages_to_translate:
+            continue
             
-            # Translate body
-            trans_body = translate_text(body, lang)
-            # Translate meta
+        print(f"Translating {file} to {languages_to_translate}...")
+        
+        # Bulk translate body
+        bulk_body = translate_text_bulk(body, languages_to_translate)
+        
+        # Bulk translate each meta field
+        bulk_meta = {k: translate_text_bulk(v, languages_to_translate) for k, v in meta.items()}
+        
+        for lang in languages_to_translate:
+            trans_body = bulk_body[lang]
             trans_meta = meta.copy()
-            for k, v in meta.items():
-                trans_meta[k] = translate_text(v, lang)
+            for k in meta.keys():
+                trans_meta[k] = bulk_meta[k][lang]
             
             trans_meta['source_hash'] = en_hash
             
             # Reconstruct content
             meta_str = "---\n" + "\n".join([f"{k}: {v}" for k, v in trans_meta.items()]) + "\n---\n"
+            slug = SLUG_MAP.get(file, {}).get(lang, file)
+            target_path = os.path.join(CACHE_DIR, lang, slug)
+            
             with open(target_path, 'w', encoding='utf-8') as f:
                 f.write(meta_str + trans_body)
     
@@ -307,28 +378,41 @@ def translate_content_jsons(target_langs):
             if targets:
                 all_known_langs.update(targets)
             
+            # Identify which languages actually need translation
+            langs_to_process = []
             for lang in sorted(list(all_known_langs)):
                 if lang == source_lang: continue
-                
+                if targets and lang not in targets: continue
+
                 # Check if translation is needed: missing or source changed
                 needs_translation = (lang not in content) or source_changed
                 
                 if needs_translation:
-                    # If it's not a targeted language, skip re-translation unless it's missing (shouldn't happen for existing)
-                    if targets and lang not in targets: continue
-                    
-                    print(f"  Translating to {lang} from {source_lang}...")
-                    trans_content = {}
-                    for key, val in source_data.items():
-                        if isinstance(val, str):
-                            trans_content[key] = translate_text(val, lang, source_lang=source_lang)
-                        else:
-                            trans_content[key] = val
-                    new_content[lang] = trans_content
-                    modified = True
+                    langs_to_process.append(lang)
                 else:
-                    # Keep existing translation
                     new_content[lang] = content[lang]
+
+            if langs_to_process:
+                print(f"  Translating {len(source_data)} entries to {langs_to_process} from {source_lang}...")
+                
+                # Pre-populate trans_content dictionaries for each language
+                bulk_trans_contents = {lang: {} for lang in langs_to_process}
+                
+                # We can iterate through the source data and bulk translate each string value
+                for key, val in source_data.items():
+                    if isinstance(val, str):
+                        # Bulk translate this string for all required languages
+                        translations = translate_text_bulk(val, langs_to_process, source_lang=source_lang)
+                        for lang in langs_to_process:
+                            bulk_trans_contents[lang][key] = translations.get(lang, val)
+                    else:
+                        for lang in langs_to_process:
+                            bulk_trans_contents[lang][key] = val
+                
+                for lang in langs_to_process:
+                    new_content[lang] = bulk_trans_contents[lang]
+                
+                modified = True
             
             data['content'] = new_content
             data['source_hash'] = current_source_hash
@@ -350,7 +434,7 @@ if __name__ == '__main__':
     elif args.lang:
         target_langs = [args.lang] if args.lang in LANGUAGES else []
     else:
-        target_langs = [] # None implies just fill English if missing
+        target_langs = LANGUAGES # Default to all languages
     
     if args.lang and not target_langs:
         print(f"Invalid language: {args.lang}. Available: {', '.join(LANGUAGES)}")

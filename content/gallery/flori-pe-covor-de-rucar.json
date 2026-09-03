@@ -15,6 +15,34 @@
     "en": {
       "name": "flowers on a Rucar carpet",
       "description": "flowers on a Rucar carpet"
+    },
+    "de": {
+      "name": "Blumen auf dem Teppich von Rucar",
+      "description": "Blumen auf dem Teppich von Rucar"
+    },
+    "es": {
+      "name": "flores en la alfombra de Rucar",
+      "description": "flores en la alfombra de Rucar"
+    },
+    "fr": {
+      "name": "fleurs sur le tapis de Rucar",
+      "description": "fleurs sur le tapis de Rucar"
+    },
+    "hu": {
+      "name": "virágok a Rucar-i szőnyegen",
+      "description": "virágok a Rucar-i szőnyegen"
+    },
+    "it": {
+      "name": "fiori sul tappeto di Rucar",
+      "description": "fiori sul tappeto di Rucar"
+    },
+    "pt": {
+      "name": "flores no tapete de Rucar",
+      "description": "flores no tapete de Rucar"
+    },
+    "ru": {
+      "name": "цветы на ковре из Рукара",
+      "description": "цветы на ковре из Рукара"
     }
   },
   "source_hash": "72454ea5e66dfa7cccb1f165f6c2b90a205344eac7ce8ad45430c776c01dc66a"

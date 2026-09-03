@@ -15,6 +15,34 @@
     "en": {
       "name": "Lake on Grui",
       "description": "Lake on the Ridge"
+    },
+    "de": {
+      "name": "See auf dem Grui",
+      "description": "See auf dem Grui"
+    },
+    "es": {
+      "name": "Lago en Grui",
+      "description": "Lago en Grui"
+    },
+    "fr": {
+      "name": "Lac sur le Grui",
+      "description": "Lac sur le Grui"
+    },
+    "hu": {
+      "name": "Tó a Grui-on",
+      "description": "Tó a Gruin"
+    },
+    "it": {
+      "name": "Lago sul Grui",
+      "description": "Lago sul Grui"
+    },
+    "pt": {
+      "name": "Lago em Grui",
+      "description": "Lago no Grui"
+    },
+    "ru": {
+      "name": "Озеро на Груи",
+      "description": "Озеро на Груи"
     }
   },
   "source_hash": "c81e1046277108409e50c32f6e1d8d0953165d550695ee68a5fa6393b233719e"

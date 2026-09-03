@@ -15,6 +15,34 @@
     "en": {
       "name": "La Jolla Cove",
       "description": "La Jolla Cove"
+    },
+    "de": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "es": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "fr": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "hu": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "it": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "pt": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
+    },
+    "ru": {
+      "name": "Ла-Хойя-Коув",
+      "description": "Ла-Хойя-Коув"
     }
   },
   "source_hash": "ccdbb5f14da7c026448bccae551e3c8e54b641ea039485162dbf5c437c495931"

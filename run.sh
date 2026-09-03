@@ -42,7 +42,7 @@ elif [ "$CMD" == "commit" ]; then
 
 elif [ "$CMD" == "translate" ]; then
     load_env
-    python script/translate.py
+    python script/translate.py 
 
 elif [ "$CMD" == "build" ]; then
     echo "Building candidate..."

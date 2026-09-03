@@ -15,6 +15,34 @@
     "en": {
       "name": "Aby at the ocean",
       "description": "Aby at the ocean"
+    },
+    "de": {
+      "name": "Aby am Ozean",
+      "description": "Aby am Ozean"
+    },
+    "es": {
+      "name": "Aby en el océano",
+      "description": "Aby en el océano"
+    },
+    "fr": {
+      "name": "Aby à l'océan",
+      "description": "Aby à l'océan"
+    },
+    "hu": {
+      "name": "Aby az óceánnál",
+      "description": "Aby az óceánnál"
+    },
+    "it": {
+      "name": "Aby all'oceano",
+      "description": "Aby all'oceano"
+    },
+    "pt": {
+      "name": "Aby no oceano",
+      "description": "Aby no oceano"
+    },
+    "ru": {
+      "name": "Аби у океана",
+      "description": "Аби у океана"
     }
   },
   "source_hash": "af0de7845948c188d57f18b179f3f9c33b92fa04f2fd8eba3dd39286c0a772ad"
