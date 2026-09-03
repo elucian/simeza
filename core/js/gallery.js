@@ -22,8 +22,8 @@ fetch(manifestUrl)
             const panel = document.createElement('div');
             panel.className = 'panel';
             
-            // Get content for the detected language, fallback to EN if missing
-            const content = item.content[lang] || item.content['en'];
+            // Get content for the detected language, fallback to EN if missing, or use first available
+            const content = item.content[lang] || item.content['en'] || (item.content ? Object.values(item.content)[0] : {});
             
             // Simple generic construction - assumes file exists and has standard fields
             // For more complex types, we might need different template logic
