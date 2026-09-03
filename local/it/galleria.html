@@ -504,19 +504,27 @@
 <button class="gallery-nav-btn gallery-nav-next" aria-label="Next">&gt;</button>
 <div id="galleryModal" class="gallery-modal-overlay">
   <div class="gallery-modal">
-    <div class="gallery-modal-header">
-      <span class="gallery-modal-close-x">&times;</span>
-    </div>
+    <button class="gallery-modal-close-x" aria-label="Close">&times;</button>
     <div class="gallery-modal-body">
-      <img id="modalImg" src="" alt="">
-      <label>Nome</label><input type="text" id="modalPicName" readonly>
-      <label>Autore</label><input type="text" id="modalAuthor" readonly>
-      <label>Anno</label><input type="text" id="modalYear" readonly>
-      <label>Stato</label><input type="text" id="modalStatus" readonly>
-      <label>Descrizione</label><textarea id="modalDesc" readonly rows="3"></textarea>
-    </div>
-    <div class="gallery-modal-footer">
-      <button class="gallery-modal-btn-close">Chiudi</button>
+      <div class="gallery-modal-image-col">
+        <img id="modalImg" src="" alt="">
+      </div>
+      <div class="gallery-modal-data-col">
+        <label>Nome</label><input type="text" id="modalPicName" readonly>
+        <label>Autore</label><input type="text" id="modalAuthor" readonly>
+        <div class="gallery-modal-form-row">
+          <div class="gallery-modal-form-group">
+            <label>Anno</label><input type="text" id="modalYear" readonly>
+          </div>
+          <div class="gallery-modal-form-group">
+            <label>Stato</label><input type="text" id="modalStatus" readonly>
+          </div>
+        </div>
+        <label>Descrizione</label><textarea id="modalDesc" readonly rows="5"></textarea>
+        <div class="gallery-modal-footer">
+          <button class="gallery-modal-btn-close">Chiudi</button>
+        </div>
+      </div>
     </div>
   </div>
 </div>
