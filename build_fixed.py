@@ -46,6 +46,18 @@ def render_gallery_html(gallery_data, lang):
         if status:
             p.append(f'        <p>Status: {status}</p>')
         if year:
+    # Pre-load gallery data
+    gallery_data = []
+    gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
+    if os.path.exists(gallery_source_dir):
+        for filename in os.listdir(gallery_source_dir):
+            if filename.endswith('.json'):
+                with open(os.path.join(gallery_source_dir, filename), 'r', encoding='utf-8') as f:
+                    try:
+                        gallery_data.append(json.load(f))
+                    except:
+                        pass
+
             p.append(f'        <p>Year: {year}</p>')
         p.append('      </div>')
         p.append('    </div>')
@@ -53,23 +65,13 @@ def render_gallery_html(gallery_data, lang):
     panels.append('</div>')
     return '\n'.join(panels)
 
+
 def write_summary(summary_text):
     if 'GITHUB_STEP_SUMMARY' in os.environ:
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
             f.write(summary_text + '\n')
-def parse_frontmatter(content):
-    m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
-    if not m:
-        return {}, content
-    meta_block = m.group(1)
-    body = content[m.end():]
-    meta = {}
-    for line in meta_block.splitlines():
-        if ':' in line:
-            k, v = line.split(':', 1)
-            meta[k.strip().lower()] = v.strip()
-    return meta, body
 
+def parse_frontmatter(content):
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
     if not m:
         return {}, content
@@ -105,18 +107,6 @@ def build():
     os.makedirs(LOCAL_DIR, exist_ok=True)
     with open(RELEASE_FILE, 'r') as f:
         version = json.load(f).get('candidate', {}).get('version', '0.1.0')
-    # Pre-load gallery data
-    gallery_data = []
-    gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
-    if os.path.exists(gallery_source_dir):
-        for filename in os.listdir(gallery_source_dir):
-            if filename.endswith('.json'):
-                with open(os.path.join(gallery_source_dir, filename), 'r', encoding='utf-8') as f:
-                    try:
-                        gallery_data.append(json.load(f))
-                    except:
-                        pass
-
     summary = []
     for lang in LANGUAGES:
         lang_dir = os.path.join(LOCAL_DIR, lang)
