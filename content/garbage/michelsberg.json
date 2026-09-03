@@ -1,0 +1,16 @@
+{
+  "id": "michelsberg",
+  "file": "michelsberg.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "en": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    }
+  }
+}
