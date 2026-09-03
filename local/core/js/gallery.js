@@ -8,13 +8,17 @@ const lang = (urlLang && languages.includes(urlLang)) ? urlLang : (localStorage.
 const containers = document.querySelectorAll('.widget-placeholder, #panel-container, #gallery-container');
 
 containers.forEach(container => {
-    // Get type, fallback to 'gallery' only if data-widget or data-type is present, or if it's a specific container ID
-    const type = container.getAttribute('data-widget') || container.getAttribute('data-type');
-    if (!type && !['panel-container', 'gallery-container'].includes(container.id)) return;
+    // Only process gallery widgets
+    const widgetType = container.getAttribute('data-widget');
+    if (widgetType !== 'gallery') return;
     
-    const effectiveType = type || 'gallery';
-    
-    const manifestUrl = lang === 'en' ? `/content/${effectiveType}/manifest.json` : `/content/${effectiveType}/manifest_${lang}.json`;
+    // Add wrapper class if not present
+    if (!container.classList.contains('panel-wrapper')) {
+        container.classList.add('panel-wrapper');
+    }
+
+    // Always fetch the main manifest
+    const manifestUrl = '/content/gallery/manifest.json';
 
     fetch(manifestUrl)
         .then(response => {
@@ -22,29 +26,25 @@ containers.forEach(container => {
             return response.json();
         })
         .then(data => {
-            if (!container) return;
+            container.innerHTML = ''; // Clear placeholder
             
             data.forEach(item => {
                 const panel = document.createElement('div');
                 panel.className = 'panel';
                 
                 // Get content for the detected language, fallback to EN if missing, or use first available
-                const content = item.content[lang] || item.content['en'] || (item.content ? Object.values(item.content)[0] : {});
+                const content = (item.content && (item.content[lang] || item.content['en'] || Object.values(item.content)[0])) || {};
                 
-                // Simple generic construction - assumes file exists and has standard fields
-                // For more complex types, we might need different template logic
-                let html = '';
-                if (item.file) {
-                        html += `
+                const title = content.name || item.id || 'Untitled';
+                const description = content.description || '';
+                
+                let html = `
                     <div class="panel-image">
-                        <img src="/content/${effectiveType}/${item.file}" alt="${content.name}">
-                    </div>`;
-                }
-                
-                html += `
+                        <img src="/content/gallery/${item.file}" alt="${title.replace(/"/g, '&quot;')}">
+                    </div>
                     <div class="panel-data">
-                        <h3>${content.name}</h3>
-                        <p>${content.description}</p>
+                        <h3>${title}</h3>
+                        <p>${description}</p>
                         ${item.status ? `<p>Status: ${item.status}</p>` : ''}
                         ${item.year ? `<p>Year: ${item.year}</p>` : ''}
                     </div>
@@ -55,9 +55,8 @@ containers.forEach(container => {
             });
         })
         .catch(error => {
-            console.error(`Error loading ${effectiveType}:`, error);
-            if (container) {
-                container.innerHTML = `<p>Error loading ${effectiveType}. Please try again later.</p>`;
-            }
+            console.error('Error loading gallery:', error);
+            container.innerHTML = `<p>Error loading gallery. Please try again later.</p>`;
         });
 });
+
