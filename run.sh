@@ -69,8 +69,7 @@ elif [ "$CMD" == "release" ]; then
     python script/release.py
 
 elif [ "$CMD" == "clean" ]; then
-    rm -rf public
-    echo "Cleaned."
+    python script/clean.py
 
 elif [ "$CMD" == "serve" ]; then
     python -m http.server 8000 -d public
