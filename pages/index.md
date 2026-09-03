@@ -20,7 +20,8 @@ Simeza is an independent publishing platform for rare multi-language books, lang
 
 | Focus | Description | 
 | :--- | :--- | 
-| **Multi-Language Books** | Rare texts and resources designed for language learners, polyglots, and researchers. | | **Original Art** | Authentic canvases and visual works available for collectors. | 
+| **Multi Language** | We host original text and we translate to 8 languages for international audience. | 
+| **Original Art** | Authentic canvases and visual art works available for collectors. | 
 | **Artistic Photography** | High-resolution photographic prints and digital archives. | 
 | **Direct Acquisition** | Secure physical items or download digital editions directly from our platform. |
 
