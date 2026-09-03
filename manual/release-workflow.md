@@ -1,14 +1,35 @@
 # Release Workflow
-The release process is automated using GitHub Actions.
 
-1.  **Candidate Build**: Building candidate...
-[main 69fd270] Build candidate: Wed, Sep  2, 2026 11:34:48 AM
- 4 files changed, 30 insertions(+), 2 deletions(-)
- create mode 100644 .clineignore
- create mode 100644 SYSTEM_INSTRUCTIONS.md
- create mode 100644 manual/architecture.md
-Build completed. generates files in  and updates  in .
-2.  **Release Trigger**: Running release check...
-Releasing version 0.0.1-rc.1...
-Release completed successfully. (or via GitHub Actions) compares  and  versions in .
-3.  **Promotion**: If versions differ,  is promoted to , and a new build is triggered.
+The release process is automated using GitHub Actions and managed locally via `./run.sh`.
+
+## 1. Candidate Workflow
+Candidate builds run validation builds without deploying to GitHub Pages.
+
+### Command
+```bash
+./run.sh commit rc "<message>"
+# Bumps version (e.g., 0.1.1-rc.1 -> 0.1.1-rc.2), sets candidate commit, and logs date.
+
+./run.sh build
+# Runs the full build, generates release metadata, and updates status in `release/releases.json`.
+```
+
+### Metadata
+- `release/releases.json`: Tracks published and candidate version, commit, date, and status (`success`/`failure`).
+- `release/release.log`: Records all version bumps and releases.
+
+## 2. Production Release
+Production deployments trigger on `Publish release:` commit messages, `v*` tags, or workflow dispatch.
+
+### Command
+```bash
+./run.sh publish
+```
+
+### Automation
+`script/release.py` is invoked to:
+1. Promote candidate to published.
+2. Generate `release/notes-<version>.md` (contains git log and file changes).
+3. Update `release/release.log`.
+4. Trigger site build and update `releases.json` status to `success`.
+5. Finally, `run.sh` commits, tags (`v<version>`), and pushes the release.
