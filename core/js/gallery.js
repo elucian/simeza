@@ -1,12 +1,41 @@
 // Gallery functionality
 document.addEventListener('DOMContentLoaded', () => {
   const wrappers = document.querySelectorAll('.panel-wrapper[data-widget="gallery"]');
-  
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalPicName = document.getElementById('modalPicName');
+  const modalAuthor = document.getElementById('modalAuthor');
+  const modalYear = document.getElementById('modalYear');
+  const modalStatus = document.getElementById('modalStatus');
+  const modalDesc = document.getElementById('modalDesc');
+  const closeModal = () => modal.classList.remove('active');
+
+  // Close modal events
+  document.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
+  document.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+
   wrappers.forEach(wrapper => {
     const container = wrapper.parentElement;
     const prevBtn = container.querySelector('.gallery-nav-prev');
     const nextBtn = container.querySelector('.gallery-nav-next');
     
+    // Panel click for modal
+    wrapper.querySelectorAll('.panel').forEach(panel => {
+      panel.addEventListener('click', () => {
+        if (window.innerWidth <= 767) return; // Do not appear on small screen
+        
+        modalImg.src = panel.dataset.image;
+        modalPicName.value = panel.dataset.title;
+        modalAuthor.value = panel.dataset.author;
+        modalYear.value = panel.dataset.year;
+        modalStatus.value = panel.dataset.status;
+        modalDesc.value = panel.dataset.desc;
+        modal.classList.add('active');
+      });
+    });
+
     // Smooth scroll functions
     const scroll = (direction, isMany = false) => {
       const scrollAmount = isMany ? wrapper.clientWidth * 0.8 : wrapper.querySelector('.panel').offsetWidth + 16;
