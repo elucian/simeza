@@ -121,6 +121,14 @@ def build():
             
             meta, body = parse_frontmatter(content)
             
+            # Handle assets (CSS/JS)
+            name_no_ext = os.path.splitext(file)[0]
+            css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
+            js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
+            
+            page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
+            page_js = f'<script src="/core/js/{name_no_ext}.js"></script>' if os.path.exists(js_path) else ''
+            
             md = markdown.Markdown(extensions=['extra'])
             html_content = md.convert(body)
             
@@ -134,6 +142,8 @@ def build():
             final_html = final_html.replace('{{title}}', title)
             final_html = final_html.replace('{{description}}', meta.get('description', 'Art gallery'))
             final_html = final_html.replace('{{keywords}}', meta.get('keywords', 'art'))
+            final_html = final_html.replace('{{page-css}}', page_css)
+            final_html = final_html.replace('{{page-js}}', page_js)
             final_html = final_html.replace('href="core/', 'href="/core/')
             final_html = final_html.replace('src="core/', 'src="/core/')
             
