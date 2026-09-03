@@ -2,9 +2,9 @@
 function initTheme() {
     const themeToggle = document.getElementById('themeToggle');
     const themeIcon = document.getElementById('themeIcon');
-    const sageLogo = document.getElementById('sage-logo');
+    const themeLogo = document.getElementById('themeLogo');
     
-    if (!themeToggle || !themeIcon || !sageLogo) return;
+    if (!themeToggle || !themeIcon || !themeLogo) return;
 
     // Load preference from localStorage or use system default
     const savedTheme = localStorage.getItem('theme');
@@ -13,7 +13,7 @@ function initTheme() {
 
     // Apply Theme
     document.documentElement.setAttribute('data-theme', activeTheme);
-    updateUI(activeTheme, themeIcon, sageLogo);
+    updateUI(activeTheme, themeIcon, themeLogo);
 
     themeToggle.addEventListener('click', () => {
         const currentTheme = document.documentElement.getAttribute('data-theme');
@@ -21,16 +21,14 @@ function initTheme() {
         
         document.documentElement.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme); // Cache preference
-        updateUI(newTheme, themeIcon, sageLogo);
+        updateUI(newTheme, themeIcon, themeLogo);
     });
 }
 
 function updateUI(theme, iconElement, logoElement) {
-    const isRo = window.location.pathname.includes('/ro/');
-    const base = isRo ? '../' : '';
-
-    // Logo update remains the same
-    logoElement.src = theme === 'dark' ? `${base}img/sage-logo-b.svg` : `${base}img/sage-logo-w.svg`;
+    // Logo update: Dark theme (black background) -> use white logo (simeza-logo-w.svg)
+    // Light theme (white background) -> use black logo (simeza-logo-b.svg)
+    logoElement.src = theme === 'dark' ? '/core/img/simeza-logo-w.svg' : '/core/img/simeza-logo-b.svg';
     
     // Theme toggle icon update using the switch-theme.svg
     iconElement.style.filter = theme === 'dark' ? 'invert(1)' : 'invert(0)';
