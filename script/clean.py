@@ -1,6 +1,7 @@
 import os
 import shutil
 import sys
+import argparse
 
 # Append script directory to path to allow importing from other scripts
 sys.path.append(os.path.dirname(os.path.abspath(__file__)))
@@ -10,7 +11,7 @@ PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LOCAL_DIR = 'local'
 
-def clean():
+def clean(target=None):
     # 1. Clean local/
     if os.path.exists(LOCAL_DIR):
         print(f"Removing {LOCAL_DIR}...")
@@ -21,6 +22,21 @@ def clean():
         if '__pycache__' in dirs:
             print(f"Removing {os.path.join(root, '__pycache__')}...")
             shutil.rmtree(os.path.join(root, '__pycache__'))
+
+    if target == 'all':
+        if os.path.exists(CACHE_DIR):
+            print(f"Removing entire {CACHE_DIR}...")
+            shutil.rmtree(CACHE_DIR)
+        print("All translations removed.")
+        return
+
+    if target in LANGUAGES:
+        lang_cache = os.path.join(CACHE_DIR, target)
+        if os.path.exists(lang_cache):
+            print(f"Removing translation cache for {target}...")
+            shutil.rmtree(lang_cache)
+        print(f"Translations for {target} removed.")
+        return
 
     # 3. Clean orphans in cache/
     active_pages = [f for f in os.listdir(PAGES_DIR) if f.endswith('.md')]
@@ -56,4 +72,8 @@ def clean():
     print("Cleanup completed.")
 
 if __name__ == '__main__':
-    clean()
+    parser = argparse.ArgumentParser(description="Clean translation cache.")
+    parser.add_argument('target', nargs='?', help="Language code to clean, 'all' to clean everything, or omit for stale files.")
+    args = parser.parse_args()
+    clean(args.target)
+

@@ -53,10 +53,14 @@ def parse_frontmatter(content):
     return meta, body
 
 def render_menu(lang):
-    if lang == 'en':
-        menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
-    else:
-        menu_file = os.path.join(CACHE_DIR, lang, 'menu.json')
+    # Default to English menu file
+    menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
+    
+    # Try language specific if not 'en'
+    if lang != 'en':
+        lang_menu = os.path.join(CACHE_DIR, lang, 'menu.json')
+        if os.path.exists(lang_menu):
+            menu_file = lang_menu
         
     if not os.path.exists(menu_file): return ''
     with open(menu_file, 'r', encoding='utf-8') as f:
@@ -64,6 +68,9 @@ def render_menu(lang):
     
     html = ''
     for label, url in data.items():
+        # Ensure we construct the link correctly
+        # If we use English menu, the url is English (e.g., about.html)
+        # If we use Translated menu, the url is Translated (e.g., despre.html)
         link = f'/{lang}/{url}'
         html += f'<li class="nav-item"><a class="nav-link" href="{link}">{label}</a></li>'
     return html
