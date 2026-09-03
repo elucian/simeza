@@ -69,6 +69,12 @@ def render_gallery_html(gallery_data, lang):
             p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
         p.append(f'        <div class="panel-title">{html.escape(title)}</div>')
+        # Add a container for mobile specific metadata
+        p.append(f'        <div class="panel-mobile-meta">')
+        if author: p.append(f'          <div class="panel-author">{html.escape(str(author))}</div>')
+        if year: p.append(f'          <div class="panel-year">{html.escape(str(year))}</div>')
+        if status: p.append(f'          <div class="panel-status">{html.escape(str(status))}</div>')
+        p.append('        </div>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
