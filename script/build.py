@@ -34,8 +34,11 @@ def render_gallery_html(gallery_data, lang):
         title = html.escape(loc.get('name') or item.get('id') or 'Untitled')
         desc = html.escape(loc.get('description') or '')
         file = item.get('file', '')
+        author = html.escape(str(item.get('author', '')))
+        category = html.escape(str(item.get('category', '')))
         status = html.escape(str(item.get('status', ''))) if item.get('status') else ''
         year = html.escape(str(item.get('year', ''))) if item.get('year') else ''
+        original = item.get('original', '')
         
         # Calculate aspect ratio
         aspect_ratio = "1/1"
@@ -54,9 +57,12 @@ def render_gallery_html(gallery_data, lang):
             p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
         p.append(f'        <div class="panel-title">{title}</div>')
+        if author: p.append(f'        <div class="panel-author">{author}</div>')
         meta = []
-        if status: meta.append(f"Status: {status}")
         if year: meta.append(f"{year}")
+        if category: meta.append(f"{category}")
+        if status: meta.append(f"Status: {status}")
+        if original == 'yes': meta.append("Original")
         if meta: p.append(f'        <div class="panel-meta">{" | ".join(meta)}</div>')
         if desc: p.append(f'        <div class="panel-desc">{desc}</div>')
         p.append('      </div>')
