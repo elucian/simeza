@@ -14,7 +14,7 @@ Original canvases, linguistic monographs, rare editions, and high-resolution art
 
 <h2 id="about">About Simeza Platform</h2>
 
-Simeza is an independent virtual showroom for rare multi-language books, language guides, and original art. We offer unique works to authors, language learners, mentors and art collectors through direct offers.
+Simeza is an independent web platform for rare multi-language books, language guides, and original art. We offer unique works to authors, language learners, mentors and art collectors through direct offers.
 
 <h2 id="focus">Core Focus Areas</h2>
 
