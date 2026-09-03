@@ -11,6 +11,11 @@
     "ro": {
       "name": "Barci la soare",
       "description": "Barci la soare"
+    },
+    "en": {
+      "name": "Boats in the sun",
+      "description": "Boats in the sun"
     }
-  }
+  },
+  "source_hash": "9fe9fe4c55e7c328aee52a86010dbd77886e795656e95c7b677d4c2e471e607f"
 }

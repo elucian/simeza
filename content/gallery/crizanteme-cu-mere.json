@@ -11,6 +11,11 @@
     "ro": {
       "name": "crizanteme cu mere",
       "description": "crizanteme cu mere"
+    },
+    "en": {
+      "name": "chrysanthemums with apples",
+      "description": "chrysanthemums with apples"
     }
-  }
+  },
+  "source_hash": "46ded8ac727c774ce2bdfbdc6b45734e21abade43e33fe586c68c3e7580416d5"
 }

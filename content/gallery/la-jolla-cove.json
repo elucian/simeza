@@ -11,6 +11,11 @@
     "ro": {
       "name": "la jolla cove",
       "description": "la jolla cove"
+    },
+    "en": {
+      "name": "La Jolla Cove",
+      "description": "La Jolla Cove"
     }
-  }
+  },
+  "source_hash": "ccdbb5f14da7c026448bccae551e3c8e54b641ea039485162dbf5c437c495931"
 }

@@ -11,6 +11,11 @@
     "ro": {
       "name": "flori-la Mihai",
       "description": "flori-la Mihai"
+    },
+    "en": {
+      "name": "flowers for Mihai",
+      "description": "flowers for Mihai"
     }
-  }
+  },
+  "source_hash": "da7b9463cee9a0944c10ce288a6a325db7bce257eecd4680598bd8c316c97f0b"
 }

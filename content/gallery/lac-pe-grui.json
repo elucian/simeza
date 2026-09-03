@@ -11,6 +11,11 @@
     "ro": {
       "name": "Lac pe Grui",
       "description": "Lac pe Grui"
+    },
+    "en": {
+      "name": "Lake on Grui",
+      "description": "Lake on the Ridge"
     }
-  }
+  },
+  "source_hash": "c81e1046277108409e50c32f6e1d8d0953165d550695ee68a5fa6393b233719e"
 }

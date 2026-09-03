@@ -11,6 +11,11 @@
     "ro": {
       "name": "flori pe covor de Rucar",
       "description": "flori pe covor de Rucar"
+    },
+    "en": {
+      "name": "flowers on a Rucar carpet",
+      "description": "flowers on a Rucar carpet"
     }
-  }
+  },
+  "source_hash": "72454ea5e66dfa7cccb1f165f6c2b90a205344eac7ce8ad45430c776c01dc66a"
 }
