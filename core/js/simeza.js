@@ -33,7 +33,8 @@
     { code: 'fr', flag: 'https://flagcdn.com/fr.svg', name: 'FR' },
     { code: 'ru', flag: 'https://flagcdn.com/ru.svg', name: 'RU' },
     { code: 'pt', flag: 'https://flagcdn.com/pt.svg', name: 'PT' },
-    { code: 'hu', flag: 'https://flagcdn.com/hu.svg', name: 'HU' }
+    { code: 'hu', flag: 'https://flagcdn.com/hu.svg', name: 'HU' },
+    { code: 'it', flag: 'https://flagcdn.com/it.svg', name: 'IT' }
   ];
 
   // Detect language from URL path, then localStorage, then default 'en'
