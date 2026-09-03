@@ -7,12 +7,14 @@ import re
 import hashlib
 import shutil
 import sys
+import argparse
 
 # Configuration
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu', 'it']
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
+GALLERY_DIR = os.path.join(os.getcwd(), 'files', 'gallery')
 GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta'
 GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-3.5-flash-lite')
 
@@ -126,7 +128,7 @@ def translate_text(text, target_lang):
     except (urllib.error.HTTPError, urllib.error.URLError, KeyError, IndexError, json.JSONDecodeError) as e:
         raise RuntimeError(f'Translation failed for {target_lang}: {format_translation_error(e)}') from e
 
-def translate_all():
+def translate_pages(target_langs):
     # 1. Translate Pages
     for file in os.listdir(PAGES_DIR):
         if not file.endswith('.md'): continue
@@ -139,8 +141,9 @@ def translate_all():
         
         meta, body = parse_frontmatter(content)
         
-        for lang in LANGUAGES:
+        for lang in target_langs:
             if lang == 'en': continue
+            if lang not in LANGUAGES: continue
             
             slug = SLUG_MAP.get(file, {}).get(lang, file)
             lang_dir = os.path.join(CACHE_DIR, lang)
@@ -172,13 +175,15 @@ def translate_all():
             with open(target_path, 'w', encoding='utf-8') as f:
                 f.write(meta_str + trans_body)
     
+    def translate_menu(target_langs):
     # 2. Translate Menu
     menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
     with open(menu_file, 'r', encoding='utf-8') as f:
         menu_data = json.load(f)
         
-    for lang in LANGUAGES:
+    for lang in target_langs:
         if lang == 'en': continue
+        if lang not in LANGUAGES: continue
         
         print(f"Translating menu for {lang}...")
         
@@ -214,12 +219,60 @@ def translate_all():
                     trans_label = translate_text(label, lang)
                     translated_menu[trans_label] = filename
             
+        os.makedirs(os.path.join(CACHE_DIR, lang), exist_ok=True)
         with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
             json.dump(translated_menu, f, indent=2, ensure_ascii=False)
 
+def translate_gallery(target_langs):
+    # 3. Translate Gallery Manifest
+    manifest_path = os.path.join(GALLERY_DIR, 'manifest.json')
+    if not os.path.exists(manifest_path):
+        print("Gallery manifest not found, skipping.")
+        return
+
+    with open(manifest_path, 'r', encoding='utf-8') as f:
+        gallery_data = json.load(f)
+
+    for lang in target_langs:
+        if lang == 'en': continue
+        if lang not in LANGUAGES: continue
+        
+        print(f"Translating gallery manifest for {lang}...")
+        translated_gallery = []
+        
+        for item in gallery_data:
+            new_item = item.copy()
+            # Only translate if not already translated
+            if 'content' not in new_item:
+                new_item['content'] = {}
+            
+            if lang not in new_item['content']:
+                print(f"  - Translating {item['id']} to {lang}...")
+                new_content = {
+                    "name": translate_text(item['content']['en']['name'], lang),
+                    "description": translate_text(item['content']['en']['description'], lang)
+                }
+                new_item['content'][lang] = new_content
+            translated_gallery.append(new_item)
+            
+        with open(os.path.join(GALLERY_DIR, f'manifest_{lang}.json'), 'w', encoding='utf-8') as f:
+            json.dump(translated_gallery, f, indent=2, ensure_ascii=False)
+
 if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description="Translate content.")
+    parser.add_argument('lang', nargs='?', default='all', help="Language code to translate, or 'all'.")
+    args = parser.parse_args()
+    
+    target_langs = LANGUAGES if args.lang == 'all' else ([args.lang] if args.lang in LANGUAGES else [])
+    
+    if not target_langs:
+        print(f"Invalid language: {args.lang}. Available: {', '.join(LANGUAGES)}")
+        sys.exit(1)
+
     try:
-        translate_all()
+        translate_pages(target_langs)
+        translate_menu(target_langs)
+        translate_gallery(target_langs)
     except RuntimeError as e:
         print(f"Error: {e}", file=sys.stderr)
         print("Run 'source ./run.sh setup' first, or put GEMINI_API_KEY in .env and use './run.sh translate'.", file=sys.stderr)
@@ -227,3 +280,4 @@ if __name__ == '__main__':
     except KeyboardInterrupt:
         print("Translation interrupted; no in-progress file was written.", file=sys.stderr)
         sys.exit(130)
+

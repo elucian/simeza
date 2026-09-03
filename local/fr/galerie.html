@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Galerie - Simeza Art</title>
-  <meta name="description" content="Une collection soigneusement sélectionnée d'œuvres photographiques et de peintures de la galerie Simeza Art.">
+  <meta name="description" content="Une collection organisée d'œuvres photographiques et de peintures de la galerie Simeza Art.">
   <meta name="keywords" content="simeza, art, galerie, peintures, images, photographie, beaux-arts">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
   <link rel="stylesheet" href="/core/css/style.css?v=">
@@ -43,8 +43,95 @@
 
 <main id="content">
    <h1>Galerie</h1>
-<p>Bienvenue dans la section Galerie de Simeza Art.</p>
-<p>Explorez notre collection de belles peintures et d'œuvres photographiques exposées à Simeza Art.</p>
+<p>Bienvenue à la Galerie Simeza. Explorez notre collection de peintures et d'œuvres photographiques.</p>
+<div id="gallery-container" class="gallery-wrapper"></div>
+
+<script>
+fetch('/files/gallery/manifest.json')
+    .then(response => response.json())
+    .then(data => {
+        const container = document.getElementById('gallery-container');
+        data.forEach(item => {
+            const panel = document.createElement('div');
+            panel.className = 'gallery-panel';
+            panel.innerHTML = `
+                <div class="gallery-image">
+                    <img src="/files/gallery/${item.file}" alt="${item.content.fr.name}">
+                </div>
+                <div class="gallery-data">
+                    <h3>${item.content.fr.name}</h3>
+                    <p>${item.content.fr.description}</p>
+                    <p>Statut : ${item.status}</p>
+                    <p>Année : ${item.year}</p>
+                </div>
+            `;
+            container.appendChild(panel);
+        });
+    });
+</script>
+
+<style>
+.gallery-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    overflow: auto;
+    scroll-snap-type: y mandatory;
+    height: 80vh;
+}
+
+@media (min-width: 768px) {
+    .gallery-wrapper {
+        flex-direction: row;
+        scroll-snap-type: x mandatory;
+        overflow-x: auto;
+    }
+}
+
+.gallery-panel {
+    display: flex;
+    flex-direction: column;
+    scroll-snap-align: start;
+    min-width: 100%;
+    border: 1px solid #ccc;
+    background: #fff;
+    padding: 10px;
+}
+
+@media (min-width: 768px) {
+    .gallery-panel {
+        flex-direction: row;
+        min-width: 80%;
+    }
+}
+
+.gallery-image img {
+    width: 100%;
+    height: auto;
+    max-height: 400px;
+    object-fit: contain;
+}
+
+.gallery-data {
+    padding: 20px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+</style>
 </main>
 
 <footer id="socialFooter"></footer>
