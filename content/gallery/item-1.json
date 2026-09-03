@@ -1,0 +1,14 @@
+{
+  "id": "item-1",
+  "file": "picture.jpg",
+  "status": "available",
+  "author": "Author Name",
+  "category": "Fine Art",
+  "topic": "Abstract",
+  "year": 2026,
+  "original": "yes",
+  "content": {
+    "en": { "name": "Title", "description": "..." },
+    "it": { "name": "Titolo", "description": "..." }
+  }
+}
