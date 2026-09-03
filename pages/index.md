@@ -4,15 +4,15 @@ description: Explore contemporary art, writings, paintings, books, and exhibitio
 keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibitions, books, culture
 ---
 
-# Welcome to Simeza Art
+# Welcome to Simeza
 
 **Original paintings and artistic photography in high resolution. Original books, rare writings, and polyglot reading materials for language learners, book authors, and art collectors.**
 
 ---
 
-<h2 id="about">About La Simeza</h2>
+<h2 id="about">About Simeza</h2>
 
-La Simeza is an independent cultural platform dedicated to exhibiting contemporary visual art, curating literary works, and hosting cultural events. The platform serves as a direct conduit between creators and audiences, supporting diverse mediums including paintings, drawings, photography, and digital works.
+Simeza is an independent cultural platform dedicated to exhibiting contemporary visual art, curating literary works, and hosting cultural events. The platform serves as a direct conduit between creators and audiences, supporting diverse mediums including paintings, drawings, photography, and digital works.
 
 <h2 id="focus">Core Focus Areas</h2>
 

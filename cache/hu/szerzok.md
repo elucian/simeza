@@ -1,11 +1,11 @@
 ---
-title: Szerzők - Simeza Art
-description: Fedezze fel a Simeza Art szerzőit és közreműködőit.
-keywords: simeza, művészet, galéria, szerzők, közreműködők
+title: Authors - Simeza Art
+description: Discover the authors and contributors behind Simeza Art.
+keywords: simeza, art, gallery, authors, contributors
+source_hash: 58055bee35fc9a58dc7cd489716fb0336669b33bea645544b1c9d44c9c0db0eb
 ---
+# Authors
 
-# Szerzők
+Welcome to the Authors section of Simeza Art.
 
-Üdvözöljük a Simeza Art Szerzők részlegében.
-
-A részleg tartalma hamarosan elérhető lesz.
+Content for this section will be available soon.

@@ -12,8 +12,8 @@ LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu']
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LAYOUT_DIR = 'layout'
-GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'gemini-2.5-flash')
-GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1beta/models'
+GEMINI_MODEL = os.environ.get('GEMINI_MODEL', 'models/gemini-1.5-flash')
+GEMINI_API_URL = 'https://generativelanguage.googleapis.com/v1'
 
 LANGUAGE_NAMES = {
     'ro': 'Romanian',
@@ -95,6 +95,9 @@ def translate_text(text, target_lang):
         'generationConfig': {'temperature': 0.2}
     }
     url = f'{GEMINI_API_URL}/{GEMINI_MODEL}:generateContent'
+    # Add debugging: print URL (masking the API key)
+    print(f"Requesting URL: {url.replace(api_key, 'REDACTED')}")
+    
     request = urllib.request.Request(
         f'{url}?key={api_key}',
         data=json.dumps(payload).encode('utf-8'),
@@ -137,6 +140,7 @@ def translate_all():
                     cached_content = f.read()
                     cached_meta, _ = parse_frontmatter(cached_content)
                 if cached_meta.get('source_hash') == en_hash:
+                    print(f"Skipping {file} ({lang}/{slug}), already up to date.")
                     continue
             
             print(f"Translating {file} -> {lang}/{slug}...")
@@ -163,24 +167,42 @@ def translate_all():
     for lang in LANGUAGES:
         if lang == 'en': continue
         
-        # Translate menu labels and update URLs to use translated slugs
+        print(f"Translating menu for {lang}...")
+        
+        # Prepare labels that need translation
+        labels_to_translate = {}
         translated_menu = {}
+        
         for label, url in menu_data.items():
-            # Use MENU_MAP if available, otherwise translate
+            # Use MENU_MAP if available
             trans_label = MENU_MAP.get(label, {}).get(lang)
-            if trans_label is None:
-                trans_label = translate_text(label, lang)
             
             # Find the original filename (e.g., 'about.html') to match with SLUG_MAP
             original_filename = url.replace('.html', '.md')
-            
             # Get translated filename
             translated_filename = SLUG_MAP.get(original_filename, {}).get(lang, original_filename).replace('.md', '.html')
             
-            translated_menu[trans_label] = translated_filename
+            if trans_label:
+                translated_menu[trans_label] = translated_filename
+            else:
+                labels_to_translate[label] = translated_filename
+        
+        # If there are labels to translate, do it in bulk
+        if labels_to_translate:
+            prompt = f"Translate the following menu labels to {LANGUAGE_NAMES.get(lang, lang)}. Return ONLY a JSON object mapping the original label to the translated label. Do not include markdown formatting.\n{json.dumps(list(labels_to_translate.keys()))}"
+            bulk_translation_json = translate_text(prompt, lang)
+            try:
+                bulk_translation = json.loads(bulk_translation_json)
+                for label, translated_label in bulk_translation.items():
+                    translated_menu[translated_label] = labels_to_translate[label]
+            except:
+                # Fallback to individual
+                for label, filename in labels_to_translate.items():
+                    trans_label = translate_text(label, lang)
+                    translated_menu[trans_label] = filename
             
         with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
-            json.dump(translated_menu, f, indent=2)
+            json.dump(translated_menu, f, indent=2, ensure_ascii=False)
 
 if __name__ == '__main__':
     translate_all()
