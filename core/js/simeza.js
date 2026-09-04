@@ -1,3 +1,21 @@
+    // Initialize filter button visibility
+    document.addEventListener('DOMContentLoaded', () => {
+        const pageId = document.querySelector('meta[name="page-id"]')?.content || '';
+        const pathname = window.location.pathname;
+        const filterBtn = document.getElementById('filterBtn');
+        const isIndex = pageId.includes('index') || pathname.endsWith('/') || pathname.endsWith('index.html');
+        if (filterBtn && !isIndex) {
+            filterBtn.style.display = 'flex';
+        }
+    });
+
+    window.toggleFilterModal = function() {
+        const modal = document.getElementById('filterModal');
+        if (modal) {
+            modal.classList.toggle('active');
+        }
+    };
+
     function toggleTheme() {
       const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';

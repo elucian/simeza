@@ -69,7 +69,7 @@ def render_gallery_html(gallery_data, lang):
         
         p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
         if file:
-            p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
+            p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         else:
             p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
@@ -121,7 +121,44 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ]
-    panels.extend(modal)
+    # Filter Modal
+    filter_modal = [
+        '<div id="filterModal" class="gallery-modal-overlay">',
+        '  <div class="gallery-modal" style="width: min(600px, 90vw); height: auto; max-height: 85dvh;">',
+        '    <button class="gallery-modal-close-x" onclick="toggleFilterModal()" aria-label="Close">&times;</button>',
+        '    <h3 style="margin-top:0; color:var(--accent-color);">Filter Gallery</h3>',
+        '    <div class="filter-modal-body" style="overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:16px; padding:10px 0;">'
+    ]
+    
+    # Load filter config
+    filter_data = {}
+    try:
+        with open(os.path.join(ROOT, 'content', 'filter-gallery.json'), 'r', encoding='utf-8') as f:
+            filter_data = json.load(f)
+    except:
+        pass
+
+    for section_key, title_label in [('types', 'Type'), ('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
+        items = filter_data.get(section_key, [])
+        if items:
+            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong><div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;">')
+            for entry in items:
+                entry_id = entry.get('id')
+                label_dict = entry.get('label', {})
+                label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
+                filter_modal.append(f'        <label style="display:inline-flex; align-items:center; gap:5px; font-size:0.85rem;"><input type="checkbox" name="filter-{section_key}" value="{entry_id}"> {label_text}</label>')
+            filter_modal.append('      </div></div>')
+
+    filter_modal.extend([
+        '    </div>',
+        '    <div class="gallery-modal-footer" style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">',
+        '      <button class="gallery-modal-btn-close" onclick="resetFilters()" style="background:transparent; color:var(--text-main); border:1px solid var(--border-color);">Reset</button>',
+        '      <button class="gallery-modal-btn-close" onclick="applyFilters()">Apply Filters</button>',
+        '    </div>',
+        '  </div>',
+        '</div>'
+    ])
+    panels.extend(filter_modal)
     panels.append('</div>')
     return '\n'.join(panels)
 

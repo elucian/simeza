@@ -47,7 +47,7 @@
   flex-direction: column;
   height: 100%;
   flex: 0 0 auto;
-  width: fit-content;
+  width: auto;
   background: var(--bg-header);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -56,24 +56,32 @@
 }
 
 .panel-image {
-  height: calc(100% - 74px);
+  flex: 1 1 auto;
+  min-height: 0;
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(0,0,0,0.02);
+  background: transparent;
   overflow: hidden;
 }
 
 .panel-image img {
-  width: 100%;
   height: 100%;
+  width: auto;
+  max-width: none;
   object-fit: contain;
   display: block;
 }
 
 .panel-data {
-  height: 96px;
-  padding: 6px 12px;
+  flex: 0 0 auto;
+  height: 52px;
+  width: 0;
+  min-width: 100%;
+  max-width: 100%;
+  padding: 6px 10px;
+  box-sizing: border-box;
   background: var(--bg-main);
   border-top: 1px solid var(--border-color);
   display: flex;
@@ -220,34 +228,7 @@
 }
 
 /* Landscape: Horizontal Cards */
-@media (orientation: landscape) and (max-height: 600px) {
-  .panel-wrapper {
-    flex-direction: row !important;
-    overflow-x: auto !important;
-    overflow-y: hidden !important;
-  }
-  .panel {
-    flex-direction: column !important;
-    height: 100% !important;
-    width: fit-content !important;
-    margin-bottom: 0 !important;
-    margin-right: 16px;
-  }
-  .panel-image {
-    width: auto !important;
-    height: calc(100% - 60px) !important;
-    border-right: none !important;
-    border-bottom: 1px solid var(--border-color);
-  }
-  .panel-data {
-    width: 100% !important;
-    height: 60px !important;
-    border-top: none !important;
-    border-left: none !important;
-  }
-}
-
-
+/* Removed landscape mobile overrides to allow smooth continuous scaling */
 
 /* Modal Styles */
 .gallery-modal-overlay {
