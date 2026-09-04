@@ -13,17 +13,15 @@ const saveFilters = () => {
 
 const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
-    if (!saved) return;
-    const filters = JSON.parse(saved);
+    const filters = saved ? JSON.parse(saved) : {};
     
     // Set type (radio)
     const typeInputs = document.querySelectorAll('input[name=\'filter-types\']');
-    if (filters.type !== undefined) {
+    if (filters.type) {
         typeInputs.forEach(radio => radio.checked = radio.value === filters.type);
     } else {
-        // If no filter saved, default to 'all' (empty value)
-        const allRadio = document.querySelector('input[name=\'filter-types\'][value=""]');
-        if (allRadio) allRadio.checked = true;
+        // If no filter saved, select the first one (default)
+        if (typeInputs.length > 0) typeInputs[0].checked = true;
     }
     
     // Set selects
@@ -51,7 +49,9 @@ window.applyFilters = function(shouldCloseModal = false) {
 
     saveFilters();
 
-    const hasActiveFilters = (type && type !== '') || authors.length > 0 || categories.length > 0 || topics.length > 0;
+    // Since radio buttons now always have a selection, filterIcon reflects author/category/topic filters only if 'type' is not just the default (though this is tricky since we don't know the default easily here)
+    // For simplicity, let's just show it if there are any non-type filters active.
+    const hasActiveFilters = authors.length > 0 || categories.length > 0 || topics.length > 0;
     const filterIcon = document.getElementById('filterIcon');
     if (filterIcon) {
         filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
@@ -64,7 +64,7 @@ window.applyFilters = function(shouldCloseModal = false) {
             const pCategory = panel.dataset.category;
             const pTopic = panel.dataset.topic;
 
-            let matchType = (!type || type === '') || (pType === type);
+            let matchType = !type || (pType === type);
             let matchAuthor = authors.length === 0 || authors.includes(pAuthor);
             let matchCategory = categories.length === 0 || categories.includes(pCategory);
             let matchTopic = topics.length === 0 || topics.includes(pTopic);

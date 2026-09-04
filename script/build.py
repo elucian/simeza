@@ -135,15 +135,14 @@ def render_gallery_html(gallery_data, lang):
         '</div>'
     ]
     # --- Types (outside modal) ---
-    all_label = {'en': 'All', 'ro': 'Toate', 'de': 'Alle', 'es': 'Todos', 'fr': 'Tous', 'ru': 'Все', 'pt': 'Todos', 'hu': 'Összes', 'it': 'Tutti'}
-    all_text = all_label.get(lang, all_label['en'])
     types_html = ['<div class="filter-types-container">']
-    types_html.append(f'  <label class="type-checkbox"><input type="radio" name="filter-types" value="" onchange="applyFilters()" checked> {all_text}</label>')
-    for entry in filter_data.get('types', []):
+    types_list = filter_data.get('types', [])
+    for i, entry in enumerate(types_list):
         entry_id = entry.get('id')
         label_dict = entry.get('label', {})
         label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-        types_html.append(f'  <label class="type-checkbox"><input type="radio" name="filter-types" value="{entry_id}" onchange="applyFilters()"> {label_text}</label>')
+        checked = ' checked' if i == 0 else ''
+        types_html.append(f'  <label class="type-checkbox"><input type="radio" name="filter-types" value="{entry_id}" onchange="applyFilters()"{checked}> {label_text}</label>')
     types_html.append('</div>')
     panels.append('\n'.join(types_html))
 
