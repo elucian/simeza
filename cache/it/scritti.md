@@ -1,11 +1,13 @@
 ---
 title: Scritti - Simeza Art
-description: Esplora la nostra raccolta di saggi, articoli e riflessioni sull'arte e sulla cultura.
+description: Esplora la nostra collezione di saggi, articoli e riflessioni sull'arte e la cultura.
 keywords: simeza, arte, galleria, scritti, saggi, articoli
-source_hash: 21e7e8e5f442dc08511d0e4ae048a61ffdfd3efe865769caf6af502997c1b06f
+source_hash: b365ca787089544a45a2377e2b2f49c3afda427af7207c78693eb18e0d82f3d4
 ---
 # Scritti
 
 Benvenuti nella sezione Scritti di Simeza Art.
 
-I contenuti di questa sezione saranno presto disponibili.
+Il contenuto di questa sezione sarà presto disponibile.
+
+{{widget:bottom_bar}}

@@ -14,37 +14,37 @@
       "description": "Sample Description"
     },
     "de": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Beispieltitel",
+      "description": "Beispielbeschreibung"
     },
     "es": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Título de ejemplo",
+      "description": "Descripción de la muestra"
     },
     "fr": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Titre d'exemple",
+      "description": "Description de l'échantillon"
     },
     "hu": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Példa cím",
+      "description": "Minta leírása"
     },
     "it": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Titolo di esempio",
+      "description": "Descrizione del campione"
     },
     "pt": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Título de exemplo",
+      "description": "Descrição da amostra"
     },
     "ro": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Titlu exemplu",
+      "description": "Descrierea eșantionului"
     },
     "ru": {
-      "title": "Sample Title",
-      "description": "Sample Description"
+      "title": "Пример заголовка",
+      "description": "Описание образца"
     }
   },
-  "source_hash": "9db8b1609b64542c0687009afca5315f29bd386d7ffa6a3d4caccf7377d9460a"
+  "source_hash": "1a9a0e7d7326a409bca454277b5f2a3f2575a84f1c0688143e8351278912b277"
 }

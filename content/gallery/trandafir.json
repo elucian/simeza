@@ -12,7 +12,39 @@
     "ro": {
       "name": "trandafir",
       "description": "Trandafir roșu cu boabe de rouâ"
+    },
+    "de": {
+      "name": "Rose",
+      "description": "Rote Rose mit Tautropfen"
+    },
+    "en": {
+      "name": "rose",
+      "description": "Red rose with dew drops"
+    },
+    "es": {
+      "name": "rosa",
+      "description": "Rosa roja con gotas de rocío"
+    },
+    "fr": {
+      "name": "rose",
+      "description": "Rose rouge avec des gouttes de rosée"
+    },
+    "hu": {
+      "name": "rózsa",
+      "description": "Vörös rózsa harmatcseppekkel"
+    },
+    "it": {
+      "name": "rosa",
+      "description": "Rosa rossa con gocce di rugiada"
+    },
+    "pt": {
+      "name": "rosa",
+      "description": "Rosa vermelha com gotas de orvalho"
+    },
+    "ru": {
+      "name": "роза",
+      "description": "Красная роза с каплями росы"
     }
   },
-  "source_hash": ""
+  "source_hash": "721a7de56f332a43d68cdedb807f5d1599429d66252c8f6343dd24c17c1af7f9"
 }

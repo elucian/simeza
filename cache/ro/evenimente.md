@@ -1,11 +1,11 @@
 ---
-title: Evenimente - Simeza Art
-description: Alăturați-vă evenimentelor noastre comunitare și expozițiilor de galerie la Simeza Art.
-keywords: simeza, artă, galerie, evenimente, expoziții
-source_hash: 6a7728a615a047387fb0ec1a69c1189cca5a48935437272ff5b1307229862d2a
+title: Media - Simeza Art
+description: Explorează colecția noastră de materiale media, inclusiv audio, video și fluxuri la Simeza Art.
+keywords: simeza, artă, media, audio, video, stream
+source_hash: 12d2f0437c013efdb1e7c31afc107d54385d0d4dd6c6b2352026215754a76105
 ---
-# Evenimente
+# Media
 
-Bun venit în secțiunea Evenimente a Simeza Art.
+{{widget:media}}
 
-Conținutul pentru această secțiune va fi disponibil în curând.
+Bun venit în secțiunea Media a Simeza Art. Explorează colecția noastră de audio, video și stream.

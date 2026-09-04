@@ -1,11 +1,11 @@
 ---
-title: Veranstaltungen - Simeza Art
-description: Nehmen Sie an unseren Community-Events und Galerieausstellungen bei Simeza Art teil.
-keywords: simeza, kunst, galerie, veranstaltungen, ausstellungen
-source_hash: 6a7728a615a047387fb0ec1a69c1189cca5a48935437272ff5b1307229862d2a
+title: Medien - Simeza Art
+description: Entdecken Sie unsere Mediensammlung, einschließlich Audio, Video und Streams bei Simeza Art.
+keywords: Simeza, Kunst, Medien, Audio, Video, Stream
+source_hash: 12d2f0437c013efdb1e7c31afc107d54385d0d4dd6c6b2352026215754a76105
 ---
-# Veranstaltungen
+# Medien
 
-Willkommen im Veranstaltungsbereich von Simeza Art.
+{{widget:media}}
 
-Inhalte für diesen Bereich werden in Kürze verfügbar sein.
+Willkommen im Medienbereich von Simeza Art. Entdecken Sie unsere Audio-, Video- und Stream-Sammlung.

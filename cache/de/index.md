@@ -2,7 +2,7 @@
 title: La Simeza - Galerie für zeitgenössische Kunst & polyglotte Austausch-Community
 description: Entdecken Sie zeitgenössische Kunst, Schriften, Gemälde, Bücher und Ausstellungen in der Simeza Art Gallery.
 keywords: simeza, kunstgalerie, zeitgenössische kunst, rumänische kunst, gemälde, ausstellungen, bücher, kultur
-source_hash: 51d098f867441483d86019ecac8b3b38f4c30f69834dfb3fb80fde5dc67d80b0
+source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 ---
 # Willkommen bei La Simeza
 
@@ -15,14 +15,14 @@ source_hash: 51d098f867441483d86019ecac8b3b38f4c30f69834dfb3fb80fde5dc67d80b0
 <h2 id="about">Kernbereiche</h2>
 
 <div class="content-card">
-La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir bieten Unterstützung für Kunstbegeisterte, polyglotte Studenten und Mentoren. Wir heißen jeden willkommen, der sich für das Sprachenlernen, kulturelle Veranstaltungen und persönliche Emanzipation interessiert.
+La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir bieten Unterstützung für Kunstliebhaber, polyglotte Studenten und Mentoren. Wir heißen jeden willkommen, der sich für das Sprachenlernen, kulturelle Medien und persönliche Emanzipation interessiert.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Mehrsprachig</strong>
+      <strong>Mehrsprachigkeit</strong>
       <span>Wir hosten Originaltexte und übersetzen in 8 europäische Sprachen.</span>
     </div>
   </div>
@@ -37,7 +37,7 @@ La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir b
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Offene Gemeinschaft</strong>
-      <span>Support-Kontakt, Sprachaustausch, kulturelle Veranstaltungen und Gespräche.</span>
+      <span>Support-Kontakt, Sprachaustausch, kulturelle Medien und Gespräche.</span>
     </div>
   </div>
 </div>
@@ -49,7 +49,7 @@ La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir b
 <h2 id="about-content">Direktangebot-Inhalte</h2>
 
 <div class="content-card">
-Originalleinwände, sprachwissenschaftliche Monographien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben. Planen Sie Gespräche und kulturelle Veranstaltungen in unserer Gemeinschaft.
+Originalleinwände, linguistische Monographien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben. Vereinbaren Sie Gespräche und kulturelle Medien in unserer Gemeinschaft.
 </div>
 
 <div class="content-card-list">
@@ -71,7 +71,7 @@ Originalleinwände, sprachwissenschaftliche Monographien, seltene Ausgaben und h
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Seltene Bücher & Publikationen</strong>
-      <span>Seltene Ausgaben, historische Drucke, Essays und sprachwissenschaftliche Leitfäden.</span>
+      <span>Seltene Ausgaben, historische Drucke, Essays und Sprachführer.</span>
     </div>
   </div>
 </div>
