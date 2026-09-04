@@ -2,15 +2,14 @@
 title: La Simeza - Galerie für zeitgenössische Kunst & Community
 description: Entdecken Sie zeitgenössische Kunst, Schriften, Gemälde, Bücher und Ausstellungen in der Simeza Art Gallery.
 keywords: simeza, kunstgalerie, zeitgenössische kunst, rumänische kunst, gemälde, ausstellungen, bücher, kultur
-source_hash: c30d206db9c7593d32c3ff669470eb462840a7b68c68efd8a10c7640c780b7a3
 ---
 # Willkommen bei Simeza
 
 **Direktkauf-Angebote für Forscher, Autoren und Sammler.**
 
-Original-Leinwände, sprachwissenschaftliche Monografien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben.
-    
----
+<div class="index-panels" markdown="1">
+
+<div class="index-panel index-panel-about" markdown="1">
 
 <h2 id="about">Über die Simeza-Plattform</h2>
 
@@ -24,3 +23,40 @@ Simeza ist eine unabhängige Webplattform für seltene mehrsprachige Bücher, Sp
 | **Originalkunst** | Authentische Leinwände und bildende Kunstwerke für Sammler. | 
 | **Künstlerische Fotografie** | Hochauflösende Fotoabzüge und digitale Archive. | 
 | **Direkter Erwerb** | Sichern Sie sich physische Objekte oder laden Sie digitale Ausgaben direkt von unserer Plattform herunter. |
+
+</div>
+
+<div class="index-panel index-panel-content" markdown="1">
+
+<h2 id="content">Über die Simeza-Inhalte</h2>
+
+Original-Leinwände, sprachwissenschaftliche Monografien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben.
+
+<div class="content-card-list">
+  <div class="content-card">
+    <i class="bi bi-palette"></i>
+    <div class="content-card-body">
+      <strong>Originalkunst & Galerie</strong>
+      <span>Authentische Leinwände und bildende Kunstwerke rumänischer Meister und zeitgenössischer Künstler.</span>
+    </div>
+  </div>
+  <div class="content-card">
+    <i class="bi bi-book"></i>
+    <div class="content-card-body">
+      <strong>Seltene Bücher & Publikationen</strong>
+      <span>Seltene Ausgaben, historische Drucke, Poesie und Sprachführer zum direkten Studium.</span>
+    </div>
+  </div>
+  <div class="content-card">
+    <i class="bi bi-journal-text"></i>
+    <div class="content-card-body">
+      <strong>Schriften & Digitale Archive</strong>
+      <span>Monografien, spirituelle Essays und hochauflösende künstlerische digitale Artefakte.</span>
+    </div>
+  </div>
+
+</div>
+
+</div>
+
+</div>

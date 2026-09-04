@@ -23,37 +23,43 @@
 
 html,
 body {
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100dvh;
   margin: 0;
   padding: 0;
-  overflow: hidden;
   background-color: var(--bg-outer);
   scroll-behavior: smooth;
 }
 
 /* Layout Container */
 .container {
-  height: 100vh;
-  height: 100dvh;
+  min-height: 100dvh;
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
   background-color: var(--bg-main);
   display: flex;
   flex-direction: column;
-  overflow: hidden;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
 }
 
 #content {
   flex: 1 1 auto;
-  min-height: 0;
   padding: 20px 20px;
-  overflow-y: auto;
   display: flex;
   flex-direction: column;
+}
+
+/* Panels */
+.index-panels {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.index-panel {
+  flex: 1 1 45%;
+  min-width: 300px;
 }
 
 #content::-webkit-scrollbar {

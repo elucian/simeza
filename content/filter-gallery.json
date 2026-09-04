@@ -1,0 +1,18 @@
+{
+  "types": [
+    { "id": "photo", "label": { "en": "Photos", "ro": "Fotografii", "de": "Fotos", "es": "Fotos", "fr": "Photos", "ru": "Фото", "pt": "Fotos", "hu": "Fotók", "it": "Foto" } },
+    { "id": "painting", "label": { "en": "Paintings", "ro": "Picturi", "de": "Gemälde", "es": "Pinturas", "fr": "Peintures", "ru": "Картины", "pt": "Pinturas", "hu": "Festmények", "it": "Dipinti" } }
+  ],
+  "authors": [
+    { "id": "Pavy Beloiu", "label": { "en": "Pavy Beloiu", "ro": "Pavy Beloiu", "de": "Pavy Beloiu", "es": "Pavy Beloiu", "fr": "Pavy Beloiu", "ru": "Пави Белою", "pt": "Pavy Beloiu", "hu": "Pavy Beloiu", "it": "Pavy Beloiu" } }
+  ],
+  "categories": [
+    { "id": "Portraits", "label": { "en": "Portraits", "ro": "Portrete", "de": "Porträts", "es": "Retratos", "fr": "Portraits", "ru": "Портреты", "pt": "Retratos", "hu": "Portrék", "it": "Ritratti" } },
+    { "id": "Landscapes", "label": { "en": "Landscapes", "ro": "Peisaje", "de": "Landschaften", "es": "Paisajes", "fr": "Paysages", "ru": "Пейзажи", "pt": "Paisagens", "hu": "Tájképek", "it": "Paesaggi" } },
+    { "id": "Still Life", "label": { "en": "Still Life", "ro": "Natură Statică", "de": "Stilleben", "es": "Naturaleza Muerta", "fr": "Nature Morte", "ru": "Натюрморт", "pt": "Natureza Morta", "hu": "Csendélet", "it": "Natura Morta" } }
+  ],
+  "topics": [
+    { "id": "Portraits", "label": { "en": "Portraits", "ro": "Portrete", "de": "Porträts", "es": "Retratos", "fr": "Portraits", "ru": "Портреты", "pt": "Retratos", "hu": "Portrék", "it": "Ritratti" } },
+    { "id": "Nature", "label": { "en": "Nature", "ro": "Natură", "de": "Natur", "es": "Naturaleza", "fr": "Nature", "ru": "Природа", "pt": "Natureza", "hu": "Természet", "it": "Natura" } }
+  ]
+}
