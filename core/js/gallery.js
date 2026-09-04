@@ -82,9 +82,31 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Panel interaction
     wrapper.querySelectorAll('.panel').forEach(panel => {
-      // Click for Desktop & Landscape Mobile
+    // Click for Desktop & Landscape Mobile
       panel.addEventListener('click', (e) => {
-        openModal(panel);
+        const isPortrait = window.innerHeight >= window.innerWidth && window.innerWidth <= 768;
+        if (isPortrait) {
+            // Trigger Fullscreen
+            const viewer = document.getElementById('imageFullscreenViewer');
+            const viewerImg = viewer.querySelector('img');
+            const img = panel.querySelector('img');
+            if (viewer && img) {
+                viewerImg.src = img.src;
+                viewer.classList.add('active');
+                // Trigger rotation logic (needs to be available or re-implemented)
+                // Since updateRotation is defined in simeza.js inside initFullscreenViewer, 
+                // it might not be global. I'll need to replicate the logic or make it global.
+                const isScreenPortrait = true; // Portrait mode
+                const isImgPortrait = (img.naturalHeight || img.height) >= (img.naturalWidth || img.width);
+                if (isImgPortrait) {
+                    viewerImg.classList.remove('rotated');
+                } else {
+                    viewerImg.classList.add('rotated');
+                }
+            }
+        } else {
+            openModal(panel);
+        }
       });
 
       // Double tap/click handler for mobile
@@ -137,6 +159,9 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Mouse wheel horizontal scroll
     wrapper.addEventListener('wheel', (e) => {
+      // Only allow horizontal wheel scroll on desktop; mobile portrait should rely on standard touch scrolling
+      if (window.innerWidth <= 767) return;
+
       if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
         e.preventDefault();
         const isMany = e.ctrlKey || e.metaKey;

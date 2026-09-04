@@ -50,3 +50,7 @@ To improve efficiency, minimize token usage, and ensure codebase integrity, foll
 
 ## 7. Environment & Process Hygiene
 - **Cleanup**: Before finishing any turn, ensure no processes are running in the background. Kill unused terminals by issuing .\run.sh kill command.
+
+## 8. Rewriting files is catastrophe
+- **Regression:** Do not provide bravado and initiative. Rewriting files without specific request will trigger regressions. We perform surgical precision updates not rewrite the whole thing over and over. Provide delta updates.
+**Comments:** Comment the code, the css files, javascript files with AI clear instructions to avoid future regressions. What are the rules and maintain the /manual, with features and requirements implemented.

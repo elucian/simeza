@@ -65,7 +65,7 @@ body:has(.gallery-container),
 }
 
 #content:has(.gallery-container) {
-  padding: 10px 20px 4px 20px;
+  padding: 0 !important;
 }
 
 /* Panels */
@@ -357,6 +357,8 @@ body:has(.gallery-container),
 
   #content {
     overflow-y: visible;
+  }
+  #content:not(:has(.gallery-container)) {
     padding: 16px 12px;
   }
 
