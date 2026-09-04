@@ -27,6 +27,52 @@ SLUG_MAP = {
     'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md', 'it': 'libri.md'}
 }
 
+def render_bottom_bar(page_id, lang, active_id=None):
+    # Data for the bottom bar buttons per page
+    config = {
+        'gallery': [
+            {'id': 'painting', 'icon': 'bi-palette', 'label': {'en': 'Paintings', 'ro': 'Picturi', 'de': 'Gemälde', 'es': 'Pinturas', 'fr': 'Peintures', 'ru': 'Картины', 'pt': 'Pinturas', 'hu': 'Festmények', 'it': 'Dipinti'}},
+            {'id': 'drawing', 'icon': 'bi-pencil', 'label': {'en': 'Drawings', 'ro': 'Desene', 'de': 'Zeichnungen', 'es': 'Dibujos', 'fr': 'Dessins', 'ru': 'Рисунки', 'pt': 'Desenhos', 'hu': 'Rajzok', 'it': 'Disegni'}},
+            {'id': 'photo', 'icon': 'bi-camera', 'label': {'en': 'Photos', 'ro': 'Fotografii', 'de': 'Fotos', 'es': 'Fotos', 'fr': 'Photos', 'ru': 'Фото', 'pt': 'Fotos', 'hu': 'Fotók', 'it': 'Foto'}}
+        ],
+        'media': [
+            {'id': 'audio', 'label': {'en': 'Audio', 'ro': 'Audio', 'de': 'Audio', 'es': 'Audio', 'fr': 'Audio', 'ru': 'Аудио', 'pt': 'Audio', 'hu': 'Audio', 'it': 'Audio'}, 'icon': 'bi-soundwave'},
+            {'id': 'video', 'label': {'en': 'Video', 'ro': 'Video', 'de': 'Video', 'es': 'Video', 'fr': 'Video', 'ru': 'Видео', 'pt': 'Video', 'hu': 'Video', 'it': 'Video'}, 'icon': 'bi-camera-video'},
+            {'id': 'stream', 'label': {'en': 'Stream', 'ro': 'Stream', 'de': 'Stream', 'es': 'Stream', 'fr': 'Stream', 'ru': 'Стрим', 'pt': 'Stream', 'hu': 'Stream', 'it': 'Stream'}, 'icon': 'bi-broadcast'}
+        ],
+        'books': [
+            {'id': 'monographs', 'label': {'en': 'Monographs'}, 'icon': 'bi-book'},
+            {'id': 'rare-editions', 'label': {'en': 'Rare Editions'}, 'icon': 'bi-journal-bookmark'},
+            {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-file-text'}
+        ],
+        'authors': [
+            {'id': 'contemporary', 'label': {'en': 'Contemporary'}, 'icon': 'bi-person'},
+            {'id': 'historical', 'label': {'en': 'Historical'}, 'icon': 'bi-person-lines-fill'},
+            {'id': 'mentors', 'label': {'en': 'Mentors'}, 'icon': 'bi-award'}
+        ],
+        'writings': [
+            {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-pen'},
+            {'id': 'poetry', 'label': {'en': 'Poetry'}, 'icon': 'bi-feather'},
+            {'id': 'articles', 'label': {'en': 'Articles'}, 'icon': 'bi-newspaper'}
+        ]
+    }
+    
+    buttons = config.get(page_id, [])
+    if not buttons:
+        return ''
+        
+    bar_html = ['<nav class="sticky-bottom-bar" id="bottomBar">']
+    for i, btn in enumerate(buttons):
+        btn_id = btn['id']
+        label = btn['label'].get(lang, btn['label'].get('en'))
+        icon = btn.get('icon')
+        active_class = ' active' if (active_id and btn_id == active_id) or (not active_id and i == 0) else ''
+        icon_html = f'<i class="bi {icon}"></i> ' if icon else ''
+        bar_html.append(f'  <button class="bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
+    bar_html.append('</nav>')
+    return '\n'.join(bar_html)
+
+
 def render_gallery_html(gallery_data, lang):
     # Modal Translations
     t = {
@@ -135,16 +181,7 @@ def render_gallery_html(gallery_data, lang):
         '</div>'
     ]
     # --- Types (outside modal) ---
-    types_html = ['<div class="filter-types-container">']
-    types_list = filter_data.get('types', [])
-    for i, entry in enumerate(types_list):
-        entry_id = entry.get('id')
-        label_dict = entry.get('label', {})
-        label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-        checked = ' checked' if i == 0 else ''
-        types_html.append(f'  <label class="type-checkbox"><input type="radio" name="filter-types" value="{entry_id}" onchange="applyFilters()"{checked}> {label_text}</label>')
-    types_html.append('</div>')
-    panels.append('\n'.join(types_html))
+    panels.append(render_bottom_bar('gallery', lang, active_id='painting'))
 
     # --- Filter Modal (with dropdowns) ---
     filter_modal = [
@@ -187,92 +224,68 @@ def render_gallery_html(gallery_data, lang):
     panels.append('</div>')
     return '\n'.join(panels)
 
+def test_func():
+    pass
+
 def render_media_html(media_data, lang):
-    # Modal Translations
+    # Translations
     t = {
-        'en': {'Name': 'Name', 'Author': 'Author', 'Date': 'Date', 'Location': 'Location', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter'},
-        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Date': 'Dată', 'Location': 'Locație', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru'},
-        'de': {'Name': 'Name', 'Author': 'Autor', 'Date': 'Datum', 'Location': 'Ort', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter'},
-        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Date': 'Fecha', 'Location': 'Ubicación', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro'},
-        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Date': 'Date', 'Location': 'Lieu', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre'},
-        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Date': 'Дата', 'Location': 'Место', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр'},
-        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Date': 'Data', 'Location': 'Local', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro'},
-        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Date': 'Dátum', 'Location': 'Helyszín', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő'},
-        'it': {'Name': 'Nome', 'Author': 'Autore', 'Date': 'Data', 'Location': 'Luogo', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro'}
+        'en': {'Close': 'Close', 'All': 'All'},
+        'ro': {'Close': 'Închide', 'All': 'Toate'},
+        'de': {'Close': 'Schließen', 'All': 'Alle'},
+        'es': {'Close': 'Cerrar', 'All': 'Todos'},
+        'fr': {'Close': 'Fermer', 'All': 'Tous'},
+        'ru': {'Close': 'Закрыть', 'All': 'Все'},
+        'pt': {'Close': 'Fechar', 'All': 'Todos'},
+        'hu': {'Close': 'Bezár', 'All': 'Összes'},
+        'it': {'Close': 'Chiudi', 'All': 'Tutti'}
     }
     trans = t.get(lang, t['en'])
     
-    panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>', '<div class="panel-wrapper" data-widget="media">']
+    # Grid
+    html_output = ['<div class="media-container">', '<div class="media-grid" data-widget="media">']
     for item in media_data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
         title = loc.get('title') or item.get('id') or 'Untitled'
         desc = loc.get('description') or ''
         file = item.get('file', '')
-        author = item.get('author', '')
-        location = item.get('location', '') or ''
-        date = item.get('date', '') or ''
-        
-        category = item.get('category', '')
-        topic = item.get('topic', '')
         item_type = item.get('type', 'audio')
         
-        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-date="{html.escape(str(date))}" data-location="{html.escape(str(location))}" data-desc="{html.escape(str(desc))}" data-image="/content/media/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
+        # Panel
+        p = [f'  <div class="media-panel" data-title="{html.escape(str(title))}" data-type="{item_type}" data-desc="{html.escape(str(desc))}">']
         if file:
-            p.append(f'      <div class="panel-image"><img src="/content/media/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
+            p.append(f'    <div class="media-panel-image"><img src="/content/media/{file}" alt="{html.escape(title)}" loading="lazy"><span class="media-type-badge">{item_type}</span></div>')
         else:
-            p.append('      <div class="panel-image"></div>')
-        p.append('      <div class="panel-data">')
-        p.append(f'        <div class="panel-title">{html.escape(title)}</div>')
-        p.append(f'        <div class="panel-mobile-meta">')
-        if author: p.append(f'          <div class="panel-author">{html.escape(str(author))}</div>')
-        if date: p.append(f'          <div class="panel-date">{html.escape(str(date))}</div>')
-        if location: p.append(f'          <div class="panel-location">{html.escape(str(location))}</div>')
-        p.append('        </div>')
-        p.append('      </div>')
+            p.append(f'    <div class="media-panel-image"><span class="media-type-badge">{item_type}</span></div>')
+        p.append('    <div class="media-panel-content">')
+        p.append(f'      <h3 class="media-panel-title">{html.escape(title)}</h3>')
+        p.append(f'      <p class="media-panel-desc">{html.escape(desc)}</p>')
         p.append('    </div>')
-        panels.append('\n'.join(p))
-    panels.append('</div>') # Close panel-wrapper
-    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
-    panels.append('</div>') # Close gallery-container
+        p.append('  </div>')
+        html_output.append('\n'.join(p))
+    html_output.append('</div>') # Close media-grid
+    
+    # Filter Bar
+    html_output.append(render_bottom_bar('media', lang, active_id='audio'))
     
     # Modal
-    modal = [
-        '<div id="mediaModal" class="gallery-modal-overlay">',
-        '  <div class="gallery-modal">',
-        '    <button class="gallery-modal-close-x" aria-label="Close">&times;</button>',
-        '    <div class="gallery-modal-body">',
-        '      <div class="gallery-modal-image-col">',
-        '        <img id="modalMediaImg" src="" alt="">',
-        '      </div>',
-        '      <div class="gallery-modal-data-col">',
-        '        <div class="gallery-modal-form-group">',
-        f'          <label>{trans["Name"]}</label><input type="text" id="modalMediaTitle" readonly>',
-        '        </div>',
-        '        <div class="gallery-modal-form-group">',
-        f'          <label>{trans["Author"]}</label><input type="text" id="modalMediaAuthor" readonly>',
-        '        </div>',
-        '        <div class="gallery-modal-form-row">',
-        '          <div class="gallery-modal-form-group">',
-        f'            <label>{trans["Date"]}</label><input type="text" id="modalMediaDate" readonly>',
-        '          </div>',
-        '          <div class="gallery-modal-form-group">',
-        f'            <label>{trans["Location"]}</label><input type="text" id="modalMediaLocation" readonly>',
-        '          </div>',
-        '        </div>',
-        '        <div class="gallery-modal-form-group gallery-modal-desc-group">',
-        f'          <label>{trans["Desc"]}</label><textarea id="modalMediaDesc" readonly rows="5"></textarea>',
-        '        </div>',
-        '        <div class="gallery-modal-footer">',
-        f'          <button class="gallery-modal-btn-close">{trans["Close"]}</button>',
-        '        </div>',
-        '      </div>',
-        '    </div>',
-        '  </div>',
-        '</div>'
-    ]
-    panels.extend(modal)
-    return '\n'.join(panels)
+    modal = f'''
+<dialog id="mediaModalDialog" class="media-modal-dialog">
+  <div class="media-modal-wrapper">
+    <button class="media-modal-close" aria-label="{trans["Close"]}">&times;</button>
+    <div class="media-modal-content">
+      <h3 id="modalMediaTitle"></h3>
+      <p id="modalMediaDesc"></p>
+    </div>
+  </div>
+</dialog>
+'''
+    html_output.append(modal)
+    html_output.append('</div>') # Close media-container
+    
+    return '\n'.join(html_output)
+
 
 
 def write_summary(summary_text):
@@ -357,20 +370,24 @@ def build(target_lang=None):
         for file in files:
             if not file.endswith('.md'): continue
             md_file = SLUG_MAP.get(file, {}).get(lang, file) if lang != "en" else file
-            if lang == "en":
-                source_filepath = os.path.join(PAGES_DIR, file)
-                output_filename = file.replace(".md", ".html")
-            else:
-                source_filepath = os.path.join(CACHE_DIR, lang, md_file)
-                output_filename = md_file.replace(".md", ".html")
-# Removing duplicate line
-
+            
+            # Determine source
+            source_filepath = os.path.join(CACHE_DIR, lang, md_file)
+            output_filename = md_file.replace(".md", ".html")
+            
             if not os.path.exists(source_filepath):
                 source_filepath = os.path.join(PAGES_DIR, file)
                 output_filename = file.replace('.md', '.html')
+            
             with open(source_filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
+                
             meta, body = parse_frontmatter(content)
+            
+            # Bottom Bar injection
+            if '{{widget:bottom_bar}}' in body:
+                page_id = os.path.splitext(file)[0]
+                body = body.replace('{{widget:bottom_bar}}', render_bottom_bar(page_id, lang))
             name_no_ext = os.path.splitext(file)[0]
             css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
