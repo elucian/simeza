@@ -2,10 +2,11 @@
 title: Könyvek - Simeza Art
 description: Fedezze fel a Simeza Art által válogatott könyveket és kiadványokat.
 keywords: simeza, művészet, galéria, könyvek, kiadványok
-source_hash: 04307f306995a684ac797e5bf553f696d42c98f158ac1c68c5356c6d8d734cb0
+source_hash: cfbfc16f3acedc4c16a33753607883afcf6b23502ce76d8bc995ebc06d378340
 ---
 # Könyvek
 
 Üdvözöljük a Simeza Art Könyvek részlegében.
 
-Ennek a részlegnek a tartalma hamarosan elérhető lesz.
+Az ehhez a részhez tartozó tartalom hamarosan elérhető lesz.
+{{widget:bottom_bar}}

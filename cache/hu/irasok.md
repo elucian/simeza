@@ -2,10 +2,12 @@
 title: Írások - Simeza Art
 description: Fedezze fel esszéink, cikkeink és gondolataink gyűjteményét a művészetről és a kultúráról.
 keywords: simeza, művészet, galéria, írások, esszék, cikkek
-source_hash: 21e7e8e5f442dc08511d0e4ae048a61ffdfd3efe865769caf6af502997c1b06f
+source_hash: b365ca787089544a45a2377e2b2f49c3afda427af7207c78693eb18e0d82f3d4
 ---
 # Írások
 
 Üdvözöljük a Simeza Art Írások szekciójában.
 
-Ennek a szekciónak a tartalma hamarosan elérhető lesz.
+Az ehhez a részhez tartozó tartalom hamarosan elérhető lesz.
+
+{{widget:bottom_bar}}

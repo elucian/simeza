@@ -10,6 +10,39 @@
     "en": {
       "title": "Live Masterclass: Composition in Color",
       "description": "Archived interactive broadcast featuring live oil painting techniques and real-time audience discussion."
+    },
+    "de": {
+      "title": "Live-Masterclass: Komposition in Farbe",
+      "description": "Archivierte interaktive Übertragung mit Live-Ölmaltechniken und Echtzeit-Publikumsdiskussion."
+    },
+    "es": {
+      "title": "Clase magistral en vivo: Composición en color",
+      "description": "Transmisión interactiva archivada que presenta técnicas de pintura al óleo en vivo y discusión con la audiencia en tiempo real."
+    },
+    "fr": {
+      "title": "Masterclass en direct : Composition en couleur",
+      "description": "Diffusion interactive archivée présentant des techniques de peinture à l'huile en direct et une discussion avec le public en temps réel."
+    },
+    "hu": {
+      "title": "Élő mesterkurzus: Kompozíció színben",
+      "description": "Archivált interaktív közvetítés, amely élő olajfestési technikákat és valós idejű közönségbeszélgetést tartalmaz."
+    },
+    "it": {
+      "title": "Masterclass dal vivo: Composizione a colori",
+      "description": "Trasmissione interattiva archiviata con tecniche di pittura a olio dal vivo e discussione con il pubblico in tempo reale."
+    },
+    "pt": {
+      "title": "Masterclass ao vivo: Composição em cores",
+      "description": "Transmissão interativa arquivada apresentando técnicas de pintura a óleo ao vivo e discussão com o público em tempo real."
+    },
+    "ro": {
+      "title": "Masterclass în direct: Compoziție în culoare",
+      "description": "Transmisiune interactivă arhivată care prezintă tehnici de pictură în ulei în direct și discuții cu publicul în timp real."
+    },
+    "ru": {
+      "title": "Живой мастер-класс: Композиция в цвете",
+      "description": "Архивная интерактивная трансляция, демонстрирующая техники масляной живописи в прямом эфире и обсуждение с аудиторией в режиме реального времени."
     }
-  }
+  },
+  "source_hash": "739316dd8cba2b24bbb8070e76589d1423577a31eace56ed199eb24cf58db889"
 }

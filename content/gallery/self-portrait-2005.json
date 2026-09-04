@@ -7,11 +7,44 @@
   "topic": "Portraits",
   "year": 2005,
   "original": "yes",
-  "type":"drawing",
+  "type": "drawing",
   "content": {
     "en": {
       "name": "self portrait 2005",
       "description": "self portrait 2005"
+    },
+    "de": {
+      "name": "Selbstporträt 2005",
+      "description": "Selbstporträt 2005"
+    },
+    "es": {
+      "name": "autorretrato 2005",
+      "description": "autorretrato 2005"
+    },
+    "fr": {
+      "name": "autoportrait 2005",
+      "description": "autoportrait 2005"
+    },
+    "hu": {
+      "name": "önarckép 2005",
+      "description": "önarckép 2005"
+    },
+    "it": {
+      "name": "autoritratto 2005",
+      "description": "autoritratto 2005"
+    },
+    "pt": {
+      "name": "autorretrato 2005",
+      "description": "autorretrato 2005"
+    },
+    "ro": {
+      "name": "autoportret 2005",
+      "description": "autoportret 2005"
+    },
+    "ru": {
+      "name": "автопортрет 2005",
+      "description": "автопортрет 2005"
     }
-  }
+  },
+  "source_hash": "4da2050fd08c4f4c56be4f6b2b4d5b7ab13bebc40613228868e29c539fd6eb84"
 }

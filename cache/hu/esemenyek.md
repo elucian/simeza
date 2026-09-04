@@ -1,11 +1,11 @@
 ---
-title: Események - Simeza Art
-description: Csatlakozzon közösségi eseményeinkhez és galériakiállításainkhoz a Simeza Artnál.
-keywords: simeza, művészet, galéria, események, kiállítások
-source_hash: 6a7728a615a047387fb0ec1a69c1189cca5a48935437272ff5b1307229862d2a
+title: Média - Simeza Art
+description: Fedezze fel média-gyűjteményünket, beleértve az audiót, videót és streameket a Simeza Artnál.
+keywords: simeza, művészet, média, audió, videó, stream
+source_hash: 12d2f0437c013efdb1e7c31afc107d54385d0d4dd6c6b2352026215754a76105
 ---
-# Események
+# Média
 
-Üdvözöljük a Simeza Art Események részlegében.
+{{widget:media}}
 
-Az ehhez a részleghez tartozó tartalom hamarosan elérhető lesz.
+Üdvözöljük a Simeza Art Média szekciójában. Fedezze fel audio-, videó- és streamgyűjteményünket.

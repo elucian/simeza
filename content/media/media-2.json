@@ -10,6 +10,39 @@
     "en": {
       "title": "Curator Walkthrough: Autumn Exhibition",
       "description": "A 4K documentary walkthrough presenting featured paintings, sculptures, and dialogues with contemporary artists."
+    },
+    "de": {
+      "title": "Kuratorenführung: Herbstausstellung",
+      "description": "Eine 4K-Dokumentation als Rundgang, die ausgewählte Gemälde, Skulpturen und Dialoge mit zeitgenössischen Künstlern präsentiert."
+    },
+    "es": {
+      "title": "Visita guiada por el comisario: Exposición de otoño",
+      "description": "Un recorrido documental en 4K que presenta pinturas destacadas, esculturas y diálogos con artistas contemporáneos."
+    },
+    "fr": {
+      "title": "Visite guidée par le conservateur : Exposition d'automne",
+      "description": "Une visite documentaire en 4K présentant des peintures, des sculptures et des dialogues avec des artistes contemporains."
+    },
+    "hu": {
+      "title": "Kurátori tárlatvezetés: Őszi kiállítás",
+      "description": "Egy 4K-s dokumentumfilm-séta, amely kiemelt festményeket, szobrokat és kortárs művészekkel folytatott párbeszédeket mutat be."
+    },
+    "it": {
+      "title": "Visita guidata dal curatore: Mostra autunnale",
+      "description": "Un tour documentario in 4K che presenta dipinti in evidenza, sculture e dialoghi con artisti contemporanei."
+    },
+    "pt": {
+      "title": "Visita guiada pelo curador: Exposição de outono",
+      "description": "Um documentário em 4K que apresenta pinturas em destaque, esculturas e diálogos com artistas contemporâneos."
+    },
+    "ro": {
+      "title": "Tur ghidat de curator: Expoziția de toamnă",
+      "description": "Un tur documentar 4K care prezintă picturi, sculpturi și dialoguri cu artiști contemporani."
+    },
+    "ru": {
+      "title": "Экскурсия с куратором: Осенняя выставка",
+      "description": "Документальная 4K-экскурсия, представляющая избранные картины, скульптуры и диалоги с современными художниками."
     }
-  }
+  },
+  "source_hash": "3706a7a8dbf70d01083fcb663a457dfe2139f8b8b769a770aaca1f1dbf6e5e47"
 }

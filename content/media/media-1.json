@@ -10,6 +10,39 @@
     "en": {
       "title": "Acoustic Soundscapes: Simeza Sessions",
       "description": "An ambient studio recording exploring acoustic string instruments and spatial reverberation in the gallery hall."
+    },
+    "de": {
+      "title": "Akustische Klanglandschaften: Simeza Sessions",
+      "description": "Eine Ambient-Studioaufnahme, die akustische Saiteninstrumente und räumliche Nachhallklänge in der Galeriehalle erkundet."
+    },
+    "es": {
+      "title": "Paisajes sonoros acústicos: Simeza Sessions",
+      "description": "Una grabación de estudio ambiental que explora instrumentos de cuerda acústicos y la reverberación espacial en la sala de la galería."
+    },
+    "fr": {
+      "title": "Paysages sonores acoustiques : Simeza Sessions",
+      "description": "Un enregistrement studio ambiant explorant les instruments à cordes acoustiques et la réverbération spatiale dans la salle de la galerie."
+    },
+    "hu": {
+      "title": "Akusztikus hangképek: Simeza Sessions",
+      "description": "Egy ambient stúdiófelvétel, amely az akusztikus vonós hangszereket és a térbeli visszhangot kutatja a galéria termében."
+    },
+    "it": {
+      "title": "Paesaggi sonori acustici: Simeza Sessions",
+      "description": "Una registrazione in studio ambient che esplora gli strumenti a corda acustici e il riverbero spaziale nella sala della galleria."
+    },
+    "pt": {
+      "title": "Paisagens sonoras acústicas: Simeza Sessions",
+      "description": "Uma gravação de estúdio ambiente que explora instrumentos de cordas acústicos e a reverberação espacial na sala da galeria."
+    },
+    "ro": {
+      "title": "Peisaje sonore acustice: Simeza Sessions",
+      "description": "O înregistrare de studio ambientală care explorează instrumentele cu coarde acustice și reverberația spațială în sala galeriei."
+    },
+    "ru": {
+      "title": "Акустические звуковые ландшафты: Simeza Sessions",
+      "description": "Эмбиент-студийная запись, исследующая акустические струнные инструменты и пространственную реверберацию в зале галереи."
     }
-  }
+  },
+  "source_hash": "a2edd2becfbb547407832f0d5a58cf3bba02304a1ae386e7108ed59e4220970f"
 }
