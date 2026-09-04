@@ -174,10 +174,14 @@ function initFullscreenViewer() {
     // Double tap/click handler
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {
-        if (e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
-            viewerImg.src = e.target.src;
-            viewer.classList.add('active');
-            updateRotation(viewerImg);
+        const panel = e.target.closest('.panel');
+        if (panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
+            const img = panel.querySelector('img');
+            if (img) {
+                viewerImg.src = panel.dataset.image || img.src;
+                viewer.classList.add('active');
+                updateRotation(viewerImg);
+            }
         }
     });
 
@@ -185,11 +189,16 @@ function initFullscreenViewer() {
     document.addEventListener('touchend', (e) => {
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
-        if (tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
-            viewerImg.src = e.target.src;
-            viewer.classList.add('active');
-            updateRotation(viewerImg);
-            e.preventDefault();
+        const panel = e.target.closest('.panel');
+        
+        if (tapLength < 300 && tapLength > 0 && panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
+            const img = panel.querySelector('img');
+            if (img) {
+                viewerImg.src = panel.dataset.image || img.src;
+                viewer.classList.add('active');
+                updateRotation(viewerImg);
+                e.preventDefault();
+            }
         }
         lastTap = currentTime;
     });
