@@ -1,32 +1,22 @@
 // Gallery functionality
-document.addEventListener('DOMContentLoaded', () => {
-  const wrappers = document.querySelectorAll('.panel-wrapper[data-widget="gallery"]');
-  const modal = document.getElementById('galleryModal');
-  const filterModal = document.getElementById('filterModal');
-  const modalImg = document.getElementById('modalImg');
-  const modalPicName = document.getElementById('modalPicName');
-  const modalAuthor = document.getElementById('modalAuthor');
-  const modalYear = document.getElementById('modalYear');
-  const modalStatus = document.getElementById('modalStatus');
 
-  // Persistence
-  const saveFilters = () => {
+// Persistence
+const saveFilters = () => {
     const filters = {
-      types: Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value),
-      author: document.querySelector('select[name="filter-authors"]')?.value,
-      category: document.querySelector('select[name="filter-categories"]')?.value,
-      topic: document.querySelector('select[name="filter-topics"]')?.value
+        types: Array.from(document.querySelectorAll('input[name=\'filter-types\']:checked')).map(el => el.value),
+        author: document.querySelector('select[name=\'filter-authors\']')?.value,
+        category: document.querySelector('select[name=\'filter-categories\']')?.value,
+        topic: document.querySelector('select[name=\'filter-topics\']')?.value
     };
     localStorage.setItem('simezaFilters', JSON.stringify(filters));
-  };
+};
 
-  const loadFilters = () => {
+const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
-    if (!saved) return;
     const filters = JSON.parse(saved);
     
     // Set types (default all checked if empty)
-    const typeInputs = document.querySelectorAll('input[name="filter-types"]');
+    const typeInputs = document.querySelectorAll('input[name=\'filter-types\']');
     if (filters.types && filters.types.length > 0) {
         typeInputs.forEach(cb => cb.checked = filters.types.includes(cb.value));
     } else {
@@ -34,17 +24,23 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     // Set selects
-    if (filters.author) document.querySelector('select[name="filter-authors"]').value = filters.author;
-    if (filters.category) document.querySelector('select[name="filter-categories"]').value = filters.category;
-    if (filters.topic) document.querySelector('select[name="filter-topics"]').value = filters.topic;
-  };
+    const authorSelect = document.querySelector('select[name=\'filter-authors\']');
+    const categorySelect = document.querySelector('select[name=\'filter-categories\']');
+    const topicSelect = document.querySelector('select[name=\'filter-topics\']');
+    
+    if (authorSelect && filters.author) authorSelect.value = filters.author;
+    if (categorySelect && filters.category) categorySelect.value = filters.category;
+    if (topicSelect && filters.topic) topicSelect.value = filters.topic;
+};
 
-  // Filter functions
-  window.applyFilters = function(shouldCloseModal = false) {
-    const types = Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value);
-    const authorSelect = document.querySelector('select[name="filter-authors"]');
-    const categorySelect = document.querySelector('select[name="filter-categories"]');
-    const topicSelect = document.querySelector('select[name="filter-topics"]');
+// Global Filter functions
+window.applyFilters = function(shouldCloseModal = false) {
+    const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
+    const filterModal = document.getElementById('filterModal');
+    const types = Array.from(document.querySelectorAll('input[name=\'filter-types\']:checked')).map(el => el.value);
+    const authorSelect = document.querySelector('select[name=\'filter-authors\']');
+    const categorySelect = document.querySelector('select[name=\'filter-categories\']');
+    const topicSelect = document.querySelector('select[name=\'filter-topics\']');
 
     const authors = authorSelect && authorSelect.value ? [authorSelect.value] : [];
     const categories = categorySelect && categorySelect.value ? [categorySelect.value] : [];
@@ -55,51 +51,53 @@ document.addEventListener('DOMContentLoaded', () => {
     const hasActiveFilters = types.length > 0 || authors.length > 0 || categories.length > 0 || topics.length > 0;
     const filterIcon = document.getElementById('filterIcon');
     if (filterIcon) {
-      filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
+        filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
     }
 
     wrappers.forEach(wrapper => {
-      wrapper.querySelectorAll('.panel').forEach(panel => {
-        const pType = panel.dataset.type;
-        const pAuthor = panel.dataset.author;
-        const pCategory = panel.dataset.category;
-        const pTopic = panel.dataset.topic;
+        wrapper.querySelectorAll('.panel').forEach(panel => {
+            const pType = panel.dataset.type;
+            const pAuthor = panel.dataset.author;
+            const pCategory = panel.dataset.category;
+            const pTopic = panel.dataset.topic;
 
-        let matchType = types.length === 0 || types.includes(pType);
-        let matchAuthor = authors.length === 0 || authors.includes(pAuthor);
-        let matchCategory = categories.length === 0 || categories.includes(pCategory);
-        let matchTopic = topics.length === 0 || topics.includes(pTopic);
+            let matchType = types.length === 0 || types.includes(pType);
+            let matchAuthor = authors.length === 0 || authors.includes(pAuthor);
+            let matchCategory = categories.length === 0 || categories.includes(pCategory);
+            let matchTopic = topics.length === 0 || topics.includes(pTopic);
 
-        panel.style.display = (matchType && matchAuthor && matchCategory && matchTopic) ? '' : 'none';
-      });
+            panel.style.display = (matchType && matchAuthor && matchCategory && matchTopic) ? '' : 'none';
+        });
     });
 
     if (shouldCloseModal && filterModal) filterModal.classList.remove('active');
-  };
+};
 
-  window.resetFilters = function() {
-    document.querySelectorAll('input[name="filter-types"]').forEach(cb => cb.checked = true);
+window.resetFilters = function() {
+    const filterModal = document.getElementById('filterModal');
+    document.querySelectorAll('input[name=\'filter-types\']').forEach(cb => cb.checked = true);
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
     saveFilters();
     if (filterModal) filterModal.classList.remove('active');
     window.applyFilters();
-  };
+};
 
-  // Init
+document.addEventListener('DOMContentLoaded', () => {
+  const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
+  const modal = document.getElementById('galleryModal');
+  const modalImg = document.getElementById('modalImg');
+  const modalPicName = document.getElementById('modalPicName');
+  const modalAuthor = document.getElementById('modalAuthor');
+  const modalYear = document.getElementById('modalYear');
+  const modalStatus = document.getElementById('modalStatus');
+  const modalDesc = document.getElementById('modalDesc');
+
+  // Load and apply initial filters
   loadFilters();
   window.applyFilters();
-
-
-  const modalDesc = document.getElementById('modalDesc');
-  const closeModal = () => modal.classList.remove('active');
-
-  // Close modal events
-  modal.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
-  modal.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
-  modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-
-  // Open modal helper
+  
+  // Modal handling
+  const closeModal = () => modal?.classList.remove('active');
   const openModal = (panel) => {
     modalImg.src = panel.dataset.image;
     modalPicName.value = panel.dataset.title;
@@ -119,50 +117,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     img.src = panel.dataset.image;
-
     modal.classList.add('active');
   };
 
-  // Close filter modal on overlay click
-  const filterModal = document.getElementById('filterModal');
-  filterModal?.addEventListener('click', (e) => { if (e.target === filterModal) filterModal.classList.remove('active'); });
+  // Close modal events
+  modal?.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
+  modal?.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
 
-  const isPortraitMobile = () => (window.innerHeight >= window.innerWidth && window.innerWidth <= 768);
-
+  // Panel click listeners
   wrappers.forEach(wrapper => {
-    const container = wrapper.parentElement;
-    const prevBtn = container.querySelector('.gallery-nav-prev');
-    const nextBtn = container.querySelector('.gallery-nav-next');
-    
-    // Panel interaction
     wrapper.querySelectorAll('.panel').forEach(panel => {
-    // Click for Desktop & Landscape Mobile
-      panel.addEventListener('click', (e) => {
-        const isPortrait = window.innerHeight >= window.innerWidth && window.innerWidth <= 768;
-        if (isPortrait) {
-            // Trigger Fullscreen
-            const viewer = document.getElementById('imageFullscreenViewer');
-            const viewerImg = viewer.querySelector('img');
-            const img = panel.querySelector('img');
-            if (viewer && img) {
-                viewerImg.src = img.src;
-                viewer.classList.add('active');
-                // Trigger rotation logic (needs to be available or re-implemented)
-                // Since updateRotation is defined in simeza.js inside initFullscreenViewer, 
-                // it might not be global. I'll need to replicate the logic or make it global.
-                const isScreenPortrait = true; // Portrait mode
-                const isImgPortrait = (img.naturalHeight || img.height) >= (img.naturalWidth || img.width);
-                if (isImgPortrait) {
-                    viewerImg.classList.remove('rotated');
-                } else {
-                    viewerImg.classList.add('rotated');
-                }
-            }
-        } else {
-            openModal(panel);
-        }
-      });
-
+      panel.addEventListener('click', () => openModal(panel));
+      
       // Double tap/click handler for mobile
       let lastTap = 0;
       const handleDoubleTap = (e) => {
@@ -175,18 +143,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         lastTap = currentTime;
       };
-
       panel.addEventListener('dblclick', handleDoubleTap);
       panel.addEventListener('touchend', handleDoubleTap);
     });
-
+    
     // Smooth scroll functions
     const container = wrapper.parentElement;
     const prevBtn = container.querySelector('.gallery-nav-prev');
     const nextBtn = container.querySelector('.gallery-nav-next');
     
     const scroll = (direction, isMany = false) => {
-      const scrollAmount = isMany ? wrapper.clientWidth * 0.8 : wrapper.querySelector('.panel').offsetWidth + 16;
+      const scrollAmount = isMany ? wrapper.clientWidth * 0.8 : (wrapper.querySelector('.panel')?.offsetWidth || 200) + 16;
       wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     };
     
@@ -230,8 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update button states
     const updateButtons = () => {
-      prevBtn.disabled = wrapper.scrollLeft <= 0;
-      nextBtn.disabled = wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 5);
+      if (prevBtn) prevBtn.disabled = wrapper.scrollLeft <= 0;
+      if (nextBtn) nextBtn.disabled = wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 5);
     };
     
     wrapper.addEventListener('scroll', updateButtons);
@@ -239,4 +206,3 @@ document.addEventListener('DOMContentLoaded', () => {
     updateButtons();
   });
 });
-
