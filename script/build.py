@@ -172,7 +172,7 @@ def render_gallery_html(gallery_data, lang):
         '    </div>',
         '    <div class="gallery-modal-footer filter-modal-footer">',
         f'      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">{trans["Reset"]}</button>',
-        f'      <button class="gallery-modal-btn-close" onclick="applyFilters()">{trans["Filter"]}</button>',
+        f'      <button class="gallery-modal-btn-close" onclick="applyFilters(true)">{trans["Filter"]}</button>',
         '    </div>',
         '  </div>',
         '</div>'
