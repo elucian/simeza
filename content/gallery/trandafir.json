@@ -1,0 +1,18 @@
+{
+  "id": "trandafir",
+  "file": "trandafir.jpeg",
+  "status": "Available",
+  "author": "Geta",
+  "category": "Fruits & Flowers",
+  "topic": "Flowers",
+  "year": 2024,
+  "original": "yes",
+  "type": "photo",
+  "content": {
+    "ro": {
+      "name": "trandafir",
+      "description": "Trandafir roșu cu boabe de rouâ"
+    }
+  },
+  "source_hash": ""
+}
