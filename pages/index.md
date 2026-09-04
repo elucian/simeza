@@ -12,13 +12,11 @@ keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibi
 
 <div class="index-panel index-panel-about">
 
-<h2 id="about">About Simeza Platform</h2>
+<h2 id="about">Core Focus Areas</h2>
 
 <div class="content-card">
 La Simeza is an independent web education and cultural platform. We provide support for Art enthusiasts, polyglot students and mentors. We welcome everyone interested in language learning, art, culture and personal emancipation.
 </div>
-
-<h2 id="focus">Core Focus Areas</h2>
 
 <div class="content-card-list">
   <div class="content-card">
@@ -55,7 +53,7 @@ La Simeza is an independent web education and cultural platform. We provide supp
 
 <div class="index-panel index-panel-content">
 
-<h2 id="about-content">About Simeza Content</h2>
+<h2 id="about-content">Direct-Offer Content</h2>
 
 <div class="content-card">
 Original canvases, linguistic monographs, rare editions, and high-resolution artistic photography. Explore the gallery, download digital artifacts, or secure physical editions. Schedule talks and cultural events in our community.
@@ -66,7 +64,7 @@ Original canvases, linguistic monographs, rare editions, and high-resolution art
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
       <strong>Original Art & Gallery</strong>
-      <span>Authentic canvases and visual artworks from Romanian masters and contemporary artists.</span>
+      <span>Authentic canvases and visual artworks from contemporary artists.</span>
     </div>
   </div>
   <div class="content-card">
@@ -80,14 +78,14 @@ Original canvases, linguistic monographs, rare editions, and high-resolution art
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Rare Books & Publications</strong>
-      <span>Rare editions, historical prints, poetry, and linguistic guides available for direct study.</span>
+      <span>Rare editions, historical prints, poetry, and linguistic guides.</span>
     </div>
   </div>
   <div class="content-card">
     <i class="bi bi-journal-text"></i>
     <div class="content-card-body">
       <strong>Writings & Digital Archives</strong>
-      <span>Monographs, spiritual essays, and high-resolution photographic digital artifacts.</span>
+      <span>Monographs, spiritual essays, and high-resolution photographic.</span>
     </div>
   </div>
 </div>
