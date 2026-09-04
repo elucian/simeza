@@ -60,7 +60,7 @@ body:has(.gallery-container),
 
 .content {
   flex: 1 1 auto;
-  padding: 12px 12px 0 12px;
+  padding: 12px 24px 0 24px;
   display: flex;
   flex-direction: column;
   overflow: hidden;

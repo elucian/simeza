@@ -66,6 +66,19 @@ document.addEventListener('DOMContentLoaded', () => {
     modalYear.value = panel.dataset.year;
     modalStatus.value = panel.dataset.status;
     modalDesc.value = panel.dataset.desc;
+    
+    // Set orientation classes
+    const img = new Image();
+    img.onload = () => {
+        const isLandscape = img.naturalWidth > img.naturalHeight;
+        const modalDialog = modal.querySelector('.gallery-modal');
+        if (modalDialog) {
+            modalDialog.classList.remove('landscape-image', 'portrait-image');
+            modalDialog.classList.add(isLandscape ? 'landscape-image' : 'portrait-image');
+        }
+    };
+    img.src = panel.dataset.image;
+
     modal.classList.add('active');
   };
 
