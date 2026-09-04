@@ -27,13 +27,6 @@ La Simeza is an independent web education and cultural platform. We provide supp
     </div>
   </div>
   <div class="content-card">
-    <i class="bi bi-brush"></i>
-    <div class="content-card-body">
-      <strong>Original Art</strong>
-      <span>Authentic canvases and visual artworks available for collectors.</span>
-    </div>
-  </div>
-  <div class="content-card">
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Direct Acquisition</strong>
@@ -78,14 +71,7 @@ Original canvases, linguistic monographs, rare editions, and high-resolution art
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Rare Books & Publications</strong>
-      <span>Rare editions, historical prints, poetry, and linguistic guides.</span>
-    </div>
-  </div>
-  <div class="content-card">
-    <i class="bi bi-journal-text"></i>
-    <div class="content-card-body">
-      <strong>Writings & Digital Archives</strong>
-      <span>Monographs, spiritual essays, and high-resolution photographic.</span>
+      <span>Rare editions, historical prints, essays, and linguistic guides.</span>
     </div>
   </div>
 </div>
