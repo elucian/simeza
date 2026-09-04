@@ -1,20 +1,6 @@
 {
   "types": [
     {
-      "id": "photo",
-      "label": {
-        "en": "Photos",
-        "ro": "Fotografii",
-        "de": "Fotos",
-        "es": "Fotos",
-        "fr": "Photos",
-        "ru": "Фото",
-        "pt": "Fotos",
-        "hu": "Fotók",
-        "it": "Foto"
-      }
-    },
-    {
       "id": "painting",
       "label": {
         "en": "Paintings",
@@ -40,6 +26,20 @@
         "pt": "Desenhos",
         "hu": "Rajzok",
         "it": "Disegni"
+      }
+    },
+    {
+      "id": "photo",
+      "label": {
+        "en": "Photos",
+        "ro": "Fotografii",
+        "de": "Fotos",
+        "es": "Fotos",
+        "fr": "Photos",
+        "ru": "Фото",
+        "pt": "Fotos",
+        "hu": "Fotók",
+        "it": "Foto"
       }
     }
   ],
