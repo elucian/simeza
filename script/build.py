@@ -30,15 +30,15 @@ SLUG_MAP = {
 def render_gallery_html(gallery_data, lang):
     # Modal Translations
     t = {
-        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close'},
-        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide'},
-        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen'},
-        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar'},
-        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer'},
-        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть'},
-        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar'},
-        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár'},
-        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi'}
+        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru'},
+        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter'},
+        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro'},
+        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre'},
+        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр'},
+        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro'},
+        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő'},
+        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro'}
     }
     trans = t.get(lang, t['en'])
 
@@ -126,39 +126,45 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ]
-    # Filter Modal
+    # --- Types (outside modal) ---
+    types_html = ['<div class="filter-types-container">']
+    for entry in filter_data.get('types', []):
+        entry_id = entry.get('id')
+        label_dict = entry.get('label', {})
+        label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
+        types_html.append(f'  <label class="type-checkbox"><input type="checkbox" name="filter-types" value="{entry_id}" onchange="applyFilters()"> {label_text}</label>')
+    types_html.append('</div>')
+    panels.append('\n'.join(types_html))
+
+    # --- Filter Modal (with dropdowns) ---
     filter_modal = [
         '<div id="filterModal" class="gallery-modal-overlay">',
         '  <div class="gallery-modal gallery-filter-modal">',
         '    <button class="gallery-modal-close-x" onclick="toggleFilterModal()" aria-label="Close">&times;</button>',
-        '    <h3 class="filter-modal-title">Filter Gallery</h3>',
+        f'    <h3 class="filter-modal-title">{trans["Filter"]}</h3>',
         '    <div class="filter-modal-body">'
     ]
     
-    # Load filter config
-    filter_data = {}
-    try:
-        with open(os.path.join(ROOT, 'content', 'filter-gallery.json'), 'r', encoding='utf-8') as f:
-            filter_data = json.load(f)
-    except:
-        pass
-
-    for section_key, title_label in [('types', 'Type'), ('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
+    # Authors, Categories, Topics as select dropdowns
+    for section_key, title_label in [('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
         items = filter_data.get(section_key, [])
         if items:
-            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong><div class="filter-options">')
+            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong>')
+            filter_modal.append(f'        <select name="filter-{section_key}" onchange="applyFilters()">')
+            filter_modal.append('          <option value="">All</option>')
             for entry in items:
                 entry_id = entry.get('id')
                 label_dict = entry.get('label', {})
                 label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-                filter_modal.append(f'        <label class="filter-option"><input type="checkbox" name="filter-{section_key}" value="{entry_id}"> {label_text}</label>')
-            filter_modal.append('      </div></div>')
+                filter_modal.append(f'          <option value="{entry_id}">{label_text}</option>')
+            filter_modal.append('        </select>')
+            filter_modal.append('      </div>')
 
     filter_modal.extend([
         '    </div>',
         '    <div class="gallery-modal-footer filter-modal-footer">',
-        '      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">Reset</button>',
-        '      <button class="gallery-modal-btn-close" onclick="applyFilters()">Apply Filters</button>',
+        f'      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">{trans["Reset"]}</button>',
+        f'      <button class="gallery-modal-btn-close" onclick="toggleFilterModal()">{trans["Close"]}</button>',
         '    </div>',
         '  </div>',
         '</div>'

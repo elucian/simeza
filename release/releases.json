@@ -6,9 +6,9 @@
     "notes": "success"
   },
   "candidate": {
-    "version": "",
-    "commit": "",
-    "date": "",
-    "notes": ""
+    "version": "0.1.1-rc.47",
+    "commit": "Build candidate: Fri, Sep  4, 2026  1:33:48 PM",
+    "date": "2026-09-04T13:33:48.455651",
+    "notes": "pending"
   }
 }

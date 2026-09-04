@@ -10,9 +10,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Filter functions
   window.applyFilters = function() {
     const types = Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value);
-    const authors = Array.from(document.querySelectorAll('input[name="filter-authors"]:checked')).map(el => el.value);
-    const categories = Array.from(document.querySelectorAll('input[name="filter-categories"]:checked')).map(el => el.value);
-    const topics = Array.from(document.querySelectorAll('input[name="filter-topics"]:checked')).map(el => el.value);
+    const authorSelect = document.querySelector('select[name="filter-authors"]');
+    const categorySelect = document.querySelector('select[name="filter-categories"]');
+    const topicSelect = document.querySelector('select[name="filter-topics"]');
+
+    const authors = authorSelect && authorSelect.value ? [authorSelect.value] : [];
+    const categories = categorySelect && categorySelect.value ? [categorySelect.value] : [];
+    const topics = topicSelect && topicSelect.value ? [topicSelect.value] : [];
 
     const hasActiveFilters = types.length > 0 || authors.length > 0 || categories.length > 0 || topics.length > 0;
     const filterIcon = document.getElementById('filterIcon');
@@ -45,7 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   window.resetFilters = function() {
-    document.querySelectorAll('#filterModal input[type="checkbox"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="filter-types"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
     window.applyFilters();
   };
 
