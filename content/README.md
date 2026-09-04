@@ -57,11 +57,12 @@ Each subfolder contains multiple JSON files, where each file represents a single
   "id": "item-id",
   "file": "picture.jpg",
   "status": "available",
+  "type": "painting",
   "author": "Author Name",
   "category": "Fine Art",
   "topic": "Abstract",
   "year": 2026,
-  "original": "yes", 
+  "original": "yes",
   "content": {
     "en": { "name": "Title", "description": "..." },
     "it": { "name": "Titolo", "description": "..." }
