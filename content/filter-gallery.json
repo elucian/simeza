@@ -3,7 +3,7 @@
     {
       "id": "photo",
       "label": {
-        "en": "Pictures",
+        "en": "Photos",
         "ro": "Fotografii",
         "de": "Fotos",
         "es": "Fotos",
@@ -17,7 +17,7 @@
     {
       "id": "painting",
       "label": {
-        "en": "Paintings",
+        "en": "Painting",
         "ro": "Picturi",
         "de": "Gemälde",
         "es": "Pinturas",
@@ -31,7 +31,7 @@
     {
       "id": "drawing",
       "label": {
-        "en": "Drawings",
+        "en": "Drawing",
         "ro": "Desene",
         "de": "Zeichnungen",
         "es": "Dibujos",
@@ -89,9 +89,9 @@
       }
     },
     {
-      "id": "Fruits & Flowers",
+      "id": "Still Life",
       "label": {
-        "en": "Fruits & Flowers",
+        "en": "Still Life",
         "ro": "Natură Statică",
         "de": "Stilleben",
         "es": "Naturaleza Muerta",
@@ -147,17 +147,17 @@
       }
     },
     {
-      "id": "Fruits & Flowers",
+      "id": "Still Life",
       "label": {
-        "en": "Fruits & Flowers",
-        "ro": "Fruits & Flowers",
-        "de": "Fruits & Flowers",
-        "es": "Fruits & Flowers",
-        "fr": "Fruits & Flowers",
-        "ru": "Fruits & Flowers",
-        "pt": "Fruits & Flowers",
-        "hu": "Fruits & Flowers",
-        "it": "Fruits & Flowers"
+        "en": "Still Life",
+        "ro": "Still Life",
+        "de": "Still Life",
+        "es": "Still Life",
+        "fr": "Still Life",
+        "ru": "Still Life",
+        "pt": "Still Life",
+        "hu": "Still Life",
+        "it": "Still Life"
       }
     }
   ]
