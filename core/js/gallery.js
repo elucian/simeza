@@ -51,7 +51,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.resetFilters = function() {
     document.querySelectorAll('input[name="filter-types"]').forEach(cb => cb.checked = false);
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
-    window.applyFilters();
   };
 
   const modalDesc = document.getElementById('modalDesc');
