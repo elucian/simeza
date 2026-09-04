@@ -172,7 +172,9 @@
 /* Modal Styling */
 .gallery-modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
 .gallery-modal-overlay.active { display: flex; }
-.gallery-modal { background: var(--bg-header); border-radius: 6px; width: min(1000px, 90vw); height: min(640px, 92vh); max-height: 92dvh; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; }
+.gallery-modal { background: var(--bg-header); border-radius: 6px; width: min(1000px, 90vw); height: min(640px, 92vh); max-height: 92dvh; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; transition: width 0.3s ease; }
+.gallery-modal.landscape-image { width: min(1200px, 95vw); height: auto; max-height: 92dvh; }
+.gallery-modal.portrait-image { width: min(600px, 90vw); height: auto; max-height: 92dvh; }
 .gallery-modal-close-x { position: absolute; top: 12px; right: 16px; font-size: 1.75rem; border: none; background: none; cursor: pointer; color: var(--text-main); }
 .gallery-modal-body { display: flex; flex-direction: row; gap: 20px; height: 100%; overflow: hidden; }
 .gallery-modal-image-col { flex: 1 1 52%; min-width: 0; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.03); border-radius: 6px; overflow: hidden; }
