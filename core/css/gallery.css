@@ -41,7 +41,7 @@
   flex: 0 0 auto;
   background: var(--bg-header);
   border: 1px solid var(--border-color);
-  border-radius: 5px;
+  border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
 }
@@ -125,16 +125,22 @@
     width: 100% !important; 
     height: 140px !important; 
     flex: 0 0 140px !important; 
-    border-radius: 5px; 
+    border-radius: 6px; 
   }
   .panel-image { 
     width: 45% !important; 
     min-width: 45% !important; 
     height: 100% !important; 
     border-right: 1px solid var(--border-color); 
-    border-radius: 5px 0 0 5px; 
+    border-radius: 6px 0 0 6px; 
   }
-  .panel-image img { width: 100%; height: 100%; object-fit: cover; border-radius: 5px 0 0 5px; }
+  .panel-image img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+    object-position: top; 
+    border-radius: 6px 0 0 6px; 
+  }
   .panel-data { 
     width: 55% !important; 
     height: 100% !important; 
@@ -157,10 +163,10 @@
 /* Modal Styling */
 .gallery-modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
 .gallery-modal-overlay.active { display: flex; }
-.gallery-modal { background: var(--bg-header); border-radius: 5px; width: min(1000px, 90vw); height: min(640px, 92vh); max-height: 92dvh; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; }
+.gallery-modal { background: var(--bg-header); border-radius: 6px; width: min(1000px, 90vw); height: min(640px, 92vh); max-height: 92dvh; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; }
 .gallery-modal-close-x { position: absolute; top: 12px; right: 16px; font-size: 1.75rem; border: none; background: none; cursor: pointer; color: var(--text-main); }
 .gallery-modal-body { display: flex; flex-direction: row; gap: 20px; height: 100%; overflow: hidden; }
-.gallery-modal-image-col { flex: 1 1 52%; min-width: 0; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.03); border-radius: 5px; overflow: hidden; }
+.gallery-modal-image-col { flex: 1 1 52%; min-width: 0; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.03); border-radius: 6px; overflow: hidden; }
 #modalImg { max-width: 100%; max-height: 100%; object-fit: contain; }
 .gallery-modal-data-col { flex: 1 1 48%; display: flex; flex-direction: column; gap: 6px; }
 
@@ -168,13 +174,13 @@
 .gallery-modal-form-group { display: flex; flex-direction: column; flex: 0 0 auto; }
 .gallery-modal-desc-group { flex: 1 1 auto; min-height: 40px; }
 .gallery-modal-form-group label { font-size: 0.72rem; font-weight: 600; text-transform: uppercase; color: var(--accent-color); margin: 0 0 2px 0; }
-.gallery-modal-data-col input, .gallery-modal-data-col textarea { background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main); padding: 4px 8px; border-radius: 5px; width: 100%; font-size: 0.85rem; box-sizing: border-box; }
+.gallery-modal-data-col input, .gallery-modal-data-col textarea { background: var(--bg-main); border: 1px solid var(--border-color); color: var(--text-main); padding: 4px 8px; border-radius: 6px; width: 100%; font-size: 0.85rem; box-sizing: border-box; }
 .gallery-modal-data-col input { height: 30px; }
 .gallery-modal-form-row { display: flex; gap: 10px; flex: 0 0 auto; }
 .gallery-modal-form-row .gallery-modal-form-group { flex: 1 1 0; min-width: 0; }
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
 .gallery-modal-footer { margin-top: auto; text-align: right; padding-top: 10px; display: flex; justify-content: flex-end; }
-.gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 5px; cursor: pointer; font-weight: 600; }
+.gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; }
 
 /* Landscape Mobile Modal Fixes */
 @media (orientation: landscape) and (max-height: 600px) {
