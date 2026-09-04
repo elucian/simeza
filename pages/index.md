@@ -15,7 +15,7 @@ keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibi
 <h2 id="about">Core Focus Areas</h2>
 
 <div class="content-card">
-La Simeza is an independent web education and cultural platform. We provide support for Art enthusiasts, polyglot students and mentors. We welcome everyone interested in language learning, art, culture and personal emancipation.
+La Simeza is an independent web educational and cultural platform. We provide support for art enthusiasts, polyglot students and mentors. We welcome everyone interested in language learning, cultural events, and personal emancipation.
 </div>
 
 <div class="content-card-list">
