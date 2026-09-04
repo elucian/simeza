@@ -106,8 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAuthor.value = panel.dataset.author;
     modalYear.value = panel.dataset.year;
     modalStatus.value = panel.dataset.status;
-    modalCategory.value = panel.dataset.category;
-    modalTopic.value = panel.dataset.topic;
+    if (modalCategory) modalCategory.value = panel.dataset.category;
+    if (modalTopic) modalTopic.value = panel.dataset.topic;
     modalDesc.value = panel.dataset.desc;
     
     // Set orientation classes
