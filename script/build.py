@@ -69,7 +69,7 @@ def render_gallery_html(gallery_data, lang):
         
         p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
         if file:
-            p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
+            p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         else:
             p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
