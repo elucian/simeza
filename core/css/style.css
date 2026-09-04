@@ -43,11 +43,29 @@ body {
   border-right: 1px solid var(--border-color);
 }
 
+.container:has(.gallery-container) {
+  max-width: 100%;
+  border-left: none;
+  border-right: none;
+}
+
+body:has(.gallery-container),
+.container:has(.gallery-container) {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
 #content {
   flex: 1 1 auto;
-  padding: 20px 20px;
+  padding: 20px 20px 0 20px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+}
+
+#content:has(.gallery-container) {
+  padding: 10px 20px 4px 20px;
 }
 
 /* Panels */

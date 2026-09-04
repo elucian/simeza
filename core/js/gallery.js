@@ -7,6 +7,48 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalAuthor = document.getElementById('modalAuthor');
   const modalYear = document.getElementById('modalYear');
   const modalStatus = document.getElementById('modalStatus');
+  // Filter functions
+  window.applyFilters = function() {
+    const types = Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value);
+    const authors = Array.from(document.querySelectorAll('input[name="filter-authors"]:checked')).map(el => el.value);
+    const categories = Array.from(document.querySelectorAll('input[name="filter-categories"]:checked')).map(el => el.value);
+    const topics = Array.from(document.querySelectorAll('input[name="filter-topics"]:checked')).map(el => el.value);
+
+    const hasActiveFilters = types.length > 0 || authors.length > 0 || categories.length > 0 || topics.length > 0;
+    const filterIcon = document.getElementById('filterIcon');
+    if (filterIcon) {
+      filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
+    }
+
+    wrappers.forEach(wrapper => {
+      wrapper.querySelectorAll('.panel').forEach(panel => {
+        const pType = panel.dataset.type;
+        const pAuthor = panel.dataset.author;
+        const pCategory = panel.dataset.category;
+        const pTopic = panel.dataset.topic;
+
+        let matchType = types.length === 0 || types.includes(pType);
+        let matchAuthor = authors.length === 0 || authors.includes(pAuthor);
+        let matchCategory = categories.length === 0 || categories.includes(pCategory);
+        let matchTopic = topics.length === 0 || topics.includes(pTopic);
+
+        if (matchType && matchAuthor && matchCategory && matchTopic) {
+          panel.style.display = '';
+        } else {
+          panel.style.display = 'none';
+        }
+      });
+    });
+
+    const filterModal = document.getElementById('filterModal');
+    if (filterModal) filterModal.classList.remove('active');
+  };
+
+  window.resetFilters = function() {
+    document.querySelectorAll('#filterModal input[type="checkbox"]').forEach(cb => cb.checked = false);
+    window.applyFilters();
+  };
+
   const modalDesc = document.getElementById('modalDesc');
   const closeModal = () => modal.classList.remove('active');
 
@@ -26,6 +68,10 @@ document.addEventListener('DOMContentLoaded', () => {
     modalDesc.value = panel.dataset.desc;
     modal.classList.add('active');
   };
+
+  // Close filter modal on overlay click
+  const filterModal = document.getElementById('filterModal');
+  filterModal?.addEventListener('click', (e) => { if (e.target === filterModal) filterModal.classList.remove('active'); });
 
   const isPortraitMobile = () => (window.innerHeight >= window.innerWidth && window.innerWidth <= 768);
 
