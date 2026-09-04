@@ -45,8 +45,8 @@
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-  padding 0;
-  width: fit-content;
+  padding: 0;
+  width: auto;
 }
 
 .panel-image {
@@ -62,12 +62,12 @@
   margin: 0;
   min-width: 0; 
   max-width: 100%;
-  width: fit-content;
+  width: auto;
 }
 
 .panel-image img {
   height: 100%;
-  width: 100%;
+  width: auto;
   object-fit: contain;
   display: block;
 }
