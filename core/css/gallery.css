@@ -47,7 +47,7 @@
   flex-direction: column;
   height: 100%;
   flex: 0 0 auto;
-  width: auto;
+  width: max-content;
   background: var(--bg-header);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -58,7 +58,7 @@
 .panel-image {
   flex: 1 1 auto;
   min-height: 0;
-  width: auto;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
