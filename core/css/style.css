@@ -1,14 +1,14 @@
 :root {
   --pico-font-family: 'Merriweather', 'Lato', sans-serif;
   --pico-background-color: var(--bg-outer);
-  --bg-outer: #e8ecf1c1;
-  --bg-header: #faf8f5d8;
-  --bg-main: #e2d5c8e3;
-  --bg-footer: #b7b4ae;
-  --text-main: #2d3748;
-  --border-color: #bca991;
+  --bg-outer: #fef4f4c1;
+  --bg-header: #e8e8e8d8;
+  --bg-main: #fbf3eae3;
+  --bg-footer: #d9d3c8;
+  --text-main: #171d27;
+  --border-color: #9c8c78;
   --accent-color: #6b3012;
-  --bg-panel: #b7b4ae; 
+  --bg-panel: #f0e9da; 
 }
 
 [data-theme="dark"] {
