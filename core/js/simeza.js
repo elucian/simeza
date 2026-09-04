@@ -171,6 +171,15 @@ function initFullscreenViewer() {
         }
     }
 
+    // Single tap/click handler to open viewer on mobile
+    document.addEventListener('click', (e) => {
+        if (window.innerWidth <= 767 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
+            viewerImg.src = e.target.src;
+            viewer.classList.add('active');
+            updateRotation(viewerImg);
+        }
+    });
+
     // Double tap/click handler
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {

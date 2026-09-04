@@ -133,22 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Panel click listeners
   wrappers.forEach(wrapper => {
     wrapper.querySelectorAll('.panel').forEach(panel => {
-      panel.addEventListener('click', () => openModal(panel));
+      // Info modal on click (only on desktop)
+      panel.addEventListener('click', (e) => {
+          if (window.innerWidth > 767) {
+              openModal(panel);
+          }
+      });
       
-      // Double tap/click handler for mobile
-      let lastTap = 0;
-      const handleDoubleTap = (e) => {
-        const currentTime = new Date().getTime();
-        const tapLength = currentTime - lastTap;
-        
-        if (e.type === 'dblclick' || (tapLength < 300 && tapLength > 0)) {
-            openModal(panel);
-            e.preventDefault();
-        }
-        lastTap = currentTime;
-      };
-      panel.addEventListener('dblclick', handleDoubleTap);
-      panel.addEventListener('touchend', handleDoubleTap);
+      // Double tap/click handler for mobile/desktop full-screen (handled by simeza.js now)
     });
     
     // Smooth scroll functions
