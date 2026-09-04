@@ -90,6 +90,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalAuthor = document.getElementById('modalAuthor');
   const modalYear = document.getElementById('modalYear');
   const modalStatus = document.getElementById('modalStatus');
+  const modalCategory = document.getElementById('modalCategory');
+  const modalTopic = document.getElementById('modalTopic');
   const modalDesc = document.getElementById('modalDesc');
 
   // Load and apply initial filters
@@ -104,6 +106,8 @@ document.addEventListener('DOMContentLoaded', () => {
     modalAuthor.value = panel.dataset.author;
     modalYear.value = panel.dataset.year;
     modalStatus.value = panel.dataset.status;
+    modalCategory.value = panel.dataset.category;
+    modalTopic.value = panel.dataset.topic;
     modalDesc.value = panel.dataset.desc;
     
     // Set orientation classes

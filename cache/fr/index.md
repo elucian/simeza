@@ -1,60 +1,79 @@
 ---
-title: La Simeza - Galerie d'art contemporain & Communauté
-description: Découvrez l'art contemporain, les écrits, les peintures, les livres et les expositions à la Simeza Art Gallery.
+title: La Simeza - Galerie d'art contemporain et communauté d'échange polyglotte
+description: Explorez l'art contemporain, les écrits, les peintures, les livres et les expositions à la galerie d'art Simeza.
 keywords: simeza, galerie d'art, art contemporain, art roumain, peintures, expositions, livres, culture
+source_hash: 51d098f867441483d86019ecac8b3b38f4c30f69834dfb3fb80fde5dc67d80b0
 ---
-# Bienvenue sur Simeza
+# Bienvenue sur La Simeza
 
-**Acquisition par offre directe pour les chercheurs, auteurs et collectionneurs.**
+**Plateforme culturelle pour étudiants, mentors, auteurs et collectionneurs.**
 
-<div class="index-panels" markdown="1">
+<div class="index-panels">
 
-<div class="index-panel index-panel-about" markdown="1">
+<div class="index-panel index-panel-about">
 
-<h2 id="about">À propos de la plateforme Simeza</h2>
+<h2 id="about">Domaines d'intérêt principaux</h2>
 
-Simeza est une plateforme web indépendante dédiée aux livres rares multilingues, aux guides linguistiques et à l'art original. Nous proposons des œuvres uniques aux auteurs, aux apprenants en langues, aux mentors et aux collectionneurs d'art par le biais d'offres directes.
+<div class="content-card">
+La Simeza est une plateforme web éducative et culturelle indépendante. Nous apportons notre soutien aux passionnés d'art, aux étudiants polyglottes et aux mentors. Nous accueillons tous ceux qui s'intéressent à l'apprentissage des langues, aux événements culturels et à l'émancipation personnelle.
+</div>
 
-<h2 id="focus">Domaines d'intervention principaux</h2>
-
-| Domaine | Description | 
-| :--- | :--- | 
-| **Multilingue** | Nous hébergeons des textes originaux et les traduisons en 8 langues pour un public international. | 
-| **Art original** | Toiles authentiques et œuvres d'art visuel disponibles pour les collectionneurs. | 
-| **Photographie artistique** | Tirages photographiques haute résolution et archives numériques. | 
-| **Acquisition directe** | Sécurisez des articles physiques ou téléchargez des éditions numériques directement depuis notre plateforme. |
+<div class="content-card-list">
+  <div class="content-card">
+    <i class="bi bi-translate"></i>
+    <div class="content-card-body">
+      <strong>Multilingue</strong>
+      <span>Nous hébergeons des textes originaux et traduisons dans 8 langues européennes.</span>
+    </div>
+  </div>
+  <div class="content-card">
+    <i class="bi bi-download"></i>
+    <div class="content-card-body">
+      <strong>Acquisition directe</strong>
+      <span>Obtenez des articles physiques ou téléchargez directement des éditions numériques.</span>
+    </div>
+  </div>
+  <div class="content-card">
+    <i class="bi bi-people"></i>
+    <div class="content-card-body">
+      <strong>Communauté ouverte</strong>
+      <span>Contact de support, échange linguistique, événements culturels et discussions.</span>
+    </div>
+  </div>
+</div>
 
 </div>
 
-<div class="index-panel index-panel-content" markdown="1">
+<div class="index-panel index-panel-content">
 
-<h2 id="about-content">À propos du contenu de Simeza</h2>
+<h2 id="about-content">Contenu en offre directe</h2>
 
-Toiles originales, monographies linguistiques, éditions rares et photographie artistique haute résolution. Explorez la galerie, téléchargez des artefacts numériques ou sécurisez des éditions physiques.
+<div class="content-card">
+Toiles originales, monographies linguistiques, éditions rares et photographie artistique haute résolution. Explorez la galerie, téléchargez des artefacts numériques ou sécurisez des éditions physiques. Planifiez des discussions et des événements culturels au sein de notre communauté.
+</div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
-      <strong>Art Original & Galerie</strong>
-      <span>Toiles authentiques et œuvres d'art visuel de maîtres roumains et d'artistes contemporains.</span>
+      <strong>Art original et galerie</strong>
+      <span>Toiles authentiques et œuvres d'art visuel d'artistes contemporains.</span>
+    </div>
+  </div>
+  <div class="content-card">
+    <i class="bi bi-camera"></i>
+    <div class="content-card-body">
+      <strong>Photographie artistique</strong>
+      <span>Tirages photographiques haute résolution et archives numériques.</span>
     </div>
   </div>
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
-      <strong>Livres Rares & Publications</strong>
-      <span>Éditions rares, estampes historiques, poésie et guides linguistiques disponibles pour étude directe.</span>
+      <strong>Livres et publications rares</strong>
+      <span>Éditions rares, tirages historiques, essais et guides linguistiques.</span>
     </div>
   </div>
-  <div class="content-card">
-    <i class="bi bi-journal-text"></i>
-    <div class="content-card-body">
-      <strong>Écrits & Archives Numériques</strong>
-      <span>Monographies, essais spirituels et artefacts numériques photographiques haute résolution.</span>
-    </div>
-  </div>
-
 </div>
 
 </div>

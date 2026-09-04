@@ -69,5 +69,6 @@ To maintain high development velocity, avoid token waste, and keep context clean
 | `./run.sh translate` | Incremental translation of changed pages via Gemini. |
 | `./run.sh serve` | Starts a local web server on port 8000. |
 | `./run.sh clean` | Prunes stale cache. |
+| `./run.sh sync` | Syncs gallery filter data with content. |
 | `./run.sh kill` | Terminates hanging background terminal sessions. |
 
