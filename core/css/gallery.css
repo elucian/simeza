@@ -27,6 +27,7 @@
   scroll-behavior: smooth;
   scrollbar-width: auto;
   scrollbar-color: var(--border-color) var(--bg-outer);
+  width: auto;
 }
 
 .panel-wrapper::-webkit-scrollbar { height: var(--scrollbar-width); }
@@ -124,6 +125,7 @@
     overflow-y: auto !important; 
     gap: 12px; 
     padding: 0 !important;
+    width: 
   }
   .panel { 
     flex-direction: row !important; 
