@@ -55,7 +55,7 @@ La Simeza is an independent web education and cultural platform. We provide supp
 
 <div class="index-panel index-panel-content">
 
-<h2 id="content">About Simeza Content</h2>
+<h2 id="about-content">About Simeza Content</h2>
 
 <div class="content-card">
 Original canvases, linguistic monographs, rare editions, and high-resolution artistic photography. Explore the gallery, download digital artifacts, or secure physical editions. Schedule talks and cultural events in our community.

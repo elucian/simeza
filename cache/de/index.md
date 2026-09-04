@@ -28,7 +28,7 @@ Simeza ist eine unabhängige Webplattform für seltene mehrsprachige Bücher, Sp
 
 <div class="index-panel index-panel-content" markdown="1">
 
-<h2 id="content">Über die Simeza-Inhalte</h2>
+<h2 id="about-content">Über die Simeza-Inhalte</h2>
 
 Original-Leinwände, sprachwissenschaftliche Monografien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben.
 

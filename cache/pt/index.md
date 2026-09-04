@@ -28,7 +28,7 @@ A Simeza é uma plataforma web independente para livros raros em vários idiomas
 
 <div class="index-panel index-panel-content" markdown="1">
 
-<h2 id="content">Sobre o Conteúdo da Simeza</h2>
+<h2 id="about-content">Sobre o Conteúdo da Simeza</h2>
 
 Telas originais, monografias linguísticas, edições raras e fotografia artística de alta resolução. Explore a galeria, baixe artefatos digitais ou garanta edições físicas.
 
