@@ -26,9 +26,6 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-.index-panel:hover {
-  border-color: var(--accent-color);
-}
 
 .index-panel h2 {
   color: var(--accent-color);
@@ -39,12 +36,8 @@
   border-bottom: 1px solid var(--border-color);
 }
 
-.index-panel h2:not(:first-child) {
-  margin-top: 1.25rem;
-}
-
 .index-panel p {
-  line-height: 1.2;
+  line-height: 1.1;
   margin-bottom: 1rem;
   color: var(--text-main);
 }
@@ -69,11 +62,6 @@
   text-decoration: none;
   color: var(--text-main);
   transition: transform 0.15s ease, border-color 0.15s ease, background-color 0.15s ease;
-}
-
-.index-panel .content-card:hover {
-  border-color: var(--accent-color);
-  transform: translateX(4px);
 }
 
 .index-panel .content-card i {
