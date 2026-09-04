@@ -105,7 +105,7 @@ def render_gallery_html(gallery_data, lang):
         f'            <label>{trans["Status"]}</label><input type="text" id="modalStatus" readonly>',
         '          </div>',
         '        </div>',
-        '        <div class="gallery-modal-form-group">',
+        '        <div class="gallery-modal-form-group gallery-modal-desc-group">',
         f'          <label>{trans["Desc"]}</label><textarea id="modalDesc" readonly rows="5"></textarea>',
         '        </div>',
         '        <div class="gallery-modal-footer">',
