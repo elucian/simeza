@@ -55,6 +55,7 @@ def render_gallery_html(gallery_data, lang):
         
         # Calculate aspect ratio
         aspect_ratio = "1/1"
+        w, h = 1, 1
         if file:
             try:
                 with Image.open(os.path.join(ROOT, 'content', 'gallery', file)) as img:
@@ -67,7 +68,10 @@ def render_gallery_html(gallery_data, lang):
         topic = item.get('topic', '')
         item_type = 'painting' if item.get('original') == 'yes' else 'photo'
         
-        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
+        # Calculate width: Height is determined by CSS (var(--gallery-panel-height) - 38px)
+        # We need a fallback height for calculation, or just rely on CSS flex logic if we can
+        # Let's try injecting the ratio and use CSS for width
+        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}" style="--w: {w}; --h: {h};">']
         if file:
             p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         else:
@@ -158,7 +162,11 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ])
+    # Add Gallery Modal
+    panels.extend(modal)
+    # Add Filter Modal
     panels.extend(filter_modal)
+    
     panels.append('</div>')
     return '\n'.join(panels)
 

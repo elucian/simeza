@@ -84,9 +84,6 @@ document.addEventListener('DOMContentLoaded', () => {
     wrapper.querySelectorAll('.panel').forEach(panel => {
       // Click for Desktop & Landscape Mobile
       panel.addEventListener('click', (e) => {
-        // Prevent opening modal if clicking the image itself while in portrait mobile mode
-        if (isPortraitMobile()) return;
-        
         openModal(panel);
       });
 
@@ -97,12 +94,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const tapLength = currentTime - lastTap;
         
         if (e.type === 'dblclick' || (tapLength < 300 && tapLength > 0)) {
-          // If in portrait, do not open dialog (unless explicitly desired, 
-          // but current requirement is property dialog in landscape)
-          if (!isPortraitMobile()) {
             openModal(panel);
             e.preventDefault();
-          }
         }
         lastTap = currentTime;
       };
