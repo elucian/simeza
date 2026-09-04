@@ -1,0 +1,15 @@
+{
+  "id": "media-1",
+  "type": "audio",
+  "file": "media-1.webp",
+  "author": "Simeza Sound",
+  "category": "Ambient",
+  "topic": "Acoustic",
+  "date": "2026-09-15",
+  "content": {
+    "en": {
+      "title": "Acoustic Soundscapes: Simeza Sessions",
+      "description": "An ambient studio recording exploring acoustic string instruments and spatial reverberation in the gallery hall."
+    }
+  }
+}

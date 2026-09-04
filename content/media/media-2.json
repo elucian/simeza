@@ -1,0 +1,15 @@
+{
+  "id": "media-2",
+  "type": "video",
+  "file": "media-2.webp",
+  "author": "Simeza Art",
+  "category": "Documentary",
+  "topic": "Exhibition",
+  "date": "2026-08-20",
+  "content": {
+    "en": {
+      "title": "Curator Walkthrough: Autumn Exhibition",
+      "description": "A 4K documentary walkthrough presenting featured paintings, sculptures, and dialogues with contemporary artists."
+    }
+  }
+}

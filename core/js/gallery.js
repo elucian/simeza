@@ -38,7 +38,12 @@ const loadFilters = () => {
 window.applyFilters = function(shouldCloseModal = false) {
     const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
     const filterModal = document.getElementById('filterModal');
-    const type = document.querySelector('input[name=\'filter-types\']:checked')?.value;
+    const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
+    let type = activeBtn ? activeBtn.dataset.filter : null;
+    
+    if (!type) {
+        type = document.querySelector('input[name=\'filter-types\']:checked')?.value;
+    }
     const authorSelect = document.querySelector('select[name=\'filter-authors\']');
     const categorySelect = document.querySelector('select[name=\'filter-categories\']');
     const topicSelect = document.querySelector('select[name=\'filter-topics\']');
@@ -212,4 +217,20 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', updateButtons);
     updateButtons();
   });
+    // Add listener for bottom bar buttons to update gallery filters
+    document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const filterValue = btn.dataset.filter;
+            // Find corresponding radio button if it exists
+            const radio = document.querySelector(`input[name='filter-types'][value='${filterValue}']`);
+            if (radio) {
+                radio.checked = true;
+                applyFilters();
+                // Update active class on buttons
+                document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        });
+    });
+
 });

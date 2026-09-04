@@ -4,10 +4,9 @@
 
 /* Gallery Widget Overrides */
 .gallery-container {
-  flex: 0 1 auto;
-  min-height: 220px;
-  max-height: 60vh;
-  height: auto;
+  flex: 1 1 auto;
+  min-height: 0;
+  height: 100%;
   position: relative;
   display: flex;
   flex-direction: column;
@@ -113,10 +112,10 @@
 .panel-mobile-meta { display: none; }
 
 .gallery-nav-btn {
-  position: absolute;
-  top: calc(50% - 22px);
+  position: fixed;
+  top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 1000;
   width: 44px;
   height: 44px;
   border-radius: 50%;
@@ -124,14 +123,40 @@
   background: var(--bg-header);
   color: var(--text-main);
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.18);
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 0.2s ease, background-color 0.2s ease, border-color 0.2s ease, opacity 0.2s ease;
 }
 
-.gallery-nav-prev { left: 10px; }
-.gallery-nav-next { right: 10px; }
+/* Pin to the very edges of the browser window */
+.gallery-nav-prev {
+  left: 12px;
+}
+
+.gallery-nav-next {
+  right: 12px;
+}
+
+/* Hover & Active Feedback */
+.gallery-nav-btn:hover:not(:disabled) {
+  background: var(--bg-main);
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.gallery-nav-btn:active:not(:disabled) {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* Disabled state when at start or end of gallery scroll */
+.gallery-nav-btn:disabled {
+  opacity: 0.2;
+  cursor: default;
+  pointer-events: none;
+}
 
 /* Mobile: Two-Column Row Card */
 @media (max-width: 767px) {
@@ -207,37 +232,6 @@
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
 .gallery-modal-footer { margin-top: auto; text-align: right; padding-top: 10px; display: flex; justify-content: flex-end; }
 .gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-/* Type checkboxes container - Sticky Bottom */
-.filter-types-container {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  padding: 10px;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  background: var(--bg-header);
-  border-top: 1px solid var(--border-color);
-  z-index: 100;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
-}
-/* Adjust main content to avoid overlap with sticky footer */
-.content { padding-bottom: 60px; }
-.type-checkbox {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  padding: 6px 12px;
-  background: var(--bg-main);
-  border: 1px solid var(--border-color);
-  border-radius: 6px;
-  font-weight: 500;
-  font-size: 0.9rem;
-}
-.type-checkbox input { accent-color: var(--accent-color); }
-
 /* Updated Filter Modal */
 .gallery-filter-modal { width: min(400px, 90vw); height: auto; max-height: 90vh; padding: 16px; }
 .filter-modal-title { margin-top: 0; color: var(--accent-color); font-size: 1.2rem; }

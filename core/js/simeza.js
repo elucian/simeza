@@ -125,15 +125,19 @@
   ];
   
   const footer = document.getElementById('socialFooter');
-  const iconsWrapper = document.createElement('div');
-  iconsWrapper.className = 'social-icons-wrapper';
+  const pageId = document.querySelector('meta[name="page-id"]')?.content || '';
   
-  socialLinks.forEach(link => {
-    iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
-  });
-  
-  footer.appendChild(iconsWrapper);
-  footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
+  if (footer && (pageId === 'index.md' || pageId === 'about.md')) {
+      const iconsWrapper = document.createElement('div');
+      iconsWrapper.className = 'social-icons-wrapper';
+      
+      socialLinks.forEach(link => {
+        iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
+      });
+      
+      footer.appendChild(iconsWrapper);
+      footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
+  }
 
 
 function initFullscreenViewer() {

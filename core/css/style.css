@@ -9,6 +9,9 @@
   --border-color: #9c8c78;
   --accent-color: #8a370d;
   --bg-panel: #cee0e9de; 
+  /* Added Button Variables */
+  --btn-active-bg: var(--accent-color);
+  --btn-active-text: #ffffff;
 }
 
 [data-theme="dark"] {
@@ -21,6 +24,67 @@
   --border-color: #444e60;
   --accent-color: #fbbf24;
   --bg-panel: #2f2d29; 
+  /* Mustard Accent, Dark Text */
+  --btn-active-bg: var(--accent-color);
+  --btn-active-text: #171d27;
+}
+
+/* ... existing styles ... */
+/* Unified Sticky Bottom Bar */
+.sticky-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-header);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+/* Unified Bar Button */
+.bottom-bar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 16px;
+  border-radius: 20px;
+  border: 1px solid var(--border-color);
+  background: var(--bg-main);
+  color: var(--text-main);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  user-select: none;
+  text-decoration: none;
+}
+
+.bottom-bar-btn:hover {
+  border-color: var(--accent-color);
+  background: var(--bg-header);
+}
+
+/* Active / Selected Button with High-Contrast Text */
+.bottom-bar-btn.active {
+  background: var(--btn-active-bg);
+  border-color: var(--btn-active-bg);
+  color: var(--btn-active-text);
+  font-weight: 600;
+}
+
+/* Content spacing to prevent bottom bar overlap */
+.content:has(.sticky-bottom-bar),
+body:has(.sticky-bottom-bar) .content {
+  padding-bottom: 76px;
 }
 
 html,
@@ -45,19 +109,6 @@ body {
   border-right: 1px solid var(--border-color);
 }
 
-.container:has(.gallery-container) {
-  max-width: 100%;
-  border-left: none;
-  border-right: none;
-}
-
-body:has(.gallery-container),
-.container:has(.gallery-container) {
-  height: 100dvh;
-  max-height: 100dvh;
-  overflow: hidden;
-}
-
 .content {
   flex: 1 1 auto;
   padding: 12px 24px 0 24px;
@@ -68,12 +119,43 @@ body:has(.gallery-container),
 
 /* --------------------
 Top: 12px
-Right: 8px
+Right: 24px
 Bottom: 0
-Left: 8px
+Left: 24px
 ----------------------*/
+/* Maintain client area containment for Gallery */
+body:has(.gallery-container),
+.container:has(.gallery-container) {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+/* Ensure Gallery container retains standard 1400px width & borders */
+.container:has(.gallery-container) {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* Optimize content spacing so gallery gets maximum vertical space */
 .content:has(.gallery-container) {
-  padding:  12px 8 0 8px !important;
+  flex: 1 1 auto;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 8px 24px 76px 24px; /* leaves room for the sticky bottom bar */
+}
+
+.content:has(.gallery-container) h1 {
+  margin: 4px 0;
+  font-size: 1.5rem;
+}
+
+.content:has(.gallery-container) p {
+  margin: 0 0 6px 0;
+  font-size: 0.9rem;
 }
 
 /* Panels */
@@ -315,15 +397,20 @@ Left: 8px
 
 /* Footer */
 #socialFooter {
+  display: none;
   flex: 0 0 auto;
   padding: 8px 10px;
   background-color: var(--bg-footer);
-  display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 5px;
   border-top: 1px solid var(--border-color);
+}
+
+body[data-page="index.md"] #socialFooter,
+body[data-page="about.md"] #socialFooter {
+  display: flex;
 }
 
 .social-icons-wrapper {
