@@ -75,7 +75,7 @@
 .panel-data {
   flex: 0 0 auto;
   height: 38px;
-  width: 100%;
+  /*width: 100%;*/
   padding: 6px 10px;
   box-sizing: border-box;
   background: var(--bg-main);
