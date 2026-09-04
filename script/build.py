@@ -187,6 +187,94 @@ def render_gallery_html(gallery_data, lang):
     panels.append('</div>')
     return '\n'.join(panels)
 
+def render_media_html(media_data, lang):
+    # Modal Translations
+    t = {
+        'en': {'Name': 'Name', 'Author': 'Author', 'Date': 'Date', 'Location': 'Location', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Date': 'Dată', 'Location': 'Locație', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru'},
+        'de': {'Name': 'Name', 'Author': 'Autor', 'Date': 'Datum', 'Location': 'Ort', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter'},
+        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Date': 'Fecha', 'Location': 'Ubicación', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro'},
+        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Date': 'Date', 'Location': 'Lieu', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre'},
+        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Date': 'Дата', 'Location': 'Место', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр'},
+        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Date': 'Data', 'Location': 'Local', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro'},
+        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Date': 'Dátum', 'Location': 'Helyszín', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő'},
+        'it': {'Name': 'Nome', 'Author': 'Autore', 'Date': 'Data', 'Location': 'Luogo', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro'}
+    }
+    trans = t.get(lang, t['en'])
+    
+    panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>', '<div class="panel-wrapper" data-widget="media">']
+    for item in media_data:
+        content = item.get('content', {})
+        loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
+        title = loc.get('title') or item.get('id') or 'Untitled'
+        desc = loc.get('description') or ''
+        file = item.get('file', '')
+        author = item.get('author', '')
+        location = item.get('location', '') or ''
+        date = item.get('date', '') or ''
+        
+        category = item.get('category', '')
+        topic = item.get('topic', '')
+        item_type = item.get('type', 'audio')
+        
+        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-date="{html.escape(str(date))}" data-location="{html.escape(str(location))}" data-desc="{html.escape(str(desc))}" data-image="/content/media/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
+        if file:
+            p.append(f'      <div class="panel-image"><img src="/content/media/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
+        else:
+            p.append('      <div class="panel-image"></div>')
+        p.append('      <div class="panel-data">')
+        p.append(f'        <div class="panel-title">{html.escape(title)}</div>')
+        p.append(f'        <div class="panel-mobile-meta">')
+        if author: p.append(f'          <div class="panel-author">{html.escape(str(author))}</div>')
+        if date: p.append(f'          <div class="panel-date">{html.escape(str(date))}</div>')
+        if location: p.append(f'          <div class="panel-location">{html.escape(str(location))}</div>')
+        p.append('        </div>')
+        p.append('      </div>')
+        p.append('    </div>')
+        panels.append('\n'.join(p))
+    panels.append('</div>') # Close panel-wrapper
+    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
+    panels.append('</div>') # Close gallery-container
+    
+    # Modal
+    modal = [
+        '<div id="mediaModal" class="gallery-modal-overlay">',
+        '  <div class="gallery-modal">',
+        '    <button class="gallery-modal-close-x" aria-label="Close">&times;</button>',
+        '    <div class="gallery-modal-body">',
+        '      <div class="gallery-modal-image-col">',
+        '        <img id="modalMediaImg" src="" alt="">',
+        '      </div>',
+        '      <div class="gallery-modal-data-col">',
+        '        <div class="gallery-modal-form-group">',
+        f'          <label>{trans["Name"]}</label><input type="text" id="modalMediaTitle" readonly>',
+        '        </div>',
+        '        <div class="gallery-modal-form-group">',
+        f'          <label>{trans["Author"]}</label><input type="text" id="modalMediaAuthor" readonly>',
+        '        </div>',
+        '        <div class="gallery-modal-form-row">',
+        '          <div class="gallery-modal-form-group">',
+        f'            <label>{trans["Date"]}</label><input type="text" id="modalMediaDate" readonly>',
+        '          </div>',
+        '          <div class="gallery-modal-form-group">',
+        f'            <label>{trans["Location"]}</label><input type="text" id="modalMediaLocation" readonly>',
+        '          </div>',
+        '        </div>',
+        '        <div class="gallery-modal-form-group gallery-modal-desc-group">',
+        f'          <label>{trans["Desc"]}</label><textarea id="modalMediaDesc" readonly rows="5"></textarea>',
+        '        </div>',
+        '        <div class="gallery-modal-footer">',
+        f'          <button class="gallery-modal-btn-close">{trans["Close"]}</button>',
+        '        </div>',
+        '      </div>',
+        '    </div>',
+        '  </div>',
+        '</div>'
+    ]
+    panels.extend(modal)
+    return '\n'.join(panels)
+
+
 def write_summary(summary_text):
     if 'GITHUB_STEP_SUMMARY' in os.environ:
         with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
@@ -244,6 +332,19 @@ def build(target_lang=None):
                     except:
                         pass
 
+    # Pre-load media data
+    media_data = []
+    media_source_dir = os.path.join(ROOT, 'content', 'media')
+    if os.path.exists(media_source_dir):
+        for filename in os.listdir(media_source_dir):
+            if filename.endswith('.json'):
+                with open(os.path.join(media_source_dir, filename), 'r', encoding='utf-8') as f:
+                    try:
+                        media_data.append(json.load(f))
+                    except:
+                        pass
+
+
     summary = []
     for lang in active_languages:
         lang_dir = os.path.join(LOCAL_DIR, lang)
@@ -282,6 +383,11 @@ def build(target_lang=None):
             if '{{widget:gallery}}' in body:
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))
                 
+
+            # Media injection
+            if '{{widget:media}}' in body:
+                body = body.replace('{{widget:media}}', render_media_html(media_data, lang))
+
             html_content = md.convert(body)
             
             title = meta.get('title', 'La Simeza')

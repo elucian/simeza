@@ -1,0 +1,50 @@
+{
+  "id": "event-1",
+  "type": "audio",
+  "file": "flyer.jpg",
+  "author": "Author Name",
+  "category": "Category",
+  "topic": "Topic",
+  "date": "2026-10-01",
+  "location": "Venue Name",
+  "original": "en",
+  "content": {
+    "en": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "de": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "es": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "fr": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "hu": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "it": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "pt": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "ro": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    },
+    "ru": {
+      "title": "Sample Title",
+      "description": "Sample Description"
+    }
+  },
+  "source_hash": "9db8b1609b64542c0687009afca5315f29bd386d7ffa6a3d4caccf7377d9460a"
+}

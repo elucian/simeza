@@ -10,8 +10,8 @@ Each subfolder contains multiple JSON files, where each file represents a single
 ├── /authors
 │   ├── author-1.json
 │   └── ...
-├── /events
-│   ├── event-1.json
+├── /media
+│   ├── media-1.json
 │   └── ...
 └── /gallery
     ├── item-1.json
@@ -35,11 +35,12 @@ Each subfolder contains multiple JSON files, where each file represents a single
 }
 ```
 
-### Events (`/events/*.json`)
+### Media (`/media/*.json`)
 ```json
 {
-  "id": "event-id",
-  "file": "flyer.jpg",
+  "id": "media-id",
+  "type": "audio",
+  "file": "file.mp3",
   "date": "2026-10-01",
   "location": "Venue Name",
   "original": "en",
@@ -71,7 +72,7 @@ Each subfolder contains multiple JSON files, where each file represents a single
 ## The `original` Field
 The `original` field behaves polymorphically depending on the content type:
 - **For Paintings/Visuals**: Use `"yes"` if it is an original work, or `"no"` if it is a copy/print.
-- **For Books/Writings/Authors/Events**: Use the language code (e.g., `"en"`, `"ro"`, `"it"`) to indicate the original language in which the work was created.
+- **For Books/Writings/Authors/Media**: Use the language code (e.g., `"en"`, `"ro"`, `"it"`) to indicate the original language in which the work was created.
 
 ## Translation Workflow
 - The `content` object contains nested translations.
