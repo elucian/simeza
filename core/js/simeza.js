@@ -171,20 +171,10 @@ function initFullscreenViewer() {
         }
     }
 
-    // Single tap/click handler to open viewer on mobile
-    document.addEventListener('click', (e) => {
-        if (window.innerWidth <= 767 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
-            viewerImg.src = e.target.src;
-            viewer.classList.add('active');
-            updateRotation(viewerImg);
-        }
-    });
-
     // Double tap/click handler
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {
-        const isPortrait = window.innerHeight >= window.innerWidth;
-        if (isPortrait && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
+        if (e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);
@@ -193,10 +183,9 @@ function initFullscreenViewer() {
 
     // Touch support for double tap
     document.addEventListener('touchend', (e) => {
-        const isPortrait = window.innerHeight >= window.innerWidth;
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
-        if (isPortrait && tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
+        if (tapLength < 300 && tapLength > 0 && e.target.tagName === 'IMG' && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             viewerImg.src = e.target.src;
             viewer.classList.add('active');
             updateRotation(viewerImg);
