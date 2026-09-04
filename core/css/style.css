@@ -1,14 +1,14 @@
 :root {
   --pico-font-family: 'Merriweather', 'Lato', sans-serif;
   --pico-background-color: var(--bg-outer);
-  --bg-outer: #fef4f4c1;
+  --bg-outer: #fef4f48e;
   --bg-header: #e8e8e8d8;
   --bg-main: #fbf3eae3;
-  --bg-footer: #d9d3c8;
+  --bg-footer:#e8e8e8d8;
   --text-main: #171d27;
   --border-color: #9c8c78;
-  --accent-color: #6b3012;
-  --bg-panel: #f0e9da; 
+  --accent-color: #59280f;
+  --bg-panel: #c6c2b9; 
 }
 
 [data-theme="dark"] {
