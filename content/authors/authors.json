@@ -1,0 +1,48 @@
+[
+  {
+    "id": "author-1",
+    "file": "photo.jpg",
+    "name": "Full Name",
+    "birth_year": 1980,
+    "original": "en",
+    "content": {
+      "en": {
+        "bio": "...",
+        "role": "..."
+      },
+      "de": {
+        "bio": "Bitte geben Sie den zu übersetzenden Text an. Sobald Sie mir den Text zur Verfügung stellen, werde ich ihn unter strikter Einhaltung Ihrer Vorgaben (Beibehaltung von Markdown, Links, HTML-Tags, Code und Zeilenumbrüchen) ins Deutsche übersetzen.",
+        "role": "Bitte fügen Sie den zu übersetzenden Text ein, damit ich ihn für Sie übersetzen kann."
+      },
+      "es": {
+        "bio": "...",
+        "role": "..."
+      },
+      "fr": {
+        "bio": "...",
+        "role": "..."
+      },
+      "hu": {
+        "bio": "...",
+        "role": "..."
+      },
+      "it": {
+        "bio": "...",
+        "role": "..."
+      },
+      "pt": {
+        "bio": "...",
+        "role": "..."
+      },
+      "ro": {
+        "bio": "...",
+        "role": "..."
+      },
+      "ru": {
+        "bio": "...",
+        "role": "..."
+      }
+    },
+    "source_hash": "5cf88b968ffb64d03e400ec68bcf1c6a7431491e1ba26782b3c517a27fce6681"
+  }
+]

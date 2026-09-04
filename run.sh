@@ -54,7 +54,21 @@ elif [ "$CMD" == "translate" ]; then
     load_env
     python script/translate.py 
 
+elif [ "$CMD" == "dev" ]; then
+    echo "Running fast English dev build..."
+    python script/build.py --lang en
+    echo "Starting local dev server at http://localhost:8000/en/..."
+    python -m http.server 8000 -d local
+
+
 elif [ "$CMD" == "build" ]; then
+    if [ "$2" != "" ]; then
+        echo "Running fast build for language: $2..."
+        python script/build.py --lang "$2"
+        echo "Build completed."
+        exit 0
+    fi
+
     echo "Building candidate..."
     load_env
     # 1. Bump version and commit changes
@@ -127,5 +141,7 @@ elif [ "$CMD" == "kill" ]; then
 
 
 else
-    echo "Usage: ./run.sh [setup|commit|translate|build|publish|release|clean|serve|kill]"
+    echo "Usage: ./run.sh [setup|commit|translate|build [lang]|dev|publish|release|clean|serve|kill]"
+
+
 fi

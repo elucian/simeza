@@ -6,6 +6,7 @@ import sys
 import re
 import html
 import time
+import argparse
 from PIL import Image
 
 # Configuration
@@ -62,7 +63,11 @@ def render_gallery_html(gallery_data, lang):
             except:
                 pass
         
-        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}">']
+        category = item.get('category', '')
+        topic = item.get('topic', '')
+        item_type = 'painting' if item.get('original') == 'yes' else 'photo'
+        
+        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
         if file:
             p.append(f'      <div class="panel-image" style="aspect-ratio: {aspect_ratio};"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         else:
@@ -153,10 +158,11 @@ def render_menu(lang):
         html += f'<li class="nav-item"><a class="nav-link" href="{link}">{label}</a></li>'
     return html
 
-def build():
+def build(target_lang=None):
     start_time = time.time()
-    print(f'Starting build at {time.ctime()}')
-    if os.path.exists(LOCAL_DIR):
+    active_languages = [target_lang] if target_lang else LANGUAGES
+    print(f'Starting build at {time.ctime()} for: {", ".join(active_languages)}')
+    if not target_lang and os.path.exists(LOCAL_DIR):
         shutil.rmtree(LOCAL_DIR)
     os.makedirs(LOCAL_DIR, exist_ok=True)
     with open(RELEASE_FILE, 'r') as f:
@@ -177,7 +183,7 @@ def build():
                         pass
 
     summary = []
-    for lang in LANGUAGES:
+    for lang in active_languages:
         lang_dir = os.path.join(LOCAL_DIR, lang)
         os.makedirs(lang_dir, exist_ok=True)
         base_template_path = os.path.join(LAYOUT_DIR, 'template.html')
@@ -208,7 +214,7 @@ def build():
             page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
             page_js = f'<script src="/core/js/{name_no_ext}.js"></script>' if os.path.exists(js_path) else ''
             
-            md = markdown.Markdown(extensions=['extra'])
+            md = markdown.Markdown(extensions=['extra', 'md_in_html'])
             
             # Gallery injection
             if '{{widget:gallery}}' in body:
@@ -237,6 +243,11 @@ def build():
     duration = time.time() - start_time
     print(f'\nBuild completed in {duration:.2f} seconds.')
     summary.append(f'\n**Build completed in {duration:.2f} seconds.**')
-    write_summary('\n'.join(summary))
+    if not target_lang:
+        write_summary('\n'.join(summary))
+
 if __name__ == '__main__':
-    build()
+    parser = argparse.ArgumentParser(description="Static site generator build script")
+    parser.add_argument('--lang', '-l', help="Target specific language (e.g. 'en' for fast dev build)")
+    args = parser.parse_args()
+    build(target_lang=args.lang)
