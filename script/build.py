@@ -120,7 +120,7 @@ def render_gallery_html(gallery_data, lang):
         
         category = item.get('category', '')
         topic = item.get('topic', '')
-        item_type = 'painting' if item.get('original') == 'yes' else 'photo'
+        item_type = item.get('type', 'painting')
         
         # Calculate width: Height is determined by CSS (100dvh - 180px - internal padding)
         # We need width = height * aspect_ratio

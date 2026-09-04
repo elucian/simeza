@@ -2,8 +2,9 @@
 
 // Persistence
 const saveFilters = () => {
+    const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
     const filters = {
-        type: document.querySelector('input[name=\'filter-types\']:checked')?.value,
+        type: activeBtn ? activeBtn.dataset.filter : 'painting',
         author: document.querySelector('select[name=\'filter-authors\']')?.value,
         category: document.querySelector('select[name=\'filter-categories\']')?.value,
         topic: document.querySelector('select[name=\'filter-topics\']')?.value
@@ -15,13 +16,18 @@ const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
     const filters = saved ? JSON.parse(saved) : {};
     
-    // Set type (radio)
-    const typeInputs = document.querySelectorAll('input[name=\'filter-types\']');
+    // Set type (button)
+    const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
     if (filters.type) {
-        typeInputs.forEach(radio => radio.checked = radio.value === filters.type);
-    } else {
-        // If no filter saved, select the first one (default)
-        if (typeInputs.length > 0) typeInputs[0].checked = true;
+        buttons.forEach(btn => {
+            if (btn.dataset.filter === filters.type) {
+                buttons.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+        });
+    } else if (buttons.length > 0) {
+        buttons.forEach(b => b.classList.remove('active'));
+        buttons[0].classList.add('active');
     }
     
     // Set selects
@@ -39,11 +45,7 @@ window.applyFilters = function(shouldCloseModal = false) {
     const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
     const filterModal = document.getElementById('filterModal');
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
-    let type = activeBtn ? activeBtn.dataset.filter : null;
-    
-    if (!type) {
-        type = document.querySelector('input[name=\'filter-types\']:checked')?.value;
-    }
+    let type = activeBtn ? activeBtn.dataset.filter : 'painting';
     const authorSelect = document.querySelector('select[name=\'filter-authors\']');
     const categorySelect = document.querySelector('select[name=\'filter-categories\']');
     const topicSelect = document.querySelector('select[name=\'filter-topics\']');
@@ -83,7 +85,12 @@ window.applyFilters = function(shouldCloseModal = false) {
 
 window.resetFilters = function() {
     const filterModal = document.getElementById('filterModal');
-    document.querySelectorAll('input[name=\'filter-types\']').forEach(cb => cb.checked = true);
+    // Set first button active (painting)
+    const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
+    if (buttons.length > 0) {
+        buttons.forEach(b => b.classList.remove('active'));
+        buttons[0].classList.add('active');
+    }
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
     saveFilters();
     if (filterModal) filterModal.classList.remove('active');
@@ -220,16 +227,16 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add listener for bottom bar buttons to update gallery filters
     document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            const filterValue = btn.dataset.filter;
-            // Find corresponding radio button if it exists
-            const radio = document.querySelector(`input[name='filter-types'][value='${filterValue}']`);
-            if (radio) {
-                radio.checked = true;
-                applyFilters();
-                // Update active class on buttons
-                document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            }
+            // Update active class on buttons
+            document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            
+            applyFilters();
+            
+            // Reset scroll position to beginning of filtered results
+            document.querySelectorAll('.panel-wrapper[data-widget="gallery"]').forEach(wrapper => {
+                wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+            });
         });
     });
 
