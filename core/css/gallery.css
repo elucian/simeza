@@ -195,24 +195,34 @@
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
 .gallery-modal-footer { margin-top: auto; text-align: right; padding-top: 10px; display: flex; justify-content: flex-end; }
 .gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-/* Type checkboxes container */
+/* Type checkboxes container - Sticky Bottom */
 .filter-types-container {
   display: flex;
   justify-content: center;
   gap: 15px;
-  margin: 15px 0;
   padding: 10px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: var(--bg-header);
+  border-top: 1px solid var(--border-color);
+  z-index: 100;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
 }
+/* Adjust main content to avoid overlap with sticky footer */
+.content { padding-bottom: 60px; }
 .type-checkbox {
   display: flex;
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  padding: 8px 16px;
+  padding: 6px 12px;
   background: var(--bg-main);
   border: 1px solid var(--border-color);
   border-radius: 6px;
   font-weight: 500;
+  font-size: 0.9rem;
 }
 .type-checkbox input { accent-color: var(--accent-color); }
 

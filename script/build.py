@@ -140,7 +140,7 @@ def render_gallery_html(gallery_data, lang):
         entry_id = entry.get('id')
         label_dict = entry.get('label', {})
         label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-        types_html.append(f'  <label class="type-checkbox"><input type="checkbox" name="filter-types" value="{entry_id}"> {label_text}</label>')
+        types_html.append(f'  <label class="type-checkbox"><input type="checkbox" name="filter-types" value="{entry_id}" onchange="applyFilters()"> {label_text}</label>')
     types_html.append('</div>')
     panels.append('\n'.join(types_html))
 

@@ -2,13 +2,45 @@
 document.addEventListener('DOMContentLoaded', () => {
   const wrappers = document.querySelectorAll('.panel-wrapper[data-widget="gallery"]');
   const modal = document.getElementById('galleryModal');
+  const filterModal = document.getElementById('filterModal');
   const modalImg = document.getElementById('modalImg');
   const modalPicName = document.getElementById('modalPicName');
   const modalAuthor = document.getElementById('modalAuthor');
   const modalYear = document.getElementById('modalYear');
   const modalStatus = document.getElementById('modalStatus');
+
+  // Persistence
+  const saveFilters = () => {
+    const filters = {
+      types: Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value),
+      author: document.querySelector('select[name="filter-authors"]')?.value,
+      category: document.querySelector('select[name="filter-categories"]')?.value,
+      topic: document.querySelector('select[name="filter-topics"]')?.value
+    };
+    localStorage.setItem('simezaFilters', JSON.stringify(filters));
+  };
+
+  const loadFilters = () => {
+    const saved = localStorage.getItem('simezaFilters');
+    if (!saved) return;
+    const filters = JSON.parse(saved);
+    
+    // Set types (default all checked if empty)
+    const typeInputs = document.querySelectorAll('input[name="filter-types"]');
+    if (filters.types && filters.types.length > 0) {
+        typeInputs.forEach(cb => cb.checked = filters.types.includes(cb.value));
+    } else {
+        typeInputs.forEach(cb => cb.checked = true);
+    }
+    
+    // Set selects
+    if (filters.author) document.querySelector('select[name="filter-authors"]').value = filters.author;
+    if (filters.category) document.querySelector('select[name="filter-categories"]').value = filters.category;
+    if (filters.topic) document.querySelector('select[name="filter-topics"]').value = filters.topic;
+  };
+
   // Filter functions
-  window.applyFilters = function() {
+  window.applyFilters = function(shouldCloseModal = false) {
     const types = Array.from(document.querySelectorAll('input[name="filter-types"]:checked')).map(el => el.value);
     const authorSelect = document.querySelector('select[name="filter-authors"]');
     const categorySelect = document.querySelector('select[name="filter-categories"]');
@@ -17,6 +49,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const authors = authorSelect && authorSelect.value ? [authorSelect.value] : [];
     const categories = categorySelect && categorySelect.value ? [categorySelect.value] : [];
     const topics = topicSelect && topicSelect.value ? [topicSelect.value] : [];
+
+    saveFilters();
 
     const hasActiveFilters = types.length > 0 || authors.length > 0 || categories.length > 0 || topics.length > 0;
     const filterIcon = document.getElementById('filterIcon');
@@ -36,22 +70,25 @@ document.addEventListener('DOMContentLoaded', () => {
         let matchCategory = categories.length === 0 || categories.includes(pCategory);
         let matchTopic = topics.length === 0 || topics.includes(pTopic);
 
-        if (matchType && matchAuthor && matchCategory && matchTopic) {
-          panel.style.display = '';
-        } else {
-          panel.style.display = 'none';
-        }
+        panel.style.display = (matchType && matchAuthor && matchCategory && matchTopic) ? '' : 'none';
       });
     });
 
-    const filterModal = document.getElementById('filterModal');
-    if (filterModal) filterModal.classList.remove('active');
+    if (shouldCloseModal && filterModal) filterModal.classList.remove('active');
   };
 
   window.resetFilters = function() {
-    document.querySelectorAll('input[name="filter-types"]').forEach(cb => cb.checked = false);
+    document.querySelectorAll('input[name="filter-types"]').forEach(cb => cb.checked = true);
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
+    saveFilters();
+    if (filterModal) filterModal.classList.remove('active');
+    window.applyFilters();
   };
+
+  // Init
+  loadFilters();
+  window.applyFilters();
+
 
   const modalDesc = document.getElementById('modalDesc');
   const closeModal = () => modal.classList.remove('active');
