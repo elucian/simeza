@@ -41,6 +41,14 @@ def render_gallery_html(gallery_data, lang):
         'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro'}
     }
     trans = t.get(lang, t['en'])
+    # Load filter config
+    filter_data = {}
+    try:
+        with open(os.path.join(ROOT, 'content', 'filter-gallery.json'), 'r', encoding='utf-8') as f:
+            filter_data = json.load(f)
+    except:
+        pass
+
 
     panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>', '<div class="panel-wrapper" data-widget="gallery">']
     for item in gallery_data:
@@ -132,7 +140,7 @@ def render_gallery_html(gallery_data, lang):
         entry_id = entry.get('id')
         label_dict = entry.get('label', {})
         label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-        types_html.append(f'  <label class="type-checkbox"><input type="checkbox" name="filter-types" value="{entry_id}" onchange="applyFilters()"> {label_text}</label>')
+        types_html.append(f'  <label class="type-checkbox"><input type="checkbox" name="filter-types" value="{entry_id}"> {label_text}</label>')
     types_html.append('</div>')
     panels.append('\n'.join(types_html))
 
@@ -150,7 +158,7 @@ def render_gallery_html(gallery_data, lang):
         items = filter_data.get(section_key, [])
         if items:
             filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong>')
-            filter_modal.append(f'        <select name="filter-{section_key}" onchange="applyFilters()">')
+            filter_modal.append(f'        <select name="filter-{section_key}">')
             filter_modal.append('          <option value="">All</option>')
             for entry in items:
                 entry_id = entry.get('id')
@@ -164,7 +172,7 @@ def render_gallery_html(gallery_data, lang):
         '    </div>',
         '    <div class="gallery-modal-footer filter-modal-footer">',
         f'      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">{trans["Reset"]}</button>',
-        f'      <button class="gallery-modal-btn-close" onclick="toggleFilterModal()">{trans["Close"]}</button>',
+        f'      <button class="gallery-modal-btn-close" onclick="applyFilters()">{trans["Filter"]}</button>',
         '    </div>',
         '  </div>',
         '</div>'
