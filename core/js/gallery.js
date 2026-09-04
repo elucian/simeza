@@ -181,14 +181,18 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Smooth scroll functions
+    const container = wrapper.parentElement;
+    const prevBtn = container.querySelector('.gallery-nav-prev');
+    const nextBtn = container.querySelector('.gallery-nav-next');
+    
     const scroll = (direction, isMany = false) => {
       const scrollAmount = isMany ? wrapper.clientWidth * 0.8 : wrapper.querySelector('.panel').offsetWidth + 16;
       wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
     };
     
     // Event listeners
-    prevBtn.addEventListener('click', () => scroll(-1, true));
-    nextBtn.addEventListener('click', () => scroll(1, true));
+    if (prevBtn) prevBtn.addEventListener('click', () => scroll(-1, true));
+    if (nextBtn) nextBtn.addEventListener('click', () => scroll(1, true));
     
     // Keyboard navigation
     document.addEventListener('keydown', (e) => {
