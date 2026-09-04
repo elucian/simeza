@@ -115,6 +115,9 @@
   justify-content: center;
 }
 
+.gallery-nav-prev { left: 10px; }
+.gallery-nav-next { right: 10px; }
+
 /* Mobile: Two-Column Row Card */
 @media (max-width: 767px) {
   .gallery-container { height: calc(100dvh - 140px); }
