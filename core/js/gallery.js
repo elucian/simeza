@@ -3,7 +3,7 @@
 // Persistence
 const saveFilters = () => {
     const filters = {
-        types: Array.from(document.querySelectorAll('input[name=\'filter-types\']:checked')).map(el => el.value),
+        type: document.querySelector('input[name=\'filter-types\']:checked')?.value,
         author: document.querySelector('select[name=\'filter-authors\']')?.value,
         category: document.querySelector('select[name=\'filter-categories\']')?.value,
         topic: document.querySelector('select[name=\'filter-topics\']')?.value
@@ -13,14 +13,17 @@ const saveFilters = () => {
 
 const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
+    if (!saved) return;
     const filters = JSON.parse(saved);
     
-    // Set types (default all checked if empty)
+    // Set type (radio)
     const typeInputs = document.querySelectorAll('input[name=\'filter-types\']');
-    if (filters.types && filters.types.length > 0) {
-        typeInputs.forEach(cb => cb.checked = filters.types.includes(cb.value));
+    if (filters.type !== undefined) {
+        typeInputs.forEach(radio => radio.checked = radio.value === filters.type);
     } else {
-        typeInputs.forEach(cb => cb.checked = true);
+        // If no filter saved, default to 'all' (empty value)
+        const allRadio = document.querySelector('input[name=\'filter-types\'][value=""]');
+        if (allRadio) allRadio.checked = true;
     }
     
     // Set selects
@@ -37,7 +40,7 @@ const loadFilters = () => {
 window.applyFilters = function(shouldCloseModal = false) {
     const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
     const filterModal = document.getElementById('filterModal');
-    const types = Array.from(document.querySelectorAll('input[name=\'filter-types\']:checked')).map(el => el.value);
+    const type = document.querySelector('input[name=\'filter-types\']:checked')?.value;
     const authorSelect = document.querySelector('select[name=\'filter-authors\']');
     const categorySelect = document.querySelector('select[name=\'filter-categories\']');
     const topicSelect = document.querySelector('select[name=\'filter-topics\']');
@@ -48,7 +51,7 @@ window.applyFilters = function(shouldCloseModal = false) {
 
     saveFilters();
 
-    const hasActiveFilters = types.length > 0 || authors.length > 0 || categories.length > 0 || topics.length > 0;
+    const hasActiveFilters = (type && type !== '') || authors.length > 0 || categories.length > 0 || topics.length > 0;
     const filterIcon = document.getElementById('filterIcon');
     if (filterIcon) {
         filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
@@ -61,7 +64,7 @@ window.applyFilters = function(shouldCloseModal = false) {
             const pCategory = panel.dataset.category;
             const pTopic = panel.dataset.topic;
 
-            let matchType = types.length === 0 || types.includes(pType);
+            let matchType = (!type || type === '') || (pType === type);
             let matchAuthor = authors.length === 0 || authors.includes(pAuthor);
             let matchCategory = categories.length === 0 || categories.includes(pCategory);
             let matchTopic = topics.length === 0 || topics.includes(pTopic);
