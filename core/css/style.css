@@ -549,3 +549,13 @@ p {
   }
 }
 
+/* Protect Images */
+img {
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+    user-select: none;
+    user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+

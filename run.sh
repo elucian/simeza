@@ -11,6 +11,7 @@
 # kill: Terminate all unused terminal sessions.
 # clean: Remove local.
 # serve: Serve local.
+# sync: Sync gallery filter data.
 
 CMD=$1
 
@@ -108,6 +109,9 @@ elif [ "$CMD" == "release" ]; then
 elif [ "$CMD" == "clean" ]; then
     python script/clean.py
 
+elif [ "$CMD" == "sync" ]; then
+    python script/sync_gallery.py
+
 elif [ "$CMD" == "serve" ]; then
     python -m http.server 8000 -d local
 
@@ -141,7 +145,7 @@ elif [ "$CMD" == "kill" ]; then
 
 
 else
-    echo "Usage: ./run.sh [setup|commit|translate|build [lang]|dev|publish|release|clean|serve|kill]"
+    echo "Usage: ./run.sh [setup|commit|translate|build [lang]|dev|publish|release|clean|serve|kill|sync]"
 
 
 fi

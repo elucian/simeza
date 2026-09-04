@@ -254,3 +254,11 @@ function initLandscapeAutoFullscreen() {
 
 document.addEventListener('DOMContentLoaded', initLandscapeAutoFullscreen);
 
+
+// Protect images from context menu
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.tagName === 'IMG') {
+        e.preventDefault();
+    }
+}, false);
+
