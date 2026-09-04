@@ -133,6 +133,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // Panel click listeners
   wrappers.forEach(wrapper => {
     wrapper.querySelectorAll('.panel').forEach(panel => {
+      // Inject overlay for protection
+      const panelImg = panel.querySelector('.panel-image');
+      if (panelImg) {
+          const overlay = document.createElement('div');
+          overlay.className = 'img-overlay';
+          panelImg.appendChild(overlay);
+      }
+
       // Info modal on click (only on desktop)
       panel.addEventListener('click', (e) => {
           if (window.innerWidth > 767) {
