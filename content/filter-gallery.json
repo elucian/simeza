@@ -17,7 +17,7 @@
     {
       "id": "painting",
       "label": {
-        "en": "Painting",
+        "en": "Paintings",
         "ro": "Picturi",
         "de": "Gemälde",
         "es": "Pinturas",
@@ -31,7 +31,7 @@
     {
       "id": "drawing",
       "label": {
-        "en": "Drawing",
+        "en": "Drawings",
         "ro": "Desene",
         "de": "Zeichnungen",
         "es": "Dibujos",
