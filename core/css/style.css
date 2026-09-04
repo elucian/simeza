@@ -58,16 +58,22 @@ body:has(.gallery-container),
   overflow: hidden;
 }
 
-#content {
+.content {
   flex: 1 1 auto;
-  padding: 20px 20px 0 20px;
+  padding: 12px 12px 0 12px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
 
-#content:has(.gallery-container) {
-  padding: 0 !important;
+/* --------------------
+Top: 12px
+Right: 8px
+Bottom: 0
+Left: 8px
+----------------------*/
+.content:has(.gallery-container) {
+  padding:  12px 8 0 8px !important;
 }
 
 /* Panels */
