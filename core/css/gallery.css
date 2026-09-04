@@ -47,7 +47,7 @@
   flex-direction: column;
   height: 100%;
   flex: 0 0 auto;
-  width: max-content;
+  width: auto;
   background: var(--bg-header);
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -58,7 +58,8 @@
 .panel-image {
   flex: 1 1 auto;
   min-height: 0;
-  width: 100%;
+  height: calc(100% - 52px);
+  width: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -68,8 +69,7 @@
 
 .panel-image img {
   height: 100%;
-  width: auto;
-  max-width: none;
+  width: 100%;
   object-fit: contain;
   display: block;
 }
