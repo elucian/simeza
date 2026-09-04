@@ -28,7 +28,7 @@ Simeza este o platformă web independentă pentru cărți rare în mai multe lim
 
 <div class="index-panel index-panel-content" markdown="1">
 
-<h2 id="content">Despre conținutul Simeza</h2>
+<h2 id="about-content">Despre conținutul Simeza</h2>
 
 Pânze originale, monografii lingvistice, ediții rare și fotografie artistică de înaltă rezoluție. Explorați galeria, descărcați artefacte digitale sau securizați ediții fizice.
 

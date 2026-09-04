@@ -28,7 +28,7 @@ A Simeza egy független webes platform ritka többnyelvű könyvek, nyelvkönyve
 
 <div class="index-panel index-panel-content" markdown="1">
 
-<h2 id="content">A Simeza tartalmáról</h2>
+<h2 id="about-content">A Simeza tartalmáról</h2>
 
 Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontású művészi fotók. Fedezze fel a galériát, töltsön le digitális műtárgyakat, vagy szerezze be a fizikai kiadásokat.
 

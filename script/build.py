@@ -128,10 +128,10 @@ def render_gallery_html(gallery_data, lang):
     # Filter Modal
     filter_modal = [
         '<div id="filterModal" class="gallery-modal-overlay">',
-        '  <div class="gallery-modal" style="width: min(600px, 90vw); height: auto; max-height: 85dvh;">',
+        '  <div class="gallery-modal gallery-filter-modal">',
         '    <button class="gallery-modal-close-x" onclick="toggleFilterModal()" aria-label="Close">&times;</button>',
-        '    <h3 style="margin-top:0; color:var(--accent-color);">Filter Gallery</h3>',
-        '    <div class="filter-modal-body" style="overflow-y:auto; flex:1; display:flex; flex-direction:column; gap:16px; padding:10px 0;">'
+        '    <h3 class="filter-modal-title">Filter Gallery</h3>',
+        '    <div class="filter-modal-body">'
     ]
     
     # Load filter config
@@ -145,18 +145,18 @@ def render_gallery_html(gallery_data, lang):
     for section_key, title_label in [('types', 'Type'), ('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
         items = filter_data.get(section_key, [])
         if items:
-            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong><div style="display:flex; flex-wrap:wrap; gap:10px; margin-top:6px;">')
+            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong><div class="filter-options">')
             for entry in items:
                 entry_id = entry.get('id')
                 label_dict = entry.get('label', {})
                 label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-                filter_modal.append(f'        <label style="display:inline-flex; align-items:center; gap:5px; font-size:0.85rem;"><input type="checkbox" name="filter-{section_key}" value="{entry_id}"> {label_text}</label>')
+                filter_modal.append(f'        <label class="filter-option"><input type="checkbox" name="filter-{section_key}" value="{entry_id}"> {label_text}</label>')
             filter_modal.append('      </div></div>')
 
     filter_modal.extend([
         '    </div>',
-        '    <div class="gallery-modal-footer" style="display:flex; justify-content:space-between; align-items:center; margin-top:15px;">',
-        '      <button class="gallery-modal-btn-close" onclick="resetFilters()" style="background:transparent; color:var(--text-main); border:1px solid var(--border-color);">Reset</button>',
+        '    <div class="gallery-modal-footer filter-modal-footer">',
+        '      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">Reset</button>',
         '      <button class="gallery-modal-btn-close" onclick="applyFilters()">Apply Filters</button>',
         '    </div>',
         '  </div>',

@@ -5,7 +5,7 @@
         const filterBtn = document.getElementById('filterBtn');
         const isIndex = pageId.includes('index') || pathname.endsWith('/') || pathname.endsWith('index.html');
         if (filterBtn && !isIndex) {
-            filterBtn.style.display = 'flex';
+            filterBtn.classList.add('is-visible');
         }
     });
 
@@ -109,11 +109,11 @@
   localStorage.setItem('lang', lang);
 
   const activeLang = languages.find(l => l.code === lang);
-  document.getElementById('langBtn').innerHTML = `<img src="${activeLang.flag}" alt="${activeLang.name}" style="width:31px; height:24px; object-fit:cover;"> ${activeLang.name}`;
+    document.getElementById('langBtn').innerHTML = `<img class="language-flag" src="${activeLang.flag}" alt="${activeLang.name}"> ${activeLang.name}`;
 
   const langMenu = document.getElementById('langMenu');
   languages.forEach(l => {
-    langMenu.innerHTML += `<li class="p-2 d-flex align-items-center gap-2" style="cursor:pointer" onclick="setLang('${l.code}')"><img src="${l.flag}" alt="${l.name}" style="width:31px; height:24px; object-fit:cover;"> ${l.name}</li>`;
+    langMenu.innerHTML += `<li class="language-option" onclick="setLang('${l.code}')"><img class="language-flag" src="${l.flag}" alt="${l.name}"> ${l.name}</li>`;
   });
 
   const socialLinks = [
