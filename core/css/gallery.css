@@ -195,12 +195,33 @@
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
 .gallery-modal-footer { margin-top: auto; text-align: right; padding-top: 10px; display: flex; justify-content: flex-end; }
 .gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; }
-.gallery-filter-modal { width: min(600px, 90vw); height: auto; max-height: 85dvh; }
+/* Type checkboxes container */
+.filter-types-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin: 15px 0;
+  padding: 10px;
+}
+.type-checkbox {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  padding: 8px 16px;
+  background: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  font-weight: 500;
+}
+.type-checkbox input { accent-color: var(--accent-color); }
+
+/* Updated Filter Modal */
+.gallery-filter-modal { width: min(600px, 90vw); height: auto; max-height: 90vh; }
 .filter-modal-title { margin-top: 0; color: var(--accent-color); }
 .filter-modal-body { overflow-y: auto; flex: 1; display: flex; flex-direction: column; gap: 16px; padding: 10px 0; }
-.filter-options { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
-.filter-option { display: inline-flex; align-items: center; gap: 5px; font-size: 0.85rem; }
-.filter-modal-footer { justify-content: space-between; align-items: center; margin-top: 15px; }
+.filter-group select { width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border-color); background: var(--bg-main); color: var(--text-main); margin-top: 5px; }
+.filter-modal-footer { justify-content: flex-end; gap: 10px; align-items: center; margin-top: 15px; }
 .filter-reset-btn { background: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
 
 /* Landscape Mobile Modal Fixes */

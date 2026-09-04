@@ -1,7 +1,8 @@
 {
   "types": [
-    { "id": "photo", "label": { "en": "Photos", "ro": "Fotografii", "de": "Fotos", "es": "Fotos", "fr": "Photos", "ru": "Фото", "pt": "Fotos", "hu": "Fotók", "it": "Foto" } },
-    { "id": "painting", "label": { "en": "Paintings", "ro": "Picturi", "de": "Gemälde", "es": "Pinturas", "fr": "Peintures", "ru": "Картины", "pt": "Pinturas", "hu": "Festmények", "it": "Dipinti" } }
+    { "id": "photo", "label": { "en": "Pictures", "ro": "Fotografii", "de": "Fotos", "es": "Fotos", "fr": "Photos", "ru": "Фото", "pt": "Fotos", "hu": "Fotók", "it": "Foto" } },
+    { "id": "painting", "label": { "en": "Paintings", "ro": "Picturi", "de": "Gemälde", "es": "Pinturas", "fr": "Peintures", "ru": "Картины", "pt": "Pinturas", "hu": "Festmények", "it": "Dipinti" } },
+    { "id": "drawing", "label": { "en": "Drawings", "ro": "Desene", "de": "Zeichnungen", "es": "Dibujos", "fr": "Dessins", "ru": "Рисунки", "pt": "Desenhos", "hu": "Rajzok", "it": "Disegni" } }
   ],
   "authors": [
     { "id": "Pavy Beloiu", "label": { "en": "Pavy Beloiu", "ro": "Pavy Beloiu", "de": "Pavy Beloiu", "es": "Pavy Beloiu", "fr": "Pavy Beloiu", "ru": "Пави Белою", "pt": "Pavy Beloiu", "hu": "Pavy Beloiu", "it": "Pavy Beloiu" } }
