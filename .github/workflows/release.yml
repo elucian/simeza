@@ -25,6 +25,9 @@ concurrency:
 jobs:
   publish-release:
     if: github.event_name == 'workflow_dispatch' || startsWith(github.event.head_commit.message, 'Publish release:') || startsWith(github.ref, 'refs/tags/v')
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout code
@@ -42,10 +45,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install markdown Pillow
 
-      - name: Process Release
+      - name: Build static site
         run: |
-          python script/release.py
-          # release.py internally calls build.py
+          python script/build.py
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
