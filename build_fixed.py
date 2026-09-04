@@ -26,7 +26,11 @@ SLUG_MAP = {
 }
 
 def render_gallery_html(gallery_data, lang):
-    panels = ['<div class="panel-wrapper" data-widget="gallery">']
+    panels = [
+        '<div class="gallery-main-wrapper" style="position: relative;">',
+        '  <button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>',
+        '  <div class="panel-wrapper" data-widget="gallery">'
+    ]
     for item in gallery_data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
@@ -36,32 +40,23 @@ def render_gallery_html(gallery_data, lang):
         status = html.escape(str(item.get('status', ''))) if item.get('status') else ''
         year = html.escape(str(item.get('year', ''))) if item.get('year') else ''
         
-        p = ['    <div class="panel">']
+        # Build the panel structure
+        p = [f'    <div class="panel" data-type="{item.get("type", "")}" data-author="{item.get("author", "")}" data-category="{item.get("category", "")}" data-topic="{item.get("topic", "")}" data-image="/content/gallery/{file}" data-title="{title}" data-desc="{desc}" data-year="{year}" data-status="{status}">']
         if file:
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{title}" loading="lazy"></div>')
         p.append('      <div class="panel-data">')
-        p.append(f'        <h3>{title}</h3>')
+        p.append(f'        <h3 class="panel-title">{title}</h3>')
         if desc:
             p.append(f'        <p>{desc}</p>')
         if status:
             p.append(f'        <p>Status: {status}</p>')
         if year:
-    # Pre-load gallery data
-    gallery_data = []
-    gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
-    if os.path.exists(gallery_source_dir):
-        for filename in os.listdir(gallery_source_dir):
-            if filename.endswith('.json'):
-                with open(os.path.join(gallery_source_dir, filename), 'r', encoding='utf-8') as f:
-                    try:
-                        gallery_data.append(json.load(f))
-                    except:
-                        pass
-
             p.append(f'        <p>Year: {year}</p>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
+    panels.append('  </div>')
+    panels.append('  <button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
     panels.append('</div>')
     return '\n'.join(panels)
 

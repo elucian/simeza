@@ -42,7 +42,7 @@ def render_gallery_html(gallery_data, lang):
     }
     trans = t.get(lang, t['en'])
 
-    panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">&lt;</button>', '<div class="panel-wrapper" data-widget="gallery">']
+    panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>', '<div class="panel-wrapper" data-widget="gallery">']
     for item in gallery_data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
@@ -87,8 +87,9 @@ def render_gallery_html(gallery_data, lang):
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
-    panels.append('</div>')
-    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">&gt;</button>')
+    panels.append('</div>') # Close panel-wrapper
+    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
+    panels.append('</div>') # Close gallery-container
     
     # Modal
     modal = [
