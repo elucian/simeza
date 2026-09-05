@@ -2,7 +2,7 @@
 title: La Simeza - Kortárs Művészeti Galéria és Poliglott Csereközösség
 description: Fedezze fel a kortárs művészetet, írásokat, festményeket, könyveket és kiállításokat a Simeza Művészeti Galériában.
 keywords: simeza, művészeti galéria, kortárs művészet, román művészet, festmények, kiállítások, könyvek, kultúra
-source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
+source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 ---
 # Üdvözöljük a La Simeza-ban
 
@@ -15,14 +15,14 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 <h2 id="about">Fő fókuszterületek</h2>
 
 <div class="content-card">
-  A La Simeza egy független platform a kulturális cseréhez és oktatáshoz. Támogatjuk a művészetrajongókat, a többnyelvű diákokat és a mentorokat. Mindenkit szívesen látunk, akit a vizuális művészetek és a kommunikáció iránti szenvedély hajt.
+  A La Simeza egy független platform a kulturális cseréhez és oktatáshoz. Támogatjuk a művészetrajongókat, a többnyelvű diákokat és a mentorokat. Mindenkit szívesen látunk, akit szenvedély fűt a vizuális művészetek és a kommunikáció iránt.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Többnyelvűség</strong>
+      <strong>Többnyelvű</strong>
       <span>Eredeti szövegeket tárolunk és 8 európai nyelvre fordítunk.</span>
     </div>
   </div>
@@ -36,15 +36,15 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
-    <strong>Öntanulás és mentorálás</strong>
-    <span>Nyelvtanulási lejátszási listák és források az önálló tanuláshoz.</span>
+    <strong>Öntanulás</strong>
+    <span>Nyelvtanulási források és útmutatók az önálló tanuláshoz.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Nyitott közösség</strong>
-      <span>Támogatási kapcsolat, nyelvcsere, kulturális média és beszélgetések.</span>
+      <span>Támogatás, nyelvcsere, kulturális média és beszélgetések.</span>
     </div>
   </div>
 </div>
@@ -53,10 +53,10 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 
 <div class="index-panel index-panel-content">
 
-<h2 id="about-content">Közvetlen ajánlatú tartalom</h2>
+<h2 id="about-content">Közvetlen ajánlat tartalom</h2>
 
 <div class="content-card">
-  Fedezze fel a képzőművészetet, fotógyűjteményeket, nyelvészeti monográfiákat és médiafolyamokat. Férjen hozzá digitális fájlokhoz, biztosítson fizikai köteteket, tekintsen meg offline felvételeket, és csatlakozzon interaktív élő videóközvetítésekhez közösségünkben.
+  Fedezze fel a képzőművészetet, fotógyűjteményeket, nyelvészeti monográfiákat és médiafolyamokat. Hozzáférhet digitális fájlokhoz, biztosíthat fizikai köteteket, megtekinthet offline felvételeket és csatlakozhat interaktív élő videóközvetítésekhez közösségünkben.
 </div>
 
 <div class="content-card-list">
@@ -64,7 +64,7 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
       <strong>Eredeti művészet és galéria</strong>
-      <span>Hiteles vásznak és vizuális műalkotások kortárs művészektől.</span>
+      <span>Hiteles vásznak és kortárs művészek vizuális alkotásai.</span>
     </div>
   </div>
   <div class="content-card">

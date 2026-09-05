@@ -2,9 +2,9 @@
 title: La Simeza - Galerie d'art contemporain et communauté d'échange polyglotte
 description: Explorez l'art contemporain, les écrits, les peintures, les livres et les expositions à la galerie d'art Simeza.
 keywords: simeza, galerie d'art, art contemporain, art roumain, peintures, expositions, livres, culture
-source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
+source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 ---
-# Bienvenue à La Simeza
+# Bienvenue sur La Simeza
 
 **Plateforme culturelle pour étudiants, mentors, auteurs et collectionneurs.**
 
@@ -15,7 +15,7 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 <h2 id="about">Domaines d'intervention principaux</h2>
 
 <div class="content-card">
-  La Simeza est une plateforme indépendante dédiée aux échanges culturels et à l'éducation. Nous soutenons les passionnés d'art, les étudiants polyglottes et les mentors. Nous accueillons tous ceux qui sont animés par une passion pour les arts visuels et la communication.
+  La Simeza est une plateforme indépendante d'échange culturel et d'éducation. Nous soutenons les passionnés d'art, les étudiants polyglottes et les mentors. Nous accueillons tous ceux qui sont animés par une passion pour les arts visuels et la communication.
 </div>
 
 <div class="content-card-list">
@@ -30,21 +30,21 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Acquisition directe</strong>
-      <span>Obtenez des objets physiques ou téléchargez directement des éditions numériques.</span>
+      <span>Obtenez des articles physiques ou téléchargez directement des éditions numériques.</span>
     </div>
   </div>
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
-    <strong>Auto-apprentissage et mentorat</strong>
-    <span>Playlists d'apprentissage des langues et ressources pour l'étude indépendante.</span>
+    <strong>Auto-apprentissage</strong>
+    <span>Ressources d'apprentissage des langues et feuilles de route pour l'étude indépendante.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Communauté ouverte</strong>
-      <span>Contact de support, échange linguistique, médias culturels et discussions.</span>
+      <span>Support, échange linguistique, médias culturels et conférences.</span>
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 <h2 id="about-content">Contenu en offre directe</h2>
 
 <div class="content-card">
-  Découvrez les beaux-arts, les collections photographiques, les monographies linguistiques et les flux multimédias. Accédez à des fichiers numériques, sécurisez des volumes physiques, visionnez des enregistrements hors ligne et rejoignez des diffusions vidéo en direct interactives au sein de notre communauté.
+  Découvrez les beaux-arts, les collections photographiques, les monographies linguistiques et les flux multimédias. Accédez à des fichiers numériques, sécurisez des volumes physiques, regardez des enregistrements hors ligne et rejoignez des diffusions vidéo en direct interactives au sein de notre communauté.
 </div>
 
 <div class="content-card-list">
@@ -85,7 +85,7 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
     <i class="bi bi-play-btn"></i>
     <div class="content-card-body">
       <strong>Médias audio et vidéo</strong>
-      <span>Entretiens enregistrés, podcasts culturels et playlists éducatives.</span>
+      <span>Entretiens enregistrés, podcasts culturels et listes de lecture éducatives.</span>
     </div>
   </div>  
 </div>
