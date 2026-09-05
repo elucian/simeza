@@ -9,3 +9,5 @@ env
 Thumbs.db
 .vscode/
 .env
+/content/garbage/
+/content/archive/
