@@ -30,23 +30,26 @@
 }
 
 /* ... existing styles ... */
-/* Unified Sticky Bottom Bar */
+/* Unified Floating Pill Bottom Bar */
 .sticky-bottom-bar {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  bottom: 16px; /* Elevated from bottom */
+  left: 50%;
+  transform: translateX(-50%);
+  width: max-content;
+  max-width: min(calc(100vw - 32px), 1352px); /* Contain within container/viewport */
+  border-radius: 30px; /* Pill shape */
+  border: 1px solid var(--border-color);
   background: var(--bg-header);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-top: 1px solid var(--border-color);
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 10px;
-  padding: 10px 16px;
+  padding: 10px 20px;
   z-index: 100;
-  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   box-sizing: border-box;
 }
 
