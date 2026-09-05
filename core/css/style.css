@@ -104,7 +104,7 @@
 /* Content spacing to prevent bottom bar overlap */
 .content:has(.sticky-bottom-bar),
 body:has(.sticky-bottom-bar) .content {
-  padding-bottom: 96px;
+  padding-bottom: 75px;
 }
 
 html,
