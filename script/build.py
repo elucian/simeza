@@ -395,6 +395,9 @@ def build(target_lang=None):
             css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
             page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
+            # Inject filter-modal.css if not index page
+            if name_no_ext != 'index':
+                page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
             page_js = f'<script src="/core/js/{name_no_ext}.js"></script>' if os.path.exists(js_path) else ''
             
             md = markdown.Markdown(extensions=['extra', 'md_in_html'])
