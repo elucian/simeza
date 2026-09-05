@@ -230,7 +230,7 @@ def render_gallery_html(gallery_data, lang):
 def test_func():
     pass
 
-def render_media_html(media_data, lang):
+def render_content_widget(content_type, lang, data):
     # Translations
     t = {
         'en': {'Close': 'Close', 'All': 'All'},
@@ -245,47 +245,49 @@ def render_media_html(media_data, lang):
     }
     trans = t.get(lang, t['en'])
     
-    # Grid
-    html_output = ['<div class="media-container">', '<div class="media-grid" data-widget="media">']
-    for item in media_data:
+    # Structure
+    html_output = [
+        f'<div class="content-gallery-wrapper" data-type="{content_type}">',
+        '<div class="left-panel">',
+        '<div class="content-grid" data-widget="content">',
+    ]
+    
+    for item in data:
         content = item.get('content', {})
         loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
-        title = loc.get('title') or item.get('id') or 'Untitled'
-        desc = loc.get('description') or ''
+        title = loc.get('title') or loc.get('name') or item.get('id') or 'Untitled'
+        desc = loc.get('description') or loc.get('bio') or ''
         file = item.get('file', '')
-        item_type = item.get('type', 'audio')
+        
+        # Determine image path based on content type
+        image_path = f'/content/{content_type}/{file}' if file else ''
         
         # Panel
-        p = [f'  <div class="media-panel" data-title="{html.escape(str(title))}" data-type="{item_type}" data-desc="{html.escape(str(desc))}">']
-        if file:
-            p.append(f'    <div class="media-panel-image"><img src="/content/media/{file}" alt="{html.escape(title)}" loading="lazy"><span class="media-type-badge">{item_type}</span></div>')
-        else:
-            p.append(f'    <div class="media-panel-image"><span class="media-type-badge">{item_type}</span></div>')
-        p.append('    <div class="media-panel-content">')
-        p.append(f'      <h3 class="media-panel-title">{html.escape(title)}</h3>')
-        p.append(f'      <p class="media-panel-desc">{html.escape(desc)}</p>')
+        p = [f'  <div class="content-panel" data-title="{html.escape(str(title))}" data-desc="{html.escape(str(desc))}" data-image="{image_path}">']
+        
+        # Image + Title below
+        p.append(f'    <div class="content-panel-image-container">')
+        if image_path:
+            p.append(f'      <img src="{image_path}" alt="{html.escape(title)}" loading="lazy">')
         p.append('    </div>')
+        
+        p.append(f'    <div class="content-panel-title">{html.escape(title)}</div>')
         p.append('  </div>')
         html_output.append('\n'.join(p))
-    html_output.append('</div>') # Close media-grid
     
-    # Filter Bar
-    html_output.append(render_bottom_bar('media', lang, active_id='audio'))
-    
-    # Modal
-    modal = f'''
-<dialog id="mediaModalDialog" class="media-modal-dialog">
-  <div class="media-modal-wrapper">
-    <button class="media-modal-close" aria-label="{trans["Close"]}">&times;</button>
-    <div class="media-modal-content">
-      <h3 id="modalMediaTitle"></h3>
-      <p id="modalMediaDesc"></p>
-    </div>
-  </div>
-</dialog>
-'''
-    html_output.append(modal)
-    html_output.append('</div>') # Close media-container
+    html_output.extend([
+        '</div>', # Close content-grid
+        '</div>', # Close left-panel
+        '<div class="content-splitter"></div>',
+        '<div class="right-panel">',
+        '  <div class="preview-content">',
+        '    <div id="preview-image-container"></div>',
+        '    <h3 id="preview-title"></h3>',
+        '    <p id="preview-desc"></p>',
+        '  </div>',
+        '</div>',
+        '</div>' # Close content-gallery-wrapper
+    ])
     
     return '\n'.join(html_output)
 
@@ -348,6 +350,32 @@ def build(target_lang=None):
                     except:
                         pass
 
+    # Pre-load books data
+    books_data = []
+    books_source_dir = os.path.join(ROOT, 'content', 'books')
+    if os.path.exists(books_source_dir):
+        for filename in os.listdir(books_source_dir):
+            if filename.endswith(('.pdf', '.jpg', '.png')):
+                books_data.append({'id': filename, 'file': filename, 'content': {'en': {'title': os.path.splitext(filename)[0]}}})
+
+    # Pre-load writings data
+    writings_data = []
+    writings_source_dir = os.path.join(ROOT, 'content', 'writings')
+    if os.path.exists(writings_source_dir):
+        for filename in os.listdir(writings_source_dir):
+            if filename.endswith(('.pdf', '.txt')):
+                writings_data.append({'id': filename, 'file': filename, 'content': {'en': {'title': os.path.splitext(filename)[0]}}})
+
+    # Pre-load authors data
+    authors_data = []
+    authors_file = os.path.join(ROOT, 'content', 'authors', 'authors.json')
+    if os.path.exists(authors_file):
+        with open(authors_file, 'r', encoding='utf-8') as f:
+            try:
+                authors_data = json.load(f)
+            except:
+                pass
+
     # Pre-load media data
     media_data = []
     media_source_dir = os.path.join(ROOT, 'content', 'media')
@@ -407,9 +435,31 @@ def build(target_lang=None):
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))
                 
 
-            # Media injection
-            if '{{widget:media}}' in body:
-                body = body.replace('{{widget:media}}', render_media_html(media_data, lang))
+            # Content injection
+            if '{{widget:content' in body:
+                import re
+                # Find all widget occurrences
+                matches = re.findall(r'\{\{widget:content(?::(\w+))?\}\}', body)
+                
+                for content_type in matches:
+                    if not content_type: content_type = 'media'
+                    
+                    # Select data based on content_type
+                    data_to_render = []
+                    if content_type == 'media': data_to_render = media_data
+                    elif content_type == 'gallery': data_to_render = gallery_data
+                    elif content_type == 'books': data_to_render = books_data
+                    elif content_type == 'writings': data_to_render = writings_data
+                    elif content_type == 'authors': data_to_render = authors_data
+                    
+                    widget_tag = f'{{{{widget:content:{content_type}}}}}' if content_type != 'media' else '{{widget:content}}'
+                    # Note: if content_type is 'media', it could be just {{widget:content}}
+                    # Let's be explicit.
+                    
+                    tag_to_replace = f'{{{{widget:content:{content_type}}}}}' if content_type != 'media' else '{{widget:content}}'
+                    # If I used {{widget:content}} in the file, match is None, content_type is 'media'.
+                    
+                    body = body.replace(tag_to_replace, render_content_widget(content_type, lang, data_to_render))
 
             html_content = md.convert(body)
             
