@@ -1,10 +1,15 @@
+/* 
+ * File: core/css/style.css
+ * Purpose: Main application styles (Theming, Layout, Components).
+ */
+
 :root {
   --font-family: 'Merriweather', 'Lato', sans-serif;
   --bg-page: var(--bg-outer);
   --bg-outer: #dededeb5;
   --bg-header: #e8e8e8d8;
   --bg-main: #fffbf9da;
-  --bg-footer:#e8e8e8d8;
+  --bg-footer: #e8e8e8d8;
   --text-main: #171d27;
   --border-color: #9c8c78;
   --accent-color: #8a370d;
@@ -29,16 +34,15 @@
   --btn-active-text: #171d27;
 }
 
-/* ... existing styles ... */
 /* Unified Floating Pill Bottom Bar */
 .sticky-bottom-bar {
   position: fixed;
-  bottom: 24px; /* Slightly more elevated */
+  bottom: 24px; 
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
   max-width: min(calc(100vw - 32px), 1352px);
-  border-radius: 40px; /* More pill shape */
+  border-radius: 40px; 
   border: 1px solid var(--border-color);
   background: var(--bg-header);
   backdrop-filter: blur(10px);
@@ -47,8 +51,8 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  padding: 14px 24px; /* More breathing room */
-  min-height: 60px; /* Taller */
+  padding: 14px 24px; 
+  min-height: 60px; 
   z-index: 100;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   box-sizing: border-box;
@@ -133,12 +137,6 @@ body {
   overflow: hidden;
 }
 
-/* --------------------
-Top: 12px
-Right: 24px
-Bottom: 0
-Left: 24px
-----------------------*/
 /* Maintain client area containment for Gallery */
 body:has(.gallery-container),
 .container:has(.gallery-container) {
@@ -147,7 +145,6 @@ body:has(.gallery-container),
   overflow: hidden;
 }
 
-/* Ensure Gallery container retains standard 1400px width & borders */
 .container:has(.gallery-container) {
   max-width: 100%;
   width: 100%;
@@ -184,7 +181,7 @@ body:has(.content-gallery-wrapper),
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  padding: 8px 24px 76px 24px; /* leaves room for the sticky bottom bar */
+  padding: 8px 24px 76px 24px; 
 }
 
 .content:has(.gallery-container) h1 {
@@ -196,35 +193,7 @@ body:has(.content-gallery-wrapper),
   margin: 0 0 6px 0;
   font-size: 0.9rem;
 }
-
-/* Panels */
-.index-panels {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-.index-panel {
-  flex: 1 1 45%;
-  min-width: 300px;
-}
-
-#content::-webkit-scrollbar {
-  width: 8px;
-}
-#content::-webkit-scrollbar-track {
-  background: var(--bg-outer);
-}
-#content::-webkit-scrollbar-thumb {
-  background: var(--border-color);
-  border-radius: 4px;
-}
-#content::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
-}
-
-
-/* Header */
+/* 4. Header, Nav, Mobile Menu */
 .header-app {
   flex: 0 0 auto;
   display: flex;
@@ -434,6 +403,7 @@ body:has(.content-gallery-wrapper),
   color: #121212 !important;
 }
 
+/* 5. Footer, Typography, Viewer, Responsive */
 /* Footer */
 #socialFooter {
   display: none;
@@ -568,7 +538,7 @@ p {
   display: none;
   align-items: center;
   justify-content: center;
-  touch-action: none; /* Important for swipe gestures */
+  touch-action: none;
 }
 
 #imageFullscreenViewer.active {
@@ -576,34 +546,34 @@ p {
 }
 
 #viewerActions {
-    position: absolute;
-    top: 16px;
-    right: 16px;
-    display: flex;
-    gap: 10px;
-    z-index: 100001;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: flex;
+  gap: 10px;
+  z-index: 100001;
 }
 
 .fullscreen-btn {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    font-size: 1.25rem;
-    padding: 0;
-    transition: background 0.3s;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 1.25rem;
+  padding: 0;
+  transition: background 0.3s;
 }
 
 .fullscreen-btn:hover {
-    background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.7);
 }
 
 #imageFullscreenViewer img {
@@ -633,10 +603,7 @@ p {
   z-index: 100000;
 }
 
-
 /* Mobile Landscape Optimization */
-
-/* Mobile typography reduction */
 @media (max-width: 767px), (orientation: landscape) and (max-height: 600px) {
   h1 { font-size: 1.4rem; }
   h2 { font-size: 1.225rem; }
@@ -713,5 +680,4 @@ p {
 img {
     -webkit-user-drag: none;
 }
-
 

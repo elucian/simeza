@@ -1,5 +1,9 @@
-/* Index Page Panels Layout */
+/* 
+ * File: core/css/index.css
+ * Purpose: Home page layout, grid panels, and content cards.
+ */
 
+/* Main Panels Grid */
 .index-panels {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -26,7 +30,6 @@
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-
 .index-panel h2 {
   color: var(--accent-color);
   font-size: 1.2rem;
@@ -41,7 +44,6 @@
   margin-bottom: 1rem;
   color: var(--text-main);
 }
-
 
 /* Content and Focus Panel Cards */
 .index-panel .content-card-list {
