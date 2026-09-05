@@ -1,0 +1,42 @@
+/* Generated Icons CSS */
+.icon, .bi {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.125em;
+  background-color: currentColor;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  mask-position: center;
+}
+.icon-arrow-repeat, .bi-arrow-repeat { -webkit-mask-image: url('/core/img/icons/arrow-repeat.svg'); mask-image: url('/core/img/icons/arrow-repeat.svg'); }
+.icon-book, .bi-book { -webkit-mask-image: url('/core/img/icons/book.svg'); mask-image: url('/core/img/icons/book.svg'); }
+.icon-broadcast, .bi-broadcast { -webkit-mask-image: url('/core/img/icons/broadcast.svg'); mask-image: url('/core/img/icons/broadcast.svg'); }
+.icon-camera, .bi-camera { -webkit-mask-image: url('/core/img/icons/camera.svg'); mask-image: url('/core/img/icons/camera.svg'); }
+.icon-camera-video, .bi-camera-video { -webkit-mask-image: url('/core/img/icons/camera-video.svg'); mask-image: url('/core/img/icons/camera-video.svg'); }
+.icon-chat-left-text, .bi-chat-left-text { -webkit-mask-image: url('/core/img/icons/chat-left-text.svg'); mask-image: url('/core/img/icons/chat-left-text.svg'); }
+.icon-discord, .bi-discord { -webkit-mask-image: url('/core/img/icons/discord.svg'); mask-image: url('/core/img/icons/discord.svg'); }
+.icon-download, .bi-download { -webkit-mask-image: url('/core/img/icons/download.svg'); mask-image: url('/core/img/icons/download.svg'); }
+.icon-facebook, .bi-facebook { -webkit-mask-image: url('/core/img/icons/facebook.svg'); mask-image: url('/core/img/icons/facebook.svg'); }
+.icon-funnel, .bi-funnel { -webkit-mask-image: url('/core/img/icons/funnel.svg'); mask-image: url('/core/img/icons/funnel.svg'); }
+.icon-funnel-fill, .bi-funnel-fill { -webkit-mask-image: url('/core/img/icons/funnel-fill.svg'); mask-image: url('/core/img/icons/funnel-fill.svg'); }
+.icon-google, .bi-google { -webkit-mask-image: url('/core/img/icons/google.svg'); mask-image: url('/core/img/icons/google.svg'); }
+.icon-layout-sidebar-reverse, .bi-layout-sidebar-reverse { -webkit-mask-image: url('/core/img/icons/layout-sidebar-reverse.svg'); mask-image: url('/core/img/icons/layout-sidebar-reverse.svg'); }
+.icon-lightbulb, .bi-lightbulb { -webkit-mask-image: url('/core/img/icons/lightbulb.svg'); mask-image: url('/core/img/icons/lightbulb.svg'); }
+.icon-list, .bi-list { -webkit-mask-image: url('/core/img/icons/list.svg'); mask-image: url('/core/img/icons/list.svg'); }
+.icon-megaphone, .bi-megaphone { -webkit-mask-image: url('/core/img/icons/megaphone.svg'); mask-image: url('/core/img/icons/megaphone.svg'); }
+.icon-mortarboard, .bi-mortarboard { -webkit-mask-image: url('/core/img/icons/mortarboard.svg'); mask-image: url('/core/img/icons/mortarboard.svg'); }
+.icon-palette, .bi-palette { -webkit-mask-image: url('/core/img/icons/palette.svg'); mask-image: url('/core/img/icons/palette.svg'); }
+.icon-pen, .bi-pen { -webkit-mask-image: url('/core/img/icons/pen.svg'); mask-image: url('/core/img/icons/pen.svg'); }
+.icon-pencil, .bi-pencil { -webkit-mask-image: url('/core/img/icons/pencil.svg'); mask-image: url('/core/img/icons/pencil.svg'); }
+.icon-pencil-square, .bi-pencil-square { -webkit-mask-image: url('/core/img/icons/pencil-square.svg'); mask-image: url('/core/img/icons/pencil-square.svg'); }
+.icon-people, .bi-people { -webkit-mask-image: url('/core/img/icons/people.svg'); mask-image: url('/core/img/icons/people.svg'); }
+.icon-play-btn, .bi-play-btn { -webkit-mask-image: url('/core/img/icons/play-btn.svg'); mask-image: url('/core/img/icons/play-btn.svg'); }
+.icon-reddit, .bi-reddit { -webkit-mask-image: url('/core/img/icons/reddit.svg'); mask-image: url('/core/img/icons/reddit.svg'); }
+.icon-soundwave, .bi-soundwave { -webkit-mask-image: url('/core/img/icons/soundwave.svg'); mask-image: url('/core/img/icons/soundwave.svg'); }
+.icon-stop-fill, .bi-stop-fill { -webkit-mask-image: url('/core/img/icons/stop-fill.svg'); mask-image: url('/core/img/icons/stop-fill.svg'); }
+.icon-translate, .bi-translate { -webkit-mask-image: url('/core/img/icons/translate.svg'); mask-image: url('/core/img/icons/translate.svg'); }
+.icon-whatsapp, .bi-whatsapp { -webkit-mask-image: url('/core/img/icons/whatsapp.svg'); mask-image: url('/core/img/icons/whatsapp.svg'); }
