@@ -177,6 +177,12 @@ document.addEventListener('DOMContentLoaded', () => {
       modal?.classList.remove('active');
   };
 
+  // Close modal events
+  modal?.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
+  document.getElementById('galleryModalCloseBtn')?.addEventListener('click', closeModal);
+  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('active')) closeModal(); });
+
   const openModal = (panel) => {
     modalFilteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
                                .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');

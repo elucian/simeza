@@ -249,6 +249,9 @@ function initFullscreenViewer() {
     // Double tap/click handler
     let lastTap = 0;
     document.addEventListener('dblclick', (e) => {
+        // Only allow fullscreen viewer on mobile
+        if (window.innerWidth > 767) return;
+
         const panel = e.target.closest('.panel');
         if (panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             filteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
@@ -261,6 +264,9 @@ function initFullscreenViewer() {
     });
 
     document.addEventListener('touchend', (e) => {
+        // Only allow fullscreen viewer on mobile
+        if (window.innerWidth > 767) return;
+
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
         const panel = e.target.closest('.panel');
