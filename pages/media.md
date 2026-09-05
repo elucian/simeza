@@ -4,8 +4,8 @@ description: Explore our collection of media, including audio, video, and stream
 keywords: simeza, art, media, audio, video, stream
 ---
 
-# Media
+# Media Library
+
+Explore our audio, video, and streaming channels.
 
 {{widget:content}}
-
-Welcome to the Media section of Simeza Art. Explore our audio, video, and stream collection.

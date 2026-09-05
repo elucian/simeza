@@ -280,7 +280,7 @@ def render_content_widget(content_type, lang, data):
         '</div>', # Close left-panel
         '<div class="content-splitter"></div>',
         '<div class="right-panel">',
-        '  <div class="preview-content">',
+        '  <div class="preview-panel">', # Added preview-panel for containment
         '    <div id="preview-image-container"></div>',
         '    <h3 id="preview-title"></h3>',
         '    <p id="preview-desc"></p>',
@@ -437,6 +437,8 @@ def build(target_lang=None):
 
             # Content injection
             if '{{widget:content' in body:
+                page_css += '<link rel="stylesheet" href="/core/css/content-widget.css">'
+                page_js += '<script src="/core/js/content-widget.js"></script>'
                 import re
                 # Find all widget occurrences
                 matches = re.findall(r'\{\{widget:content(?::(\w+))?\}\}', body)

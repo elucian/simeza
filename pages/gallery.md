@@ -8,5 +8,5 @@ keywords: simeza, art, gallery, paintings, pictures, photography, fine art
 
 Welcome to the Simeza Gallery. Explore our collection of fine paintings and photographic works.
 
-{{widget:content:gallery}}
+{{widget:gallery}}
 
