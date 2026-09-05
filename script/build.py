@@ -69,6 +69,11 @@ def render_bottom_bar(page_id, lang, active_id=None):
         active_class = ' active' if (active_id and btn_id == active_id) or (not active_id and i == 0) else ''
         icon_html = f'<i class="bi {icon}"></i> ' if icon else ''
         bar_html.append(f'  <button class="pill-btn bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
+    
+    # Add Layout Toggle
+    bar_html.append('<div class="bottom-bar-separator"></div>')
+    bar_html.append('<button id="layoutToggleBtn" class="pill-btn bottom-bar-btn layout-toggle-btn active" title="Toggle preview panel"><i class="bi bi-layout-sidebar-reverse"></i></button>')
+    
     bar_html.append('</div>')
     return '\n'.join(bar_html)
 
@@ -233,15 +238,15 @@ def test_func():
 def render_content_widget(content_type, lang, data):
     # Translations
     t = {
-        'en': {'Close': 'Close', 'All': 'All'},
-        'ro': {'Close': 'Închide', 'All': 'Toate'},
-        'de': {'Close': 'Schließen', 'All': 'Alle'},
-        'es': {'Close': 'Cerrar', 'All': 'Todos'},
-        'fr': {'Close': 'Fermer', 'All': 'Tous'},
-        'ru': {'Close': 'Закрыть', 'All': 'Все'},
-        'pt': {'Close': 'Fechar', 'All': 'Todos'},
-        'hu': {'Close': 'Bezár', 'All': 'Összes'},
-        'it': {'Close': 'Chiudi', 'All': 'Tutti'}
+        'en': {'Close': 'Close', 'All': 'All', 'Name': 'Name', 'Desc': 'Description'},
+        'ro': {'Close': 'Închide', 'All': 'Toate', 'Name': 'Nume', 'Desc': 'Descriere'},
+        'de': {'Close': 'Schließen', 'All': 'Alle', 'Name': 'Name', 'Desc': 'Beschreibung'},
+        'es': {'Close': 'Cerrar', 'All': 'Todos', 'Name': 'Nombre', 'Desc': 'Descripción'},
+        'fr': {'Close': 'Fermer', 'All': 'Tous', 'Name': 'Nom', 'Desc': 'Description'},
+        'ru': {'Close': 'Закрыть', 'All': 'Все', 'Name': 'Имя', 'Desc': 'Описание'},
+        'pt': {'Close': 'Fechar', 'All': 'Todos', 'Name': 'Nome', 'Desc': 'Descrição'},
+        'hu': {'Close': 'Bezár', 'All': 'Összes', 'Name': 'Név', 'Desc': 'Leírás'},
+        'it': {'Close': 'Chiudi', 'All': 'Tutti', 'Name': 'Nome', 'Desc': 'Descrizione'}
     }
     trans = t.get(lang, t['en'])
     
@@ -261,9 +266,10 @@ def render_content_widget(content_type, lang, data):
         
         # Determine image path based on content type
         image_path = f'/content/{content_type}/{file}' if file else ''
+        item_type = item.get('type', 'item')
         
         # Panel
-        p = [f'  <div class="content-panel" data-title="{html.escape(str(title))}" data-desc="{html.escape(str(desc))}" data-image="{image_path}">']
+        p = [f'  <div class="content-panel" data-title="{html.escape(str(title))}" data-desc="{html.escape(str(desc))}" data-image="{image_path}" data-type="{item_type}">']
         
         # Image + Title below
         p.append(f'    <div class="content-panel-image-container">')
@@ -280,13 +286,35 @@ def render_content_widget(content_type, lang, data):
         '</div>', # Close left-panel
         '<div class="content-splitter"></div>',
         '<div class="right-panel">',
-        '  <div class="preview-panel">', # Added preview-panel for containment
+        '  <div class="preview-panel">',
         '    <div id="preview-image-container"></div>',
         '    <h3 id="preview-title"></h3>',
         '    <p id="preview-desc"></p>',
         '  </div>',
         '</div>',
-        '</div>' # Close content-gallery-wrapper
+        '</div>', # Close content-gallery-wrapper
+        # Content Modal
+        '<div id="contentModal" class="content-modal-overlay">',
+        '  <div class="content-modal">',
+        '    <button class="content-modal-close-x" aria-label="Close">&times;</button>',
+        '    <div class="content-modal-body">',
+        '      <div class="content-modal-image-col">',
+        '        <img id="modalContentImg" src="" alt="">',
+        '      </div>',
+        '      <div class="content-modal-data-col">',
+        '        <div class="content-modal-form-group">',
+        f'          <label>{trans["Name"]}</label><input type="text" id="modalContentName" readonly>',
+        '        </div>',
+        '        <div class="content-modal-form-group content-modal-desc-group">',
+        f'          <label>{trans["Desc"]}</label><textarea id="modalContentDesc" readonly></textarea>',
+        '        </div>',
+        '        <div class="content-modal-footer">',
+        f'          <button id="contentModalCloseBtn" class="content-modal-btn-close">{trans["Close"]}</button>',
+        '        </div>',
+        '      </div>',
+        '    </div>',
+        '  </div>',
+        '</div>'
     ])
     
     return '\n'.join(html_output)
