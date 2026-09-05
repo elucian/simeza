@@ -149,9 +149,16 @@ body:has(.gallery-container),
 
 /* Ensure Gallery container retains standard 1400px width & borders */
 .container:has(.gallery-container) {
-  max-width: 1400px;
+  max-width: 100%;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Enable full-width for all containers in Fullscreen mode */
+:fullscreen .container {
+  max-width: 100% !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 /* Full width containment and viewport locking for Content Widget pages */
@@ -467,7 +474,7 @@ body[data-page="about.md"] #socialFooter {
 
 .copyright {
   font-size: 0.6rem;
-  color: #7f5e56
+  color: #7f5e56;
   margin: 0;
   text-align: center;
 }
@@ -705,7 +712,6 @@ p {
 /* Protect Images */
 img {
     -webkit-user-drag: none;
-    user-drag: none;
 }
 
 
