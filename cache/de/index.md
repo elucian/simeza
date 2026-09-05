@@ -2,7 +2,7 @@
 title: La Simeza - Galerie für zeitgenössische Kunst & polyglotte Austausch-Community
 description: Entdecken Sie zeitgenössische Kunst, Schriften, Gemälde, Bücher und Ausstellungen in der Simeza Art Gallery.
 keywords: simeza, kunstgalerie, zeitgenössische kunst, rumänische kunst, gemälde, ausstellungen, bücher, kultur
-source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
+source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 ---
 # Willkommen bei La Simeza
 
@@ -12,7 +12,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 
 <div class="index-panel index-panel-about">
 
-<h2 id="about">Kernfokusbereiche</h2>
+<h2 id="about">Kernbereiche</h2>
 
 <div class="content-card">
   La Simeza ist eine unabhängige Plattform für kulturellen Austausch und Bildung. Wir unterstützen Kunstbegeisterte, polyglotte Studenten und Mentoren. Wir heißen jeden willkommen, der eine Leidenschaft für bildende Kunst und Kommunikation hat.
@@ -30,21 +30,21 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Direkter Erwerb</strong>
-      <span>Sichern Sie sich physische Artikel oder laden Sie digitale Ausgaben direkt herunter.</span>
+      <span>Sichern Sie sich physische Objekte oder laden Sie digitale Ausgaben direkt herunter.</span>
     </div>
   </div>
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Selbststudium</strong>
-    <span>Ressourcen zum Sprachenlernen und Roadmaps für das unabhängige Studium.</span>
+    <span>Lernressourcen und Roadmaps für das eigenständige Lernen.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Offene Gemeinschaft</strong>
-      <span>Support-Kontakt, Sprachaustausch, kulturelle Medien und Vorträge.</span>
+      <span>Support-Kontakt, Sprachaustausch, kulturelle Medien und Gespräche.</span>
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about-content">Direktangebot-Inhalte</h2>
 
 <div class="content-card">
-  Entdecken Sie bildende Kunst, Fotosammlungen, linguistische Monographien und Medien-Streams. Greifen Sie auf digitale Dateien zu, sichern Sie sich physische Bände, sehen Sie sich Offline-Aufzeichnungen an und nehmen Sie an interaktiven Live-Videoübertragungen in unserer Community teil.
+  Entdecken Sie bildende Kunst, Fotosammlungen, linguistische Monografien und Medien-Streams. Greifen Sie auf digitale Dateien zu, sichern Sie sich physische Bände, sehen Sie sich Offline-Aufzeichnungen an und nehmen Sie an interaktiven Live-Videoübertragungen in unserer Community teil.
 </div>
 
 <div class="content-card-list">
@@ -71,7 +71,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-camera"></i>
     <div class="content-card-body">
       <strong>Künstlerische Fotografie</strong>
-      <span>Hochauflösende Fotoabzüge und digitale Archive.</span>
+      <span>Hochauflösende Fotodrucke und digitale Archive.</span>
     </div>
   </div>
   <div class="content-card">

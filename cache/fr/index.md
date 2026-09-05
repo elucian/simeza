@@ -2,9 +2,9 @@
 title: La Simeza - Galerie d'art contemporain et communauté d'échange polyglotte
 description: Explorez l'art contemporain, les écrits, les peintures, les livres et les expositions à la galerie d'art Simeza.
 keywords: simeza, galerie d'art, art contemporain, art roumain, peintures, expositions, livres, culture
-source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
+source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 ---
-# Bienvenue sur La Simeza
+# Bienvenue à La Simeza
 
 **Plateforme culturelle pour étudiants, mentors, auteurs et collectionneurs.**
 
@@ -37,14 +37,14 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Auto-apprentissage</strong>
-    <span>Ressources d'apprentissage des langues et feuilles de route pour l'étude indépendante.</span>
+    <span>Ressources d'apprentissage et feuilles de route pour l'étude indépendante.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Communauté ouverte</strong>
-      <span>Support, échange linguistique, médias culturels et conférences.</span>
+      <span>Support, échange linguistique, médias culturels et discussions.</span>
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about-content">Contenu en offre directe</h2>
 
 <div class="content-card">
-  Découvrez les beaux-arts, les collections photographiques, les monographies linguistiques et les flux multimédias. Accédez à des fichiers numériques, sécurisez des volumes physiques, regardez des enregistrements hors ligne et rejoignez des diffusions vidéo en direct interactives au sein de notre communauté.
+  Découvrez les beaux-arts, les collections photographiques, les monographies linguistiques et les flux multimédias. Accédez à des fichiers numériques, obtenez des volumes physiques, regardez des enregistrements hors ligne et rejoignez des diffusions vidéo en direct interactives au sein de notre communauté.
 </div>
 
 <div class="content-card-list">
@@ -78,7 +78,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Livres rares et publications</strong>
-      <span>Éditions rares, impressions historiques, essais et guides linguistiques.</span>
+      <span>Éditions rares, tirages historiques, essais et guides linguistiques.</span>
     </div>
   </div>
   <div class="content-card">
