@@ -6,14 +6,20 @@ document.addEventListener('DOMContentLoaded', () => {
 
     filterBtns.forEach(btn => {
         btn.addEventListener('click', () => {
+            const wasActive = btn.classList.contains('active');
+            
             // Update active state
             filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            if (!wasActive) {
+                btn.classList.add('active');
+            }
 
             // Filter panels
-            const filter = btn.dataset.filter;
+            const activeBtn = document.querySelector('.bottom-bar-btn.active');
+            const filter = activeBtn ? activeBtn.dataset.filter : 'all';
+            
             panels.forEach(panel => {
-                // If button is 'all', show everything, otherwise match type
+                // If button is 'all' (or no filter), show everything, otherwise match type
                 if (filter === 'all' || panel.dataset.type === filter) {
                     panel.style.display = 'flex';
                 } else {

@@ -144,15 +144,26 @@ function initFullscreenViewer() {
     const viewer = document.createElement('div');
     viewer.id = 'imageFullscreenViewer';
     viewer.innerHTML = `
-        <button class="gallery-modal-close-x" aria-label="Close">&times;</button>
+        <div id="viewerActions">
+            <button id="fullscreenLoopBtn" class="fullscreen-btn"><i class="bi bi-arrow-repeat"></i></button>
+            <button id="fullscreenCloseBtn" class="fullscreen-btn">&times;</button>
+        </div>
         <img src="" alt="Fullscreen Image">
     `;
     document.body.appendChild(viewer);
 
     const viewerImg = viewer.querySelector('img');
-    const closeBtn = viewer.querySelector('.gallery-modal-close-x');
+    const closeBtn = document.getElementById('fullscreenCloseBtn');
+    const loopBtn = document.getElementById('fullscreenLoopBtn');
     
+    let filteredPanels = [];
+    let currentIndex = 0;
+    let loopTimeout = null;
+    let isLooping = false;
+    let isPaused = false;
+
     function closeViewer() {
+        stopLoop();
         viewer.classList.remove('active');
     }
 
@@ -160,8 +171,68 @@ function initFullscreenViewer() {
     viewer.addEventListener('click', (e) => {
         if (e.target === viewer) closeViewer();
     });
+
+    function showImage(index) {
+        if (index < 0) index = filteredPanels.length - 1;
+        if (index >= filteredPanels.length) index = 0;
+        currentIndex = index;
+        const panel = filteredPanels[currentIndex];
+        viewerImg.src = panel.dataset.image || panel.querySelector('img').src;
+        updateRotation(viewerImg);
+    }
+
+    function showNext() { showImage(currentIndex + 1); }
+    function showPrev() { showImage(currentIndex - 1); }
+
+    function startLoop() {
+        if (!isLooping) return;
+        loopBtn.innerHTML = '<i class="bi bi-stop-fill"></i>';
+        loopTimeout = setTimeout(() => {
+            showNext();
+            startLoop();
+        }, 3000);
+    }
+
+    function stopLoop() {
+        clearTimeout(loopTimeout);
+        loopBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i>';
+    }
+
+    loopBtn.addEventListener('click', () => {
+        isLooping = !isLooping;
+        if (isLooping) {
+            startLoop();
+        } else {
+            stopLoop();
+        }
+    });
+
+    // Touch/Mouse pause/resume
+    viewerImg.addEventListener('mousedown', () => { if (isLooping) clearTimeout(loopTimeout); });
+    viewerImg.addEventListener('mouseup', () => { if (isLooping) startLoop(); });
+    viewerImg.addEventListener('touchstart', (e) => { e.preventDefault(); if (isLooping) clearTimeout(loopTimeout); });
+    viewerImg.addEventListener('touchend', (e) => { e.preventDefault(); if (isLooping) startLoop(); });
+
+    // Swipe navigation
+    let startX = 0;
+    viewer.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+    viewer.addEventListener('touchend', (e) => {
+        const deltaX = e.changedTouches[0].clientX - startX;
+        if (Math.abs(deltaX) > 50) {
+            deltaX > 0 ? showPrev() : showNext();
+            if (isLooping) {
+                stopLoop();
+                startLoop(); // Reset timer
+            }
+        }
+    });
+
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') closeViewer();
+        if (viewer.classList.contains('active')) {
+            if (e.key === 'ArrowRight') showNext();
+            if (e.key === 'ArrowLeft') showPrev();
+        }
     });
 
     function updateRotation(imgElement) {
@@ -180,29 +251,28 @@ function initFullscreenViewer() {
     document.addEventListener('dblclick', (e) => {
         const panel = e.target.closest('.panel');
         if (panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
-            const img = panel.querySelector('img');
-            if (img) {
-                viewerImg.src = panel.dataset.image || img.src;
-                viewer.classList.add('active');
-                updateRotation(viewerImg);
-            }
+            filteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
+                                  .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
+            currentIndex = filteredPanels.indexOf(panel);
+            viewerImg.src = panel.dataset.image || panel.querySelector('img').src;
+            viewer.classList.add('active');
+            updateRotation(viewerImg);
         }
     });
 
-    // Touch support for double tap
     document.addEventListener('touchend', (e) => {
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
         const panel = e.target.closest('.panel');
         
         if (tapLength < 300 && tapLength > 0 && panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
-            const img = panel.querySelector('img');
-            if (img) {
-                viewerImg.src = panel.dataset.image || img.src;
-                viewer.classList.add('active');
-                updateRotation(viewerImg);
-                e.preventDefault();
-            }
+            filteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
+                                  .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
+            currentIndex = filteredPanels.indexOf(panel);
+            viewerImg.src = panel.dataset.image || panel.querySelector('img').src;
+            viewer.classList.add('active');
+            updateRotation(viewerImg);
+            e.preventDefault();
         }
         lastTap = currentTime;
     });
@@ -210,11 +280,7 @@ function initFullscreenViewer() {
     window.addEventListener('resize', () => {
         const isPortrait = window.innerHeight >= window.innerWidth;
         if (viewer.classList.contains('active')) {
-            if (!isPortrait) {
-                viewer.classList.remove('active');
-            } else {
-                updateRotation(viewerImg);
-            }
+            updateRotation(viewerImg);
         }
     });
 }
