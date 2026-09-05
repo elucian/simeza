@@ -1,8 +1,17 @@
-/* Base Reset & Variables */
-*, *::before, *::after {
+/* 
+ * File: core/css/reset.css
+ * Purpose: Base styles, browser reset, and foundational typography.
+ * Included in: All pages.
+ */
+
+/* 1. Box Model Reset */
+*, 
+*::before, 
+*::after {
   box-sizing: border-box;
 }
 
+/* 2. Global Typography & Background */
 body {
   margin: 0;
   padding: 0;
@@ -11,8 +20,11 @@ body {
   background-color: var(--bg-outer);
 }
 
-/* Minimalist Form Elements */
-button, input, textarea, select {
+/* 3. Input Element Reset */
+button, 
+input, 
+textarea, 
+select {
   font-family: inherit;
   font-size: inherit;
 }

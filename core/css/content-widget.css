@@ -1,5 +1,9 @@
-/* Content Widget Styles */
+/* 
+ * File: core/css/content-widget.css
+ * Purpose: Styles for Content Widget, including splitter, grid, and modal.
+ */
 
+/* Content Widget Wrapper */
 .content-gallery-wrapper {
   display: flex;
   height: calc(100dvh - 285px); /* Increased reduction to guarantee no scroll */
@@ -12,6 +16,7 @@
   box-sizing: border-box;
 }
 
+/* Panel Layout */
 .left-panel {
   flex: 1 1 0%;
   overflow-y: auto;
@@ -37,7 +42,9 @@
   transition: transform 0.2s;
 }
 
-.content-panel:hover { transform: scale(1.02); }
+.content-panel:hover { 
+  transform: scale(1.02); 
+}
 
 .content-panel-image-container {
   width: 100%;
@@ -62,6 +69,7 @@
   white-space: nowrap;
 }
 
+/* Splitter */
 .content-splitter {
   width: 10px;
   cursor: col-resize;
