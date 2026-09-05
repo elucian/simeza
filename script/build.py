@@ -46,9 +46,9 @@ def render_bottom_bar(page_id, lang, active_id=None):
             {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-file-text'}
         ],
         'authors': [
-            {'id': 'contemporary', 'label': {'en': 'Contemporary'}, 'icon': 'bi-person'},
-            {'id': 'historical', 'label': {'en': 'Historical'}, 'icon': 'bi-person-lines-fill'},
-            {'id': 'mentors', 'label': {'en': 'Mentors'}, 'icon': 'bi-award'}
+            {'id': 'creators', 'icon': 'bi-palette', 'label': {'en': 'Creators', 'ro': 'Creatori', 'de': 'Schöpfer', 'es': 'Creadores', 'fr': 'Créateurs', 'ru': 'Создатели', 'pt': 'Criadores', 'hu': 'Alkotók', 'it': 'Creatori'}},
+            {'id': 'writers', 'icon': 'bi-pen', 'label': {'en': 'Writers', 'ro': 'Scriitori', 'de': 'Schriftsteller', 'es': 'Escritores', 'fr': 'Écrivains', 'ru': 'Писатели', 'pt': 'Escritores', 'hu': 'Írók', 'it': 'Scrittori'}},
+            {'id': 'mentors', 'icon': 'bi-mortarboard', 'label': {'en': 'Mentors', 'ro': 'Mentori', 'de': 'Mentoren', 'es': 'Mentores', 'fr': 'Mentors', 'ru': 'Наставники', 'pt': 'Mentores', 'hu': 'Mentorok', 'it': 'Mentori'}}
         ],
         'writings': [
             {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-pen'},
@@ -61,15 +61,15 @@ def render_bottom_bar(page_id, lang, active_id=None):
     if not buttons:
         return ''
         
-    bar_html = ['<nav class="sticky-bottom-bar" id="bottomBar">']
+    bar_html = ['<div class="pill-bar sticky-bottom-bar" id="bottomBar">']
     for i, btn in enumerate(buttons):
         btn_id = btn['id']
         label = btn['label'].get(lang, btn['label'].get('en'))
         icon = btn.get('icon')
         active_class = ' active' if (active_id and btn_id == active_id) or (not active_id and i == 0) else ''
         icon_html = f'<i class="bi {icon}"></i> ' if icon else ''
-        bar_html.append(f'  <button class="bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
-    bar_html.append('</nav>')
+        bar_html.append(f'  <button class="pill-btn bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
+    bar_html.append('</div>')
     return '\n'.join(bar_html)
 
 
