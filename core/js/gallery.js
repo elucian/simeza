@@ -16,7 +16,7 @@ const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
     const filters = saved ? JSON.parse(saved) : {};
     
-    // Set type (button)
+    // Set type (button) - only if explicitly saved
     const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
     if (filters.type) {
         buttons.forEach(btn => {
@@ -25,9 +25,8 @@ const loadFilters = () => {
                 btn.classList.add('active');
             }
         });
-    } else if (buttons.length > 0) {
+    } else {
         buttons.forEach(b => b.classList.remove('active'));
-        buttons[0].classList.add('active');
     }
     
     // Set selects
@@ -44,8 +43,13 @@ const loadFilters = () => {
 window.applyFilters = function(shouldCloseModal = false) {
     const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
     const filterModal = document.getElementById('filterModal');
+    if (shouldCloseModal) {
+        // Toolbar filter used: unselect all pills so secondary filter takes full control across all types
+        document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
+    }
+
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
-    let type = activeBtn ? activeBtn.dataset.filter : 'painting';
+    let type = activeBtn ? activeBtn.dataset.filter : null;
     const authorSelect = document.querySelector('select[name=\'filter-authors\']');
     const categorySelect = document.querySelector('select[name=\'filter-categories\']');
     const topicSelect = document.querySelector('select[name=\'filter-topics\']');
@@ -85,12 +89,9 @@ window.applyFilters = function(shouldCloseModal = false) {
 
 window.resetFilters = function() {
     const filterModal = document.getElementById('filterModal');
-    // Set first button active (painting)
-    const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
-    if (buttons.length > 0) {
-        buttons.forEach(b => b.classList.remove('active'));
-        buttons[0].classList.add('active');
-    }
+    // Unselect all pill buttons
+    document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
+    
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
     saveFilters();
     if (filterModal) filterModal.classList.remove('active');
@@ -115,7 +116,13 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // Modal handling
   const closeModal = () => modal?.classList.remove('active');
-  const openModal = (panel) => {
+  const loopBtn = document.getElementById('galleryModalLoopBtn');
+  let modalFilteredPanels = [];
+  let currentModalIndex = 0;
+  let modalLoopTimeout = null;
+  let isModalLooping = false;
+
+  const populateModal = (panel) => {
     modalImg.src = panel.dataset.image;
     modalPicName.value = panel.dataset.title;
     modalAuthor.value = panel.dataset.author;
@@ -136,14 +143,51 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
     img.src = panel.dataset.image;
-    modal.classList.add('active');
   };
 
-  // Close modal events
-  modal?.querySelector('.gallery-modal-close-x')?.addEventListener('click', closeModal);
-  modal?.querySelector('.gallery-modal-btn-close')?.addEventListener('click', closeModal);
-  modal?.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
-  document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
+  const stopModalLoop = () => {
+    clearTimeout(modalLoopTimeout);
+    isModalLooping = false;
+    loopBtn.classList.remove('is-looping');
+    loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
+    loopBtn.querySelector('i').className = 'bi bi-arrow-repeat';
+  };
+
+  const startModalLoop = () => {
+    isModalLooping = true;
+    loopBtn.classList.add('is-looping');
+    loopBtn.querySelector('span').textContent = loopBtn.dataset.stopText;
+    loopBtn.querySelector('i').className = 'bi bi-stop-fill';
+    
+    const cycle = () => {
+      if (!isModalLooping) return;
+      currentModalIndex = (currentModalIndex + 1) % modalFilteredPanels.length;
+      populateModal(modalFilteredPanels[currentModalIndex]);
+      modalLoopTimeout = setTimeout(cycle, 3000);
+    };
+    modalLoopTimeout = setTimeout(cycle, 3000);
+  };
+
+  loopBtn?.addEventListener('click', () => {
+      isModalLooping ? stopModalLoop() : startModalLoop();
+  });
+
+  const closeModal = () => {
+      stopModalLoop();
+      modal?.classList.remove('active');
+  };
+
+  const openModal = (panel) => {
+    modalFilteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
+                               .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
+    currentModalIndex = modalFilteredPanels.indexOf(panel);
+    populateModal(panel);
+    
+    // Initialize loop button text
+    loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
+    
+    modal.classList.add('active');
+  };
 
   // Panel click listeners
   wrappers.forEach(wrapper => {
@@ -227,9 +271,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Add listener for bottom bar buttons to update gallery filters
     document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(btn => {
         btn.addEventListener('click', () => {
-            // Update active class on buttons
+            const wasActive = btn.classList.contains('active');
+            
+            // Toggle behavior
             document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            
+            if (!wasActive) {
+                btn.classList.add('active');
+            }
             
             applyFilters();
             

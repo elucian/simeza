@@ -42,8 +42,8 @@ def render_bottom_bar(page_id, lang, active_id=None):
         ],
         'books': [
             {'id': 'education', 'icon': 'bi-mortarboard', 'label': {'en': 'Education', 'ro': 'Educație', 'de': 'Bildung', 'es': 'Educación', 'fr': 'Éducation', 'ru': 'Образование', 'pt': 'Educação', 'hu': 'Oktatás', 'it': 'Educazione'}},
-            {'id': 'literature', 'icon': 'bi-compass', 'label': {'en': 'Literature', 'ro': 'Literatură', 'de': 'Literatur', 'es': 'Literatura', 'fr': 'Littérature', 'ru': 'Литература', 'pt': 'Literatura', 'hu': 'Irodalom', 'it': 'Letteratura'}},
-            {'id': 'science', 'icon': 'bi-flask', 'label': {'en': 'Science', 'ro': 'Știință', 'de': 'Wissenschaft', 'es': 'Ciencia', 'fr': 'Science', 'ru': 'Наука', 'pt': 'Ciência', 'hu': 'Tudomány', 'it': 'Scienza'}}
+            {'id': 'literature', 'icon': 'bi-book', 'label': {'en': 'Literature', 'ro': 'Literatură', 'de': 'Literatur', 'es': 'Literatura', 'fr': 'Littérature', 'ru': 'Литература', 'pt': 'Literatura', 'hu': 'Irodalom', 'it': 'Letteratura'}},
+            {'id': 'knowledge', 'icon': 'bi-lightbulb', 'label': {'en': 'Knowledge', 'ro': 'Cunoaștere', 'de': 'Wissen', 'es': 'Conocimiento', 'fr': 'Connaissance', 'ru': 'Знания', 'pt': 'Conhecimento', 'hu': 'Tudás', 'it': 'Conoscenza'}}
         ],
         'authors': [
             {'id': 'creators', 'icon': 'bi-palette', 'label': {'en': 'Creators', 'ro': 'Creatori', 'de': 'Schöpfer', 'es': 'Creadores', 'fr': 'Créateurs', 'ru': 'Создатели', 'pt': 'Criadores', 'hu': 'Alkotók', 'it': 'Creatori'}},
@@ -76,15 +76,15 @@ def render_bottom_bar(page_id, lang, active_id=None):
 def render_gallery_html(gallery_data, lang):
     # Modal Translations
     t = {
-        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter'},
-        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru'},
-        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter'},
-        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro'},
-        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre'},
-        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр'},
-        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro'},
-        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő'},
-        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro'}
+        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter', 'Loop': 'Loop', 'Stop': 'Stop'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru', 'Loop': 'Redare', 'Stop': 'Oprește'},
+        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter', 'Loop': 'Schleife', 'Stop': 'Stopp'},
+        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro', 'Loop': 'Bucle', 'Stop': 'Detener'},
+        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre', 'Loop': 'Boucle', 'Stop': 'Arrêt'},
+        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр', 'Loop': 'Цикл', 'Stop': 'Стоп'},
+        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Parar'},
+        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő', 'Loop': 'Hurok', 'Stop': 'Állj'},
+        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Stop'}
     }
     trans = t.get(lang, t['en'])
     # Load filter config
@@ -173,6 +173,9 @@ def render_gallery_html(gallery_data, lang):
         f'          <label>{trans["Desc"]}</label><textarea id="modalDesc" readonly rows="5"></textarea>',
         '        </div>',
         '        <div class="gallery-modal-footer">',
+        f'          <button id="galleryModalLoopBtn" class="gallery-modal-btn-close" data-loop-text="{trans["Loop"]}" data-stop-text="{trans["Stop"]}">',
+        '            <i class="bi bi-arrow-repeat"></i> <span></span>',
+        '          </button>',
         f'          <button class="gallery-modal-btn-close">{trans["Close"]}</button>',
         '        </div>',
         '      </div>',

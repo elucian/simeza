@@ -212,14 +212,12 @@
 /* Modal Styling */
 .gallery-modal-overlay { display: none; position: fixed; inset: 0; z-index: 2000; background: rgba(0,0,0,0.6); backdrop-filter: blur(4px); align-items: center; justify-content: center; }
 .gallery-modal-overlay.active { display: flex; }
-.gallery-modal { background: var(--bg-header); border-radius: 6px; width: 90vw; height: 90vh; padding: 24px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: column; transition: width 0.3s ease; }
-.gallery-modal.landscape-image { width: 90vw; }
-.gallery-modal.portrait-image { width: 60vw; }
-.gallery-modal-close-x { position: absolute; top: 12px; right: 16px; font-size: 1.75rem; border: none; background: none; cursor: pointer; color: var(--text-main); }
-.gallery-modal-body { display: flex; flex-direction: row; gap: 20px; height: 100%; overflow: hidden; }
-.gallery-modal-image-col { flex: 1; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.03); border-radius: 6px; overflow: hidden; }
-#modalImg { width: 100%; height: 100%; object-fit: contain; }
-.gallery-modal-data-col { flex: 0 0 400px; height: 100%; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid var(--border-color); padding-left: 20px; }
+.gallery-modal { background: var(--bg-header); border-radius: 6px; width: 90vw; height: 90vh; box-shadow: 0 20px 40px rgba(0,0,0,0.3); position: relative; display: flex; flex-direction: row; transition: width 0.3s ease; overflow: hidden; padding: 0; }
+.gallery-modal-close-x { position: absolute; top: 12px; right: 16px; font-size: 1.75rem; border: none; background: none; cursor: pointer; color: var(--text-main); z-index: 1000; }
+.gallery-modal-body { display: flex; flex-direction: row; width: 100%; height: 100%; overflow: hidden; }
+.gallery-modal-image-col { flex: 1; height: 100%; display: flex; align-items: center; justify-content: center; background: rgba(0, 0, 0, 0.03); overflow: hidden; padding: 16px; }
+#modalImg { max-width: 100%; max-height: 100%; object-fit: contain; }
+.gallery-modal-data-col { flex: 0 0 380px; height: 100%; display: flex; flex-direction: column; gap: 6px; border-left: 1px solid var(--border-color); padding: 24px; box-sizing: border-box; }
 
 /* Modal Form Controls Restoration */
 .gallery-modal-form-group { display: flex; flex-direction: column; flex: 0 0 auto; }
@@ -230,8 +228,10 @@
 .gallery-modal-form-row { display: flex; gap: 10px; flex: 0 0 auto; }
 .gallery-modal-form-row .gallery-modal-form-group { flex: 1 1 0; min-width: 0; }
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
-.gallery-modal-footer { margin-top: auto; text-align: right; padding-top: 10px; display: flex; justify-content: flex-end; }
-.gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; }
+.gallery-modal-footer { margin-top: auto; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); }
+.gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; }
+.gallery-modal-btn-loop { background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; }
+.gallery-modal-btn-loop.is-looping { background: var(--accent-color); color: white; border-color: var(--accent-color); }
 /* Updated Filter Modal */
 .gallery-filter-modal { width: min(400px, 90vw); height: auto; max-height: 90vh; padding: 16px; }
 .filter-modal-title { margin-top: 0; color: var(--accent-color); font-size: 1.2rem; }
