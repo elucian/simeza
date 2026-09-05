@@ -6,6 +6,6 @@ keywords: simeza, art, media, audio, video, stream
 
 # Media
 
-{{widget:media}}
+{{widget:content}}
 
 Welcome to the Media section of Simeza Art. Explore our audio, video, and stream collection.

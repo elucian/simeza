@@ -8,7 +8,7 @@ keywords: simeza, art, gallery, authors, contributors
 
 Welcome to the Authors section of Simeza Art.
 
-Content for this section will be available soon.
+{{widget:content:authors}}
 
 {{widget:bottom_bar}}
 

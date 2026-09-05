@@ -8,5 +8,6 @@ keywords: simeza, art, gallery, books, publications
 
 Welcome to the Books section of Simeza Art.
 
-Content for this section will be available soon.
+{{widget:content:books}}
+
 {{widget:bottom_bar}}
