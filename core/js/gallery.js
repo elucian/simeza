@@ -109,14 +109,14 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCategory = document.getElementById('modalCategory');
   const modalTopic = document.getElementById('modalTopic');
   const modalDesc = document.getElementById('modalDesc');
+  const loopBtn = document.getElementById('galleryModalLoopBtn');
+  const closeBtn = document.getElementById('galleryModalCloseBtn');
 
   // Load and apply initial filters
   loadFilters();
   window.applyFilters();
   
   // Modal handling
-  const closeModal = () => modal?.classList.remove('active');
-  const loopBtn = document.getElementById('galleryModalLoopBtn');
   let modalFilteredPanels = [];
   let currentModalIndex = 0;
   let modalLoopTimeout = null;
@@ -148,16 +148,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const stopModalLoop = () => {
     clearTimeout(modalLoopTimeout);
     isModalLooping = false;
-    loopBtn.classList.remove('is-looping');
-    loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
-    loopBtn.querySelector('i').className = 'bi bi-arrow-repeat';
+    if (loopBtn) loopBtn.classList.remove('is-looping');
+    if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
+    if (loopBtn) loopBtn.querySelector('i').className = 'bi bi-arrow-repeat';
   };
 
   const startModalLoop = () => {
     isModalLooping = true;
-    loopBtn.classList.add('is-looping');
-    loopBtn.querySelector('span').textContent = loopBtn.dataset.stopText;
-    loopBtn.querySelector('i').className = 'bi bi-stop-fill';
+    if (loopBtn) loopBtn.classList.add('is-looping');
+    if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.stopText;
+    if (loopBtn) loopBtn.querySelector('i').className = 'bi bi-stop-fill';
     
     const cycle = () => {
       if (!isModalLooping) return;
@@ -190,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
     populateModal(panel);
     
     // Initialize loop button text
-    loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
+    if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
     
     modal.classList.add('active');
   };
@@ -201,19 +201,24 @@ document.addEventListener('DOMContentLoaded', () => {
       // Inject overlay for protection
       const panelImg = panel.querySelector('.panel-image');
       if (panelImg) {
-          const overlay = document.createElement('div');
-          overlay.className = 'img-overlay';
+          const overlay = document.createElement("div");
+          overlay.className = "img-overlay";
           panelImg.appendChild(overlay);
       }
 
       // Info modal on click (only on desktop)
-      panel.addEventListener('click', (e) => {
+      panel.addEventListener("click", (e) => {
           if (window.innerWidth > 767) {
               openModal(panel);
           }
       });
-      
-      // Double tap/click handler for mobile/desktop full-screen (handled by simeza.js now)
+      panel.addEventListener("dblclick", (e) => {
+          if (window.innerWidth > 767) {
+              e.preventDefault();
+              e.stopPropagation();
+              openModal(panel);
+          }
+      });
     });
     
     // Smooth scroll functions
