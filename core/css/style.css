@@ -33,12 +33,12 @@
 /* Unified Floating Pill Bottom Bar */
 .sticky-bottom-bar {
   position: fixed;
-  bottom: 16px; /* Elevated from bottom */
+  bottom: 24px; /* Slightly more elevated */
   left: 50%;
   transform: translateX(-50%);
   width: max-content;
-  max-width: min(calc(100vw - 32px), 1352px); /* Contain within container/viewport */
-  border-radius: 30px; /* Pill shape */
+  max-width: min(calc(100vw - 32px), 1352px);
+  border-radius: 40px; /* More pill shape */
   border: 1px solid var(--border-color);
   background: var(--bg-header);
   backdrop-filter: blur(10px);
@@ -46,8 +46,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
-  padding: 10px 20px;
+  gap: 12px;
+  padding: 14px 24px; /* More breathing room */
+  min-height: 60px; /* Taller */
   z-index: 100;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
   box-sizing: border-box;
@@ -57,18 +58,19 @@
 .bottom-bar-btn {
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px 16px;
+  gap: 8px;
+  padding: 8px 18px;
   border-radius: 20px;
   border: 1px solid var(--border-color);
   background: var(--bg-main);
   color: var(--text-main);
-  font-size: 0.88rem;
+  font-size: 0.92rem;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.2s ease;
   user-select: none;
   text-decoration: none;
+  height: 40px;
 }
 
 .bottom-bar-btn:hover {
@@ -84,10 +86,21 @@
   font-weight: 600;
 }
 
+.bottom-bar-separator {
+  width: 1px;
+  height: 30px;
+  background: var(--border-color);
+  margin: 0 5px;
+}
+
+.layout-toggle-btn {
+  padding: 8px 12px;
+}
+
 /* Content spacing to prevent bottom bar overlap */
 .content:has(.sticky-bottom-bar),
 body:has(.sticky-bottom-bar) .content {
-  padding-bottom: 76px;
+  padding-bottom: 96px;
 }
 
 html,
@@ -139,6 +152,22 @@ body:has(.gallery-container),
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
+}
+
+/* Full width containment and viewport locking for Content Widget pages */
+body:has(.content-gallery-wrapper),
+.container:has(.content-gallery-wrapper) {
+  height: 100dvh;
+  max-height: 100dvh;
+  overflow: hidden;
+}
+
+.container:has(.content-gallery-wrapper) {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 /* Optimize content spacing so gallery gets maximum vertical space */
@@ -495,29 +524,32 @@ body[data-page="about.md"] #socialFooter {
 h1 {
   text-align: center;
   color: var(--accent-color);
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   margin-top: 0;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 #content > h1 + p {
-  font-weight: bold;
+  font-weight: 600;
   text-align: center;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.2rem;
 }
 
 h2 {
   color: var(--accent-color);
-  font-size: 1.1rem;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
 h3 {
   color: var(--accent-color);
-  font-size: 1.05rem;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 p {
   color: var(--text-main);
+  line-height: 1.1;
 }
 
 /* Fullscreen Image Viewer */

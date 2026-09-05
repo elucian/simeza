@@ -9,3 +9,5 @@ keywords: simeza, art, media, audio, video, stream
 Explore our audio, video, and streaming channels.
 
 {{widget:content}}
+
+{{widget:bottom_bar}}
