@@ -12,17 +12,17 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 
 <div class="index-panel index-panel-about">
 
-<h2 id="about">Áreas de enfoque principal</h2>
+<h2 id="about">Áreas de enfoque principales</h2>
 
 <div class="content-card">
-La Simeza es una plataforma web educativa y cultural independiente. Brindamos apoyo a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los interesados en el aprendizaje de idiomas, medios culturales y la emancipación personal.
+La Simeza es una plataforma educativa y cultural web independiente. Brindamos apoyo a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los interesados en el aprendizaje de idiomas, medios culturales y emancipación personal.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Multilingüe</strong>
+      <strong>Multi-idioma</strong>
       <span>Albergamos textos originales y traducimos a 8 idiomas europeos.</span>
     </div>
   </div>
@@ -56,7 +56,7 @@ Lienzos originales, monografías lingüísticas, ediciones raras y fotografía a
   <div class="content-card">
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
-      <strong>Arte original y Galería</strong>
+      <strong>Arte original y galería</strong>
       <span>Lienzos auténticos y obras de arte visual de artistas contemporáneos.</span>
     </div>
   </div>
@@ -70,7 +70,7 @@ Lienzos originales, monografías lingüísticas, ediciones raras y fotografía a
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
-      <strong>Libros raros y publicaciones</strong>
+      <strong>Libros y publicaciones raras</strong>
       <span>Ediciones raras, impresiones históricas, ensayos y guías lingüísticas.</span>
     </div>
   </div>

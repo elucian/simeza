@@ -8,5 +8,5 @@ source_hash: cfbfc16f3acedc4c16a33753607883afcf6b23502ce76d8bc995ebc06d378340
 
 Bienvenido a la sección de Libros de Simeza Art.
 
-El contenido de esta sección estará disponible pronto.
+El contenido para esta sección estará disponible pronto.
 {{widget:bottom_bar}}

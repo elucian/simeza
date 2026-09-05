@@ -15,7 +15,7 @@ keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibi
 <h2 id="about">Core Focus Areas</h2>
 
 <div class="content-card">
-La Simeza is an independent web educational and cultural platform. We provide support for art enthusiasts, polyglot students and mentors. We welcome everyone interested in language learning, cultural media, and personal emancipation.
+La Simeza is an independent web educational and cultural platform. We provide support for art enthusiasts, polyglot students and mentors. We welcome everyone interested in language learning, and visual arts.
 </div>
 
 <div class="content-card-list">
@@ -34,6 +34,13 @@ La Simeza is an independent web educational and cultural platform. We provide su
     </div>
   </div>
   <div class="content-card">
+  <i class="bi bi-mortarboard"></i>
+  <div class="content-card-body">
+    <strong>Self-Study &amp; Mentoring</strong>
+    <span>Language learning playlists and resources for independent study.</span>
+  </div>
+  </div>
+  <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Open Community</strong>
@@ -49,7 +56,7 @@ La Simeza is an independent web educational and cultural platform. We provide su
 <h2 id="about-content">Direct-Offer Content</h2>
 
 <div class="content-card">
-Original canvases, linguistic monographs, rare editions, and high-resolution artistic photography. Explore the gallery, download digital artifacts, or secure physical editions. Schedule talks and cultural media in our community.
+Discover fine art, photographic collections, linguistic monographs, and media streams. Access digital files, secure physical volumes, view offline educational recordings, or join live video presentations.
 </div>
 
 <div class="content-card-list">
@@ -74,6 +81,13 @@ Original canvases, linguistic monographs, rare editions, and high-resolution art
       <span>Rare editions, historical prints, essays, and linguistic guides.</span>
     </div>
   </div>
+  <div class="content-card">
+    <i class="bi bi-play-btn"></i>
+    <div class="content-card-body">
+      <strong>Audio & Video Media</strong>
+      <span>Recorded interviews, cultural podcasts, and educational playlists.</span>
+    </div>
+  </div>  
 </div>
 
 </div>

@@ -15,7 +15,7 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Kernbereiche</h2>
 
 <div class="content-card">
-La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir bieten Unterstützung für Kunstliebhaber, polyglotte Studenten und Mentoren. Wir heißen jeden willkommen, der sich für das Sprachenlernen, kulturelle Medien und persönliche Emanzipation interessiert.
+La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir bieten Unterstützung für Kunstbegeisterte, polyglotte Studenten und Mentoren. Wir heißen jeden willkommen, der sich für das Erlernen von Sprachen, kulturelle Medien und persönliche Emanzipation interessiert.
 </div>
 
 <div class="content-card-list">
@@ -46,7 +46,7 @@ La Simeza ist eine unabhängige webbasierte Bildungs- und Kulturplattform. Wir b
 
 <div class="index-panel index-panel-content">
 
-<h2 id="about-content">Direktangebot-Inhalte</h2>
+<h2 id="about-content">Direktangebots-Inhalte</h2>
 
 <div class="content-card">
 Originalleinwände, linguistische Monographien, seltene Ausgaben und hochauflösende künstlerische Fotografie. Erkunden Sie die Galerie, laden Sie digitale Artefakte herunter oder sichern Sie sich physische Ausgaben. Vereinbaren Sie Gespräche und kulturelle Medien in unserer Gemeinschaft.
