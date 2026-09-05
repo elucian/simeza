@@ -15,14 +15,14 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Domenii principale de interes</h2>
 
 <div class="content-card">
-La Simeza este o platformă educațională și culturală web independentă. Oferim sprijin pasionaților de artă, studenților poligloți și mentorilor. Îi primim pe toți cei interesați de învățarea limbilor străine, media culturală și emanciparea personală.
+La Simeza este o platformă educațională și culturală web independentă. Oferim sprijin entuziaștilor de artă, studenților poligloți și mentorilor. Îi primim pe toți cei interesați de învățarea limbilor străine, media culturală și emanciparea personală.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Multilingvism</strong>
+      <strong>Limbi multiple</strong>
       <span>Găzduim texte originale și traducem în 8 limbi europene.</span>
     </div>
   </div>
@@ -56,7 +56,7 @@ Panze originale, monografii lingvistice, ediții rare și fotografie artistică 
   <div class="content-card">
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
-      <strong>Artă originală și Galerie</strong>
+      <strong>Artă originală și galerie</strong>
       <span>Panze autentice și opere de artă vizuală de la artiști contemporani.</span>
     </div>
   </div>
@@ -70,7 +70,7 @@ Panze originale, monografii lingvistice, ediții rare și fotografie artistică 
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
-      <strong>Cărți rare și publicații</strong>
+      <strong>Cărți și publicații rare</strong>
       <span>Ediții rare, printuri istorice, eseuri și ghiduri lingvistice.</span>
     </div>
   </div>

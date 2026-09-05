@@ -4,7 +4,7 @@ description: Fedezze fel a kortárs művészetet, írásokat, festményeket, kö
 keywords: simeza, művészeti galéria, kortárs művészet, román művészet, festmények, kiállítások, könyvek, kultúra
 source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 ---
-# Üdvözöljük a La Simeza oldalán
+# Üdvözöljük a La Simeza-ban
 
 **Kulturális platform diákok, mentorok, szerzők és gyűjtők számára.**
 
@@ -15,7 +15,7 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Fő fókuszterületek</h2>
 
 <div class="content-card">
-A La Simeza egy független oktatási és kulturális webes platform. Támogatást nyújtunk a művészetkedvelőknek, többnyelvű diákoknak és mentoroknak. Szeretettel várunk mindenkit, aki érdeklődik a nyelvtanulás, a kulturális média és a személyes emancipáció iránt.
+A La Simeza egy független webes oktatási és kulturális platform. Támogatást nyújtunk a művészetkedvelőknek, többnyelvű diákoknak és mentoroknak. Szeretettel várunk mindenkit, akit érdekel a nyelvtanulás, a kulturális média és a személyes emancipáció.
 </div>
 
 <div class="content-card-list">
@@ -36,7 +36,7 @@ A La Simeza egy független oktatási és kulturális webes platform. Támogatás
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
-      <strong>Nyílt közösség</strong>
+      <strong>Nyitott közösség</strong>
       <span>Támogatás, nyelvcsere, kulturális média és beszélgetések.</span>
     </div>
   </div>
@@ -49,15 +49,15 @@ A La Simeza egy független oktatási és kulturális webes platform. Támogatás
 <h2 id="about-content">Közvetlen ajánlatú tartalom</h2>
 
 <div class="content-card">
-Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontású művészi fotók. Fedezze fel a galériát, töltsön le digitális alkotásokat vagy biztosítson be fizikai kiadásokat. Ütemezzen beszélgetéseket és kulturális médiát közösségünkben.
+Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontású művészi fotók. Fedezze fel a galériát, töltsön le digitális alkotásokat vagy biztosítson be fizikai kiadásokat. Ütemezzen beszélgetéseket és kulturális médiaeseményeket közösségünkben.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
-      <strong>Eredeti művészet és Galéria</strong>
-      <span>Hiteles vásznak és kortárs művészek vizuális alkotásai.</span>
+      <strong>Eredeti művészet és galéria</strong>
+      <span>Hiteles vásznak és vizuális műalkotások kortárs művészektől.</span>
     </div>
   </div>
   <div class="content-card">

@@ -6,6 +6,6 @@ source_hash: 8b5be09d5d11c110daaf7baaebbf4eb2ce3d231131559727560e812d79f38fa4
 ---
 # Rólunk
 
-Üdvözöljük a Simeza Art Rólunk oldalán.
+Üdvözöljük a Simeza Art Rólunk szekciójában.
 
-Az oldal tartalma hamarosan elérhető lesz.
+Az ehhez a részhez tartozó tartalom hamarosan elérhető lesz.

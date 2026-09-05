@@ -8,6 +8,6 @@ source_hash: f71a620f9004f9c101c3dd40ed2fdc3102d069d996fd159428d05fe23c1d123f
 
 Bem-vindo à seção de Autores da Simeza Art.
 
-O conteúdo desta seção estará disponível em breve.
+O conteúdo para esta seção estará disponível em breve.
 
 {{widget:bottom_bar}}
