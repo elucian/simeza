@@ -41,9 +41,9 @@ def render_bottom_bar(page_id, lang, active_id=None):
             {'id': 'stream', 'label': {'en': 'Stream', 'ro': 'Stream', 'de': 'Stream', 'es': 'Stream', 'fr': 'Stream', 'ru': 'Стрим', 'pt': 'Stream', 'hu': 'Stream', 'it': 'Stream'}, 'icon': 'bi-broadcast'}
         ],
         'books': [
-            {'id': 'monographs', 'label': {'en': 'Monographs'}, 'icon': 'bi-book'},
-            {'id': 'rare-editions', 'label': {'en': 'Rare Editions'}, 'icon': 'bi-journal-bookmark'},
-            {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-file-text'}
+            {'id': 'education', 'icon': 'bi-mortarboard', 'label': {'en': 'Education', 'ro': 'Educație', 'de': 'Bildung', 'es': 'Educación', 'fr': 'Éducation', 'ru': 'Образование', 'pt': 'Educação', 'hu': 'Oktatás', 'it': 'Educazione'}},
+            {'id': 'literature', 'icon': 'bi-compass', 'label': {'en': 'Literature', 'ro': 'Literatură', 'de': 'Literatur', 'es': 'Literatura', 'fr': 'Littérature', 'ru': 'Литература', 'pt': 'Literatura', 'hu': 'Irodalom', 'it': 'Letteratura'}},
+            {'id': 'science', 'icon': 'bi-flask', 'label': {'en': 'Science', 'ro': 'Știință', 'de': 'Wissenschaft', 'es': 'Ciencia', 'fr': 'Science', 'ru': 'Наука', 'pt': 'Ciência', 'hu': 'Tudomány', 'it': 'Scienza'}}
         ],
         'authors': [
             {'id': 'creators', 'icon': 'bi-palette', 'label': {'en': 'Creators', 'ro': 'Creatori', 'de': 'Schöpfer', 'es': 'Creadores', 'fr': 'Créateurs', 'ru': 'Создатели', 'pt': 'Criadores', 'hu': 'Alkotók', 'it': 'Creatori'}},
@@ -51,9 +51,9 @@ def render_bottom_bar(page_id, lang, active_id=None):
             {'id': 'mentors', 'icon': 'bi-mortarboard', 'label': {'en': 'Mentors', 'ro': 'Mentori', 'de': 'Mentoren', 'es': 'Mentores', 'fr': 'Mentors', 'ru': 'Наставники', 'pt': 'Mentores', 'hu': 'Mentorok', 'it': 'Mentori'}}
         ],
         'writings': [
-            {'id': 'essays', 'label': {'en': 'Essays'}, 'icon': 'bi-pen'},
-            {'id': 'poetry', 'label': {'en': 'Poetry'}, 'icon': 'bi-feather'},
-            {'id': 'articles', 'label': {'en': 'Articles'}, 'icon': 'bi-newspaper'}
+            {'id': 'critiques', 'icon': 'bi-chat-left-text', 'label': {'en': 'Critiques', 'ro': 'Critici', 'de': 'Kritiken', 'es': 'Críticas', 'fr': 'Critiques', 'ru': 'Критика', 'pt': 'Críticas', 'hu': 'Kritikák', 'it': 'Critiche'}},
+            {'id': 'pamphlets', 'icon': 'bi-megaphone', 'label': {'en': 'Pamphlets', 'ro': 'Pamflete', 'de': 'Pamphlete', 'es': 'Panfletos', 'fr': 'Pamphlets', 'ru': 'Памфлеты', 'pt': 'Panfletos', 'hu': 'Pamfletek', 'it': 'Pamphlet'}},
+            {'id': 'sketches', 'icon': 'bi-pencil-square', 'label': {'en': 'Sketches', 'ro': 'Schițe', 'de': 'Skizzen', 'es': 'Bocetos', 'fr': 'Esquisses', 'ru': 'Зарисовки', 'pt': 'Esboços', 'hu': 'Vázlatok', 'it': 'Schizzi'}}
         ]
     }
     
