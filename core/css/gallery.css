@@ -230,7 +230,7 @@
 #modalDesc { flex: 1 1 auto; min-height: 40px; resize: none; overflow-y: auto; }
 .gallery-modal-footer { margin-top: auto; padding-top: 16px; display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--border-color); }
 .gallery-modal-btn-close { background: var(--accent-color); color: white; border: none; padding: 8px 24px; border-radius: 6px; cursor: pointer; font-weight: 600; font-size: 0.9rem; height: 60px; }
-.gallery-modal-btn-loop { background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; border-radius: 6px; height: 60px;}
+.gallery-modal-btn-loop { background: var(--bg-main); color: var(--text-main); border: 1px solid var(--border-color); display: flex; align-items: center; gap: 8px; font-size: 0.9rem; border-radius: 6px; height: 60px !important;}
 .gallery-modal-btn-loop.is-looping { background: var(--accent-color); color: white; border-color: var(--accent-color); }
 /* Updated Filter Modal */
 .gallery-filter-modal { width: min(400px, 90vw); height: auto; max-height: 90vh; padding: 16px; }
