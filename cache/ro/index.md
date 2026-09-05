@@ -2,7 +2,7 @@
 title: La Simeza - Galerie de Artă Contemporană & Comunitate de Schimb Poliglot
 description: Explorează artă contemporană, scrieri, picturi, cărți și expoziții la Galeria de Artă Simeza.
 keywords: simeza, galerie de artă, artă contemporană, artă românească, picturi, expoziții, cărți, cultură
-source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
+source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 ---
 # Bine ați venit la La Simeza
 
@@ -15,7 +15,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about">Domenii principale de interes</h2>
 
 <div class="content-card">
-  La Simeza este o platformă independentă pentru schimb cultural și educație. Susținem entuziaștii artei, studenții poligloți și mentorii. Îi primim pe toți cei mânați de o pasiune pentru artele vizuale și comunicare.
+  La Simeza este o platformă independentă pentru schimb cultural și educație. Susținem pasionații de artă, studenții poligloți și mentorii. Îi primim pe toți cei mânați de o pasiune pentru artele vizuale și comunicare.
 </div>
 
 <div class="content-card-list">
@@ -30,14 +30,14 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Achiziție directă</strong>
-      <span>Obțineți articole fizice sau descărcați ediții digitale direct.</span>
+      <span>Obțineți obiecte fizice sau descărcați ediții digitale direct.</span>
     </div>
   </div>
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Studiu individual</strong>
-    <span>Resurse pentru învățarea limbilor străine și planuri pentru studiu independent.</span>
+    <span>Resurse de învățare și planuri de studiu pentru învățare independentă.</span>
   </div>
   </div>
   <div class="content-card">
@@ -53,10 +53,10 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 
 <div class="index-panel index-panel-content">
 
-<h2 id="about-content">Conținut cu ofertă directă</h2>
+<h2 id="about-content">Conținut oferit direct</h2>
 
 <div class="content-card">
-  Descoperiți artă plastică, colecții fotografice, monografii lingvistice și fluxuri media. Accesați fișiere digitale, volume fizice securizate, vizionați înregistrări offline și alăturați-vă transmisiunilor video live interactive în comunitatea noastră.
+  Descoperiți artă plastică, colecții fotografice, monografii lingvistice și fluxuri media. Accesați fișiere digitale, obțineți volume fizice, vizionați înregistrări offline și participați la transmisiuni video live interactive în comunitatea noastră.
 </div>
 
 <div class="content-card-list">
@@ -71,14 +71,14 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-camera"></i>
     <div class="content-card-body">
       <strong>Fotografie artistică</strong>
-      <span>Imprimeuri fotografice de înaltă rezoluție și arhive digitale.</span>
+      <span>Printuri fotografice de înaltă rezoluție și arhive digitale.</span>
     </div>
   </div>
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Cărți rare și publicații</strong>
-      <span>Ediții rare, tipărituri istorice, eseuri și ghiduri lingvistice.</span>
+      <span>Ediții rare, printuri istorice, eseuri și ghiduri lingvistice.</span>
     </div>
   </div>
   <div class="content-card">

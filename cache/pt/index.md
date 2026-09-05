@@ -2,9 +2,9 @@
 title: La Simeza - Galeria de Arte Contemporânea e Comunidade de Intercâmbio Poliglota
 description: Explore arte contemporânea, escritos, pinturas, livros e exposições na Galeria de Arte Simeza.
 keywords: simeza, galeria de arte, arte contemporânea, arte romena, pinturas, exposições, livros, cultura
-source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
+source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 ---
-# Bem-vindo ao La Simeza
+# Bem-vindo à La Simeza
 
 **Plataforma cultural para estudantes, mentores, autores e colecionadores.**
 
@@ -15,7 +15,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about">Áreas de foco principal</h2>
 
 <div class="content-card">
-  La Simeza é uma plataforma independente para intercâmbio cultural e educação. Apoiamos entusiastas da arte, estudantes poliglotas e mentores. Damos as boas-vindas a todos os que são movidos pela paixão pelas artes visuais e pela comunicação.
+  A La Simeza é uma plataforma independente para intercâmbio cultural e educação. Apoiamos entusiastas da arte, estudantes poliglotas e mentores. Damos as boas-vindas a todos os que são movidos pela paixão pelas artes visuais e pela comunicação.
 </div>
 
 <div class="content-card-list">
@@ -37,14 +37,14 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Autoestudo</strong>
-    <span>Recursos de aprendizagem de idiomas e roteiros para estudo independente.</span>
+    <span>Recursos de aprendizagem e roteiros para estudo independente.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Comunidade aberta</strong>
-      <span>Suporte, intercâmbio de idiomas, mídia cultural e palestras.</span>
+      <span>Suporte, intercâmbio de idiomas, mídia cultural e conversas.</span>
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about-content">Conteúdo de oferta direta</h2>
 
 <div class="content-card">
-  Descubra belas artes, coleções fotográficas, monografias linguísticas e fluxos de mídia. Acesse arquivos digitais, garanta volumes físicos, assista a gravações offline e participe de transmissões de vídeo ao vivo interativas em nossa comunidade.
+  Descubra belas artes, coleções fotográficas, monografias linguísticas e fluxos de mídia. Acesse arquivos digitais, obtenha volumes físicos, veja gravações offline e participe de transmissões de vídeo ao vivo interativas em nossa comunidade.
 </div>
 
 <div class="content-card-list">
@@ -85,7 +85,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-play-btn"></i>
     <div class="content-card-body">
       <strong>Mídia de áudio e vídeo</strong>
-      <span>Entrevistas gravadas, podcasts culturais e playlists educacionais.</span>
+      <span>Entrevistas gravadas, podcasts culturais e listas de reprodução educacionais.</span>
     </div>
   </div>  
 </div>

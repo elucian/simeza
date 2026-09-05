@@ -1,8 +1,8 @@
 ---
 title: La Simeza - Galería de Arte Contemporáneo y Comunidad de Intercambio Políglota
-description: Explore arte contemporáneo, escritos, pinturas, libros y exposiciones en la Galería de Arte Simeza.
+description: Explora arte contemporáneo, escritos, pinturas, libros y exposiciones en la Galería de Arte Simeza.
 keywords: simeza, galería de arte, arte contemporáneo, arte rumano, pinturas, exposiciones, libros, cultura
-source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
+source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 ---
 # Bienvenido a La Simeza
 
@@ -15,7 +15,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about">Áreas de enfoque principal</h2>
 
 <div class="content-card">
-  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que sienten pasión por las artes visuales y la comunicación.
+  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que se sientan impulsados por la pasión por las artes visuales y la comunicación.
 </div>
 
 <div class="content-card-list">
@@ -30,14 +30,14 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Adquisición directa</strong>
-      <span>Consiga artículos físicos o descargue ediciones digitales directamente.</span>
+      <span>Obtenga artículos físicos o descargue ediciones digitales directamente.</span>
     </div>
   </div>
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Autoestudio</strong>
-    <span>Recursos de aprendizaje de idiomas y hojas de ruta para el estudio independiente.</span>
+    <span>Recursos de aprendizaje y hojas de ruta para el estudio independiente.</span>
   </div>
   </div>
   <div class="content-card">
@@ -56,7 +56,7 @@ source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 <h2 id="about-content">Contenido de oferta directa</h2>
 
 <div class="content-card">
-  Descubra bellas artes, colecciones fotográficas, monografías lingüísticas y transmisiones multimedia. Acceda a archivos digitales, asegure volúmenes físicos, vea grabaciones sin conexión y únase a transmisiones de video en vivo interactivas en nuestra comunidad.
+  Descubra bellas artes, colecciones fotográficas, monografías lingüísticas y transmisiones multimedia. Acceda a archivos digitales, obtenga volúmenes físicos, vea grabaciones sin conexión y únase a transmisiones de video en vivo interactivas en nuestra comunidad.
 </div>
 
 <div class="content-card-list">
