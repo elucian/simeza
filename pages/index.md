@@ -37,7 +37,7 @@ keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibi
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
     <strong>Self-Study</strong>
-    <span>Language learning resources and roadmaps for independent study.</span>
+    <span>Learning resources and roadmaps for independent study.</span>
   </div>
   </div>
   <div class="content-card">
