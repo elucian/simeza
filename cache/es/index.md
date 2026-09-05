@@ -2,7 +2,7 @@
 title: La Simeza - Galería de Arte Contemporáneo y Comunidad de Intercambio Políglota
 description: Explore arte contemporáneo, escritos, pinturas, libros y exposiciones en la Galería de Arte Simeza.
 keywords: simeza, galería de arte, arte contemporáneo, arte rumano, pinturas, exposiciones, libros, cultura
-source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
+source_hash: b6d7975e0ab98bfe41880050e46043872c988159482197b96b38fc1541a38ed3
 ---
 # Bienvenido a La Simeza
 
@@ -12,10 +12,10 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 
 <div class="index-panel index-panel-about">
 
-<h2 id="about">Áreas de enfoque principales</h2>
+<h2 id="about">Áreas de enfoque principal</h2>
 
 <div class="content-card">
-  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que se sientan impulsados por una pasión por las artes visuales y la comunicación.
+  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que sienten pasión por las artes visuales y la comunicación.
 </div>
 
 <div class="content-card-list">
@@ -36,8 +36,8 @@ source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
-    <strong>Autoestudio y mentoría</strong>
-    <span>Listas de reproducción para el aprendizaje de idiomas y recursos para el estudio independiente.</span>
+    <strong>Autoestudio</strong>
+    <span>Recursos de aprendizaje de idiomas y hojas de ruta para el estudio independiente.</span>
   </div>
   </div>
   <div class="content-card">
