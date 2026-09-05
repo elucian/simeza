@@ -2,7 +2,7 @@
 title: La Simeza - Galerie d'art contemporain et communauté d'échange polyglotte
 description: Explorez l'art contemporain, les écrits, les peintures, les livres et les expositions à la galerie d'art Simeza.
 keywords: simeza, galerie d'art, art contemporain, art roumain, peintures, expositions, livres, culture
-source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
+source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 ---
 # Bienvenue à La Simeza
 
@@ -15,14 +15,14 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Domaines d'intervention principaux</h2>
 
 <div class="content-card">
-La Simeza est une plateforme éducative et culturelle web indépendante. Nous apportons notre soutien aux passionnés d'art, aux étudiants polyglottes et aux mentors. Nous accueillons tous ceux qui s'intéressent à l'apprentissage des langues, aux médias culturels et à l'émancipation personnelle.
+  La Simeza est une plateforme indépendante dédiée aux échanges culturels et à l'éducation. Nous soutenons les passionnés d'art, les étudiants polyglottes et les mentors. Nous accueillons tous ceux qui sont animés par une passion pour les arts visuels et la communication.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Multi-langues</strong>
+      <strong>Multilingue</strong>
       <span>Nous hébergeons des textes originaux et traduisons dans 8 langues européennes.</span>
     </div>
   </div>
@@ -30,8 +30,15 @@ La Simeza est une plateforme éducative et culturelle web indépendante. Nous ap
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Acquisition directe</strong>
-      <span>Obtenez des articles physiques ou téléchargez directement des éditions numériques.</span>
+      <span>Obtenez des objets physiques ou téléchargez directement des éditions numériques.</span>
     </div>
+  </div>
+  <div class="content-card">
+  <i class="bi bi-mortarboard"></i>
+  <div class="content-card-body">
+    <strong>Auto-apprentissage et mentorat</strong>
+    <span>Playlists d'apprentissage des langues et ressources pour l'étude indépendante.</span>
+  </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
@@ -49,7 +56,7 @@ La Simeza est une plateforme éducative et culturelle web indépendante. Nous ap
 <h2 id="about-content">Contenu en offre directe</h2>
 
 <div class="content-card">
-Toiles originales, monographies linguistiques, éditions rares et photographie artistique haute résolution. Explorez la galerie, téléchargez des artefacts numériques ou sécurisez des éditions physiques. Programmez des discussions et des médias culturels au sein de notre communauté.
+  Découvrez les beaux-arts, les collections photographiques, les monographies linguistiques et les flux multimédias. Accédez à des fichiers numériques, sécurisez des volumes physiques, visionnez des enregistrements hors ligne et rejoignez des diffusions vidéo en direct interactives au sein de notre communauté.
 </div>
 
 <div class="content-card-list">
@@ -70,10 +77,17 @@ Toiles originales, monographies linguistiques, éditions rares et photographie a
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
-      <strong>Livres et publications rares</strong>
-      <span>Éditions rares, tirages historiques, essais et guides linguistiques.</span>
+      <strong>Livres rares et publications</strong>
+      <span>Éditions rares, impressions historiques, essais et guides linguistiques.</span>
     </div>
   </div>
+  <div class="content-card">
+    <i class="bi bi-play-btn"></i>
+    <div class="content-card-body">
+      <strong>Médias audio et vidéo</strong>
+      <span>Entretiens enregistrés, podcasts culturels et playlists éducatives.</span>
+    </div>
+  </div>  
 </div>
 
 </div>

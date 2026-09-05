@@ -2,7 +2,7 @@
 title: La Simeza - Galerie de Artă Contemporană & Comunitate de Schimb Poliglot
 description: Explorează artă contemporană, scrieri, picturi, cărți și expoziții la Galeria de Artă Simeza.
 keywords: simeza, galerie de artă, artă contemporană, artă românească, picturi, expoziții, cărți, cultură
-source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
+source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 ---
 # Bine ați venit la La Simeza
 
@@ -15,14 +15,14 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Domenii principale de interes</h2>
 
 <div class="content-card">
-La Simeza este o platformă educațională și culturală web independentă. Oferim sprijin entuziaștilor de artă, studenților poligloți și mentorilor. Îi primim pe toți cei interesați de învățarea limbilor străine, media culturală și emanciparea personală.
+  La Simeza este o platformă independentă pentru schimb cultural și educație. Susținem pasionații de artă, studenții poligloți și mentorii. Primim pe oricine este condus de o pasiune pentru artele vizuale și comunicare.
 </div>
 
 <div class="content-card-list">
   <div class="content-card">
     <i class="bi bi-translate"></i>
     <div class="content-card-body">
-      <strong>Limbi multiple</strong>
+      <strong>Multilingv</strong>
       <span>Găzduim texte originale și traducem în 8 limbi europene.</span>
     </div>
   </div>
@@ -34,10 +34,17 @@ La Simeza este o platformă educațională și culturală web independentă. Ofe
     </div>
   </div>
   <div class="content-card">
+  <i class="bi bi-mortarboard"></i>
+  <div class="content-card-body">
+    <strong>Studiu individual și mentorat</strong>
+    <span>Liste de redare pentru învățarea limbilor străine și resurse pentru studiu independent.</span>
+  </div>
+  </div>
+  <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Comunitate deschisă</strong>
-      <span>Suport, schimb lingvistic, media culturală și discuții.</span>
+      <span>Contact de asistență, schimb lingvistic, media culturală și discuții.</span>
     </div>
   </div>
 </div>
@@ -49,7 +56,7 @@ La Simeza este o platformă educațională și culturală web independentă. Ofe
 <h2 id="about-content">Conținut cu ofertă directă</h2>
 
 <div class="content-card">
-Panze originale, monografii lingvistice, ediții rare și fotografie artistică de înaltă rezoluție. Explorați galeria, descărcați artefacte digitale sau securizați ediții fizice. Programați discuții și media culturală în comunitatea noastră.
+  Descoperiți artă plastică, colecții fotografice, monografii lingvistice și fluxuri media. Accesați fișiere digitale, securizați volume fizice, vizionați înregistrări offline și alăturați-vă transmisiunilor video live interactive în comunitatea noastră.
 </div>
 
 <div class="content-card-list">
@@ -57,7 +64,7 @@ Panze originale, monografii lingvistice, ediții rare și fotografie artistică 
     <i class="bi bi-palette"></i>
     <div class="content-card-body">
       <strong>Artă originală și galerie</strong>
-      <span>Panze autentice și opere de artă vizuală de la artiști contemporani.</span>
+      <span>Pânze autentice și opere de artă vizuală de la artiști contemporani.</span>
     </div>
   </div>
   <div class="content-card">
@@ -70,10 +77,17 @@ Panze originale, monografii lingvistice, ediții rare și fotografie artistică 
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
-      <strong>Cărți și publicații rare</strong>
-      <span>Ediții rare, printuri istorice, eseuri și ghiduri lingvistice.</span>
+      <strong>Cărți rare și publicații</strong>
+      <span>Ediții rare, tipărituri istorice, eseuri și ghiduri lingvistice.</span>
     </div>
   </div>
+  <div class="content-card">
+    <i class="bi bi-play-btn"></i>
+    <div class="content-card-body">
+      <strong>Media audio și video</strong>
+      <span>Interviuri înregistrate, podcasturi culturale și liste de redare educaționale.</span>
+    </div>
+  </div>  
 </div>
 
 </div>

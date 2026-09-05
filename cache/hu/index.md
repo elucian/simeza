@@ -2,7 +2,7 @@
 title: La Simeza - Kortárs Művészeti Galéria és Poliglott Csereközösség
 description: Fedezze fel a kortárs művészetet, írásokat, festményeket, könyveket és kiállításokat a Simeza Művészeti Galériában.
 keywords: simeza, művészeti galéria, kortárs művészet, román művészet, festmények, kiállítások, könyvek, kultúra
-source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
+source_hash: dc92718992210f9fa886b32be39c1a627704d28e13b4137f419736c7d314ace3
 ---
 # Üdvözöljük a La Simeza-ban
 
@@ -15,7 +15,7 @@ source_hash: 49a68c2bb86f5c66ae10b82552bb72a0bdf4608a8b7825637cf6ad962378e4c0
 <h2 id="about">Fő fókuszterületek</h2>
 
 <div class="content-card">
-A La Simeza egy független webes oktatási és kulturális platform. Támogatást nyújtunk a művészetkedvelőknek, többnyelvű diákoknak és mentoroknak. Szeretettel várunk mindenkit, akit érdekel a nyelvtanulás, a kulturális média és a személyes emancipáció.
+  A La Simeza egy független platform a kulturális cseréhez és oktatáshoz. Támogatjuk a művészetrajongókat, a többnyelvű diákokat és a mentorokat. Mindenkit szívesen látunk, akit a vizuális művészetek és a kommunikáció iránti szenvedély hajt.
 </div>
 
 <div class="content-card-list">
@@ -34,10 +34,17 @@ A La Simeza egy független webes oktatási és kulturális platform. Támogatás
     </div>
   </div>
   <div class="content-card">
+  <i class="bi bi-mortarboard"></i>
+  <div class="content-card-body">
+    <strong>Öntanulás és mentorálás</strong>
+    <span>Nyelvtanulási lejátszási listák és források az önálló tanuláshoz.</span>
+  </div>
+  </div>
+  <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Nyitott közösség</strong>
-      <span>Támogatás, nyelvcsere, kulturális média és beszélgetések.</span>
+      <span>Támogatási kapcsolat, nyelvcsere, kulturális média és beszélgetések.</span>
     </div>
   </div>
 </div>
@@ -49,7 +56,7 @@ A La Simeza egy független webes oktatási és kulturális platform. Támogatás
 <h2 id="about-content">Közvetlen ajánlatú tartalom</h2>
 
 <div class="content-card">
-Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontású művészi fotók. Fedezze fel a galériát, töltsön le digitális alkotásokat vagy biztosítson be fizikai kiadásokat. Ütemezzen beszélgetéseket és kulturális médiaeseményeket közösségünkben.
+  Fedezze fel a képzőművészetet, fotógyűjteményeket, nyelvészeti monográfiákat és médiafolyamokat. Férjen hozzá digitális fájlokhoz, biztosítson fizikai köteteket, tekintsen meg offline felvételeket, és csatlakozzon interaktív élő videóközvetítésekhez közösségünkben.
 </div>
 
 <div class="content-card-list">
@@ -63,7 +70,7 @@ Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontá
   <div class="content-card">
     <i class="bi bi-camera"></i>
     <div class="content-card-body">
-      <strong>Művészi fotográfia</strong>
+      <strong>Művészi fotózás</strong>
       <span>Nagy felbontású fotónyomatok és digitális archívumok.</span>
     </div>
   </div>
@@ -74,6 +81,13 @@ Eredeti vásznak, nyelvészeti monográfiák, ritka kiadások és nagy felbontá
       <span>Ritka kiadások, történelmi nyomatok, esszék és nyelvészeti útmutatók.</span>
     </div>
   </div>
+  <div class="content-card">
+    <i class="bi bi-play-btn"></i>
+    <div class="content-card-body">
+      <strong>Audio- és videomédia</strong>
+      <span>Rögzített interjúk, kulturális podcastok és oktatási lejátszási listák.</span>
+    </div>
+  </div>  
 </div>
 
 </div>
