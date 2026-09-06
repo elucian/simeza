@@ -12,11 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 return {
                     loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                     autoRotation: parsed.autoRotation === true || parsed.autoRotation === 'true',
-                    desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider'
+                    desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider',
+                    musicEnabled: parsed.musicEnabled === true || parsed.musicEnabled === 'true'
                 };
             }
         } catch (e) {}
-        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider' };
+        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider', musicEnabled: false };
     };
 
     const settings = getSavedSettings();
@@ -31,6 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const layoutRadio = form.querySelector(`input[name="desktopLayout"][value="${settings.desktopLayout}"]`);
         if (layoutRadio) layoutRadio.checked = true;
+
+        const musicRadio = form.querySelector(`input[name="musicEnabled"][value="${settings.musicEnabled}"]`);
+        if (musicRadio) musicRadio.checked = true;
     }
 
     const getGalleryUrl = (settings) => {
@@ -49,7 +53,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const params = new URLSearchParams({
             loopDelay: String(settings.loopDelay),
             autoRotation: String(settings.autoRotation),
-            desktopLayout: settings.desktopLayout
+            desktopLayout: settings.desktopLayout,
+            musicEnabled: String(settings.musicEnabled)
         });
         return '/' + lang + '/' + (slugMap[lang] || 'gallery.html') + '?' + params.toString();
     };
@@ -59,7 +64,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const previewSettings = {
             loopDelay: parseInt(form.querySelector('select[name="loopDelay"]')?.value, 10) || 3,
             autoRotation: form.querySelector('input[name="autoRotation"]:checked')?.value === 'true',
-            desktopLayout: form.querySelector('input[name="desktopLayout"]:checked')?.value || 'slider'
+            desktopLayout: form.querySelector('input[name="desktopLayout"]:checked')?.value || 'slider',
+            musicEnabled: form.querySelector('input[name="musicEnabled"]:checked')?.value === 'true'
         };
         const shareLink = document.getElementById('settingsShareLink');
         if (shareLink) shareLink.value = window.location.origin + getGalleryUrl(previewSettings);
@@ -79,11 +85,13 @@ document.addEventListener('DOMContentLoaded', () => {
         const loopDelayVal = form ? form.querySelector('select[name="loopDelay"]')?.value : '3';
         const autoRotationVal = form ? form.querySelector('input[name="autoRotation"]:checked')?.value : 'true';
         const desktopLayoutVal = form ? form.querySelector('input[name="desktopLayout"]:checked')?.value : 'slider';
+        const musicEnabledVal = form ? form.querySelector('input[name="musicEnabled"]:checked')?.value : 'false';
 
         const newSettings = {
             loopDelay: parseInt(loopDelayVal, 10) || 3,
             autoRotation: autoRotationVal === 'true',
-            desktopLayout: desktopLayoutVal === 'panels' ? 'panels' : 'slider'
+            desktopLayout: desktopLayoutVal === 'panels' ? 'panels' : 'slider',
+            musicEnabled: musicEnabledVal === 'true'
         };
         localStorage.setItem('simezaSettings', JSON.stringify(newSettings));
         location.href = getGalleryUrl(newSettings);

@@ -43,6 +43,13 @@ keywords: simeza, settings, configuration
             </label>
           </div>
         </div>
+        <div class="settings-group">
+          <label>Music</label>
+          <div class="radio-group" role="radiogroup" aria-label="Music">
+            <label><input type="radio" name="musicEnabled" value="true"> On</label>
+            <label><input type="radio" name="musicEnabled" value="false"> Off</label>
+          </div>
+        </div>
         <div class="settings-group settings-share-group">
           <label for="settingsShareLink">Shareable Link</label>
           <div class="settings-share-control">

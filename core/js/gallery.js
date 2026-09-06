@@ -9,11 +9,12 @@ const getGallerySettings = () => {
             return {
                 loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                 autoRotation: parsed.autoRotation === true || parsed.autoRotation === 'true',
-              desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider'
+              desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider',
+              musicEnabled: parsed.musicEnabled === true || parsed.musicEnabled === 'true'
             };
         }
     } catch (e) {}
-        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider' };
+        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider', musicEnabled: false };
 };
 
 const applySettings = () => {
@@ -181,7 +182,6 @@ onDOMReady(() => {
   const sliderDescription = document.getElementById('sliderDescription');
   const sliderLoopButton = document.getElementById('sliderLoopBtn');
   const sliderDownloadButton = document.getElementById('sliderDownloadBtn');
-  const sliderRotateButton = document.getElementById('sliderRotateBtn');
   const modal = document.getElementById('galleryModal');
   const modalImg = document.getElementById('modalImg');
   const modalPicName = document.getElementById('modalPicName');
@@ -216,7 +216,6 @@ onDOMReady(() => {
   let sliderLoopTimeout = null;
   let isSliderLooping = false;
   let selectedSliderPanel = null;
-  let isSliderRotated = false;
   const sliderMusicTracks = [
     '/content/music/3m-Oriental-JapaneseFolk-120bpm-GMajor.mp3',
     '/content/music/3m-Jazz-CoolJazz-120bpm-CMajor.mp3',
@@ -228,6 +227,7 @@ onDOMReady(() => {
   ];
   const sliderAudio = new Audio();
   let currentSliderTrack = -1;
+  let sliderMusicTimeout = null;
 
   const playNextSliderTrack = () => {
     if (!isSliderLooping || !sliderMusicTracks.length) return;
@@ -240,7 +240,10 @@ onDOMReady(() => {
     sliderAudio.play().catch(() => {});
   };
 
-  sliderAudio.addEventListener('ended', playNextSliderTrack);
+  sliderAudio.addEventListener('ended', () => {
+    clearTimeout(sliderMusicTimeout);
+    sliderMusicTimeout = setTimeout(playNextSliderTrack, 3000);
+  });
 
   const fitSliderImage = () => {
     if (!sliderImage?.naturalWidth) return;
@@ -249,18 +252,10 @@ onDOMReady(() => {
     const availableHeight = Math.max(1, frame.height - 32);
     const sourceWidth = sliderImage.naturalWidth;
     const sourceHeight = sliderImage.naturalHeight;
-    const scale = isSliderRotated
-      ? Math.min(availableWidth / sourceHeight, availableHeight / sourceWidth)
-      : Math.min(availableWidth / sourceWidth, availableHeight / sourceHeight);
+    const scale = Math.min(availableWidth / sourceWidth, availableHeight / sourceHeight);
     sliderImage.style.width = `${Math.floor(sourceWidth * scale)}px`;
     sliderImage.style.height = `${Math.floor(sourceHeight * scale)}px`;
-    sliderImage.classList.toggle('is-rotated', isSliderRotated);
   };
-
-  sliderRotateButton?.addEventListener('click', () => {
-    isSliderRotated = !isSliderRotated;
-    fitSliderImage();
-  });
 
   sliderImage?.addEventListener('load', fitSliderImage);
   window.addEventListener('resize', fitSliderImage);
@@ -268,8 +263,6 @@ onDOMReady(() => {
   const selectSliderPanel = (panel) => {
     if (!panel || !sliderImage) return;
     selectedSliderPanel = panel;
-    isSliderRotated = false;
-    sliderImage.classList.remove('is-rotated');
     sliderImage.src = panel.dataset.image;
     sliderImage.alt = panel.dataset.title || '';
     sliderName.textContent = panel.dataset.title || '';
@@ -282,11 +275,23 @@ onDOMReady(() => {
       sliderDownloadButton.download = (panel.dataset.image || '').split('/').pop() || 'artwork';
     }
     wrappers.forEach(wrapper => wrapper.querySelectorAll('.panel').forEach(item => item.classList.toggle('is-selected', item === panel)));
-    panel.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  };
+
+  const revealSelectedSliderPanel = (panel) => {
+    const wrapper = panel?.closest('.panel-wrapper');
+    if (!wrapper || document.body.classList.contains('layout-maximized')) return;
+    const stripBounds = wrapper.getBoundingClientRect();
+    const panelBounds = panel.getBoundingClientRect();
+    if (panelBounds.right > stripBounds.right - 2) {
+      wrapper.scrollTo({ left: panel.offsetLeft - 12, behavior: 'smooth' });
+    } else if (panelBounds.left < stripBounds.left + 2) {
+      wrapper.scrollTo({ left: panel.offsetLeft + panel.offsetWidth - wrapper.clientWidth + 12, behavior: 'smooth' });
+    }
   };
 
   const stopSliderLoop = () => {
     clearTimeout(sliderLoopTimeout);
+    clearTimeout(sliderMusicTimeout);
     isSliderLooping = false;
     sliderAudio.pause();
     sliderAudio.currentTime = 0;
@@ -301,7 +306,7 @@ onDOMReady(() => {
     const visiblePanels = Array.from(document.querySelectorAll('.panel')).filter(panel => getComputedStyle(panel).display !== 'none');
     if (!visiblePanels.length) return stopSliderLoop();
     isSliderLooping = true;
-    playNextSliderTrack();
+    if (getGallerySettings().musicEnabled) playNextSliderTrack();
     if (sliderLoopButton) {
       sliderLoopButton.classList.add('is-looping');
       sliderLoopButton.querySelector('i').className = 'bi bi-stop-fill';
@@ -310,7 +315,9 @@ onDOMReady(() => {
     const advance = () => {
       if (!isSliderLooping) return;
       const currentIndex = Math.max(0, visiblePanels.indexOf(selectedSliderPanel));
-      selectSliderPanel(visiblePanels[(currentIndex + 1) % visiblePanels.length]);
+      const nextPanel = visiblePanels[(currentIndex + 1) % visiblePanels.length];
+      selectSliderPanel(nextPanel);
+      revealSelectedSliderPanel(nextPanel);
       sliderLoopTimeout = setTimeout(advance, (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000);
     };
     sliderLoopTimeout = setTimeout(advance, (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000);
@@ -433,11 +440,48 @@ onDOMReady(() => {
     const container = wrapper.parentElement;
     const prevBtn = container.querySelector('.gallery-nav-prev');
     const nextBtn = container.querySelector('.gallery-nav-next');
+
+    const isSliderMode = () => window.innerWidth > 767 && !document.body.classList.contains('layout-maximized');
+    const getVisiblePanels = () => Array.from(wrapper.querySelectorAll('.panel')).filter(panel => getComputedStyle(panel).display !== 'none');
+    const selectPanelAtScrollPosition = (scrollLeft) => {
+      const visiblePanels = getVisiblePanels();
+      const nextPanel = visiblePanels.find(panel => panel.offsetLeft + panel.offsetWidth > scrollLeft + 2) || visiblePanels.at(-1);
+      if (nextPanel) selectSliderPanel(nextPanel);
+    };
+
+    const moveSliderSelection = (direction) => {
+      const visiblePanels = getVisiblePanels();
+      const currentIndex = Math.max(0, visiblePanels.indexOf(selectedSliderPanel));
+      const nextPanel = visiblePanels[currentIndex + direction];
+      if (!nextPanel) return;
+
+      selectSliderPanel(nextPanel);
+      const stripBounds = wrapper.getBoundingClientRect();
+      const panelBounds = nextPanel.getBoundingClientRect();
+      const isOutsideVisibleStrip = direction > 0
+        ? panelBounds.right > stripBounds.right - 2
+        : panelBounds.left < stripBounds.left + 2;
+
+      if (isOutsideVisibleStrip) {
+        wrapper.scrollBy({ left: direction * (nextPanel.offsetWidth + 10), behavior: 'smooth' });
+      }
+      setTimeout(updateButtons, 350);
+    };
     
     const scroll = (direction, isMany = false) => {
       const panelWidth = (wrapper.querySelector('.panel')?.offsetWidth || 220) + 12;
       const scrollAmount = isMany ? Math.max(wrapper.clientWidth * 0.75, panelWidth * 2) : panelWidth;
+      const targetScrollLeft = Math.max(0, Math.min(wrapper.scrollLeft + direction * scrollAmount, wrapper.scrollWidth - wrapper.clientWidth));
       wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      if (isSliderMode()) {
+        if (isMany) {
+          selectPanelAtScrollPosition(targetScrollLeft);
+        } else {
+          const visiblePanels = getVisiblePanels();
+          const currentIndex = Math.max(0, visiblePanels.indexOf(selectedSliderPanel));
+          selectSliderPanel(visiblePanels[Math.max(0, Math.min(visiblePanels.length - 1, currentIndex + direction))]);
+        }
+      }
       setTimeout(updateButtons, 350);
     };
     
@@ -453,16 +497,26 @@ onDOMReady(() => {
       
       if (e.key === 'ArrowLeft') {
         e.preventDefault();
-        scroll(-1, isCtrl);
+        if (isSliderMode() && !isCtrl) {
+          moveSliderSelection(-1);
+        } else {
+          scroll(-1, isCtrl);
+        }
       } else if (e.key === 'ArrowRight') {
         e.preventDefault();
-        scroll(1, isCtrl);
+        if (isSliderMode() && !isCtrl) {
+          moveSliderSelection(1);
+        } else {
+          scroll(1, isCtrl);
+        }
       } else if (e.key === 'Home') {
         e.preventDefault();
         wrapper.scrollTo({ left: 0, behavior: 'smooth' });
+        if (isSliderMode()) selectSliderPanel(getVisiblePanels()[0]);
       } else if (e.key === 'End') {
         e.preventDefault();
         wrapper.scrollTo({ left: wrapper.scrollWidth, behavior: 'smooth' });
+        if (isSliderMode()) selectSliderPanel(getVisiblePanels().at(-1));
       }
     });
     
