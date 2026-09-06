@@ -14,7 +14,7 @@
     width: min(400px, calc(100vw - 32px)) !important;
     height: auto !important;
     max-height: calc(100dvh - 32px) !important;
-    padding: 24px !important;
+    padding: 16px !important;
     box-sizing: border-box;
     overflow: auto;
 }
@@ -37,17 +37,18 @@
     color: var(--accent-color);
 }
 .settings-group {
-    margin-bottom: 20px;
+    margin-bottom: 12px;
 }
 .settings-group label {
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 5px;
     font-weight: 600;
     color: var(--accent-color);
 }
 .settings-group select {
     width: 100%;
-    padding: 10px;
+    min-height: 34px;
+    padding: 6px 10px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
     background: var(--bg-main);
@@ -74,16 +75,21 @@
 
 .layout-choice {
     display: flex;
-    min-height: 76px;
-    flex-direction: column;
+    position: relative;
+    height: 40px;
+    box-sizing: border-box;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
-    gap: 6px;
+    gap: 8px;
+    margin: 0 !important;
     border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background: var(--bg-main);
+    border-radius: 50rem;
+    background: var(--bg-header);
     color: var(--text-main);
     cursor: pointer;
+    font-size: 0.9rem;
+    line-height: 1;
 }
 
 .layout-choice input {
@@ -92,8 +98,22 @@
 }
 
 .layout-choice .bi {
-    font-size: 1.35rem;
+    position: absolute;
+    top: 50%;
+    left: 14px;
+    font-size: 1rem;
     color: var(--accent-color);
+    transform: translateY(-50%);
+}
+
+.layout-choice span {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
 .layout-choice:has(input:checked) {
@@ -141,6 +161,17 @@
     color: var(--accent-color);
 }
 .settings-modal .filter-modal-body {
-    padding: 20px 0;
+    padding: 8px 0;
+    gap: 8px;
+}
+
+.settings-modal .filter-modal-title {
+    margin-bottom: 12px;
+    font-size: 1.2rem;
+}
+
+.settings-modal .filter-modal-footer {
+    margin-top: 12px;
+    padding-top: 10px;
 }
 

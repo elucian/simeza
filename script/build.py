@@ -48,7 +48,6 @@ def render_gallery_html(gallery_data, lang):
         '  <section class="gallery-slider-stage" aria-label="Selected artwork">',
         '    <div class="gallery-slider-image">',
         '      <img id="sliderImage" src="" alt="">',
-        '      <button type="button" id="sliderRotateBtn" class="gallery-slider-rotate" aria-label="Rotate image" title="Rotate image"><i class="bi bi-arrow-repeat"></i></button>',
         '    </div>',
         '    <div class="gallery-slider-properties">',
         '      <div class="gallery-slider-field"><span>Name</span><strong id="sliderName"></strong></div>',
@@ -64,8 +63,8 @@ def render_gallery_html(gallery_data, lang):
         '      </div>',
         '    </div>',
         '  </section>',
-        '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>',
-        '<div class="panel-wrapper" data-widget="gallery">'
+        '  <div class="gallery-thumbnail-area">',
+        '    <div class="panel-wrapper" data-widget="gallery">'
     ]
     for item in gallery_data:
         content = item.get('content', {})
@@ -88,7 +87,8 @@ def render_gallery_html(gallery_data, lang):
         category = item.get('category', '')
         topic = item.get('topic', '')
         item_type = item.get('type', 'painting')
-        p = [f'  <div class="panel" data-type="{item_type}" data-author="{author}" data-category="{category}" data-topic="{topic}" data-image="/content/gallery/{file}" data-title="{html.escape(title)}" data-desc="{html.escape(desc)}" data-year="{year}" data-status="{status}">']
+        thumbnail_width = max(86, min(216, round(118 * w / h)))
+        p = [f'  <div class="panel" style="--thumbnail-width: {thumbnail_width}px" data-type="{item_type}" data-author="{author}" data-category="{category}" data-topic="{topic}" data-image="/content/gallery/{file}" data-title="{html.escape(title)}" data-desc="{html.escape(desc)}" data-year="{year}" data-status="{status}">']
         if file:
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         p.append('      <div class="panel-data">')
@@ -101,8 +101,14 @@ def render_gallery_html(gallery_data, lang):
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
-    panels.append('</div>')
-    panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
+    panels.append('    </div>')
+    panels.extend([
+        '    <div class="gallery-thumbnail-controls">',
+        '      <button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>',
+        '      <button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>',
+        '    </div>',
+        '  </div>'
+    ])
     panels.extend([
         '<div class="gallery-empty-state" id="galleryEmptyState" hidden>',
         '  <div class="gallery-empty-state-card">',
@@ -153,7 +159,6 @@ def render_gallery_html(gallery_data, lang):
     ]
 
     panels.extend(modal)
-    panels.append('</div>')
     return '\n'.join(panels)
 
 def render_filter_html(lang):
@@ -202,7 +207,7 @@ def render_about_html(lang):
             f'      <img src="/content/authors/{image}" alt="{name}">',
             f'      <h3>{name}</h3>',
             f'      <p>{description}</p>',
-            f'      <a class="about-contact-btn" href="mailto:{contact}">Contact {label}</a>',
+            f'      <a class="about-contact-btn" href="mailto:{contact}" data-email="{contact}">Contact {label}</a>',
             '    </article>'
         ])
     parts.append('</section>')
@@ -293,9 +298,9 @@ def build(target_lang=None):
             name_no_ext = os.path.splitext(file)[0]
             css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
-            page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css?v={version}-page-12">' if os.path.exists(css_path) else ''
+            page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css?v={version}-page-32">' if os.path.exists(css_path) else ''
             if name_no_ext != 'index': page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
-            page_js = f'<script src="/core/js/{name_no_ext}.js?v={version}-page-6"></script>' if os.path.exists(js_path) else ''
+            page_js = f'<script src="/core/js/{name_no_ext}.js?v={version}-page-12"></script>' if os.path.exists(js_path) else ''
             md = markdown.Markdown(extensions=['extra', 'md_in_html'])
             if '{{widget:gallery}}' in body:
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))

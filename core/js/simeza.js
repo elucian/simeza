@@ -120,11 +120,12 @@ function getSettings() {
             return {
                 loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                 autoRotation: parsed.autoRotation === true || parsed.autoRotation === "true",
-                desktopLayout: parsed.desktopLayout === "panels" ? "panels" : "slider"
+                desktopLayout: parsed.desktopLayout === "panels" ? "panels" : "slider",
+                musicEnabled: parsed.musicEnabled === true || parsed.musicEnabled === "true"
             };
         }
     } catch (e) {}
-    return { loopDelay: 3, autoRotation: true, desktopLayout: "slider" };
+    return { loopDelay: 3, autoRotation: true, desktopLayout: "slider", musicEnabled: false };
 }
 
 // Global DOM Ready Handlers
@@ -137,21 +138,6 @@ window.toggleSettingsModal = function() {
 };
 
 onDOMReady(() => {
-    // Apply Settings
-    const applyBtn = document.getElementById('applySettingsBtn');
-    if (applyBtn) applyBtn.onclick = () => {
-        const form = document.getElementById('settingsForm');
-        const formData = new FormData(form);
-        const settings = {
-            loopDelay: formData.get('loopDelay'),
-            autoRotation: formData.get('autoRotation') === 'true',
-            pillbarVisible: formData.get('pillbarVisible') === 'true'
-        };
-        localStorage.setItem("simezaSettings", JSON.stringify(settings));
-        window.toggleSettingsModal();
-        applySettings(); // Re-apply immediately
-    };
-    
     // Theme Logo setup
     const themeLogo = document.getElementById("themeLogo");
     if (themeLogo) {
@@ -173,11 +159,12 @@ onDOMReady(() => {
 
     // 3. Apply shareable settings before restoring the desktop layout.
     const routeSettings = new URLSearchParams(window.location.search);
-    if (routeSettings.has("loopDelay") || routeSettings.has("autoRotation") || routeSettings.has("desktopLayout")) {
+    if (routeSettings.has("loopDelay") || routeSettings.has("autoRotation") || routeSettings.has("desktopLayout") || routeSettings.has("musicEnabled")) {
         const settings = getSettings();
         settings.loopDelay = parseInt(routeSettings.get("loopDelay"), 10) || settings.loopDelay;
         if (routeSettings.has("autoRotation")) settings.autoRotation = routeSettings.get("autoRotation") === "true";
         if (routeSettings.has("desktopLayout")) settings.desktopLayout = routeSettings.get("desktopLayout") === "panels" ? "panels" : "slider";
+        if (routeSettings.has("musicEnabled")) settings.musicEnabled = routeSettings.get("musicEnabled") === "true";
         try { localStorage.setItem("simezaSettings", JSON.stringify(settings)); } catch (e) {}
     }
 
@@ -497,17 +484,5 @@ window.toggleSettingsModal = function() {
         modal.classList.toggle("active");
     }
 };
-
-onDOMReady(() => {
-    const applyBtn = document.getElementById('applySettingsBtn');
-    const cancelBtn = document.getElementById('cancelSettingsBtn');
-    if (applyBtn) applyBtn.onclick = () => {
-        // Handle settings save logic here
-        window.toggleSettingsModal();
-    };
-    if (cancelBtn) cancelBtn.onclick = () => {
-        window.toggleSettingsModal();
-    };
-});
 
 });
