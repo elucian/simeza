@@ -1,14 +1,14 @@
 {
   "published": {
-    "version": "0.1.1-rc.106",
-    "commit": "b39f57b6e64690fad2a8368a22853ae8ce1b4cd4",
-    "date": "2026-09-06T17:43:16.283171",
+    "version": "0.1.1-rc.109",
+    "commit": "c726e3b84e2234f0e5219525fe438e77d0e81fdc",
+    "date": "2026-09-06T17:59:48.516614",
     "notes": "success"
   },
   "candidate": {
-    "version": "0.1.1-rc.109",
-    "commit": "Build candidate: Sun, Sep  6, 2026  5:59:04 PM",
-    "date": "2026-09-06T17:59:04.605231",
-    "notes": "success"
+    "version": "",
+    "commit": "",
+    "date": "",
+    "notes": ""
   }
 }
