@@ -11,6 +11,39 @@
     "en": {
       "name": "joshua trees",
       "description": "joshua trees"
+    },
+    "de": {
+      "name": "Joshua-Palmlilien",
+      "description": "Joshua-Palmlilien"
+    },
+    "es": {
+      "name": "árboles de Josué",
+      "description": "árboles de Josué"
+    },
+    "fr": {
+      "name": "arbres de Josué",
+      "description": "arbres de Josué"
+    },
+    "hu": {
+      "name": "joshua-fák",
+      "description": "joshua-fák"
+    },
+    "it": {
+      "name": "alberi di Giosuè",
+      "description": "alberi di Giosuè"
+    },
+    "pt": {
+      "name": "árvores de Josué",
+      "description": "árvores de Josué"
+    },
+    "ro": {
+      "name": "arbori Joshua",
+      "description": "arbori Joshua"
+    },
+    "ru": {
+      "name": "юкки коротколистные",
+      "description": "юкка коротколистная"
     }
-  }
+  },
+  "source_hash": "8a41ef1ba6dc2023144641b050ecc3b5aac3d6f9f71d06776fd1966519d2fcba"
 }

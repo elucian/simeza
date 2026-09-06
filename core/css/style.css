@@ -17,6 +17,8 @@
   /* Added Button Variables */
   --btn-active-bg: var(--accent-color);
   --btn-active-text: #ffffff;
+  --btn-inactive-icon: #171d27;
+  --panel-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
 
 [data-theme="dark"] {
@@ -32,87 +34,10 @@
   /* Mustard Accent, Dark Text */
   --btn-active-bg: var(--accent-color);
   --btn-active-text: #171d27;
+  --btn-inactive-icon: #ffffff;
+  --panel-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
 }
 
-/* Unified Floating Pill Bottom Bar */
-.sticky-bottom-bar {
-  position: fixed;
-  bottom: 24px; 
-  left: 50%;
-  transform: translateX(-50%);
-  width: max-content;
-  max-width: min(calc(100vw - 32px), 1352px);
-  border-radius: 40px; 
-  border: 1px solid var(--border-color);
-  background: var(--bg-header);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-  padding: 14px 24px; 
-  min-height: 60px; 
-  z-index: 100;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-  box-sizing: border-box;
-}
-
-/* Unified Bar Button */
-.bottom-bar-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 18px;
-  border-radius: 20px;
-  border: 1px solid var(--border-color);
-  background: var(--bg-main);
-  color: var(--text-main);
-  font-size: 0.92rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-  text-decoration: none;
-  height: 40px;
-}
-
-.bottom-bar-btn:hover {
-  border-color: var(--accent-color);
-  background: var(--bg-header);
-}
-
-/* Active / Selected Button with High-Contrast Text */
-.bottom-bar-btn.active {
-  background: var(--btn-active-bg);
-  border-color: var(--btn-active-bg);
-  color: var(--btn-active-text);
-  font-weight: 600;
-}
-
-
-/* In dark mode, ensure icons on unpressed / inactive buttons are white */
-[data-theme="dark"] .bottom-bar-btn:not(.active) i,
-[data-theme="dark"] .bottom-bar-btn:not(.active) .bi {
-  color: #ffffff;
-}
-
-.bottom-bar-separator {
-  width: 1px;
-  height: 30px;
-  background: var(--border-color);
-  margin: 0 5px;
-}
-
-.layout-toggle-btn {
-  padding: 8px 12px;
-}
-
-/* Content spacing to prevent bottom bar overlap */
-.content:has(.sticky-bottom-bar),
-body:has(.sticky-bottom-bar) .content {
-  padding-bottom: 75px;
-}
 
 html,
 body {
@@ -121,12 +46,14 @@ body {
   padding: 0;
   background-color: var(--bg-outer);
   scroll-behavior: smooth;
+/* Removed Mobile Menu */
+#mobileMenu { display: none !important; }
 }
 
 /* Layout Container */
 .container {
   min-height: 100dvh;
-  max-width: 1400px;
+  max-width: 100% !important;
   width: 100%;
   margin: 0 auto;
   background-color: var(--bg-main);
@@ -134,6 +61,13 @@ body {
   flex-direction: column;
   border-left: 1px solid var(--border-color);
   border-right: 1px solid var(--border-color);
+  transition: max-width 0.25s ease;
+}
+
+body.layout-maximized .container {
+  max-width: 100% !important;
+  border-left: none !important;
+  border-right: none !important;
 }
 
 .content {
@@ -263,6 +197,42 @@ body:has(.content-gallery-wrapper),
 
 /* Language Selector */
 .lang-selector {
+
+/* New Toolbar Styles */
+.toolbar-nav {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.toolbar-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  border-radius: 50rem;
+  background: var(--bg-header);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.toolbar-btn:hover {
+  background: var(--accent-color);
+  color: #fff;
+}
+
+@media (max-width: 767px) {
+  .btn-label {
+    display: none !important;
+  }
+  .toolbar-btn {
+    padding: 8px 12px;
+  }
+}
+
   position: relative;
   display: flex;
   align-items: center;
@@ -398,22 +368,20 @@ body:has(.content-gallery-wrapper),
   white-space: nowrap !important;
   text-align: left !important;
   transition: background 0.15s ease, color 0.15s ease;
-
-/* Force white icons on inactive buttons in dark mode for visibility */
-[data-theme="dark"] .container .bottom-bar-btn:not(.active) .bi,
-[data-theme="dark"] .container .bottom-bar-btn:not(.active) i {
-  color: #ffffff !important;
 }
 
+.bottom-bar-btn:not(.active) i,
+.bottom-bar-btn:not(.active) .bi {
+  color: var(--btn-inactive-icon);
+}
 
 /* Hide pillbar settings */
-body.hide-pillbar .sticky-bottom-bar {
+body.hide-pillbar .sticky-bottom-bar,
+.hide-pillbar .sticky-bottom-bar {
   display: none !important;
 }
 body.hide-pillbar .content:has(.gallery-container) {
   padding-bottom: 16px !important;
-}
-
 }
 
 #mobileMenuList .nav-link:hover,
@@ -705,3 +673,9 @@ img {
     -webkit-user-drag: none;
 }
 
+
+@media (max-width: 767px) {
+  #layoutGridBtn {
+    display: none !important;
+  }
+}

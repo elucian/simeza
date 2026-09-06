@@ -11,6 +11,39 @@
     "ro": {
       "name": "la tara",
       "description": "la tara"
+    },
+    "de": {
+      "name": "auf dem Land",
+      "description": "auf dem Land"
+    },
+    "en": {
+      "name": "in the countryside",
+      "description": "in the countryside"
+    },
+    "es": {
+      "name": "en el campo",
+      "description": "en el campo"
+    },
+    "fr": {
+      "name": "à la campagne",
+      "description": "à la campagne"
+    },
+    "hu": {
+      "name": "vidéken",
+      "description": "vidéken"
+    },
+    "it": {
+      "name": "in campagna",
+      "description": "in campagna"
+    },
+    "pt": {
+      "name": "no campo",
+      "description": "no campo"
+    },
+    "ru": {
+      "name": "в деревне",
+      "description": "в деревне"
     }
-  }
+  },
+  "source_hash": "0fe9fe6e0eb8dcb38769755440c5ca30fc426fb5ea85662b980aeb7d27d0b6e0"
 }

@@ -11,6 +11,39 @@
     "en": {
       "name": "casa parintilor 1",
       "description": "casa parintilor 1"
+    },
+    "de": {
+      "name": "Elternhaus 1",
+      "description": "Elternhaus 1"
+    },
+    "es": {
+      "name": "casa de los padres 1",
+      "description": "casa de los padres 1"
+    },
+    "fr": {
+      "name": "maison des parents 1",
+      "description": "maison des parents 1"
+    },
+    "hu": {
+      "name": "szülői ház 1",
+      "description": "szülői ház 1"
+    },
+    "it": {
+      "name": "casa dei genitori 1",
+      "description": "casa dei genitori 1"
+    },
+    "pt": {
+      "name": "casa dos pais 1",
+      "description": "casa dos pais 1"
+    },
+    "ro": {
+      "name": "casa părinților 1",
+      "description": "casa părinților 1"
+    },
+    "ru": {
+      "name": "родительский дом 1",
+      "description": "родительский дом 1"
     }
-  }
+  },
+  "source_hash": "9bc49b582f76475714465b842a404145c1ac8f740664b38594025b8dc3a75f74"
 }

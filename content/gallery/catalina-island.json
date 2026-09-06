@@ -11,6 +11,39 @@
     "ro": {
       "name": "catalina island",
       "description": "catalina island"
+    },
+    "de": {
+      "name": "Catalina Island",
+      "description": "Catalina Island"
+    },
+    "en": {
+      "name": "Catalina Island",
+      "description": "Catalina Island"
+    },
+    "es": {
+      "name": "Isla Catalina",
+      "description": "Isla Catalina"
+    },
+    "fr": {
+      "name": "Île Catalina",
+      "description": "Île Catalina"
+    },
+    "hu": {
+      "name": "Catalina-sziget",
+      "description": "Catalina-sziget"
+    },
+    "it": {
+      "name": "Isola di Catalina",
+      "description": "Isola di Catalina"
+    },
+    "pt": {
+      "name": "Ilha Catalina",
+      "description": "Ilha Catalina"
+    },
+    "ru": {
+      "name": "остров Каталина",
+      "description": "остров Каталина"
     }
-  }
+  },
+  "source_hash": "d648310b3d5d5e77bb691abdc39837ed3c6b8bb80083bfd0d11b4a0b7f69ad3e"
 }

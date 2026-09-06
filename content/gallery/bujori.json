@@ -11,6 +11,39 @@
     "ro": {
       "name": "bujori",
       "description": "bujori"
+    },
+    "de": {
+      "name": "Pfingstrosen",
+      "description": "Pfingstrosen"
+    },
+    "en": {
+      "name": "peonies",
+      "description": "peonies"
+    },
+    "es": {
+      "name": "peonías",
+      "description": "peonías"
+    },
+    "fr": {
+      "name": "pivoines",
+      "description": "pivoines"
+    },
+    "hu": {
+      "name": "bazsarózsák",
+      "description": "bazsarózsák"
+    },
+    "it": {
+      "name": "peonie",
+      "description": "peonie"
+    },
+    "pt": {
+      "name": "peônias",
+      "description": "peônias"
+    },
+    "ru": {
+      "name": "пионы",
+      "description": "пионы"
     }
-  }
+  },
+  "source_hash": "b95ff9a193e13fe4e5990dcf08a83aa9b23da4b973e2f44414d3f9b01c55a1de"
 }

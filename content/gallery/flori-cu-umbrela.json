@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori cu umbrela",
       "description": "flori cu umbrela"
+    },
+    "de": {
+      "name": "Blumen mit Regenschirm",
+      "description": "Blumen mit Regenschirm"
+    },
+    "en": {
+      "name": "flowers with umbrella",
+      "description": "flowers with umbrella"
+    },
+    "es": {
+      "name": "flores con paraguas",
+      "description": "flores con paraguas"
+    },
+    "fr": {
+      "name": "fleurs avec parapluie",
+      "description": "fleurs avec parapluie"
+    },
+    "hu": {
+      "name": "virágok esernyővel",
+      "description": "virágok esernyővel"
+    },
+    "it": {
+      "name": "fiori con ombrello",
+      "description": "fiori con ombrello"
+    },
+    "pt": {
+      "name": "flores com guarda-chuva",
+      "description": "flores com guarda-chuva"
+    },
+    "ru": {
+      "name": "цветы с зонтиком",
+      "description": "цветы с зонтиком"
     }
-  }
+  },
+  "source_hash": "633e36f11bb63974a3b859ab2ce78dc9fa07763115be745276f5f3979207c558"
 }

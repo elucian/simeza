@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori de camp cu vas",
       "description": "flori de camp cu vas"
+    },
+    "de": {
+      "name": "Wiesenblumen mit Vase",
+      "description": "Wiesenblumen mit Vase"
+    },
+    "en": {
+      "name": "wildflowers with vase",
+      "description": "wildflowers with vase"
+    },
+    "es": {
+      "name": "flores de campo con jarrón",
+      "description": "flores de campo con jarrón"
+    },
+    "fr": {
+      "name": "fleurs des champs avec vase",
+      "description": "fleurs des champs avec vase"
+    },
+    "hu": {
+      "name": "mezei virágok vázával",
+      "description": "mezei virágok vázával"
+    },
+    "it": {
+      "name": "fiori di campo con vaso",
+      "description": "fiori di campo con vaso"
+    },
+    "pt": {
+      "name": "flores do campo com vaso",
+      "description": "flores do campo com vaso"
+    },
+    "ru": {
+      "name": "полевые цветы с вазой",
+      "description": "полевые цветы с вазой"
     }
-  }
+  },
+  "source_hash": "47792e201ff4f90f3e94c6e003dc1b31f3765418b2ecc69fabd70f4c68f42b12"
 }

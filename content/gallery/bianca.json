@@ -11,6 +11,39 @@
     "en": {
       "name": "bianca",
       "description": "bianca"
+    },
+    "de": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "es": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "fr": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "hu": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "it": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "pt": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "ro": {
+      "name": "bianca",
+      "description": "bianca"
+    },
+    "ru": {
+      "name": "бьянка",
+      "description": "бьянка"
     }
-  }
+  },
+  "source_hash": "c5f51b52229c98906648f30201430ad8cebcbb1bd61e924239ecdba72f318b09"
 }

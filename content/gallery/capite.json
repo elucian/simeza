@@ -11,6 +11,39 @@
     "en": {
       "name": "capite",
       "description": "capite"
+    },
+    "de": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "es": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "fr": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "hu": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "it": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "pt": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "ro": {
+      "name": "capite",
+      "description": "capite"
+    },
+    "ru": {
+      "name": "capite",
+      "description": "capite"
     }
-  }
+  },
+  "source_hash": "b29a884b0e72d61895c90363122e47f7d4ac5b84b37a957da4a57428ae5ba209"
 }

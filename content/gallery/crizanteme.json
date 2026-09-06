@@ -11,6 +11,39 @@
     "ro": {
       "name": "crizanteme",
       "description": "crizanteme"
+    },
+    "de": {
+      "name": "Chrysanthemen",
+      "description": "Chrysanthemen"
+    },
+    "en": {
+      "name": "chrysanthemums",
+      "description": "chrysanthemums"
+    },
+    "es": {
+      "name": "crisantemos",
+      "description": "crisantemos"
+    },
+    "fr": {
+      "name": "chrysanthèmes",
+      "description": "chrysanthèmes"
+    },
+    "hu": {
+      "name": "krizantémok",
+      "description": "krizantémok"
+    },
+    "it": {
+      "name": "crisantemi",
+      "description": "crisantemi"
+    },
+    "pt": {
+      "name": "crisântemos",
+      "description": "crisântemos"
+    },
+    "ru": {
+      "name": "хризантемы",
+      "description": "хризантемы"
     }
-  }
+  },
+  "source_hash": "2f965b873b3e42be4a4d09ef2bf31a8517223b58b350b06c1a196823fee46bb5"
 }

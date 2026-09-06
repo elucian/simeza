@@ -1,9 +1,28 @@
 // Gallery functionality
 
-// Persistence
+// Persistence & Settings
 const getSettings = () => {
-    const saved = localStorage.getItem('simezaSettings');
-    return saved ? JSON.parse(saved) : { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+    try {
+        const saved = localStorage.getItem('simezaSettings');
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            return {
+                loopDelay: parseInt(parsed.loopDelay, 10) || 3,
+                autoRotation: parsed.autoRotation === true || parsed.autoRotation === 'true',
+                pillbarVisible: parsed.pillbarVisible !== false && parsed.pillbarVisible !== 'false'
+            };
+        }
+    } catch (e) {}
+    return { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+};
+
+const applySettings = () => {
+    const settings = getSettings();
+    document.body.classList.toggle('hide-pillbar', !settings.pillbarVisible);
+    const bottomBar = document.getElementById('bottomBar');
+    if (bottomBar) {
+        bottomBar.style.display = settings.pillbarVisible ? '' : 'none';
+    }
 };
 
 const saveFilters = () => {
@@ -21,17 +40,15 @@ const loadFilters = () => {
     const saved = localStorage.getItem('simezaFilters');
     const filters = saved ? JSON.parse(saved) : {};
     
-    // Set type (button) - only if explicitly saved
+    // Set type (button) - restore saved or default to painting
     const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
     if (filters.type) {
         buttons.forEach(btn => {
-            if (btn.dataset.filter === filters.type) {
-                buttons.forEach(b => b.classList.remove('active'));
-                btn.classList.add('active');
-            }
+            btn.classList.toggle('active', btn.dataset.filter === filters.type);
         });
     } else {
-        buttons.forEach(b => b.classList.remove('active'));
+        const defaultBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn[data-filter="painting"]') || buttons[0];
+        if (defaultBtn) defaultBtn.classList.add('active');
     }
     
     // Set selects
@@ -103,7 +120,15 @@ window.resetFilters = function() {
     window.applyFilters();
 };
 
-document.addEventListener('DOMContentLoaded', () => {
+function onDOMReady(fn) {
+    if (document.readyState !== "loading") {
+        fn();
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
+    }
+}
+
+onDOMReady(() => {
   const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
   const modal = document.getElementById('galleryModal');
   const modalImg = document.getElementById('modalImg');
@@ -114,10 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalCategory = document.getElementById('modalCategory');
   const modalTopic = document.getElementById('modalTopic');
   // Apply settings
-  const settings = getSettings();
-  if (!settings.pillbarVisible) {
-      document.body.classList.add('hide-pillbar');
-  }
+  applySettings();
 
   const modalDesc = document.getElementById('modalDesc');
   const loopBtn = document.getElementById('galleryModalLoopBtn');
@@ -170,14 +192,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.stopText;
     if (loopBtn) loopBtn.querySelector('i').className = 'bi bi-stop-fill';
     
-    const settings = getSettings();
     const cycle = () => {
       if (!isModalLooping) return;
       currentModalIndex = (currentModalIndex + 1) % modalFilteredPanels.length;
       populateModal(modalFilteredPanels[currentModalIndex]);
-      modalLoopTimeout = setTimeout(cycle, settings.loopDelay * 1000);
+      const currentDelay = (parseInt(getSettings().loopDelay, 10) || 3) * 1000;
+      modalLoopTimeout = setTimeout(cycle, currentDelay);
     };
-    modalLoopTimeout = setTimeout(cycle, settings.loopDelay * 1000);
+    const initialDelay = (parseInt(getSettings().loopDelay, 10) || 3) * 1000;
+    modalLoopTimeout = setTimeout(cycle, initialDelay);
   };
 
   loopBtn?.addEventListener('click', () => {
@@ -245,8 +268,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const nextBtn = container.querySelector('.gallery-nav-next');
     
     const scroll = (direction, isMany = false) => {
-      const scrollAmount = isMany ? wrapper.clientWidth * 0.8 : (wrapper.querySelector('.panel')?.offsetWidth || 200) + 16;
+      const panelWidth = (wrapper.querySelector('.panel')?.offsetWidth || 220) + 12;
+      const scrollAmount = isMany ? Math.max(wrapper.clientWidth * 0.75, panelWidth * 2) : panelWidth;
       wrapper.scrollBy({ left: direction * scrollAmount, behavior: 'smooth' });
+      setTimeout(updateButtons, 350);
     };
     
     // Event listeners
@@ -289,33 +314,34 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Update button states
     const updateButtons = () => {
-      if (prevBtn) prevBtn.disabled = wrapper.scrollLeft <= 0;
-      if (nextBtn) nextBtn.disabled = wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 5);
+      if (prevBtn) {
+        const atStart = wrapper.scrollLeft <= 2;
+        prevBtn.disabled = atStart;
+        prevBtn.style.opacity = atStart ? "0.3" : "1";
+      }
+      if (nextBtn) {
+        const canScroll = wrapper.scrollWidth > wrapper.clientWidth + 10;
+        const atEnd = wrapper.scrollLeft >= (wrapper.scrollWidth - wrapper.clientWidth - 10);
+        nextBtn.disabled = canScroll && atEnd;
+        nextBtn.style.opacity = (canScroll && atEnd) ? "0.3" : "1";
+      }
     };
-    
-    wrapper.addEventListener('scroll', updateButtons);
-    window.addEventListener('resize', updateButtons);
+
+    wrapper.addEventListener("scroll", updateButtons);
+    window.addEventListener("resize", updateButtons);
+    window.addEventListener("load", updateButtons);
+    wrapper.querySelectorAll("img").forEach(img => {
+      if (!img.complete) {
+        img.addEventListener("load", updateButtons, { once: true });
+      }
+    });
     updateButtons();
   });
-    // Add listener for bottom bar buttons to update gallery filters
-    document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(btn => {
-        btn.addEventListener('click', () => {
-            const wasActive = btn.classList.contains('active');
-            
-            // Toggle behavior
-            document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
-            
-            if (!wasActive) {
-                btn.classList.add('active');
-            }
-            
-            applyFilters();
-            
-            // Reset scroll position to beginning of filtered results
-            document.querySelectorAll('.panel-wrapper[data-widget="gallery"]').forEach(wrapper => {
-                wrapper.scrollTo({ left: 0, behavior: 'smooth' });
             });
         });
     });
 
 });
+
+
+

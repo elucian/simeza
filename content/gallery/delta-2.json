@@ -11,6 +11,39 @@
     "en": {
       "name": "delta 2",
       "description": "delta 2"
+    },
+    "de": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "es": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "fr": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "hu": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "it": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "pt": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "ro": {
+      "name": "delta 2",
+      "description": "delta 2"
+    },
+    "ru": {
+      "name": "дельта 2",
+      "description": "дельта 2"
     }
-  }
+  },
+  "source_hash": "1d743f04ca7af381a0d63c85c1041135a47d680cc5ebd6ca8f37949a184484a4"
 }

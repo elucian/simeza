@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori cu vioara",
       "description": "flori cu vioara"
+    },
+    "de": {
+      "name": "Blumen mit Geige",
+      "description": "Blumen mit Geige"
+    },
+    "en": {
+      "name": "flowers with violin",
+      "description": "flowers with violin"
+    },
+    "es": {
+      "name": "flores con violín",
+      "description": "flores con violín"
+    },
+    "fr": {
+      "name": "fleurs avec violon",
+      "description": "fleurs avec violon"
+    },
+    "hu": {
+      "name": "virágok hegedűvel",
+      "description": "virágok hegedűvel"
+    },
+    "it": {
+      "name": "fiori con violino",
+      "description": "fiori con violino"
+    },
+    "pt": {
+      "name": "flores com violino",
+      "description": "flores com violino"
+    },
+    "ru": {
+      "name": "цветы со скрипкой",
+      "description": "цветы со скрипкой"
     }
-  }
+  },
+  "source_hash": "69652595836a8109fb3597f4010b0bd10432841b97e253deddf95d29b2d171bf"
 }

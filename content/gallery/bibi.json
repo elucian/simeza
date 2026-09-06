@@ -11,6 +11,39 @@
     "en": {
       "name": "bibi",
       "description": "bibi"
+    },
+    "de": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "es": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "fr": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "hu": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "it": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "pt": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "ro": {
+      "name": "bibi",
+      "description": "bibi"
+    },
+    "ru": {
+      "name": "биби",
+      "description": "биби"
     }
-  }
+  },
+  "source_hash": "2ec4a772af51a184bbf002346fc5ccef141b4726d63ea24e5b7291fbc1fe25cd"
 }

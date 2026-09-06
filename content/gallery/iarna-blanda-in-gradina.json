@@ -11,6 +11,39 @@
     "ro": {
       "name": "iarna blanda in gradina",
       "description": "iarna blanda in gradina"
+    },
+    "de": {
+      "name": "milder Winter im Garten",
+      "description": "milder Winter im Garten"
+    },
+    "en": {
+      "name": "mild winter in the garden",
+      "description": "mild winter in the garden"
+    },
+    "es": {
+      "name": "invierno suave en el jardín",
+      "description": "invierno suave en el jardín"
+    },
+    "fr": {
+      "name": "hiver doux dans le jardin",
+      "description": "hiver doux dans le jardin"
+    },
+    "hu": {
+      "name": "enyhe tél a kertben",
+      "description": "enyhe tél a kertben"
+    },
+    "it": {
+      "name": "inverno mite in giardino",
+      "description": "inverno mite in giardino"
+    },
+    "pt": {
+      "name": "inverno suave no jardim",
+      "description": "inverno suave no jardim"
+    },
+    "ru": {
+      "name": "мягкая зима в саду",
+      "description": "мягкая зима в саду"
     }
-  }
+  },
+  "source_hash": "05b338e9d2e1d75d98b0bcb7fd407e9556fca6d49adfd62cb3df657dd407dc10"
 }

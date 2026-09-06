@@ -1,161 +1,250 @@
-    // Initialize filter button visibility
-    document.addEventListener('DOMContentLoaded', () => {
-        const pageId = document.querySelector('meta[name="page-id"]')?.content || '';
-        const pathname = window.location.pathname;
-        const filterBtn = document.getElementById('filterBtn');
-        const isIndex = pageId.includes('index') || pathname.endsWith('/') || pathname.endsWith('index.html');
-        if (filterBtn && !isIndex) {
-            filterBtn.classList.add('is-visible');
-        }
-    });
-
-    window.toggleFilterModal = function() {
-        const modal = document.getElementById('filterModal');
-        if (modal) {
-            modal.classList.toggle('active');
-        }
-    };
-
-    function toggleTheme() {
-      const currentTheme = document.documentElement.getAttribute('data-theme') || 'light';
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      document.documentElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-      document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
-      document.getElementById('themeLogo').src = newTheme === 'dark' ? '/core/img/simeza-logo-w.svg' : '/core/img/simeza-logo-b.svg';
+// Helper for bulletproof DOM ready execution
+function onDOMReady(fn) {
+    if (document.readyState !== "loading") {
+        fn();
+    } else {
+        document.addEventListener("DOMContentLoaded", fn);
     }
+}
 
-    // Initialize theme from cookie/localStorage
-    const savedTheme = localStorage.getItem('theme') || (document.cookie.includes('theme=dark') ? 'dark' : 'light');
-    document.documentElement.setAttribute('data-theme', savedTheme);
-    document.getElementById('themeLogo').src = savedTheme === 'dark' ? '/core/img/simeza-logo-w.svg' : '/core/img/simeza-logo-b.svg';
-
-    function toggleMobileMenu() {
-        document.getElementById('mobileMenu').classList.toggle('show');
+// 1. Theme Toggle - exposed globally
+window.toggleTheme = function() {
+    const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+    const newTheme = currentTheme === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    try {
+        localStorage.setItem("theme", newTheme);
+        document.cookie = `theme=${newTheme}; path=/; max-age=31536000`;
+    } catch (e) {}
+    const themeLogo = document.getElementById("themeLogo");
+    if (themeLogo) {
+        themeLogo.src = newTheme === "dark" ? "/core/img/simeza-logo-w.svg" : "/core/img/simeza-logo-b.svg";
     }
+};
 
-    function closeMobileMenu() {
-        document.getElementById('mobileMenu').classList.remove('show');
+// Initialize theme immediately
+(function initTheme() {
+    try {
+        const savedTheme = localStorage.getItem("theme") || (document.cookie.includes("theme=dark") ? "dark" : "light");
+        document.documentElement.setAttribute("data-theme", savedTheme);
+        const themeLogo = document.getElementById("themeLogo");
+        if (themeLogo) {
+            themeLogo.src = savedTheme === "dark" ? "/core/img/simeza-logo-w.svg" : "/core/img/simeza-logo-b.svg";
+        }
+    } catch (e) {}
+})();
+
+// 2. Filter Modal Toggle
+window.toggleFilterModal = function() {
+    const modal = document.getElementById("filterModal");
+    if (modal) {
+        modal.classList.toggle("active");
     }
+};
 
-    // Close mobile menu on link click
-    document.addEventListener('click', function(event) {
-        const mobileMenu = document.getElementById('mobileMenu');
-        const langMenu = document.getElementById('langMenu');
-        const toggler = document.querySelector('.navbar-toggler');
-        const langBtn = document.getElementById('langBtn');
-        
-        // If clicked on a nav link in mobile menu, close it
-        if (mobileMenu.classList.contains('show') && mobileMenu.contains(event.target) && event.target.tagName === 'A') {
-            closeMobileMenu();
-        } 
-        // If clicked outside menu and not on toggler, close it
-        else if (mobileMenu.classList.contains('show') && !mobileMenu.contains(event.target) && !toggler.contains(event.target)) {
-            closeMobileMenu();
-        }
+// 3. Desktop Layout Toggle (Normal 1200px row vs Fullscreen Grid)
+window.toggleDesktopLayout = function() {
+    const isMax = document.body.classList.toggle("layout-maximized");
+    try {
+        localStorage.setItem("simezaDesktopLayout", isMax ? "maximized" : "normal");
+    } catch (e) {}
+    updateLayoutButtonIcon(isMax);
+};
 
-        // Close lang menu if clicked outside
-        if (langMenu.classList.contains('show') && !langMenu.contains(event.target) && !langBtn.contains(event.target)) {
-            toggleLangMenu();
-        }
-    });
+function updateLayoutButtonIcon(isMax) {
+    const icon = document.getElementById("layoutGridIcon");
+    const btn = document.getElementById("layoutGridBtn");
+    if (icon) {
+        icon.className = isMax ? "bi bi-view-stacked" : "bi bi-grid";
+    }
+    if (btn) {
+        btn.title = isMax ? "Single Row Layout" : "Maximized Grid Layout";
+    }
+}
 
-    // Handle Escape key
-    document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape') {
-            closeMobileMenu();
-        }
-    });
+// 4. Mobile Menu
+window.toggleMobileMenu = function() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) menu.classList.toggle("show");
+};
 
-  const SLUG_MAP = {
-    'about.md': {'ro': 'despre.md', 'de': 'ueber-uns.md', 'fr': 'a-propos.md', 'es': 'sobre-nosotros.md', 'ru': 'o-nas.md', 'pt': 'sobre.md', 'hu': 'rolunk.md', 'it': 'chi-siamo.md'}, 
-    'media.md': {'ro': 'media.md', 'de': 'media.md', 'fr': 'media.md', 'es': 'media.md', 'ru': 'media.md', 'pt': 'media.md', 'hu': 'media.md', 'it': 'media.md'}, 
-    'authors.md': {'ro': 'autori.md', 'de': 'autoren.md', 'fr': 'auteurs.md', 'es': 'autores.md', 'ru': 'avtory.md', 'pt': 'autores.md', 'hu': 'szerzok.md', 'it': 'autori.md'}, 
-    'writings.md': {'ro': 'scrieri.md', 'de': 'schriften.md', 'fr': 'ecrits.md', 'es': 'escritos.md', 'ru': 'stati.md', 'pt': 'escritos.md', 'hu': 'irasok.md', 'it': 'scritti.md'}, 
-    'gallery.md': {'ro': 'galerie.md', 'de': 'galerie.md', 'fr': 'galerie.md', 'es': 'galeria.md', 'ru': 'galereya.md', 'pt': 'galeria.md', 'hu': 'galeria.md', 'it': 'galleria.md'}, 
-    'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md', 'it': 'libri.md'}
-  };
+window.closeMobileMenu = function() {
+    const menu = document.getElementById("mobileMenu");
+    if (menu) menu.classList.remove("show");
+};
 
-  function setLang(lang) {
-    localStorage.setItem('lang', lang);
-    const pathParts = window.location.pathname.split('/');
-    const currentPageFile = document.querySelector('meta[name="page-id"]').content;
+// 5. Language Handling
+const SLUG_MAP = {
+    "about.md": {"ro": "despre.md", "de": "ueber-uns.md", "fr": "a-propos.md", "es": "sobre-nosotros.md", "ru": "o-nas.md", "pt": "sobre.md", "hu": "rolunk.md", "it": "chi-siamo.md"},
+    "media.md": {"ro": "media.md", "de": "media.md", "fr": "media.md", "es": "media.md", "ru": "media.md", "pt": "media.md", "hu": "media.md", "it": "media.md"},
+    "authors.md": {"ro": "autori.md", "de": "autoren.md", "fr": "auteurs.md", "es": "autores.md", "ru": "avtory.md", "pt": "autores.md", "hu": "szerzok.md", "it": "autori.md"},
+    "writings.md": {"ro": "scrieri.md", "de": "schriften.md", "fr": "ecrits.md", "es": "escritos.md", "ru": "stati.md", "pt": "escritos.md", "hu": "irasok.md", "it": "scritti.md"},
+    "gallery.md": {"ro": "galerie.md", "de": "galerie.md", "fr": "galerie.md", "es": "galeria.md", "ru": "galereya.md", "pt": "galeria.md", "hu": "galeria.md", "it": "galleria.md"},
+    "books.md": {"ro": "carti.md", "de": "buecher.md", "fr": "livres.md", "es": "libros.md", "ru": "knigi.md", "pt": "livros.md", "hu": "konyvek.md", "it": "libri.md"}
+};
+
+const languages = [
+    { code: "en", flag: "https://flagcdn.com/gb.svg", name: "EN" },
+    { code: "ro", flag: "https://flagcdn.com/ro.svg", name: "RO" },
+    { code: "de", flag: "https://flagcdn.com/de.svg", name: "DE" },
+    { code: "es", flag: "https://flagcdn.com/es.svg", name: "ES" },
+    { code: "fr", flag: "https://flagcdn.com/fr.svg", name: "FR" },
+    { code: "ru", flag: "https://flagcdn.com/ru.svg", name: "RU" },
+    { code: "pt", flag: "https://flagcdn.com/pt.svg", name: "PT" },
+    { code: "hu", flag: "https://flagcdn.com/hu.svg", name: "HU" },
+    { code: "it", flag: "https://flagcdn.com/it.svg", name: "IT" }
+];
+
+window.setLang = function(lang) {
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+    const currentPageMeta = document.querySelector("meta[name=\x27page-id\x27]");
+    const currentPageFile = currentPageMeta ? currentPageMeta.content : "gallery.md";
     const targetSlug = SLUG_MAP[currentPageFile] ? (SLUG_MAP[currentPageFile][lang] || currentPageFile) : currentPageFile;
-    const targetPath = '/' + lang + '/' + targetSlug.replace('.md', '.html');
+    const targetPath = "/" + lang + "/" + targetSlug.replace(".md", ".html");
     location.href = targetPath;
-  }
+};
 
-  function toggleLangMenu() {
-    document.getElementById('langMenu').classList.toggle('show');
-  }
+window.toggleLangMenu = function() {
+    const menu = document.getElementById("langMenu");
+    if (menu) menu.classList.toggle("show");
+};
 
-  const languages = [
-    { code: 'en', flag: 'https://flagcdn.com/gb.svg', name: 'EN' },
-    { code: 'ro', flag: 'https://flagcdn.com/ro.svg', name: 'RO' },
-    { code: 'de', flag: 'https://flagcdn.com/de.svg', name: 'DE' },
-    { code: 'es', flag: 'https://flagcdn.com/es.svg', name: 'ES' },
-    { code: 'fr', flag: 'https://flagcdn.com/fr.svg', name: 'FR' },
-    { code: 'ru', flag: 'https://flagcdn.com/ru.svg', name: 'RU' },
-    { code: 'pt', flag: 'https://flagcdn.com/pt.svg', name: 'PT' },
-    { code: 'hu', flag: 'https://flagcdn.com/hu.svg', name: 'HU' },
-    { code: 'it', flag: 'https://flagcdn.com/it.svg', name: 'IT' }
-  ];
+// Global settings reader
+function getSettings() {
+    try {
+        const saved = localStorage.getItem("simezaSettings");
+        if (saved) {
+            const parsed = JSON.parse(saved);
+            return {
+                loopDelay: parseInt(parsed.loopDelay, 10) || 3,
+                autoRotation: parsed.autoRotation === true || parsed.autoRotation === "true",
+                pillbarVisible: parsed.pillbarVisible !== false && parsed.pillbarVisible !== "false"
+            };
+        }
+    } catch (e) {}
+    return { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+}
 
-  // Detect language from URL path, then localStorage, then default 'en'
-  const pathParts = window.location.pathname.split('/');
-  const urlLang = pathParts[1];
-  const lang = (urlLang && languages.find(l => l.code === urlLang)) ? urlLang : (localStorage.getItem('lang') || 'en');
-  
-  localStorage.setItem('lang', lang);
+// Global DOM Ready Handlers
+onDOMReady(() => {
+    // 1. Theme Logo click handler & sync
+    const themeLogo = document.getElementById("themeLogo");
+    if (themeLogo) {
+        themeLogo.style.cursor = "pointer";
+        themeLogo.onclick = window.toggleTheme;
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+        themeLogo.src = currentTheme === "dark" ? "/core/img/simeza-logo-w.svg" : "/core/img/simeza-logo-b.svg";
+    }
 
-  const activeLang = languages.find(l => l.code === lang);
-    document.getElementById('langBtn').innerHTML = `<img class="language-flag" src="${activeLang.flag}" alt="${activeLang.name}"> ${activeLang.name}`;
+    // 2. Toolbar buttons visibility
+    const pageId = document.querySelector("meta[name=\x27page-id\x27]")?.content || "";
+    const pathname = window.location.pathname;
+    const filterBtn = document.getElementById("filterBtn");
+    const layoutGridBtn = document.getElementById("layoutGridBtn");
+    const isIndex = pageId.includes("index") || pathname.endsWith("/") || pathname.endsWith("index.html");
 
-  const langMenu = document.getElementById('langMenu');
-  languages.forEach(l => {
-    langMenu.innerHTML += `<li class="language-option" onclick="setLang('${l.code}')"><img class="language-flag" src="${l.flag}" alt="${l.name}"> ${l.name}</li>`;
-  });
+    if (filterBtn && !isIndex) {
+        filterBtn.classList.add("is-visible");
+        filterBtn.onclick = window.toggleFilterModal;
+    }
+    if (layoutGridBtn && !isIndex) {
+        layoutGridBtn.classList.add("is-visible");
+        layoutGridBtn.onclick = window.toggleDesktopLayout;
+    }
 
-  const socialLinks = [
-    { name: "Google Groups", icon: "bi-google", url: "#" },
-    { name: "Reddit", icon: "bi-reddit", url: "#" },
-    { name: "Facebook", icon: "bi-facebook", url: "#" },
-    { name: "Discord", icon: "bi-discord", url: "#" },
-    { name: "WhatsApp", icon: "bi-whatsapp", url: "#" }
-  ];
-  
-  const footer = document.getElementById('socialFooter');
-  const pageId = document.querySelector('meta[name="page-id"]')?.content || '';
-  
-  if (footer && (pageId === 'index.md' || pageId === 'about.md')) {
-      const iconsWrapper = document.createElement('div');
-      iconsWrapper.className = 'social-icons-wrapper';
-      
-      socialLinks.forEach(link => {
-        iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
-      });
-      
-      footer.appendChild(iconsWrapper);
-      footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
-  }
+    // 3. Desktop Layout restoration
+    if (window.innerWidth >= 768) {
+        const savedLayout = localStorage.getItem("simezaDesktopLayout");
+        if (savedLayout === "maximized") {
+            document.body.classList.add("layout-maximized");
+            updateLayoutButtonIcon(true);
+        }
+    }
 
+    // 4. Language UI Setup
+    const pathParts = window.location.pathname.split("/");
+    const urlLang = pathParts[1];
+    const savedLang = localStorage.getItem("lang");
+    const matchedUrlLang = urlLang && languages.find(l => l.code === urlLang);
+    const lang = matchedUrlLang ? urlLang : (savedLang && languages.find(l => l.code === savedLang) ? savedLang : "en");
+    try { localStorage.setItem("lang", lang); } catch (e) {}
+
+    const activeLang = languages.find(l => l.code === lang) || languages[0];
+    const langBtn = document.getElementById("langBtn");
+    if (langBtn && activeLang) {
+        langBtn.innerHTML = `<img class="language-flag" src="${activeLang.flag}" alt="${activeLang.name}"> ${activeLang.name}`;
+    }
+
+    const langMenu = document.getElementById("langMenu");
+    if (langMenu && langMenu.children.length === 0) {
+        languages.forEach(l => {
+            langMenu.innerHTML += `<li class="language-option" onclick="setLang('${l.code}')"><img class="language-flag" src="${l.flag}" alt="${l.name}"> ${l.name}</li>`;
+        });
+    }
+
+    // 5. Global click listeners for menus
+    document.addEventListener("click", function(event) {
+        const mobileMenu = document.getElementById("mobileMenu");
+        const langMenu = document.getElementById("langMenu");
+        const toggler = document.querySelector(".navbar-toggler");
+        const langBtn = document.getElementById("langBtn");
+
+        if (mobileMenu && mobileMenu.classList.contains("show") && mobileMenu.contains(event.target) && event.target.tagName === "A") {
+            window.closeMobileMenu();
+        } else if (mobileMenu && mobileMenu.classList.contains("show") && !mobileMenu.contains(event.target) && (!toggler || !toggler.contains(event.target))) {
+            window.closeMobileMenu();
+        }
+
+        if (langMenu && langMenu.classList.contains("show") && !langMenu.contains(event.target) && (!langBtn || !langBtn.contains(event.target))) {
+            window.toggleLangMenu();
+        }
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            window.closeMobileMenu();
+            const langMenu = document.getElementById("langMenu");
+            if (langMenu) langMenu.classList.remove("show");
+        }
+    });
+
+    // 6. Social Footer
+    const footer = document.getElementById("socialFooter");
+    if (footer && (pageId === "index.md" || pageId === "about.md") && footer.children.length === 0) {
+        const socialLinks = [
+            { name: "Google Groups", icon: "bi-google", url: "#" },
+            { name: "Reddit", icon: "bi-reddit", url: "#" },
+            { name: "Facebook", icon: "bi-facebook", url: "#" },
+            { name: "Discord", icon: "bi-discord", url: "#" },
+            { name: "WhatsApp", icon: "bi-whatsapp", url: "#" }
+        ];
+        const iconsWrapper = document.createElement("div");
+        iconsWrapper.className = "social-icons-wrapper";
+        socialLinks.forEach(link => {
+            iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
+        });
+        footer.appendChild(iconsWrapper);
+        footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
+    }
+});
 
 function initFullscreenViewer() {
     const viewer = document.createElement('div');
     viewer.id = 'imageFullscreenViewer';
     viewer.innerHTML = `
-        <div id="viewerActions">
-            <button id="fullscreenLoopBtn" class="fullscreen-btn"><i class="bi bi-arrow-repeat"></i></button>
-            <button id="fullscreenCloseBtn" class="fullscreen-btn">&times;</button>
-        </div>
-        <img src="" alt="Fullscreen Image">
+    <div id="viewerActions">
+    <button id="fullscreenLoopBtn" class="fullscreen-btn"><i class="bi bi-arrow-repeat"></i></button>
+    <button id="fullscreenCloseBtn" class="fullscreen-btn">&times;</button>
+
+    </div>
+    <img src="" alt="Fullscreen Image">
     `;
     document.body.appendChild(viewer);
 
     const viewerImg = viewer.querySelector('img');
     const closeBtn = document.getElementById('fullscreenCloseBtn');
     const loopBtn = document.getElementById('fullscreenLoopBtn');
-    
+
     let filteredPanels = [];
     let currentIndex = 0;
     let loopTimeout = null;
@@ -187,10 +276,11 @@ function initFullscreenViewer() {
     function startLoop() {
         if (!isLooping) return;
         loopBtn.innerHTML = '<i class="bi bi-stop-fill"></i>';
+        const settings = getSettings();
         loopTimeout = setTimeout(() => {
             showNext();
             startLoop();
-        }, 3000);
+        }, settings.loopDelay * 1000);
     }
 
     function stopLoop() {
@@ -238,7 +328,7 @@ function initFullscreenViewer() {
     function updateRotation(imgElement) {
         const isScreenPortrait = window.innerHeight >= window.innerWidth;
         const isImgPortrait = (imgElement.naturalHeight || imgElement.height) >= (imgElement.naturalWidth || imgElement.width);
-        
+
         if ((isScreenPortrait && !isImgPortrait) || (!isScreenPortrait && isImgPortrait)) {
             imgElement.classList.add('rotated');
         } else {
@@ -255,7 +345,7 @@ function initFullscreenViewer() {
         const panel = e.target.closest('.panel');
         if (panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             filteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
-                                  .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
+            .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
             currentIndex = filteredPanels.indexOf(panel);
             viewerImg.src = panel.dataset.image || panel.querySelector('img').src;
             viewer.classList.add('active');
@@ -270,10 +360,10 @@ function initFullscreenViewer() {
         const currentTime = new Date().getTime();
         const tapLength = currentTime - lastTap;
         const panel = e.target.closest('.panel');
-        
+
         if (tapLength < 300 && tapLength > 0 && panel && !e.target.closest('#imageFullscreenViewer') && !e.target.closest('#galleryModal')) {
             filteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
-                                  .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
+            .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
             currentIndex = filteredPanels.indexOf(panel);
             viewerImg.src = panel.dataset.image || panel.querySelector('img').src;
             viewer.classList.add('active');
@@ -293,6 +383,9 @@ function initFullscreenViewer() {
 
 document.addEventListener('DOMContentLoaded', initFullscreenViewer);
 
+
+
+onDOMReady(initFullscreenViewer);
 
 function initLandscapeAutoFullscreen() {
     const enterFullscreen = () => {
@@ -335,7 +428,5 @@ function initLandscapeAutoFullscreen() {
     document.addEventListener('touchstart', handleTouch, { once: true });
 }
 
-document.addEventListener('DOMContentLoaded', initLandscapeAutoFullscreen);
 
-
-
+onDOMReady(initLandscapeAutoFullscreen);

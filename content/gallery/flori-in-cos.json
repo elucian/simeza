@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori in cos",
       "description": "flori in cos"
+    },
+    "de": {
+      "name": "Blumen im Korb",
+      "description": "Blumen im Korb"
+    },
+    "en": {
+      "name": "flowers in a basket",
+      "description": "flowers in a basket"
+    },
+    "es": {
+      "name": "flores en una cesta",
+      "description": "flores en una cesta"
+    },
+    "fr": {
+      "name": "fleurs dans un panier",
+      "description": "fleurs dans un panier"
+    },
+    "hu": {
+      "name": "virágok kosárban",
+      "description": "virágok kosárban"
+    },
+    "it": {
+      "name": "fiori in un cesto",
+      "description": "fiori in un cesto"
+    },
+    "pt": {
+      "name": "flores em uma cesta",
+      "description": "flores em uma cesta"
+    },
+    "ru": {
+      "name": "цветы в корзине",
+      "description": "цветы в корзине"
     }
-  }
+  },
+  "source_hash": "1be7141e9d2583bfbe85001a1bc8e92daeefa78bd60206ac94bfc0ed38921bbd"
 }

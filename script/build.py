@@ -24,29 +24,6 @@ SLUG_MAP = {
     "settings.md": {"ro": "setari.md", "de": "einstellungen.md", "fr": "parametres.md", "es": "ajustes.md", "ru": "nastroyki.md", "pt": "configuracoes.md", "hu": "beallitasok.md", "it": "impostazioni.md"}
 }
 
-def render_bottom_bar(page_id, lang, active_id=None):
-    config = {
-        'gallery': [
-            {'id': 'painting', 'icon': 'bi-palette', 'label': {'en': 'Paintings', 'ro': 'Picturi', 'de': 'Gemälde', 'es': 'Pinturas', 'fr': 'Peintures', 'ru': 'Картины', 'pt': 'Pinturas', 'hu': 'Festmények', 'it': 'Dipinti'}},
-            {'id': 'drawing', 'icon': 'bi-pencil', 'label': {'en': 'Drawings', 'ro': 'Desene', 'de': 'Zeichnungen', 'es': 'Dibujos', 'fr': 'Dessins', 'ru': 'Рисунки', 'pt': 'Desenhos', 'hu': 'Rajzok', 'it': 'Disegni'}},
-            {'id': 'photo', 'icon': 'bi-camera', 'label': {'en': 'Photos', 'ro': 'Fotografii', 'de': 'Fotos', 'es': 'Fotos', 'fr': 'Photos', 'ru': 'Фото', 'pt': 'Fotos', 'hu': 'Fotók', 'it': 'Foto'}}
-        ]
-    }
-    buttons = config.get(page_id, [])
-    if not buttons: return ''
-    bar_html = ['<div class="pill-bar sticky-bottom-bar" id="bottomBar">']
-    for i, btn in enumerate(buttons):
-        btn_id = btn['id']
-        label = btn['label'].get(lang, btn['label'].get('en'))
-        icon = btn.get('icon')
-        active_class = ' active' if (active_id and btn_id == active_id) or (not active_id and i == 0) else ''
-        icon_html = f'<i class="bi {icon}"></i> ' if icon else ''
-        bar_html.append(f'  <button class="pill-btn bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
-    bar_html.append('<div class="bottom-bar-separator"></div>')
-    bar_html.append('<button id="layoutToggleBtn" class="pill-btn bottom-bar-btn layout-toggle-btn active" title="Toggle preview panel"><i class="bi bi-layout-sidebar-reverse"></i></button>')
-    bar_html.append('</div>')
-    return '\n'.join(bar_html)
-
 def render_gallery_html(gallery_data, lang):
     t = {
         'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter':'Filter', 'Loop': 'Loop', 'Stop': 'Stop'},
@@ -93,6 +70,11 @@ def render_gallery_html(gallery_data, lang):
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         p.append('      <div class="panel-data">')
         p.append(f'        <h3 class="panel-title">{html.escape(title)}</h3>')
+        p.append('        <div class="panel-mobile-meta">')
+        if author: p.append(f'          <div class="panel-author">{html.escape(str(author))}</div>')
+        if year: p.append(f'          <div class="panel-year">{html.escape(str(year))}</div>')
+        if status: p.append(f'          <div class="panel-status">{html.escape(str(status))}</div>')
+        p.append('        </div>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
@@ -136,7 +118,7 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ]
-    panels.append(render_bottom_bar('gallery', lang, active_id='painting'))
+
     filter_modal = [
         '<div id="filterModal" class="gallery-modal-overlay">',
         '  <div class="gallery-modal gallery-filter-modal">',

@@ -11,6 +11,39 @@
     "en": {
       "name": "floarea soarelui",
       "description": "floarea soarelui"
+    },
+    "de": {
+      "name": "Sonnenblume",
+      "description": "Sonnenblume"
+    },
+    "es": {
+      "name": "girasol",
+      "description": "girasol"
+    },
+    "fr": {
+      "name": "tournesol",
+      "description": "tournesol"
+    },
+    "hu": {
+      "name": "napraforgó",
+      "description": "napraforgó"
+    },
+    "it": {
+      "name": "girasole",
+      "description": "girasole"
+    },
+    "pt": {
+      "name": "girassol",
+      "description": "girassol"
+    },
+    "ro": {
+      "name": "floarea soarelui",
+      "description": "floarea soarelui"
+    },
+    "ru": {
+      "name": "подсолнух",
+      "description": "подсолнух"
     }
-  }
+  },
+  "source_hash": "2b9a1d0b43de2ff93b8390796b7a130b8ce58e5f99be28300d112e3ec53597ca"
 }

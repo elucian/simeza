@@ -35,6 +35,16 @@
   -webkit-mask-image: url('/core/img/icons/layout-sidebar-reverse.svg'); 
   mask-image: url('/core/img/icons/layout-sidebar-reverse.svg'); 
 }
+.icon-grid,
+.bi-grid {
+  -webkit-mask-image: url('/core/img/icons/grid.svg');
+  mask-image: url('/core/img/icons/grid.svg');
+}
+.icon-view-stacked,
+.bi-view-stacked {
+  -webkit-mask-image: url('/core/img/icons/view-stacked.svg');
+  mask-image: url('/core/img/icons/view-stacked.svg');
+}
 
 /* Content & Media Icons */
 .icon-book, 

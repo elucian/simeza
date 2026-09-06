@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori cu tartacute",
       "description": "flori cu tartacute"
+    },
+    "de": {
+      "name": "Blumen mit kleinen Kürbissen",
+      "description": "Blumen mit kleinen Kürbissen"
+    },
+    "en": {
+      "name": "flowers with small pumpkins",
+      "description": "flowers with small pumpkins"
+    },
+    "es": {
+      "name": "flores con calabacitas",
+      "description": "flores con calabacitas"
+    },
+    "fr": {
+      "name": "fleurs avec des petites citrouilles",
+      "description": "fleurs avec des petites citrouilles"
+    },
+    "hu": {
+      "name": "virágok kis tökökkel",
+      "description": "virágok kis tökökkel"
+    },
+    "it": {
+      "name": "fiori con zucche piccole",
+      "description": "fiori con zucche piccole"
+    },
+    "pt": {
+      "name": "flores com pequenas abóboras",
+      "description": "flores com pequenas abóboras"
+    },
+    "ru": {
+      "name": "цветы с маленькими тыквами",
+      "description": "цветы с маленькими тыквами"
     }
-  }
+  },
+  "source_hash": "ffbb60ebed80ba7abe2b6c71206ffad6f652f7056345767658a52e6ab84697ed"
 }

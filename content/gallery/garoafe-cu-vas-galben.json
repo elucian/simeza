@@ -11,6 +11,39 @@
     "ro": {
       "name": "garoafe cu vas galben",
       "description": "garoafe cu vas galben"
+    },
+    "de": {
+      "name": "Nelken mit gelber Vase",
+      "description": "Nelken mit gelber Vase"
+    },
+    "en": {
+      "name": "carnations with yellow vase",
+      "description": "carnations with yellow vase"
+    },
+    "es": {
+      "name": "claveles con jarrón amarillo",
+      "description": "claveles con jarrón amarillo"
+    },
+    "fr": {
+      "name": "œillets avec vase jaune",
+      "description": "œillets avec vase jaune"
+    },
+    "hu": {
+      "name": "szegfűk sárga vázával",
+      "description": "szegfű sárga vázával"
+    },
+    "it": {
+      "name": "garofani con vaso giallo",
+      "description": "garofani con vaso giallo"
+    },
+    "pt": {
+      "name": "cravos com vaso amarelo",
+      "description": "cravos com vaso amarelo"
+    },
+    "ru": {
+      "name": "гвоздики с желтой вазой",
+      "description": "гвоздики с желтой вазой"
     }
-  }
+  },
+  "source_hash": "76b1dd71a125a8ecd6d7d141d839066a8eb7a0c300ef006b98792859fd3d45ee"
 }
