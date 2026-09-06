@@ -173,6 +173,15 @@ function onDOMReady(fn) {
 
 onDOMReady(() => {
   const wrappers = document.querySelectorAll('.panel-wrapper[data-widget=\'gallery\']');
+  const sliderImage = document.getElementById('sliderImage');
+  const sliderName = document.getElementById('sliderName');
+  const sliderAuthor = document.getElementById('sliderAuthor');
+  const sliderYear = document.getElementById('sliderYear');
+  const sliderStatus = document.getElementById('sliderStatus');
+  const sliderDescription = document.getElementById('sliderDescription');
+  const sliderLoopButton = document.getElementById('sliderLoopBtn');
+  const sliderDownloadButton = document.getElementById('sliderDownloadBtn');
+  const sliderRotateButton = document.getElementById('sliderRotateBtn');
   const modal = document.getElementById('galleryModal');
   const modalImg = document.getElementById('modalImg');
   const modalPicName = document.getElementById('modalPicName');
@@ -204,6 +213,112 @@ onDOMReady(() => {
   let currentModalIndex = 0;
   let modalLoopTimeout = null;
   let isModalLooping = false;
+  let sliderLoopTimeout = null;
+  let isSliderLooping = false;
+  let selectedSliderPanel = null;
+  let isSliderRotated = false;
+  const sliderMusicTracks = [
+    '/content/music/3m-Oriental-JapaneseFolk-120bpm-GMajor.mp3',
+    '/content/music/3m-Jazz-CoolJazz-120bpm-CMajor.mp3',
+    '/content/music/3m-Blues-ChicagoBlues-120bpm-FMajor.mp3',
+    '/content/music/13m-Ambient-NatureSoundscape-120bpm-GMajor.mp3',
+    '/content/music/3m-Western-Bluegrass-120bpm-EMajor%20(1).mp3',
+    '/content/music/3m-Spanish-Guitar-120bpm-CMajor.mp3',
+    '/content/music/3m-Western-Bluegrass-120bpm-EMajor.mp3'
+  ];
+  const sliderAudio = new Audio();
+  let currentSliderTrack = -1;
+
+  const playNextSliderTrack = () => {
+    if (!isSliderLooping || !sliderMusicTracks.length) return;
+    let nextTrack = Math.floor(Math.random() * sliderMusicTracks.length);
+    if (sliderMusicTracks.length > 1) {
+      while (nextTrack === currentSliderTrack) nextTrack = Math.floor(Math.random() * sliderMusicTracks.length);
+    }
+    currentSliderTrack = nextTrack;
+    sliderAudio.src = sliderMusicTracks[currentSliderTrack];
+    sliderAudio.play().catch(() => {});
+  };
+
+  sliderAudio.addEventListener('ended', playNextSliderTrack);
+
+  const fitSliderImage = () => {
+    if (!sliderImage?.naturalWidth) return;
+    const frame = sliderImage.parentElement.getBoundingClientRect();
+    const availableWidth = Math.max(1, frame.width - 32);
+    const availableHeight = Math.max(1, frame.height - 32);
+    const sourceWidth = sliderImage.naturalWidth;
+    const sourceHeight = sliderImage.naturalHeight;
+    const scale = isSliderRotated
+      ? Math.min(availableWidth / sourceHeight, availableHeight / sourceWidth)
+      : Math.min(availableWidth / sourceWidth, availableHeight / sourceHeight);
+    sliderImage.style.width = `${Math.floor(sourceWidth * scale)}px`;
+    sliderImage.style.height = `${Math.floor(sourceHeight * scale)}px`;
+    sliderImage.classList.toggle('is-rotated', isSliderRotated);
+  };
+
+  sliderRotateButton?.addEventListener('click', () => {
+    isSliderRotated = !isSliderRotated;
+    fitSliderImage();
+  });
+
+  sliderImage?.addEventListener('load', fitSliderImage);
+  window.addEventListener('resize', fitSliderImage);
+
+  const selectSliderPanel = (panel) => {
+    if (!panel || !sliderImage) return;
+    selectedSliderPanel = panel;
+    isSliderRotated = false;
+    sliderImage.classList.remove('is-rotated');
+    sliderImage.src = panel.dataset.image;
+    sliderImage.alt = panel.dataset.title || '';
+    sliderName.textContent = panel.dataset.title || '';
+    sliderAuthor.textContent = panel.dataset.author || '';
+    sliderYear.textContent = panel.dataset.year || '';
+    sliderStatus.textContent = panel.dataset.status || '';
+    sliderDescription.textContent = panel.dataset.desc || '';
+    if (sliderDownloadButton) {
+      sliderDownloadButton.href = panel.dataset.image || '#';
+      sliderDownloadButton.download = (panel.dataset.image || '').split('/').pop() || 'artwork';
+    }
+    wrappers.forEach(wrapper => wrapper.querySelectorAll('.panel').forEach(item => item.classList.toggle('is-selected', item === panel)));
+    panel.scrollIntoView({ block: 'nearest', inline: 'center', behavior: 'smooth' });
+  };
+
+  const stopSliderLoop = () => {
+    clearTimeout(sliderLoopTimeout);
+    isSliderLooping = false;
+    sliderAudio.pause();
+    sliderAudio.currentTime = 0;
+    if (sliderLoopButton) {
+      sliderLoopButton.classList.remove('is-looping');
+      sliderLoopButton.querySelector('i').className = 'bi bi-arrow-repeat';
+      sliderLoopButton.querySelector('span').textContent = sliderLoopButton.dataset.loopText;
+    }
+  };
+
+  const startSliderLoop = () => {
+    const visiblePanels = Array.from(document.querySelectorAll('.panel')).filter(panel => getComputedStyle(panel).display !== 'none');
+    if (!visiblePanels.length) return stopSliderLoop();
+    isSliderLooping = true;
+    playNextSliderTrack();
+    if (sliderLoopButton) {
+      sliderLoopButton.classList.add('is-looping');
+      sliderLoopButton.querySelector('i').className = 'bi bi-stop-fill';
+      sliderLoopButton.querySelector('span').textContent = sliderLoopButton.dataset.stopText;
+    }
+    const advance = () => {
+      if (!isSliderLooping) return;
+      const currentIndex = Math.max(0, visiblePanels.indexOf(selectedSliderPanel));
+      selectSliderPanel(visiblePanels[(currentIndex + 1) % visiblePanels.length]);
+      sliderLoopTimeout = setTimeout(advance, (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000);
+    };
+    sliderLoopTimeout = setTimeout(advance, (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000);
+  };
+
+  sliderLoopButton?.addEventListener('click', () => {
+    isSliderLooping ? stopSliderLoop() : startSliderLoop();
+  });
 
   const populateModal = (panel) => {
     modalImg.src = panel.dataset.image;
@@ -269,22 +384,16 @@ onDOMReady(() => {
   document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && modal?.classList.contains('active')) closeModal(); });
 
   const openModal = (panel) => {
+    stopModalLoop();
     modalFilteredPanels = Array.from(document.querySelectorAll('.panel-wrapper[data-widget="gallery"] .panel'))
                                .filter(p => p.offsetParent !== null && window.getComputedStyle(p).display !== 'none');
     currentModalIndex = modalFilteredPanels.indexOf(panel);
     populateModal(panel);
     
-    // Initialize loop button text
-    if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
-    
     modal.classList.add('active');
-    // Auto-rotation
-    const settings = getGallerySettings();
-    if (settings.autoRotation) {
-        startModalLoop();
-    }
-
   };
+
+  selectSliderPanel(Array.from(document.querySelectorAll('.panel')).find(panel => getComputedStyle(panel).display !== 'none'));
 
   // Panel click listeners
   wrappers.forEach(wrapper => {
@@ -300,14 +409,22 @@ onDOMReady(() => {
       // Info modal on click (only on desktop)
       panel.addEventListener("click", (e) => {
           if (window.innerWidth > 767) {
+            if (document.body.classList.contains('layout-maximized')) {
               openModal(panel);
+            } else {
+              selectSliderPanel(panel);
+            }
           }
       });
       panel.addEventListener("dblclick", (e) => {
           if (window.innerWidth > 767) {
               e.preventDefault();
               e.stopPropagation();
-              openModal(panel);
+                if (document.body.classList.contains('layout-maximized')) {
+                  openModal(panel);
+                } else {
+                  selectSliderPanel(panel);
+                }
           }
       });
     });
