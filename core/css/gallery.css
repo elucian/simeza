@@ -42,6 +42,81 @@
 .panel-wrapper::-webkit-scrollbar-thumb { background: var(--border-color); border-radius: 8px; }
 .panel-wrapper::-webkit-scrollbar-thumb:hover { background: var(--accent-color); }
 
+.gallery-empty-state {
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: color-mix(in srgb, var(--bg-main) 88%, transparent);
+}
+
+.gallery-empty-state[hidden] {
+  display: none;
+}
+
+.gallery-empty-state-card {
+  width: min(400px, 100%);
+  padding: 24px;
+  box-sizing: border-box;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-header);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.16);
+  text-align: center;
+}
+
+.gallery-empty-state-card h2 {
+  margin: 0 0 8px;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+}
+
+.gallery-empty-state-card p {
+  margin: 0;
+}
+
+.gallery-empty-criteria {
+  display: grid;
+  gap: 6px;
+  margin: 18px 0;
+  text-align: left;
+}
+
+.gallery-empty-criteria div {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 7px 10px;
+  border-radius: 4px;
+  background: var(--bg-main);
+}
+
+.gallery-empty-criteria dt {
+  color: var(--accent-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.gallery-empty-criteria dd {
+  margin: 0;
+  color: var(--text-main);
+  text-align: right;
+}
+
+.gallery-empty-rebuild-btn {
+  min-height: 38px;
+  padding: 8px 18px;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  background: var(--accent-color);
+  color: var(--btn-active-text);
+  cursor: pointer;
+  font-weight: 600;
+}
+
 /* Desktop Minimalist Panel (Vertical Stack: Image Top, Title Below) */
 .panel {
   display: flex;

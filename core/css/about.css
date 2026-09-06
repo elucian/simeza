@@ -1,0 +1,124 @@
+#content:has(.about-panels) {
+  overflow-y: auto;
+}
+
+.about-panels {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(360px, 0.65fr);
+  gap: 24px;
+  align-items: stretch;
+  margin: auto 0;
+}
+
+.about-main-panel,
+.about-portrait-panel {
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background: var(--bg-panel);
+  box-shadow: var(--panel-shadow);
+}
+
+.about-main-panel {
+  padding: 28px;
+}
+
+.about-main-panel h2 {
+  margin: 0 0 16px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--accent-color);
+  font-size: 1.3rem;
+}
+
+.about-main-panel p {
+  margin: 0 0 16px;
+  line-height: 1.55;
+}
+
+.about-main-panel p:last-child {
+  margin-bottom: 0;
+}
+
+.about-portrait-panels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.about-portrait-panel {
+  display: flex;
+  min-width: 0;
+  padding: 12px;
+  flex-direction: column;
+  text-align: center;
+}
+
+.about-portrait-panel img {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 5px;
+}
+
+.about-portrait-panel h3 {
+  margin: 12px 0 5px;
+  color: var(--accent-color);
+  font-size: 1rem;
+}
+
+.about-portrait-panel p {
+  min-height: 2.8em;
+  margin: 0 0 14px;
+  color: var(--text-main);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+.about-contact-btn {
+  display: inline-flex;
+  min-height: 38px;
+  align-items: center;
+  justify-content: center;
+  margin-top: auto;
+  padding: 8px 12px;
+  border: 1px solid var(--accent-color);
+  border-radius: 6px;
+  background: var(--accent-color);
+  color: var(--btn-active-text);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-contact-btn:hover {
+  border-color: var(--text-main);
+  background: var(--bg-main);
+  color: var(--accent-color);
+}
+
+@media (max-width: 900px) {
+  .about-panels {
+    grid-template-columns: 1fr;
+    margin: 0;
+  }
+}
+
+@media (max-width: 500px) {
+  .about-main-panel {
+    padding: 20px;
+  }
+
+  .about-portrait-panels {
+    gap: 10px;
+  }
+
+  .about-portrait-panel {
+    padding: 8px;
+  }
+
+  .about-contact-btn {
+    padding: 8px 6px;
+    font-size: 0.75rem;
+  }
+}

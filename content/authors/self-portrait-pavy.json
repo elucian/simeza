@@ -1,17 +1,18 @@
 {
   "id": "self-portrait-4",
-  "file": "self-portrait-4.webp",
+  "file": "self-portrait-pavy.webp",
   "status": "Available",
-  "author": "Pavy Beloiu",
+  "author": "Pavy",
   "category": "Portraits",
   "topic": "Portraits",
   "year": 1990,
   "original": "yes",
   "type": "painting",
+  "contact": "pavybeloiu@gmail.com",
   "content": {
     "en": {
       "name": "Pavy Beloyu",
-      "description": "self portrait 4"
+      "description": "Artist, Polymath, Book Author"
     },
     "de": {
       "name": "Selbstporträt 4",

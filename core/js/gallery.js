@@ -31,6 +31,32 @@ const getSavedFilters = () => {
   }
 };
 
+const getFilterPagePath = () => {
+  const lang = localStorage.getItem('lang') || 'en';
+  const slugs = {
+    en: 'filter.html', ro: 'filter.html', de: 'filter.html', es: 'filter.html',
+    fr: 'filter.html', ru: 'filter.html', pt: 'filter.html', hu: 'filter.html', it: 'filter.html'
+  };
+  return '/' + lang + '/' + (slugs[lang] || 'filter.html');
+};
+
+const updateEmptyState = (filters, matchCount) => {
+  const emptyState = document.getElementById('galleryEmptyState');
+  const criteria = document.getElementById('galleryEmptyCriteria');
+  if (!emptyState || !criteria) return;
+
+  emptyState.hidden = matchCount !== 0;
+  if (matchCount !== 0) return;
+
+  const entries = [
+    ['Type', filters.type],
+    ['Author', filters.author],
+    ['Category', filters.category],
+    ['Topic', filters.topic]
+  ].filter(([, value]) => value);
+  criteria.innerHTML = entries.map(([label, value]) => `<div><dt>${label}</dt><dd>${value}</dd></div>`).join('') || '<div><dd>All collection items</dd></div>';
+};
+
 const saveFilters = () => {
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
   const savedFilters = getSavedFilters();
@@ -97,6 +123,7 @@ window.applyFilters = function(shouldCloseModal = false) {
         filterIcon.className = hasActiveFilters ? 'bi bi-funnel-fill' : 'bi bi-funnel';
     }
 
+    let matchCount = 0;
     wrappers.forEach(wrapper => {
         wrapper.querySelectorAll('.panel').forEach(panel => {
             const pType = panel.dataset.type;
@@ -109,9 +136,18 @@ window.applyFilters = function(shouldCloseModal = false) {
             let matchCategory = categories.length === 0 || categories.includes(pCategory);
             let matchTopic = topics.length === 0 || topics.includes(pTopic);
 
-            panel.style.display = (matchType && matchAuthor && matchCategory && matchTopic) ? '' : 'none';
+            const isMatch = matchType && matchAuthor && matchCategory && matchTopic;
+            panel.style.display = isMatch ? '' : 'none';
+            if (isMatch) matchCount += 1;
         });
     });
+
+        updateEmptyState({
+          type,
+          author: authors[0],
+          category: categories[0],
+          topic: topics[0]
+        }, matchCount);
 
     if (shouldCloseModal && filterModal) filterModal.classList.remove('active');
 };
@@ -147,6 +183,10 @@ onDOMReady(() => {
   const modalTopic = document.getElementById('modalTopic');
   // Apply settings
   applySettings();
+
+  document.getElementById('rebuildFiltersBtn')?.addEventListener('click', () => {
+    location.href = getFilterPagePath();
+  });
 
   const modalDesc = document.getElementById('modalDesc');
   const loopBtn = document.getElementById('galleryModalLoopBtn');

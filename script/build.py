@@ -80,6 +80,16 @@ def render_gallery_html(gallery_data, lang):
         panels.append('\n'.join(p))
     panels.append('</div>')
     panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
+    panels.extend([
+        '<div class="gallery-empty-state" id="galleryEmptyState" hidden>',
+        '  <div class="gallery-empty-state-card">',
+        '    <h2>Filter is empty</h2>',
+        '    <p>No pictures match the selected criteria.</p>',
+        '    <dl id="galleryEmptyCriteria" class="gallery-empty-criteria"></dl>',
+        '    <button type="button" id="rebuildFiltersBtn" class="gallery-empty-rebuild-btn">Rebuild</button>',
+        '  </div>',
+        '</div>'
+    ])
     panels.append('</div>')
     modal = [
         '<div id="galleryModal" class="gallery-modal-overlay">',
@@ -139,6 +149,48 @@ def render_filter_html(lang):
             parts.append(f'        <option value="{html.escape(entry_id)}">{html.escape(entry_label)}</option>')
         parts.extend(['      </select>', '    </div>'])
     parts.extend(['  </form>', '  <div class="filter-page-actions">', f'    <button type="button" class="filter-reset-btn" id="resetFiltersBtn">{text["reset"]}</button>', f'    <button type="button" class="filter-apply-btn" id="applyFiltersBtn">{text["apply"]}</button>', '  </div>', '</div>'])
+    return '\n'.join(parts)
+
+def render_about_html(lang):
+    authors_dir = os.path.join(ROOT, 'content', 'authors')
+    author_files = ['self-portrait-pavy.json', 'self-portrait-eluchn.json']
+    portraits = []
+    for filename in author_files:
+        with open(os.path.join(authors_dir, filename), 'r', encoding='utf-8') as f:
+            author = json.load(f)
+        content = author.get('content', {}).get(lang) or author.get('content', {}).get('en', {})
+        portraits.append({
+            'name': content.get('name', author.get('author', '')),
+            'description': content.get('description', ''),
+            'file': author.get('file', ''),
+            'contact': author.get('contact', ''),
+            'author': author.get('author', '')
+        })
+
+    parts = [
+        '<div class="about-panels">',
+        '  <section class="about-main-panel">',
+        '    <h2>La Simeza</h2>',
+        '    <p>Pavy Beloyu is an engineer, visual artist, and author whose practice brings together painting, writing, mathematics, and cultural research. His visual work includes landscapes, portraits, and still lifes, shaped by a precise and expressive approach to color, composition, and place.</p>',
+        '    <p>Alongside his art, Beloyu has published books in English and Romanian. His work draws on archival research and personal journeys, including research into Dumitru Cornilescu\'s sermons in the Ländli archive in the Swiss Alps and documentation of the evangelical movement and painters of Muscel. La Simeza presents this intersection of visual art, study, and cultural memory.</p>',
+        '  </section>',
+        '  <section class="about-portrait-panels" aria-label="Contacts">'
+    ]
+    for portrait in portraits:
+        name = html.escape(portrait['name'])
+        description = html.escape(portrait['description'])
+        image = html.escape(portrait['file'])
+        contact = html.escape(portrait['contact'])
+        label = html.escape(portrait['author'])
+        parts.extend([
+            '    <article class="about-portrait-panel">',
+            f'      <img src="/content/authors/{image}" alt="{name}">',
+            f'      <h3>{name}</h3>',
+            f'      <p>{description}</p>',
+            f'      <a class="about-contact-btn" href="mailto:{contact}">Contact {label}</a>',
+            '    </article>'
+        ])
+    parts.extend(['  </section>', '</div>'])
     return '\n'.join(parts)
 
 def parse_frontmatter(content):
@@ -234,6 +286,8 @@ def build(target_lang=None):
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))
             if '{{widget:filter}}' in body:
                 body = body.replace('{{widget:filter}}', render_filter_html(lang))
+            if '{{widget:about}}' in body:
+                body = body.replace('{{widget:about}}', render_about_html(lang))
             html_content = md.convert(body)
             title = meta.get('title', 'La Simeza')
             final_html = base_template.replace('{{lang}}', lang).replace('{{page-id}}', file).replace('{{page-content}}', html_content).replace('{{menu}}', render_toolbar(lang)).replace('{{version}}', version).replace('{{title}}', title).replace('{{description}}', meta.get('description', 'Art gallery')).replace('{{keywords}}', meta.get('keywords', 'art')).replace('{{page-css}}', page_css).replace('{{page-js}}', page_js).replace('href="core/', 'href="/core/').replace('src="core/', 'src="/core/')
