@@ -167,15 +167,7 @@ def render_about_html(lang):
             'author': author.get('author', '')
         })
 
-    parts = [
-        '<div class="about-panels">',
-        '  <section class="about-main-panel">',
-        '    <h2>La Simeza</h2>',
-        '    <p>Pavy Beloyu is an engineer, visual artist, and author whose practice brings together painting, writing, mathematics, and cultural research. His visual work includes landscapes, portraits, and still lifes, shaped by a precise and expressive approach to color, composition, and place.</p>',
-        '    <p>Alongside his art, Beloyu has published books in English and Romanian. His work draws on archival research and personal journeys, including research into Dumitru Cornilescu\'s sermons in the Ländli archive in the Swiss Alps and documentation of the evangelical movement and painters of Muscel. La Simeza presents this intersection of visual art, study, and cultural memory.</p>',
-        '  </section>',
-        '  <section class="about-portrait-panels" aria-label="Contacts">'
-    ]
+    parts = ['<section class="about-portrait-panels" aria-label="Contacts">']
     for portrait in portraits:
         name = html.escape(portrait['name'])
         description = html.escape(portrait['description'])
@@ -190,7 +182,7 @@ def render_about_html(lang):
             f'      <a class="about-contact-btn" href="mailto:{contact}">Contact {label}</a>',
             '    </article>'
         ])
-    parts.extend(['  </section>', '</div>'])
+    parts.append('</section>')
     return '\n'.join(parts)
 
 def parse_frontmatter(content):
