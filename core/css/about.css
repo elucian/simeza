@@ -5,12 +5,13 @@
 .about-intro-panels {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  gap: 20px;
   align-items: stretch;
-  margin: 0 0 20px;
+  margin: 0 0 24px;
 }
 
 .about-intro-panel,
+.about-contact-panel,
 .about-portrait-panel {
   border: 1px solid var(--border-color);
   border-radius: 8px;
@@ -19,17 +20,39 @@
 }
 
 .about-intro-panel {
-  padding: 16px 20px;
-}
-
-.about-intro-panel h1,
-.about-intro-panel p {
-  margin: 0;
-  color: var(--accent-color);
+  padding: 22px 24px;
 }
 
 .about-intro-panel h1 {
-  font-size: 1.25rem;
+  margin: 0 0 12px;
+  color: var(--accent-color);
+  font-size: 1.2rem;
+  text-align: left;
+}
+
+.about-intro-panel p,
+.about-contact-panel p {
+  margin: 0;
+  color: var(--text-main);
+  line-height: 1.55;
+}
+
+.about-contact-panel {
+  max-width: 760px;
+  margin: 24px auto 0;
+  padding: 22px 24px;
+}
+
+.about-contact-panel h1 {
+  margin: 0 0 12px;
+  color: var(--accent-color);
+  font-size: 1.15rem;
+  text-align: left;
+}
+
+.about-contact-panel a {
+  color: var(--accent-color);
+  font-weight: 600;
 }
 
 .about-portrait-panels {
@@ -105,7 +128,11 @@
   }
 
   .about-intro-panel {
-    padding: 12px 8px;
+    padding: 16px;
+  }
+
+  .about-contact-panel {
+    padding: 16px;
   }
 
   .about-intro-panel h1 {
@@ -139,11 +166,4 @@
     font-size: 0.75rem;
   }
 
-  .about-contact-panel {
-    display: flex;
-    align-items: stretch;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    color: var(--accent-color);
-  }
 }
