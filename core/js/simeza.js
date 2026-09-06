@@ -227,7 +227,7 @@ onDOMReady(() => {
                 socialLinks.filter(link => link.url).forEach(link => {
                     const anchor = document.createElement("a");
                     anchor.href = link.url;
-                    anchor.title = link.name || '';
+                    anchor.setAttribute("aria-label", link.name || 'Social link');
                     anchor.target = "_blank";
                     anchor.rel = "noopener noreferrer";
                     const icon = document.createElement("i");

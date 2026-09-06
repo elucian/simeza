@@ -303,7 +303,11 @@ body:has(.content-gallery-wrapper),
     display: none !important;
   }
   .toolbar-btn {
-    padding: 8px 12px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    justify-content: center;
+    border-radius: 50%;
   }
 }
 
@@ -563,6 +567,11 @@ body.hide-pillbar .content:has(.gallery-container) {
     flex-direction: column;
     gap: 4px;
     padding: 8px 12px;
+  }
+
+  .social-icons-wrapper a::before,
+  .social-icons-wrapper a::after {
+    content: none !important;
   }
 }
 
