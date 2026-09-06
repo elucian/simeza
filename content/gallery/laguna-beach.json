@@ -1,0 +1,16 @@
+{
+  "id": "laguna-beach",
+  "file": "laguna-beach.webp",
+  "status": "Available",
+  "author": "Pavy Beloiu",
+  "category": "Landscapes",
+  "topic": "Landscapes",
+  "year": 1990,
+  "original": "yes",
+  "content": {
+    "en": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    }
+  }
+}

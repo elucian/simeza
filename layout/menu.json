@@ -1,8 +1,5 @@
 {
   "Gallery": "gallery.html",
-  "Media": "media.html",
-  "Authors": "authors.html",
-  "Writings": "writings.html",
-  "Books": "books.html",
-  "About": "index.html"
+  "Author":  "index.html",
+  "Settings": "settings.html"
 }

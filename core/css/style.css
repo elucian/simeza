@@ -12,7 +12,7 @@
   --bg-footer: #e8e8e8d8;
   --text-main: #171d27;
   --border-color: #9c8c78;
-  --accent-color: #8a370d;
+  --accent-color: #eb9a72;
   --bg-panel: #cee0e9de; 
   /* Added Button Variables */
   --btn-active-bg: var(--accent-color);
@@ -88,6 +88,13 @@
   border-color: var(--btn-active-bg);
   color: var(--btn-active-text);
   font-weight: 600;
+}
+
+
+/* In dark mode, ensure icons on unpressed / inactive buttons are white */
+[data-theme="dark"] .bottom-bar-btn:not(.active) i,
+[data-theme="dark"] .bottom-bar-btn:not(.active) .bi {
+  color: #ffffff;
 }
 
 .bottom-bar-separator {
@@ -186,7 +193,7 @@ body:has(.content-gallery-wrapper),
 
 .content:has(.gallery-container) h1 {
   margin: 4px 0;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .content:has(.gallery-container) p {
@@ -391,6 +398,15 @@ body:has(.content-gallery-wrapper),
   white-space: nowrap !important;
   text-align: left !important;
   transition: background 0.15s ease, color 0.15s ease;
+
+/* Hide pillbar settings */
+body.hide-pillbar .sticky-bottom-bar {
+  display: none !important;
+}
+body.hide-pillbar .content:has(.gallery-container) {
+  padding-bottom: 16px !important;
+}
+
 }
 
 #mobileMenuList .nav-link:hover,
@@ -527,6 +543,7 @@ h3 {
 p {
   color: var(--text-main);
   line-height: 1.1;
+  margin-top: 0.2rem;
 }
 
 /* Fullscreen Image Viewer */
@@ -605,7 +622,7 @@ p {
 
 /* Mobile Landscape Optimization */
 @media (max-width: 767px), (orientation: landscape) and (max-height: 600px) {
-  h1 { font-size: 1.4rem; }
+  h1 { font-size: 1.3rem; }
   h2 { font-size: 1.225rem; }
   h3 { font-size: 1.05rem; }
   h4 { font-size: 0.875rem; }

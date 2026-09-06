@@ -1,11 +1,9 @@
 ---
 title: About - Simeza Art
-description: Discover the history, vision, and artists behind Simeza Art.
-keywords: simeza, art, gallery, about, history
+description: Discover the artists behind Simeza Art.
+keywords: simeza, art, gallery, about
 ---
 
-# About
+# About La Simeza Art
 
-Welcome to the About section of Simeza Art.
-
-Content for this section will be available soon.
+La Simeza is an independent art gallery. 
