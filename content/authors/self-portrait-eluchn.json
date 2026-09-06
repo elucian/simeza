@@ -1,0 +1,19 @@
+{
+  "id": "self-portrait-4",
+  "file": "self-portrait-eluchn.jpg",
+  "status": "Available",
+  "author": "Eluchn",
+  "category": "Portraits",
+  "topic": "Portraits",
+  "year": 1980,
+  "original": "no",
+  "type": "painting",
+  "contact": "eluchn@proton.me",
+  "content": {
+    "en": {
+      "name": "Elucian Moise",
+      "description": "Web designer, Engineer, Mentor"
+    }
+  },
+  "source_hash": ""
+}
