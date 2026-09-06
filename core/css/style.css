@@ -12,7 +12,7 @@
   --bg-footer: #e8e8e8d8;
   --text-main: #171d27;
   --border-color: #9c8c78;
-  --accent-color: #eb9a72;
+  --accent-color: #7a3a1a;
   --bg-panel: #cee0e9de; 
   /* Added Button Variables */
   --btn-active-bg: var(--accent-color);
@@ -398,6 +398,13 @@ body:has(.content-gallery-wrapper),
   white-space: nowrap !important;
   text-align: left !important;
   transition: background 0.15s ease, color 0.15s ease;
+
+/* Force white icons on inactive buttons in dark mode for visibility */
+[data-theme="dark"] .container .bottom-bar-btn:not(.active) .bi,
+[data-theme="dark"] .container .bottom-bar-btn:not(.active) i {
+  color: #ffffff !important;
+}
+
 
 /* Hide pillbar settings */
 body.hide-pillbar .sticky-bottom-bar {
