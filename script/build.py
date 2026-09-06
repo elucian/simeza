@@ -140,7 +140,7 @@ def render_filter_html(lang):
         filter_data = json.load(f)
 
     sections = [('types', 'type', text['type']), ('authors', 'author', text['author']), ('categories', 'category', text['category']), ('topics', 'topic', text['topic'])]
-    parts = ['<div class="filter-page-dialog">', f'  <h2>{text["title"]}</h2>', '  <form id="filterForm">']
+    parts = ['<div class="filter-page-overlay">', '<div class="filter-page-dialog" role="dialog" aria-modal="true" aria-labelledby="filterDialogTitle">', '  <button type="button" class="filter-page-close" id="closeFilterBtn" aria-label="Close">&times;</button>', f'  <h2 id="filterDialogTitle">{text["title"]}</h2>', '  <form id="filterForm">']
     for source_key, field_name, label in sections:
         parts.extend([f'    <div class="filter-group">', f'      <label for="filter-{field_name}">{label}</label>', f'      <select id="filter-{field_name}" name="{field_name}">', f'        <option value="">{text["all"]}</option>'])
         for entry in filter_data.get(source_key, []):
@@ -148,7 +148,7 @@ def render_filter_html(lang):
             entry_label = entry.get('label', {}).get(lang) or entry.get('label', {}).get('en') or entry_id
             parts.append(f'        <option value="{html.escape(entry_id)}">{html.escape(entry_label)}</option>')
         parts.extend(['      </select>', '    </div>'])
-    parts.extend(['  </form>', '  <div class="filter-page-actions">', f'    <button type="button" class="filter-reset-btn" id="resetFiltersBtn">{text["reset"]}</button>', f'    <button type="button" class="filter-apply-btn" id="applyFiltersBtn">{text["apply"]}</button>', '  </div>', '</div>'])
+    parts.extend(['  </form>', '  <div class="filter-page-actions">', f'    <button type="button" class="filter-reset-btn" id="resetFiltersBtn">{text["reset"]}</button>', f'    <button type="button" class="filter-apply-btn" id="applyFiltersBtn">{text["apply"]}</button>', '  </div>', '</div>', '</div>'])
     return '\n'.join(parts)
 
 def render_about_html(lang):
@@ -270,9 +270,9 @@ def build(target_lang=None):
             name_no_ext = os.path.splitext(file)[0]
             css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
-            page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
+            page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css?v={version}-page-3">' if os.path.exists(css_path) else ''
             if name_no_ext != 'index': page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
-            page_js = f'<script src="/core/js/{name_no_ext}.js?v={version}-page-2"></script>' if os.path.exists(js_path) else ''
+            page_js = f'<script src="/core/js/{name_no_ext}.js?v={version}-page-3"></script>' if os.path.exists(js_path) else ''
             md = markdown.Markdown(extensions=['extra', 'md_in_html'])
             if '{{widget:gallery}}' in body:
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))

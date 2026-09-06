@@ -181,12 +181,13 @@ onDOMReady(() => {
         try { localStorage.setItem("simezaSettings", JSON.stringify(settings)); } catch (e) {}
     }
 
-    // 4. Desktop Layout restoration
-    if (window.innerWidth >= 768) {
-        if (getSettings().desktopLayout === "panels") {
-            document.body.classList.add("layout-maximized");
-            updateLayoutButtonIcon(true);
-        }
+    // 4. Desktop Layout restoration applies only to the gallery.
+    const isGalleryPage = Boolean(document.querySelector('.gallery-container'));
+    if (window.innerWidth >= 768 && isGalleryPage && getSettings().desktopLayout === "panels") {
+        document.body.classList.add("layout-maximized");
+        updateLayoutButtonIcon(true);
+    } else if (!isGalleryPage) {
+        document.body.classList.remove("layout-maximized");
     }
 
     // 4. Language UI Setup
