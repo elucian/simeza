@@ -207,6 +207,14 @@ body:has(.content-gallery-wrapper),
   color: var(--btn-active-text);
 }
 
+.home-btn .bi-house {
+  background-color: var(--text-main);
+}
+
+.home-btn:hover .bi-house {
+  background-color: var(--btn-active-text);
+}
+
 .nav-menu {
   display: flex;
   align-items: center;
