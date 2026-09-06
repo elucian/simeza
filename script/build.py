@@ -207,7 +207,7 @@ def render_about_html(lang):
             f'      <img src="/content/authors/{image}" alt="{name}">',
             f'      <h3>{name}</h3>',
             f'      <p>{description}</p>',
-            f'      <a class="about-contact-btn" href="mailto:{contact}" data-email="{contact}">Contact {label}</a>',
+            f'      <a class="about-contact-btn" href="/{lang}/contact.html?to={contact}" data-email="{contact}">Contact {label}</a>',
             '    </article>'
         ])
     parts.append('</section>')

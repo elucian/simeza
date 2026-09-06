@@ -1,8 +1,8 @@
 ---
 title: Setări - Simeza Art
-description: Personalizați-vă experiența pe galeria de artă Simeza.
+description: Personalizează-ți experiența pe galeria de artă Simeza.
 keywords: simeza, setări, configurare
-source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
+source_hash: 5a2e97477083d46752167bad97fc11acaeeb9a551e81681d589415200035a64b
 ---
 # Setări
 
@@ -29,10 +29,32 @@ source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
           </div>
         </div>
         <div class="settings-group">
-          <label>Bară vizibilă</label>
-          <div class="radio-group">
-            <label><input type="radio" name="pillbarVisible" value="true"> Da</label>
-            <label><input type="radio" name="pillbarVisible" value="false"> Nu</label>
+          <label>Aspect desktop</label>
+          <div class="layout-choice-group" role="radiogroup" aria-label="Aspect desktop">
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="panels">
+              <i class="bi bi-grid" aria-hidden="true"></i>
+              <span>Panouri</span>
+            </label>
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="slider">
+              <i class="bi bi-view-stacked" aria-hidden="true"></i>
+              <span>Glisor</span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label>Muzică</label>
+          <div class="radio-group" role="radiogroup" aria-label="Muzică">
+            <label><input type="radio" name="musicEnabled" value="true"> Pornit</label>
+            <label><input type="radio" name="musicEnabled" value="false"> Oprit</label>
+          </div>
+        </div>
+        <div class="settings-group settings-share-group">
+          <label for="settingsShareLink">Link partajabil</label>
+          <div class="settings-share-control">
+            <input id="settingsShareLink" type="url" readonly>
+            <button type="button" id="copySettingsLinkBtn">Copiază</button>
           </div>
         </div>
       </form>

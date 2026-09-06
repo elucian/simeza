@@ -1,8 +1,8 @@
 ---
 title: Настройки - Simeza Art
-description: Настройте свой опыт в художественной галерее Simeza.
+description: Настройте свой опыт работы с художественной галереей Simeza.
 keywords: simeza, настройки, конфигурация
-source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
+source_hash: 5a2e97477083d46752167bad97fc11acaeeb9a551e81681d589415200035a64b
 ---
 # Настройки
 
@@ -22,17 +22,39 @@ source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
           </select>
         </div>
         <div class="settings-group">
-          <label>Автоповорот</label>
+          <label>Автоматический поворот</label>
           <div class="radio-group">
             <label><input type="radio" name="autoRotation" value="true"> Вкл</label>
             <label><input type="radio" name="autoRotation" value="false"> Выкл</label>
           </div>
         </div>
         <div class="settings-group">
-          <label>Видимость панели</label>
-          <div class="radio-group">
-            <label><input type="radio" name="pillbarVisible" value="true"> Да</label>
-            <label><input type="radio" name="pillbarVisible" value="false"> Нет</label>
+          <label>Макет рабочего стола</label>
+          <div class="layout-choice-group" role="radiogroup" aria-label="Макет рабочего стола">
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="panels">
+              <i class="bi bi-grid" aria-hidden="true"></i>
+              <span>Панели</span>
+            </label>
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="slider">
+              <i class="bi bi-view-stacked" aria-hidden="true"></i>
+              <span>Слайдер</span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label>Музыка</label>
+          <div class="radio-group" role="radiogroup" aria-label="Музыка">
+            <label><input type="radio" name="musicEnabled" value="true"> Вкл</label>
+            <label><input type="radio" name="musicEnabled" value="false"> Выкл</label>
+          </div>
+        </div>
+        <div class="settings-group settings-share-group">
+          <label for="settingsShareLink">Ссылка для обмена</label>
+          <div class="settings-share-control">
+            <input id="settingsShareLink" type="url" readonly>
+            <button type="button" id="copySettingsLinkBtn">Копировать</button>
           </div>
         </div>
       </form>

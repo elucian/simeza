@@ -1,42 +1,30 @@
 {
-  "settings": {
-    "slug": "settings",
-    "icon": "bi-gear",
-    "action": "toggleSettingsModal()",
-    "label": {
-      "hu": "Beállítások"
-    }
-  },
-  "gallery": {
-    "slug": "gallery.html",
-    "icon": "bi-palette",
-    "label": {
-      "hu": "Galéria"
-    }
-  },
   "about": {
-    "slug": "about.html",
+    "slug": "about",
     "icon": "bi-person",
     "label": {
       "hu": "Névjegy"
     }
   },
+  "gallery": {
+    "slug": "gallery",
+    "icon": "bi-palette",
+    "label": {
+      "hu": "Galéria"
+    }
+  },
   "filter": {
     "slug": "filter",
     "icon": "bi-funnel",
-    "action": "toggleFilterModal()",
-    "galleryOnly": true,
     "label": {
       "hu": "Szűrő"
     }
   },
-  "share": {
-    "slug": "share",
-    "icon": "bi-share",
-    "action": "shareGallery()",
-    "galleryOnly": true,
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
     "label": {
-      "hu": "Megosztás"
+      "hu": "Beállítások"
     }
   }
 }

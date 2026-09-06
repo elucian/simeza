@@ -2,7 +2,7 @@
 title: Einstellungen - Simeza Art
 description: Personalisieren Sie Ihr Erlebnis in der Simeza Kunstgalerie.
 keywords: Simeza, Einstellungen, Konfiguration
-source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
+source_hash: 5a2e97477083d46752167bad97fc11acaeeb9a551e81681d589415200035a64b
 ---
 # Einstellungen
 
@@ -29,10 +29,32 @@ source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
           </div>
         </div>
         <div class="settings-group">
-          <label>Pillbar sichtbar</label>
-          <div class="radio-group">
-            <label><input type="radio" name="pillbarVisible" value="true"> Ja</label>
-            <label><input type="radio" name="pillbarVisible" value="false"> Nein</label>
+          <label>Desktop-Layout</label>
+          <div class="layout-choice-group" role="radiogroup" aria-label="Desktop-Layout">
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="panels">
+              <i class="bi bi-grid" aria-hidden="true"></i>
+              <span>Panels</span>
+            </label>
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="slider">
+              <i class="bi bi-view-stacked" aria-hidden="true"></i>
+              <span>Slider</span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label>Musik</label>
+          <div class="radio-group" role="radiogroup" aria-label="Musik">
+            <label><input type="radio" name="musicEnabled" value="true"> An</label>
+            <label><input type="radio" name="musicEnabled" value="false"> Aus</label>
+          </div>
+        </div>
+        <div class="settings-group settings-share-group">
+          <label for="settingsShareLink">Freigabelink</label>
+          <div class="settings-share-control">
+            <input id="settingsShareLink" type="url" readonly>
+            <button type="button" id="copySettingsLinkBtn">Kopieren</button>
           </div>
         </div>
       </form>

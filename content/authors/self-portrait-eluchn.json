@@ -13,7 +13,39 @@
     "en": {
       "name": "Elucian Moise",
       "description": "Web designer, Engineer, Mentor"
+    },
+    "de": {
+      "name": "Elucian Moise",
+      "description": "Webdesigner, Ingenieur, Mentor"
+    },
+    "es": {
+      "name": "Elucian Moise",
+      "description": "Diseñador web, Ingeniero, Mentor"
+    },
+    "fr": {
+      "name": "Elucian Moise",
+      "description": "Concepteur web, Ingénieur, Mentor"
+    },
+    "hu": {
+      "name": "Elucian Moise",
+      "description": "Webdesigner, Mérnök, Mentor"
+    },
+    "it": {
+      "name": "Elucian Moise",
+      "description": "Web designer, Ingegnere, Mentore"
+    },
+    "pt": {
+      "name": "Elucian Moise",
+      "description": "Web designer, Engenheiro, Mentor"
+    },
+    "ro": {
+      "name": "Elucian Moise",
+      "description": "Web designer, Inginer, Mentor"
+    },
+    "ru": {
+      "name": "Элучиан Мойсе",
+      "description": "Веб-дизайнер, Инженер, Ментор"
     }
   },
-  "source_hash": ""
+  "source_hash": "0a35c2ff4fd4a55c29969c34d274e7cec84cff2cd3faa1479cacd98735c0b1a1"
 }

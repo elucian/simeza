@@ -2,7 +2,7 @@
 title: Ajustes - Simeza Art
 description: Personaliza tu experiencia en la galería de arte Simeza.
 keywords: simeza, ajustes, configuración
-source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
+source_hash: 5a2e97477083d46752167bad97fc11acaeeb9a551e81681d589415200035a64b
 ---
 # Ajustes
 
@@ -29,10 +29,32 @@ source_hash: 602559a295172c5338d9ba4f6f01cca7d38355476106bbc2bad64730609b5503
           </div>
         </div>
         <div class="settings-group">
-          <label>Barra visible</label>
-          <div class="radio-group">
-            <label><input type="radio" name="pillbarVisible" value="true"> Sí</label>
-            <label><input type="radio" name="pillbarVisible" value="false"> No</label>
+          <label>Diseño de escritorio</label>
+          <div class="layout-choice-group" role="radiogroup" aria-label="Diseño de escritorio">
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="panels">
+              <i class="bi bi-grid" aria-hidden="true"></i>
+              <span>Paneles</span>
+            </label>
+            <label class="layout-choice">
+              <input type="radio" name="desktopLayout" value="slider">
+              <i class="bi bi-view-stacked" aria-hidden="true"></i>
+              <span>Deslizador</span>
+            </label>
+          </div>
+        </div>
+        <div class="settings-group">
+          <label>Música</label>
+          <div class="radio-group" role="radiogroup" aria-label="Música">
+            <label><input type="radio" name="musicEnabled" value="true"> Encendido</label>
+            <label><input type="radio" name="musicEnabled" value="false"> Apagado</label>
+          </div>
+        </div>
+        <div class="settings-group settings-share-group">
+          <label for="settingsShareLink">Enlace para compartir</label>
+          <div class="settings-share-control">
+            <input id="settingsShareLink" type="url" readonly>
+            <button type="button" id="copySettingsLinkBtn">Copiar</button>
           </div>
         </div>
       </form>

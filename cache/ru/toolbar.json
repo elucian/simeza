@@ -1,42 +1,30 @@
 {
-  "settings": {
-    "slug": "settings",
-    "icon": "bi-gear",
-    "action": "toggleSettingsModal()",
-    "label": {
-      "ru": "Настройки"
-    }
-  },
-  "gallery": {
-    "slug": "gallery.html",
-    "icon": "bi-palette",
-    "label": {
-      "ru": "Галерея"
-    }
-  },
   "about": {
-    "slug": "about.html",
+    "slug": "about",
     "icon": "bi-person",
     "label": {
       "ru": "О нас"
     }
   },
+  "gallery": {
+    "slug": "gallery",
+    "icon": "bi-palette",
+    "label": {
+      "ru": "Галерея"
+    }
+  },
   "filter": {
     "slug": "filter",
     "icon": "bi-funnel",
-    "action": "toggleFilterModal()",
-    "galleryOnly": true,
     "label": {
       "ru": "Фильтр"
     }
   },
-  "share": {
-    "slug": "share",
-    "icon": "bi-share",
-    "action": "shareGallery()",
-    "galleryOnly": true,
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
     "label": {
-      "ru": "Поделиться"
+      "ru": "Настройки"
     }
   }
 }
