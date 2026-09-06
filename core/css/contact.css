@@ -25,10 +25,16 @@
 }
 
 .contact-page-dialog h1 {
-  margin: 0 36px 16px 0;
+  margin: 0 36px 4px 0;
   color: var(--accent-color);
   font-size: 1.25rem;
   text-align: left;
+}
+
+.contact-recipient {
+  margin: 0 0 16px;
+  color: var(--text-main);
+  font-size: 0.85rem;
 }
 
 .contact-field {
@@ -112,7 +118,17 @@
   color: var(--text-main);
 }
 
+.contact-new-action {
+  border: 1px solid var(--border-color);
+  background: var(--bg-main);
+  color: var(--text-main);
+}
+
 .contact-send-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
   border: 1px solid var(--accent-color);
   background: var(--accent-color);
   color: var(--btn-active-text);

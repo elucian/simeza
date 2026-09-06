@@ -8,14 +8,11 @@ keywords: simeza, contact, pavy beloyu, elucian moise
   <section class="contact-page-dialog" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
     <button type="button" class="contact-page-close" id="closeContactBtn" aria-label="Close">&times;</button>
     <h1 id="contactTitle">Contact</h1>
+    <p id="contactRecipient" class="contact-recipient"></p>
     <form id="contactForm">
       <div class="contact-field">
         <label for="contactName">Name</label>
         <input id="contactName" name="name" type="text" autocomplete="name" required>
-      </div>
-      <div class="contact-field">
-        <label for="contactEmail">E-mail Address</label>
-        <input id="contactEmail" name="email" type="email" autocomplete="email" required>
       </div>
       <div class="contact-field">
         <label for="contactPhone">Phone Number</label>
@@ -23,7 +20,7 @@ keywords: simeza, contact, pavy beloyu, elucian moise
       </div>
       <div class="contact-field">
         <label for="contactSubject">Subject</label>
-        <input id="contactSubject" name="subject" type="text" required>
+        <input id="contactSubject" name="subject" type="text" value="Simeza Contact Message" required>
       </div>
       <div class="contact-field contact-message-field">
         <label for="contactMessage">Message</label>
@@ -32,7 +29,8 @@ keywords: simeza, contact, pavy beloyu, elucian moise
       <p id="contactError" class="contact-error" role="alert" hidden></p>
       <div class="contact-page-actions">
         <button type="button" id="closeContactAction" class="contact-close-action">Close</button>
-        <button type="submit" class="contact-send-action">Send</button>
+        <button type="button" id="newContactBtn" class="contact-new-action">New</button>
+        <button type="submit" class="contact-send-action"><i class="bi bi-envelope" aria-hidden="true"></i><span>Send</span></button>
       </div>
     </form>
   </section>

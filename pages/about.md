@@ -21,8 +21,6 @@ keywords: pavy beloiu, simeza, art, gallery, artist, author
 {{widget:about}}
 
 <section class="about-contact-panel">
-<h1>External References:</h1>
-<p>This website is demonstrative. If you like what you see, visit <a href="https://pavybeloiu.com">pavybeloiu.com</a> to order original physical canvas, books and writings.</p>
-
-<p>For more resources visit <a href="https://sagecode.org">sagecode.org</a> where you can learn foreign languages and programming.</p>
+<h1>How to Contact Works</h1>
+<p>This website is static we do not have a backend. You need the computer settings to allow you to send e-mail using System (windows) MAILTO configuration using your e-mail address. If the e-mail client do not pop your configuration is wrong.</p>
 </section>

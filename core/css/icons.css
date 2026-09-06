@@ -184,6 +184,12 @@
   mask-image: url('/core/img/icons/mortarboard.svg'); 
 }
 
+.icon-envelope,
+.bi-envelope {
+  -webkit-mask-image: url('/core/img/icons/envelope.svg');
+  mask-image: url('/core/img/icons/envelope.svg');
+}
+
 
 .icon-gear, .bi-gear { -webkit-mask-image: url('/core/img/icons/gear.svg'); mask-image: url('/core/img/icons/gear.svg'); }
 .icon-person, .bi-person { -webkit-mask-image: url('/core/img/icons/person.svg'); mask-image: url('/core/img/icons/person.svg'); }
