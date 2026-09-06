@@ -53,7 +53,7 @@ body {
 /* Layout Container */
 .container {
   min-height: 100dvh;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
   background-color: var(--bg-main);
@@ -89,7 +89,7 @@ body:has(.gallery-container),
 .container:has(.gallery-container) {
   display: grid;
   grid-template-rows: 56px minmax(0, 1fr) 56px;
-  max-width: 1000px;
+  max-width: 1200px;
   width: 100%;
   margin: 0 auto;
 }
@@ -121,11 +121,19 @@ body:has(.content-gallery-wrapper),
 .content:has(.gallery-container) {
   flex: 1 1 0;
   min-height: 0;
+  min-width: 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   padding: 8px 24px;
+}
+
+@media (min-width: 768px) {
+  body:not(.layout-maximized) .content:has(.gallery-container),
+  body:not(.layout-maximized) .gallery-container {
+    overflow: visible;
+  }
 }
 
 .content:has(.gallery-container) h1 {
