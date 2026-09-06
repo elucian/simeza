@@ -6,8 +6,6 @@ To improve efficiency, minimize token usage, and ensure codebase integrity, foll
 - **Thinking Budget Control**: Rely on `low`/`medium` effort in Act mode to suppress unnecessary thinking token generation and minimize execution costs.
 - **Cache Preservation**: Maintain consistent file access patterns to maximize Gemini context cache hits (`cacheRead` discount). Avoid redundant full-file reads when targeted diffs suffice.
 
-## 2. Multilingual Template Architecture (`ro/`)
-
 ## 1. Zero-Hang & Non-Interactive Policy (CRITICAL)
 - **Git Paging Ban**: Git pagers (like `less` or `more`) cause terminal hangs. **ALL** Git inspection commands MUST be non-interactive.
 - **Mandatory Flags**: Always use `git --no-pager` or `GIT_PAGER=cat` for all Git commands that produce output.
@@ -57,3 +55,7 @@ To improve efficiency, minimize token usage, and ensure codebase integrity, foll
 
 ## Issue valid commands in terminal.
 For some reason sometimes you issue truncated wrong commands usually first letter you miss. Avoid these kind of silly mistakes, make a verification to check if command is correct before you run it.
+
+## Exclude files from context
+Do not scan /local folder it contains generated files dist files.
+Do not scan /cache folder it contains translations
