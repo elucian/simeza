@@ -1,0 +1,30 @@
+{
+  "copyright": "Copyright (C) 2026 Sage-Code Laboratory.",
+  "links": [
+    {
+      "name": "Google Groups",
+      "icon": "bi-google",
+      "url": "https://groups.google.com/g/simeza"
+    },
+    {
+      "name": "Reddit",
+      "icon": "bi-reddit",
+      "url": ""
+    },
+    {
+      "name": "Facebook",
+      "icon": "bi-facebook",
+      "url": ""
+    },
+    {
+      "name": "Discord",
+      "icon": "bi-discord",
+      "url": ""
+    },
+    {
+      "name": "WhatsApp",
+      "icon": "bi-whatsapp",
+      "url": ""
+    }
+  ]
+}

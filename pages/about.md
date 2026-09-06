@@ -21,6 +21,6 @@ keywords: pavy beloiu, simeza, art, gallery, artist, author
 {{widget:about}}
 
 <section class="about-contact-panel">
-<h1>How to Contact Works</h1>
-<p>This website is static we do not have a backend. You need the computer settings to allow you to send e-mail using System (windows) MAILTO configuration using your e-mail address. If the e-mail client do not pop your configuration is wrong.</p>
+  <h3>Community &amp; Support</h3>
+  <p>Connect with us, ask questions, or join the discussion on our community channels.</p>
 </section>

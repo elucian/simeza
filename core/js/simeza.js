@@ -227,20 +227,35 @@ onDOMReady(() => {
     // 6. Social Footer
     const footer = document.getElementById("socialFooter");
     if (footer && footer.children.length === 0) {
-        const socialLinks = [
-            { name: "Google Groups", icon: "bi-google", url: "#" },
-            { name: "Reddit", icon: "bi-reddit", url: "#" },
-            { name: "Facebook", icon: "bi-facebook", url: "#" },
-            { name: "Discord", icon: "bi-discord", url: "#" },
-            { name: "WhatsApp", icon: "bi-whatsapp", url: "#" }
-        ];
-        const iconsWrapper = document.createElement("div");
-        iconsWrapper.className = "social-icons-wrapper";
-        socialLinks.forEach(link => {
-            iconsWrapper.innerHTML += `<a href="${link.url}" class="mx-2" title="${link.name}"><i class="bi ${link.icon}"></i></a>`;
-        });
-        footer.appendChild(iconsWrapper);
-        footer.innerHTML += `<p class="copyright">Copyright (C) 2026 Sage-Code Laboratory.</p>`;
+        fetch('/content/footer-links.json')
+            .then(response => response.ok ? response.json() : Promise.reject(new Error('Footer links unavailable')))
+            .then(config => {
+                const socialLinks = Array.isArray(config.links) ? config.links : [];
+                const iconsWrapper = document.createElement("div");
+                iconsWrapper.className = "social-icons-wrapper";
+                socialLinks.filter(link => link.url).forEach(link => {
+                    const anchor = document.createElement("a");
+                    anchor.href = link.url;
+                    anchor.title = link.name || '';
+                    anchor.target = "_blank";
+                    anchor.rel = "noopener noreferrer";
+                    const icon = document.createElement("i");
+                    icon.className = "bi " + (link.icon || '');
+                    anchor.appendChild(icon);
+                    iconsWrapper.appendChild(anchor);
+                });
+                if (iconsWrapper.children.length) footer.appendChild(iconsWrapper);
+                const copyright = document.createElement("p");
+                copyright.className = "copyright";
+                copyright.textContent = config.copyright || 'Copyright (C) 2026 Sage-Code Laboratory.';
+                footer.appendChild(copyright);
+            })
+            .catch(() => {
+                const copyright = document.createElement("p");
+                copyright.className = "copyright";
+                copyright.textContent = 'Copyright (C) 2026 Sage-Code Laboratory.';
+                footer.appendChild(copyright);
+            });
     }
 });
 
