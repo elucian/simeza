@@ -15,11 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getGalleryPath = () => {
         const lang = localStorage.getItem('lang') || 'en';
-        const slugs = {
-            en: 'gallery.html', ro: 'galerie.html', de: 'galerie.html', fr: 'galerie.html',
-            es: 'galeria.html', ru: 'galereya.html', pt: 'galeria.html', hu: 'galeria.html', it: 'galleria.html'
-        };
-        return '/' + lang + '/' + (slugs[lang] || 'gallery.html');
+        return '/' + lang + '/gallery.html';
     };
 
     closeButton?.addEventListener('click', () => {

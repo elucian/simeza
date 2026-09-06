@@ -39,24 +39,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const getGalleryUrl = (settings) => {
         const lang = localStorage.getItem('lang') || 'en';
-        const slugMap = {
-            'ro': 'galerie.html',
-            'de': 'galerie.html',
-            'fr': 'galerie.html',
-            'es': 'galeria.html',
-            'ru': 'galereya.html',
-            'pt': 'galeria.html',
-            'hu': 'galeria.html',
-            'it': 'galleria.html',
-            'en': 'gallery.html'
-        };
         const params = new URLSearchParams({
             loopDelay: String(settings.loopDelay),
             autoRotation: String(settings.autoRotation),
             desktopLayout: settings.desktopLayout,
             musicEnabled: String(settings.musicEnabled)
         });
-        return '/' + lang + '/' + (slugMap[lang] || 'gallery.html') + '?' + params.toString();
+        return '/' + lang + '/gallery.html?' + params.toString();
     };
 
     const updateShareLink = () => {

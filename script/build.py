@@ -285,10 +285,9 @@ def build(target_lang=None):
             if not file.endswith('.md'): continue
             md_file = SLUG_MAP.get(file, {}).get(lang, file) if lang != "en" else file
             source_filepath = os.path.join(CACHE_DIR, lang, md_file)
-            output_filename = md_file.replace(".md", ".html")
+            output_filename = file.replace(".md", ".html")
             if not os.path.exists(source_filepath):
                 source_filepath = os.path.join(PAGES_DIR, file)
-                output_filename = file.replace('.md', '.html')
             with open(source_filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
             meta, body = parse_frontmatter(content)

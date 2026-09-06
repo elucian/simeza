@@ -43,11 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const close = () => {
         const lang = localStorage.getItem('lang') || 'en';
-        const slugs = {
-            en: 'about.html', ro: 'despre.html', de: 'ueber-uns.html', fr: 'a-propos.html',
-            es: 'sobre-nosotros.html', ru: 'o-nas.html', pt: 'sobre.html', hu: 'rolunk.html', it: 'chi-siamo.html'
-        };
-        location.href = '/' + lang + '/' + (slugs[lang] || 'about.html');
+        location.href = '/' + lang + '/about.html';
     };
 
     if (recipientName) {

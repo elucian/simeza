@@ -76,14 +76,6 @@ window.closeMobileMenu = function() {
 };
 
 // 5. Language Handling
-const SLUG_MAP = {
-    "about.md": {"ro": "despre.md", "de": "ueber-uns.md", "fr": "a-propos.md", "es": "sobre-nosotros.md", "ru": "o-nas.md", "pt": "sobre.md", "hu": "rolunk.md", "it": "chi-siamo.md"},
-    "media.md": {"ro": "media.md", "de": "media.md", "fr": "media.md", "es": "media.md", "ru": "media.md", "pt": "media.md", "hu": "media.md", "it": "media.md"},
-    "authors.md": {"ro": "autori.md", "de": "autoren.md", "fr": "auteurs.md", "es": "autores.md", "ru": "avtory.md", "pt": "autores.md", "hu": "szerzok.md", "it": "autori.md"},
-    "writings.md": {"ro": "scrieri.md", "de": "schriften.md", "fr": "ecrits.md", "es": "escritos.md", "ru": "stati.md", "pt": "escritos.md", "hu": "irasok.md", "it": "scritti.md"},
-    "gallery.md": {"ro": "galerie.md", "de": "galerie.md", "fr": "galerie.md", "es": "galeria.md", "ru": "galereya.md", "pt": "galeria.md", "hu": "galeria.md", "it": "galleria.md"},
-    "books.md": {"ro": "carti.md", "de": "buecher.md", "fr": "livres.md", "es": "libros.md", "ru": "knigi.md", "pt": "livros.md", "hu": "konyvek.md", "it": "libri.md"}
-};
 
 const languages = [
     { code: "en", flag: "https://flagcdn.com/gb.svg", name: "EN" },
@@ -101,8 +93,7 @@ window.setLang = function(lang) {
     try { localStorage.setItem("lang", lang); } catch (e) {}
     const currentPageMeta = document.querySelector("meta[name=\x27page-id\x27]");
     const currentPageFile = currentPageMeta ? currentPageMeta.content : "gallery.md";
-    const targetSlug = SLUG_MAP[currentPageFile] ? (SLUG_MAP[currentPageFile][lang] || currentPageFile) : currentPageFile;
-    const targetPath = "/" + lang + "/" + targetSlug.replace(".md", ".html");
+    const targetPath = "/" + lang + "/" + currentPageFile.replace(".md", ".html");
     location.href = targetPath;
 };
 
