@@ -11,6 +11,39 @@
     "ro": {
       "name": "mesteceni 3",
       "description": "mesteceni 3"
+    },
+    "de": {
+      "name": "Birken 3",
+      "description": "Birken 3"
+    },
+    "en": {
+      "name": "birch trees 3",
+      "description": "birches 3"
+    },
+    "es": {
+      "name": "abedules 3",
+      "description": "abedules 3"
+    },
+    "fr": {
+      "name": "bouleaux 3",
+      "description": "bouleaux 3"
+    },
+    "hu": {
+      "name": "nyírfák 3",
+      "description": "nyírfák 3"
+    },
+    "it": {
+      "name": "betulle 3",
+      "description": "betulle 3"
+    },
+    "pt": {
+      "name": "bétulas 3",
+      "description": "bétulas 3"
+    },
+    "ru": {
+      "name": "берёзы 3",
+      "description": "берёзы 3"
     }
-  }
+  },
+  "source_hash": "31ba6db6d4eddf78a7273f7c06816e48def3031b5cec6c26a5e42dff58624adf"
 }

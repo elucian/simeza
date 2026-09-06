@@ -197,6 +197,11 @@ body:has(.content-gallery-wrapper),
 
 /* Language Selector */
 .lang-selector {
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
 
 /* New Toolbar Styles */
 .toolbar-nav {
@@ -212,6 +217,33 @@ body:has(.content-gallery-wrapper),
   padding: 8px 16px;
   border-radius: 50rem;
   background: var(--bg-header);
+
+/* Mobile Tooltip Support */
+@media (max-width: 767px) {
+  .toolbar-btn {
+    position: relative;
+  }
+  .toolbar-btn::after {
+    content: attr(title);
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #333;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+  .toolbar-btn:active::after {
+    opacity: 1;
+  }
+}
+
   border: 1px solid var(--border-color);
   color: var(--text-main);
   text-decoration: none;
@@ -231,12 +263,6 @@ body:has(.content-gallery-wrapper),
   .toolbar-btn {
     padding: 8px 12px;
   }
-}
-
-  position: relative;
-  display: flex;
-  align-items: center;
-  margin: 0;
 }
 
 #langBtn {
@@ -397,32 +423,37 @@ body.hide-pillbar .content:has(.gallery-container) {
 /* 5. Footer, Typography, Viewer, Responsive */
 /* Footer */
 #socialFooter {
-  display: none;
-  flex: 0 0 auto;
-  padding: 8px 10px;
-  background-color: var(--bg-footer);
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  border-top: 1px solid var(--border-color);
-}
-
-body[data-page="index.md"] #socialFooter,
-body[data-page="about.md"] #socialFooter {
   display: flex;
+  flex: 0 0 auto;
+  position: sticky;
+  bottom: 0;
+  z-index: 50;
+  min-height: 48px;
+  box-sizing: border-box;
+  padding: 8px 24px;
+  background-color: var(--bg-footer);
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border-top: 1px solid var(--border-color);
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.08);
 }
 
 .social-icons-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
 }
 
 .social-icons-wrapper a {
   color: var(--accent-color);
-  font-size: 1.25rem;
+  width: 30px;
+  height: 30px;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  font-size: 1rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -430,12 +461,14 @@ body[data-page="about.md"] #socialFooter {
 }
 
 .social-icons-wrapper a:hover {
-  opacity: 0.8;
+  background: var(--bg-main);
+  border-color: var(--border-color);
 }
 
 .copyright {
-  font-size: 0.6rem;
-  color: #7f5e56;
+  font-size: 0.7rem;
+  color: var(--text-main);
+  opacity: 0.7;
   margin: 0;
   text-align: center;
 }
@@ -484,7 +517,10 @@ body[data-page="about.md"] #socialFooter {
   }
 
   #socialFooter {
-    position: static;
+    position: sticky;
+    flex-direction: column;
+    gap: 4px;
+    padding: 8px 12px;
   }
 }
 
@@ -607,9 +643,6 @@ p {
 }
 
 @media (orientation: landscape) and (max-height: 600px) {
-  #socialFooter {
-    display: none !important;
-  }
   .header-app {
     padding: 2px 12px !important;
     height: auto !important;
@@ -655,6 +688,15 @@ p {
     overflow-y: auto !important;
   }
   .container {
+
+/* Gallery-only buttons */
+.gallery-only {
+  display: none !important;
+}
+body[data-page="gallery.md"] .gallery-only {
+  display: flex !important;
+}
+
     height: 100dvh !important;
     display: flex !important;
     flex-direction: column !important;

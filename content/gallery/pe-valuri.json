@@ -11,6 +11,39 @@
     "ro": {
       "name": "Pe valuri",
       "description": "Pe valuri"
+    },
+    "de": {
+      "name": "Auf den Wellen",
+      "description": "Auf den Wellen"
+    },
+    "en": {
+      "name": "On the waves",
+      "description": "On the waves"
+    },
+    "es": {
+      "name": "Sobre las olas",
+      "description": "Sobre las olas"
+    },
+    "fr": {
+      "name": "Sur les vagues",
+      "description": "Sur les vagues"
+    },
+    "hu": {
+      "name": "A hullámokon",
+      "description": "A hullámokon"
+    },
+    "it": {
+      "name": "Sulle onde",
+      "description": "Sulle onde"
+    },
+    "pt": {
+      "name": "Sobre as ondas",
+      "description": "Sobre as ondas"
+    },
+    "ru": {
+      "name": "На волнах",
+      "description": "На волнах"
     }
-  }
+  },
+  "source_hash": "28abb1b8747785a7b474418762bb9072d571f8b7562ec0af16b2ea88546c7dd4"
 }

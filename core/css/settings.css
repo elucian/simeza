@@ -1,32 +1,43 @@
-.settings-dialog {
+.gallery-modal-overlay:has(.settings-modal) {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
     display: flex;
-    border: 1px solid var(--border-color);
-    padding: 24px;
-    height: 50vh;
-    margin: 40px auto;
-    max-width: 600px;
-    border-radius: 8px;
-    background: var(--bg-main);
-}
-.settings-left {
-    flex: 2;
-    border-right: 1px solid var(--border-color);
-    padding-right: 20px;
-    display: flex;
-    flex-direction: column;
-}
-.settings-right {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
-    gap: 15px;
-    padding-left: 20px;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.55);
+    backdrop-filter: blur(4px);
+}
+
+.settings-modal {
+    position: relative;
+    width: min(400px, calc(100vw - 32px)) !important;
+    height: auto !important;
+    max-height: calc(100dvh - 32px) !important;
+    padding: 24px !important;
+    box-sizing: border-box;
+    overflow: auto;
+}
+
+.settings-modal .gallery-modal-close-x {
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    border-radius: 4px;
+    color: var(--text-main);
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+.settings-modal .gallery-modal-close-x:hover {
+    background: var(--bg-main);
+    color: var(--accent-color);
 }
 .settings-group {
     margin-bottom: 20px;
-    max-width: 300px;
 }
 .settings-group label {
     display: block;
@@ -54,20 +65,82 @@
     gap: 5px;
     cursor: pointer;
 }
-#applySettingsBtn, #cancelSettingsBtn {
-    width: 120px;
-    border: none;
-    padding: 10px 24px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
+
+.layout-choice-group {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
 }
-#applySettingsBtn {
-    background: var(--accent-color);
-    color: white;
-}
-#cancelSettingsBtn {
-    background: var(--bg-header);
-    color: var(--text-main);
+
+.layout-choice {
+    display: flex;
+    min-height: 76px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
     border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    cursor: pointer;
 }
+
+.layout-choice input {
+    position: absolute;
+    opacity: 0;
+}
+
+.layout-choice .bi {
+    font-size: 1.35rem;
+    color: var(--accent-color);
+}
+
+.layout-choice:has(input:checked) {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: var(--btn-active-text);
+}
+
+.layout-choice:has(input:checked) .bi {
+    background-color: currentColor;
+}
+
+.layout-choice:focus-within {
+    outline: 2px solid var(--accent-color);
+    outline-offset: 2px;
+}
+
+.settings-share-control {
+    display: flex;
+    gap: 8px;
+}
+
+.settings-share-control input {
+    min-width: 0;
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-main);
+    color: var(--text-main);
+}
+
+.settings-share-control button {
+    flex: 0 0 auto;
+    padding: 8px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-main);
+    color: var(--text-main);
+    cursor: pointer;
+}
+
+.settings-share-control button:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+.settings-modal .filter-modal-body {
+    padding: 20px 0;
+}
+

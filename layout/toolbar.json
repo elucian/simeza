@@ -1,0 +1,32 @@
+{
+  "about": {
+    "slug": "about",
+    "icon": "bi-person",
+    "label": {
+      "en": "About", "ro": "Despre", "de": "Über", "es": "Acerca de", "fr": "À propos", "ru": "О нас", "pt": "Sobre", "hu": "Névjegy", "it": "Chi siamo"
+    }
+  },
+  "gallery": {
+    "slug": "gallery",
+    "icon": "bi-palette",
+    "label": {
+      "en": "Gallery", "ro": "Galerie", "de": "Galerie", "es": "Galería", "fr": "Galerie", "ru": "Галерея", "pt": "Galeria", "hu": "Galéria", "it": "Galleria"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "label": {
+      "en": "Filter", "ro": "Filtru", "de": "Filter", "es": "Filtro", "fr": "Filtre", "ru": "Фильтр", "pt": "Filtro", "hu": "Szűrő", "it": "Filtro"
+    }
+  },
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "label": {
+      "en": "Settings", "ro": "Setări", "de": "Einstellungen", "es": "Ajustes", "fr": "Paramètres", "ru": "Настройки", "pt": "Configurações", "hu": "Beállítások", "it": "Impostazioni"
+    }
+  }
+}
+ 
+

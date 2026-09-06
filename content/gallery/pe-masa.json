@@ -11,6 +11,39 @@
     "ro": {
       "name": "pe masa",
       "description": "pe masa"
+    },
+    "de": {
+      "name": "auf dem Tisch",
+      "description": "auf dem Tisch"
+    },
+    "en": {
+      "name": "on the table",
+      "description": "on the table"
+    },
+    "es": {
+      "name": "sobre la mesa",
+      "description": "sobre la mesa"
+    },
+    "fr": {
+      "name": "sur la table",
+      "description": "sur la table"
+    },
+    "hu": {
+      "name": "az asztalon",
+      "description": "az asztalon"
+    },
+    "it": {
+      "name": "sul tavolo",
+      "description": "sul tavolo"
+    },
+    "pt": {
+      "name": "sobre a mesa",
+      "description": "sobre a mesa"
+    },
+    "ru": {
+      "name": "на столе",
+      "description": "на столе"
     }
-  }
+  },
+  "source_hash": "ee670381c0dbbf19da70b0343bb38eaa4273683b7e3c4e63ddec6ff2c13c7f8b"
 }

@@ -11,6 +11,39 @@
     "en": {
       "name": "mona",
       "description": "mona"
+    },
+    "de": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "es": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "fr": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "hu": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "it": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "pt": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "ro": {
+      "name": "mona",
+      "description": "mona"
+    },
+    "ru": {
+      "name": "мона",
+      "description": "мона"
     }
-  }
+  },
+  "source_hash": "708789d1754fae1c7584040b11a6ea4fa3086e9307c856380502155e53efea21"
 }

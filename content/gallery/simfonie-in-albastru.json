@@ -11,6 +11,39 @@
     "ro": {
       "name": "simfonie in albastru",
       "description": "simfonie in albastru"
+    },
+    "de": {
+      "name": "Sinfonie in Blau",
+      "description": "Sinfonie in Blau"
+    },
+    "en": {
+      "name": "Symphony in blue",
+      "description": "Symphony in blue"
+    },
+    "es": {
+      "name": "Sinfonía en azul",
+      "description": "Sinfonía en azul"
+    },
+    "fr": {
+      "name": "Symphonie en bleu",
+      "description": "Symphonie en bleu"
+    },
+    "hu": {
+      "name": "Szimfónia kékben",
+      "description": "Szimfónia kékben"
+    },
+    "it": {
+      "name": "Sinfonia in blu",
+      "description": "Sinfonia in blu"
+    },
+    "pt": {
+      "name": "Sinfonia em azul",
+      "description": "Sinfonia em azul"
+    },
+    "ru": {
+      "name": "Симфония в синем",
+      "description": "Симфония в синем"
     }
-  }
+  },
+  "source_hash": "8713ec4644f2ec5d3e5eeb1b440511d2542e39bf4056f150899a33bc798d7646"
 }

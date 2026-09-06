@@ -119,39 +119,27 @@ def render_gallery_html(gallery_data, lang):
         '</div>'
     ]
 
-    filter_modal = [
-        '<div id="filterModal" class="gallery-modal-overlay">',
-        '  <div class="gallery-modal gallery-filter-modal">',
-        '    <button class="gallery-modal-close-x" onclick="toggleFilterModal()" aria-label="Close">&times;</button>',
-        f'    <h3 class="filter-modal-title">{trans["Filter"]}</h3>',
-        '    <div class="filter-modal-body">'
-    ]
-    for section_key, title_label in [('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
-        items = filter_data.get(section_key, [])
-        if items:
-            filter_modal.append(f'      <div class="filter-group"><strong>{title_label}</strong>')
-            filter_modal.append(f'        <select name="filter-{section_key}">')
-            filter_modal.append('          <option value="">All</option>')
-            for entry in items:
-                entry_id = entry.get('id')
-                label_dict = entry.get('label', {})
-                label_text = label_dict.get(lang) or label_dict.get('en') or entry_id
-                filter_modal.append(f'          <option value="{entry_id}">{label_text}</option>')
-            filter_modal.append('        </select>')
-            filter_modal.append('      </div>')
-    filter_modal.extend([
-        '    </div>',
-        '    <div class="gallery-modal-footer filter-modal-footer">',
-        f'      <button class="gallery-modal-btn-close filter-reset-btn" onclick="resetFilters()">{trans["Reset"]}</button>',
-        f'      <button class="gallery-modal-btn-close" onclick="applyFilters(true)">{trans["Filter"]}</button>',
-        '    </div>',
-        '  </div>',
-        '</div>'
-    ])
     panels.extend(modal)
-    panels.extend(filter_modal)
     panels.append('</div>')
     return '\n'.join(panels)
+
+def render_filter_html(lang):
+    labels = {'en': {'title': 'Filter Collection', 'all': 'All', 'type': 'Type', 'author': 'Author', 'category': 'Category', 'topic': 'Topic', 'reset': 'Reset', 'apply': 'View Collection'}}
+    text = labels['en']
+    with open(os.path.join(ROOT, 'content', 'filter-gallery.json'), 'r', encoding='utf-8') as f:
+        filter_data = json.load(f)
+
+    sections = [('types', 'type', text['type']), ('authors', 'author', text['author']), ('categories', 'category', text['category']), ('topics', 'topic', text['topic'])]
+    parts = ['<div class="filter-page-dialog">', f'  <h2>{text["title"]}</h2>', '  <form id="filterForm">']
+    for source_key, field_name, label in sections:
+        parts.extend([f'    <div class="filter-group">', f'      <label for="filter-{field_name}">{label}</label>', f'      <select id="filter-{field_name}" name="{field_name}">', f'        <option value="">{text["all"]}</option>'])
+        for entry in filter_data.get(source_key, []):
+            entry_id = entry.get('id', '')
+            entry_label = entry.get('label', {}).get(lang) or entry.get('label', {}).get('en') or entry_id
+            parts.append(f'        <option value="{html.escape(entry_id)}">{html.escape(entry_label)}</option>')
+        parts.extend(['      </select>', '    </div>'])
+    parts.extend(['  </form>', '  <div class="filter-page-actions">', f'    <button type="button" class="filter-reset-btn" id="resetFiltersBtn">{text["reset"]}</button>', f'    <button type="button" class="filter-apply-btn" id="applyFiltersBtn">{text["apply"]}</button>', '  </div>', '</div>'])
+    return '\n'.join(parts)
 
 def parse_frontmatter(content):
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
@@ -165,18 +153,33 @@ def parse_frontmatter(content):
             meta[k.strip().lower()] = v.strip()
     return meta, body
 
-def render_menu(lang):
-    menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
+def render_toolbar(lang):
+    toolbar_file = os.path.join(LAYOUT_DIR, 'toolbar.json')
     if lang != 'en':
-        lang_menu = os.path.join(CACHE_DIR, lang, 'menu.json')
-        if os.path.exists(lang_menu): menu_file = lang_menu
-    if not os.path.exists(menu_file): return ''
-    with open(menu_file, 'r', encoding='utf-8') as f:
+        lang_toolbar = os.path.join(CACHE_DIR, lang, 'toolbar.json')
+        if os.path.exists(lang_toolbar): toolbar_file = lang_toolbar
+    if not os.path.exists(toolbar_file): return ''
+    with open(toolbar_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
+    
     html = ''
-    for label, url in data.items():
-        link = f'/{lang}/{url}'
-        html += f'<li class="nav-item"><a class="nav-link" href="{link}">{label}</a></li>'
+    for item_id, config in data.items():
+        icon = config.get("icon", "bi-circle")
+        action = config.get("action")
+        slug = config.get("slug")
+        gallery_only = config.get("galleryOnly", False)
+        label = config.get("label", {}).get(lang, config.get("label", {}).get('en', ''))
+        
+        btn_class = "toolbar-btn"
+        if gallery_only:
+            btn_class += " gallery-only"
+        
+        if action:
+            html += f'<li><button class="{btn_class}" onclick="{action}" title="{label}"><i class="bi {icon}"></i><span class="btn-label">{label}</span></button></li>'
+        else:
+            link = f'/{lang}/{slug}.html'
+            html += f'<li><a href="{link}" class="{btn_class}" title="{label}"><i class="bi {icon}"></i><span class="btn-label">{label}</span></a></li>'
+            
     return html
 
 def build(target_lang=None):
@@ -225,13 +228,15 @@ def build(target_lang=None):
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
             page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
             if name_no_ext != 'index': page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
-            page_js = f'<script src="/core/js/{name_no_ext}.js"></script>' if os.path.exists(js_path) else ''
+            page_js = f'<script src="/core/js/{name_no_ext}.js?v={version}-page-2"></script>' if os.path.exists(js_path) else ''
             md = markdown.Markdown(extensions=['extra', 'md_in_html'])
             if '{{widget:gallery}}' in body:
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))
+            if '{{widget:filter}}' in body:
+                body = body.replace('{{widget:filter}}', render_filter_html(lang))
             html_content = md.convert(body)
             title = meta.get('title', 'La Simeza')
-            final_html = base_template.replace('{{lang}}', lang).replace('{{page-id}}', file).replace('{{page-content}}', html_content).replace('{{menu}}', render_menu(lang)).replace('{{mobile_menu}}', render_menu(lang)).replace('{{version}}', version).replace('{{title}}', title).replace('{{description}}', meta.get('description', 'Art gallery')).replace('{{keywords}}', meta.get('keywords', 'art')).replace('{{page-css}}', page_css).replace('{{page-js}}', page_js).replace('href="core/', 'href="/core/').replace('src="core/', 'src="/core/')
+            final_html = base_template.replace('{{lang}}', lang).replace('{{page-id}}', file).replace('{{page-content}}', html_content).replace('{{menu}}', render_toolbar(lang)).replace('{{version}}', version).replace('{{title}}', title).replace('{{description}}', meta.get('description', 'Art gallery')).replace('{{keywords}}', meta.get('keywords', 'art')).replace('{{page-css}}', page_css).replace('{{page-js}}', page_js).replace('href="core/', 'href="/core/').replace('src="core/', 'src="/core/')
             protection = """
 <style>
   img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; user-select: none; }

@@ -11,6 +11,39 @@
     "ro": {
       "name": "squash cu stergar",
       "description": "squash cu stergar"
+    },
+    "de": {
+      "name": "Squash mit Handtuch",
+      "description": "Squash mit Handtuch"
+    },
+    "en": {
+      "name": "squash with towel",
+      "description": "squash with towel"
+    },
+    "es": {
+      "name": "squash con toalla",
+      "description": "squash con toalla"
+    },
+    "fr": {
+      "name": "squash avec serviette",
+      "description": "squash avec serviette"
+    },
+    "hu": {
+      "name": "squash törölközővel",
+      "description": "squash törölközővel"
+    },
+    "it": {
+      "name": "squash con asciugamano",
+      "description": "squash con asciugamano"
+    },
+    "pt": {
+      "name": "squash com toalha",
+      "description": "squash com toalha"
+    },
+    "ru": {
+      "name": "сквош с полотенцем",
+      "description": "сквош с полотенцем"
     }
-  }
+  },
+  "source_hash": "9e0b97188dff364833b4ee4cc19f8cd4a7ab5a0edcbcf75f64b47a8c68257acf"
 }

@@ -11,6 +11,39 @@
     "en": {
       "name": "Michelsberg",
       "description": "Michelsberg"
+    },
+    "de": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "es": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "fr": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "hu": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "it": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "pt": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "ro": {
+      "name": "Michelsberg",
+      "description": "Michelsberg"
+    },
+    "ru": {
+      "name": "Михельсберг",
+      "description": "Михельсберг"
     }
-  }
+  },
+  "source_hash": "00f7a9be400adfc44012de9901b1872afbc77fefeda554a05bf608f41c56096d"
 }

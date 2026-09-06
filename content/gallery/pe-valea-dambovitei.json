@@ -11,6 +11,39 @@
     "ro": {
       "name": "pe valea Dambovitei",
       "description": "pe valea Dambovitei"
+    },
+    "de": {
+      "name": "im Dâmbovița-Tal",
+      "description": "im Dâmbovița-Tal"
+    },
+    "en": {
+      "name": "in the Dâmbovița valley",
+      "description": "in the Dâmbovița valley"
+    },
+    "es": {
+      "name": "en el valle del Dâmbovița",
+      "description": "en el valle del Dâmbovița"
+    },
+    "fr": {
+      "name": "dans la vallée de la Dâmbovița",
+      "description": "dans la vallée de la Dâmbovița"
+    },
+    "hu": {
+      "name": "a Dâmbovița völgyében",
+      "description": "a Dâmbovița völgyében"
+    },
+    "it": {
+      "name": "nella valle della Dâmbovița",
+      "description": "nella valle della Dâmbovița"
+    },
+    "pt": {
+      "name": "no vale do Dâmbovița",
+      "description": "no vale do Dâmbovița"
+    },
+    "ru": {
+      "name": "в долине Дымбовицы",
+      "description": "в долине Дымбовицы"
     }
-  }
+  },
+  "source_hash": "2b0d25264fb205b22bc3a83c5eca28e7e21b8dbe682a8ce242078795b7f1899d"
 }

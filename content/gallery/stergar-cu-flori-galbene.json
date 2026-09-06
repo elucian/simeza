@@ -11,6 +11,39 @@
     "ro": {
       "name": "Stergar cu flori galbene",
       "description": "Stergar cu flori galbene"
+    },
+    "de": {
+      "name": "Geschirrtuch mit gelben Blumen",
+      "description": "Geschirrtuch mit gelben Blumen"
+    },
+    "en": {
+      "name": "Towel with yellow flowers",
+      "description": "Towel with yellow flowers"
+    },
+    "es": {
+      "name": "Paño de cocina con flores amarillas",
+      "description": "Paño de cocina con flores amarillas"
+    },
+    "fr": {
+      "name": "Torchon avec des fleurs jaunes",
+      "description": "Torchon avec des fleurs jaunes"
+    },
+    "hu": {
+      "name": "Törölköző sárga virágokkal",
+      "description": "Törölköző sárga virágokkal"
+    },
+    "it": {
+      "name": "Asciugamano con fiori gialli",
+      "description": "Asciugamano con fiori gialli"
+    },
+    "pt": {
+      "name": "Pano de prato com flores amarelas",
+      "description": "Pano de prato com flores amarelas"
+    },
+    "ru": {
+      "name": "Полотенце с желтыми цветами",
+      "description": "Полотенце с желтыми цветами"
     }
-  }
+  },
+  "source_hash": "0a52565b5c186fefcf647f23dd0d610da44910d707e2d18548c3c49b12b3266b"
 }

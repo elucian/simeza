@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "action": "toggleSettingsModal()",
+    "label": {
+      "it": "Impostazioni"
+    }
+  },
+  "gallery": {
+    "slug": "gallery.html",
+    "icon": "bi-palette",
+    "label": {
+      "it": "Galleria"
+    }
+  },
+  "about": {
+    "slug": "about.html",
+    "icon": "bi-person",
+    "label": {
+      "it": "Chi siamo"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "action": "toggleFilterModal()",
+    "galleryOnly": true,
+    "label": {
+      "it": "Filtro"
+    }
+  },
+  "share": {
+    "slug": "share",
+    "icon": "bi-share",
+    "action": "shareGallery()",
+    "galleryOnly": true,
+    "label": {
+      "it": "Condividi"
+    }
+  }
+}

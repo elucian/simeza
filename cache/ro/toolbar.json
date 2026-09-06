@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "action": "toggleSettingsModal()",
+    "label": {
+      "ro": "Setări"
+    }
+  },
+  "gallery": {
+    "slug": "gallery.html",
+    "icon": "bi-palette",
+    "label": {
+      "ro": "Galerie"
+    }
+  },
+  "about": {
+    "slug": "about.html",
+    "icon": "bi-person",
+    "label": {
+      "ro": "Despre"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "action": "toggleFilterModal()",
+    "galleryOnly": true,
+    "label": {
+      "ro": "Filtru"
+    }
+  },
+  "share": {
+    "slug": "share",
+    "icon": "bi-share",
+    "action": "shareGallery()",
+    "galleryOnly": true,
+    "label": {
+      "ro": "Distribuie"
+    }
+  }
+}

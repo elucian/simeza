@@ -1,7 +1,7 @@
 // Gallery functionality
 
 // Persistence & Settings
-const getSettings = () => {
+const getGallerySettings = () => {
     try {
         const saved = localStorage.getItem('simezaSettings');
         if (saved) {
@@ -9,36 +9,42 @@ const getSettings = () => {
             return {
                 loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                 autoRotation: parsed.autoRotation === true || parsed.autoRotation === 'true',
-                pillbarVisible: parsed.pillbarVisible !== false && parsed.pillbarVisible !== 'false'
+              desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider'
             };
         }
     } catch (e) {}
-    return { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider' };
 };
 
 const applySettings = () => {
-    const settings = getSettings();
-    document.body.classList.toggle('hide-pillbar', !settings.pillbarVisible);
-    const bottomBar = document.getElementById('bottomBar');
-    if (bottomBar) {
-        bottomBar.style.display = settings.pillbarVisible ? '' : 'none';
+  const settings = getGallerySettings();
+        if (window.innerWidth >= 768) {
+          document.body.classList.toggle('layout-maximized', settings.desktopLayout === 'panels');
     }
+};
+
+const getSavedFilters = () => {
+  try {
+    return JSON.parse(localStorage.getItem('simezaFilters')) || {};
+  } catch (e) {
+    return {};
+  }
 };
 
 const saveFilters = () => {
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
+  const savedFilters = getSavedFilters();
     const filters = {
-        type: activeBtn ? activeBtn.dataset.filter : 'painting',
-        author: document.querySelector('select[name=\'filter-authors\']')?.value,
-        category: document.querySelector('select[name=\'filter-categories\']')?.value,
-        topic: document.querySelector('select[name=\'filter-topics\']')?.value
+    type: activeBtn ? activeBtn.dataset.filter : savedFilters.type,
+    author: document.querySelector('select[name=\'filter-authors\']')?.value || savedFilters.author || '',
+    category: document.querySelector('select[name=\'filter-categories\']')?.value || savedFilters.category || '',
+    topic: document.querySelector('select[name=\'filter-topics\']')?.value || savedFilters.topic || ''
     };
     localStorage.setItem('simezaFilters', JSON.stringify(filters));
 };
 
 const loadFilters = () => {
-    const saved = localStorage.getItem('simezaFilters');
-    const filters = saved ? JSON.parse(saved) : {};
+  const filters = getSavedFilters();
     
     // Set type (button) - restore saved or default to painting
     const buttons = document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn');
@@ -70,15 +76,16 @@ window.applyFilters = function(shouldCloseModal = false) {
         document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
     }
 
+    const savedFilters = getSavedFilters();
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
-    let type = activeBtn ? activeBtn.dataset.filter : null;
+    let type = activeBtn ? activeBtn.dataset.filter : savedFilters.type || null;
     const authorSelect = document.querySelector('select[name=\'filter-authors\']');
     const categorySelect = document.querySelector('select[name=\'filter-categories\']');
     const topicSelect = document.querySelector('select[name=\'filter-topics\']');
 
-    const authors = authorSelect && authorSelect.value ? [authorSelect.value] : [];
-    const categories = categorySelect && categorySelect.value ? [categorySelect.value] : [];
-    const topics = topicSelect && topicSelect.value ? [topicSelect.value] : [];
+    const authors = authorSelect && authorSelect.value ? [authorSelect.value] : (savedFilters.author ? [savedFilters.author] : []);
+    const categories = categorySelect && categorySelect.value ? [categorySelect.value] : (savedFilters.category ? [savedFilters.category] : []);
+    const topics = topicSelect && topicSelect.value ? [topicSelect.value] : (savedFilters.topic ? [savedFilters.topic] : []);
 
     saveFilters();
 
@@ -115,7 +122,7 @@ window.resetFilters = function() {
     document.querySelectorAll('.sticky-bottom-bar .bottom-bar-btn').forEach(b => b.classList.remove('active'));
     
     document.querySelectorAll('#filterModal select').forEach(sel => sel.value = '');
-    saveFilters();
+    localStorage.removeItem('simezaFilters');
     if (filterModal) filterModal.classList.remove('active');
     window.applyFilters();
 };
@@ -147,6 +154,9 @@ onDOMReady(() => {
 
   // Load and apply initial filters
   loadFilters();
+  // Apply route filters
+  window.applyRouteFilters();
+
   window.applyFilters();
   
   // Modal handling
@@ -196,10 +206,10 @@ onDOMReady(() => {
       if (!isModalLooping) return;
       currentModalIndex = (currentModalIndex + 1) % modalFilteredPanels.length;
       populateModal(modalFilteredPanels[currentModalIndex]);
-      const currentDelay = (parseInt(getSettings().loopDelay, 10) || 3) * 1000;
+      const currentDelay = (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000;
       modalLoopTimeout = setTimeout(cycle, currentDelay);
     };
-    const initialDelay = (parseInt(getSettings().loopDelay, 10) || 3) * 1000;
+    const initialDelay = (parseInt(getGallerySettings().loopDelay, 10) || 3) * 1000;
     modalLoopTimeout = setTimeout(cycle, initialDelay);
   };
 
@@ -229,7 +239,7 @@ onDOMReady(() => {
     
     modal.classList.add('active');
     // Auto-rotation
-    const settings = getSettings();
+    const settings = getGallerySettings();
     if (settings.autoRotation) {
         startModalLoop();
     }
@@ -337,9 +347,6 @@ onDOMReady(() => {
     });
     updateButtons();
   });
-            });
-        });
-    });
 
 });
 

@@ -11,6 +11,39 @@
     "en": {
       "name": "pacific grove",
       "description": "pacific grove"
+    },
+    "de": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "es": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "fr": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "hu": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "it": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "pt": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "ro": {
+      "name": "Pacific Grove",
+      "description": "Pacific Grove"
+    },
+    "ru": {
+      "name": "Пасифик-Гроув",
+      "description": "Пасифик-Гроув"
     }
-  }
+  },
+  "source_hash": "d98f4f5eb3b88acb74feb9339cf1a2f3529a6067d8d68328ab9228ac08a44de8"
 }

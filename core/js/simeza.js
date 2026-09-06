@@ -46,7 +46,9 @@ window.toggleFilterModal = function() {
 window.toggleDesktopLayout = function() {
     const isMax = document.body.classList.toggle("layout-maximized");
     try {
-        localStorage.setItem("simezaDesktopLayout", isMax ? "maximized" : "normal");
+        const settings = getSettings();
+        settings.desktopLayout = isMax ? "panels" : "slider";
+        localStorage.setItem("simezaSettings", JSON.stringify(settings));
     } catch (e) {}
     updateLayoutButtonIcon(isMax);
 };
@@ -118,16 +120,39 @@ function getSettings() {
             return {
                 loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                 autoRotation: parsed.autoRotation === true || parsed.autoRotation === "true",
-                pillbarVisible: parsed.pillbarVisible !== false && parsed.pillbarVisible !== "false"
+                desktopLayout: parsed.desktopLayout === "panels" ? "panels" : "slider"
             };
         }
     } catch (e) {}
-    return { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+    return { loopDelay: 3, autoRotation: true, desktopLayout: "slider" };
 }
 
 // Global DOM Ready Handlers
 onDOMReady(() => {
-    // 1. Theme Logo click handler & sync
+window.toggleSettingsModal = function() {
+    const modal = document.getElementById("settingsModal");
+    if (modal) {
+        modal.classList.toggle("active");
+    }
+};
+
+onDOMReady(() => {
+    // Apply Settings
+    const applyBtn = document.getElementById('applySettingsBtn');
+    if (applyBtn) applyBtn.onclick = () => {
+        const form = document.getElementById('settingsForm');
+        const formData = new FormData(form);
+        const settings = {
+            loopDelay: formData.get('loopDelay'),
+            autoRotation: formData.get('autoRotation') === 'true',
+            pillbarVisible: formData.get('pillbarVisible') === 'true'
+        };
+        localStorage.setItem("simezaSettings", JSON.stringify(settings));
+        window.toggleSettingsModal();
+        applySettings(); // Re-apply immediately
+    };
+    
+    // Theme Logo setup
     const themeLogo = document.getElementById("themeLogo");
     if (themeLogo) {
         themeLogo.style.cursor = "pointer";
@@ -137,25 +162,28 @@ onDOMReady(() => {
     }
 
     // 2. Toolbar buttons visibility
-    const pageId = document.querySelector("meta[name=\x27page-id\x27]")?.content || "";
+    const pageId = document.querySelector("meta[name='page-id']")?.content || "";
     const pathname = window.location.pathname;
-    const filterBtn = document.getElementById("filterBtn");
-    const layoutGridBtn = document.getElementById("layoutGridBtn");
-    const isIndex = pageId.includes("index") || pathname.endsWith("/") || pathname.endsWith("index.html");
+    const filterBtn = document.querySelector(".toolbar-btn[onclick*='toggleFilterModal']");
+    const isGallery = pageId.includes("gallery.md") || pathname.includes("galerie");
 
-    if (filterBtn && !isIndex) {
-        filterBtn.classList.add("is-visible");
-        filterBtn.onclick = window.toggleFilterModal;
-    }
-    if (layoutGridBtn && !isIndex) {
-        layoutGridBtn.classList.add("is-visible");
-        layoutGridBtn.onclick = window.toggleDesktopLayout;
+    if (filterBtn) {
+        filterBtn.parentElement.classList.toggle("gallery-only", !isGallery);
     }
 
-    // 3. Desktop Layout restoration
+    // 3. Apply shareable settings before restoring the desktop layout.
+    const routeSettings = new URLSearchParams(window.location.search);
+    if (routeSettings.has("loopDelay") || routeSettings.has("autoRotation") || routeSettings.has("desktopLayout")) {
+        const settings = getSettings();
+        settings.loopDelay = parseInt(routeSettings.get("loopDelay"), 10) || settings.loopDelay;
+        if (routeSettings.has("autoRotation")) settings.autoRotation = routeSettings.get("autoRotation") === "true";
+        if (routeSettings.has("desktopLayout")) settings.desktopLayout = routeSettings.get("desktopLayout") === "panels" ? "panels" : "slider";
+        try { localStorage.setItem("simezaSettings", JSON.stringify(settings)); } catch (e) {}
+    }
+
+    // 4. Desktop Layout restoration
     if (window.innerWidth >= 768) {
-        const savedLayout = localStorage.getItem("simezaDesktopLayout");
-        if (savedLayout === "maximized") {
+        if (getSettings().desktopLayout === "panels") {
             document.body.classList.add("layout-maximized");
             updateLayoutButtonIcon(true);
         }
@@ -210,7 +238,7 @@ onDOMReady(() => {
 
     // 6. Social Footer
     const footer = document.getElementById("socialFooter");
-    if (footer && (pageId === "index.md" || pageId === "about.md") && footer.children.length === 0) {
+    if (footer && footer.children.length === 0) {
         const socialLinks = [
             { name: "Google Groups", icon: "bi-google", url: "#" },
             { name: "Reddit", icon: "bi-reddit", url: "#" },
@@ -296,6 +324,37 @@ function initFullscreenViewer() {
             stopLoop();
         }
     });
+
+
+window.shareGallery = function() {
+    const activeBtn = document.querySelector('.toolbar-btn.active') || document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
+    const params = new URLSearchParams({
+        type: activeBtn?.dataset?.filter || 'painting',
+        author: document.querySelector('select[name=\'filter-authors\']')?.value || '',
+        category: document.querySelector('select[name=\'filter-categories\']')?.value || '',
+        topic: document.querySelector('select[name=\'filter-topics\']')?.value || ''
+    });
+    
+    // Remove empty params
+    for (const [key, value] of params.entries()) {
+        if (!value) params.delete(key);
+    }
+    
+    const url = window.location.origin + window.location.pathname + '?' + params.toString();
+    navigator.clipboard.writeText(url).then(() => {
+        alert('Share link copied to clipboard!');
+    });
+};
+
+window.applyRouteFilters = function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const keys = ['type', 'author', 'category', 'topic'];
+    if (!keys.some(key => urlParams.has(key))) return;
+    const filters = {};
+    keys.forEach(key => { filters[key] = urlParams.get(key) || ''; });
+    try { localStorage.setItem('simezaFilters', JSON.stringify(filters)); } catch (e) {}
+    window.applyFilters?.();
+};
 
     // Touch/Mouse pause/resume
     viewerImg.addEventListener('mousedown', () => { if (isLooping) clearTimeout(loopTimeout); });
@@ -430,3 +489,24 @@ function initLandscapeAutoFullscreen() {
 
 
 onDOMReady(initLandscapeAutoFullscreen);
+
+window.toggleSettingsModal = function() {
+    const modal = document.getElementById("settingsModal");
+    if (modal) {
+        modal.classList.toggle("active");
+    }
+};
+
+onDOMReady(() => {
+    const applyBtn = document.getElementById('applySettingsBtn');
+    const cancelBtn = document.getElementById('cancelSettingsBtn');
+    if (applyBtn) applyBtn.onclick = () => {
+        // Handle settings save logic here
+        window.toggleSettingsModal();
+    };
+    if (cancelBtn) cancelBtn.onclick = () => {
+        window.toggleSettingsModal();
+    };
+});
+
+});

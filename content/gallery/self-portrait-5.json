@@ -11,6 +11,39 @@
     "en": {
       "name": "self portrait 5",
       "description": "self portrait 5"
+    },
+    "de": {
+      "name": "Selbstporträt 5",
+      "description": "Selbstporträt 5"
+    },
+    "es": {
+      "name": "autorretrato 5",
+      "description": "autorretrato 5"
+    },
+    "fr": {
+      "name": "autoportrait 5",
+      "description": "autoportrait 5"
+    },
+    "hu": {
+      "name": "önarckép 5",
+      "description": "önarckép 5"
+    },
+    "it": {
+      "name": "autoritratto 5",
+      "description": "autoritratto 5"
+    },
+    "pt": {
+      "name": "autorretrato 5",
+      "description": "autorretrato 5"
+    },
+    "ro": {
+      "name": "autoportret 5",
+      "description": "autoportret 5"
+    },
+    "ru": {
+      "name": "автопортрет 5",
+      "description": "автопортрет 5"
     }
-  }
+  },
+  "source_hash": "4fca5c385c0c0eb48ddce9cd901b95e6135a2c023a356a296e327fca40085373"
 }

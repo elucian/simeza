@@ -11,6 +11,39 @@
     "en": {
       "name": "petrona",
       "description": "petrona"
+    },
+    "de": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "es": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "fr": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "hu": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "it": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "pt": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "ro": {
+      "name": "petrona",
+      "description": "petrona"
+    },
+    "ru": {
+      "name": "петрона",
+      "description": "петрона"
     }
-  }
+  },
+  "source_hash": "dc74898d99f5f242a7faf6a0d2e7eb130214c48cbaa7cad7638f68cacb81279e"
 }

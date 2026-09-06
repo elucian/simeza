@@ -11,6 +11,39 @@
     "en": {
       "name": "roze galbene",
       "description": "roze galbene"
+    },
+    "de": {
+      "name": "gelbe Rosen",
+      "description": "gelbe Rosen"
+    },
+    "es": {
+      "name": "rosas amarillas",
+      "description": "rosas amarillas"
+    },
+    "fr": {
+      "name": "roses jaunes",
+      "description": "roses jaunes"
+    },
+    "hu": {
+      "name": "sárga rózsák",
+      "description": "sárga rózsák"
+    },
+    "it": {
+      "name": "rose gialle",
+      "description": "rose gialle"
+    },
+    "pt": {
+      "name": "rosas amarelas",
+      "description": "rosas amarelas"
+    },
+    "ro": {
+      "name": "trandafiri galbeni",
+      "description": "trandafiri galbeni"
+    },
+    "ru": {
+      "name": "желтые розы",
+      "description": "желтые розы"
     }
-  }
+  },
+  "source_hash": "c2e002ab291303e75ad909bc11ff67cc5fe8769359405c05e17f01f89047c5aa"
 }

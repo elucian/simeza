@@ -1,0 +1,42 @@
+{
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "action": "toggleSettingsModal()",
+    "label": {
+      "ru": "Настройки"
+    }
+  },
+  "gallery": {
+    "slug": "gallery.html",
+    "icon": "bi-palette",
+    "label": {
+      "ru": "Галерея"
+    }
+  },
+  "about": {
+    "slug": "about.html",
+    "icon": "bi-person",
+    "label": {
+      "ru": "О нас"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "action": "toggleFilterModal()",
+    "galleryOnly": true,
+    "label": {
+      "ru": "Фильтр"
+    }
+  },
+  "share": {
+    "slug": "share",
+    "icon": "bi-share",
+    "action": "shareGallery()",
+    "galleryOnly": true,
+    "label": {
+      "ru": "Поделиться"
+    }
+  }
+}

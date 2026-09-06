@@ -11,6 +11,39 @@
     "ro": {
       "name": "mama",
       "description": "mama"
+    },
+    "de": {
+      "name": "Mama",
+      "description": "Mama"
+    },
+    "en": {
+      "name": "mom",
+      "description": "mom"
+    },
+    "es": {
+      "name": "mamá",
+      "description": "mamá"
+    },
+    "fr": {
+      "name": "maman",
+      "description": "maman"
+    },
+    "hu": {
+      "name": "anya",
+      "description": "anya"
+    },
+    "it": {
+      "name": "mamma",
+      "description": "mamma"
+    },
+    "pt": {
+      "name": "mamãe",
+      "description": "mamãe"
+    },
+    "ru": {
+      "name": "мама",
+      "description": "мама"
     }
-  }
+  },
+  "source_hash": "5287391a5d8408664eb6446390a6c7d29173aa0b220886a51376266364f6c81d"
 }

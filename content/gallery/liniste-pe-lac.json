@@ -11,6 +11,39 @@
     "ro": {
       "name": "liniste pe lac",
       "description": "liniste pe lac"
+    },
+    "de": {
+      "name": "Stille auf dem See",
+      "description": "Stille auf dem See"
+    },
+    "en": {
+      "name": "silence on the lake",
+      "description": "silence on the lake"
+    },
+    "es": {
+      "name": "silencio en el lago",
+      "description": "silencio en el lago"
+    },
+    "fr": {
+      "name": "silence sur le lac",
+      "description": "silence sur le lac"
+    },
+    "hu": {
+      "name": "csend a tavon",
+      "description": "csend a tavon"
+    },
+    "it": {
+      "name": "silenzio sul lago",
+      "description": "silenzio sul lago"
+    },
+    "pt": {
+      "name": "silêncio no lago",
+      "description": "silêncio no lago"
+    },
+    "ru": {
+      "name": "тишина на озере",
+      "description": "тишина на озере"
     }
-  }
+  },
+  "source_hash": "3e6a1de209be9bdb87a81b22a197e15962a08ee7db0e88aabdc2ce437c761f36"
 }

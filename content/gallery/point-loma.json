@@ -11,6 +11,39 @@
     "en": {
       "name": "point loma",
       "description": "point loma"
+    },
+    "de": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "es": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "fr": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "hu": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "it": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "pt": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "ro": {
+      "name": "Point Loma",
+      "description": "point loma"
+    },
+    "ru": {
+      "name": "Пойнт-Лома",
+      "description": "пойнт-лома"
     }
-  }
+  },
+  "source_hash": "bc9eafa50c5d5d967708f262f21a895babdd5cf940021851f9d5d7a9253fd56c"
 }

@@ -11,6 +11,39 @@
     "ro": {
       "name": "tufanele",
       "description": "tufanele"
+    },
+    "de": {
+      "name": "Chrysanthemen",
+      "description": "Chrysanthemen"
+    },
+    "en": {
+      "name": "chrysanthemums",
+      "description": "chrysanthemums"
+    },
+    "es": {
+      "name": "crisantemos",
+      "description": "crisantemos"
+    },
+    "fr": {
+      "name": "chrysanthèmes",
+      "description": "chrysanthèmes"
+    },
+    "hu": {
+      "name": "krizantémok",
+      "description": "krizantémok"
+    },
+    "it": {
+      "name": "crisantemi",
+      "description": "crisantemi"
+    },
+    "pt": {
+      "name": "crisântemos",
+      "description": "crisântemos"
+    },
+    "ru": {
+      "name": "хризантемы",
+      "description": "хризантемы"
     }
-  }
+  },
+  "source_hash": "b044d09c95db3a2174a8cc4b53c1f633c246151b05411d4ac8c90c4b69c785ce"
 }
