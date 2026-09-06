@@ -115,6 +115,7 @@
   text-align: center;
 }
 
+
 .panel-mobile-meta { 
   display: none; 
 }
@@ -182,7 +183,7 @@
     font-size: 0.72rem; 
     opacity: 0.8; 
   }
-  .panel-title { text-align: left; }
+  .panel-title { text-align: center; }
   .gallery-nav-btn { display: none; }
 }
 

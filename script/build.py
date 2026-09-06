@@ -93,7 +93,6 @@ def render_gallery_html(gallery_data, lang):
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
         p.append('      <div class="panel-data">')
         p.append(f'        <h3 class="panel-title">{html.escape(title)}</h3>')
-        if desc: p.append(f'        <p>{html.escape(desc)}</p>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
