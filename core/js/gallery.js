@@ -352,7 +352,7 @@ onDOMReady(() => {
     // Mouse wheel horizontal scroll
     wrapper.addEventListener('wheel', (e) => {
       // Only allow horizontal wheel scroll on desktop; mobile portrait should rely on standard touch scrolling
-      if (window.innerWidth <= 767) return;
+      if (window.innerWidth <= 767 || document.body.classList.contains('layout-maximized')) return;
 
       if (Math.abs(e.deltaX) < Math.abs(e.deltaY)) {
         e.preventDefault();

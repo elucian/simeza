@@ -549,9 +549,9 @@
 /* Maximized Desktop Grid Layout Mode */
 @media (min-width: 768px) {
   body.layout-maximized .gallery-container {
-    height: auto !important;
-    min-height: calc(100dvh - 120px);
-    overflow: visible !important;
+    height: 100% !important;
+    min-height: 0;
+    overflow: hidden !important;
   }
 
   body.layout-maximized .panel-wrapper {
@@ -561,11 +561,11 @@
     justify-content: center !important;
     align-content: flex-start !important;
     gap: 16px !important;
-    overflow-x: visible !important;
-    overflow-y: visible !important;
+    overflow-x: hidden !important;
+    overflow-y: auto !important;
     scroll-snap-type: none !important;
-    padding: 24px 32px 100px 32px !important;
-    height: auto !important;
+    padding: 24px 32px !important;
+    height: 100% !important;
     width: 100% !important;
     box-sizing: border-box !important;
   }
@@ -612,5 +612,10 @@
 
   body.layout-maximized .gallery-nav-btn {
     display: none !important;
+  }
+
+  body.layout-maximized .panel-wrapper::-webkit-scrollbar {
+    width: 14px;
+    height: auto;
   }
 }

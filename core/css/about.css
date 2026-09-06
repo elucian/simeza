@@ -139,4 +139,9 @@
     padding: 8px 6px;
     font-size: 0.75rem;
   }
+
+  .about-contact-panel {
+    margin-top: 0.5rem;
+    msthin-bottom: 0.5rem;
+  }
 }

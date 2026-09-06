@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('filterForm');
     const applyButton = document.getElementById('applyFiltersBtn');
     const resetButton = document.getElementById('resetFiltersBtn');
+    const closeButton = document.getElementById('closeFilterBtn');
     if (!form) return;
 
     const getSavedFilters = () => {
@@ -20,6 +21,10 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         return '/' + lang + '/' + (slugs[lang] || 'gallery.html');
     };
+
+    closeButton?.addEventListener('click', () => {
+        location.href = getGalleryPath();
+    });
 
     const savedFilters = getSavedFilters();
     ['type', 'author', 'category', 'topic'].forEach(name => {
