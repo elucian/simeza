@@ -30,6 +30,11 @@
   -webkit-mask-image: url('/core/img/icons/arrow-repeat.svg'); 
   mask-image: url('/core/img/icons/arrow-repeat.svg'); 
 }
+.icon-house,
+.bi-house {
+  -webkit-mask-image: url('/core/img/icons/house.svg');
+  mask-image: url('/core/img/icons/house.svg');
+}
 .icon-list, 
 .bi-list { 
   -webkit-mask-image: url('/core/img/icons/list.svg'); 
