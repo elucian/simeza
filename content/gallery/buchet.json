@@ -11,6 +11,39 @@
     "en": {
       "name": "buchet",
       "description": "buchet"
+    },
+    "de": {
+      "name": "Strauß",
+      "description": "Strauß"
+    },
+    "es": {
+      "name": "ramo",
+      "description": "ramo"
+    },
+    "fr": {
+      "name": "bouquet",
+      "description": "bouquet"
+    },
+    "hu": {
+      "name": "csokor",
+      "description": "csokor"
+    },
+    "it": {
+      "name": "mazzo",
+      "description": "mazzo"
+    },
+    "pt": {
+      "name": "buquê",
+      "description": "buquê"
+    },
+    "ro": {
+      "name": "buchet",
+      "description": "buchet"
+    },
+    "ru": {
+      "name": "букет",
+      "description": "букет"
     }
-  }
+  },
+  "source_hash": "e8d5e46906e664ede1046b639e6f6cd6fa90dea603c9583f919ae378a7417625"
 }

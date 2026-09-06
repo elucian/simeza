@@ -1,5 +1,32 @@
+.settings-dialog {
+    display: flex;
+    border: 1px solid var(--border-color);
+    padding: 24px;
+    height: 50vh;
+    margin: 40px auto;
+    max-width: 600px;
+    border-radius: 8px;
+    background: var(--bg-main);
+}
+.settings-left {
+    flex: 2;
+    border-right: 1px solid var(--border-color);
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.settings-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    padding-left: 20px;
+}
 .settings-group {
     margin-bottom: 20px;
+    max-width: 300px;
 }
 .settings-group label {
     display: block;
@@ -27,13 +54,8 @@
     gap: 5px;
     cursor: pointer;
 }
-.button-group {
-    display: flex;
-    gap: 10px;
-    margin-top: 30px;
-}
 #applySettingsBtn, #cancelSettingsBtn {
-    flex: 1;
+    width: 120px;
     border: none;
     padding: 10px 24px;
     border-radius: 6px;

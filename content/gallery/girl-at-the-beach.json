@@ -11,6 +11,39 @@
     "en": {
       "name": "Girl at the Beach",
       "description": "Girl at the Beach"
+    },
+    "de": {
+      "name": "Mädchen am Strand",
+      "description": "Mädchen am Strand"
+    },
+    "es": {
+      "name": "Chica en la playa",
+      "description": "Chica en la playa"
+    },
+    "fr": {
+      "name": "Fille à la plage",
+      "description": "Fille à la plage"
+    },
+    "hu": {
+      "name": "Lány a tengerparton",
+      "description": "Lány a tengerparton"
+    },
+    "it": {
+      "name": "Ragazza in spiaggia",
+      "description": "Ragazza in spiaggia"
+    },
+    "pt": {
+      "name": "Garota na praia",
+      "description": "Garota na praia"
+    },
+    "ro": {
+      "name": "Fată pe plajă",
+      "description": "Fată pe plajă"
+    },
+    "ru": {
+      "name": "Девушка на пляже",
+      "description": "Девушка на пляже"
     }
-  }
+  },
+  "source_hash": "429bf7b210dee1bf19100de30d8723103497a76147bfb9c70695e05d255dd28a"
 }

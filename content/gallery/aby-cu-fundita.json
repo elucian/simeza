@@ -11,6 +11,39 @@
     "ro": {
       "name": "Aby cu fundita",
       "description": "Aby cu fundita"
+    },
+    "de": {
+      "name": "Aby mit Schleife",
+      "description": "Aby mit Schleife"
+    },
+    "en": {
+      "name": "Aby with a bow",
+      "description": "Aby with a bow"
+    },
+    "es": {
+      "name": "Aby con lazo",
+      "description": "Aby con lazo"
+    },
+    "fr": {
+      "name": "Aby avec un nœud",
+      "description": "Aby avec un nœud"
+    },
+    "hu": {
+      "name": "Aby masnival",
+      "description": "Aby masnival"
+    },
+    "it": {
+      "name": "Aby con fiocco",
+      "description": "Aby con fiocco"
+    },
+    "pt": {
+      "name": "Aby com laço",
+      "description": "Aby com laço"
+    },
+    "ru": {
+      "name": "Эби с бантиком",
+      "description": "Эби с бантиком"
     }
-  }
+  },
+  "source_hash": "01f69c338e279ef3b7049848593f6b8056fd6ee71f25728f1da95fce9da85336"
 }

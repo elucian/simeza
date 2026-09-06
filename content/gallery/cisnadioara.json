@@ -11,6 +11,39 @@
     "en": {
       "name": "Cisnadioara",
       "description": "Cisnadioara"
+    },
+    "de": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "es": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "fr": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "hu": {
+      "name": "Kisdisznód",
+      "description": "Kisdisznód"
+    },
+    "it": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "pt": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "ro": {
+      "name": "Cisnădioara",
+      "description": "Cisnădioara"
+    },
+    "ru": {
+      "name": "Чиснэдиоара",
+      "description": "Чиснэдиоара"
     }
-  }
+  },
+  "source_hash": "fad6fcf04a1ca5aa2687a30bb907c0b12cbf91c391386207c1020652a0d9c6f0"
 }

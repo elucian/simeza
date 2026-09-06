@@ -23,31 +23,28 @@
 <header class="header-app">
   <img src="/core/img/simeza-logo-w.svg" id="themeLogo" alt="Logo" class="logo-btn" onclick="toggleTheme()">
   
-  <nav class="desktop-nav">
-    <ul id="menuList" class="nav-menu">
-      {{menu}}
-    </ul>
-  </nav>
+    <nav class="toolbar-nav">
+        <ul id="toolbarList" class="nav-menu">
+            <li><a href="/settings.html" class="toolbar-btn"><i class="bi bi-gear"></i><span class="btn-label">Settings</span></a></li>
+            <li><a href="/gallery.html" class="toolbar-btn"><i class="bi bi-palette"></i><span class="btn-label">Gallery</span></a></li>
+            <li><a href="/about.html" class="toolbar-btn"><i class="bi bi-person"></i><span class="btn-label">Author</span></a></li>
+            <li><button class="toolbar-btn" onclick="toggleFilterModal()"><i class="bi bi-funnel"></i><span class="btn-label">Filter</span></button></li>
+            <li><button class="toolbar-btn" onclick="toggleDesktopLayout()"><i class="bi bi-grid"></i><span class="btn-label">Layout</span></button></li>
+        </ul>
+    </nav>
 
-  <div class="header-actions">
-    <button id="filterBtn" class="filter-btn" title="Filter" onclick="toggleFilterModal()">
-      <i id="filterIcon" class="bi bi-funnel"></i>
-    </button>
-    <div class="lang-selector">
-      <button id="langBtn" onclick="toggleLangMenu()"></button>
-      <ul id="langMenu" class="lang-menu"></ul>
+    <div class="header-actions">
+        <div class="lang-selector">
+            <button id="langBtn" onclick="toggleLangMenu()"></button>
+            <ul id="langMenu" class="lang-menu"></ul>
+        </div>
     </div>
-    <button class="navbar-toggler" type="button" onclick="toggleMobileMenu()">
-      <i class="bi bi-list"></i>
-    </button>
-  </div>
 </header>
 
-<nav id="mobileMenu">
-  <ul id="mobileMenuList">
-    {{mobile_menu}}
-  </ul>
-</nav>
+    <nav id="mobileMenu">
+        <ul id="mobileMenuList">
+        </ul>
+    </nav>
 
 <main id="content" class="content">
    {{page-content}}

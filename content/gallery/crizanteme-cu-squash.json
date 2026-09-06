@@ -11,6 +11,39 @@
     "ro": {
       "name": "crizanteme cu squash",
       "description": "crizanteme cu squash"
+    },
+    "de": {
+      "name": "Chrysanthemen mit Squash",
+      "description": "Chrysanthemen mit Squash"
+    },
+    "en": {
+      "name": "chrysanthemums with squash",
+      "description": "chrysanthemums with squash"
+    },
+    "es": {
+      "name": "crisantemos con calabaza",
+      "description": "crisantemos con calabaza"
+    },
+    "fr": {
+      "name": "chrysanthèmes avec courge",
+      "description": "chrysanthèmes avec courge"
+    },
+    "hu": {
+      "name": "krizantémok tökkel",
+      "description": "krizantémok tökkel"
+    },
+    "it": {
+      "name": "crisantemi con zucca",
+      "description": "crisantemi con zucca"
+    },
+    "pt": {
+      "name": "crisântemos com abóbora",
+      "description": "crisântemos com abóbora"
+    },
+    "ru": {
+      "name": "хризантемы с тыквой",
+      "description": "хризантемы с тыквой"
     }
-  }
+  },
+  "source_hash": "213e36c3786ef7f7bf3872050e14e3f07735a8a121d5d47aea720648b784c75a"
 }

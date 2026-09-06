@@ -11,6 +11,39 @@
     "ro": {
       "name": "la fantana",
       "description": "la fantana"
+    },
+    "de": {
+      "name": "am Brunnen",
+      "description": "am Brunnen"
+    },
+    "en": {
+      "name": "at the fountain",
+      "description": "at the fountain"
+    },
+    "es": {
+      "name": "en la fuente",
+      "description": "en la fuente"
+    },
+    "fr": {
+      "name": "à la fontaine",
+      "description": "à la fontaine"
+    },
+    "hu": {
+      "name": "a kútnál",
+      "description": "a kútnál"
+    },
+    "it": {
+      "name": "alla fontana",
+      "description": "alla fontana"
+    },
+    "pt": {
+      "name": "na fonte",
+      "description": "na fonte"
+    },
+    "ru": {
+      "name": "у фонтана",
+      "description": "у фонтана"
     }
-  }
+  },
+  "source_hash": "bf892947a71f610aa1e5c1befa163e825f1f1a5832821e8420a7ac2995d5609c"
 }

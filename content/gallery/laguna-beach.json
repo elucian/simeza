@@ -11,6 +11,39 @@
     "en": {
       "name": "Laguna Beach",
       "description": "Laguna Beach"
+    },
+    "de": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "es": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "fr": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "hu": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "it": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "pt": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "ro": {
+      "name": "Laguna Beach",
+      "description": "Laguna Beach"
+    },
+    "ru": {
+      "name": "Лагуна-Бич",
+      "description": "Лагуна-Бич"
     }
-  }
+  },
+  "source_hash": "e38210f962aea68fe426c2293ef82a35bb4b1644fc6de998f84f53e4f5569faf"
 }

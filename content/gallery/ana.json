@@ -11,6 +11,39 @@
     "en": {
       "name": "ana",
       "description": "ana"
+    },
+    "de": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "es": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "fr": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "hu": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "it": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "pt": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "ro": {
+      "name": "ana",
+      "description": "ana"
+    },
+    "ru": {
+      "name": "ана",
+      "description": "ана"
     }
-  }
+  },
+  "source_hash": "ff076bbd10992068b301ea2e5b8d72cf5ecaaa6410438d3adb7c187c12402f59"
 }

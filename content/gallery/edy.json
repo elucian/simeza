@@ -11,6 +11,39 @@
     "ro": {
       "name": "edy",
       "description": "edy"
+    },
+    "de": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "en": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "es": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "fr": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "hu": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "it": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "pt": {
+      "name": "edy",
+      "description": "edy"
+    },
+    "ru": {
+      "name": "edy",
+      "description": "edy"
     }
-  }
+  },
+  "source_hash": "3077fcfa2ab39615dc738956b809cde7a30a4cff289b7ab8f622d03221da8397"
 }

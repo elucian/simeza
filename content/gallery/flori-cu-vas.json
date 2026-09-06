@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori cu vas",
       "description": "flori cu vas"
+    },
+    "de": {
+      "name": "Blumen mit Vase",
+      "description": "Blumen mit Vase"
+    },
+    "en": {
+      "name": "flowers with vase",
+      "description": "flowers with vase"
+    },
+    "es": {
+      "name": "flores con florero",
+      "description": "flores con florero"
+    },
+    "fr": {
+      "name": "fleurs avec vase",
+      "description": "fleurs avec vase"
+    },
+    "hu": {
+      "name": "virágok vázával",
+      "description": "virágok vázával"
+    },
+    "it": {
+      "name": "fiori con vaso",
+      "description": "fiori con vaso"
+    },
+    "pt": {
+      "name": "flores com vaso",
+      "description": "flores com vaso"
+    },
+    "ru": {
+      "name": "цветы с вазой",
+      "description": "цветы с вазой"
     }
-  }
+  },
+  "source_hash": "05e7b95792ff702df9d244a14bb4d9d4478ca5a60176c621cb37ea8986a989e6"
 }

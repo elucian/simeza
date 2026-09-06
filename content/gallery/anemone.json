@@ -11,6 +11,39 @@
     "en": {
       "name": "anemone",
       "description": "anemone"
+    },
+    "de": {
+      "name": "Anemone",
+      "description": "Anemone"
+    },
+    "es": {
+      "name": "anémona",
+      "description": "anémona"
+    },
+    "fr": {
+      "name": "anémone",
+      "description": "anémone"
+    },
+    "hu": {
+      "name": "kökörcsin",
+      "description": "kökörcsin"
+    },
+    "it": {
+      "name": "anemone",
+      "description": "anemone"
+    },
+    "pt": {
+      "name": "anêmona",
+      "description": "anêmona"
+    },
+    "ro": {
+      "name": "anemonă",
+      "description": "anemonă"
+    },
+    "ru": {
+      "name": "анемона",
+      "description": "анемона"
     }
-  }
+  },
+  "source_hash": "e36aa04800cd3f2ae336d2b663c3e26b4f80a93f0715119c4cb6fe455189cb60"
 }

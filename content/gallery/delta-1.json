@@ -11,6 +11,39 @@
     "en": {
       "name": "delta 1",
       "description": "delta 1"
+    },
+    "de": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "es": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "fr": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "hu": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "it": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "pt": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "ro": {
+      "name": "delta 1",
+      "description": "delta 1"
+    },
+    "ru": {
+      "name": "дельта 1",
+      "description": "дельта 1"
     }
-  }
+  },
+  "source_hash": "fe11e65a489e2eb6b7fd481fb443ed9d9b12a37e8fa65eb2533b707fc7e92130"
 }

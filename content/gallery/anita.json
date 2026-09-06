@@ -11,6 +11,39 @@
     "en": {
       "name": "anita",
       "description": "anita"
+    },
+    "de": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "es": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "fr": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "hu": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "it": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "pt": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "ro": {
+      "name": "anita",
+      "description": "anita"
+    },
+    "ru": {
+      "name": "анита",
+      "description": "анита"
     }
-  }
+  },
+  "source_hash": "8b569c50a2dc28501153946a5f43d90cc7fd170ff385b1a912c674a4e7ebf6ff"
 }

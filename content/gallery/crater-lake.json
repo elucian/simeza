@@ -11,6 +11,39 @@
     "en": {
       "name": "Crater Lake",
       "description": "Crater Lake"
+    },
+    "de": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "es": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "fr": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "hu": {
+      "name": "Crater-tó",
+      "description": "Crater-tó"
+    },
+    "it": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "pt": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "ro": {
+      "name": "Crater Lake",
+      "description": "Crater Lake"
+    },
+    "ru": {
+      "name": "Крейтер",
+      "description": "Крейтер"
     }
-  }
+  },
+  "source_hash": "f7429452be57d30e2451c3d065d15ee364d29d15424857056f9120eb0d978cc7"
 }

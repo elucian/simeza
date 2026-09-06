@@ -11,6 +11,39 @@
     "en": {
       "name": "bunicul",
       "description": "bunicul"
+    },
+    "de": {
+      "name": "Großvater",
+      "description": "Großvater"
+    },
+    "es": {
+      "name": "abuelo",
+      "description": "abuelo"
+    },
+    "fr": {
+      "name": "grand-père",
+      "description": "grand-père"
+    },
+    "hu": {
+      "name": "nagyapa",
+      "description": "nagyapa"
+    },
+    "it": {
+      "name": "nonno",
+      "description": "nonno"
+    },
+    "pt": {
+      "name": "avô",
+      "description": "avô"
+    },
+    "ro": {
+      "name": "bunicul",
+      "description": "bunicul"
+    },
+    "ru": {
+      "name": "дедушка",
+      "description": "дедушка"
     }
-  }
+  },
+  "source_hash": "eba6c0483d6fa46c9093d0dab46b7bc4d407112e6c1b9188ebf3d7c81ab61883"
 }

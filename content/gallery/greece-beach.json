@@ -11,6 +11,39 @@
     "en": {
       "name": "Greece Beach",
       "description": "Greece Beach"
+    },
+    "de": {
+      "name": "Griechenland Strand",
+      "description": "Griechenland Strand"
+    },
+    "es": {
+      "name": "Playa de Grecia",
+      "description": "Playa de Grecia"
+    },
+    "fr": {
+      "name": "Plage de Grèce",
+      "description": "Plage de Grèce"
+    },
+    "hu": {
+      "name": "Görögországi strand",
+      "description": "Görögországi strand"
+    },
+    "it": {
+      "name": "Spiaggia della Grecia",
+      "description": "Spiaggia della Grecia"
+    },
+    "pt": {
+      "name": "Praia da Grécia",
+      "description": "Praia da Grécia"
+    },
+    "ro": {
+      "name": "Plajă în Grecia",
+      "description": "Plajă în Grecia"
+    },
+    "ru": {
+      "name": "Пляж в Греции",
+      "description": "Пляж в Греции"
     }
-  }
+  },
+  "source_hash": "fd0e431e298601863d09892dacc48a10b80b7e36eb375a166d3a6ae0d5b682a1"
 }

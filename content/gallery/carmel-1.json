@@ -11,6 +11,39 @@
     "ro": {
       "name": "carmel 1",
       "description": "carmel 1"
+    },
+    "de": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "en": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "es": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "fr": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "hu": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "it": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "pt": {
+      "name": "carmel 1",
+      "description": "carmel 1"
+    },
+    "ru": {
+      "name": "carmel 1",
+      "description": "carmel 1"
     }
-  }
+  },
+  "source_hash": "e586582e323694ebfa647886be4cd9e2241fa7369b72c1b96a5a70860a39abea"
 }

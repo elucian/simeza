@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori",
       "description": "flori"
+    },
+    "de": {
+      "name": "Blumen",
+      "description": "Blumen"
+    },
+    "en": {
+      "name": "flowers",
+      "description": "flowers"
+    },
+    "es": {
+      "name": "flores",
+      "description": "flores"
+    },
+    "fr": {
+      "name": "fleurs",
+      "description": "fleurs"
+    },
+    "hu": {
+      "name": "virágok",
+      "description": "virágok"
+    },
+    "it": {
+      "name": "fiori",
+      "description": "fiori"
+    },
+    "pt": {
+      "name": "flores",
+      "description": "flores"
+    },
+    "ru": {
+      "name": "цветы",
+      "description": "цветы"
     }
-  }
+  },
+  "source_hash": "48386af579c9a191f4b3dcb1b3e428387a4f0893bd357ad3e93adbf06c843ee6"
 }

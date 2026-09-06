@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori galbene cu stergar",
       "description": "flori galbene cu stergar"
+    },
+    "de": {
+      "name": "gelbe Blumen mit Handtuch",
+      "description": "gelbe Blumen mit Handtuch"
+    },
+    "en": {
+      "name": "yellow flowers with towel",
+      "description": "yellow flowers with towel"
+    },
+    "es": {
+      "name": "flores amarillas con toalla",
+      "description": "flores amarillas con toalla"
+    },
+    "fr": {
+      "name": "fleurs jaunes avec serviette",
+      "description": "fleurs jaunes avec serviette"
+    },
+    "hu": {
+      "name": "sárga virágok törölközővel",
+      "description": "sárga virágok törölközővel"
+    },
+    "it": {
+      "name": "fiori gialli con asciugamano",
+      "description": "fiori gialli con asciugamano"
+    },
+    "pt": {
+      "name": "flores amarelas com toalha",
+      "description": "flores amarelas com toalha"
+    },
+    "ru": {
+      "name": "желтые цветы с полотенцем",
+      "description": "желтые цветы с полотенцем"
     }
-  }
+  },
+  "source_hash": "71c943db37adfbe6e75f8529f41f8efa1e576acc4f0a84eaf7dd506b5df716da"
 }

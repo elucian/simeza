@@ -11,6 +11,39 @@
     "en": {
       "name": "berny",
       "description": "berny"
+    },
+    "de": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "es": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "fr": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "hu": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "it": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "pt": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "ro": {
+      "name": "berny",
+      "description": "berny"
+    },
+    "ru": {
+      "name": "берни",
+      "description": "берни"
     }
-  }
+  },
+  "source_hash": "ffb6fbb62f55b2d89360f4105149881e20d5474322a066d622430ef1c8822fe4"
 }

@@ -11,6 +11,39 @@
     "en": {
       "name": "lalele",
       "description": "lalele"
+    },
+    "de": {
+      "name": "Tulpen",
+      "description": "Tulpen"
+    },
+    "es": {
+      "name": "tulipanes",
+      "description": "tulipanes"
+    },
+    "fr": {
+      "name": "tulipes",
+      "description": "tulipes"
+    },
+    "hu": {
+      "name": "tulipánok",
+      "description": "tulipánok"
+    },
+    "it": {
+      "name": "tulipani",
+      "description": "tulipani"
+    },
+    "pt": {
+      "name": "tulipas",
+      "description": "tulipas"
+    },
+    "ro": {
+      "name": "lalele",
+      "description": "lalele"
+    },
+    "ru": {
+      "name": "тюльпаны",
+      "description": "тюльпаны"
     }
-  }
+  },
+  "source_hash": "f4aa6e2ce22a1d3ea6c4add42c3f22d2254fe17ef869c042947a73e5c1cd3114"
 }

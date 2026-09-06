@@ -11,6 +11,39 @@
     "ro": {
       "name": "flori pe masa",
       "description": "flori pe masa"
+    },
+    "de": {
+      "name": "Blumen auf dem Tisch",
+      "description": "Blumen auf dem Tisch"
+    },
+    "en": {
+      "name": "flowers on the table",
+      "description": "flowers on the table"
+    },
+    "es": {
+      "name": "flores en la mesa",
+      "description": "flores en la mesa"
+    },
+    "fr": {
+      "name": "fleurs sur la table",
+      "description": "fleurs sur la table"
+    },
+    "hu": {
+      "name": "virágok az asztalon",
+      "description": "virágok az asztalon"
+    },
+    "it": {
+      "name": "fiori sul tavolo",
+      "description": "fiori sul tavolo"
+    },
+    "pt": {
+      "name": "flores na mesa",
+      "description": "flores na mesa"
+    },
+    "ru": {
+      "name": "цветы на столе",
+      "description": "цветы на столе"
     }
-  }
+  },
+  "source_hash": "345c9bb878c604b048d28af2cf02cab4f9182a042c07df1ae138f7408a0bfb12"
 }
