@@ -142,8 +142,8 @@
   .about-contact-panel {
     display: flex;
     align-items: stretch;
-    margin-top: 0.5rem;
-    msthin-bottom: 0.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
     color: var(--accent-color);
   }
 }
