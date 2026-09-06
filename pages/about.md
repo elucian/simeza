@@ -21,6 +21,8 @@ keywords: pavy beloiu, simeza, art, gallery, artist, author
 {{widget:about}}
 
 <section class="about-contact-panel">
-<h1>Vizit our Homepe</h1>
-<p>This portfolio experimental website was designed by Elucian Moise. If you like what you see, visit <a href="https://pavybeloiu.com">pavybeloiu.com</a> to order original physical canvas, books and writings. Visit <a href="https://sagecode.org">sagecode.org</a> to learn foreign languages and programming, or to explore other interesting projects. You can contact us via our official contact links.</p>
+<h1>External References:</h1>
+<p>This website is demonstrative. If you like what you see, visit <a href="https://pavybeloiu.com">pavybeloiu.com</a> to order original physical canvas, books and writings.</p>
+
+<p>For more resources visit <a href="https://sagecode.org">sagecode.org</a> where you can learn foreign languages and programming.</p>
 </section>
