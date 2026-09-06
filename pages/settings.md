@@ -13,21 +13,25 @@ keywords: simeza, settings, configuration
       <option value="3">3</option>
       <option value="5">5</option>
       <option value="8">8</option>
+      <option value="12">12</option>
     </select>
   </div>
   <div class="settings-group">
     <label>Auto Rotation</label>
-    <select name="autoRotation">
-      <option value="true">On</option>
-      <option value="false">Off</option>
-    </select>
+    <div class="radio-group">
+      <label><input type="radio" name="autoRotation" value="true"> On</label>
+      <label><input type="radio" name="autoRotation" value="false"> Off</label>
+    </div>
   </div>
   <div class="settings-group">
     <label>Pillbar Visible</label>
-    <select name="pillbarVisible">
-      <option value="true">Yes</option>
-      <option value="false">No</option>
-    </select>
+    <div class="radio-group">
+      <label><input type="radio" name="pillbarVisible" value="true"> Yes</label>
+      <label><input type="radio" name="pillbarVisible" value="false"> No</label>
+    </div>
   </div>
-  <button type="button" id="saveSettingsBtn">OK</button>
+  <div class="button-group">
+    <button type="button" id="applySettingsBtn">Apply</button>
+    <button type="button" id="cancelSettingsBtn">Cancel</button>
+  </div>
 </form>

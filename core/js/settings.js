@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('settingsForm');
-    const saveBtn = document.getElementById('saveSettingsBtn');
+    const applyBtn = document.getElementById('applySettingsBtn');
+    const cancelBtn = document.getElementById('cancelSettingsBtn');
     
     // Load settings
     const saved = localStorage.getItem('simezaSettings');
@@ -9,20 +10,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // Populate form
     if (form) {
         form.elements['loopDelay'].value = settings.loopDelay;
-        form.elements['autoRotation'].value = settings.autoRotation.toString();
-        form.elements['pillbarVisible'].value = settings.pillbarVisible.toString();
+        form.querySelector(`input[name="autoRotation"][value="${settings.autoRotation}"]`).checked = true;
+        form.querySelector(`input[name="pillbarVisible"][value="${settings.pillbarVisible}"]`).checked = true;
     }
-    
-    // Save settings
-    saveBtn?.addEventListener('click', () => {
-        const newSettings = {
-            loopDelay: parseInt(form.elements['loopDelay'].value),
-            autoRotation: form.elements['autoRotation'].value === 'true',
-            pillbarVisible: form.elements['pillbarVisible'].value === 'true'
-        };
-        localStorage.setItem('simezaSettings', JSON.stringify(newSettings));
-        
-        // Return to gallery
+
+    const redirectToGallery = () => {
         const lang = localStorage.getItem('lang') || 'en';
         const slugMap = {
             'ro': 'galerie.html',
@@ -36,5 +28,21 @@ document.addEventListener('DOMContentLoaded', () => {
             'en': 'gallery.html'
         };
         location.href = '/' + lang + '/' + (slugMap[lang] || 'gallery.html');
+    };
+    
+    // Apply settings
+    applyBtn?.addEventListener('click', () => {
+        const newSettings = {
+            loopDelay: parseInt(form.elements['loopDelay'].value),
+            autoRotation: form.elements['autoRotation'].value === 'true',
+            pillbarVisible: form.elements['pillbarVisible'].value === 'true'
+        };
+        localStorage.setItem('simezaSettings', JSON.stringify(newSettings));
+        redirectToGallery();
+    });
+
+    // Cancel
+    cancelBtn?.addEventListener('click', () => {
+        redirectToGallery();
     });
 });

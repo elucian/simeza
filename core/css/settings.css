@@ -15,12 +15,37 @@
     background: var(--bg-main);
     color: var(--text-main);
 }
-#saveSettingsBtn {
-    background: var(--accent-color);
-    color: white;
+.radio-group {
+    display: flex;
+    gap: 15px;
+}
+.radio-group label {
+    font-weight: normal;
+    color: var(--text-main);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+.button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 30px;
+}
+#applySettingsBtn, #cancelSettingsBtn {
+    flex: 1;
     border: none;
     padding: 10px 24px;
     border-radius: 6px;
     cursor: pointer;
     font-weight: 600;
+}
+#applySettingsBtn {
+    background: var(--accent-color);
+    color: white;
+}
+#cancelSettingsBtn {
+    background: var(--bg-header);
+    color: var(--text-main);
+    border: 1px solid var(--border-color);
 }
