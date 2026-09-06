@@ -1,0 +1,37 @@
+---
+title: Contact - Simeza Art
+description: Trimite un mesaj echipei Simeza Art.
+keywords: simeza, contact, pavy beloyu, elucian moise
+source_hash: 09f2dd6a270b49d8a5755b3f870e444e12f725603ce0eed35e05337b3d7adf9c
+---
+<div class="contact-page-overlay">
+  <section class="contact-page-dialog" role="dialog" aria-modal="true" aria-labelledby="contactTitle">
+    <button type="button" class="contact-page-close" id="closeContactBtn" aria-label="Închide">&times;</button>
+    <h1 id="contactTitle">Contact</h1>
+    <p id="contactRecipient" class="contact-recipient"></p>
+    <form id="contactForm">
+      <div class="contact-field">
+        <label for="contactName">Nume</label>
+        <input id="contactName" name="name" type="text" autocomplete="name" required>
+      </div>
+      <div class="contact-field">
+        <label for="contactPhone">Număr de telefon</label>
+        <input id="contactPhone" name="phone" type="tel" autocomplete="tel">
+      </div>
+      <div class="contact-field">
+        <label for="contactSubject">Subiect</label>
+        <input id="contactSubject" name="subject" type="text" value="Mesaj de contact Simeza" required>
+      </div>
+      <div class="contact-field contact-message-field">
+        <label for="contactMessage">Mesaj</label>
+        <textarea id="contactMessage" name="message" rows="8" required></textarea>
+      </div>
+      <p id="contactError" class="contact-error" role="alert" hidden></p>
+      <div class="contact-page-actions">
+        <button type="button" id="closeContactAction" class="contact-close-action">Închide</button>
+        <button type="button" id="newContactBtn" class="contact-new-action">Nou</button>
+        <button type="submit" class="contact-send-action"><i class="bi bi-envelope" aria-hidden="true"></i><span>Trimite</span></button>
+      </div>
+    </form>
+  </section>
+</div>

@@ -2,7 +2,7 @@
 title: À propos de Pavy Beloiu - Simeza Art
 description: Découvrez Pavy Beloiu, ingénieur, artiste visuel et auteur.
 keywords: pavy beloiu, simeza, art, galerie, artiste, auteur
-source_hash: db1a84a8f6530f1bd346b0acfb8bf05a0e91eb0aec5a4e3da18cac0e43fcf929
+source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 ---
 # Bienvenue à La Simeza
 
@@ -11,7 +11,7 @@ source_hash: db1a84a8f6530f1bd346b0acfb8bf05a0e91eb0aec5a4e3da18cac0e43fcf929
 <div class="about-intro-panels">
 	<section class="about-intro-panel">
         <h1>À propos de La Simeza</h1>
-        <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art organisées. Les expositions peuvent être visualisées en plein écran sur les appareils mobiles et de bureau. Développé par Elucian Moise, avec des œuvres d'art originales sous licence de Pavy Beloiu.</p>
+        <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art organisées. Les expositions peuvent être visualisées en plein écran sur les appareils mobiles et de bureau. Développé par Elucian Moise, présentant des œuvres d'art originales sous licence de Pavy Beloiu.</p>
 	</section>
 	<section class="about-intro-panel">
         <h1>À propos du contenu</h1>
@@ -22,8 +22,6 @@ source_hash: db1a84a8f6530f1bd346b0acfb8bf05a0e91eb0aec5a4e3da18cac0e43fcf929
 {{widget:about}}
 
 <section class="about-contact-panel">
-<h1>Références externes :</h1>
-<p>Ce site web est démonstratif. Si vous aimez ce que vous voyez, visitez <a href="https://pavybeloiu.com">pavybeloiu.com</a> pour commander des toiles physiques originales, des livres et des écrits.</p>
-
-<p>Pour plus de ressources, visitez <a href="https://sagecode.org">sagecode.org</a> où vous pouvez apprendre des langues étrangères et la programmation.</p>
+  <h3>Communauté et support</h3>
+  <p>Connectez-vous avec nous, posez des questions, faites une offre ou rejoignez la discussion sur nos canaux communautaires. Nous attendons avec impatience de nouveaux membres dans notre communauté.</p>
 </section>

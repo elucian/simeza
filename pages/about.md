@@ -22,5 +22,5 @@ keywords: pavy beloiu, simeza, art, gallery, artist, author
 
 <section class="about-contact-panel">
   <h3>Community &amp; Support</h3>
-  <p>Connect with us, ask questions, or join the discussion on our community channels.</p>
+  <p>Connect with us, ask questions, make an offer or join the discussion on our community channels. We look forward for new members in our community.</p>
 </section>

@@ -2,7 +2,7 @@
 title: Sobre Pavy Beloiu - Simeza Art
 description: Conozca a Pavy Beloiu, ingeniero, artista visual y autor.
 keywords: pavy beloiu, simeza, arte, galería, artista, autor
-source_hash: db1a84a8f6530f1bd346b0acfb8bf05a0e91eb0aec5a4e3da18cac0e43fcf929
+source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 ---
 # Bienvenido a La Simeza
 
@@ -22,8 +22,6 @@ source_hash: db1a84a8f6530f1bd346b0acfb8bf05a0e91eb0aec5a4e3da18cac0e43fcf929
 {{widget:about}}
 
 <section class="about-contact-panel">
-<h1>Referencias externas:</h1>
-<p>Este sitio web es demostrativo. Si le gusta lo que ve, visite <a href="https://pavybeloiu.com">pavybeloiu.com</a> para pedir lienzos físicos originales, libros y escritos.</p>
-
-<p>Para obtener más recursos, visite <a href="https://sagecode.org">sagecode.org</a> donde puede aprender idiomas extranjeros y programación.</p>
+  <h3>Comunidad y soporte</h3>
+  <p>Conéctese con nosotros, haga preguntas, haga una oferta o únase a la discusión en nuestros canales comunitarios. Esperamos nuevos miembros en nuestra comunidad.</p>
 </section>
