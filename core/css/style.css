@@ -257,6 +257,12 @@ body:has(.content-gallery-wrapper),
   padding: 8px 16px;
   border-radius: 50rem;
   background: var(--bg-header);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  text-decoration: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
 
 /* Mobile Tooltip Support */
 @media (max-width: 767px) {
@@ -284,17 +290,19 @@ body:has(.content-gallery-wrapper),
   }
 }
 
+.toolbar-btn.home-btn {
+  padding: 0;
+  width: 34px;
+  height: 34px;
+  justify-content: center;
+  border-radius: 50%;
+  flex: 0 0 34px;
+}
+
 @media (min-width: 768px) {
   body.layout-maximized .container:has(.gallery-container) {
     max-width: 100% !important;
   }
-}
-
-  border: 1px solid var(--border-color);
-  color: var(--text-main);
-  text-decoration: none;
-  cursor: pointer;
-  font-size: 0.9rem;
 }
 
 [data-theme="dark"] .toolbar-btn .bi {
