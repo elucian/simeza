@@ -1,0 +1,22 @@
+{
+    "about.md": {
+        "ro": "despre.md",
+        "de": "ueber-uns.md",
+        "fr": "a-propos.md",
+        "es": "sobre-nosotros.md",
+        "ru": "o-nas.md",
+        "pt": "sobre.md",
+        "hu": "rolunk.md",
+        "it": "chi-siamo.md"
+    },
+    "gallery.md": {
+        "ro": "galerie.md",
+        "de": "galerie.md",
+        "fr": "galerie.md",
+        "es": "galeria.md",
+        "ru": "galereya.md",
+        "pt": "galeria.md",
+        "hu": "galeria.md",
+        "it": "galleria.md"
+    }
+}

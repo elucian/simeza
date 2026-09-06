@@ -1,8 +1,5 @@
 {
   "Galería": "galeria.html",
-  "Medios": "media.html",
-  "Autores": "autores.html",
-  "Obras": "escritos.html",
-  "Libros": "libros.html",
-  "Acerca de": "index.html"
+  "Autor": "index.html",
+  "Ajustes": "settings.html"
 }

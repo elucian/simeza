@@ -1,8 +1,5 @@
 {
   "Galéria": "galeria.html",
-  "Média": "media.html",
-  "Szerzők": "szerzok.html",
-  "Írások": "irasok.html",
-  "Könyvek": "konyvek.html",
-  "Rólunk": "index.html"
+  "Szerző": "index.html",
+  "Beállítások": "settings.html"
 }

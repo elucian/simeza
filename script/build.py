@@ -19,48 +19,21 @@ RELEASE_FILE = os.path.join(ROOT, 'release', 'releases.json')
 LANGUAGES = ['ro', 'en', 'de', 'es', 'fr', 'ru', 'pt', 'hu', 'it']
 
 SLUG_MAP = {
-    'about.md': {'ro': 'despre.md', 'de': 'ueber-uns.md', 'fr': 'a-propos.md', 'es': 'sobre-nosotros.md', 'ru': 'o-nas.md', 'pt': 'sobre.md', 'hu': 'rolunk.md', 'it': 'chi-siamo.md'}, 
-    'media.md': {'ro': 'media.md', 'de': 'media.md', 'fr': 'media.md', 'es': 'media.md', 'ru': 'media.md', 'pt': 'media.md', 'hu': 'media.md', 'it': 'media.md'}, 
-    'authors.md': {'ro': 'autori.md', 'de': 'autoren.md', 'fr': 'auteurs.md', 'es': 'autores.md', 'ru': 'avtory.md', 'pt': 'autores.md', 'hu': 'szerzok.md', 'it': 'autori.md'}, 
-    'writings.md': {'ro': 'scrieri.md', 'de': 'schriften.md', 'fr': 'ecrits.md', 'es': 'escritos.md', 'ru': 'stati.md', 'pt': 'escritos.md', 'hu': 'irasok.md', 'it': 'scritti.md'}, 
-    'gallery.md': {'ro': 'galerie.md', 'de': 'galerie.md', 'fr': 'galerie.md', 'es': 'galeria.md', 'ru': 'galereya.md', 'pt': 'galeria.md', 'hu': 'galeria.md', 'it': 'galleria.md'}, 
-    'books.md': {'ro': 'carti.md', 'de': 'buecher.md', 'fr': 'livres.md', 'es': 'libros.md', 'ru': 'knigi.md', 'pt': 'livros.md', 'hu': 'konyvek.md', 'it': 'libri.md'}
+    "about.md": {"ro": "despre.md", "de": "ueber-uns.md", "fr": "a-propos.md", "es": "sobre-nosotros.md", "ru": "o-nas.md", "pt": "sobre.md", "hu": "rolunk.md", "it": "chi-siamo.md"}, 
+    "gallery.md": {"ro": "galerie.md", "de": "galerie.md", "fr": "galerie.md", "es": "galeria.md", "ru": "galereya.md", "pt": "galeria.md", "hu": "galeria.md", "it": "galleria.md"},
+    "settings.md": {"ro": "setari.md", "de": "einstellungen.md", "fr": "parametres.md", "es": "ajustes.md", "ru": "nastroyki.md", "pt": "configuracoes.md", "hu": "beallitasok.md", "it": "impostazioni.md"}
 }
 
 def render_bottom_bar(page_id, lang, active_id=None):
-    # Data for the bottom bar buttons per page
     config = {
         'gallery': [
             {'id': 'painting', 'icon': 'bi-palette', 'label': {'en': 'Paintings', 'ro': 'Picturi', 'de': 'Gemälde', 'es': 'Pinturas', 'fr': 'Peintures', 'ru': 'Картины', 'pt': 'Pinturas', 'hu': 'Festmények', 'it': 'Dipinti'}},
             {'id': 'drawing', 'icon': 'bi-pencil', 'label': {'en': 'Drawings', 'ro': 'Desene', 'de': 'Zeichnungen', 'es': 'Dibujos', 'fr': 'Dessins', 'ru': 'Рисунки', 'pt': 'Desenhos', 'hu': 'Rajzok', 'it': 'Disegni'}},
             {'id': 'photo', 'icon': 'bi-camera', 'label': {'en': 'Photos', 'ro': 'Fotografii', 'de': 'Fotos', 'es': 'Fotos', 'fr': 'Photos', 'ru': 'Фото', 'pt': 'Fotos', 'hu': 'Fotók', 'it': 'Foto'}}
-        ],
-        'media': [
-            {'id': 'audio', 'label': {'en': 'Audio', 'ro': 'Audio', 'de': 'Audio', 'es': 'Audio', 'fr': 'Audio', 'ru': 'Аудио', 'pt': 'Audio', 'hu': 'Audio', 'it': 'Audio'}, 'icon': 'bi-soundwave'},
-            {'id': 'video', 'label': {'en': 'Video', 'ro': 'Video', 'de': 'Video', 'es': 'Video', 'fr': 'Video', 'ru': 'Видео', 'pt': 'Video', 'hu': 'Video', 'it': 'Video'}, 'icon': 'bi-camera-video'},
-            {'id': 'stream', 'label': {'en': 'Stream', 'ro': 'Stream', 'de': 'Stream', 'es': 'Stream', 'fr': 'Stream', 'ru': 'Стрим', 'pt': 'Stream', 'hu': 'Stream', 'it': 'Stream'}, 'icon': 'bi-broadcast'}
-        ],
-        'books': [
-            {'id': 'education', 'icon': 'bi-mortarboard', 'label': {'en': 'Education', 'ro': 'Educație', 'de': 'Bildung', 'es': 'Educación', 'fr': 'Éducation', 'ru': 'Образование', 'pt': 'Educação', 'hu': 'Oktatás', 'it': 'Educazione'}},
-            {'id': 'literature', 'icon': 'bi-book', 'label': {'en': 'Literature', 'ro': 'Literatură', 'de': 'Literatur', 'es': 'Literatura', 'fr': 'Littérature', 'ru': 'Литература', 'pt': 'Literatura', 'hu': 'Irodalom', 'it': 'Letteratura'}},
-            {'id': 'knowledge', 'icon': 'bi-lightbulb', 'label': {'en': 'Knowledge', 'ro': 'Cunoaștere', 'de': 'Wissen', 'es': 'Conocimiento', 'fr': 'Connaissance', 'ru': 'Знания', 'pt': 'Conhecimento', 'hu': 'Tudás', 'it': 'Conoscenza'}}
-        ],
-        'authors': [
-            {'id': 'creators', 'icon': 'bi-palette', 'label': {'en': 'Creators', 'ro': 'Creatori', 'de': 'Schöpfer', 'es': 'Creadores', 'fr': 'Créateurs', 'ru': 'Создатели', 'pt': 'Criadores', 'hu': 'Alkotók', 'it': 'Creatori'}},
-            {'id': 'writers', 'icon': 'bi-pen', 'label': {'en': 'Writers', 'ro': 'Scriitori', 'de': 'Schriftsteller', 'es': 'Escritores', 'fr': 'Écrivains', 'ru': 'Писатели', 'pt': 'Escritores', 'hu': 'Írók', 'it': 'Scrittori'}},
-            {'id': 'mentors', 'icon': 'bi-mortarboard', 'label': {'en': 'Mentors', 'ro': 'Mentori', 'de': 'Mentoren', 'es': 'Mentores', 'fr': 'Mentors', 'ru': 'Наставники', 'pt': 'Mentores', 'hu': 'Mentorok', 'it': 'Mentori'}}
-        ],
-        'writings': [
-            {'id': 'critiques', 'icon': 'bi-chat-left-text', 'label': {'en': 'Critiques', 'ro': 'Critici', 'de': 'Kritiken', 'es': 'Críticas', 'fr': 'Critiques', 'ru': 'Критика', 'pt': 'Críticas', 'hu': 'Kritikák', 'it': 'Critiche'}},
-            {'id': 'pamphlets', 'icon': 'bi-megaphone', 'label': {'en': 'Pamphlets', 'ro': 'Pamflete', 'de': 'Pamphlete', 'es': 'Panfletos', 'fr': 'Pamphlets', 'ru': 'Памфлеты', 'pt': 'Panfletos', 'hu': 'Pamfletek', 'it': 'Pamphlet'}},
-            {'id': 'sketches', 'icon': 'bi-pencil-square', 'label': {'en': 'Sketches', 'ro': 'Schițe', 'de': 'Skizzen', 'es': 'Bocetos', 'fr': 'Esquisses', 'ru': 'Зарисовки', 'pt': 'Esboços', 'hu': 'Vázlatok', 'it': 'Schizzi'}}
         ]
     }
-    
     buttons = config.get(page_id, [])
-    if not buttons:
-        return ''
-        
+    if not buttons: return ''
     bar_html = ['<div class="pill-bar sticky-bottom-bar" id="bottomBar">']
     for i, btn in enumerate(buttons):
         btn_id = btn['id']
@@ -69,20 +42,15 @@ def render_bottom_bar(page_id, lang, active_id=None):
         active_class = ' active' if (active_id and btn_id == active_id) or (not active_id and i == 0) else ''
         icon_html = f'<i class="bi {icon}"></i> ' if icon else ''
         bar_html.append(f'  <button class="pill-btn bottom-bar-btn{active_class}" data-filter="{btn_id}">{icon_html}{label}</button>')
-    
-    # Add Layout Toggle
     bar_html.append('<div class="bottom-bar-separator"></div>')
     bar_html.append('<button id="layoutToggleBtn" class="pill-btn bottom-bar-btn layout-toggle-btn active" title="Toggle preview panel"><i class="bi bi-layout-sidebar-reverse"></i></button>')
-    
     bar_html.append('</div>')
     return '\n'.join(bar_html)
 
-
 def render_gallery_html(gallery_data, lang):
-    # Modal Translations
     t = {
-        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter': 'Filter', 'Loop': 'Loop', 'Stop': 'Stop'},
-        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter': 'Filtru', 'Loop': 'Redare', 'Stop': 'Oprește'},
+        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter':'Filter', 'Loop': 'Loop', 'Stop': 'Stop'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter':'Filtru', 'Loop': 'Redare', 'Stop': 'Oprește'},
         'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter', 'Loop': 'Schleife', 'Stop': 'Stopp'},
         'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro', 'Loop': 'Bucle', 'Stop': 'Detener'},
         'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre', 'Loop': 'Boucle', 'Stop': 'Arrêt'},
@@ -92,15 +60,12 @@ def render_gallery_html(gallery_data, lang):
         'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Stop'}
     }
     trans = t.get(lang, t['en'])
-    # Load filter config
     filter_data = {}
     try:
         with open(os.path.join(ROOT, 'content', 'filter-gallery.json'), 'r', encoding='utf-8') as f:
             filter_data = json.load(f)
     except:
         pass
-
-
     panels = ['<div class="gallery-container">', '<button class="gallery-nav-btn gallery-nav-prev" aria-label="Previous">◀</button>', '<div class="panel-wrapper" data-widget="gallery">']
     for item in gallery_data:
         content = item.get('content', {})
@@ -111,8 +76,6 @@ def render_gallery_html(gallery_data, lang):
         author = item.get('author', '')
         status = item.get('status', '') or ''
         year = item.get('year', '') or ''
-        
-        # Calculate aspect ratio
         aspect_ratio = "1/1"
         w, h = 1, 1
         if file:
@@ -122,35 +85,21 @@ def render_gallery_html(gallery_data, lang):
                     aspect_ratio = f"{w}/{h}"
             except:
                 pass
-        
         category = item.get('category', '')
         topic = item.get('topic', '')
         item_type = item.get('type', 'painting')
-        
-        # Calculate width: Height is determined by CSS (100dvh - 180px - internal padding)
-        # We need width = height * aspect_ratio
-        
-        p = [f'    <div class="panel" data-title="{html.escape(str(title))}" data-author="{html.escape(str(author))}" data-year="{html.escape(str(year))}" data-status="{html.escape(str(status))}" data-desc="{html.escape(str(desc))}" data-image="/content/gallery/{file}" data-type="{item_type}" data-category="{html.escape(str(category))}" data-topic="{html.escape(str(topic))}">']
+        p = [f'  <div class="panel" data-type="{item_type}" data-author="{author}" data-category="{category}" data-topic="{topic}" data-image="/content/gallery/{file}" data-title="{html.escape(title)}" data-desc="{html.escape(desc)}" data-year="{year}" data-status="{status}">']
         if file:
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
-        else:
-            p.append('      <div class="panel-image"></div>')
         p.append('      <div class="panel-data">')
-        p.append(f'        <div class="panel-title">{html.escape(title)}</div>')
-        # Add a container for mobile specific metadata
-        p.append(f'        <div class="panel-mobile-meta">')
-        if author: p.append(f'          <div class="panel-author">{html.escape(str(author))}</div>')
-        if year: p.append(f'          <div class="panel-year">{html.escape(str(year))}</div>')
-        if status: p.append(f'          <div class="panel-status">{html.escape(str(status))}</div>')
-        p.append('        </div>')
+        p.append(f'        <h3 class="panel-title">{html.escape(title)}</h3>')
+        if desc: p.append(f'        <p>{html.escape(desc)}</p>')
         p.append('      </div>')
         p.append('    </div>')
         panels.append('\n'.join(p))
-    panels.append('</div>') # Close panel-wrapper
+    panels.append('</div>')
     panels.append('<button class="gallery-nav-btn gallery-nav-next" aria-label="Next">▶</button>')
-    panels.append('</div>') # Close gallery-container
-    
-    # Modal
+    panels.append('</div>')
     modal = [
         '<div id="galleryModal" class="gallery-modal-overlay">',
         '  <div class="gallery-modal">',
@@ -188,10 +137,7 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ]
-    # --- Types (outside modal) ---
     panels.append(render_bottom_bar('gallery', lang, active_id='painting'))
-
-    # --- Filter Modal (with dropdowns) ---
     filter_modal = [
         '<div id="filterModal" class="gallery-modal-overlay">',
         '  <div class="gallery-modal gallery-filter-modal">',
@@ -199,8 +145,6 @@ def render_gallery_html(gallery_data, lang):
         f'    <h3 class="filter-modal-title">{trans["Filter"]}</h3>',
         '    <div class="filter-modal-body">'
     ]
-    
-    # Authors, Categories, Topics as select dropdowns
     for section_key, title_label in [('authors', 'Author'), ('categories', 'Category'), ('topics', 'Topic')]:
         items = filter_data.get(section_key, [])
         if items:
@@ -214,7 +158,6 @@ def render_gallery_html(gallery_data, lang):
                 filter_modal.append(f'          <option value="{entry_id}">{label_text}</option>')
             filter_modal.append('        </select>')
             filter_modal.append('      </div>')
-
     filter_modal.extend([
         '    </div>',
         '    <div class="gallery-modal-footer filter-modal-footer">',
@@ -224,112 +167,14 @@ def render_gallery_html(gallery_data, lang):
         '  </div>',
         '</div>'
     ])
-    # Add Gallery Modal
     panels.extend(modal)
-    # Add Filter Modal
     panels.extend(filter_modal)
-    
     panels.append('</div>')
     return '\n'.join(panels)
 
-def test_func():
-    pass
-
-def render_content_widget(content_type, lang, data):
-    # Translations
-    t = {
-        'en': {'Close': 'Close', 'All': 'All', 'Name': 'Name', 'Desc': 'Description'},
-        'ro': {'Close': 'Închide', 'All': 'Toate', 'Name': 'Nume', 'Desc': 'Descriere'},
-        'de': {'Close': 'Schließen', 'All': 'Alle', 'Name': 'Name', 'Desc': 'Beschreibung'},
-        'es': {'Close': 'Cerrar', 'All': 'Todos', 'Name': 'Nombre', 'Desc': 'Descripción'},
-        'fr': {'Close': 'Fermer', 'All': 'Tous', 'Name': 'Nom', 'Desc': 'Description'},
-        'ru': {'Close': 'Закрыть', 'All': 'Все', 'Name': 'Имя', 'Desc': 'Описание'},
-        'pt': {'Close': 'Fechar', 'All': 'Todos', 'Name': 'Nome', 'Desc': 'Descrição'},
-        'hu': {'Close': 'Bezár', 'All': 'Összes', 'Name': 'Név', 'Desc': 'Leírás'},
-        'it': {'Close': 'Chiudi', 'All': 'Tutti', 'Name': 'Nome', 'Desc': 'Descrizione'}
-    }
-    trans = t.get(lang, t['en'])
-    
-    # Structure
-    html_output = [
-        f'<div class="content-gallery-wrapper" data-type="{content_type}">',
-        '<div class="left-panel">',
-        '<div class="content-grid" data-widget="content">',
-    ]
-    
-    for item in data:
-        content = item.get('content', {})
-        loc = content.get(lang) or content.get('en') or (list(content.values())[0] if content else {})
-        title = loc.get('title') or loc.get('name') or item.get('id') or 'Untitled'
-        desc = loc.get('description') or loc.get('bio') or ''
-        file = item.get('file', '')
-        
-        # Determine image path based on content type
-        image_path = f'/content/{content_type}/{file}' if file else ''
-        item_type = item.get('type', 'item')
-        
-        # Panel
-        p = [f'  <div class="content-panel" data-title="{html.escape(str(title))}" data-desc="{html.escape(str(desc))}" data-image="{image_path}" data-type="{item_type}">']
-        
-        # Image + Title below
-        p.append(f'    <div class="content-panel-image-container">')
-        if image_path:
-            p.append(f'      <img src="{image_path}" alt="{html.escape(title)}" loading="lazy">')
-        p.append('    </div>')
-        
-        p.append(f'    <div class="content-panel-title">{html.escape(title)}</div>')
-        p.append('  </div>')
-        html_output.append('\n'.join(p))
-    
-    html_output.extend([
-        '</div>', # Close content-grid
-        '</div>', # Close left-panel
-        '<div class="content-splitter"></div>',
-        '<div class="right-panel">',
-        '  <div class="preview-panel">',
-        '    <div id="preview-image-container"></div>',
-        '    <h3 id="preview-title"></h3>',
-        '    <p id="preview-desc"></p>',
-        '  </div>',
-        '</div>',
-        '</div>', # Close content-gallery-wrapper
-        # Content Modal
-        '<div id="contentModal" class="content-modal-overlay">',
-        '  <div class="content-modal">',
-        '    <button class="content-modal-close-x" aria-label="Close">&times;</button>',
-        '    <div class="content-modal-body">',
-        '      <div class="content-modal-image-col">',
-        '        <img id="modalContentImg" src="" alt="">',
-        '      </div>',
-        '      <div class="content-modal-data-col">',
-        '        <div class="content-modal-form-group">',
-        f'          <label>{trans["Name"]}</label><input type="text" id="modalContentName" readonly>',
-        '        </div>',
-        '        <div class="content-modal-form-group content-modal-desc-group">',
-        f'          <label>{trans["Desc"]}</label><textarea id="modalContentDesc" readonly></textarea>',
-        '        </div>',
-        '        <div class="content-modal-footer">',
-        f'          <button id="contentModalCloseBtn" class="content-modal-btn-close">{trans["Close"]}</button>',
-        '        </div>',
-        '      </div>',
-        '    </div>',
-        '  </div>',
-        '</div>'
-    ])
-    
-    return '\n'.join(html_output)
-
-
-
-def write_summary(summary_text):
-    if 'GITHUB_STEP_SUMMARY' in os.environ:
-        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
-            f.write(summary_text + '\n')
-
 def parse_frontmatter(content):
     m = re.match(r'^---\s*\n(.*?)\n---\s*\n', content, re.DOTALL)
-    if not m:
-        return {}, content
+    if not m: return {}, content
     meta_block = m.group(1)
     body = content[m.end():]
     meta = {}
@@ -343,8 +188,7 @@ def render_menu(lang):
     menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
     if lang != 'en':
         lang_menu = os.path.join(CACHE_DIR, lang, 'menu.json')
-        if os.path.exists(lang_menu):
-            menu_file = lang_menu
+        if os.path.exists(lang_menu): menu_file = lang_menu
     if not os.path.exists(menu_file): return ''
     with open(menu_file, 'r', encoding='utf-8') as f:
         data = json.load(f)
@@ -358,65 +202,20 @@ def build(target_lang=None):
     start_time = time.time()
     active_languages = [target_lang] if target_lang else LANGUAGES
     print(f'Starting build at {time.ctime()} for: {", ".join(active_languages)}')
-    if not target_lang and os.path.exists(LOCAL_DIR):
-        shutil.rmtree(LOCAL_DIR)
+    if not target_lang and os.path.exists(LOCAL_DIR): shutil.rmtree(LOCAL_DIR)
     os.makedirs(LOCAL_DIR, exist_ok=True)
     with open(RELEASE_FILE, 'r') as f:
         data = json.load(f)
         version = data.get('candidate', {}).get('version')
-        if not version:
-            version = data.get('published', {}).get('version', '0.1.0')
-    # Pre-load gallery data
+        if not version: version = data.get('published', {}).get('version', '0.1.0')
     gallery_data = []
     gallery_source_dir = os.path.join(ROOT, 'content', 'gallery')
     if os.path.exists(gallery_source_dir):
         for filename in os.listdir(gallery_source_dir):
             if filename.endswith('.json'):
                 with open(os.path.join(gallery_source_dir, filename), 'r', encoding='utf-8') as f:
-                    try:
-                        gallery_data.append(json.load(f))
-                    except:
-                        pass
-
-    # Pre-load books data
-    books_data = []
-    books_source_dir = os.path.join(ROOT, 'content', 'books')
-    if os.path.exists(books_source_dir):
-        for filename in os.listdir(books_source_dir):
-            if filename.endswith(('.pdf', '.jpg', '.png')):
-                books_data.append({'id': filename, 'file': filename, 'content': {'en': {'title': os.path.splitext(filename)[0]}}})
-
-    # Pre-load writings data
-    writings_data = []
-    writings_source_dir = os.path.join(ROOT, 'content', 'writings')
-    if os.path.exists(writings_source_dir):
-        for filename in os.listdir(writings_source_dir):
-            if filename.endswith(('.pdf', '.txt')):
-                writings_data.append({'id': filename, 'file': filename, 'content': {'en': {'title': os.path.splitext(filename)[0]}}})
-
-    # Pre-load authors data
-    authors_data = []
-    authors_file = os.path.join(ROOT, 'content', 'authors', 'authors.json')
-    if os.path.exists(authors_file):
-        with open(authors_file, 'r', encoding='utf-8') as f:
-            try:
-                authors_data = json.load(f)
-            except:
-                pass
-
-    # Pre-load media data
-    media_data = []
-    media_source_dir = os.path.join(ROOT, 'content', 'media')
-    if os.path.exists(media_source_dir):
-        for filename in os.listdir(media_source_dir):
-            if filename.endswith('.json'):
-                with open(os.path.join(media_source_dir, filename), 'r', encoding='utf-8') as f:
-                    try:
-                        media_data.append(json.load(f))
-                    except:
-                        pass
-
-
+                    try: gallery_data.append(json.load(f))
+                    except: pass
     summary = []
     for lang in active_languages:
         lang_dir = os.path.join(LOCAL_DIR, lang)
@@ -429,21 +228,14 @@ def build(target_lang=None):
         for file in files:
             if not file.endswith('.md'): continue
             md_file = SLUG_MAP.get(file, {}).get(lang, file) if lang != "en" else file
-            
-            # Determine source
             source_filepath = os.path.join(CACHE_DIR, lang, md_file)
             output_filename = md_file.replace(".md", ".html")
-            
             if not os.path.exists(source_filepath):
                 source_filepath = os.path.join(PAGES_DIR, file)
                 output_filename = file.replace('.md', '.html')
-            
             with open(source_filepath, 'r', encoding='utf-8') as f:
                 content = f.read()
-                
             meta, body = parse_frontmatter(content)
-            
-            # Bottom Bar injection
             if '{{widget:bottom_bar}}' in body:
                 page_id = os.path.splitext(file)[0]
                 body = body.replace('{{widget:bottom_bar}}', render_bottom_bar(page_id, lang))
@@ -451,52 +243,14 @@ def build(target_lang=None):
             css_path = os.path.join(ROOT, 'core', 'css', f'{name_no_ext}.css')
             js_path = os.path.join(ROOT, 'core', 'js', f'{name_no_ext}.js')
             page_css = f'<link rel="stylesheet" href="/core/css/{name_no_ext}.css">' if os.path.exists(css_path) else ''
-            # Inject filter-modal.css if not index page
-            if name_no_ext != 'index':
-                page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
+            if name_no_ext != 'index': page_css += '<link rel="stylesheet" href="/core/css/filter-modal.css">'
             page_js = f'<script src="/core/js/{name_no_ext}.js"></script>' if os.path.exists(js_path) else ''
-            
             md = markdown.Markdown(extensions=['extra', 'md_in_html'])
-            
-            # Gallery injection
             if '{{widget:gallery}}' in body:
                 body = body.replace('{{widget:gallery}}', render_gallery_html(gallery_data, lang))
-                
-
-            # Content injection
-            if '{{widget:content' in body:
-                page_css += '<link rel="stylesheet" href="/core/css/content-widget.css">'
-                page_js += '<script src="/core/js/content-widget.js"></script>'
-                import re
-                # Find all widget occurrences
-                matches = re.findall(r'\{\{widget:content(?::(\w+))?\}\}', body)
-                
-                for content_type in matches:
-                    if not content_type: content_type = 'media'
-                    
-                    # Select data based on content_type
-                    data_to_render = []
-                    if content_type == 'media': data_to_render = media_data
-                    elif content_type == 'gallery': data_to_render = gallery_data
-                    elif content_type == 'books': data_to_render = books_data
-                    elif content_type == 'writings': data_to_render = writings_data
-                    elif content_type == 'authors': data_to_render = authors_data
-                    
-                    widget_tag = f'{{{{widget:content:{content_type}}}}}' if content_type != 'media' else '{{widget:content}}'
-                    # Note: if content_type is 'media', it could be just {{widget:content}}
-                    # Let's be explicit.
-                    
-                    tag_to_replace = f'{{{{widget:content:{content_type}}}}}' if content_type != 'media' else '{{widget:content}}'
-                    # If I used {{widget:content}} in the file, match is None, content_type is 'media'.
-                    
-                    body = body.replace(tag_to_replace, render_content_widget(content_type, lang, data_to_render))
-
             html_content = md.convert(body)
-            
             title = meta.get('title', 'La Simeza')
             final_html = base_template.replace('{{lang}}', lang).replace('{{page-id}}', file).replace('{{page-content}}', html_content).replace('{{menu}}', render_menu(lang)).replace('{{mobile_menu}}', render_menu(lang)).replace('{{version}}', version).replace('{{title}}', title).replace('{{description}}', meta.get('description', 'Art gallery')).replace('{{keywords}}', meta.get('keywords', 'art')).replace('{{page-css}}', page_css).replace('{{page-js}}', page_js).replace('href="core/', 'href="/core/').replace('src="core/', 'src="/core/')
-            
-            # Global image protection
             protection = """
 <style>
   img { -webkit-user-drag: none; user-drag: none; -webkit-user-select: none; user-select: none; }
@@ -510,7 +264,6 @@ def build(target_lang=None):
 </script>
 """
             final_html = final_html.replace('</body>', protection + '</body>')
-            
             with open(os.path.join(lang_dir, output_filename), 'w', encoding='utf-8') as f:
                 f.write(final_html)
             if file == 'index.md' and lang == 'en':
@@ -523,15 +276,17 @@ def build(target_lang=None):
     with open(os.path.join(LOCAL_DIR, '.nojekyll'), 'w') as f:
         f.write('')
     shutil.copytree(os.path.join(ROOT, 'content'), os.path.join(LOCAL_DIR, 'content'), dirs_exist_ok=True)
-    # Manifest generation moved to start of build()
-    pass
-
     shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(LOCAL_DIR, 'core'), dirs_exist_ok=True)
     duration = time.time() - start_time
     print(f'\nBuild completed in {duration:.2f} seconds.')
     summary.append(f'\n**Build completed in {duration:.2f} seconds.**')
     if not target_lang:
         write_summary('\n'.join(summary))
+
+def write_summary(summary_text):
+    if 'GITHUB_STEP_SUMMARY' in os.environ:
+        with open(os.environ['GITHUB_STEP_SUMMARY'], 'a') as f:
+            f.write(summary_text + '\n')
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description="Static site generator build script")

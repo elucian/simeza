@@ -1,8 +1,5 @@
 {
   "Galerie": "galerie.html",
-  "Media": "media.html",
-  "Autori": "autori.html",
-  "Scrieri": "scrieri.html",
-  "Cărți": "carti.html",
-  "Despre": "index.html"
+  "Autor": "index.html",
+  "Setări": "settings.html"
 }

@@ -1,8 +1,5 @@
 {
   "Галерея": "galereya.html",
-  "Медиа": "media.html",
-  "Авторы": "avtory.html",
-  "Статьи": "stati.html",
-  "Книги": "knigi.html",
-  "О нас": "index.html"
+  "Автор": "index.html",
+  "Настройки": "settings.html"
 }

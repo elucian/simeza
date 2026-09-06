@@ -1,6 +1,11 @@
 // Gallery functionality
 
 // Persistence
+const getSettings = () => {
+    const saved = localStorage.getItem('simezaSettings');
+    return saved ? JSON.parse(saved) : { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+};
+
 const saveFilters = () => {
     const activeBtn = document.querySelector('.sticky-bottom-bar .bottom-bar-btn.active');
     const filters = {
@@ -108,6 +113,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const modalStatus = document.getElementById('modalStatus');
   const modalCategory = document.getElementById('modalCategory');
   const modalTopic = document.getElementById('modalTopic');
+  // Apply settings
+  const settings = getSettings();
+  if (!settings.pillbarVisible) {
+      document.body.classList.add('hide-pillbar');
+  }
+
   const modalDesc = document.getElementById('modalDesc');
   const loopBtn = document.getElementById('galleryModalLoopBtn');
   const closeBtn = document.getElementById('galleryModalCloseBtn');
@@ -159,13 +170,14 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.stopText;
     if (loopBtn) loopBtn.querySelector('i').className = 'bi bi-stop-fill';
     
+    const settings = getSettings();
     const cycle = () => {
       if (!isModalLooping) return;
       currentModalIndex = (currentModalIndex + 1) % modalFilteredPanels.length;
       populateModal(modalFilteredPanels[currentModalIndex]);
-      modalLoopTimeout = setTimeout(cycle, 3000);
+      modalLoopTimeout = setTimeout(cycle, settings.loopDelay * 1000);
     };
-    modalLoopTimeout = setTimeout(cycle, 3000);
+    modalLoopTimeout = setTimeout(cycle, settings.loopDelay * 1000);
   };
 
   loopBtn?.addEventListener('click', () => {
@@ -193,6 +205,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (loopBtn) loopBtn.querySelector('span').textContent = loopBtn.dataset.loopText;
     
     modal.classList.add('active');
+    // Auto-rotation
+    const settings = getSettings();
+    if (settings.autoRotation) {
+        startModalLoop();
+    }
+
   };
 
   // Panel click listeners
