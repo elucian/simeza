@@ -11,6 +11,39 @@
     "ro": {
       "name": "miki cu fructe",
       "description": "miki cu fructe"
+    },
+    "de": {
+      "name": "Miki mit Früchten",
+      "description": "Miki mit Früchten"
+    },
+    "en": {
+      "name": "Miki with fruit",
+      "description": "Miki with fruit"
+    },
+    "es": {
+      "name": "Miki con frutas",
+      "description": "Miki con frutas"
+    },
+    "fr": {
+      "name": "Miki aux fruits",
+      "description": "Miki aux fruits"
+    },
+    "hu": {
+      "name": "Miki gyümölccsel",
+      "description": "Miki gyümölccsel"
+    },
+    "it": {
+      "name": "Miki con frutta",
+      "description": "Miki con frutta"
+    },
+    "pt": {
+      "name": "Miki com frutas",
+      "description": "Miki com frutas"
+    },
+    "ru": {
+      "name": "Мики с фруктами",
+      "description": "Мики с фруктами"
     }
-  }
+  },
+  "source_hash": "82f7bb59539bf929f69a82ba91c21a825a1765ad3cf57be06a1a87c527e91981"
 }

@@ -11,6 +11,39 @@
     "en": {
       "name": "miki-mireasa",
       "description": "miki-mireasa"
+    },
+    "de": {
+      "name": "miki-braut",
+      "description": "miki-braut"
+    },
+    "es": {
+      "name": "miki-novia",
+      "description": "miki-novia"
+    },
+    "fr": {
+      "name": "miki-mariée",
+      "description": "miki-mariée"
+    },
+    "hu": {
+      "name": "miki-menyasszony",
+      "description": "miki-menyasszony"
+    },
+    "it": {
+      "name": "miki-sposa",
+      "description": "miki-sposa"
+    },
+    "pt": {
+      "name": "miki-noiva",
+      "description": "miki-noiva"
+    },
+    "ro": {
+      "name": "miki-mireasă",
+      "description": "miki-mireasă"
+    },
+    "ru": {
+      "name": "miki-невеста",
+      "description": "miki-невеста"
     }
-  }
+  },
+  "source_hash": "870856c1694aa7b9e93a24240071fee01bfd2d02e2085a13ef2886824c0f4c28"
 }

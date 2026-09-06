@@ -257,7 +257,7 @@ def translate_pages(target_langs):
     
 def translate_menu(target_langs):
     # 2. Translate Menu
-    menu_file = os.path.join(LAYOUT_DIR, 'menu.json')
+    menu_file = os.path.join(LAYOUT_DIR, 'toolbar.json')
     with open(menu_file, 'r', encoding='utf-8') as f:
         menu_data = json.load(f)
         
@@ -271,9 +271,14 @@ def translate_menu(target_langs):
         labels_to_translate = {}
         translated_menu = {}
         
-        for label, url in menu_data.items():
+        for item_id, config in menu_data.items():
+            label_obj = config.get("label", {})
+            label = label_obj.get('en', item_id)
+            url = config.get("slug")
+            
             # Use MENU_MAP if available
-            trans_label = MENU_MAP.get(label, {}).get(lang)
+            trans_label_obj = config.get("label", {})
+            trans_label = trans_label_obj.get(lang)
             
             # Find the original filename (e.g., 'about.html') to match with SLUG_MAP
             original_filename = url.replace('.html', '.md')
@@ -281,9 +286,11 @@ def translate_menu(target_langs):
             translated_filename = SLUG_MAP.get(original_filename, {}).get(lang, original_filename).replace('.md', '.html')
             
             if trans_label:
-                translated_menu[trans_label] = translated_filename
+                config_copy = config.copy()
+                config_copy["label"] = {lang: trans_label}
+                translated_menu[item_id] = config_copy
             else:
-                labels_to_translate[label] = translated_filename
+                labels_to_translate[item_id] = (config, translated_filename)
         
         # If there are labels to translate, do it in bulk
         if labels_to_translate:
@@ -300,7 +307,7 @@ def translate_menu(target_langs):
                     translated_menu[trans_label] = filename
             
         os.makedirs(os.path.join(CACHE_DIR, lang), exist_ok=True)
-        with open(os.path.join(CACHE_DIR, lang, 'menu.json'), 'w', encoding='utf-8') as f:
+        with open(os.path.join(CACHE_DIR, lang, 'toolbar.json'), 'w', encoding='utf-8') as f:
             json.dump(translated_menu, f, indent=2, ensure_ascii=False)
 
 

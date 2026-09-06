@@ -12,7 +12,7 @@
   <meta name="description" content="{{description}}">
   <meta name="keywords" content="{{keywords}}">
   <link rel="stylesheet" href="/core/css/reset.css?v={{version}}">
-  <link rel="stylesheet" href="/core/css/icons.css?v={{version}}">
+    <link rel="stylesheet" href="/core/css/icons.css?v={{version}}-icons-2">
   <link rel="stylesheet" href="/core/css/style.css?v={{version}}">
   {{page-css}}
   <link rel="icon" type="image/svg+xml" href="/core/img/favicon.svg">
@@ -25,17 +25,13 @@
   
     <nav class="toolbar-nav">
         <ul id="toolbarList" class="nav-menu">
-            <li><a href="/settings.html" class="toolbar-btn"><i class="bi bi-gear"></i><span class="btn-label">Settings</span></a></li>
-            <li><a href="/gallery.html" class="toolbar-btn"><i class="bi bi-palette"></i><span class="btn-label">Gallery</span></a></li>
-            <li><a href="/about.html" class="toolbar-btn"><i class="bi bi-person"></i><span class="btn-label">Author</span></a></li>
-            <li><button class="toolbar-btn" onclick="toggleFilterModal()"><i class="bi bi-funnel"></i><span class="btn-label">Filter</span></button></li>
-            <li><button class="toolbar-btn" onclick="toggleDesktopLayout()"><i class="bi bi-grid"></i><span class="btn-label">Layout</span></button></li>
+            {{menu}}
         </ul>
     </nav>
 
     <div class="header-actions">
         <div class="lang-selector">
-            <button id="langBtn" onclick="toggleLangMenu()"></button>
+            <button id="langBtn" onclick="toggleLangMenu()" aria-label="Select language">EN</button>
             <ul id="langMenu" class="lang-menu"></ul>
         </div>
     </div>
@@ -53,7 +49,7 @@
 <footer id="socialFooter"></footer>
 </div>
 
-<script src="/core/js/simeza.js"></script>
+<script src="/core/js/simeza.js?v={{version}}"></script>
 {{page-js}}
 
 </body>

@@ -11,6 +11,39 @@
     "en": {
       "name": "trump",
       "description": "trump"
+    },
+    "de": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "es": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "fr": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "hu": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "it": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "pt": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "ro": {
+      "name": "trump",
+      "description": "trump"
+    },
+    "ru": {
+      "name": "трамп",
+      "description": "трамп"
     }
-  }
+  },
+  "source_hash": "4ed78c8cb81cbc96888b2cca25b45e6a459961106451c6b49d4befa1578d02d6"
 }

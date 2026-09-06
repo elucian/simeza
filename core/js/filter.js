@@ -1,0 +1,44 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('filterForm');
+    const applyButton = document.getElementById('applyFiltersBtn');
+    const resetButton = document.getElementById('resetFiltersBtn');
+    if (!form) return;
+
+    const getSavedFilters = () => {
+        try {
+            return JSON.parse(localStorage.getItem('simezaFilters')) || {};
+        } catch (e) {
+            return {};
+        }
+    };
+
+    const getGalleryPath = () => {
+        const lang = localStorage.getItem('lang') || 'en';
+        const slugs = {
+            en: 'gallery.html', ro: 'galerie.html', de: 'galerie.html', fr: 'galerie.html',
+            es: 'galeria.html', ru: 'galereya.html', pt: 'galeria.html', hu: 'galeria.html', it: 'galleria.html'
+        };
+        return '/' + lang + '/' + (slugs[lang] || 'gallery.html');
+    };
+
+    const savedFilters = getSavedFilters();
+    ['type', 'author', 'category', 'topic'].forEach(name => {
+        const field = form.elements[name];
+        if (field && savedFilters[name]) field.value = savedFilters[name];
+    });
+
+    applyButton?.addEventListener('click', () => {
+        const filters = Object.fromEntries(new FormData(form).entries());
+        localStorage.setItem('simezaFilters', JSON.stringify(filters));
+        const params = new URLSearchParams();
+        Object.entries(filters).forEach(([key, value]) => {
+            if (value) params.set(key, value);
+        });
+        location.href = getGalleryPath() + (params.size ? '?' + params.toString() : '');
+    });
+
+    resetButton?.addEventListener('click', () => {
+        form.reset();
+        localStorage.removeItem('simezaFilters');
+    });
+});

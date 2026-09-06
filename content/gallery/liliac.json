@@ -11,6 +11,39 @@
     "en": {
       "name": "liliac",
       "description": "liliac"
+    },
+    "de": {
+      "name": "Fledermaus",
+      "description": "liliac"
+    },
+    "es": {
+      "name": "murciélago",
+      "description": "liliac"
+    },
+    "fr": {
+      "name": "chauve-souris",
+      "description": "liliac"
+    },
+    "hu": {
+      "name": "denevér",
+      "description": "liliac"
+    },
+    "it": {
+      "name": "pipistrello",
+      "description": "liliac"
+    },
+    "pt": {
+      "name": "morcego",
+      "description": "liliac"
+    },
+    "ro": {
+      "name": "liliac",
+      "description": "liliac"
+    },
+    "ru": {
+      "name": "летучая мышь",
+      "description": "liliac"
     }
-  }
+  },
+  "source_hash": "287ba9eb97c5df350c94c67906f8df018a442b1608339ced095e8d27fb297456"
 }

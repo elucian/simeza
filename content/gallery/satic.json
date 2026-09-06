@@ -11,6 +11,39 @@
     "ro": {
       "name": "Satic",
       "description": "Săticul, sătucul minunat ascuns printre munții Pietrei lui Crai. Aici m-a dus tata de mic, ani la rând, până aveam 15 ani. L-am pictat de la Țața Veruța Falcă, din curte, prin 93, după ce am venit cu familia întregită din Elveția. Perspectiva este plata, primul plan este trata la fel ca ultimul-totuși o încercare modesta, după câțiva ani de întrerupere (în exilul din CH n-am pictat nimic)."
+    },
+    "de": {
+      "name": "Satic",
+      "description": "Săticul, das wundervolle kleine Dorf, versteckt zwischen den Bergen der Piatra Craiului. Hier hat mich mein Vater als Kind jahrelang mitgenommen, bis ich 15 war. Ich habe es 1993 von Țața Veruța Falcă aus im Hof gemalt, nachdem ich mit meiner wiedervereinten Familie aus der Schweiz zurückgekehrt war. Die Perspektive ist flach, der Vordergrund ist genauso behandelt wie der Hintergrund – dennoch ein bescheidener Versuch nach einigen Jahren Unterbrechung (im Exil in der CH habe ich nichts gemalt)."
+    },
+    "en": {
+      "name": "Satic",
+      "description": "Săticul, the wonderful little village hidden among the Piatra Craiului mountains. My father took me here as a child, for years on end, until I was 15. I painted it from Țața Veruța Falcă's courtyard back in '93, after I returned with my reunited family from Switzerland. The perspective is flat, the foreground is treated the same as the background—still, a modest attempt after a few years of interruption (in exile in CH I didn't paint anything)."
+    },
+    "es": {
+      "name": "Satic",
+      "description": "Săticul, el maravilloso pueblecito escondido entre las montañas de Piatra Craiului. Aquí me traía mi padre de pequeño, durante años, hasta que tuve 15. Lo pinté desde el patio de Țața Veruța Falcă, allá por el 93, después de volver con mi familia reunificada de Suiza. La perspectiva es plana, el primer plano está tratado igual que el último; sin embargo, es un intento modesto después de algunos años de interrupción (en el exilio en CH no pinté nada)."
+    },
+    "fr": {
+      "name": "Satic",
+      "description": "Săticul, le merveilleux petit village caché parmi les montagnes de Piatra Craiului. C'est ici que mon père m'emmenait tout petit, pendant des années, jusqu'à mes 15 ans. Je l'ai peint depuis la cour de Țața Veruța Falcă, vers 93, après être revenu avec ma famille réunifiée de Suisse. La perspective est plate, le premier plan est traité de la même manière que l'arrière-plan – c'est tout de même une modeste tentative après quelques années d'interruption (en exil en CH, je n'ai rien peint)."
+    },
+    "hu": {
+      "name": "Satic",
+      "description": "Săticul, a csodálatos kis falu, amely a Királykő (Piatra Craiului) hegyei között bújik meg. Ide hozott el apám kiskoromban, éveken át, egészen 15 éves koromig. 93 táján festettem meg Țața Veruța Falcă udvaráról, miután a családommal együtt hazatértünk Svájcból. A perspektíva lapos, az előteret ugyanúgy kezeltem, mint a hátteret – mégis, egy szerény próbálkozás néhány év kihagyás után (a svájci száműzetésben semmit sem festettem)."
+    },
+    "it": {
+      "name": "Satic",
+      "description": "Săticul, il meraviglioso paesino nascosto tra le montagne di Piatra Craiului. Qui mi portava mio padre da piccolo, per anni, fino all'età di 15 anni. L'ho dipinto dal cortile di Țața Veruța Falcă, verso il '93, dopo essere tornato con la mia famiglia riunita dalla Svizzera. La prospettiva è piatta, il primo piano è trattato allo stesso modo dell'ultimo; tuttavia, è un modesto tentativo dopo alcuni anni di interruzione (durante l'esilio in CH non ho dipinto nulla)."
+    },
+    "pt": {
+      "name": "Satic",
+      "description": "Săticul, a maravilhosa aldeia escondida entre as montanhas de Piatra Craiului. Aqui o meu pai trazia-me desde pequeno, durante anos, até aos 15 anos. Pintei-a a partir do pátio de Țața Veruța Falcă, por volta de 93, depois de regressar com a minha família reunida da Suíça. A perspectiva é plana, o primeiro plano é tratado da mesma forma que o último – ainda assim, uma tentativa modesta após alguns anos de interrupção (no exílio na CH não pintei nada)."
+    },
+    "ru": {
+      "name": "Сатик",
+      "description": "Сэтикул, чудесная деревушка, спрятанная среди гор Пьятра-Краюлуй. Сюда отец привозил меня в детстве, много лет подряд, пока мне не исполнилось 15. Я нарисовал её со двора Цацы Веруцы Фалкэ где-то в 93-м, после того как мы вернулись воссоединенной семьей из Швейцарии. Перспектива плоская, передний план проработан так же, как и задний — всё же это скромная попытка после нескольких лет перерыва (в изгнании в Швейцарии я ничего не писал)."
     }
-  }
+  },
+  "source_hash": "921f9ee7edd7dc54bfc87d6d7b76f2eb5473cdb11f2c97b4ca676ad07643be6d"
 }

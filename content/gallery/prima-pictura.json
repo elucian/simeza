@@ -11,6 +11,39 @@
     "en": {
       "name": "prima pictura",
       "description": "prima pictura"
+    },
+    "de": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "es": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "fr": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "hu": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "it": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "pt": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "ro": {
+      "name": "prima pictura",
+      "description": "prima pictura"
+    },
+    "ru": {
+      "name": "prima pictura",
+      "description": "prima pictura"
     }
-  }
+  },
+  "source_hash": "203fc5bce9b458d48243498d9a91183571c3c8025fa556c7d6ad62aec9dc5fa4"
 }

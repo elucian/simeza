@@ -11,6 +11,39 @@
     "ro": {
       "name": "poiana in Mi",
       "description": "poiana in Mi"
+    },
+    "de": {
+      "name": "Lichtung in Mi",
+      "description": "Lichtung in Mi"
+    },
+    "en": {
+      "name": "glade in Mi",
+      "description": "glade in Mi"
+    },
+    "es": {
+      "name": "claro en Mi",
+      "description": "claro en Mi"
+    },
+    "fr": {
+      "name": "clairière à Mi",
+      "description": "clairière en Mi"
+    },
+    "hu": {
+      "name": "tisztás Mi-ben",
+      "description": "tisztás Mi-ben"
+    },
+    "it": {
+      "name": "radura a Mi",
+      "description": "radura in Mi"
+    },
+    "pt": {
+      "name": "clareira em Mi",
+      "description": "clareira em Mi"
+    },
+    "ru": {
+      "name": "поляна в Ми",
+      "description": "поляна в Ми"
     }
-  }
+  },
+  "source_hash": "d1e05f500f0be285c63a163e873800e7b7a5105341e135bd983a9224e11ed084"
 }

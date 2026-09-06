@@ -11,6 +11,39 @@
     "ro": {
       "name": "Marea neagra",
       "description": "Tot la Costinești în 84 în excursia pe CZ-250, cu șevaletul și pânzele la spinare cărate pe bolidul zburător! Norii sunt obraznici și pornesc asaltul către mare cu săgeți de război; marea mai are sclipiri de azur, spumate, care se izbesc în malul argilos și stâncos, ars de soare…(colecția Petre Beloiu-Pitești)."
+    },
+    "de": {
+      "name": "Schwarzes Meer",
+      "description": "Ebenfalls in Costinești im Jahr 84 auf dem Ausflug mit der CZ-250, mit der Staffelei und den Leinwänden auf dem Rücken, getragen auf dem fliegenden Boliden! Die Wolken sind frech und starten den Angriff auf das Meer mit Kriegspfeilen; das Meer hat noch azurblaue, schäumende Glanzlichter, die gegen das lehmige und felsige, von der Sonne verbrannte Ufer prallen…(Sammlung Petre Beloiu-Pitești)."
+    },
+    "en": {
+      "name": "Black Sea",
+      "description": "Also in Costinești in '84 on the trip on the CZ-250, with the easel and canvases on my back, carried on the flying bolide! The clouds are cheeky and launch an assault towards the sea with arrows of war; the sea still has azure, foamy glimmers that crash into the clay and rocky shore, scorched by the sun…(Petre Beloiu-Pitești collection)."
+    },
+    "es": {
+      "name": "Mar Negro",
+      "description": "También en Costinești en el 84 en la excursión en la CZ-250, con el caballete y los lienzos a cuestas, ¡llevados en el bólido volador! Las nubes son descaradas y lanzan el asalto hacia el mar con flechas de guerra; el mar todavía tiene destellos de azur, espumosos, que chocan contra la orilla arcillosa y rocosa, quemada por el sol…(colección Petre Beloiu-Pitești)."
+    },
+    "fr": {
+      "name": "Mer Noire",
+      "description": "Toujours à Costinești en 84 lors de l'excursion sur la CZ-250, avec le chevalet et les toiles sur le dos, transportés sur le bolide volant ! Les nuages sont effrontés et lancent l'assaut vers la mer avec des flèches de guerre ; la mer a encore des éclats d'azur, écumeux, qui se fracassent sur la rive argileuse et rocheuse, brûlée par le soleil…(collection Petre Beloiu-Pitești)."
+    },
+    "hu": {
+      "name": "Fekete-tenger",
+      "description": "Szintén Costinești-ben, 84-ben, a CZ-250-es kiránduláson, a hátamon a festőállvánnyal és a vásznakkal, a repülő száguldó gépen cipelve! A felhők pimaszok, és hadnyilakkal indítanak rohamot a tenger felé; a tengernek még vannak azúr, habos csillogásai, amelyek a napégette, agyagos és sziklás partnak csapódnak…(Petre Beloiu-Pitești gyűjtemény)."
+    },
+    "it": {
+      "name": "Mar Nero",
+      "description": "Sempre a Costinești nell'84 durante l'escursione sulla CZ-250, con il cavalletto e le tele in spalla, trasportati sul bolide volante! Le nuvole sono sfacciate e lanciano l'assalto verso il mare con frecce di guerra; il mare ha ancora bagliori d'azzurro, spumeggianti, che si infrangono sulla riva argillosa e rocciosa, bruciata dal sole…(collezione Petre Beloiu-Pitești)."
+    },
+    "pt": {
+      "name": "Mar Negro",
+      "description": "Também em Costinești em 84 na excursão na CZ-250, com o cavalete e as telas às costas, carregados no bólido voador! As nuvens são atrevidas e iniciam o assalto ao mar com flechas de guerra; o mar ainda tem brilhos de azul, espumantes, que se chocam contra a margem argilosa e rochosa, queimada pelo sol…(coleção Petre Beloiu-Pitești)."
+    },
+    "ru": {
+      "name": "Чёрное море",
+      "description": "Тоже в Костинешть в 84-м, в поездке на CZ-250, с мольбертом и холстами за спиной, везёнными на летающем болиде! Облака дерзкие и начинают штурм моря военными стрелами; у моря ещё есть лазурные, пенящиеся отблески, которые разбиваются о глинистый и скалистый берег, выжженный солнцем…(коллекция Петре Белою-Питешти)."
     }
-  }
+  },
+  "source_hash": "0bef7691a5d6a31037b247a2a7bb6fd1eecbe38f01c80cd639b788c0b752e9c3"
 }

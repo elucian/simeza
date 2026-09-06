@@ -12,11 +12,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return {
                     loopDelay: parseInt(parsed.loopDelay, 10) || 3,
                     autoRotation: parsed.autoRotation === true || parsed.autoRotation === 'true',
-                    pillbarVisible: parsed.pillbarVisible !== false && parsed.pillbarVisible !== 'false'
+                    desktopLayout: parsed.desktopLayout === 'panels' ? 'panels' : 'slider'
                 };
             }
         } catch (e) {}
-        return { loopDelay: 3, autoRotation: true, pillbarVisible: true };
+        return { loopDelay: 3, autoRotation: true, desktopLayout: 'slider' };
     };
 
     const settings = getSavedSettings();
@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
         const autoRadio = form.querySelector(`input[name="autoRotation"][value="${settings.autoRotation}"]`);
         if (autoRadio) autoRadio.checked = true;
 
-        const pillRadio = form.querySelector(`input[name="pillbarVisible"][value="${settings.pillbarVisible}"]`);
-        if (pillRadio) pillRadio.checked = true;
+        const layoutRadio = form.querySelector(`input[name="desktopLayout"][value="${settings.desktopLayout}"]`);
+        if (layoutRadio) layoutRadio.checked = true;
     }
 
-    const redirectToGallery = () => {
+    const getGalleryUrl = (settings) => {
         const lang = localStorage.getItem('lang') || 'en';
         const slugMap = {
             'ro': 'galerie.html',
@@ -46,26 +46,51 @@ document.addEventListener('DOMContentLoaded', () => {
             'it': 'galleria.html',
             'en': 'gallery.html'
         };
-        location.href = '/' + lang + '/' + (slugMap[lang] || 'gallery.html');
+        const params = new URLSearchParams({
+            loopDelay: String(settings.loopDelay),
+            autoRotation: String(settings.autoRotation),
+            desktopLayout: settings.desktopLayout
+        });
+        return '/' + lang + '/' + (slugMap[lang] || 'gallery.html') + '?' + params.toString();
     };
+
+    const updateShareLink = () => {
+        if (!form) return;
+        const previewSettings = {
+            loopDelay: parseInt(form.querySelector('select[name="loopDelay"]')?.value, 10) || 3,
+            autoRotation: form.querySelector('input[name="autoRotation"]:checked')?.value === 'true',
+            desktopLayout: form.querySelector('input[name="desktopLayout"]:checked')?.value || 'slider'
+        };
+        const shareLink = document.getElementById('settingsShareLink');
+        if (shareLink) shareLink.value = window.location.origin + getGalleryUrl(previewSettings);
+    };
+
+    form?.addEventListener('change', updateShareLink);
+    updateShareLink();
+
+    document.getElementById('copySettingsLinkBtn')?.addEventListener('click', async () => {
+        const shareLink = document.getElementById('settingsShareLink');
+        if (!shareLink) return;
+        await navigator.clipboard.writeText(shareLink.value);
+    });
     
     // Apply settings
     applyBtn?.addEventListener('click', () => {
         const loopDelayVal = form ? form.querySelector('select[name="loopDelay"]')?.value : '3';
         const autoRotationVal = form ? form.querySelector('input[name="autoRotation"]:checked')?.value : 'true';
-        const pillbarVisibleVal = form ? form.querySelector('input[name="pillbarVisible"]:checked')?.value : 'true';
+        const desktopLayoutVal = form ? form.querySelector('input[name="desktopLayout"]:checked')?.value : 'slider';
 
         const newSettings = {
             loopDelay: parseInt(loopDelayVal, 10) || 3,
             autoRotation: autoRotationVal === 'true',
-            pillbarVisible: pillbarVisibleVal === 'true'
+            desktopLayout: desktopLayoutVal === 'panels' ? 'panels' : 'slider'
         };
         localStorage.setItem('simezaSettings', JSON.stringify(newSettings));
-        redirectToGallery();
+        location.href = getGalleryUrl(newSettings);
     });
 
     // Cancel
     cancelBtn?.addEventListener('click', () => {
-        redirectToGallery();
+        location.href = getGalleryUrl(settings);
     });
 });

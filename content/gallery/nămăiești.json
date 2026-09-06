@@ -11,6 +11,39 @@
     "ro": {
       "name": "Nămăiești",
       "description": "Vechea clopotniță era o idilă ascunsă intre stânci; o măicuță zgribulită bătea toaca și se urca agale să tragă clopotul din turn. Stâncile din jur și minaretul sunt aduse anume ca să întregească peisajul. Coamele copacilor și stăncile sunt modelate cu pensulații viguroase după tehnica modeleului-Cezanne. Poarta deschisă și un crâmpei de cer lângă clopot aduc speranță și te îmbie să urci pe poteca din spatele zidurilor…(colecția Petre Beloiu-Pitești)."
+    },
+    "de": {
+      "name": "Nămăiești",
+      "description": "Der alte Glockenturm war eine Idylle, versteckt zwischen Felsen; eine fröstelnde Nonne schlug das Holzbrett (Toaca) und stieg gemächlich hinauf, um die Glocke im Turm zu läuten. Die umliegenden Felsen und das Minarett wurden eigens hinzugefügt, um die Landschaft zu vervollständigen. Die Baumwipfel und Felsen sind mit kräftigen Pinselstrichen nach der Technik des Cézanne-Modells modelliert. Das offene Tor und ein Stück Himmel neben der Glocke bringen Hoffnung und laden dazu ein, den Pfad hinter den Mauern hinaufzusteigen…(Sammlung Petre Beloiu-Pitești)."
+    },
+    "en": {
+      "name": "Nămăiești",
+      "description": "The old bell tower was an idyll hidden between rocks; a shivering nun would beat the toaca and climb slowly to ring the bell in the tower. The surrounding rocks and the minaret are brought specifically to complete the landscape. The treetops and rocks are modeled with vigorous brushstrokes following the Cézanne-model technique. The open gate and a glimpse of sky near the bell bring hope and invite you to climb the path behind the walls…(Petre Beloiu-Pitești collection)."
+    },
+    "es": {
+      "name": "Nămăiești",
+      "description": "El viejo campanario era un idilio escondido entre rocas; una monja tiritando golpeaba la toaca y subía lentamente para tocar la campana de la torre. Las rocas circundantes y el minarete fueron traídos expresamente para completar el paisaje. Las copas de los árboles y las rocas están modeladas con pinceladas vigorosas siguiendo la técnica del modelo de Cézanne. La puerta abierta y un trozo de cielo junto a la campana traen esperanza y te invitan a subir por el sendero detrás de los muros…(colección Petre Beloiu-Pitești)."
+    },
+    "fr": {
+      "name": "Nămăiești",
+      "description": "Le vieux clocher était une idylle cachée entre les rochers ; une nonne grelottante frappait la toaca et montait lentement pour sonner la cloche dans la tour. Les rochers environnants et le minaret sont amenés spécifiquement pour compléter le paysage. Les cimes des arbres et les rochers sont modelés avec des coups de pinceau vigoureux selon la technique du modèle de Cézanne. La porte ouverte et un morceau de ciel près de la cloche apportent de l'espoir et vous invitent à monter sur le sentier derrière les murs…(collection Petre Beloiu-Pitești)."
+    },
+    "hu": {
+      "name": "Nămăiești",
+      "description": "Az öreg harangtorony egy sziklák közé rejtett idill volt; egy didergő apáca verte a toacát, és komótosan felmászott, hogy meghúzza a torony harangját. A környező sziklákat és a minaretet kifejezetten a táj teljessé tétele érdekében helyezték oda. A fák koronáit és a sziklákat erőteljes ecsetvonásokkal, a Cézanne-féle modell technikáját követve formálták meg. A nyitott kapu és a harang melletti égbolt egy darabja reményt hoz, és arra csábít, hogy mássz fel a falak mögötti ösvényen…(Petre Beloiu-Pitești gyűjtemény)."
+    },
+    "it": {
+      "name": "Nămăiești",
+      "description": "Il vecchio campanile era un idillio nascosto tra le rocce; una suora infreddolita batteva la toaca e saliva lentamente per suonare la campana nella torre. Le rocce circostanti e il minareto sono stati portati appositamente per completare il paesaggio. Le cime degli alberi e le rocce sono modellate con pennellate vigorose secondo la tecnica del modello di Cézanne. Il cancello aperto e uno scorcio di cielo vicino alla campana portano speranza e ti invitano a salire sul sentiero dietro le mura…(collezione Petre Beloiu-Pitești)."
+    },
+    "pt": {
+      "name": "Nămăiești",
+      "description": "O velho campanário era um idílio escondido entre rochas; uma freira a tremer batia a toaca e subia lentamente para tocar o sino na torre. As rochas circundantes e o minarete foram trazidos especificamente para completar a paisagem. As copas das árvores e as rochas são modeladas com pinceladas vigorosas seguindo a técnica do modelo de Cézanne. O portão aberto e um pedaço de céu perto do sino trazem esperança e convidam-no a subir pelo caminho atrás das muralhas…(coleção Petre Beloiu-Pitești)."
+    },
+    "ru": {
+      "name": "Нэпэешть",
+      "description": "Старая колокольня была идиллией, скрытой среди скал; дрожащая монахиня била в тоаку и медленно поднималась, чтобы позвонить в колокол на башне. Окружающие скалы и минарет были добавлены специально, чтобы дополнить пейзаж. Верхушки деревьев и скалы смоделированы энергичными мазками кисти в технике модели Сезанна. Открытые ворота и кусочек неба рядом с колоколом приносят надежду и приглашают подняться по тропинке за стенами…(коллекция Петре Белою-Питешти)."
     }
-  }
+  },
+  "source_hash": "67c73bbb902c3b323ec94fc6c29a62a27d77f921eff7a06d0b3b88b78550849d"
 }

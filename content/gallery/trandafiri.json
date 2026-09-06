@@ -11,6 +11,39 @@
     "en": {
       "name": "trandafiri",
       "description": "trandafiri"
+    },
+    "de": {
+      "name": "Rosen",
+      "description": "Rosen"
+    },
+    "es": {
+      "name": "rosas",
+      "description": "rosas"
+    },
+    "fr": {
+      "name": "roses",
+      "description": "roses"
+    },
+    "hu": {
+      "name": "rózsák",
+      "description": "rózsák"
+    },
+    "it": {
+      "name": "rose",
+      "description": "rose"
+    },
+    "pt": {
+      "name": "rosas",
+      "description": "rosas"
+    },
+    "ro": {
+      "name": "trandafiri",
+      "description": "trandafiri"
+    },
+    "ru": {
+      "name": "розы",
+      "description": "розы"
     }
-  }
+  },
+  "source_hash": "41f4775eb01578daa8439a77ba0f570e00b4622be160577336f9e5c77ce2f747"
 }

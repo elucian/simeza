@@ -11,6 +11,39 @@
     "ro": {
       "name": "tata",
       "description": "tata"
+    },
+    "de": {
+      "name": "Papa",
+      "description": "Papa"
+    },
+    "en": {
+      "name": "dad",
+      "description": "dad"
+    },
+    "es": {
+      "name": "papá",
+      "description": "papá"
+    },
+    "fr": {
+      "name": "papa",
+      "description": "papa"
+    },
+    "hu": {
+      "name": "apa",
+      "description": "apa"
+    },
+    "it": {
+      "name": "papà",
+      "description": "papà"
+    },
+    "pt": {
+      "name": "pai",
+      "description": "pai"
+    },
+    "ru": {
+      "name": "папа",
+      "description": "папа"
     }
-  }
+  },
+  "source_hash": "cf69b3c0a24280729e4434450838c960abdd3a98aa29761c72a435e1b2ed4e0c"
 }

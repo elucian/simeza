@@ -11,6 +11,39 @@
     "en": {
       "name": "michelsberg cetatea",
       "description": "michelsberg cetatea"
+    },
+    "de": {
+      "name": "Michelsberg Burg",
+      "description": "Michelsberg Burg"
+    },
+    "es": {
+      "name": "fortaleza de Michelsberg",
+      "description": "fortaleza de Michelsberg"
+    },
+    "fr": {
+      "name": "forteresse de Michelsberg",
+      "description": "forteresse de Michelsberg"
+    },
+    "hu": {
+      "name": "cisnadioarai vár",
+      "description": "cisnadioarai vár"
+    },
+    "it": {
+      "name": "fortezza di Michelsberg",
+      "description": "fortezza di Michelsberg"
+    },
+    "pt": {
+      "name": "fortaleza de Michelsberg",
+      "description": "fortaleza de Michelsberg"
+    },
+    "ro": {
+      "name": "cetatea Cisnădioara",
+      "description": "cetatea Cisnădioara"
+    },
+    "ru": {
+      "name": "крепость Михельсберг",
+      "description": "крепость Михельсберг"
     }
-  }
+  },
+  "source_hash": "ec822ab4c16842d6772824d7d2abdeb4ef6348e61e17995def09328e31b564c4"
 }

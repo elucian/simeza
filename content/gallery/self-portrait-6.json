@@ -11,6 +11,39 @@
     "en": {
       "name": "self portrait 6",
       "description": "self portrait 6"
+    },
+    "de": {
+      "name": "Selbstporträt 6",
+      "description": "Selbstporträt 6"
+    },
+    "es": {
+      "name": "autorretrato 6",
+      "description": "autorretrato 6"
+    },
+    "fr": {
+      "name": "autoportrait 6",
+      "description": "autoportrait 6"
+    },
+    "hu": {
+      "name": "önarckép 6",
+      "description": "önarckép 6"
+    },
+    "it": {
+      "name": "autoritratto 6",
+      "description": "autoritratto 6"
+    },
+    "pt": {
+      "name": "autorretrato 6",
+      "description": "autorretrato 6"
+    },
+    "ro": {
+      "name": "autoportret 6",
+      "description": "autoportret 6"
+    },
+    "ru": {
+      "name": "автопортрет 6",
+      "description": "автопортрет 6"
     }
-  }
+  },
+  "source_hash": "11f71dd65f8d6557175fb7982757ac06cfa2064a4b1ae7a6f3ab761638e4ec97"
 }

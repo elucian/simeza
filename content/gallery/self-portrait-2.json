@@ -11,6 +11,39 @@
     "en": {
       "name": "self portrait 2",
       "description": "self portrait 2"
+    },
+    "de": {
+      "name": "Selbstporträt 2",
+      "description": "Selbstporträt 2"
+    },
+    "es": {
+      "name": "autorretrato 2",
+      "description": "autorretrato 2"
+    },
+    "fr": {
+      "name": "autoportrait 2",
+      "description": "autoportrait 2"
+    },
+    "hu": {
+      "name": "önarckép 2",
+      "description": "önarckép 2"
+    },
+    "it": {
+      "name": "autoritratto 2",
+      "description": "autoritratto 2"
+    },
+    "pt": {
+      "name": "autorretrato 2",
+      "description": "autorretrato 2"
+    },
+    "ro": {
+      "name": "autoportret 2",
+      "description": "autoportret 2"
+    },
+    "ru": {
+      "name": "автопортрет 2",
+      "description": "автопортрет 2"
     }
-  }
+  },
+  "source_hash": "237231b6cb4885fe5c42bf059884ba64ff8b1fba067bec2a8c134f5e8f02e2da"
 }

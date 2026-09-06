@@ -11,6 +11,39 @@
     "en": {
       "name": "Self Portrait 1989",
       "description": "Self Portrait 1989"
+    },
+    "de": {
+      "name": "Selbstporträt 1989",
+      "description": "Selbstporträt 1989"
+    },
+    "es": {
+      "name": "Autorretrato 1989",
+      "description": "Autorretrato 1989"
+    },
+    "fr": {
+      "name": "Autoportrait 1989",
+      "description": "Autoportrait 1989"
+    },
+    "hu": {
+      "name": "Önarckép 1989",
+      "description": "Önarckép 1989"
+    },
+    "it": {
+      "name": "Autoritratto 1989",
+      "description": "Autoritratto 1989"
+    },
+    "pt": {
+      "name": "Autorretrato 1989",
+      "description": "Autorretrato 1989"
+    },
+    "ro": {
+      "name": "Autoportret 1989",
+      "description": "Autoportret 1989"
+    },
+    "ru": {
+      "name": "Автопортрет 1989",
+      "description": "Автопортрет 1989"
     }
-  }
+  },
+  "source_hash": "019ea46622c96ac2b04130c268e4f4eacc297a94fb16f21202a5659ea11c68b8"
 }

@@ -11,6 +11,39 @@
     "ro": {
       "name": "vas alb cu garoafe rosii",
       "description": "vas alb cu garoafe rosii"
+    },
+    "de": {
+      "name": "weiße Vase mit roten Nelken",
+      "description": "weiße Vase mit roten Nelken"
+    },
+    "en": {
+      "name": "white vase with red carnations",
+      "description": "white vase with red carnations"
+    },
+    "es": {
+      "name": "jarrón blanco con claveles rojos",
+      "description": "jarrón blanco con claveles rojos"
+    },
+    "fr": {
+      "name": "vase blanc avec des œillets rouges",
+      "description": "vase blanc avec des œillets rouges"
+    },
+    "hu": {
+      "name": "fehér váza vörös szegfűvel",
+      "description": "fehér váza vörös szegfűvel"
+    },
+    "it": {
+      "name": "vaso bianco con garofani rossi",
+      "description": "vaso bianco con garofani rossi"
+    },
+    "pt": {
+      "name": "vaso branco com cravos vermelhos",
+      "description": "vaso branco com cravos vermelhos"
+    },
+    "ru": {
+      "name": "белая ваза с красными гвоздиками",
+      "description": "белая ваза с красными гвоздиками"
     }
-  }
+  },
+  "source_hash": "b0392f66514b6c686d227f354dfd6ed9907f2690d398cfd9f9d037e20607bfbd"
 }

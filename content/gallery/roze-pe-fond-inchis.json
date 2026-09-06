@@ -11,6 +11,39 @@
     "ro": {
       "name": "roze pe fond inchis",
       "description": "roze pe fond inchis"
+    },
+    "de": {
+      "name": "Rosen auf dunklem Hintergrund",
+      "description": "Rosen auf dunklem Hintergrund"
+    },
+    "en": {
+      "name": "roses on a dark background",
+      "description": "roses on a dark background"
+    },
+    "es": {
+      "name": "rosas sobre fondo oscuro",
+      "description": "rosas sobre fondo oscuro"
+    },
+    "fr": {
+      "name": "roses sur fond sombre",
+      "description": "roses sur fond sombre"
+    },
+    "hu": {
+      "name": "rózsák sötét háttéren",
+      "description": "rózsák sötét háttéren"
+    },
+    "it": {
+      "name": "rose su sfondo scuro",
+      "description": "rose su sfondo scuro"
+    },
+    "pt": {
+      "name": "rosas em fundo escuro",
+      "description": "rosas em fundo escuro"
+    },
+    "ru": {
+      "name": "розы на темном фоне",
+      "description": "розы на темном фоне"
     }
-  }
+  },
+  "source_hash": "67b2650afd99523c19040d1017806363540750e9af9355906aed8be892acf000"
 }

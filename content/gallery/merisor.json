@@ -11,6 +11,39 @@
     "en": {
       "name": "merisor",
       "description": "merisor"
+    },
+    "de": {
+      "name": "Preiselbeere",
+      "description": "Preiselbeere"
+    },
+    "es": {
+      "name": "arándano rojo",
+      "description": "arándano rojo"
+    },
+    "fr": {
+      "name": "airelle",
+      "description": "airelle"
+    },
+    "hu": {
+      "name": "vörös áfonya",
+      "description": "vörös áfonya"
+    },
+    "it": {
+      "name": "mirtillo rosso",
+      "description": "mirtillo rosso"
+    },
+    "pt": {
+      "name": "oxicoco",
+      "description": "oxicoco"
+    },
+    "ro": {
+      "name": "merișor",
+      "description": "merișor"
+    },
+    "ru": {
+      "name": "брусника",
+      "description": "брусника"
     }
-  }
+  },
+  "source_hash": "269fff9e9aeb51f8175b39df06d0802ffab5e21bbf757df8a2a742c9c98c1332"
 }
