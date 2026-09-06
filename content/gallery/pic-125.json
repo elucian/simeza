@@ -1,0 +1,46 @@
+{
+  "id": "pic-125",
+  "file": "pic-125.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Blush of Dawn",
+      "description": "A radiant hibiscus bloom featuring delicate, ruffled cream petals that melt seamlessly into a vivid magenta heart, set against a backdrop of lush green garden foliage."
+    },
+    "de": {
+      "name": "Morgenröte",
+      "description": "Eine strahlende Hibiskusblüte mit zarten, gerüschten cremefarbenen Blütenblättern, die nahtlos in ein leuchtend magentafarbenes Herz übergehen, vor dem Hintergrund von üppigem, grünem Gartenlaub."
+    },
+    "es": {
+      "name": "Rubor del amanecer",
+      "description": "Una radiante flor de hibisco con delicados pétalos color crema con volantes que se funden perfectamente en un vívido corazón magenta, sobre un fondo de exuberante follaje de jardín verde."
+    },
+    "fr": {
+      "name": "Rouge de l'aube",
+      "description": "Une fleur d'hibiscus rayonnante dotée de délicats pétales crème volantés qui se fondent harmonieusement dans un cœur magenta vif, sur fond de feuillage de jardin vert luxuriant."
+    },
+    "hu": {
+      "name": "Hajnalpír",
+      "description": "Egy ragyogó hibiszkuszvirág finom, fodros krémszínű szirmokkal, amelyek észrevétlenül olvadnak bele az élénk bíborvörös közepébe, dús, zöld kerti lombozat hátterében."
+    },
+    "it": {
+      "name": "Rossore dell'alba",
+      "description": "Un fiore di ibisco radioso caratterizzato da delicati petali color crema increspati che si fondono perfettamente in un vivido cuore magenta, sullo sfondo di un rigoglioso fogliame verde da giardino."
+    },
+    "pt": {
+      "name": "Rubor do amanhecer",
+      "description": "Uma flor de hibisco radiante com pétalas delicadas e franzidas em tom creme que se fundem perfeitamente num coração magenta vívido, sobre um fundo de folhagem verde exuberante de jardim."
+    },
+    "ro": {
+      "name": "Rumoarea zorilor",
+      "description": "O floare radiantă de hibiscus, cu petale delicate, crețe, de culoarea cremei, care se topesc perfect într-o inimă magenta vie, pe un fundal de frunziș verde și luxuriant de grădină."
+    },
+    "ru": {
+      "name": "Румянец зари",
+      "description": "Сияющий цветок гибискуса с нежными, волнистыми кремовыми лепестками, которые плавно переходят в ярко-пурпурную сердцевину, на фоне пышной зеленой садовой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "1e530043428cd66ac4f0c6ed5f928f2661059419feed314028321f7b3799d7b7"
+}

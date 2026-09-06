@@ -1,0 +1,46 @@
+{
+  "id": "pic-123",
+  "file": "pic-123.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Rain-Kissed Velvet",
+      "description": "A vibrant magenta flower unfurls its velvety, trumpet-shaped petals, adorned with glistening droplets of rain against a lush, verdant garden backdrop."
+    },
+    "de": {
+      "name": "Regengeküsster Samt",
+      "description": "Eine leuchtend magentafarbene Blume entfaltet ihre samtigen, trompetenförmigen Blütenblätter, geschmückt mit glitzernden Regentropfen vor einer üppigen, grünen Gartenkulisse."
+    },
+    "es": {
+      "name": "Terciopelo besado por la lluvia",
+      "description": "Una vibrante flor magenta despliega sus aterciopelados pétalos en forma de trompeta, adornados con brillantes gotas de lluvia sobre un exuberante y verde telón de fondo de jardín."
+    },
+    "fr": {
+      "name": "Velours embrassé par la pluie",
+      "description": "Une fleur magenta éclatante déploie ses pétales veloutés en forme de trompette, ornés de gouttes de pluie scintillantes sur une toile de fond de jardin luxuriante et verdoyante."
+    },
+    "hu": {
+      "name": "Esőcsókolta bársony",
+      "description": "Egy élénk bíborvörös virág bontja ki bársonyos, tölcsér alakú szirmait, amelyeket csillogó esőcseppek díszítenek a buja, zöldellő kerti háttér előtt."
+    },
+    "it": {
+      "name": "Velluto baciato dalla pioggia",
+      "description": "Un vibrante fiore magenta dispiega i suoi petali vellutati a forma di tromba, adornati con luccicanti gocce di pioggia su un rigoglioso sfondo di giardino verdeggiante."
+    },
+    "pt": {
+      "name": "Veludo beijado pela chuva",
+      "description": "Uma flor magenta vibrante desabrocha suas pétalas aveludadas em forma de trombeta, adornadas com gotas de chuva cintilantes contra um pano de fundo de jardim exuberante e verdejante."
+    },
+    "ro": {
+      "name": "Catifea sărutată de ploaie",
+      "description": "O floare vibrantă de culoare magenta își desface petalele catifelate în formă de trompetă, împodobite cu picături sclipitoare de ploaie pe fundalul unei grădini luxuriante și verzi."
+    },
+    "ru": {
+      "name": "Бархат, поцелованный дождем",
+      "description": "Яркий пурпурный цветок раскрывает свои бархатистые лепестки в форме трубы, украшенные сверкающими каплями дождя на фоне пышного зеленого сада."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "3c97f0e49a61ab106913d0ebae4d0a315d0612e4c2638b48396d8e90c0802248"
+}

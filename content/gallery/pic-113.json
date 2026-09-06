@@ -1,0 +1,46 @@
+{
+  "id": "pic-113",
+  "file": "pic-113.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Nature's Ruby Heart",
+      "description": "Glistening like polished rubies nestled against a vibrant golden mantle, brilliant crimson seeds burst forth in a striking display of natural elegance held beneath the warm sunlight."
+    },
+    "de": {
+      "name": "Das rubinrote Herz der Natur",
+      "description": "Wie polierte Rubine, die in einen leuchtend goldenen Mantel gebettet sind, glänzen die brillanten karmesinroten Samen und brechen in einer beeindruckenden Darstellung natürlicher Eleganz hervor, gehalten unter dem warmen Sonnenlicht."
+    },
+    "es": {
+      "name": "El corazón de rubí de la naturaleza",
+      "description": "Reluciendo como rubíes pulidos anidados contra un vibrante manto dorado, brillantes semillas carmesí brotan en una sorprendente muestra de elegancia natural bajo la cálida luz del sol."
+    },
+    "fr": {
+      "name": "Le cœur de rubis de la nature",
+      "description": "Scintillant comme des rubis polis nichés contre un manteau doré vibrant, des graines cramoisies éclatantes jaillissent dans une démonstration saisissante d'élégance naturelle sous la lumière chaude du soleil."
+    },
+    "hu": {
+      "name": "A természet rubinszíve",
+      "description": "Mint csiszolt rubinok, amelyek egy élénk aranyszínű köpenybe ágyazódnak, a ragyogó karmazsinvörös magok a természetes elegancia lenyűgöző látványát nyújtva törnek elő a meleg napfény alatt."
+    },
+    "it": {
+      "name": "Il cuore di rubino della natura",
+      "description": "Scintillanti come rubini levigati adagiati su un vibrante manto dorato, brillanti semi cremisi erompono in una sorprendente dimostrazione di eleganza naturale sotto la calda luce del sole."
+    },
+    "pt": {
+      "name": "O coração de rubi da natureza",
+      "description": "Reluzindo como rubis polidos aninhados contra um vibrante manto dourado, sementes carmesim brilhantes irrompem em uma exibição impressionante de elegância natural sob a luz quente do sol."
+    },
+    "ro": {
+      "name": "Inima de rubin a naturii",
+      "description": "Strălucind ca niște rubine șlefuite cuibărite într-o mantie aurie vibrantă, semințele de un roșu aprins izbucnesc într-o demonstrație uimitoare de eleganță naturală sub lumina caldă a soarelui."
+    },
+    "ru": {
+      "name": "Рубиновое сердце природы",
+      "description": "Сверкая, словно полированные рубины, покоящиеся на ярком золотом покрове, блестящие малиновые семена прорываются наружу, являя собой поразительный образец природной элегантности в лучах теплого солнца."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "e2b8288b76a81321fc9033f33122f29f3c0b81acf11056bfe9e7ae81ddbc6bd2"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "pic-111",
+  "file": "pic-111.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crimson Oasis",
+      "description": "Vivid red hibiscus blossoms radiate warm tropical energy amidst a lush tapestry of sun-dappled emerald foliage and gentle cascades of water, capturing the vibrant serenity of a botanical paradise."
+    },
+    "de": {
+      "name": "Karmesinoase",
+      "description": "Lebhaft rote Hibiskusblüten strahlen inmitten eines üppigen Teppichs aus sonnendurchflutetem smaragdgrünem Laub und sanften Wasserkaskaden warme tropische Energie aus und fangen die lebendige Gelassenheit eines botanischen Paradieses ein."
+    },
+    "es": {
+      "name": "Oasis Carmesí",
+      "description": "Las vívidas flores rojas de hibisco irradian una cálida energía tropical en medio de un exuberante tapiz de follaje esmeralda bañado por el sol y suaves cascadas de agua, capturando la vibrante serenidad de un paraíso botánico."
+    },
+    "fr": {
+      "name": "Oasis Cramoisi",
+      "description": "Des fleurs d'hibiscus rouge vif rayonnent d'une chaude énergie tropicale au milieu d'une tapisserie luxuriante de feuillage émeraude baigné de soleil et de douces cascades d'eau, capturant la sérénité vibrante d'un paradis botanique."
+    },
+    "hu": {
+      "name": "Bíbor Oázis",
+      "description": "Az élénkvörös hibiszkuszvirágok meleg trópusi energiát sugároznak a napsütötte smaragdzöld lombozat és a lágy vízesések buja szőnyegében, megragadva egy botanikus paradicsom vibráló nyugalmát."
+    },
+    "it": {
+      "name": "Oasi Cremisi",
+      "description": "I vividi fiori rossi di ibisco irradiano una calda energia tropicale in mezzo a un lussureggiante arazzo di fogliame color smeraldo baciato dal sole e dolci cascate d'acqua, catturando la vibrante serenità di un paradiso botanico."
+    },
+    "pt": {
+      "name": "Oásis Carmesim",
+      "description": "Flores de hibisco vermelho vívido irradiam uma energia tropical quente em meio a uma tapeçaria exuberante de folhagem esmeralda banhada pelo sol e suaves cascatas de água, capturando a serenidade vibrante de um paraíso botânico."
+    },
+    "ro": {
+      "name": "Oază Purpurie",
+      "description": "Florile de hibiscus roșu aprins radiază o energie tropicală caldă în mijlocul unei tapiserii luxuriante de frunziș smarald scăldat în soare și cascade blânde de apă, surprinzând seninătatea vibrantă a unui paradis botanic."
+    },
+    "ru": {
+      "name": "Багровый оазис",
+      "description": "Ярко-красные цветы гибискуса излучают теплую тропическую энергию среди пышного ковра залитой солнцем изумрудной листвы и нежных водных каскадов, передавая яркое спокойствие ботанического рая."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "1408d63dc8446b428b0dbc492e5d872c022d9c834bc709b1900dfe05eaf18872"
+}

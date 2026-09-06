@@ -1,0 +1,46 @@
+{
+  "id": "pic-110",
+  "file": "pic-110.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Celestial Harvest",
+      "description": "Dappled sunlight casts soft leafy shadows over a playful arrangement of golden starfruit and a fresh green guava, capturing the radiant warmth of a tropical afternoon."
+    },
+    "de": {
+      "name": "Himmlische Ernte",
+      "description": "Geflecktes Sonnenlicht wirft sanfte Blätterschatten über ein verspieltes Arrangement aus goldener Sternfrucht und einer frischen grünen Guave und fängt die strahlende Wärme eines tropischen Nachmittags ein."
+    },
+    "es": {
+      "name": "Cosecha celestial",
+      "description": "La luz del sol moteada proyecta suaves sombras de hojas sobre una alegre disposición de carambola dorada y una guayaba verde fresca, capturando el calor radiante de una tarde tropical."
+    },
+    "fr": {
+      "name": "Moisson céleste",
+      "description": "La lumière du soleil tachetée projette de douces ombres de feuilles sur un arrangement ludique de caramboles dorées et d'une goyave verte fraîche, capturant la chaleur rayonnante d'un après-midi tropical."
+    },
+    "hu": {
+      "name": "Égi aratás",
+      "description": "A foltos napfény lágy levélárnyékokat vet az aranyló csillaggyümölcs és egy friss zöld guava játékos elrendezésére, megörökítve egy trópusi délután sugárzó melegét."
+    },
+    "it": {
+      "name": "Raccolto celeste",
+      "description": "La luce solare screziata proietta morbide ombre di foglie su una giocosa disposizione di carambola dorata e una fresca guava verde, catturando il calore radiante di un pomeriggio tropicale."
+    },
+    "pt": {
+      "name": "Colheita celestial",
+      "description": "A luz do sol salpicada projeta sombras suaves de folhas sobre um arranjo lúdico de carambola dourada e uma goiaba verde fresca, capturando o calor radiante de uma tarde tropical."
+    },
+    "ro": {
+      "name": "Recoltă cerească",
+      "description": "Lumina pătată a soarelui aruncă umbre moi de frunze peste un aranjament jucăuș de carambolă aurie și o guavă verde proaspătă, surprinzând căldura radiantă a unei după-amiezi tropicale."
+    },
+    "ru": {
+      "name": "Небесный урожай",
+      "description": "Пятнистый солнечный свет отбрасывает мягкие тени листвы на игривую композицию из золотистой карамболы и свежей зеленой гуавы, передавая лучистое тепло тропического полудня."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "466cfe9b8f6905fca9b7e42e5acf850fa2fbc9bf06209451cf283443ba89963a"
+}

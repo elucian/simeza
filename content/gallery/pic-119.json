@@ -1,0 +1,46 @@
+{
+  "id": "pic-119",
+  "file": "pic-119.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Ruby Secrets of the Vine",
+      "description": "Amidst a tangled tapestry of lush green foliage, a ripe bitter melon bursts open to reveal striking, jewel-like crimson seeds, accompanied by a soft yellow blossom basking in the sunlight."
+    },
+    "de": {
+      "name": "Ruby Geheimnisse des Weinstocks",
+      "description": "Inmitten eines verworrenen Teppichs aus sattem grünen Blattwerk bricht eine reife Bittermelone auf und enthüllt auffällige, juwelenartige purpurrote Samen, begleitet von einer zarten gelben Blüte, die sich im Sonnenlicht sonnt."
+    },
+    "es": {
+      "name": "Secretos de la vid de rubí",
+      "description": "En medio de un enmarañado tapiz de exuberante follaje verde, una melón amargo maduro se abre para revelar llamativas semillas carmesí similares a joyas, acompañadas por una suave flor amarilla que se baña bajo la luz del sol."
+    },
+    "fr": {
+      "name": "Secrets de la vigne rubis",
+      "description": "Au milieu d'une tapisserie enchevêtrée de feuillage vert luxuriant, un melon amer mûr s'ouvre pour révéler des graines cramoisies saisissantes, semblables à des bijoux, accompagnées d'une douce fleur jaune baignée par la lumière du soleil."
+    },
+    "hu": {
+      "name": "A rubin szőlőtő titkai",
+      "description": "A buja zöld lombozat kusza szövevénye közepette egy érett keserűdinnye nyílik ki, feltárva a feltűnő, ékszerszerű bíbor magokat, amelyeket egy lágy sárga virág kísér, ahogy sütkérezik a napfényben."
+    },
+    "it": {
+      "name": "Segreti della vite rubino",
+      "description": "In mezzo a un intricato arazzo di rigoglioso fogliame verde, un melone amaro maturo si apre per rivelare sorprendenti semi color cremisi simili a gioielli, accompagnati da un delicato fiore giallo che si crogiola alla luce del sole."
+    },
+    "pt": {
+      "name": "Segredos da videira rubi",
+      "description": "Em meio a uma tapeçaria emaranhada de folhagem verde exuberante, um melão-de-são-caetano maduro se abre para revelar sementes carmesim impressionantes, semelhantes a joias, acompanhadas por uma suave flor amarela que se banha à luz do sol."
+    },
+    "ro": {
+      "name": "Secretele viței de vie rubin",
+      "description": "În mijlocul unei tapiserii încâlcite de frunziș verde luxuriant, un castravete amar copt se deschide pentru a dezvălui semințe izbitoare, de culoarea purpurie, asemănătoare unor bijuterii, însoțite de o floare galbenă delicată care se scaldă în lumina soarelui."
+    },
+    "ru": {
+      "name": "Рубиновые секреты виноградной лозы",
+      "description": "Посреди запутанного гобелена из пышной зеленой листвы спелая горькая дыня раскрывается, обнажая поразительные, похожие на драгоценные камни малиновые семена, в сопровождении нежного желтого цветка, купающегося в солнечном свете."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "4c5d4b6b1894e1b85bcaeac810022bd4717c1dcbc9f7ae2df8b060a89b0ffc15"
+}

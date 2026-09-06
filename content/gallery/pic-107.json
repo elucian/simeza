@@ -1,0 +1,46 @@
+{
+  "id": "pic-107",
+  "file": "pic-107.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Amber Blossom in Crimson Embrace",
+      "description": "Bright yellow, ruffled petals bloom passionately against vibrant green foliage, dramatically resting atop a single vivid magenta bract bathed in warm tropical sunlight."
+    },
+    "de": {
+      "name": "Bernsteinblüte in purpurner Umarmung",
+      "description": "Hellgelbe, gerüschte Blüten blühen leidenschaftlich vor leuchtend grünem Laub und ruhen dramatisch auf einem einzelnen, kräftig magentafarbenen Hochblatt, das in warmem tropischem Sonnenlicht gebadet ist."
+    },
+    "es": {
+      "name": "Flor de ámbar en abrazo carmesí",
+      "description": "Pétalos de color amarillo brillante y ondulados florecen apasionadamente contra un follaje verde vibrante, descansando dramáticamente sobre una única bráctea de color magenta intenso bañada por la cálida luz del sol tropical."
+    },
+    "fr": {
+      "name": "Fleur d'ambre dans une étreinte cramoisie",
+      "description": "Des pétales jaune vif et froncés fleurissent passionnément sur un feuillage vert vibrant, reposant de façon spectaculaire sur une unique bractée magenta vif baignée par la chaude lumière du soleil tropical."
+    },
+    "hu": {
+      "name": "Borostyánvirág bíbor ölelésben",
+      "description": "Élénysárga, fodros szirmok virágoznak szenvedélyesen az élénkzöld lombozat előtt, drámaian megpihenve egyetlen, meleg trópusi napfényben fürdő, élénk bíbor színű murvaléveleken."
+    },
+    "it": {
+      "name": "Fiore d'ambra in un abbraccio cremisi",
+      "description": "Petali giallo brillante e increspati sbocciano appassionatamente contro un fogliame verde vibrante, riposando drammaticamente sopra una singola brattea magenta vivido bagnata dalla calda luce del sole tropicale."
+    },
+    "pt": {
+      "name": "Flor de âmbar em abraço carmesim",
+      "description": "Pétalas amarelo-brilhantes e onduladas florescem apaixonadamente contra uma folhagem verde vibrante, descansando dramaticamente sobre uma única bráctea magenta vívida banhada pela luz quente do sol tropical."
+    },
+    "ro": {
+      "name": "Floare de chihlimbar în îmbrățișare purpurie",
+      "description": "Petale galben-strălucitor, ondulate, înfloresc pasional pe un frunziș verde vibrant, odihnindu-se dramatic deasupra unei singure bractee magenta viu, scăldată în lumina caldă a soarelui tropical."
+    },
+    "ru": {
+      "name": "Янтарный цветок в багровых объятиях",
+      "description": "Ярко-желтые гофрированные лепестки страстно распускаются на фоне сочной зеленой листвы, эффектно покоясь на единственном ярко-пурпурном прицветнике, купающемся в теплых лучах тропического солнца."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "3a24c6e1111786fa46662dd0a5318a6fa76f02862ee20c2126366ebf068212a1"
+}

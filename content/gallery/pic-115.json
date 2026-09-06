@@ -1,0 +1,46 @@
+{
+  "id": "pic-115",
+  "file": "pic-115.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crimson Solstice",
+      "description": "A brilliant red hibiscus unfurls its velvety, sunlit petals, revealing a delicate golden stamen at its heart against a backdrop of lush green leaves."
+    },
+    "de": {
+      "name": "Crimson Solstice",
+      "description": "Ein leuchtend roter Hibiskus entfaltet seine samtigen, sonnenbeschienenen Blütenblätter und enthüllt einen zarten goldenen Stempel in seinem Herzen vor einer Kulisse aus üppig grünen Blättern."
+    },
+    "es": {
+      "name": "Solsticio Carmesí",
+      "description": "Un brillante hibisco rojo despliega sus pétalos aterciopelados y bañados por el sol, revelando un delicado estambre dorado en su corazón sobre un telón de fondo de exuberantes hojas verdes."
+    },
+    "fr": {
+      "name": "Solstice Pourpre",
+      "description": "Un hibiscus rouge éclatant déploie ses pétales veloutés et ensoleillés, révélant une délicate étamine dorée en son cœur sur une toile de fond de feuilles vert luxuriant."
+    },
+    "hu": {
+      "name": "Bíbor Napforduló",
+      "description": "Egy ragyogó vörös hibiszkusz bontja ki bársonyos, napfényes szirmait, felfedve egy finom arany porzót a szívében, a buja zöld levelek háttere előtt."
+    },
+    "it": {
+      "name": "Solstizio Cremisi",
+      "description": "Un brillante ibisco rosso dispiega i suoi petali vellutati e baciati dal sole, rivelando un delicato stame dorato nel suo cuore su uno sfondo di rigogliose foglie verdi."
+    },
+    "pt": {
+      "name": "Solstício Carmesim",
+      "description": "Um hibisco vermelho brilhante desdobra as suas pétalas aveludadas e banhadas pelo sol, revelando um delicado estame dourado no seu coração contra um pano de fundo de folhas verdes luxuriantes."
+    },
+    "ro": {
+      "name": "Solstițiu Purpuriu",
+      "description": "Un hibiscus roșu strălucitor își desface petalele catifelate și însorite, dezvăluind o stamină aurie delicată în inima sa, pe un fundal de frunze verzi luxuriante."
+    },
+    "ru": {
+      "name": "Багровое солнцестояние",
+      "description": "Ярко-красный гибискус раскрывает свои бархатистые, освещенные солнцем лепестки, обнажая нежный золотистый пестик в самом сердце на фоне пышной зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "54f1d63eeff6fee2d116a81793ee7f48f6c2a1b370aa4cc01da044b2bc1146b0"
+}

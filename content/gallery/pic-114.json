@@ -1,0 +1,46 @@
+{
+  "id": "pic-114",
+  "file": "pic-114.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Ivory and Flame",
+      "description": "A pristine white gardenia blooms serenely above vibrant, fiery heliconias, creating a striking dynamic of tranquil purity and tropical warmth amid lush emerald foliage."
+    },
+    "de": {
+      "name": "Elfenbein und Flamme",
+      "description": "Eine makellose weiße Gardenie blüht gelassen über lebhaften, feurigen Helikonien und erzeugt eine beeindruckende Dynamik aus ruhiger Reinheit und tropischer Wärme inmitten von üppigem smaragdgrünem Laub."
+    },
+    "es": {
+      "name": "Marfil y llama",
+      "description": "Una inmaculada gardenia blanca florece serenamente sobre vibrantes y ardientes heliconias, creando una dinámica sorprendente de pureza tranquila y calidez tropical en medio de un exuberante follaje esmeralda."
+    },
+    "fr": {
+      "name": "Ivoire et flamme",
+      "description": "Un gardénia blanc immaculé fleurit sereinement au-dessus d'héliconias vibrants et ardents, créant une dynamique saisissante de pureté tranquille et de chaleur tropicale au milieu d'un feuillage émeraude luxuriant."
+    },
+    "hu": {
+      "name": "Elefántcsont és láng",
+      "description": "Egy érintetlen fehér gardénia virágzik nyugodtan az élénk, tüzes papagájvirágok felett, lenyűgöző dinamikát teremtve a csendes tisztaság és a trópusi meleg között, a buja smaragdzöld lombozat közepette."
+    },
+    "it": {
+      "name": "Avorio e fiamma",
+      "description": "Una candida gardenia bianca sboccia serenamente sopra vibranti e ardenti heliconie, creando una dinamica sorprendente di tranquilla purezza e calore tropicale tra un rigoglioso fogliame color smeraldo."
+    },
+    "pt": {
+      "name": "Marfim e chama",
+      "description": "Uma gardênia branca imaculada floresce serenamente sobre helicônias vibrantes e ardentes, criando uma dinâmica impressionante de pureza tranquila e calor tropical em meio a uma folhagem verde-esmeralda exuberante."
+    },
+    "ro": {
+      "name": "Fildeș și flacără",
+      "description": "O gardenie albă imaculată înflorește senin deasupra unor heliconii vibrante și arzătoare, creând o dinamică izbitoare de puritate liniștită și căldură tropicală în mijlocul unui frunziș luxuriant de smarald."
+    },
+    "ru": {
+      "name": "Слоновая кость и пламя",
+      "description": "Безупречная белая гардения безмятежно цветет над яркими, огненными геликониями, создавая поразительную динамику спокойной чистоты и тропического тепла среди пышной изумрудной листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "d6fc584d8e51b9a6cea66977eccfe3f1f00349e4bfcdffe209cedb1679dbeddc"
+}

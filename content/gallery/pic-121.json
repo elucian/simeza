@@ -1,0 +1,46 @@
+{
+  "id": "pic-121",
+  "file": "pic-121.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Velvet Labyrinth",
+      "description": "Exotic maroon blooms hang like intricate tapestries among vibrant foliage, their velvety petals etched with delicate, pale vein patterns that draw the eye into deep, mysterious centers."
+    },
+    "de": {
+      "name": "Samtlabyrinth",
+      "description": "Exotische kastanienbraune Blüten hängen wie kunstvolle Wandteppiche zwischen lebhaftem Laub, ihre samtigen Blütenblätter sind mit zarten, blassen Adernmustern durchzogen, die das Auge in tiefe, geheimnisvolle Zentren ziehen."
+    },
+    "es": {
+      "name": "Laberinto de terciopelo",
+      "description": "Exóticas flores de color granate cuelgan como tapices intrincados entre un follaje vibrante; sus pétalos aterciopelados están grabados con delicados y pálidos patrones de vetas que atraen la mirada hacia centros profundos y misteriosos."
+    },
+    "fr": {
+      "name": "Labyrinthe de velours",
+      "description": "Des fleurs exotiques rouge bordeaux pendent comme des tapisseries complexes au milieu d'un feuillage vibrant, leurs pétales veloutés étant gravés de délicats motifs de nervures pâles qui attirent le regard vers des centres profonds et mystérieux."
+    },
+    "hu": {
+      "name": "Bársony labirintus",
+      "description": "Egzotikus gesztenyebarna virágok függnek, mint bonyolult falikárpitok az élénk lombozat között; bársonyos szirmaikat finom, halvány erezetminták díszítik, amelyek mély, titokzatos központokba vonzzák a tekintetet."
+    },
+    "it": {
+      "name": "Labirinto di velluto",
+      "description": "Esotici fiori color granata pendono come intricati arazzi tra un fogliame vibrante; i loro petali vellutati sono incisi con delicati e pallidi motivi venati che attirano lo sguardo verso centri profondi e misteriosi."
+    },
+    "pt": {
+      "name": "Labirinto de veludo",
+      "description": "Flores exóticas de cor castanho-avermelhada pendem como tapeçarias intrincadas entre uma folhagem vibrante, as suas pétalas aveludadas gravadas com delicados e pálidos padrões de veios que atraem o olhar para centros profundos e misteriosos."
+    },
+    "ro": {
+      "name": "Labirint de catifea",
+      "description": "Flori exotice de culoarea castaniei atârnă ca niște tapiserii complicate printre frunzișul vibrant, petalele lor catifelate fiind gravate cu modele delicate și palide de nervuri care atrag privirea spre centre adânci și misterioase."
+    },
+    "ru": {
+      "name": "Бархатный лабиринт",
+      "description": "Экзотические бордовые цветы свисают, словно затейливые гобелены, среди яркой листвы; их бархатистые лепестки испещрены нежными бледными прожилками, которые притягивают взгляд к глубоким, таинственным центрам."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "d772c9e00d2c7b76db578f3c61959318c3a8fe72c104626aa0a3deedc78b1c97"
+}

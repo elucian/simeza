@@ -1,0 +1,46 @@
+{
+  "id": "pic-131",
+  "file": "pic-131.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Solar Chalices",
+      "description": "Radiant golden-orange blossoms stretch toward a brilliant blue sky, their frilled, chalice-like petals glowing intensely as they capture the warmth of the sunlight."
+    },
+    "de": {
+      "name": "Solarkelche",
+      "description": "Strahlend goldorangefarbene Blüten recken sich einem strahlend blauen Himmel entgegen, ihre gerüschten, kelchartigen Blütenblätter leuchten intensiv, während sie die Wärme des Sonnenlichts einfangen."
+    },
+    "es": {
+      "name": "Cálices solares",
+      "description": "Radiantes flores de color naranja dorado se extienden hacia un cielo azul brillante, sus pétalos con volantes, similares a cálices, brillan intensamente mientras capturan el calor de la luz del sol."
+    },
+    "fr": {
+      "name": "Calices solaires",
+      "description": "Des fleurs d'un orange doré éclatant s'étirent vers un ciel bleu brillant, leurs pétales froncés en forme de calice brillant intensément alors qu'ils capturent la chaleur de la lumière du soleil."
+    },
+    "hu": {
+      "name": "Napekelyhek",
+      "description": "Ragyogó arany-narancssárga virágok nyújtóznak a ragyogó kék ég felé, fodros, kehely alakú szirmaik intenzíven izzanak, miközben magukba szívják a napfény melegét."
+    },
+    "it": {
+      "name": "Calici solari",
+      "description": "Radiosi fiori color arancio dorato si protendono verso un cielo blu brillante, i loro petali increspati a forma di calice brillano intensamente mentre catturano il calore della luce solare."
+    },
+    "pt": {
+      "name": "Cálices solares",
+      "description": "Flores radiantes de cor laranja-dourado estendem-se em direção a um céu azul brilhante, as suas pétalas franzidas, semelhantes a cálices, brilham intensamente enquanto capturam o calor da luz solar."
+    },
+    "ro": {
+      "name": "Potire solare",
+      "description": "Flori radiante de un portocaliu auriu se întind spre un cer albastru strălucitor, petalele lor ondulate, asemănătoare unor potire, strălucind intens în timp ce captează căldura luminii solare."
+    },
+    "ru": {
+      "name": "Солнечные чаши",
+      "description": "Сияющие золотисто-оранжевые цветы тянутся к ярко-синему небу, их гофрированные, похожие на чашечки лепестки интенсивно светятся, впитывая тепло солнечного света."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "97c345a4a68168559f0c38b7f5e55412ff810493ab9b1d71e4ec0a46ab19f3a1"
+}

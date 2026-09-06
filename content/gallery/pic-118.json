@@ -1,0 +1,46 @@
+{
+  "id": "pic-118",
+  "file": "pic-118.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Velvet Flame's Awakening",
+      "description": "Beneath a clear azure sky, a sculptural cluster of velvety golden buds reaches upward, poised to burst into brilliant orange blossoms amidst vibrant green foliage."
+    },
+    "de": {
+      "name": "Das Erwachen der Samtflamme",
+      "description": "Unter einem klaren azurblauen Himmel streckt sich eine skulpturale Ansammlung samtiger goldener Knospen nach oben, bereit, inmitten von lebhaftem grünem Laub in leuchtend orangefarbenen Blüten aufzubrechen."
+    },
+    "es": {
+      "name": "El despertar de la llama de terciopelo",
+      "description": "Bajo un cielo azul claro, un grupo escultural de capullos dorados aterciopelados se extiende hacia arriba, listo para estallar en brillantes flores naranjas en medio de un follaje verde vibrante."
+    },
+    "fr": {
+      "name": "L'éveil de la flamme de velours",
+      "description": "Sous un ciel azur limpide, un groupe sculptural de bourgeons dorés et veloutés s'étire vers le haut, prêt à éclater en fleurs orange éclatantes au milieu d'un feuillage vert vibrant."
+    },
+    "hu": {
+      "name": "A bársonyláng ébredése",
+      "description": "Egy tiszta azúrkék égbolt alatt bársonyos, aranyszínű bimbók szoborszerű csoportja nyújtózik felfelé, készen arra, hogy élénkzöld lombok között ragyogó narancssárga virágokba boruljon."
+    },
+    "it": {
+      "name": "Il risveglio della fiamma di velluto",
+      "description": "Sotto un limpido cielo azzurro, un gruppo scultoreo di vellutati boccioli dorati si protende verso l'alto, pronto a sbocciare in brillanti fiori arancioni tra un vibrante fogliame verde."
+    },
+    "pt": {
+      "name": "O despertar da chama de veludo",
+      "description": "Sob um céu azul límpido, um grupo escultural de botões dourados aveludados estende-se para cima, pronto a explodir em flores cor de laranja brilhantes no meio de uma folhagem verde vibrante."
+    },
+    "ro": {
+      "name": "Trezirea flăcării de catifea",
+      "description": "Sub un cer azuriu senin, un grup sculptural de muguri aurii catifelați se înalță, gata să izbucnească în flori portocalii strălucitoare printre un frunziș verde vibrant."
+    },
+    "ru": {
+      "name": "Пробуждение бархатного пламени",
+      "description": "Под ясным лазурным небом скульптурная группа бархатистых золотистых бутонов тянется вверх, готовая распуститься яркими оранжевыми цветами среди сочной зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "39a9d9039dacfb46329bad9a11e22961bc5d96174e20b8364a63c538d7bcc8af"
+}

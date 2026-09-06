@@ -1,0 +1,46 @@
+{
+  "id": "pic-105",
+  "file": "pic-105.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Velvet Labyrinth",
+      "description": "Intricate, lace-like patterns of pale cream web across deep burgundy petals, creating a dramatic, otherworldly botanical display set against lush green foliage."
+    },
+    "de": {
+      "name": "Samtlabyrinth",
+      "description": "Filigrane, spitzenartige Muster aus blassem Creme ziehen sich über tiefburgunderrote Blütenblätter und erzeugen eine dramatische, jenseitige botanische Darstellung vor üppig grünem Laub."
+    },
+    "es": {
+      "name": "Laberinto de terciopelo",
+      "description": "Intrincados patrones similares al encaje en color crema pálido se extienden sobre pétalos de color burdeos intenso, creando una exhibición botánica dramática y de otro mundo sobre un follaje verde exuberante."
+    },
+    "fr": {
+      "name": "Labyrinthe de velours",
+      "description": "Des motifs complexes, semblables à de la dentelle, de couleur crème pâle se déploient sur des pétales d'un bordeaux profond, créant une exposition botanique spectaculaire et surnaturelle sur un feuillage vert luxuriant."
+    },
+    "hu": {
+      "name": "Bársony labirintus",
+      "description": "Bonyolult, csipkeszerű, halvány krémszínű minták hálózzák be a mély bordó szirmokat, drámai, másvilági botanikai látványt nyújtva a buja zöld lombozat hátterében."
+    },
+    "it": {
+      "name": "Labirinto di velluto",
+      "description": "Intricati motivi simili a pizzo color crema pallido si intrecciano su petali rosso bordeaux intenso, creando una spettacolare esposizione botanica ultraterrena su un fogliame verde lussureggiante."
+    },
+    "pt": {
+      "name": "Labirinto de veludo",
+      "description": "Padrões intrincados, semelhantes a renda, em creme pálido cruzam pétalas de um bordô profundo, criando uma exibição botânica dramática e de outro mundo contra uma folhagem verde exuberante."
+    },
+    "ro": {
+      "name": "Labirint de catifea",
+      "description": "Modele complicate, asemănătoare dantelei, de culoare crem pal se întind pe petalele de un vișiniu intens, creând un spectacol botanic dramatic, de altă lume, pe fundalul unui frunziș verde luxuriant."
+    },
+    "ru": {
+      "name": "Бархатный лабиринт",
+      "description": "Сложные, кружевные узоры бледно-кремового цвета переплетаются на глубоких бордовых лепестках, создавая драматичную, неземную ботаническую композицию на фоне пышной зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "1539cf3153dae9093a34448b01b055615e0f812510a1ccaeead740340d24de57"
+}

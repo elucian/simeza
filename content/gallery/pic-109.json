@@ -1,0 +1,46 @@
+{
+  "id": "pic-109",
+  "file": "pic-109.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Amber Crowns in Sunlight",
+      "description": "Vibrant golden-orange blossoms stretch eagerly toward the open sky, their delicate frilled petals illuminated by bright sunlight above lush green foliage."
+    },
+    "de": {
+      "name": "Bernsteinkronen im Sonnenlicht",
+      "description": "Lebendige goldorangefarbene Blüten strecken sich eifrig dem offenen Himmel entgegen, ihre zarten, gerüschten Blütenblätter werden vom hellen Sonnenlicht über üppigem grünen Laub beleuchtet."
+    },
+    "es": {
+      "name": "Coronas de ámbar bajo la luz del sol",
+      "description": "Vibrantes flores de color naranja dorado se extienden con entusiasmo hacia el cielo abierto, sus delicados pétalos con volantes iluminados por la brillante luz del sol sobre un exuberante follaje verde."
+    },
+    "fr": {
+      "name": "Couronnes d'ambre à la lumière du soleil",
+      "description": "Des fleurs vibrantes orange doré s'étirent avec empressement vers le ciel ouvert, leurs délicats pétales frangés illuminés par la lumière vive du soleil au-dessus d'un feuillage vert luxuriant."
+    },
+    "hu": {
+      "name": "Borostyánkoronák a napfényben",
+      "description": "Élénk arany-narancssárga virágok nyúlnak mohón a nyitott égbolt felé, finom, fodros szirmaikat a buja zöld lombozat felett ragyogó napfény világítja meg."
+    },
+    "it": {
+      "name": "Corone d'ambra alla luce del sole",
+      "description": "Vibranti fiori color arancio dorato si protendono con entusiasmo verso il cielo aperto, i loro delicati petali increspati illuminati dalla luce brillante del sole sopra un rigoglioso fogliame verde."
+    },
+    "pt": {
+      "name": "Coroas de âmbar sob a luz do sol",
+      "description": "Flores vibrantes de cor laranja-dourado estendem-se ansiosamente em direção ao céu aberto, suas delicadas pétalas franzidas iluminadas pela luz brilhante do sol sobre uma folhagem verde exuberante."
+    },
+    "ro": {
+      "name": "Coroane de chihlimbar în lumina soarelui",
+      "description": "Flori vibrante de culoare portocaliu-auriu se întind cu nerăbdare spre cerul deschis, petalele lor delicate și ondulate fiind iluminate de lumina strălucitoare a soarelui deasupra unui frunziș verde luxuriant."
+    },
+    "ru": {
+      "name": "Янтарные короны в солнечном свете",
+      "description": "Яркие золотисто-оранжевые цветы тянутся к открытому небу, их нежные гофрированные лепестки освещены ярким солнечным светом на фоне пышной зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "70f112426e4b8329d8853143da4358a4209f0f339edbf242be9b4a36e197d6fc"
+}

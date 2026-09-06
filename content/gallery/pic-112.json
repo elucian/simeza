@@ -1,0 +1,46 @@
+{
+  "id": "pic-112",
+  "file": "pic-112.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Nature's Crimson Heart",
+      "description": "A ripe bitter melon pod bursts open under the warm sun, revealing glossy, jewel-like crimson seeds cradled inside golden-orange flesh amidst a canopy of vibrant green leaves."
+    },
+    "de": {
+      "name": "Das purpurne Herz der Natur",
+      "description": "Eine reife Bittermelonenfrucht platzt unter der warmen Sonne auf und enthüllt glänzende, juwelenartige purpurrote Samen, die in goldorangefarbenem Fruchtfleisch inmitten eines Blätterdachs aus leuchtend grünen Blättern gebettet sind."
+    },
+    "es": {
+      "name": "El corazón carmesí de la naturaleza",
+      "description": "Una vaina madura de melón amargo se abre bajo el cálido sol, revelando semillas carmesí brillantes como joyas acunadas dentro de una pulpa de color naranja dorado en medio de un dosel de hojas de color verde vibrante."
+    },
+    "fr": {
+      "name": "Le cœur cramoisi de la nature",
+      "description": "Une gousse de margose mûre éclate sous le soleil chaud, révélant des graines cramoisies brillantes, semblables à des bijoux, nichées dans une chair orange doré au milieu d'une canopée de feuilles vert vif."
+    },
+    "hu": {
+      "name": "A természet bíbor szíve",
+      "description": "Egy érett keserűdinnye-termés felreped a meleg napsütésben, feltárva a fényes, ékszerszerű bíborvörös magokat, amelyek az aranysárga-narancssárga húsban pihennek, élénkzöld levelek lombkoronája közepette."
+    },
+    "it": {
+      "name": "Il cuore cremisi della natura",
+      "description": "Un baccello maturo di melone amaro si apre sotto il sole caldo, rivelando semi cremisi lucenti, simili a gioielli, cullati all'interno di una polpa arancione dorata in mezzo a una chioma di foglie verde brillante."
+    },
+    "pt": {
+      "name": "O coração carmesim da natureza",
+      "description": "Uma vagem madura de melão-de-são-caetano abre-se sob o sol quente, revelando sementes carmesim brilhantes, semelhantes a joias, aninhadas dentro de uma polpa laranja-dourada em meio a uma copa de folhas verde-vibrantes."
+    },
+    "ro": {
+      "name": "Inima purpurie a naturii",
+      "description": "O păstaie coaptă de castravete amar crapă sub soarele cald, dezvăluind semințe purpurii lucioase, ca niște bijuterii, cuibărite în interiorul unei pulpe portocaliu-aurii, în mijlocul unui baldachin de frunze de un verde vibrant."
+    },
+    "ru": {
+      "name": "Багровое сердце природы",
+      "description": "Спелый плод горькой дыни лопается под теплым солнцем, обнажая блестящие, похожие на драгоценные камни малиновые семена, покоящиеся внутри золотисто-оранжевой мякоти среди полога ярко-зеленых листьев."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "f00c2a1f038b5b612a447637201cbbf49c1a67f18181066a046e34b73e24eccf"
+}

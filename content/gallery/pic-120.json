@@ -1,0 +1,46 @@
+{
+  "id": "pic-120",
+  "file": "pic-120.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Sunburst in Bloom",
+      "description": "A vibrant yellow tropical blossom catches the light amidst lush green foliage, its soft, trumpeted petals gently glistening with fresh rain droplets beneath a cloud-dappled sky."
+    },
+    "de": {
+      "name": "Sunburst in voller Blüte",
+      "description": "Eine leuchtend gelbe tropische Blüte fängt das Licht inmitten von üppigem grünen Laub ein, ihre weichen, trompetenförmigen Blütenblätter glitzern sanft mit frischen Regentropfen unter einem wolkenverhangenen Himmel."
+    },
+    "es": {
+      "name": "Sunburst en flor",
+      "description": "Una vibrante flor tropical amarilla atrapa la luz en medio de un exuberante follaje verde, sus suaves pétalos en forma de trompeta brillan suavemente con gotas de lluvia fresca bajo un cielo moteado de nubes."
+    },
+    "fr": {
+      "name": "Sunburst en fleurs",
+      "description": "Une fleur tropicale jaune éclatante capte la lumière au milieu d'un feuillage vert luxuriant, ses pétales doux en forme de trompette scintillant doucement sous des gouttes de pluie fraîche, sous un ciel parsemé de nuages."
+    },
+    "hu": {
+      "name": "Sunburst virágzásban",
+      "description": "Egy élénksárga trópusi virág kapja el a fényt a buja zöld lombozat közepette, puha, tölcséres szirmai lágyan csillognak a friss esőcseppektől a felhőkkel tarkított ég alatt."
+    },
+    "it": {
+      "name": "Sunburst in fiore",
+      "description": "Un vibrante fiore tropicale giallo cattura la luce tra il fogliame verde lussureggiante, i suoi petali morbidi a forma di tromba brillano delicatamente con gocce di pioggia fresca sotto un cielo punteggiato di nuvole."
+    },
+    "pt": {
+      "name": "Sunburst em flor",
+      "description": "Uma vibrante flor tropical amarela capta a luz em meio a uma folhagem verde exuberante, suas pétalas macias em forma de trombeta brilham suavemente com gotas de chuva fresca sob um céu salpicado de nuvens."
+    },
+    "ro": {
+      "name": "Sunburst în floare",
+      "description": "O floare tropicală galbenă vibrantă prinde lumina în mijlocul unui frunziș verde luxuriant, petalele sale moi, în formă de trompetă, strălucind ușor cu picături de ploaie proaspătă sub un cer pătat de nori."
+    },
+    "ru": {
+      "name": "Sunburst в цвету",
+      "description": "Яркий желтый тропический цветок ловит свет среди пышной зеленой листвы, его мягкие лепестки в форме трубы нежно блестят от капель свежего дождя под небом, усыпанным облаками."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "b2ec91ca83b1259f8b75a4882de5fbdaf47f816d0300bba683d5b31623c791e8"
+}

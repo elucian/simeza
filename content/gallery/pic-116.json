@@ -1,0 +1,46 @@
+{
+  "id": "pic-116",
+  "file": "pic-116.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Amber Unfurling",
+      "description": "Velvety botanical buds gather in a rustic crown, gently peeling back to reveal vibrant, sun-dappled golden petals against a soft, cloud-kissed sky."
+    },
+    "de": {
+      "name": "Bernstein entfaltet sich",
+      "description": "Samtige botanische Knospen versammeln sich zu einer rustikalen Krone und entfalten sich sanft, um lebendige, sonnenbeschienene goldene Blütenblätter vor einem weichen, wolkengeküssten Himmel zu enthüllen."
+    },
+    "es": {
+      "name": "Ámbar desplegándose",
+      "description": "Terciopelos capullos botánicos se reúnen en una corona rústica, abriéndose suavemente para revelar vibrantes pétalos dorados bañados por el sol contra un cielo suave y besado por las nubes."
+    },
+    "fr": {
+      "name": "Ambre se déployant",
+      "description": "Des bourgeons botaniques veloutés se rassemblent en une couronne rustique, s'ouvrant délicatement pour révéler des pétales dorés vibrants, baignés de soleil, sur un ciel doux embrassé par les nuages."
+    },
+    "hu": {
+      "name": "Borostyán kibontakozása",
+      "description": "Bársonyos botanikai rügyek gyűlnek rusztikus koronába, gyengéden visszahúzódva, hogy feltárják az élénk, napsütötte aranyszirmokat a lágy, felhőcsókolta égbolt előtt."
+    },
+    "it": {
+      "name": "Ambra che si dispiega",
+      "description": "Vellutati boccioli botanici si raccolgono in una corona rustica, schiudendosi delicatamente per rivelare vibranti petali dorati baciati dal sole contro un cielo soffice e accarezzato dalle nuvole."
+    },
+    "pt": {
+      "name": "Âmbar desdobrando-se",
+      "description": "Botões botânicos aveludados reúnem-se numa coroa rústica, abrindo-se suavemente para revelar pétalas douradas vibrantes e banhadas pelo sol contra um céu suave e beijado pelas nuvens."
+    },
+    "ro": {
+      "name": "Chihlimbar desfășurându-se",
+      "description": "Muguri botanici catifelați se adună într-o coroană rustică, desfăcându-se ușor pentru a dezvălui petale aurii vibrante, scăldate în soare, pe un cer blând, sărutat de nori."
+    },
+    "ru": {
+      "name": "Янтарь разворачивается",
+      "description": "Бархатистые ботанические бутоны собираются в деревенский венок, нежно раскрываясь, чтобы показать яркие, залитые солнцем золотистые лепестки на фоне мягкого, обласканного облаками неба."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "1411352dda1dc21a26aef6789e136f387a4f60b8f7522eebaf8a4c92bfaee48d"
+}

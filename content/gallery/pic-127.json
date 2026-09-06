@@ -1,0 +1,46 @@
+{
+  "id": "pic-127",
+  "file": "pic-127.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Velvet and Flame",
+      "description": "Radiant, flame-like orange petals unfurl around velvety central buds, basking in brilliant sunlight against a backdrop of soft magenta blooms."
+    },
+    "de": {
+      "name": "Samt und Flamme",
+      "description": "Strahlende, flammenartige orangefarbene Blütenblätter entfalten sich um samtige zentrale Knospen, die sich im strahlenden Sonnenlicht vor einer Kulisse aus zart magentafarbenen Blüten sonnen."
+    },
+    "es": {
+      "name": "Terciopelo y llama",
+      "description": "Radiantes pétalos de color naranja, similares a llamas, se despliegan alrededor de aterciopelados capullos centrales, bañándose bajo la brillante luz del sol sobre un telón de fondo de suaves flores magenta."
+    },
+    "fr": {
+      "name": "Velours et flamme",
+      "description": "Des pétales orange radieux, semblables à des flammes, se déploient autour de boutons centraux veloutés, se prélassant sous un soleil éclatant sur une toile de fond de douces fleurs magenta."
+    },
+    "hu": {
+      "name": "Bársony és láng",
+      "description": "Sugárzó, lángszerű narancssárga szirmok nyílnak ki a bársonyos középső bimbók körül, a ragyogó napfényben fürdőzve, a lágy bíbor virágok hátterében."
+    },
+    "it": {
+      "name": "Velluto e fiamma",
+      "description": "Radiosi petali arancioni simili a fiamme si spiegano attorno a vellutati boccioli centrali, crogiolandosi nella brillante luce del sole su uno sfondo di delicati fiori magenta."
+    },
+    "pt": {
+      "name": "Veludo e chama",
+      "description": "Pétalas laranja radiantes, semelhantes a chamas, desabrocham em torno de botões centrais aveludados, banhando-se na luz solar brilhante contra um pano de fundo de suaves flores magenta."
+    },
+    "ro": {
+      "name": "Catifea și flacără",
+      "description": "Petale radiante, portocalii ca flăcările, se desfac în jurul unor muguri centrali catifelați, scăldați în lumina strălucitoare a soarelui pe un fundal de flori delicate de culoarea magentei."
+    },
+    "ru": {
+      "name": "Бархат и пламя",
+      "description": "Сияющие, похожие на пламя оранжевые лепестки раскрываются вокруг бархатистых центральных бутонов, купаясь в ярком солнечном свете на фоне нежных пурпурных цветов."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "3fde397ef2e9dbaa784cde7a81f1e3239038d3cf0fb61714bb83c58f9a82cc40"
+}

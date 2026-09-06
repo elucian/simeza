@@ -1,0 +1,46 @@
+{
+  "id": "pic-122",
+  "file": "pic-122.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crimson Passion",
+      "description": "A close-up view of a vibrant red passion flower, displaying its striking ruby-red petals and intricately sculpted center surrounded by a backdrop of sunlit green foliage."
+    },
+    "de": {
+      "name": "Leidenschaft in Purpur",
+      "description": "Eine Nahaufnahme einer leuchtend roten Passionsblume, die ihre auffälligen rubinroten Blütenblätter und ihr kunstvoll geformtes Zentrum vor einer Kulisse aus sonnenbeschienenem grünen Laub zeigt."
+    },
+    "es": {
+      "name": "Pasión Carmesí",
+      "description": "Una vista en primer plano de una vibrante flor de la pasión roja, que muestra sus llamativos pétalos de color rojo rubí y su centro intrincadamente esculpido rodeado por un telón de fondo de follaje verde iluminado por el sol."
+    },
+    "fr": {
+      "name": "Passion Cramoisie",
+      "description": "Une vue en gros plan d'une fleur de la passion rouge vif, affichant ses pétales rouge rubis saisissants et son centre finement sculpté entouré par une toile de fond de feuillage vert baigné de soleil."
+    },
+    "hu": {
+      "name": "Bíbor Szenvedély",
+      "description": "Egy élénkvörös golgotavirág közeli képe, amelyen jól láthatók a feltűnő rubinvörös szirmok és a bonyolult kialakítású közép, a napfényben fürdő zöld lombozat hátterében."
+    },
+    "it": {
+      "name": "Passione Cremisi",
+      "description": "Una vista ravvicinata di una vibrante passiflora rossa, che mostra i suoi sorprendenti petali rosso rubino e il suo centro finemente scolpito circondato da uno sfondo di fogliame verde illuminato dal sole."
+    },
+    "pt": {
+      "name": "Paixão Carmesim",
+      "description": "Uma vista em close-up de uma vibrante flor-da-paixão vermelha, exibindo suas impressionantes pétalas vermelho-rubi e seu centro intrincadamente esculpido, cercado por um cenário de folhagem verde iluminada pelo sol."
+    },
+    "ro": {
+      "name": "Pasiune Purpurie",
+      "description": "O vedere de aproape a unei flori pasiunii roșii vibrante, care își etalează petalele izbitoare de culoarea roșu rubin și centrul sculptat complex, înconjurat de un fundal de frunziș verde scăldat în lumina soarelui."
+    },
+    "ru": {
+      "name": "Багряная страсть",
+      "description": "Крупный план ярко-красного цветка страстоцвета, демонстрирующего поразительные рубиново-красные лепестки и замысловато вылепленный центр на фоне залитой солнцем зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "eb6fa0f8c84811857173fc1b71cb63c95c1a4c9918d49c99fc63c2a1f5c41775"
+}

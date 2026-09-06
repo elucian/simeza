@@ -1,0 +1,46 @@
+{
+  "id": "pic-124",
+  "file": "pic-124.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Nature's Ember Spine",
+      "description": "Resting softly in an open palm, a split wild bitter melon reveals its hidden treasures—a textured orange hull studded with glistening, ruby-red seeds that shine like natural jewels against a backdrop of lush green foliage."
+    },
+    "de": {
+      "name": "Natures Glutgrat",
+      "description": "Sanft in einer offenen Handfläche ruhend, offenbart eine aufgeschnittene wilde Bittermelone ihre verborgenen Schätze – eine strukturierte orangefarbene Hülle, besetzt mit glitzernden, rubinroten Samen, die wie natürliche Juwelen vor einer Kulisse aus üppigem grünen Blattwerk leuchten."
+    },
+    "es": {
+      "name": "Espina de Brasa de la Naturaleza",
+      "description": "Reposando suavemente en una palma abierta, una melón amargo silvestre partido revela sus tesoros ocultos: una cáscara naranja texturizada tachonada con semillas de color rojo rubí brillante que resplandecen como joyas naturales sobre un telón de fondo de exuberante follaje verde."
+    },
+    "fr": {
+      "name": "Épine de braise de la nature",
+      "description": "Reposant doucement dans une paume ouverte, un melon amer sauvage fendu révèle ses trésors cachés — une coque orange texturée parsemée de graines rouge rubis scintillantes qui brillent comme des joyaux naturels sur une toile de fond de feuillage vert luxuriant."
+    },
+    "hu": {
+      "name": "A természet parázsgerince",
+      "description": "Egy nyitott tenyérben lágyan pihenve, egy felhasított vad keserűdinnye tárja fel rejtett kincseit – egy texturált narancssárga héj, amelyet csillogó, rubinvörös magvak tarkítanak, amelyek úgy ragyognak, mint a természetes ékszerek a buja zöld lombozat hátterében."
+    },
+    "it": {
+      "name": "Spina di brace della natura",
+      "description": "Adagiato dolcemente su un palmo aperto, un melone amaro selvatico spaccato rivela i suoi tesori nascosti: un guscio arancione strutturato tempestato di semi rosso rubino scintillanti che brillano come gioielli naturali sullo sfondo di un rigoglioso fogliame verde."
+    },
+    "pt": {
+      "name": "Espinha de Brasa da Natureza",
+      "description": "Repousando suavemente numa palma aberta, um melão-de-são-caetano silvestre partido revela os seus tesouros escondidos — uma casca laranja texturizada cravejada de sementes vermelho-rubi cintilantes que brilham como joias naturais contra um pano de fundo de folhagem verde luxuriante."
+    },
+    "ro": {
+      "name": "Coloana de jar a naturii",
+      "description": "Odihnindu-se ușor într-o palmă deschisă, un castravete amar sălbatic desfăcut își dezvăluie comorile ascunse — o coajă portocalie texturată, presărată cu semințe sclipitoare de culoarea rubinului, care strălucesc precum bijuteriile naturale pe un fundal de frunziș verde luxuriant."
+    },
+    "ru": {
+      "name": "Хребет природного угля",
+      "description": "Мягко покоясь на открытой ладони, разрезанная дикая горькая дыня открывает свои скрытые сокровища — текстурированную оранжевую оболочку, усеянную сверкающими рубиново-красными семенами, которые сияют, словно природные драгоценные камни, на фоне пышной зеленой листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "17a122fea5d9a005422c191724ff5621c81be6a6b84666ba99a4a497ee64032e"
+}

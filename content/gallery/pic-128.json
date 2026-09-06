@@ -1,0 +1,46 @@
+{
+  "id": "pic-128",
+  "file": "pic-128.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crown of Tendrils",
+      "description": "Delicate, wavy white filaments radiate like fine lace from a striking, pale green center, surrounded by lush foliage. The intricate geometry and ethereal structure of this passion flower highlight the breathtaking, otherworldly beauty found in nature."
+    },
+    "de": {
+      "name": "Krone aus Ranken",
+      "description": "Zarte, wellenförmige weiße Filamente strahlen wie feine Spitze von einer markanten, blassgrünen Mitte aus, umgeben von üppigem Blattwerk. Die komplexe Geometrie und ätherische Struktur dieser Passionsblume unterstreichen die atemberaubende, jenseitige Schönheit, die in der Natur zu finden ist."
+    },
+    "es": {
+      "name": "Corona de zarcillos",
+      "description": "Delicados filamentos blancos y ondulados irradian como un encaje fino desde un llamativo centro verde pálido, rodeado de un follaje exuberante. La intrincada geometría y la estructura etérea de esta flor de la pasión resaltan la impresionante belleza de otro mundo que se encuentra en la naturaleza."
+    },
+    "fr": {
+      "name": "Couronne de vrilles",
+      "description": "Des filaments blancs délicats et ondulés rayonnent comme une fine dentelle à partir d'un centre vert pâle saisissant, entouré d'un feuillage luxuriant. La géométrie complexe et la structure éthérée de cette fleur de la passion soulignent la beauté époustouflante et surnaturelle que l'on trouve dans la nature."
+    },
+    "hu": {
+      "name": "Kacsok koronája",
+      "description": "Finom, hullámos fehér szálak sugároznak, mint a csipke, egy feltűnő, halványzöld központból, dús lombozattal körülvéve. Ennek a golgotavirágnak a bonyolult geometriája és éteri szerkezete kiemeli azt a lélegzetelállító, másvilági szépséget, amely a természetben rejlik."
+    },
+    "it": {
+      "name": "Corona di viticci",
+      "description": "Delicati filamenti bianchi e ondulati si irradiano come un pizzo fine da un sorprendente centro verde pallido, circondato da un fogliame lussureggiante. L'intricata geometria e la struttura eterea di questo fiore della passione mettono in risalto la bellezza mozzafiato e ultraterrena che si trova in natura."
+    },
+    "pt": {
+      "name": "Coroa de gavinhas",
+      "description": "Delicados filamentos brancos e ondulados irradiam como uma renda fina a partir de um centro verde-pálido marcante, rodeado por uma folhagem exuberante. A geometria intrincada e a estrutura etérea desta flor-da-paixão realçam a beleza deslumbrante e sobrenatural encontrada na natureza."
+    },
+    "ro": {
+      "name": "Coroană de cârcei",
+      "description": "Filamente albe, delicate și ondulate radiază ca o dantelă fină dintr-un centru izbitor de culoare verde pal, înconjurat de un frunziș luxuriant. Geometria complexă și structura eterică a acestei flori pasiunii scot în evidență frumusețea uluitoare, de altă lume, care se găsește în natură."
+    },
+    "ru": {
+      "name": "Корона из усиков",
+      "description": "Нежные, волнистые белые нити расходятся, словно тонкое кружево, от яркого бледно-зеленого центра, окруженного пышной листвой. Сложная геометрия и эфирная структура этого цветка страстоцвета подчеркивают захватывающую дух, неземную красоту, которую можно встретить в природе."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "0bb4b1b085977545a43e88bf7b0929a35350ddc8f27d7135fab9b75b90bd9402"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "pic-130",
+  "file": "pic-130.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crimson Velvet Tapestry",
+      "description": "Three dramatic, wide-mouthed flowers unfurl against vibrant green foliage, showcasing an intricate web of pale, lace-like veining etched across deep burgundy petals. Their velvety throats draw the eye toward luminous yellow centers, exuding an aura of mysterious botanical elegance."
+    },
+    "de": {
+      "name": "Karmesinroter Samtwandteppich",
+      "description": "Drei dramatische, weit geöffnete Blüten entfalten sich vor leuchtend grünem Laub und zeigen ein kompliziertes Netz aus blassen, spitzenartigen Adern, die sich über tiefburgunderrote Blütenblätter ziehen. Ihre samtigen Schlunde lenken den Blick auf leuchtend gelbe Zentren und strahlen eine Aura geheimnisvoller botanischer Eleganz aus."
+    },
+    "es": {
+      "name": "Tapiz de terciopelo carmesí",
+      "description": "Tres flores dramáticas de boca ancha se despliegan sobre un follaje verde vibrante, mostrando una intrincada red de venas pálidas, similares al encaje, grabadas a través de pétalos de color borgoña intenso. Sus gargantas aterciopeladas atraen la mirada hacia centros amarillos luminosos, exudando un aura de misteriosa elegancia botánica."
+    },
+    "fr": {
+      "name": "Tapisserie en velours cramoisi",
+      "description": "Trois fleurs spectaculaires à large corolle s'épanouissent sur un feuillage vert vibrant, révélant un réseau complexe de nervures pâles, semblables à de la dentelle, gravées sur des pétales d'un bordeaux profond. Leurs gorges veloutées attirent le regard vers des cœurs jaune lumineux, dégageant une aura d'élégance botanique mystérieuse."
+    },
+    "hu": {
+      "name": "Bíborbársony falikárpit",
+      "description": "Három drámai, széles szájú virág nyílik ki az élénkzöld lombozat előtt, feltárva a mély bordó szirmokon végigfutó halvány, csipkeszerű erezet bonyolult hálóját. Bársonyos torkuk a fénylő sárga központok felé vonzza a tekintetet, titokzatos botanikai elegancia auráját árasztva."
+    },
+    "it": {
+      "name": "Arazzo in velluto cremisi",
+      "description": "Tre fiori spettacolari dalla corolla ampia si schiudono su un fogliame verde vibrante, mettendo in mostra un'intricata rete di venature pallide, simili a pizzo, incise su petali color bordeaux intenso. Le loro gole vellutate attirano lo sguardo verso centri giallo luminoso, emanando un'aura di misteriosa eleganza botanica."
+    },
+    "pt": {
+      "name": "Tapeçaria de veludo carmesim",
+      "description": "Três flores dramáticas de boca larga desabrocham contra uma folhagem verde vibrante, exibindo uma intrincada rede de veios pálidos, semelhantes a renda, gravados em pétalas de um bordô profundo. Suas gargantas aveludadas atraem o olhar para centros amarelos luminosos, exalando uma aura de misteriosa elegância botânica."
+    },
+    "ro": {
+      "name": "Tapiserie din catifea purpurie",
+      "description": "Trei flori dramatice, cu gura largă, se desfac pe un frunziș verde vibrant, etalând o rețea complexă de nervuri palide, asemănătoare dantelei, gravate pe petale de un vișiniu profund. Gâturile lor catifelate atrag privirea către centre galbene luminoase, emanând o aură de misterioasă eleganță botanică."
+    },
+    "ru": {
+      "name": "Гобелен из малинового бархата",
+      "description": "Три эффектных цветка с широкими венчиками раскрываются на фоне ярко-зеленой листвы, демонстрируя сложную сеть бледных, кружевных прожилок, прочерченных по темно-бордовым лепесткам. Их бархатистые зевы притягивают взгляд к светящимся желтым центрам, излучая ауру таинственной ботанической элегантности."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "ee754f9ff9b98f216d9be641a230426cfe61cd9c3acb83b4cdfc778b627c8e5e"
+}

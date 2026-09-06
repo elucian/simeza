@@ -1,0 +1,46 @@
+{
+  "id": "pic-108",
+  "file": "pic-108.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Sunlit Chalices",
+      "description": "Vibrant golden-orange blossoms reach toward a bright blue sky, their ruffled, cup-like petals capturing the sunlight in a radiant display of tropical brilliance."
+    },
+    "de": {
+      "name": "Sonnenbeschienene Kelche",
+      "description": "Lebhafte goldorangefarbene Blüten recken sich einem strahlend blauen Himmel entgegen, wobei ihre gerüschten, kelchförmigen Blütenblätter das Sonnenlicht in einer strahlenden Darbietung tropischer Brillanz einfangen."
+    },
+    "es": {
+      "name": "Cálices iluminados por el sol",
+      "description": "Vibrantes flores de color naranja dorado se extienden hacia un cielo azul brillante, sus pétalos rizados en forma de copa capturan la luz del sol en una radiante exhibición de esplendor tropical."
+    },
+    "fr": {
+      "name": "Calices baignés de soleil",
+      "description": "Des fleurs vibrantes orange doré s'étirent vers un ciel bleu éclatant, leurs pétales froncés en forme de coupe capturant la lumière du soleil dans une démonstration rayonnante d'éclat tropical."
+    },
+    "hu": {
+      "name": "Napfényes kelyhek",
+      "description": "Élénk arany-narancssárga virágok nyúlnak a ragyogó kék ég felé, fodros, kehely alakú szirmaik pedig a napfényt fogják be a trópusi ragyogás sugárzó látványában."
+    },
+    "it": {
+      "name": "Calici illuminati dal sole",
+      "description": "Vibranti fiori color arancio dorato si protendono verso un cielo azzurro brillante, i loro petali increspati a forma di coppa catturano la luce del sole in una radiosa esibizione di splendore tropicale."
+    },
+    "pt": {
+      "name": "Cálices banhados pelo sol",
+      "description": "Flores vibrantes de cor laranja-dourada estendem-se em direção a um céu azul brilhante, com as suas pétalas franzidas em forma de taça a captar a luz solar numa exibição radiante de brilho tropical."
+    },
+    "ro": {
+      "name": "Potire luminate de soare",
+      "description": "Flori vibrante de culoare portocaliu-auriu se întind spre un cer albastru strălucitor, petalele lor ondulate, în formă de cupă, captând lumina soarelui într-o demonstrație radiantă de strălucire tropicală."
+    },
+    "ru": {
+      "name": "Озарённые солнцем чаши",
+      "description": "Яркие золотисто-оранжевые цветы тянутся к ярко-синему небу, их волнистые чашевидные лепестки ловят солнечный свет, создавая сияющее зрелище тропического великолепия."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "456e20449dd38ddefddd51f9f8db9f77857d579523d1a1103c177e4f7350508b"
+}

@@ -1,0 +1,46 @@
+{
+  "id": "pic-129",
+  "file": "pic-129.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crimson Spire",
+      "description": "Rising gracefully from the earth, a vibrant Siam tulip stands like a burning torch, its stacked petal-like bracts transitioning from deep coral to luminous pink amidst lush tropical foliage."
+    },
+    "de": {
+      "name": "Crimson Spire",
+      "description": "Anmutig aus der Erde emporsteigend, steht eine leuchtende Siam-Tulpe wie eine brennende Fackel da, deren gestapelte, blütenblattartige Hochblätter inmitten von üppigem tropischem Blattwerk von tiefem Korallenrot zu leuchtendem Pink übergehen."
+    },
+    "es": {
+      "name": "Aguja Carmesí",
+      "description": "Elevándose con gracia desde la tierra, un vibrante tulipán de Siam se alza como una antorcha encendida, con sus brácteas apiladas en forma de pétalos que transicionan de un coral intenso a un rosa luminoso en medio de un exuberante follaje tropical."
+    },
+    "fr": {
+      "name": "Flèche Pourpre",
+      "description": "S'élevant gracieusement de la terre, une tulipe de Siam vibrante se dresse comme une torche ardente, ses bractées empilées en forme de pétales passant d'un corail profond à un rose lumineux au milieu d'un feuillage tropical luxuriant."
+    },
+    "hu": {
+      "name": "Bíbor Torony",
+      "description": "A földből kecsesen kiemelkedve áll a vibráló sziámi tulipán, mint egy égő fáklya; egymásra rétegzett, sziromszerű murvalevelei a mély korallvöröstől a ragyogó rózsaszínig váltakoznak a buja trópusi lombozat közepette."
+    },
+    "it": {
+      "name": "Guglia Cremisi",
+      "description": "Elevandosi con grazia dalla terra, un vibrante tulipano del Siam si erge come una torcia ardente, le sue brattee sovrapposte simili a petali sfumano da un corallo intenso a un rosa luminoso tra il rigoglioso fogliame tropicale."
+    },
+    "pt": {
+      "name": "Pináculo Carmesim",
+      "description": "Erguendo-se graciosamente da terra, uma vibrante tulipa-do-sião destaca-se como uma tocha acesa, com as suas brácteas empilhadas em forma de pétalas a transitar de um coral profundo para um rosa luminoso no meio de uma folhagem tropical exuberante."
+    },
+    "ro": {
+      "name": "Spire Purpuriu",
+      "description": "Ridicându-se grațios din pământ, o lalea siameză vibrantă stă ca o torță aprinsă, bracteele sale suprapuse, asemănătoare petalelor, trecând de la un coral intens la un roz luminos în mijlocul unui frunziș tropical luxuriant."
+    },
+    "ru": {
+      "name": "Багряный шпиль",
+      "description": "Грациозно поднимаясь из земли, яркий сиамский тюльпан стоит, словно горящий факел, а его сложенные друг на друга лепестковидные прицветники переходят от глубокого кораллового к ярко-розовому цвету среди пышной тропической листвы."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "a2a06ef8412d30c250421351473158da8151703ebffaa5c75e7dff90d39f08f9"
+}

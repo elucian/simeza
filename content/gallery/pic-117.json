@@ -1,0 +1,46 @@
+{
+  "id": "pic-117",
+  "file": "pic-117.webp",
+  "type": "photo",
+  "content": {
+    "en": {
+      "name": "Crown of Amber Flames",
+      "description": "Vibrant, sun-drenched orange petals ignite from velvety, claw-like buds, reaching toward the open sky amidst a lush tapestry of greenery and delicate pink blossoms."
+    },
+    "de": {
+      "name": "Krone aus bernsteinfarbenen Flammen",
+      "description": "Lebendige, sonnenverwöhnte orangefarbene Blütenblätter entzünden sich aus samtigen, krallenartigen Knospen und recken sich inmitten eines üppigen Teppichs aus Grün und zarten rosa Blüten dem offenen Himmel entgegen."
+    },
+    "es": {
+      "name": "Corona de llamas de ámbar",
+      "description": "Vibrantes pétalos de color naranja bañados por el sol se encienden desde capullos aterciopelados en forma de garra, alcanzando el cielo abierto en medio de un exuberante tapiz de vegetación y delicadas flores rosadas."
+    },
+    "fr": {
+      "name": "Couronne de flammes d'ambre",
+      "description": "Des pétales orange vibrants et baignés de soleil s'enflamment à partir de boutons veloutés en forme de griffes, s'étirant vers le ciel ouvert au milieu d'une tapisserie luxuriante de verdure et de délicates fleurs roses."
+    },
+    "hu": {
+      "name": "Borostyánlángok koronája",
+      "description": "Élénk, napsütötte narancssárga szirmok lobbannak fel a bársonyos, karomszerű bimbókból, a nyílt ég felé nyújtózva a zöldellő növényzet és a finom rózsaszín virágok buja szőnyegében."
+    },
+    "it": {
+      "name": "Corona di fiamme d'ambra",
+      "description": "Vibranti petali arancioni baciati dal sole si accendono da boccioli vellutati a forma di artiglio, protendendosi verso il cielo aperto in mezzo a un lussureggiante arazzo di verde e delicati fiori rosa."
+    },
+    "pt": {
+      "name": "Coroa de chamas de âmbar",
+      "description": "Pétalas vibrantes de cor laranja banhadas pelo sol inflamam-se a partir de botões aveludados em forma de garra, alcançando o céu aberto em meio a uma tapeçaria exuberante de vegetação e delicadas flores cor-de-rosa."
+    },
+    "ro": {
+      "name": "Coroană de flăcări de chihlimbar",
+      "description": "Petale vibrante, scăldate în soare, de culoarea portocalie, se aprind din muguri catifelați, în formă de gheară, întinzându-se spre cerul deschis în mijlocul unei tapiserii luxuriante de verdeață și flori delicate de culoare roz."
+    },
+    "ru": {
+      "name": "Корона из янтарного пламени",
+      "description": "Яркие, залитые солнцем оранжевые лепестки вспыхивают из бархатистых, похожих на когти бутонов, тянущихся к открытому небу посреди пышного ковра из зелени и нежных розовых цветов."
+    }
+  },
+  "category": "nature",
+  "topic": "garden",
+  "source_hash": "79f25f8967ff7b4e895c1ef4b4163af905e436f21b764608d1b4b90e7dedf323"
+}
