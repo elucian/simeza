@@ -12,40 +12,40 @@
   "content": {
     "en": {
       "name": "Pavy Beloyu",
-      "description": "Artist, Polymath, Book Author"
+      "description": "Artist, Polymath, Author"
     },
     "de": {
       "name": "Pavy Beloyu",
-      "description": "Künstler, Universalgelehrter, Buchautor"
+      "description": "Künstler, Universalgelehrter, Autor"
     },
     "es": {
       "name": "Pavy Beloyu",
-      "description": "Artista, polímata, autor de libros"
+      "description": "Artista, polímata, autor"
     },
     "fr": {
       "name": "Pavy Beloyu",
-      "description": "Artiste, polymathe, auteur de livres"
+      "description": "Artiste, polymathe, auteur"
     },
     "hu": {
       "name": "Pavy Beloyu",
-      "description": "Művész, polihisztor, könyvszerző"
+      "description": "Művész, polihisztor, szerző"
     },
     "it": {
       "name": "Pavy Beloyu",
-      "description": "Artista, poliedrico, autore di libri"
+      "description": "Artista, polimata, autore"
     },
     "pt": {
       "name": "Pavy Beloyu",
-      "description": "Artista, polímata, autor de livros"
+      "description": "Artista, polímata, autor"
     },
     "ro": {
       "name": "Pavy Beloyu",
-      "description": "Artist, polimat, autor de cărți"
+      "description": "Artist, polimat, autor"
     },
     "ru": {
       "name": "Пави Белою",
-      "description": "Художник, эрудит, автор книг"
+      "description": "Художник, эрудит, автор"
     }
   },
-  "source_hash": "eb16c4e302c9b807206ee8ddb52037a6710d39c94913db9dbd0ee1de8199286b"
+  "source_hash": "bb7de7b06a9fc980a668002b2b0a28a0fa567d3b1afe4f232b4a921978f9bbda"
 }
