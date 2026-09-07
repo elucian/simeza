@@ -185,7 +185,7 @@
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-size: 1.2rem;
-  color: var(--text-color, #0f172a);
+  color: var(--accent-color, #616774);
 }
 
 .community-card p {
