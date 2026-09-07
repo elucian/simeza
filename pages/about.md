@@ -24,7 +24,7 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
 
 <section class="about-contact-panel">
   <h2>Join our Community</h2>
-  <p>Connect with fellow learners, access visual learning roadmaps, and build your language or technical skills across our platforms.</p>
+  <p>Connect with fellow learners, access visual learning roadmaps, and build your language and technical skills across our platforms.</p>
 
   <div class="community-grid">
     <div class="community-card">

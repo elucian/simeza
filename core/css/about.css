@@ -44,12 +44,6 @@
   text-align: left;
 }
 
-.about-contact-panel a {
-  color: var(--accent-color);
-  font-weight: 600;
-  margin-bottom:8px;
-}
-
 .about-portrait-panels {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -212,4 +206,10 @@
 
 .cta-link:hover {
   text-decoration: underline;
+}
+
+.about-contact-panel a {
+  color: var(--link-color, --accent-color);
+  font-weight: 600;
+  margin-bottom:8px;
 }
