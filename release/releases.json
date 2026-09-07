@@ -6,9 +6,9 @@
     "notes": "success"
   },
   "candidate": {
-    "version": "",
-    "commit": "",
-    "date": "",
-    "notes": ""
+    "version": "0.1.1-rc.153",
+    "commit": "fix release workflow",
+    "date": "2026-09-07T10:46:57.866671",
+    "notes": "pending"
   }
 }
