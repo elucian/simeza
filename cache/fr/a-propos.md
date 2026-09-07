@@ -2,7 +2,7 @@
 title: À propos de La Simeza - Art, Culture et Éducation Multilingue
 description: Découvrez La Simeza, une galerie numérique indépendante présentant les beaux-arts de Pavy Beloiu et la photographie d'Elucian Moise, conçue pour l'appréciation de l'art et l'acquisition du langage visuel.
 keywords: pavy beloiu, elucian moise, simeza, beaux-arts, photographie, apprentissage du langage visuel, sage-code
-source_hash: d1bd8eada18ab602f973a1efb5cf561acf64aad257e8fc1b1de690e6c344deb3
+source_hash: f53194927adbc239421d02e0bda43d059b4ef7e1dd7185530d5eaaf31aa49755
 ---
 # À propos de La Simeza
 
@@ -24,7 +24,7 @@ source_hash: d1bd8eada18ab602f973a1efb5cf561acf64aad257e8fc1b1de690e6c344deb3
 
 <section class="about-contact-panel">
   <h2>Rejoignez notre Communauté</h2>
-  <p>Connectez-vous avec d'autres apprenants, accédez à des feuilles de route d'apprentissage visuel et développez vos compétences linguistiques ou techniques sur nos plateformes.</p>
+  <p>Connectez-vous avec d'autres apprenants, accédez à des feuilles de route d'apprentissage visuel et développez vos compétences linguistiques et techniques sur nos plateformes.</p>
 
   <div class="community-grid">
     <div class="community-card">
@@ -34,7 +34,7 @@ source_hash: d1bd8eada18ab602f973a1efb5cf561acf64aad257e8fc1b1de690e6c344deb3
     </div>
 
     <div class="community-card">
-      <h3>Sage-Code : Logiciels et Systèmes</h3>
+      <h3>Sage-Code : Logiciel et Communication</h3>
       <p>Maîtrisez les langages de programmation et l'ingénierie logicielle grâce à des feuilles de route structurées sur Sage-Code.</p>
       <a href="https://sagecode.org" class="cta-link" rel="external">Visiter Sage-Code</a>
     </div>

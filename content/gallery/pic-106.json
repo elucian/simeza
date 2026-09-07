@@ -5,44 +5,44 @@
   "content": {
     "en": {
       "name": "Dew-Kissed Crown",
-      "description": "Sunlight streams across broad, intricately ribbed leaves shimmering with water droplets, illuminating a tropical ginger bloom that rises gracefully with a delicate gradient of terracotta, blush pink, and soft white petals."
+      "description": "Tropical ginger bloom that rises gracefully with a delicate gradient of terracotta, blush pink, and soft white petals."
     },
     "de": {
       "name": "Taugeküsste Krone",
-      "description": "Sonnenlicht strömt über breite, komplex gerippte Blätter, die von Wassertropfen schimmern, und beleuchtet eine tropische Ingwerblüte, die sich anmutig mit einem zarten Farbverlauf aus terrakottafarbenen, rosafarbenen und sanft weißen Blütenblättern erhebt."
+      "description": "Tropische Ingwerblüte, die sich anmutig mit einem zarten Farbverlauf aus Terrakotta, zartem Rosa und sanften weißen Blütenblättern erhebt."
     },
     "es": {
       "name": "Corona besada por el rocío",
-      "description": "La luz del sol se derrama sobre hojas anchas y de nervaduras intrincadas que brillan con gotas de agua, iluminando una flor de jengibre tropical que se alza con gracia con un delicado degradado de pétalos en tonos terracota, rosa rubor y blanco suave."
+      "description": "Flor de jengibre tropical que se alza con gracia con un delicado degradado de pétalos en tonos terracota, rosa rubor y blanco suave."
     },
     "fr": {
       "name": "Couronne embrassée par la rosée",
-      "description": "La lumière du soleil traverse de larges feuilles aux nervures complexes qui scintillent sous les gouttes d'eau, illuminant une fleur de gingembre tropicale qui s'élève gracieusement avec un dégradé délicat de pétales terracotta, rose poudré et blanc doux."
+      "description": "Fleur de gingembre tropicale qui s'élève gracieusement avec un dégradé délicat de pétales terracotta, rose poudré et blanc doux."
     },
     "hu": {
       "name": "Harmatcsókolta korona",
-      "description": "A napfény széles, bonyolult erezetű, vízcseppektől csillogó leveleken áramlik keresztül, megvilágítva egy trópusi gyömbérvirágot, amely kecsesen emelkedik ki a terrakotta, a púderrózsaszín és a lágy fehér szirmok finom színátmenetével."
+      "description": "Trópusi gyömbérvirág, amely kecsesen emelkedik ki a terrakotta, a púderrózsaszín és a lágy fehér szirmok finom színátmenetével."
     },
     "it": {
       "name": "Corona baciata dalla rugiada",
-      "description": "La luce del sole scorre su foglie larghe e dalle venature intricate che brillano di gocce d'acqua, illuminando un fiore di zenzero tropicale che si erge con grazia con un delicato gradiente di petali color terracotta, rosa tenue e bianco delicato."
+      "description": "Fiore di zenzero tropicale che si erge con grazia con una delicata sfumatura di petali color terracotta, rosa tenue e bianco delicato."
     },
     "pt": {
       "name": "Coroa beijada pelo orvalho",
-      "description": "A luz do sol flui sobre folhas largas e de nervuras intrincadas que brilham com gotas de água, iluminando uma flor de gengibre tropical que se ergue graciosamente com um delicado gradiente de pétalas em tons de terracota, rosa suave e branco delicado."
+      "description": "Flor de gengibre tropical que se eleva graciosamente com um gradiente delicado de pétalas em tons de terracota, rosa blush e branco suave."
     },
     "ro": {
       "name": "Coroană sărutată de rouă",
-      "description": "Lumina soarelui se revarsă peste frunze late, cu nervuri complexe, care strălucesc sub picăturile de apă, iluminând o floare tropicală de ghimbir care se înalță grațios, cu un gradient delicat de petale în nuanțe de teracotă, roz pal și alb fin."
+      "description": "Floare tropicală de ghimbir care se înalță grațios cu un gradient delicat de petale în nuanțe de teracotă, roz pal și alb fin."
     },
     "ru": {
       "name": "Корона, поцелованная росой",
-      "description": "Солнечный свет струится по широким, со сложным жилкованием листьям, мерцающим от капель воды, освещая тропический цветок имбиря, который грациозно возвышается с нежным градиентом лепестков терракотового, нежно-розового и мягкого белого цветов."
+      "description": "Тропический цветок имбиря, который грациозно возвышается благодаря нежному градиенту лепестков терракотового, нежно-розового и мягкого белого цветов."
     }
   },
   "category": "nature",
   "topic": "garden",
-  "source_hash": "344018c557662ba40e315deccde19eb6b78a74b32a0b0ad5a5f8ae36b7da5cc4",
+  "source_hash": "2e3489324f2ce82937e7e7a789c03246750f29cf3def96850ceb54e7eb15de8d",
   "author": "Pavy Beloiu",
   "year": 2012,
   "status": "Available"
