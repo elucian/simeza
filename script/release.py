@@ -76,6 +76,10 @@ def release():
         return False
 
     pub = data.get('published', {})
+    if cand.get('version') == pub.get('version'):
+        print(f"Candidate version {cand['version']} matches published version. Nothing to release.")
+        return False
+
     version = cand['version']
     print(f"Releasing version {version}...")
 
@@ -97,7 +101,7 @@ def release():
         'date': datetime.datetime.now().isoformat(),
         'notes': 'success' # Set success
     }
-    data['candidate'] = {'version': '', 'commit': '', 'date': '', 'notes': ''}
+    # REMOVED: data['candidate'] = {'version': '', 'commit': '', 'date': '', 'notes': ''}
 
     with open(RELEASE_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)

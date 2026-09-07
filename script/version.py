@@ -58,8 +58,7 @@ def bump_version(is_rc=True, commit_msg=""):
         data['candidate']['notes'] = "pending"
     else:
         data['published']['version'] = new_version
-        # Reset candidate
-        data['candidate'] = {'version': '', 'commit': '', 'date': '', 'notes': ''}
+        # NOTE: Not resetting candidate. candidate stays at the version it was at, which is now equal to published.
 
     with open(RELEASE_FILE, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=2)

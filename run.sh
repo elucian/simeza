@@ -82,9 +82,11 @@ elif [ "$CMD" == "update" ]; then
     fi
 
     VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])" 2>/dev/null || echo "unknown")
+    CANDIDATE=$(python -c "import json; print(json.load(open('release/releases.json'))['candidate']['version'])" 2>/dev/null || echo "unknown")
     echo "----------------------------------------"
     echo "Workspace is synchronized and ready!"
-    echo "Current published version: v$VERSION"
+    echo "Published version: $VERSION"
+    echo "Candidate version: $CANDIDATE"
     echo "Head commit: $(git log -1 --oneline)"
     echo "----------------------------------------"
 
@@ -127,11 +129,14 @@ elif [ "$CMD" == "build" ]; then
 
 elif [ "$CMD" == "publish" ]; then
     echo "Publishing..."
-    # Get version before it gets cleared by release.py
+    # Check if a candidate exists and is different from published
     CANDIDATE_VERSION=$(python -c "import json; print(json.load(open('release/releases.json')).get('candidate', {}).get('version', ''))" 2>/dev/null)
+    PUBLISHED_VERSION=$(python -c "import json; print(json.load(open('release/releases.json')).get('published', {}).get('version', ''))" 2>/dev/null)
     
     if [ -z "$CANDIDATE_VERSION" ]; then
         echo "No release candidate found. Nothing to release."
+    elif [ "$CANDIDATE_VERSION" == "$PUBLISHED_VERSION" ]; then
+        echo "Candidate version $CANDIDATE_VERSION matches published version. Nothing to release."
     else
         python script/release.py
         
