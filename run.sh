@@ -127,18 +127,18 @@ elif [ "$CMD" == "build" ]; then
 
 elif [ "$CMD" == "publish" ]; then
     echo "Publishing..."
-    python script/release.py
-    
-    CANDIDATE_VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['candidate']['version'])")
+    # Get version before it gets cleared by release.py
+    CANDIDATE_VERSION=$(python -c "import json; print(json.load(open('release/releases.json')).get('candidate', {}).get('version', ''))" 2>/dev/null)
     
     if [ -z "$CANDIDATE_VERSION" ]; then
-        echo "No release candidate found. Nothing to commit or push."
+        echo "No release candidate found. Nothing to release."
     else
-        git add .
-        # Ensure version has 'v' prefix once
+        python script/release.py
+        
         VERSION_RAW=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])")
         VERSION="v${VERSION_RAW#v}"
         
+        git add .
         git commit -m "Publish release: $VERSION"
         git tag "$VERSION"
         git push origin main "$VERSION"
