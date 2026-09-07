@@ -273,6 +273,8 @@ def build(target_lang=None):
                     try: gallery_data.append(json.load(f))
                     except: pass
     summary = []
+
+    sitemap_pages = []
     for lang in active_languages:
         lang_dir = os.path.join(LOCAL_DIR, lang)
         os.makedirs(lang_dir, exist_ok=True)
@@ -325,11 +327,15 @@ def build(target_lang=None):
             final_html = final_html.replace('</body>', protection + '</body>')
             with open(os.path.join(lang_dir, output_filename), 'w', encoding='utf-8') as f:
                 f.write(final_html)
+            sitemap_pages.append(f"{lang}/{output_filename}")
             if file == 'index.md' and lang == 'en':
                 with open(os.path.join(LOCAL_DIR, 'index.html'), 'w', encoding='utf-8') as f:
                     f.write(final_html)
+                sitemap_pages.append("index.html")
             pages_count += 1
         summary.append(f'| {lang.upper()} |  | {pages_count} pages | ✅ Ready |')
+    if not target_lang:
+        generate_sitemap(sitemap_pages)
     if os.path.exists(os.path.join(ROOT, 'CNAME')):
         shutil.copy(os.path.join(ROOT, 'CNAME'), os.path.join(LOCAL_DIR, 'CNAME'))
     with open(os.path.join(LOCAL_DIR, '.nojekyll'), 'w') as f:
@@ -341,6 +347,30 @@ def build(target_lang=None):
     summary.append(f'\n**Build completed in {duration:.2f} seconds.**')
     if not target_lang:
         write_summary('\n'.join(summary))
+def generate_sitemap(pages, domain="https://simeza.art"):
+    sitemap_content = ['<?xml version="1.0" encoding="UTF-8"?>',
+                       '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    
+    # Sort pages for consistent output
+    for page in sorted(pages):
+        url = f"{domain}/{page}"
+        # Remove trailing index.html for better SEO
+        if url.endswith('/index.html'):
+            url = url[:-11]
+            if not url.endswith('/'):
+                url += '/'
+        
+        sitemap_content.append(f'  <url>')
+        sitemap_content.append(f'    <loc>{url}</loc>')
+        sitemap_content.append(f'    <lastmod>{time.strftime("%Y-%m-%d")}</lastmod>')
+        sitemap_content.append(f'  </url>')
+        
+    sitemap_content.append('</urlset>')
+    
+    with open(os.path.join(LOCAL_DIR, 'sitemap.xml'), 'w', encoding='utf-8') as f:
+        f.write('\n'.join(sitemap_content))
+
+
 
 def write_summary(summary_text):
     if 'GITHUB_STEP_SUMMARY' in os.environ:
