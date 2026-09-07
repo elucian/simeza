@@ -145,10 +145,6 @@ body:has(.content-gallery-wrapper),
   font-size: 1.4rem;
 }
 
-.content p:first-of-type {
-  margin: 2px 2px 8px 8px;
-  font-size: 1rem;
-}
 /* 4. Header, Nav, Mobile Menu */
 .header-app {
   flex: 0 0 auto;
@@ -614,7 +610,7 @@ h1 {
 #content > h1 + p {
   font-weight: 600;
   text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 h2 {
