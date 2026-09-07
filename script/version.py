@@ -10,22 +10,23 @@ RELEASE_LOG = os.path.join(os.getcwd(), 'release', 'release.log')
 def get_next_version(current_version, is_rc=True):
     # Basic semver increment: 0.1.0 -> 0.1.1
     # If is_rc: 0.1.0 -> 0.1.1-rc.1, 0.1.1-rc.1 -> 0.1.1-rc.2
-    parts = current_version.split('-')[0].split('.')
+    v_stripped = current_version.lstrip('v')
+    parts = v_stripped.split('-')[0].split('.')
     major, minor, patch = map(int, parts)
     
     if is_rc:
-        if '-' in current_version:
+        if '-' in v_stripped:
             # Already an RC, increment only the RC number
             base = f"{major}.{minor}.{patch}"
-            rc_part = current_version.split('-')[1]
+            rc_part = v_stripped.split('-')[1]
             rc_num = int(rc_part.replace('rc.', ''))
-            return f"{base}-rc.{rc_num + 1}"
+            return f"v{base}-rc.{rc_num + 1}"
         else:
             # Promote to new RC (next patch)
-            return f"{major}.{minor}.{patch+1}-rc.1"
+            return f"v{major}.{minor}.{patch+1}-rc.1"
     else:
         # Promote: 0.1.1-rc.2 -> 0.1.1
-        return f"{major}.{minor}.{patch}"
+        return f"v{major}.{minor}.{patch}"
 
 def log_event(message):
     with open(RELEASE_LOG, 'a', encoding='utf-8') as f:

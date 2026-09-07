@@ -17,7 +17,7 @@ def log_event(message):
         timestamp = datetime.datetime.now().isoformat()
         f.write(f"[{timestamp}] {message}\n")
 
-def generate_release_notes(version, prev_commit, curr_commit):
+def generate_release_notes(version, prev_commit, curr_commit, version_for_file=None):
     """Automatically generate release notes markdown file based on git history."""
     try:
         if prev_commit:
@@ -49,7 +49,9 @@ def generate_release_notes(version, prev_commit, curr_commit):
 ```
 """
     os.makedirs(RELEASE_DIR, exist_ok=True)
-    safe_version = version.replace('/', '-').replace('\\', '-')
+    if version_for_file is None:
+        version_for_file = version
+    safe_version = version_for_file.replace('/', '-').replace('\\', '-')
     notes_filename = f"notes-{safe_version}.md"
     notes_filepath = os.path.join(RELEASE_DIR, notes_filename)
 
@@ -84,7 +86,9 @@ def release():
         curr_commit = cand.get('commit', '')
 
     # Automatically generate release notes file
-    notes_path = generate_release_notes(version, prev_commit, curr_commit)
+    # Ensure version doesn't have 'v' for filename compatibility with workflow
+    version_for_file = version.lstrip('v')
+    notes_path = generate_release_notes(version, prev_commit, curr_commit, version_for_file)
     
     # Promote
     data['published'] = {

@@ -135,11 +135,14 @@ elif [ "$CMD" == "publish" ]; then
         echo "No release candidate found. Nothing to commit or push."
     else
         git add .
-        VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])")
-        git commit -m "Publish release: v$VERSION"
-        git tag "v$VERSION"
-        git push origin main "v$VERSION"
-        echo "Published v$VERSION."
+        # Ensure version has 'v' prefix once
+        VERSION_RAW=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])")
+        VERSION="v${VERSION_RAW#v}"
+        
+        git commit -m "Publish release: $VERSION"
+        git tag "$VERSION"
+        git push origin main "$VERSION"
+        echo "Published $VERSION."
     fi
 
 elif [ "$CMD" == "release" ]; then
