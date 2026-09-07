@@ -1,14 +1,14 @@
 {
   "published": {
-    "version": "0.1.1-rc.151",
-    "commit": "5506cf72e01ad6477b79572e1f8450398bf9ba41",
-    "date": "2026-09-07T10:38:37.620906",
+    "version": "0.1.1-rc.152",
+    "commit": "8820472f67f4fe98958d4ba158bfca4c8efa5540",
+    "date": "2026-09-07T10:42:58.042610",
     "notes": "success"
   },
   "candidate": {
-    "version": "0.1.1-rc.152",
-    "commit": "New release - for mobile",
-    "date": "2026-09-07T10:42:34.565063",
-    "notes": "pending"
+    "version": "",
+    "commit": "",
+    "date": "",
+    "notes": ""
   }
 }
