@@ -254,10 +254,13 @@ function initFullscreenViewer() {
     const viewer = document.createElement('div');
     viewer.id = 'imageFullscreenViewer';
     viewer.innerHTML = `
+    <div id="viewerSoundAction">
+        <button id="fullscreenSoundBtn" class="fullscreen-btn"><i class="bi bi-volume-up-fill"></i></button>
+    </div>
     <div id="viewerActions">
-    <button id="fullscreenLoopBtn" class="fullscreen-btn"><i class="bi bi-arrow-repeat"></i></button>
-    <button id="fullscreenCloseBtn" class="fullscreen-btn">&times;</button>
-
+        <button id="fullscreenRotateBtn" class="fullscreen-btn"><i class="bi bi-arrow-repeat"></i></button>
+        <button id="fullscreenPlayBtn" class="fullscreen-btn"><i class="bi bi-play-fill"></i></button>
+        <button id="fullscreenCloseBtn" class="fullscreen-btn">&times;</button>
     </div>
     <img src="" alt="Fullscreen Image">
     `;
@@ -265,13 +268,55 @@ function initFullscreenViewer() {
 
     const viewerImg = viewer.querySelector('img');
     const closeBtn = document.getElementById('fullscreenCloseBtn');
-    const loopBtn = document.getElementById('fullscreenLoopBtn');
+    const playBtn = document.getElementById('fullscreenPlayBtn');
+    const rotateBtn = document.getElementById('fullscreenRotateBtn');
+    const soundBtn = document.getElementById('fullscreenSoundBtn');
+    const soundIcon = soundBtn.querySelector('i');
 
-    let filteredPanels = [];
-    let currentIndex = 0;
-    let loopTimeout = null;
     let isLooping = false;
-    let isPaused = false;
+
+    // Rotation variables removed in favor of CSS class toggling
+
+    // Audio setup
+    const viewerAudio = new Audio();
+    const musicTracks = [
+        '/content/music/3m-Oriental-JapaneseFolk-120bpm-GMajor.mp3',
+        '/content/music/3m-Jazz-CoolJazz-120bpm-CMajor.mp3',
+        '/content/music/3m-Blues-ChicagoBlues-120bpm-FMajor.mp3',
+        '/content/music/13m-Ambient-NatureSoundscape-120bpm-GMajor.mp3',
+        '/content/music/3m-Western-Bluegrass-120bpm-EMajor%20(1).mp3',
+        '/content/music/3m-Spanish-Guitar-120bpm-CMajor.mp3',
+        '/content/music/3m-Western-Bluegrass-120bpm-EMajor.mp3'
+    ];
+    let currentTrackIndex = -1;
+
+    function updateSoundUI() {
+        const enabled = getSettings().musicEnabled;
+        soundIcon.className = enabled ? 'bi bi-volume-up-fill' : 'bi bi-volume-mute-fill';
+    }
+    updateSoundUI();
+
+    soundBtn.addEventListener('click', () => {
+        const settings = getSettings();
+        settings.musicEnabled = !settings.musicEnabled;
+        localStorage.setItem("simezaSettings", JSON.stringify(settings));
+        
+        // Sync with settings form if it exists
+        const musicRadio = document.querySelector(`input[name="musicEnabled"][value="${settings.musicEnabled}"]`);
+        if (musicRadio) musicRadio.checked = true;
+
+        updateSoundUI();
+        
+        if (settings.musicEnabled) {
+            // Turning music ON: start playback immediately
+            if (viewerAudio.paused) playNextTrack();
+        } else {
+            // Turning music OFF: stop everything music-related
+            clearTimeout(viewerMusicTimeout);
+            viewerAudio.pause();
+            viewerAudio.currentTime = 0;
+        }
+    });
 
     function closeViewer() {
         stopLoop();
@@ -295,29 +340,71 @@ function initFullscreenViewer() {
     function showNext() { showImage(currentIndex + 1); }
     function showPrev() { showImage(currentIndex - 1); }
 
-    function startLoop() {
+    let filteredPanels = [];
+    let currentIndex = 0;
+    let viewerMusicTimeout = null;
+    let viewerSlideTimeout = null;
+
+    function playNextTrack() {
+        if (!getSettings().musicEnabled) return;
+        
+        let nextTrack = Math.floor(Math.random() * musicTracks.length);
+        if (musicTracks.length > 1) {
+            while (nextTrack === currentTrackIndex) {
+                nextTrack = Math.floor(Math.random() * musicTracks.length);
+            }
+        }
+        currentTrackIndex = nextTrack;
+        viewerAudio.src = musicTracks[currentTrackIndex];
+        viewerAudio.play().catch(() => {});
+    }
+
+    viewerAudio.addEventListener('ended', () => {
+        clearTimeout(viewerMusicTimeout);
+        viewerMusicTimeout = setTimeout(playNextTrack, 3000);
+    });
+
+    function advanceSlide() {
         if (!isLooping) return;
-        loopBtn.innerHTML = '<i class="bi bi-stop-fill"></i>';
+        showNext();
         const settings = getSettings();
-        loopTimeout = setTimeout(() => {
-            showNext();
-            startLoop();
-        }, settings.loopDelay * 1000);
+        viewerSlideTimeout = setTimeout(advanceSlide, (parseInt(settings.loopDelay, 10) || 3) * 1000);
+    }
+
+    function startLoop() {
+        if (isLooping) return;
+        isLooping = true;
+        playBtn.querySelector('i').className = 'bi bi-stop-fill';
+        
+        if (getSettings().musicEnabled && viewerAudio.paused) {
+            playNextTrack();
+        }
+        
+        const settings = getSettings();
+        viewerSlideTimeout = setTimeout(advanceSlide, (parseInt(settings.loopDelay, 10) || 3) * 1000);
     }
 
     function stopLoop() {
-        clearTimeout(loopTimeout);
-        loopBtn.innerHTML = '<i class="bi bi-arrow-repeat"></i>';
+        isLooping = false;
+        clearTimeout(viewerSlideTimeout);
+        clearTimeout(viewerMusicTimeout);
+        viewerAudio.pause();
+        viewerAudio.currentTime = 0;
+        playBtn.querySelector('i').className = 'bi bi-play-fill';
     }
 
-    loopBtn.addEventListener('click', () => {
-        isLooping = !isLooping;
+    playBtn.addEventListener('click', () => {
         if (isLooping) {
-            startLoop();
-        } else {
             stopLoop();
+        } else {
+            startLoop();
         }
     });
+
+    rotateBtn.addEventListener('click', () => {
+        viewerImg.classList.toggle('rotated');
+    });
+
 
 
 window.shareGallery = function() {
@@ -363,9 +450,10 @@ window.applyRouteFilters = function() {
         const deltaX = e.changedTouches[0].clientX - startX;
         if (Math.abs(deltaX) > 50) {
             deltaX > 0 ? showPrev() : showNext();
+            
+            // If autoplay is on, turn it off immediately upon swipe
             if (isLooping) {
                 stopLoop();
-                startLoop(); // Reset timer
             }
         }
     });
@@ -379,14 +467,21 @@ window.applyRouteFilters = function() {
     });
 
     function updateRotation(imgElement) {
-        const isScreenPortrait = window.innerHeight >= window.innerWidth;
-        const isImgPortrait = (imgElement.naturalHeight || imgElement.height) >= (imgElement.naturalWidth || imgElement.width);
-
-        if ((isScreenPortrait && !isImgPortrait) || (!isScreenPortrait && isImgPortrait)) {
-            imgElement.classList.add('rotated');
-        } else {
+        if (!getSettings().autoRotation) {
             imgElement.classList.remove('rotated');
+        } else {
+            const isScreenPortrait = window.innerHeight >= window.innerWidth;
+            const isImgPortrait = (imgElement.naturalHeight || imgElement.height) >= (imgElement.naturalWidth || imgElement.width);
+            const shouldBeRotated = ((isScreenPortrait && !isImgPortrait) || (!isScreenPortrait && isImgPortrait));
+            
+            if (shouldBeRotated) {
+                imgElement.classList.add('rotated');
+            } else {
+                imgElement.classList.remove('rotated');
+            }
         }
+        // Ensure no inline transforms are interfering
+        imgElement.style.transform = '';
     }
 
     // Double tap/click handler

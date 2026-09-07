@@ -643,6 +643,14 @@ p {
   display: flex;
 }
 
+#viewerSoundAction {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  z-index: 100001;
+}
+
+
 #viewerActions {
   position: absolute;
   top: 16px;

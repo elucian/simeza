@@ -87,6 +87,22 @@
   -webkit-mask-image: url('/core/img/icons/soundwave.svg'); 
   mask-image: url('/core/img/icons/soundwave.svg'); 
 }
+.icon-play-fill,
+.bi-play-fill {
+  -webkit-mask-image: url('/core/img/icons/play-fill.svg');
+  mask-image: url('/core/img/icons/play-fill.svg');
+}
+.icon-volume-up-fill,
+.bi-volume-up-fill {
+  -webkit-mask-image: url('/core/img/icons/volume-up-fill.svg');
+  mask-image: url('/core/img/icons/volume-up-fill.svg');
+}
+.icon-volume-mute-fill,
+.bi-volume-mute-fill {
+  -webkit-mask-image: url('/core/img/icons/volume-mute-fill.svg');
+  mask-image: url('/core/img/icons/volume-mute-fill.svg');
+}
+
 .icon-broadcast, 
 .bi-broadcast { 
   -webkit-mask-image: url('/core/img/icons/broadcast.svg'); 
