@@ -26,15 +26,15 @@ SLUG_MAP = {
 
 def render_gallery_html(gallery_data, lang):
     t = {
-        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter':'Filter', 'Loop': 'Loop', 'Stop': 'Stop'},
-        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter':'Filtru', 'Loop': 'Redare', 'Stop': 'Oprește'},
-        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter', 'Loop': 'Schleife', 'Stop': 'Stopp'},
-        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro', 'Loop': 'Bucle', 'Stop': 'Detener'},
-        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre', 'Loop': 'Boucle', 'Stop': 'Arrêt'},
-        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр', 'Loop': 'Цикл', 'Stop': 'Стоп'},
-        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Parar'},
-        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő', 'Loop': 'Hurok', 'Stop': 'Állj'},
-        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Stop'}
+        'en': {'Name': 'Name', 'Author': 'Author', 'Year': 'Year', 'Status': 'Status', 'Desc': 'Description', 'Close': 'Close', 'Reset': 'Reset', 'Filter':'Filter', 'Loop': 'Loop', 'Stop': 'Stop', 'Download': 'Download'},
+        'ro': {'Name': 'Nume', 'Author': 'Autor', 'Year': 'An', 'Status': 'Stare', 'Desc': 'Descriere', 'Close': 'Închide', 'Reset': 'Resetează', 'Filter':'Filtru', 'Loop': 'Redare', 'Stop': 'Oprește', 'Download': 'Descărcare'},
+        'de': {'Name': 'Name', 'Author': 'Autor', 'Year': 'Jahr', 'Status': 'Status', 'Desc': 'Beschreibung', 'Close': 'Schließen', 'Reset': 'Zurücksetzen', 'Filter': 'Filter', 'Loop': 'Schleife', 'Stop': 'Stopp', 'Download': 'Herunterladen'},
+        'es': {'Name': 'Nombre', 'Author': 'Autor', 'Year': 'Año', 'Status': 'Estado', 'Desc': 'Descripción', 'Close': 'Cerrar', 'Reset': 'Reiniciar', 'Filter': 'Filtro', 'Loop': 'Bucle', 'Stop': 'Detener', 'Download': 'Descargar'},
+        'fr': {'Name': 'Nom', 'Author': 'Auteur', 'Year': 'Année', 'Status': 'Statut', 'Desc': 'Description', 'Close': 'Fermer', 'Reset': 'Réinitialiser', 'Filter': 'Filtre', 'Loop': 'Boucle', 'Stop': 'Arrêt', 'Download': 'Télécharger'},
+        'ru': {'Name': 'Имя', 'Author': 'Автор', 'Year': 'Год', 'Status': 'Статус', 'Desc': 'Описание', 'Close': 'Закрыть', 'Reset': 'Сброс', 'Filter': 'Фильтр', 'Loop': 'Цикл', 'Stop': 'Стоп', 'Download': 'Скачать'},
+        'pt': {'Name': 'Nome', 'Author': 'Autor', 'Year': 'Ano', 'Status': 'Status', 'Desc': 'Descrição', 'Close': 'Fechar', 'Reset': 'Redefinir', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Parar', 'Download': 'Baixar'},
+        'hu': {'Name': 'Név', 'Author': 'Szerző', 'Year': 'Év', 'Status': 'Állapot', 'Desc': 'Leírás', 'Close': 'Bezár', 'Reset': 'Alaphelyzet', 'Filter': 'Szűrő', 'Loop': 'Hurok', 'Stop': 'Állj', 'Download': 'Letöltés'},
+        'it': {'Name': 'Nome', 'Author': 'Autore', 'Year': 'Anno', 'Status': 'Stato', 'Desc': 'Descrizione', 'Close': 'Chiudi', 'Reset': 'Ripristina', 'Filter': 'Filtro', 'Loop': 'Loop', 'Stop': 'Stop', 'Download': 'Scarica'}
     }
     trans = t.get(lang, t['en'])
     filter_data = {}
@@ -59,7 +59,7 @@ def render_gallery_html(gallery_data, lang):
         '      <div class="gallery-slider-field gallery-slider-description"><span>Description</span><p id="sliderDescription"></p></div>',
         '      <div class="gallery-slider-actions">',
         f'        <button type="button" id="sliderLoopBtn" class="gallery-slider-action" data-loop-text="{trans["Loop"]}" data-stop-text="{trans["Stop"]}"><i class="bi bi-arrow-repeat"></i><span>{trans["Loop"]}</span></button>',
-        '        <a id="sliderDownloadBtn" class="gallery-slider-action gallery-slider-download" href="#" download><i class="bi bi-download"></i><span>Download</span></a>',
+        f'        <a id="sliderDownloadBtn" class="gallery-slider-action gallery-slider-download" href="#" download><i class="bi bi-download"></i><span>{trans["Download"]}</span></a>',
         '      </div>',
         '    </div>',
         '  </section>',
@@ -150,6 +150,7 @@ def render_gallery_html(gallery_data, lang):
         f'          <button id="galleryModalLoopBtn" class="gallery-modal-btn-loop" data-loop-text="{trans["Loop"]}" data-stop-text="{trans["Stop"]}">',
         '            <i class="bi bi-arrow-repeat"></i> <span></span>',
         '          </button>',
+        f'          <a id="galleryModalDownloadBtn" class="gallery-modal-btn-download" href="#" download><i class="bi bi-download"></i><span>{trans["Download"]}</span></a>',
         f'          <button id="galleryModalCloseBtn" class="gallery-modal-btn-close">{trans["Close"]}</button>',
         '        </div>',
         '      </div>',

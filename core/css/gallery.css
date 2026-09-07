@@ -674,6 +674,37 @@
   border-color: var(--accent-color);
 }
 
+.gallery-modal-btn-download {
+  flex: 0 0 calc(50% - 6px);
+  width: calc(50% - 6px);
+  min-width: 0;
+  background: var(--bg-main);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 0.9rem;
+  border-radius: 6px;
+  height: 40px !important;
+  text-decoration: none;
+}
+
+.gallery-slider-download.is-protected,
+.gallery-modal-btn-download.is-protected {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+.gallery-slider-download.is-archived,
+.gallery-modal-btn-download.is-archived {
+  opacity: 0.3;
+  pointer-events: none;
+  cursor: default;
+}
+
+
 /* Filter Modal */
 .gallery-filter-modal {
   width: min(400px, 90vw);

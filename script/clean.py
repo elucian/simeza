@@ -10,8 +10,47 @@ from translate import LANGUAGES, SLUG_MAP
 PAGES_DIR = 'pages'
 CACHE_DIR = 'cache'
 LOCAL_DIR = 'local'
+RELEASE_DIR = 'release'
+RELEASE_LOG = os.path.join(RELEASE_DIR, 'release.log')
+
+def clean_logs():
+    """Keep release.log and remove legacy releaseN.log files."""
+    if not os.path.exists(RELEASE_DIR):
+        return
+
+    print("Cleaning up rotated log files...")
+    
+    # Remove all release*.log files except release.log
+    for filename in os.listdir(RELEASE_DIR):
+        if filename.startswith("release") and filename.endswith(".log") and filename != "release.log":
+            filepath = os.path.join(RELEASE_DIR, filename)
+            print(f"Removing {filepath}")
+            os.remove(filepath)
+
+def clean_notes():
+    """Keep only the latest release note file."""
+    if not os.path.exists(RELEASE_DIR):
+        return
+        
+    notes = [f for f in os.listdir(RELEASE_DIR) if f.startswith("notes-") and f.endswith(".md")]
+    if len(notes) <= 1:
+        return
+        
+    # Sort notes based on filename (assuming timestamps or versions make them sortable)
+    # If they are named notes-<version>.md, sorting might not be chronological.
+    # We can sort by modification time.
+    notes.sort(key=lambda f: os.path.getmtime(os.path.join(RELEASE_DIR, f)), reverse=True)
+    
+    # Keep the first (newest)
+    to_remove = notes[1:]
+    for note in to_remove:
+        print(f"Removing old release note: {note}")
+        os.remove(os.path.join(RELEASE_DIR, note))
 
 def clean(target=None):
+    clean_logs()
+    clean_notes()
+    
     # 1. Clean __pycache__ everywhere
     for root, dirs, files in os.walk('.'):
         if '__pycache__' in dirs:

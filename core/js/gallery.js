@@ -182,6 +182,39 @@ onDOMReady(() => {
   const sliderDescription = document.getElementById('sliderDescription');
   const sliderLoopButton = document.getElementById('sliderLoopBtn');
   const sliderDownloadButton = document.getElementById('sliderDownloadBtn');
+  const modalDownloadButton = document.getElementById('galleryModalDownloadBtn');
+
+
+  const updateDownloadButtonState = (btn, status, imageSrc) => {
+    if (!btn) return;
+    
+    // Reset state
+    btn.classList.remove('is-protected', 'is-archived', 'is-available');
+    btn.removeAttribute('download');
+    btn.href = '#';
+    btn.style.cursor = '';
+    btn.onclick = null;
+
+    const normalizedStatus = (status || '').toLowerCase();
+
+    if (normalizedStatus === 'available') {
+        btn.classList.add('is-available');
+        btn.href = imageSrc || '#';
+        btn.download = (imageSrc || '').split('/').pop() || 'artwork';
+    } else if (normalizedStatus === 'protected') {
+        btn.classList.add('is-protected');
+        btn.onclick = (e) => { e.preventDefault(); return false; };
+    } else if (normalizedStatus === 'archived') {
+        btn.classList.add('is-archived');
+        btn.onclick = (e) => { e.preventDefault(); return false; };
+    } else {
+        // Default to available-like behavior for unknown statuses
+        btn.classList.add('is-available');
+        btn.href = imageSrc || '#';
+        btn.download = (imageSrc || '').split('/').pop() || 'artwork';
+    }
+  };
+
   const modal = document.getElementById('galleryModal');
   const modalImg = document.getElementById('modalImg');
   const modalPicName = document.getElementById('modalPicName');
@@ -270,10 +303,7 @@ onDOMReady(() => {
     sliderYear.textContent = panel.dataset.year || '';
     sliderStatus.textContent = panel.dataset.status || '';
     sliderDescription.textContent = panel.dataset.desc || '';
-    if (sliderDownloadButton) {
-      sliderDownloadButton.href = panel.dataset.image || '#';
-      sliderDownloadButton.download = (panel.dataset.image || '').split('/').pop() || 'artwork';
-    }
+    updateDownloadButtonState(sliderDownloadButton, panel.dataset.status, panel.dataset.image);
     wrappers.forEach(wrapper => wrapper.querySelectorAll('.panel').forEach(item => item.classList.toggle('is-selected', item === panel)));
   };
 
@@ -337,6 +367,8 @@ onDOMReady(() => {
     if (modalTopic) modalTopic.value = panel.dataset.topic;
     modalDesc.value = panel.dataset.desc;
     
+    updateDownloadButtonState(modalDownloadButton, panel.dataset.status, panel.dataset.image);
+
     // Set orientation classes
     const img = new Image();
     img.onload = () => {
