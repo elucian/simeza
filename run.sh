@@ -127,17 +127,18 @@ elif [ "$CMD" == "build" ]; then
 
 elif [ "$CMD" == "publish" ]; then
     echo "Publishing..."
-    # 1. Promote candidate to published and build
-    # release.py internally handles: promotion, notes generation, build, status update
     python script/release.py
-    
-    # 2. Commit, Tag and push
-    git add .
-    VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])")
-    git commit -m "Publish release: v$VERSION"
-    git tag "v$VERSION"
-    git push origin main --tags
-    echo "Published v$VERSION."
+    CANDIDATE_VERSION=$(python -c "import json; print(json.load(open("release/releases.json"))["candidate"]["version"])")
+    if [ -z "$CANDIDATE_VERSION" ]; then
+        echo "No release candidate found. Nothing to commit or push."
+    else
+        git add .
+        VERSION=$(python -c "import json; print(json.load(open("release/releases.json"))["published"]["version"])")
+        git commit -m "Publish release: v$VERSION"
+        git tag "v$VERSION"
+        git push origin main "v$VERSION"
+        echo "Published v$VERSION."
+    fi
 
 elif [ "$CMD" == "release" ]; then
     echo "Running release check..."

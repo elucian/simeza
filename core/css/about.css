@@ -53,6 +53,7 @@
 .about-contact-panel a {
   color: var(--accent-color);
   font-weight: 600;
+  margin-bottom:8px;
 }
 
 .about-portrait-panels {
@@ -79,10 +80,10 @@
   border-radius: 5px;
 }
 
-.about-portrait-panel h3 {
-  margin: 12px 0 5px;
+.about-portrait-panel h3, .about-content-panel h3 {
+  margin: 8px 0 5px;
   color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 .about-portrait-panel p {

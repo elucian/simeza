@@ -70,8 +70,8 @@ def release():
     # 1. Promote candidate to published
     cand = data.get('candidate', {})
     if not cand.get('version'):
-        print("No candidate found to release.")
-        sys.exit(0)
+        print("No candidate found to release. Nothing to do.")
+        return False
 
     pub = data.get('published', {})
     version = cand['version']
@@ -105,6 +105,11 @@ def release():
     build.build()
 
     print("Release completed successfully.")
+    return True
 
 if __name__ == '__main__':
-    release()
+    if release():
+        sys.exit(0)
+    else:
+        sys.exit(0)
+
