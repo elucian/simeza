@@ -109,23 +109,22 @@ elif [ "$CMD" == "build" ]; then
         exit 0
     fi
 
-    echo "Building candidate..."
+    echo "Building locally..."
     load_env
-    # 1. Bump version and commit changes
-    python script/version.py rc "Build candidate: $(date)"
-    git add .
-    git commit -m "Build candidate: $(date)"
-    
-    # 2. Build
     python script/build.py
-    
-    # 3. Update Status
-    if [ $? -eq 0 ]; then
-        python -c "import json; r=json.load(open('release/releases.json')); r['candidate']['notes']='success'; json.dump(r, open('release/releases.json', 'w'), indent=2)"
-    else
-        python -c "import json; r=json.load(open('release/releases.json')); r['candidate']['notes']='failure'; json.dump(r, open('release/releases.json', 'w'), indent=2)"
-    fi
     echo "Build completed."
+
+elif [ "$CMD" == "release" ]; then
+    echo "Creating new release candidate..."
+    load_env
+    python script/version.py rc "Build candidate: $(date)"
+    echo "Release candidate created."
+
+elif [ "$CMD" == "commit" ]; then
+    MSG="${2:-Commit: $(date)}"
+    git add .
+    git commit -m "$MSG"
+    echo "Changes committed locally."
 
 elif [ "$CMD" == "publish" ]; then
     echo "Publishing..."
@@ -149,10 +148,6 @@ elif [ "$CMD" == "publish" ]; then
         git push origin main "$VERSION"
         echo "Published $VERSION."
     fi
-
-elif [ "$CMD" == "release" ]; then
-    echo "Running release check..."
-    python script/release.py
 
 elif [ "$CMD" == "clean" ]; then
     python script/clean.py
