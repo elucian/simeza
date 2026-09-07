@@ -1,14 +1,14 @@
 {
   "published": {
-    "version": "0.1.1-rc.132",
-    "commit": "1f53179e5e8a7eb06f446d351a5238a8296ad7a1",
-    "date": "2026-09-07T04:11:44.193225",
+    "version": "0.1.1-rc.136",
+    "commit": "f241dbe74f4ceb1ef06dcf6bdda8a75fb9222bd4",
+    "date": "2026-09-07T06:10:06.597575",
     "notes": "success"
   },
   "candidate": {
-    "version": "0.1.1-rc.136",
-    "commit": "Improve About page",
-    "date": "2026-09-07T06:09:29.447594",
+    "version": "0.1.1-rc.137",
+    "commit": "fix errors in publish\n",
+    "date": "2026-09-07T06:11:08.694605",
     "notes": "pending"
   }
 }
