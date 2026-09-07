@@ -467,19 +467,27 @@ window.applyRouteFilters = function() {
     });
 
     function updateRotation(imgElement) {
+        // Clear existing rotation immediately to ensure no persistence
+        imgElement.classList.remove('rotated');
+        
         if (!getSettings().autoRotation) {
-            imgElement.classList.remove('rotated');
-        } else {
-            const isScreenPortrait = window.innerHeight >= window.innerWidth;
-            const isImgPortrait = (imgElement.naturalHeight || imgElement.height) >= (imgElement.naturalWidth || imgElement.width);
-            const shouldBeRotated = ((isScreenPortrait && !isImgPortrait) || (!isScreenPortrait && isImgPortrait));
-            
-            if (shouldBeRotated) {
-                imgElement.classList.add('rotated');
-            } else {
-                imgElement.classList.remove('rotated');
-            }
+            return;
         }
+
+        // Wait 1 second before assessing/applying rotation
+        setTimeout(() => {
+            // Re-check settings (might have changed or we just want to ensure we are still in autorotation)
+            if (!getSettings().autoRotation) return;
+
+            const isImgPortrait = (imgElement.naturalHeight || imgElement.height) > (imgElement.naturalWidth || imgElement.width);
+            
+            // "If image size is more tall then wide show it in portrait mode." (i.e., isImgPortrait -> no rotation)
+            // "Otherwise rotate if rotation is enabled then show the picture." (i.e., Landscape -> rotate)
+            if (!isImgPortrait) {
+                imgElement.classList.add('rotated');
+            }
+        }, 1000);
+
         // Ensure no inline transforms are interfering
         imgElement.style.transform = '';
     }
