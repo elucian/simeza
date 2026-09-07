@@ -6,9 +6,9 @@
     "notes": "success"
   },
   "candidate": {
-    "version": "",
-    "commit": "",
-    "date": "",
-    "notes": ""
+    "version": "0.1.1-rc.127",
+    "commit": "beta release 1, with home button",
+    "date": "2026-09-07T02:51:03.475247",
+    "notes": "pending"
   }
 }

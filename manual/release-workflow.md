@@ -20,11 +20,13 @@ The release process relies on a two-tier pipeline managed locally via `./run.sh`
   2.  Automated generation of `release/notes-<version>.md` (commits + file diffs).
   3.  Entry in `release/release.log`.
   4.  Git tagging (`v<version>`) and push to `main`.
+  5.  GitHub Actions deploys GitHub Pages and creates the matching GitHub Release from the generated notes.
 
 ## 3. CI/CD Integration (`.github/workflows/release.yml`)
 
 - **`build-candidate` Job**: Triggered on `push`. Validates the build without deployment.
-- **`publish-release` Job**: Triggered by `Publish release:` commit messages, `v*` tags, or workflow dispatch. Builds and deploys to GitHub Pages.
+- **`publish-release` Job**: Triggered by `Publish release:` commit messages, `v*` tags, or workflow dispatch with `publish` enabled. Builds and deploys to GitHub Pages.
+- **GitHub Release**: A tag run creates `v<version>` as a GitHub Release. Re-running the workflow is idempotent when that release already exists.
 
 ## 4. Command Reference
 
