@@ -20,7 +20,8 @@
   --btn-inactive-icon: #171d27;
   --panel-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
   --text-muted:  #1e577f;
-  --link-color: 
+  --link-color: #2d3ec0;
+  --card-bg:  #cfd0db;
 }
 
 
@@ -41,6 +42,7 @@
   --panel-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
   --text-muted:  #afe5e2f7;
   --link-color:  #6070ea;
+  --card-bg:  #434554;
 }
 
 
