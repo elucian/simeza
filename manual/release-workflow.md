@@ -31,7 +31,7 @@ source ./run.sh setup
 ./run.sh publish
 ```
 
-The last command pushes `main` and a `v<version>` tag. That push starts GitHub Actions. Wait for the `Deploy Website` workflow to finish before treating the release as published.
+The last command pushes `main` and a `v<version>` tag. That push starts the GitHub Actions `release` workflow. Wait for the `Deploy Website` workflow to finish before treating the release as published.
 
 ## Commands
 
@@ -57,7 +57,7 @@ Creates a new release candidate and performs a full build for all supported lang
 
 It does the following:
 
-1. Increments the candidate version in `release/releases.json`.
+1. Increments the candidate version in `release/releases.json` to a new `v<x.y.z>-rc.<n>`.
 2. Records a `Build candidate: ...` commit with the version change and current working-tree changes.
 3. Builds all languages into `local/`.
 4. Marks the candidate build as `success` or `failure` in `release/releases.json`.
@@ -66,59 +66,42 @@ This command commits locally but does not push. If the build fails, do not publi
 
 ### `./run.sh publish`
 
-Publishes the current candidate. A candidate version must exist first.
+Publishes the current candidate. A candidate version must exist and differ from the published version.
 
 The command:
 
-1. Promotes `candidate.version` to `published.version`.
-2. Generates `release/notes-<version>.md` from Git history.
-3. Appends an entry to `release/release.log`.
-4. Runs the full production build.
-5. Creates a `Publish release: v<version>` commit.
-6. Creates the `v<version>` Git tag.
-7. Pushes `main` and the tag to `origin`.
+1. Checks if `candidate.version` != `published.version`.
+2. Promotes `candidate.version` to `published.version` in `release/releases.json` (without clearing `candidate`).
+3. Generates `release/notes-<version>.md` from Git history.
+4. Appends an entry to `release/release.log`.
+5. Runs the full production build.
+6. Creates a `Publish release: v<version>` commit.
+7. Creates the `v<version>` Git tag.
+8. Pushes `main` and the tag to `origin`.
 
-The tag starts the `publish-release` job in `.github/workflows/release.yml`. GitHub Actions checks out Git LFS assets, builds `local/`, deploys GitHub Pages, and creates the matching GitHub Release using the generated notes.
+The `v<version>` tag starts the `publish-release` job in `.github/workflows/release.yml`. GitHub Actions builds `local/`, deploys GitHub Pages, and creates the matching GitHub Release using the generated notes.
 
-### `./run.sh release`
+### `./run.sh update`
 
-Runs `script/release.py` directly. It promotes the candidate, generates notes, updates metadata, and builds locally, but it does not commit, tag, or push. It is a local promotion/build command, not a complete published release. For the normal release flow, use `./run.sh publish` instead.
+Syncs your local workspace with the remote.
 
-## Before Publishing
+1. Stashes uncommitted local changes.
+2. Pulls latest from `origin/main` and updates tags.
+3. Ensures Git LFS image assets are up to date.
+4. Pops stashed changes.
+5. Displays `Published version` and `Candidate version` to confirm synchronization status.
 
-Check these items before running `./run.sh publish`:
+## Lifecycle & Version State
 
-```bash
-git status
-git lfs fsck
-python -m py_compile script/build.py script/release.py
-git log -1 --oneline
-```
-
-- The candidate build must have completed successfully.
-- The intended changes must be in the candidate commit.
-- Git LFS must be installed and image objects must be available locally.
-- `origin` must point to the GitHub repository, with permission to push to `main` and create tags.
-- Do not run `./run.sh publish` twice for the same candidate. It creates a tag and a publish commit.
+- **Unpublished Candidate**: When you build, `candidate.version` increments, and `candidate.version != published.version`.
+- **Published/In-Sync**: When you publish, `published.version` updates to match `candidate.version`. The state `candidate.version == published.version` signifies the workspace is fully synchronized.
 
 ## GitHub Actions
 
-- **`build-candidate`** runs on ordinary pushes to `main` and validates a full build.
-- **`publish-release`** runs for a `Publish release:` commit, a `v*` tag, or a manual workflow dispatch with `publish` enabled.
-- Both jobs use `lfs: true` during checkout so image assets are real files rather than LFS pointer text.
-- A tag run deploys GitHub Pages and creates the corresponding GitHub Release. Re-running the workflow does not create a duplicate release if it already exists.
+- **`candidate.yml` (`Build Candidate`)**: Runs automatically on every push to the `main` branch. It validates the build of the current candidate. It ignores commits containing "Publish release:" to avoid conflicts with release deployments.
+- **`release.yml` (`Deploy Website`)**: Triggers **only** when a Git tag `v*` is pushed. It builds the production bundle, deploys to GitHub Pages, and creates the GitHub Release.
+- Both workflows use `lfs: true` during checkout.
 
-## Common Recovery Checks
-
-### The build cannot open or process images
-
-Run:
-
-```bash
-git lfs pull
-git lfs fsck
-./run.sh build en
-```
 
 If the GitHub workflow fails after the LFS conversion, confirm that both checkout steps in `.github/workflows/release.yml` contain `lfs: true`.
 

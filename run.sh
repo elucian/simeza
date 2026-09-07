@@ -144,7 +144,7 @@ elif [ "$CMD" == "publish" ]; then
         VERSION="v${VERSION_RAW#v}"
         
         git add .
-        git commit -m "Publish release: $VERSION [skip ci]"
+        git commit -m "Publish release: $VERSION"
         git tag "$VERSION"
         git push origin main "$VERSION"
         echo "Published $VERSION."

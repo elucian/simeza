@@ -51,7 +51,11 @@ To maintain high development velocity, avoid token waste, and keep context clean
    - The translation engine automatically creates/updates localized Markdown in `cache/` and updates localized navigation slugs.
    - Run `./run.sh build` to produce the multi-language production bundle.
 
-## 4. Cache & Workspace Cleanup (`script/clean.py`)
+## 4. GitHub Actions CI
+- **Candidate CI (`.github/workflows/candidate.yml`)**: Triggered on pushes to `main`. Validates candidate builds.
+- **Release CI (`.github/workflows/release.yml`)**: Triggered on release tag pushes (`v*`). Builds, deploys, and releases.
+
+## 5. Cache & Workspace Cleanup (`script/clean.py`)
 
 - **Orphan Cleaner**: Run without arguments to automatically prune cached translations when source files or slugs are removed.
 - **Targeted Purge**:
