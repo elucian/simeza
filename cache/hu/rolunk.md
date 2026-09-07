@@ -1,27 +1,42 @@
 ---
-title: Pavy Beloiu - Simeza Art névjegye
-description: Tudjon meg többet Pavy Beloiu mérnökről, vizuális művészről és szerzőről.
-keywords: pavy beloiu, simeza, művészet, galéria, művész, szerző
-source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
+title: A La Simeza-ról - Művészet, kultúra és többnyelvű oktatás
+description: Fedezze fel a La Simeza-t, egy független digitális galériát, amely Pavy Beloiu képzőművészeti alkotásait és Elucian Moise fotóit mutatja be, a művészet értékelésére és a vizuális nyelv elsajátítására tervezve.
+keywords: pavy beloiu, elucian moise, simeza, képzőművészet, fotográfia, vizuális nyelvtanulás, sage-code
+source_hash: d1bd8eada18ab602f973a1efb5cf561acf64aad257e8fc1b1de690e6c344deb3
 ---
-# Üdvözöljük a La Simeza-ban
+# A La Simeza-ról
 
-**privát galéria: festmények, rajzok és fotók.**
+**Egy privát digitális galéria, amely képzőművészetet, fotográfiát és vizuális nyelvtanulást mutat be.**
 
 <div class="about-intro-panels">
-	<section class="about-intro-panel">
-        <h1>A La Simeza-ról</h1>
-        <p>A La Simeza egy független kiadói platform, amelyet kurátori művészeti gyűjtemények bemutatására terveztek. A kiállítások teljes képernyőn tekinthetők meg mobileszközökön és asztali számítógépeken egyaránt. Elucian Moise fejlesztette, Pavy Beloiu által licencelt eredeti műalkotásokkal.</p>
-	</section>
-	<section class="about-intro-panel">
-        <h1>A tartalomról</h1>
-        <p>Alacsony felbontású festményeket mutatunk be, amelyeket a „pavybeloiu.com” írt alá, és szerzői jog védi őket. Emellett Pavy és Elucian által készített művészi fényképeket is tartalmazunk, amelyek a természetet, az építészetet és a képzőművészetet örökítik meg az Ön örömére.</p>
-	</section>
+  <section class="about-intro-panel">
+    <h2>A Platform</h2>
+    <p>A La Simeza egy független publikációs platform, amelyet arra terveztek, hogy kurált művészeti gyűjteményeket mutasson be reszponzív, teljes képernyős galériákban. A platform architektúráját Elucian Moise fejlesztette, eredeti festményeket és fotókat tartalmaz, amelyek Pavy Beloiu licencével rendelkeznek.</p>
+  </section>
+
+  <section class="about-intro-panel">
+    <h2>Tartalom és Vízió</h2>
+    <p>Eredeti festmények web-optimalizált reprodukcióit mutatjuk be, képzőművészeti és örökségvédelmi fotográfiák mellett. A La Simeza demonstratív tanulási platformként is szolgál, lehetővé téve a diákok számára, hogy többnyelvű címekkel és leírásokkal kísért műalkotásokat tanulmányozzanak.</p>
+  </section>
 </div>
 
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h3>Közösség és támogatás</h3>
-  <p>Reméljük, élvezi a látogatást. Ha igen, lépjen kapcsolatba velünk a közösségi csatornákon, tegyen fel kérdéseket, tegyen javaslatokat a fejlesztésekre, vagy csatlakozzon a közösségünkben tervezett nyilvános eseményekhez. Várjuk az új tagokat. Minél többen vagyunk, annál jobb. Tanulj és gyarapodj.</p>
+  <h2>Csatlakozz közösségünkhöz</h2>
+  <p>Lépj kapcsolatba más tanulókkal, érj el vizuális tanulási útitervet, és fejleszd nyelvi vagy technikai készségeidet platformjainkon.</p>
+
+  <div class="community-grid">
+    <div class="community-card">
+      <h3>Simeza: Nyelvcsere</h3>
+      <p>Gyakorold a szókincset, a nyelvtant és a társalgási készségeket valós idejű csatornákon a Discord szerverünkön.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Csatlakozz a Discordhoz</a>
+    </div>
+
+    <div class="community-card">
+      <h3>Sage-Code: Szoftver és Rendszerek</h3>
+      <p>Sajátíts el programozási nyelveket és szoftverfejlesztést strukturált útiterv segítségével a Sage-Code-on.</p>
+      <a href="https://sagecode.org" class="cta-link" rel="external">Látogasd meg a Sage-Code-ot</a>
+    </div>
+  </div>
 </section>

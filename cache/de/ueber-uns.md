@@ -1,27 +1,42 @@
 ---
-title: Über Pavy Beloiu - Simeza Art
-description: Erfahren Sie mehr über Pavy Beloiu, Ingenieur, bildender Künstler und Autor.
-keywords: pavy beloiu, simeza, kunst, galerie, künstler, autor
-source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
+title: Über La Simeza - Kunst, Kultur & Mehrsprachige Bildung
+description: Entdecken Sie La Simeza, eine unabhängige digitale Galerie mit bildender Kunst von Pavy Beloiu und Fotografie von Elucian Moise, die für die Wertschätzung von Kunst und den Erwerb visueller Sprache konzipiert wurde.
+keywords: pavy beloiu, elucian moise, simeza, bildende kunst, fotografie, visuelles sprachenlernen, sage-code
+source_hash: d1bd8eada18ab602f973a1efb5cf561acf64aad257e8fc1b1de690e6c344deb3
 ---
-# Willkommen bei La Simeza
+# Über La Simeza
 
-**private Galerie: Gemälde, Zeichnungen und Fotos.**
+**Eine private digitale Galerie, die bildende Kunst, Fotografie und visuelles Sprachenlernen präsentiert.**
 
 <div class="about-intro-panels">
-	<section class="about-intro-panel">
-        <h1>Über La Simeza</h1>
-        <p>La Simeza ist eine unabhängige Veröffentlichungsplattform, die dazu konzipiert wurde, kuratierte Kunstsammlungen zu präsentieren. Ausstellungen können sowohl auf Mobilgeräten als auch auf Desktops im Vollbildmodus betrachtet werden. Entwickelt von Elucian Moise, mit Originalkunstwerken, die von Pavy Beloiu lizenziert wurden.</p>
-	</section>
-	<section class="about-intro-panel">
-        <h1>Über den Inhalt</h1>
-        <p>Wir präsentieren Gemälde in niedriger Auflösung, die von „pavybeloiu.com“ signiert und urheberrechtlich geschützt sind. Wir fügen auch künstlerische Fotografien von Pavy und Elucian hinzu, die Natur, Architektur und bildende Kunst für Ihr Vergnügen einfangen.</p>
-	</section>
+  <section class="about-intro-panel">
+    <h2>Die Plattform</h2>
+    <p>La Simeza ist eine unabhängige Publikationsplattform, die entwickelt wurde, um kuratierte Kunstsammlungen in responsiven Vollbild-Galerien zu präsentieren. Die Plattformarchitektur wurde von Elucian Moise entwickelt und enthält Originalgemälde und Fotos, die von Pavy Beloiu lizenziert wurden.</p>
+  </section>
+
+  <section class="about-intro-panel">
+    <h2>Inhalt & Vision</h2>
+    <p>Wir zeigen weboptimierte Reproduktionen von Originalgemälden sowie bildende Kunst und historische Fotografie. La Simeza dient gleichzeitig als demonstrative Lernplattform, die es Schülern ermöglicht, Kunstwerke mit mehrsprachigen Titeln und Beschreibungen zu studieren.</p>
+  </section>
 </div>
 
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h3>Community & Support</h3>
-  <p>Wir hoffen, Ihnen gefällt Ihr Besuch. Wenn ja, vernetzen Sie sich mit uns auf sozialen Kanälen, stellen Sie Fragen, machen Sie Verbesserungsvorschläge oder nehmen Sie an den öffentlichen Veranstaltungen teil, die wir in unserer Community planen. Wir freuen uns auf neue Mitglieder. Je mehr, desto besser. Lernen und gedeihen.</p>
+  <h2>Werde Teil unserer Community</h2>
+  <p>Vernetze dich mit anderen Lernenden, greife auf visuelle Lern-Roadmaps zu und baue deine sprachlichen oder technischen Fähigkeiten auf unseren Plattformen aus.</p>
+
+  <div class="community-grid">
+    <div class="community-card">
+      <h3>Simeza: Sprachaustausch</h3>
+      <p>Übe Vokabeln, Grammatik und Konversationsfähigkeiten in Echtzeit-Kanälen auf unserem Discord-Server.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Discord beitreten</a>
+    </div>
+
+    <div class="community-card">
+      <h3>Sage-Code: Software & Systeme</h3>
+      <p>Meistere Programmiersprachen und Software-Engineering durch strukturierte Roadmaps bei Sage-Code.</p>
+      <a href="https://sagecode.org" class="cta-link" rel="external">Sage-Code besuchen</a>
+    </div>
+  </div>
 </section>
