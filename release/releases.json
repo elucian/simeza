@@ -6,9 +6,9 @@
     "notes": "success"
   },
   "candidate": {
-    "version": "v0.1.1-rc.157",
-    "commit": "Build candidate: Mon, Sep  7, 2026 11:48:21 AM",
-    "date": "2026-09-07T11:48:21.171189",
+    "version": "v0.1.1-rc.158",
+    "commit": "improve about community invitation",
+    "date": "2026-09-07T12:07:41.964646",
     "notes": "pending"
   }
 }

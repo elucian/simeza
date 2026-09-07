@@ -15,27 +15,27 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
   </section>
 
   <section class="about-intro-panel">
-    <h2>The Content &amp; Vision</h2>
-    <p>We feature web-optimized reproductions of original paintings alongside fine art and heritage photography. La Simeza doubles as a demonstrative learning platform, allowing students to study artwork accompanied by multilingual titles and descriptions.</p>
+    <h2>The Vision</h2>
+    <p>We feature web-optimized digital reproductions of original paintings alongside fine art and heritage photography. La Simeza doubles as a demonstrative learning platform, allowing visitors to study artwork accompanied by multilingual description.</p>
   </section>
 </div>
 
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h2>Join our Community</h2>
-  <p>Connect with fellow learners, access visual learning roadmaps, and build your language and technical skills across our platforms.</p>
+  <h2>Join Our Community</h2>
+  <p>Connect with fellow learners, access visual learning roadmaps, and build your technical skills. Join our groups across social platforms to collaborate, contribute to projects, and chat directly with the team.</p>
 
   <div class="community-grid">
     <div class="community-card">
       <h3>Simeza: Language Exchange</h3>
-      <p>Practice vocabulary, grammar, and conversational skills in real-time channels on our Discord stage.</p>
+      <p>Practice vocabulary, grammar, and conversational skills on chat and voice channels on our Discord server.</p>
       <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Join Discord</a>
     </div>
 
     <div class="community-card">
       <h3>Sage-Code: Software &amp; Communication</h3>
-      <p>Master programming languages and software engineering through structured roadmaps at Sage-Code.</p>
+      <p>Master a second language, programming languages, and software engineering through structured roadmaps.</p>
       <a href="https://sagecode.org" class="cta-link" rel="external">Visit Sage-Code</a>
     </div>
   </div>
