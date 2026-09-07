@@ -54,20 +54,33 @@ elif [ "$CMD" == "commit" ]; then
 
 elif [ "$CMD" == "update" ]; then
     echo "Preparing workspace for new session..."
-    if ! git diff-index --quiet HEAD --; then
-        echo "Warning: You have uncommitted changes."
-        git status --short
-        read -p "Continue updating anyway? (y/N): " choice
-        [[ "$choice" =~ ^[Yy]$ ]] || { echo "Aborted."; exit 1; }
+    
+    STASHED=0
+    # Check if there are any changes (tracked or untracked)
+    if ! git diff-index --quiet HEAD -- || [ -n "$(git status --porcelain)" ]; then
+        echo "Stashing uncommitted local changes..."
+        git stash push -u -m "run.sh update auto-stash"
+        STASHED=1
     fi
+
     echo "Pulling latest changes from origin/main..."
     git pull origin main
+
     echo "Resyncing tags..."
     git fetch --tags -f origin
+
     if command -v git-lfs >/dev/null 2>&1 || git lfs version >/dev/null 2>&1; then
         echo "Ensuring Git LFS image assets are up to date..."
         git lfs pull
     fi
+
+    if [ $STASHED -eq 1 ]; then
+        echo "Restoring uncommitted local changes..."
+        if ! git stash pop; then
+            echo "⚠️ Conflict detected while restoring changes! Resolve conflicts before continuing."
+        fi
+    fi
+
     VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])" 2>/dev/null || echo "unknown")
     echo "----------------------------------------"
     echo "Workspace is synchronized and ready!"
