@@ -34,7 +34,7 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
     </div>
 
     <div class="community-card">
-      <h3>Sage-Code: Software &amp; Systems</h3>
+      <h3>Sage-Code: Software &amp; Communication</h3>
       <p>Master programming languages and software engineering through structured roadmaps at Sage-Code.</p>
       <a href="https://sagecode.org" class="cta-link" rel="external">Visit Sage-Code</a>
     </div>
