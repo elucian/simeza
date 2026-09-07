@@ -344,6 +344,7 @@ function initFullscreenViewer() {
     let currentIndex = 0;
     let viewerMusicTimeout = null;
     let viewerSlideTimeout = null;
+    let viewerRotationTimeout = null; // Track rotation timeout specifically
 
     function playNextTrack() {
         if (!getSettings().musicEnabled) return;
@@ -467,26 +468,48 @@ window.applyRouteFilters = function() {
     });
 
     function updateRotation(imgElement) {
-        // Clear existing rotation immediately to ensure no persistence
+        // Clear previous rotation state and timers
         imgElement.classList.remove('rotated');
+        clearTimeout(viewerRotationTimeout);
         
         if (!getSettings().autoRotation) {
             return;
         }
 
-        // Wait 1 second before assessing/applying rotation
-        setTimeout(() => {
-            // Re-check settings (might have changed or we just want to ensure we are still in autorotation)
+        // Ensure we work with natural dimensions after image is loaded
+        const assessAndRotate = () => {
+            // Re-check settings (might have changed)
             if (!getSettings().autoRotation) return;
 
-            const isImgPortrait = (imgElement.naturalHeight || imgElement.height) > (imgElement.naturalWidth || imgElement.width);
-            
-            // "If image size is more tall then wide show it in portrait mode." (i.e., isImgPortrait -> no rotation)
-            // "Otherwise rotate if rotation is enabled then show the picture." (i.e., Landscape -> rotate)
-            if (!isImgPortrait) {
-                imgElement.classList.add('rotated');
+            // Wait until image is actually loaded if naturalWidth is 0
+            if (imgElement.naturalWidth === 0 && imgElement.naturalHeight === 0) {
+                 viewerRotationTimeout = setTimeout(assessAndRotate, 200);
+                 return;
             }
-        }, 1000);
+
+            const isImgLandscape = imgElement.naturalWidth > imgElement.naturalHeight;
+            
+            // Logic: Rotate if it's landscape. Don't rotate if portrait.
+            if (isImgLandscape) {
+                imgElement.classList.add('rotated');
+                
+                // If loop is running, extend time after rotation
+                if (isLooping) {
+                    clearTimeout(viewerSlideTimeout);
+                    // Ensure at least 3 seconds remain after rotation
+                    const extendDelay = 3000;
+                    viewerSlideTimeout = setTimeout(advanceSlide, extendDelay);
+                }
+            }
+        };
+
+        if (imgElement.complete && imgElement.naturalWidth > 0) {
+            viewerRotationTimeout = setTimeout(assessAndRotate, 1000);
+        } else {
+            imgElement.onload = () => {
+                viewerRotationTimeout = setTimeout(assessAndRotate, 1000);
+            };
+        }
 
         // Ensure no inline transforms are interfering
         imgElement.style.transform = '';
