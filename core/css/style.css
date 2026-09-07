@@ -140,13 +140,13 @@ body:has(.content-gallery-wrapper),
   }
 }
 
-.content:has(.gallery-container) h1 {
+.content h1 {
   margin: 4px 0;
   font-size: 1.4rem;
 }
 
-.content:has(.gallery-container) p {
-  margin: 2px 2p 4px 8px;
+.content p:first-of-type {
+  margin: 2px 2px 8px 8px;
   font-size: 1rem;
 }
 /* 4. Header, Nav, Mobile Menu */
