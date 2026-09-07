@@ -8,6 +8,7 @@
 # release: Check release status, promote, build.
 # setup: Load environment variables from .env.
 #        IMPORTANT: Must be run with 'source ./run.sh setup' to take effect.
+# update: Sync remote, tags, LFS.
 # kill: Terminate all unused terminal sessions.
 # clean: Remove local.
 # serve: Serve local.
@@ -50,6 +51,29 @@ elif [ "$CMD" == "commit" ]; then
     fi
     git commit -m "$MSG"
     echo "Changes committed locally."
+
+elif [ "$CMD" == "update" ]; then
+    echo "Preparing workspace for new session..."
+    if ! git diff-index --quiet HEAD --; then
+        echo "Warning: You have uncommitted changes."
+        git status --short
+        read -p "Continue updating anyway? (y/N): " choice
+        [[ "$choice" =~ ^[Yy]$ ]] || { echo "Aborted."; exit 1; }
+    fi
+    echo "Pulling latest changes from origin/main..."
+    git pull origin main
+    echo "Resyncing tags..."
+    git fetch --tags -f origin
+    if command -v git-lfs >/dev/null 2>&1 || git lfs version >/dev/null 2>&1; then
+        echo "Ensuring Git LFS image assets are up to date..."
+        git lfs pull
+    fi
+    VERSION=$(python -c "import json; print(json.load(open('release/releases.json'))['published']['version'])" 2>/dev/null || echo "unknown")
+    echo "----------------------------------------"
+    echo "Workspace is synchronized and ready!"
+    echo "Current published version: v$VERSION"
+    echo "Head commit: $(git log -1 --oneline)"
+    echo "----------------------------------------"
 
 elif [ "$CMD" == "translate" ]; then
     load_env
@@ -145,7 +169,7 @@ elif [ "$CMD" == "kill" ]; then
 
 
 else
-    echo "Usage: ./run.sh [setup|commit|translate|build [lang]|dev|publish|release|clean|serve|kill|sync]"
+    echo "Usage: ./run.sh [setup|update|commit|translate|build [lang]|dev|publish|release|clean|serve|kill|sync]"
 
 
 fi
