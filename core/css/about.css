@@ -7,7 +7,7 @@
   grid-template-columns: 1fr 1fr;
   gap: 20px;
   align-items: stretch;
-  margin: 0 0 24px;
+  margin: 0 0 14px;
 }
 
 .about-intro-panel,
@@ -20,7 +20,7 @@
 }
 
 .about-intro-panel {
-  padding: 22px 24px;
+  padding: 12px 18px;
 }
 
 .about-intro-panel h1 {
@@ -35,12 +35,6 @@
   margin: 0;
   color: var(--text-main);
   line-height: 1.55;
-}
-
-.about-contact-panel {
-  max-width: 760px;
-  margin: 24px auto 0;
-  padding: 22px 24px;
 }
 
 .about-contact-panel h1 {
@@ -132,9 +126,6 @@
     padding: 16px;
   }
 
-  .about-contact-panel {
-    padding: 16px;
-  }
 
   .about-intro-panel h1 {
     font-size: 1rem;
@@ -152,10 +143,6 @@
     aspect-ratio: 1 / 1.15;
   }
 
-  .about-portrait-panel h3 {
-    margin-top: 8px;
-    font-size: 0.85rem;
-  }
 
   .about-portrait-panel p {
     min-height: 3.6em;
@@ -167,4 +154,62 @@
     font-size: 0.75rem;
   }
 
+}
+
+/* bottom panel over two smaller panels */
+.about-contact-panel {
+  max-width: 980px;
+  margin: 12px auto 0;
+  padding: 8px 12px;
+  border: 1px solid var(--border-color, #e2e8f0);
+}
+
+.community-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.community-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  background-color: var(--card-bg, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 6px;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.community-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.community-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  color: var(--text-color, #0f172a);
+}
+
+.community-card p {
+  flex-grow: 1;
+  margin-bottom: 1.25rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-muted, #475569);
+}
+
+.cta-link {
+  align-self: flex-start;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--link-color, #2563eb);
+  text-decoration: none;
+}
+
+.cta-link:hover {
+  text-decoration: underline;
 }

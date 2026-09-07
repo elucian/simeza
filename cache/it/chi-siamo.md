@@ -2,7 +2,7 @@
 title: Informazioni su Pavy Beloiu - Simeza Art
 description: Scopri di più su Pavy Beloiu, ingegnere, artista visivo e autore.
 keywords: pavy beloiu, simeza, arte, galleria, artista, autore
-source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
+source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
 ---
 # Benvenuti a La Simeza
 
@@ -23,5 +23,5 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 
 <section class="about-contact-panel">
   <h3>Comunità e supporto</h3>
-  <p>Connettiti con noi, fai domande, fai un'offerta o unisciti alla discussione sui nostri canali della community. Non vediamo l'ora di accogliere nuovi membri nella nostra community.</p>
+  <p>Speriamo che la vostra visita sia di vostro gradimento. Se è così, connettetevi con noi sui canali social, fate domande, date suggerimenti per miglioramenti o partecipate agli eventi pubblici che programmiamo nella nostra comunità. Non vediamo l'ora di accogliere nuovi membri. Più siamo, meglio è. Imparate e prosperate.</p>
 </section>

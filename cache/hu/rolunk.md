@@ -1,8 +1,8 @@
 ---
 title: Pavy Beloiu - Simeza Art névjegye
-description: Tudjon meg többet Pavy Beloiuról, mérnökről, vizuális művészről és szerzőről.
+description: Tudjon meg többet Pavy Beloiu mérnökről, vizuális művészről és szerzőről.
 keywords: pavy beloiu, simeza, művészet, galéria, művész, szerző
-source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
+source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
 ---
 # Üdvözöljük a La Simeza-ban
 
@@ -15,7 +15,7 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 	</section>
 	<section class="about-intro-panel">
         <h1>A tartalomról</h1>
-        <p>Alacsony felbontású festményeket mutatunk be, amelyeket a „pavybeloiu.com” írt alá, és szerzői jog védi őket. Tartalmazunk továbbá Pavy és Elucian által készített művészi fényképeket is, amelyek a természetet, az építészetet és a képzőművészetet örökítik meg az Ön örömére.</p>
+        <p>Alacsony felbontású festményeket mutatunk be, amelyeket a „pavybeloiu.com” írt alá, és szerzői jog védi őket. Emellett Pavy és Elucian által készített művészi fényképeket is tartalmazunk, amelyek a természetet, az építészetet és a képzőművészetet örökítik meg az Ön örömére.</p>
 	</section>
 </div>
 
@@ -23,5 +23,5 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 
 <section class="about-contact-panel">
   <h3>Közösség és támogatás</h3>
-  <p>Lépjen kapcsolatba velünk, tegyen fel kérdéseket, tegyen ajánlatot, vagy csatlakozzon a beszélgetéshez közösségi csatornáinkon. Várjuk az új tagokat közösségünkben.</p>
+  <p>Reméljük, élvezi a látogatást. Ha igen, lépjen kapcsolatba velünk a közösségi csatornákon, tegyen fel kérdéseket, tegyen javaslatokat a fejlesztésekre, vagy csatlakozzon a közösségünkben tervezett nyilvános eseményekhez. Várjuk az új tagokat. Minél többen vagyunk, annál jobb. Tanulj és gyarapodj.</p>
 </section>

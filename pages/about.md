@@ -1,26 +1,42 @@
 ---
-title: About Pavy Beloiu - Simeza Art
-description: Learn about Pavy Beloiu, engineer, visual artist, and author.
-keywords: pavy beloiu, simeza, art, gallery, artist, author
+title: About La Simeza - Art, Culture & Multilingual Education
+description: Discover La Simeza, an independent digital gallery featuring fine art by Pavy Beloiu and photography by Elucian Moise, designed for art appreciation and visual language acquisition.
+keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual language learning, sage-code
 ---
-# Welcome La Simeza
 
-**private gallery: paintings, drawings and photos.**
+# About La Simeza
+
+**A private digital gallery showcasing fine art, photography, and visual language learning.**
 
 <div class="about-intro-panels">
-	<section class="about-intro-panel">
-        <h1>About La Simeza</h1>
-        <p>La Simeza is an independent publishing platform designed to showcase curated art collections. Exhibits can be viewed in full screen on both mobile and desktop devices. Developed by Elucian Moise, featuring original artwork licensed from Pavy Beloiu.</p>
-	</section>
-	<section class="about-intro-panel">
-        <h1>About The Content</h1>
-        <p>We feature low-resolution paintings signed by "pavybeloiu.com" and protected by copyright. We also include artistic photographs taken by Pavy and Elucian capturing nature, architecture, and fine art for your enjoyment.</p>
-	</section>
+  <section class="about-intro-panel">
+    <h2>The Platform</h2>
+    <p>La Simeza is an independent publishing platform engineered to showcase curated art collections in responsive, full-screen galleries. Platform architecture developed by Elucian Moise, featuring original paintings and photos licensed from Pavy Beloiu.</p>
+  </section>
+
+  <section class="about-intro-panel">
+    <h2>The Content &amp; Vision</h2>
+    <p>We feature web-optimized reproductions of original paintings alongside fine art and heritage photography. La Simeza doubles as a demonstrative learning platform, allowing students to study artwork accompanied by multilingual titles and descriptions.</p>
+  </section>
 </div>
 
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h3>Community &amp; Support</h3>
-  <p>We hope you enjoy your visit. If you do, connect with us on social channels, ask questions, make suggestions for improvements, or join the public events we schedule in our community. We look forward for new members. The more the merrier. Learn and prosper.</p>
+  <h2>Join our Community</h2>
+  <p>Connect with fellow learners, access visual learning roadmaps, and build your language or technical skills across our platforms.</p>
+
+  <div class="community-grid">
+    <div class="community-card">
+      <h3>Simeza: Language Exchange</h3>
+      <p>Practice vocabulary, grammar, and conversational skills in real-time channels on our Discord stage.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Join Discord</a>
+    </div>
+
+    <div class="community-card">
+      <h3>Sage-Code: Software &amp; Systems</h3>
+      <p>Master programming languages and software engineering through structured roadmaps at Sage-Code.</p>
+      <a href="https://sagecode.org" class="cta-link" rel="external">Visit Sage-Code</a>
+    </div>
+  </div>
 </section>

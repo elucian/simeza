@@ -19,7 +19,9 @@
   --btn-active-text: #ffffff;
   --btn-inactive-icon: #171d27;
   --panel-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  --text-muted:  #e2f8de;
 }
+
 
 [data-theme="dark"] {
   --bg-page: var(--bg-outer);
@@ -36,6 +38,7 @@
   --btn-active-text: #171d27;
   --btn-inactive-icon: #ffffff;
   --panel-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+  --text-muted:  #262b33;
 }
 
 
@@ -595,7 +598,7 @@ body.hide-pillbar .content:has(.gallery-container) {
 h1 {
   text-align: center;
   color: var(--accent-color);
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   margin-top: 0;
   margin-bottom: 0.2rem;
 }
@@ -608,7 +611,7 @@ h1 {
 
 h2 {
   color: var(--accent-color);
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 500;
 }
 

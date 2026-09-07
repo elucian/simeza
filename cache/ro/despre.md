@@ -2,7 +2,7 @@
 title: Despre Pavy Beloiu - Simeza Art
 description: Află mai multe despre Pavy Beloiu, inginer, artist vizual și autor.
 keywords: pavy beloiu, simeză, artă, galerie, artist, autor
-source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
+source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
 ---
 # Bine ați venit la La Simeza
 
@@ -15,7 +15,7 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 	</section>
 	<section class="about-intro-panel">
         <h1>Despre conținut</h1>
-        <p>Prezentăm picturi la rezoluție mică semnate de „pavybeloiu.com” și protejate prin drepturi de autor. Includem, de asemenea, fotografii artistice realizate de Pavy și Elucian care surprind natura, arhitectura și arta plastică pentru plăcerea dumneavoastră.</p>
+        <p>Prezentăm picturi la rezoluție mică semnate de „pavybeloiu.com” și protejate prin drepturi de autor. Includem, de asemenea, fotografii artistice realizate de Pavy și Elucian, surprinzând natura, arhitectura și arta plastică pentru plăcerea dumneavoastră.</p>
 	</section>
 </div>
 
@@ -23,5 +23,5 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 
 <section class="about-contact-panel">
   <h3>Comunitate și asistență</h3>
-  <p>Conectați-vă cu noi, puneți întrebări, faceți o ofertă sau alăturați-vă discuției pe canalele noastre comunitare. Așteptăm cu nerăbdare noi membri în comunitatea noastră.</p>
+  <p>Sperăm să vă bucurați de vizită. Dacă o faceți, conectați-vă cu noi pe canalele sociale, puneți întrebări, faceți sugestii de îmbunătățire sau alăturați-vă evenimentelor publice pe care le programăm în comunitatea noastră. Așteptăm cu nerăbdare noi membri. Cu cât mai mulți, cu atât mai bine. Învățați și prosperați.</p>
 </section>

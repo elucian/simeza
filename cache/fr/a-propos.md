@@ -2,7 +2,7 @@
 title: À propos de Pavy Beloiu - Simeza Art
 description: Découvrez Pavy Beloiu, ingénieur, artiste visuel et auteur.
 keywords: pavy beloiu, simeza, art, galerie, artiste, auteur
-source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
+source_hash: 98552788148953ad68a96d21e8a1c05dd3cbe4704ab7ffe86ca904b6b86993f0
 ---
 # Bienvenue à La Simeza
 
@@ -11,7 +11,7 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 <div class="about-intro-panels">
 	<section class="about-intro-panel">
         <h1>À propos de La Simeza</h1>
-        <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art organisées. Les expositions peuvent être visualisées en plein écran sur les appareils mobiles et de bureau. Développé par Elucian Moise, présentant des œuvres d'art originales sous licence de Pavy Beloiu.</p>
+        <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art organisées. Les expositions peuvent être visionnées en plein écran sur les appareils mobiles et de bureau. Développé par Elucian Moise, présentant des œuvres d'art originales sous licence de Pavy Beloiu.</p>
 	</section>
 	<section class="about-intro-panel">
         <h1>À propos du contenu</h1>
@@ -23,5 +23,5 @@ source_hash: 04477cb22e62a08138f4a20f65858459209a96625c3d33907d16d1082f638470
 
 <section class="about-contact-panel">
   <h3>Communauté et support</h3>
-  <p>Connectez-vous avec nous, posez des questions, faites une offre ou rejoignez la discussion sur nos canaux communautaires. Nous attendons avec impatience de nouveaux membres dans notre communauté.</p>
+  <p>Nous espérons que vous apprécierez votre visite. Si c'est le cas, connectez-vous avec nous sur les réseaux sociaux, posez des questions, faites des suggestions d'amélioration ou rejoignez les événements publics que nous organisons dans notre communauté. Nous attendons avec impatience de nouveaux membres. Plus on est de fous, plus on rit. Apprenez et prospérez.</p>
 </section>
