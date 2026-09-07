@@ -142,7 +142,7 @@ body:has(.content-gallery-wrapper),
 
 .content:has(.gallery-container) h1 {
   margin: 4px 0;
-  font-size: 1.2rem;
+  font-size: 1.4rem;
 }
 
 .content:has(.gallery-container) p {
