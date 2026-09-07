@@ -1,8 +1,8 @@
 {
   "published": {
-    "version": "v0.1.1-rc.166",
-    "commit": "3e5797d67c74a8ae5be44bf02e116ed2daae508b",
-    "date": "2026-09-07T15:36:01.765598",
+    "version": "v0.1.1-rc.167",
+    "commit": "cfd52f8b025b1a9c69af22630ad7ba352eadf891",
+    "date": "2026-09-07T16:08:57.677923",
     "notes": "success"
   },
   "candidate": {
