@@ -23,20 +23,20 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h2>Join Our Community</h2>
-  <p>Connect with fellow learners, access visual learning roadmaps, and build your technical skills. Join our groups across social platforms to collaborate, contribute to projects, and chat directly with the team.</p>
+  <h2>Join the Inner Circle</h2>
+  <p>Connect directly for real-time discussion, collaboration, and resource sharing across our primary community platforms.</p>
 
   <div class="community-grid">
     <div class="community-card">
-      <h3>Simeza: Language Exchange</h3>
-      <p>Practice vocabulary, grammar, and conversational skills on chat and voice channels on our Discord server.</p>
-      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Join Discord</a>
+      <h3>WhatsApp Simeza Group</h3>
+      <p>Direct channel with artist Pavy Beloiu and the community. Pitch ideas, share feedback, and discuss custom commissions or deals.</p>
+      <a href="https://chat.whatsapp.com/DKOFmfKzYPxH1HIdmVTFa9" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Simeza Group">Join WhatsApp</a>
     </div>
 
     <div class="community-card">
-      <h3>Sage-Code: Software &amp; Communication</h3>
-      <p>Master a second language, programming languages, and software engineering through structured roadmaps.</p>
-      <a href="https://sagecode.org" class="cta-link" rel="external">Visit Sage-Code</a>
+      <h3>Discord Learning Hub</h3>
+      <p>Structured roadmaps for software engineering and language learning. Access exclusive resources, commission websites, or request private mentoring.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Learning Hub">Join Discord</a>
     </div>
   </div>
 </section>
