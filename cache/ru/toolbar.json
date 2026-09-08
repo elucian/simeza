@@ -1,0 +1,30 @@
+{
+  "about": {
+    "slug": "about",
+    "icon": "bi-person",
+    "label": {
+      "ru": "О нас"
+    }
+  },
+  "gallery": {
+    "slug": "gallery",
+    "icon": "bi-palette",
+    "label": {
+      "ru": "Галерея"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "label": {
+      "ru": "Фильтр"
+    }
+  },
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "label": {
+      "ru": "Настройки"
+    }
+  }
+}

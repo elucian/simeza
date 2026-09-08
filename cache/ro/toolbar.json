@@ -1,0 +1,30 @@
+{
+  "about": {
+    "slug": "about",
+    "icon": "bi-person",
+    "label": {
+      "ro": "Despre"
+    }
+  },
+  "gallery": {
+    "slug": "gallery",
+    "icon": "bi-palette",
+    "label": {
+      "ro": "Galerie"
+    }
+  },
+  "filter": {
+    "slug": "filter",
+    "icon": "bi-funnel",
+    "label": {
+      "ro": "Filtru"
+    }
+  },
+  "settings": {
+    "slug": "settings",
+    "icon": "bi-gear",
+    "label": {
+      "ro": "Setări"
+    }
+  }
+}

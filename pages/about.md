@@ -34,8 +34,8 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
     </div>
 
     <div class="community-card">
-      <h3>Discord Learning Server</h3>
-      <p>Simeza stage server for language learning and art exchange. Access exclusive resources, request private mentoring, share artwork, schedule meetings, and participate in live stage events.</p>
+      <h3>Discord Learning Platform</h3>
+      <p>Community server for language learning and art exchange. Access exclusive resources, request private mentoring, share artwork, schedule meetings, and participate in live stage events.</p>
       <a href="https://discord.gg/TTFrRzynEF" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Learning Hub"><i class="bi bi-discord" aria-hidden="true"></i> Join Discord</a>
     </div>
   </div>

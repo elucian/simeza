@@ -2,7 +2,7 @@
 title: À propos de La Simeza - Art, Culture et Éducation Multilingue
 description: Découvrez La Simeza, une galerie numérique indépendante présentant les beaux-arts de Pavy Beloiu et la photographie d'Elucian Moise, conçue pour l'appréciation de l'art et l'acquisition du langage visuel.
 keywords: pavy beloiu, elucian moise, simeza, beaux-arts, photographie, apprentissage du langage visuel, sage-code
-source_hash: 23c22b1d9106cc1f2482716de531b521d057c96c6325244cfc19f426ff99584a
+source_hash: 52c3411752564dac77ae4265f85d003bfee78f3fd8f7592ebc9aef12552c3524
 ---
 # À propos de La Simeza
 
@@ -11,7 +11,7 @@ source_hash: 23c22b1d9106cc1f2482716de531b521d057c96c6325244cfc19f426ff99584a
 <div class="about-intro-panels">
   <section class="about-intro-panel">
     <h2>La Plateforme</h2>
-    <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art sélectionnées dans des galeries réactives en plein écran. L'architecture de la plateforme a été développée par Elucian Moise, présentant des peintures et des photos originales sous licence de Pavy Beloiu.</p>
+    <p>La Simeza est une plateforme de publication indépendante conçue pour présenter des collections d'art sélectionnées dans des galeries réactives en plein écran. L'architecture de la plateforme a été développée par Elucian Moise, mettant en vedette des peintures et des photos originales sous licence de Pavy Beloiu.</p>
   </section>
 
   <section class="about-intro-panel">
@@ -23,20 +23,20 @@ source_hash: 23c22b1d9106cc1f2482716de531b521d057c96c6325244cfc19f426ff99584a
 {{widget:about}}
 
 <section class="about-contact-panel">
-  <h2>Rejoignez notre communauté</h2>
-  <p>Connectez-vous avec d'autres apprenants, accédez à des feuilles de route d'apprentissage visuel et développez vos compétences techniques. Rejoignez nos groupes sur les plateformes sociales pour collaborer, contribuer à des projets et discuter directement avec l'équipe.</p>
+  <h2>Rejoignez le Cercle Intérieur</h2>
+  <p>Connectez-vous directement pour des discussions en temps réel, de la collaboration et le partage de ressources sur nos principales plateformes communautaires.</p>
 
   <div class="community-grid">
     <div class="community-card">
-      <h3>Simeza : Échange linguistique</h3>
-      <p>Pratiquez le vocabulaire, la grammaire et les compétences conversationnelles sur les canaux de chat et vocaux de notre serveur Discord.</p>
-      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" rel="external">Rejoindre Discord</a>
+      <h3>Groupe WhatsApp Simeza</h3>
+      <p>Canal direct avec l'artiste Pavy Beloiu et la communauté La Simeza. Proposez des idées, partagez vos commentaires et discutez de commandes personnalisées ou d'offres. Chiffrement de bout en bout avec prise en charge de la voix et de la vidéo.</p>
+      <a href="https://chat.whatsapp.com/DKOFmfKzYPxH1HIdmVTFa9" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Simeza Group"><i class="bi bi-whatsapp" aria-hidden="true"></i> Rejoindre WhatsApp</a>
     </div>
 
     <div class="community-card">
-      <h3>Sage-Code : Logiciel &amp; Communication</h3>
-      <p>Maîtrisez une deuxième langue, des langages de programmation et l'ingénierie logicielle grâce à des feuilles de route structurées.</p>
-      <a href="https://sagecode.org" class="cta-link" rel="external">Visiter Sage-Code</a>
+      <h3>Plateforme d'apprentissage Discord</h3>
+      <p>Serveur communautaire pour l'apprentissage des langues et l'échange artistique. Accédez à des ressources exclusives, demandez un mentorat privé, partagez des œuvres d'art, planifiez des réunions et participez à des événements en direct.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Learning Hub"><i class="bi bi-discord" aria-hidden="true"></i> Rejoindre Discord</a>
     </div>
   </div>
 </section>
