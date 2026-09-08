@@ -33,7 +33,7 @@
   /* .gallery-thumbnail-area display: contents moved to base */
 
   .gallery-container:not(:has(.gallery-empty-state:not([hidden]))) {
-    gap: 12px;
+    gap: 8px;
   }
 
   .gallery-slider-stage {
@@ -69,28 +69,41 @@
   }
 
   .gallery-slider-properties {
-    flex: 0 0 320px;
+    flex: 0 0 480px;
     display: flex;
     min-width: 0;
-    padding: 22px;
+    padding: 10px;
     box-sizing: border-box;
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
     border-left: 1px solid var(--border-color);
     height: 100%;
   }
 
-  .gallery-slider-field {
+  .gallery-slider-fields {
     display: flex;
     flex-direction: column;
-    gap: 3px;
+    gap: 8px;
+  }
+
+  .gallery-slider-fields-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+  }
+
+  .gallery-slider-field {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
     background: var(--bg-secondary);
-    padding: 10px;
+    padding: 8px 10px;
     border: 1px solid var(--border-color);
     border-radius: 6px;
   }
 
   .gallery-slider-field span {
+    flex: 0 0 80px;
     color: var(--accent-color);
     font-size: 0.72rem;
     font-weight: 600;
@@ -105,10 +118,8 @@
     line-height: 1.4;
   }
 
-  .gallery-slider-field-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
+  .gallery-slider-field strong {
+    min-width: 0;
   }
 
   .gallery-slider-description {
@@ -118,6 +129,8 @@
 
   .gallery-slider-description p {
     margin: 0;
+    flex: 1 1 auto;
+    min-width: 0;
   }
 
   .gallery-slider-actions {
@@ -153,8 +166,8 @@
   }
 
   .panel-wrapper {
-    flex: 0 0 174px;
-    height: 174px;
+    flex: 0 0 157px;
+    height: 157px;
     gap: 10px;
     padding: 3px 2px 22px;
     overflow-x: auto;
@@ -163,9 +176,9 @@
   }
 
   .panel {
-    flex: 0 0 var(--thumbnail-width, 132px);
-    width: var(--thumbnail-width, 132px);
-    height: 144px;
+    flex: 0 0 var(--thumbnail-width, 113px);
+    width: var(--thumbnail-width, 113px);
+    height: 127px;
     cursor: pointer;
   }
 
@@ -850,16 +863,16 @@
 
 @media (min-width: 768px) {
   body:not(.layout-maximized) .gallery-thumbnail-area {
-    flex: 0 0 174px;
+    flex: 0 0 157px;
     position: relative;
     display: block;
     min-width: 0;
-    margin-top: 12px;
+    margin-top: 8px;
   }
 
   body:not(.layout-maximized) .panel-wrapper {
     width: 100%;
-    height: 174px;
+    height: 157px;
     margin-top: 0;
     gap: 10px;
     padding: 3px 2px 22px;
@@ -869,9 +882,9 @@
   }
 
   body:not(.layout-maximized) .panel {
-    flex: 0 0 var(--thumbnail-width, 132px);
-    width: var(--thumbnail-width, 132px);
-    height: 144px;
+    flex: 0 0 var(--thumbnail-width, 113px);
+    width: var(--thumbnail-width, 113px);
+    height: 127px;
     cursor: pointer;
   }
 

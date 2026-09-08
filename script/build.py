@@ -50,11 +50,13 @@ def render_gallery_html(gallery_data, lang):
         '      <img id="sliderImage" src="" alt="">',
         '    </div>',
         '    <div class="gallery-slider-properties">',
-        '      <div class="gallery-slider-field"><span>Name</span><strong id="sliderName"></strong></div>',
-        '      <div class="gallery-slider-field"><span>Author</span><strong id="sliderAuthor"></strong></div>',
-        '      <div class="gallery-slider-field-row">',
-        '        <div class="gallery-slider-field"><span>Year</span><strong id="sliderYear"></strong></div>',
-        '        <div class="gallery-slider-field"><span>Status</span><strong id="sliderStatus"></strong></div>',
+        '      <div class="gallery-slider-fields">',
+        '        <div class="gallery-slider-field"><span>Name</span><strong id="sliderName"></strong></div>',
+        '        <div class="gallery-slider-field"><span>Author</span><strong id="sliderAuthor"></strong></div>',
+        '        <div class="gallery-slider-fields-row">',
+        '          <div class="gallery-slider-field"><span>Year</span><strong id="sliderYear"></strong></div>',
+        '          <div class="gallery-slider-field"><span>Status</span><strong id="sliderStatus"></strong></div>',
+        '        </div>',
         '      </div>',
         '      <div class="gallery-slider-field gallery-slider-description"><span>Description</span><p id="sliderDescription"></p></div>',
         '      <div class="gallery-slider-actions">',
@@ -87,7 +89,7 @@ def render_gallery_html(gallery_data, lang):
         category = item.get('category', '')
         topic = item.get('topic', '')
         item_type = item.get('type', 'painting')
-        thumbnail_width = max(86, min(216, round(118 * w / h)))
+        thumbnail_width = max(73, min(184, round(101 * w / h)))
         p = [f'  <div class="panel" style="--thumbnail-width: {thumbnail_width}px" data-type="{item_type}" data-author="{author}" data-category="{category}" data-topic="{topic}" data-image="/content/gallery/{file}" data-title="{html.escape(title)}" data-desc="{html.escape(desc)}" data-year="{year}" data-status="{status}">']
         if file:
             p.append(f'      <div class="panel-image"><img src="/content/gallery/{file}" alt="{html.escape(title)}" loading="lazy"></div>')
