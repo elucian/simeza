@@ -228,6 +228,7 @@ onDOMReady(() => {
                     const anchor = document.createElement("a");
                     anchor.href = link.url;
                     anchor.setAttribute("aria-label", link.name || 'Social link');
+                    anchor.dataset.name = link.name || 'Social link';
                     anchor.target = "_blank";
                     anchor.rel = "noopener noreferrer";
                     const icon = document.createElement("i");
@@ -235,7 +236,28 @@ onDOMReady(() => {
                     anchor.appendChild(icon);
                     iconsWrapper.appendChild(anchor);
                 });
-                if (iconsWrapper.children.length) footer.appendChild(iconsWrapper);
+                if (iconsWrapper.children.length) {
+                    footer.appendChild(iconsWrapper);
+                    // Hint tooltip: centered above the footer icons (hover / focus / touch)
+                    const hint = document.createElement("span");
+                    hint.className = "social-hint";
+                    hint.setAttribute("role", "tooltip");
+                    footer.appendChild(hint);
+                    const showHint = (anchor) => {
+                        hint.textContent = anchor.dataset.name || '';
+                        hint.classList.add("visible");
+                    };
+                    const hideHint = () => hint.classList.remove("visible");
+                    iconsWrapper.querySelectorAll("a").forEach(anchor => {
+                        anchor.addEventListener("mouseenter", () => showHint(anchor));
+                        anchor.addEventListener("mouseleave", hideHint);
+                        anchor.addEventListener("focus", () => showHint(anchor));
+                        anchor.addEventListener("blur", hideHint);
+                        anchor.addEventListener("touchstart", () => showHint(anchor), { passive: true });
+                        anchor.addEventListener("touchend", hideHint);
+                        anchor.addEventListener("touchcancel", hideHint);
+                    });
+                }
                 const copyright = document.createElement("p");
                 copyright.className = "copyright";
                 copyright.textContent = config.copyright || 'Copyright (C) 2026 Sage-Code Laboratory.';
