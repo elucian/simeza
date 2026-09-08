@@ -343,6 +343,7 @@ def build(target_lang=None):
         f.write('')
     shutil.copytree(os.path.join(ROOT, 'content'), os.path.join(LOCAL_DIR, 'content'), dirs_exist_ok=True)
     shutil.copytree(os.path.join(ROOT, 'core'), os.path.join(LOCAL_DIR, 'core'), dirs_exist_ok=True)
+    shutil.copytree(os.path.join(ROOT, 'layout'), os.path.join(LOCAL_DIR, 'layout'), dirs_exist_ok=True)
     duration = time.time() - start_time
     print(f'\nBuild completed in {duration:.2f} seconds.')
     summary.append(f'\n**Build completed in {duration:.2f} seconds.**')

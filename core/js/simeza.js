@@ -218,7 +218,7 @@ onDOMReady(() => {
     // 6. Social Footer
     const footer = document.getElementById("socialFooter");
     if (footer && footer.children.length === 0) {
-        fetch('/content/footer-links.json')
+        fetch('/layout/footer-links.json')
             .then(response => response.ok ? response.json() : Promise.reject(new Error('Footer links unavailable')))
             .then(config => {
                 const socialLinks = Array.isArray(config.links) ? config.links : [];
