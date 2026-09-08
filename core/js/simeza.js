@@ -236,39 +236,9 @@ onDOMReady(() => {
                     anchor.appendChild(icon);
                     iconsWrapper.appendChild(anchor);
                 });
-                if (iconsWrapper.children.length) {
-                    footer.appendChild(iconsWrapper);
-                    // Hint tooltip: centered above the footer icons (hover / focus / touch)
-                    const hint = document.createElement("span");
-                    hint.className = "social-hint";
-                    hint.setAttribute("role", "tooltip");
-                    footer.appendChild(hint);
-                    const showHint = (anchor) => {
-                        hint.textContent = anchor.dataset.name || '';
-                        hint.classList.add("visible");
-                    };
-                    const hideHint = () => hint.classList.remove("visible");
-                    iconsWrapper.querySelectorAll("a").forEach(anchor => {
-                        anchor.addEventListener("mouseenter", () => showHint(anchor));
-                        anchor.addEventListener("mouseleave", hideHint);
-                        anchor.addEventListener("focus", () => showHint(anchor));
-                        anchor.addEventListener("blur", hideHint);
-                        anchor.addEventListener("touchstart", () => showHint(anchor), { passive: true });
-                        anchor.addEventListener("touchend", hideHint);
-                        anchor.addEventListener("touchcancel", hideHint);
-                    });
-                }
-                const copyright = document.createElement("p");
-                copyright.className = "copyright";
-                copyright.textContent = config.copyright || 'Copyright (C) 2026 Sage-Code Laboratory.';
-                footer.appendChild(copyright);
+                if (iconsWrapper.children.length) footer.appendChild(iconsWrapper);
             })
-            .catch(() => {
-                const copyright = document.createElement("p");
-                copyright.className = "copyright";
-                copyright.textContent = 'Copyright (C) 2026 Sage-Code Laboratory.';
-                footer.appendChild(copyright);
-            });
+            .catch(() => {});
     }
 });
 
