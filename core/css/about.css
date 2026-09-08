@@ -204,6 +204,10 @@
   text-decoration: none;
 }
 
+.cta-link .bi {
+  margin-right: 0.4em;
+}
+
 .cta-link:hover {
   text-decoration: underline;
 }

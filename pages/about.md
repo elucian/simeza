@@ -29,14 +29,14 @@ keywords: pavy beloiu, elucian moise, simeza, fine art, photography, visual lang
   <div class="community-grid">
     <div class="community-card">
       <h3>WhatsApp Simeza Group</h3>
-      <p>Direct channel with artist Pavy Beloiu and the community. Pitch ideas, share feedback, and discuss custom commissions or deals.</p>
-      <a href="https://chat.whatsapp.com/DKOFmfKzYPxH1HIdmVTFa9" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Simeza Group">Join WhatsApp</a>
+      <p>Direct channel with artist Pavy Beloiu and the La Simeza community. Pitch ideas, share feedback, and discuss custom commissions or deals. End-to-end encrypted with voice and video support.</p>
+      <a href="https://chat.whatsapp.com/DKOFmfKzYPxH1HIdmVTFa9" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join WhatsApp Simeza Group"><i class="bi bi-whatsapp" aria-hidden="true"></i> Join WhatsApp</a>
     </div>
 
     <div class="community-card">
-      <h3>Discord Learning Hub</h3>
-      <p>Structured roadmaps for software engineering and language learning. Access exclusive resources, commission websites, or request private mentoring.</p>
-      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Learning Hub">Join Discord</a>
+      <h3>Discord Learning Server</h3>
+      <p>Simeza stage server for language learning and art exchange. Access exclusive resources, request private mentoring, share artwork, schedule meetings, and participate in live stage events.</p>
+      <a href="https://discord.gg/TTFrRzynEF" class="cta-link" target="_blank" rel="noopener noreferrer" aria-label="Join Discord Learning Hub"><i class="bi bi-discord" aria-hidden="true"></i> Join Discord</a>
     </div>
   </div>
 </section>
