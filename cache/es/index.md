@@ -2,9 +2,9 @@
 title: La Simeza - Galería de Arte Contemporáneo y Comunidad de Intercambio Políglota
 description: Explore arte contemporáneo, escritos, pinturas, libros y exposiciones en la Galería de Arte Simeza.
 keywords: simeza, galería de arte, arte contemporáneo, arte rumano, pinturas, exposiciones, libros, cultura
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Bienvenido a La Simeza
+# Bienvenido a Simeza
 
 **Plataforma cultural para estudiantes, mentores, autores y coleccionistas.**
 
@@ -15,7 +15,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about">Áreas de enfoque principal</h2>
 
 <div class="content-card">
-  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que sienten pasión por las artes visuales y la comunicación.
+  La Simeza es una plataforma independiente para el intercambio cultural y la educación. Apoyamos a entusiastas del arte, estudiantes políglotas y mentores. Damos la bienvenida a todos los que tengan pasión por las artes visuales y la comunicación.
 </div>
 
 <div class="content-card-list">
@@ -56,7 +56,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about-content">Contenido de oferta directa</h2>
 
 <div class="content-card">
-  Descubra bellas artes, colecciones fotográficas, monografías lingüísticas y flujos de medios. Acceda a archivos digitales, asegure volúmenes físicos, vea grabaciones sin conexión y únase a transmisiones de video en vivo interactivas en nuestra comunidad.
+  Descubra bellas artes, colecciones fotográficas, monografías lingüísticas y transmisiones multimedia. Acceda a archivos digitales, asegure volúmenes físicos, vea grabaciones sin conexión y únase a transmisiones de video en vivo interactivas en nuestra comunidad.
 </div>
 
 <div class="content-card-list">

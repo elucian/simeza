@@ -1,10 +1,10 @@
 ---
 title: La Simeza - Galleria d'arte contemporanea e comunità di scambio poliglotta
-description: Esplora arte contemporanea, scritti, dipinti, libri e mostre alla Galleria d'Arte Simeza.
+description: Esplora arte contemporanea, scritti, dipinti, libri e mostre alla Simeza Art Gallery.
 keywords: simeza, galleria d'arte, arte contemporanea, arte rumena, dipinti, mostre, libri, cultura
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Benvenuti a La Simeza
+# Benvenuti a Simeza
 
 **Piattaforma culturale per studenti, mentori, autori e collezionisti.**
 
@@ -44,7 +44,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Comunità aperta</strong>
-      <span>Contatto di supporto, scambio linguistico, media culturali e conversazioni.</span>
+      <span>Supporto, scambio linguistico, media culturali e conversazioni.</span>
     </div>
   </div>
 </div>
@@ -56,7 +56,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about-content">Contenuti in offerta diretta</h2>
 
 <div class="content-card">
-  Scopri belle arti, collezioni fotografiche, monografie linguistiche e flussi multimediali. Accedi a file digitali, assicurati volumi fisici, guarda registrazioni offline e unisciti a trasmissioni video interattive in diretta nella nostra comunità.
+  Scopri le belle arti, le collezioni fotografiche, le monografie linguistiche e i flussi multimediali. Accedi a file digitali, assicurati volumi fisici, guarda registrazioni offline e unisciti alle trasmissioni video interattive in diretta nella nostra comunità.
 </div>
 
 <div class="content-card-list">

@@ -2,9 +2,9 @@
 title: La Simeza - Galerie de Artă Contemporană & Comunitate de Schimb Poliglot
 description: Explorează artă contemporană, scrieri, picturi, cărți și expoziții la Galeria de Artă Simeza.
 keywords: simeza, galerie de artă, artă contemporană, artă românească, picturi, expoziții, cărți, cultură
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Bine ați venit la La Simeza
+# Bine ați venit la Simeza
 
 **Platformă culturală pentru studenți, mentori, autori și colecționari.**
 
@@ -15,7 +15,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about">Domenii principale de interes</h2>
 
 <div class="content-card">
-  La Simeza este o platformă independentă pentru schimb cultural și educație. Susținem entuziaștii artei, studenții poligloți și mentorii. Îi primim pe toți cei mânați de o pasiune pentru artele vizuale și comunicare.
+  La Simeza este o platformă independentă pentru schimb cultural și educație. Susținem entuziaștii artei, studenții poligloți și mentorii. Primim pe oricine este condus de o pasiune pentru artele vizuale și comunicare.
 </div>
 
 <div class="content-card-list">
@@ -30,21 +30,21 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Achiziție directă</strong>
-      <span>Obțineți obiecte fizice sau descărcați ediții digitale direct.</span>
+      <span>Obțineți articole fizice sau descărcați ediții digitale direct.</span>
     </div>
   </div>
   <div class="content-card">
   <i class="bi bi-mortarboard"></i>
   <div class="content-card-body">
-    <strong>Studiu individual</strong>
-    <span>Resurse de învățare și planuri de studiu pentru învățare independentă.</span>
+    <strong>Autostudiu</strong>
+    <span>Resurse de învățare și planuri de studiu pentru studiu independent.</span>
   </div>
   </div>
   <div class="content-card">
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Comunitate deschisă</strong>
-      <span>Contact de suport, schimb lingvistic, media culturală și discuții.</span>
+      <span>Suport, schimb lingvistic, media culturală și discuții.</span>
     </div>
   </div>
 </div>
@@ -71,14 +71,14 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-camera"></i>
     <div class="content-card-body">
       <strong>Fotografie artistică</strong>
-      <span>Printuri fotografice de înaltă rezoluție și arhive digitale.</span>
+      <span>Imprimeuri fotografice de înaltă rezoluție și arhive digitale.</span>
     </div>
   </div>
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Cărți rare și publicații</strong>
-      <span>Ediții rare, printuri istorice, eseuri și ghiduri lingvistice.</span>
+      <span>Ediții rare, imprimeuri istorice, eseuri și ghiduri lingvistice.</span>
     </div>
   </div>
   <div class="content-card">

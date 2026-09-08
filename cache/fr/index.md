@@ -2,9 +2,9 @@
 title: La Simeza - Galerie d'art contemporain et communauté d'échange polyglotte
 description: Explorez l'art contemporain, les écrits, les peintures, les livres et les expositions à la galerie d'art Simeza.
 keywords: simeza, galerie d'art, art contemporain, art roumain, peintures, expositions, livres, culture
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Bienvenue sur La Simeza
+# Bienvenue chez Simeza
 
 **Plateforme culturelle pour étudiants, mentors, auteurs et collectionneurs.**
 
@@ -30,7 +30,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-download"></i>
     <div class="content-card-body">
       <strong>Acquisition directe</strong>
-      <span>Obtenez des objets physiques ou téléchargez directement des éditions numériques.</span>
+      <span>Obtenez des articles physiques ou téléchargez directement des éditions numériques.</span>
     </div>
   </div>
   <div class="content-card">
@@ -44,7 +44,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Communauté ouverte</strong>
-      <span>Contact de support, échange linguistique, médias culturels et discussions.</span>
+      <span>Support, échange linguistique, médias culturels et discussions.</span>
     </div>
   </div>
 </div>
@@ -71,14 +71,14 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-camera"></i>
     <div class="content-card-body">
       <strong>Photographie artistique</strong>
-      <span>Tirages photographiques haute résolution et archives numériques.</span>
+      <span>Impressions photographiques haute résolution et archives numériques.</span>
     </div>
   </div>
   <div class="content-card">
     <i class="bi bi-book"></i>
     <div class="content-card-body">
       <strong>Livres rares et publications</strong>
-      <span>Éditions rares, tirages historiques, essais et guides linguistiques.</span>
+      <span>Éditions rares, impressions historiques, essais et guides linguistiques.</span>
     </div>
   </div>
   <div class="content-card">

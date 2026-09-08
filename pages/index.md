@@ -4,7 +4,7 @@ description: Explore contemporary art, writings, paintings, books, and exhibitio
 keywords: simeza, art gallery, contemporary art, romanian art, paintings, exhibitions, books, culture
 ---
 
-# Welcome to La Simeza
+# Welcome to Simeza
 
 **Cultural platform for students, mentors, authors, and collectors.**
 

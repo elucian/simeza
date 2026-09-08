@@ -2,9 +2,9 @@
 title: La Simeza - Galeria de Arte Contemporânea e Comunidade de Intercâmbio Poliglota
 description: Explore arte contemporânea, escritos, pinturas, livros e exposições na Galeria de Arte Simeza.
 keywords: simeza, galeria de arte, arte contemporânea, arte romena, pinturas, exposições, livros, cultura
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Bem-vindo ao La Simeza
+# Bem-vindo à Simeza
 
 **Plataforma cultural para estudantes, mentores, autores e colecionadores.**
 
@@ -15,7 +15,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about">Áreas de foco principal</h2>
 
 <div class="content-card">
-  O La Simeza é uma plataforma independente para intercâmbio cultural e educação. Apoiamos entusiastas da arte, estudantes poliglotas e mentores. Damos as boas-vindas a todos os que são movidos por uma paixão pelas artes visuais e pela comunicação.
+  A La Simeza é uma plataforma independente para intercâmbio cultural e educação. Apoiamos entusiastas da arte, estudantes poliglotas e mentores. Damos as boas-vindas a todos os que são movidos pela paixão pelas artes visuais e pela comunicação.
 </div>
 
 <div class="content-card-list">
@@ -44,7 +44,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Comunidade aberta</strong>
-      <span>Contato de suporte, intercâmbio de idiomas, mídia cultural e conversas.</span>
+      <span>Suporte, intercâmbio de idiomas, mídia cultural e conversas.</span>
     </div>
   </div>
 </div>

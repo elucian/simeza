@@ -2,9 +2,9 @@
 title: La Simeza - Kortárs Művészeti Galéria és Poliglott Csereközösség
 description: Fedezze fel a kortárs művészetet, írásokat, festményeket, könyveket és kiállításokat a Simeza Művészeti Galériában.
 keywords: simeza, művészeti galéria, kortárs művészet, román művészet, festmények, kiállítások, könyvek, kultúra
-source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
+source_hash: 44faf79b23f03386696fc60d43817c77a7eab081367a2b2de460710ac5261ac7
 ---
-# Üdvözöljük a La Simeza-nál
+# Üdvözöljük a Simezában
 
 **Kulturális platform diákok, mentorok, szerzők és gyűjtők számára.**
 
@@ -15,7 +15,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 <h2 id="about">Fő fókuszterületek</h2>
 
 <div class="content-card">
-  A La Simeza egy független platform a kulturális cseréhez és oktatáshoz. Támogatjuk a művészetrajongókat, a többnyelvű diákokat és a mentorokat. Mindenkit szívesen látunk, akit szenvedély fűt a vizuális művészetek és a kommunikáció iránt.
+  A La Simeza egy független platform a kulturális cseréhez és oktatáshoz. Támogatjuk a művészetrajongókat, a többnyelvű diákokat és a mentorokat. Mindenkit szívesen látunk, akit szenvedélyesen érdekel a vizuális művészet és a kommunikáció.
 </div>
 
 <div class="content-card-list">
@@ -44,7 +44,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
     <i class="bi bi-people"></i>
     <div class="content-card-body">
       <strong>Nyílt közösség</strong>
-      <span>Támogatási kapcsolat, nyelvcsere, kulturális média és beszélgetések.</span>
+      <span>Támogatás, nyelvcsere, kulturális média és beszélgetések.</span>
     </div>
   </div>
 </div>
@@ -53,7 +53,7 @@ source_hash: c3175d7b3be1317f099f8ed7554ae5faf8fe0454b56ee4a887a517982bab4ea4
 
 <div class="index-panel index-panel-content">
 
-<h2 id="about-content">Közvetlen ajánlatok</h2>
+<h2 id="about-content">Közvetlen ajánlatú tartalom</h2>
 
 <div class="content-card">
   Fedezze fel a képzőművészetet, fotógyűjteményeket, nyelvészeti monográfiákat és médiafolyamokat. Hozzáférhet digitális fájlokhoz, biztosíthat fizikai köteteket, megtekinthet offline felvételeket, és csatlakozhat interaktív élő videóközvetítésekhez közösségünkben.
