@@ -77,13 +77,17 @@
     flex-direction: column;
     gap: 14px;
     border-left: 1px solid var(--border-color);
-    overflow-y: auto;
+    height: 100%;
   }
 
   .gallery-slider-field {
     display: flex;
     flex-direction: column;
     gap: 3px;
+    background: var(--bg-secondary);
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
   }
 
   .gallery-slider-field span {
@@ -109,6 +113,7 @@
 
   .gallery-slider-description {
     flex: 1 1 auto;
+    overflow-y: auto;
   }
 
   .gallery-slider-description p {
