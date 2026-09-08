@@ -22,6 +22,11 @@
       "url": "https://discord.gg/TTFrRzynEF"
     },
     {
+      "name": "bluesky",
+      "icon": "bi-bluesky",
+      "url": "https://bsky.app/profile/elucian.bsky.social"
+    },
+    {
       "name": "WhatsApp",
       "icon": "bi-whatsapp",
       "url": "https://chat.whatsapp.com/DKOFmfKzYPxH1HIdmVTFa9"

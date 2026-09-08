@@ -177,6 +177,11 @@
   -webkit-mask-image: url('/core/img/icons/whatsapp.svg'); 
   mask-image: url('/core/img/icons/whatsapp.svg'); 
 }
+.icon-bluesky,
+.bi-bluesky {
+  -webkit-mask-image: url('/core/img/icons/bluesky.svg');
+  mask-image: url('/core/img/icons/bluesky.svg');
+}
 
 /* Interaction & Action Icons */
 .icon-funnel, 
